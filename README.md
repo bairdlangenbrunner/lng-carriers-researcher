@@ -1,4 +1,4 @@
-# LNG Carrier Tracker
+# LNG carriers researcher
 
 A public, quarterly-updated dataset of conventional LNG carriers and FSRUs in global LNG trade. Built on top of the International Gas Union (IGU) World LNG Report and extended with industry news and public contract data.
 
