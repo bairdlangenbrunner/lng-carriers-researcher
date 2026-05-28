@@ -1,0 +1,37 @@
+[project]
+name = "lng-carrier-tracker"
+version = "0.1.0"
+description = "Research scaffolding for the LNG Carrier Tracker — SOPs, tooling, and per-batch outputs."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "LNG Carrier Tracker maintainers" },
+]
+dependencies = [
+    "openpyxl>=3.1.2",      # build_workbook.py, recalc.py
+    "requests>=2.31.0",     # url_verifier.py, csb_fetch.py
+    "beautifulsoup4>=4.12",  # csb_fetch.py HTML parsing
+    "lxml>=5.0",             # bs4 backend
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = [
+    "E501",  # line length — covered by formatter
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"

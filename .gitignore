@@ -1,0 +1,42 @@
+# Scratch / working directory — never committed
+work/
+*.tmp
+*.bak
+
+# Local backend pulls (also live under work/, but ignore at root too just in case)
+backend.csv
+backend.colmap.json
+
+# Claude Code — commit settings.json (shared), ignore personal local overrides
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Excel temp/lock files
+~$*.xlsx
+
+# Cached CSB HTML — keep test fixtures under tests/fixtures/, but cache misc HTML
+# fetched at batch time goes in work/csb/ which is already ignored.
