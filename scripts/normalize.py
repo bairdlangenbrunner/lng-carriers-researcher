@@ -149,6 +149,17 @@ _OWNER_MAP = {
 }
 
 
+# Preferred display forms — the exact string to WRITE into the backend's
+# Shipowner / Operator/charterer cells, keyed by canonical owner tag. Per
+# [ref]-Fill SOP §4.14, match the backend's existing stylization and prefer the
+# established short form. Seed entries as a stylization is settled; an owner
+# absent here is written as researched (display_owner returns the input
+# unchanged), so this map only needs the ones the backend abbreviates.
+_OWNER_DISPLAY = {
+    "cosco-shipping-energy": "COSCO",
+}
+
+
 def _normalize_input(s: str) -> str:
     """Lowercase, strip, collapse whitespace, remove parenthetical content."""
     if s is None:
@@ -181,6 +192,16 @@ def normalize_owner(s: str) -> str:
         if norm.startswith(key) or key in norm:
             return tag
     return norm
+
+
+def display_owner(s: str) -> str:
+    """Return the preferred backend display string for an owner/charterer.
+
+    Looks up the canonical tag in _OWNER_DISPLAY; if a short form is settled
+    (e.g. 'COSCO'), returns it, otherwise returns the input unchanged. Per
+    [ref]-Fill SOP §4.14 — match the backend's existing stylization.
+    """
+    return _OWNER_DISPLAY.get(normalize_owner(s), s)
 
 
 def normalize_hull(builder_tag: str, hull_raw: str) -> str:

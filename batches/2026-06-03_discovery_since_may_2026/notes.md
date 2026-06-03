@@ -1,6 +1,6 @@
 # Batch 2026-06-03 — discovery — since May 1, 2026 (gap window 2026-05-01 → 2026-06-03)
 
-**SOP revs at time of batch:** RF rev 16, DC rev 6 (pointers.md reconciled RF 16 / DC 6 / SR 4 — consistent, no stale cross-refs).
+**SOP revs at time of batch:** built under RF rev 16 / DC rev 6, then rebuilt 2026-06-03 under **RF rev 17 / DC rev 7** (pointers.md reconciled RF 17 / DC 7 / SR 4). The rev-17/rev-7 changes — owner stylization (RF §4.14), multi-URL `", "` join (RF §4.15), and yard-location autofill (DC §6.7) — were applied to this batch; see Script changes.
 
 **Backend pull:** 1,465,308 bytes, 1210 data rows, header row index 1 (data starts row 2). All 30 expected columns mapped; no schema drift. Full live schema = 46 columns.
 
@@ -16,7 +16,7 @@
 
 - **C1 — Samsung HI, 1 LNG carrier** — undisclosed Bermuda owner (brokers→JP Morgan, unconfirmed), 27-May-2026, $252M, delivery Oct-2028. **Yellow** (owner unnamed).
 - **C2 — Hanwha Ocean, 1 LNG carrier** — Knutsen OAS 9th ship, 29-May-2026, 174,000 cbm, $250M (375.9bn won), delivery Sep-2029. **Green**.
-- **C3 — Jiangnan, 4 LNG carriers** — COSCO Shipping Energy (CSET), Shell 7-yr charter, ~02-Jun-2026, 175,000 cbm, $953M total (~$238M/ship), delivery 2029-2030. **Yellow** (corroborators env-blocked; see verification note).
+- **C3 — Jiangnan, 4 LNG carriers** — **COSCO** (Cosco Shipping Energy Transportation / CSET; written as `COSCO` per RF §4.14), Shell 7-yr charter, ~02-Jun-2026, 175,000 cbm, $953M total (~$238M/ship), delivery 2029-2030. **Yellow** (corroborators env-blocked; see verification note).
 
 Ring A (CSB) returned **zero** new — CSB's newest indexed contract at every main yard is 2026-03 (≈3-month lag), and every CSB LNG/FSRU cluster already matched the backend. All discovery came from Rings B+C (regulatory + trade press). **Count reconciliations were clean** and confirm the backend is at the leading edge, not systematically behind:
 - Samsung YTD = 13 LNG incl 1 FSRU = backend 12 + C1's 1.
@@ -65,3 +65,8 @@ _(pending upload — see batches/README.md for the upload + share-link procedure
 ## Script changes
 
 - **`scripts/build_workbook.py`** — fixed discovery mode to mirror the **full live backend column order (46 cols)** after the 4 prefix columns, instead of the previous hardcoded 29-column subset. Required by Discovery SOP §5.2/§6.6 for paste-compatibility: the `candidate_vessels` sheet now reproduces every backend column (geolocation, Researcher, Last updated, [Original source], Notes, Other names, country/units/currency) in native order as blank columns. `row_data` is now keyed by exact backend header strings and placed by header index. This is the repo's first discovery batch, so the discovery path had not been exercised against the real schema before. Verified: candidate_vessels mirrored columns `== backend header` (paste-compatible); recalc zero errors.
+- **`scripts/build_workbook.py` (rev-17/rev-7 conventions)** — two behaviors added, and this batch rebuilt under them:
+  - **Yard-location autofill (DC §6.7):** the 7 yard-location columns (`Shipbuilder yard country/area` + [ref]; `Yard location latitude`/`longitude`/`plus code`/`accuracy` + lat/lon [ref]) are copied from an existing backend row for the same (normalized) shipbuilder, or left blank if the shipbuilder is new. All 6 candidates matched (Samsung HI, Hanwha Ocean, Jiangnan) and now carry the full block (e.g. Samsung `34.89804 / 128.6045 / VJW3+QV`, Jiangnan `31.355766 / 121.502217 / 9G32+XJ`). `candidates.json` row_data no longer carries these columns.
+  - **Multiple URLs join with `", "` (RF §4.15):** `[ref]` cells with more than one URL join with `", "`, never a newline (defensive newline→`", "` rewrite added; both modes). C1's Shipowner / Contract date / Price `[ref]` cells were converted from newline-joined.
+- **`scripts/normalize.py`** — added `_OWNER_DISPLAY` + `display_owner()` for the RF §4.14 owner-stylization rule; seeded `cosco-shipping-energy → COSCO`. C3's Shipowner was restyled `Cosco Shipping Energy Transportation → COSCO` (backend uses `COSCO` / `MOL, COSCO`).
+- **Rebuild:** `lng_carrier_candidate_vessels.xlsx` regenerated 2026-06-03 under the above; recalc zero formula errors; 50 cols × 6 candidate rows verified (yard-location block populated, Shipowner `COSCO`, `", "`-joined refs, no newlines).

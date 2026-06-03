@@ -67,12 +67,17 @@ candidates.json schema (discovery mode):
           "cluster_label": "MISC FSRU at Samsung HI",
           "confidence": "G",
           "discovery_notes": "...",
-          "row_data": {            # cells keyed by canonical column name
-            "shipowner": "MISC Berhad",
-            "shipowner_ref": "https://...",
-            "shipbuilder": "Samsung Heavy Industries",
+          "row_data": {            # cells keyed by EXACT backend header strings
+            "Shipowner": "MISC Berhad",
+            "Shipowner [ref]": "https://...",
+            "Shipbuilder": "Samsung Heavy Industries",
             ...
           }
+          # NOTE: do NOT put the 7 yard-location columns (Shipbuilder yard
+          # country/area + its [ref] + the 5 Yard location cells) in row_data —
+          # they are autofilled from an existing backend row for the same
+          # shipbuilder (Discovery SOP §6.7), or left blank if the shipbuilder
+          # is new. Multiple URLs in one [ref] cell join with ", " (SOP §4.15).
         },
         ...
       ],
@@ -92,6 +97,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
 from paths import backend_csv_path
+from normalize import normalize_builder
 
 
 # Color conventions
@@ -244,12 +250,13 @@ def build_ref_fill(args):
                     break
             cites = cite_lookup.get((row_id, field_name), [])
             if cites:
-                # New citation — apply confidence color and combine URLs
-                # (one cell may have multiple URLs joined with newlines)
+                # New citation — apply confidence color and combine URLs.
+                # Multiple URLs in one cell join with ", " (SOP §4.15), never
+                # newlines.
                 conf = cites[0]["confidence"]
                 fill = CONFIDENCE_FILLS.get(conf, FILL_RED)
                 cell.fill = fill
-                cell.value = "\n".join(c["url"] for c in cites)
+                cell.value = ", ".join(c["url"] for c in cites)
             elif val and field_name and field_name.endswith("_ref"):
                 # Pre-existing ref URL — gray
                 cell.fill = FILL_GRAY
@@ -305,6 +312,50 @@ def build_ref_fill(args):
     return out_path
 
 
+# Discovery yard-location autofill (Discovery SOP §6.7). The yard-location block
+# is a property of the shipbuilder (yard), not the individual vessel, so on a
+# candidate row these 7 columns are filled by copying from an existing backend
+# row for the SAME shipbuilder. If the shipbuilder is new to the backend they
+# stay blank. row_data must NOT carry these columns — this autofill owns them.
+# (Exact backend header strings; must match the live schema.)
+YARD_LOCATION_COLS = [
+    "Shipbuilder yard country/area",
+    "Shipbuilder yard country/area [ref]",
+    "Yard location latitude",
+    "Yard location longitude",
+    "Yard location plus code",
+    "Yard location accuracy",
+    "Yard location lat/lon [ref]",
+]
+
+
+def _build_yard_location_map(backend_data, backend_header):
+    """tag -> {yard-location header: value} for autofill (Discovery SOP §6.7).
+
+    For each normalized shipbuilder tag, picks the existing backend row with the
+    most fully-populated yard-location block and records its 7 values. A yard's
+    location is constant across its vessels, so any populated row is
+    authoritative; most-populated wins so the copied block is complete.
+    """
+    hidx = {h: i for i, h in enumerate(backend_header)}
+    if "Shipbuilder" not in hidx:
+        return {}
+    sb_i = hidx["Shipbuilder"]
+    yl_idx = [(h, hidx[h]) for h in YARD_LOCATION_COLS if h in hidx]
+    best = {}  # tag -> (populated_count, block)
+    for r in backend_data:
+        if len(r) <= sb_i or not r[sb_i].strip():
+            continue
+        tag = normalize_builder(r[sb_i])
+        if not tag:
+            continue
+        block = {h: (r[i] if len(r) > i else "") for h, i in yl_idx}
+        score = sum(1 for v in block.values() if v.strip())
+        if score and (tag not in best or score > best[tag][0]):
+            best[tag] = (score, block)
+    return {tag: block for tag, (_, block) in best.items()}
+
+
 def build_discovery(args):
     """Build the discovery mode workbook."""
     candidates_path = Path(args.candidates)
@@ -335,6 +386,8 @@ def build_discovery(args):
     colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
     backend_header = backend_rows[colmap["_header_row_idx"]]
     header_index = {h: i for i, h in enumerate(backend_header)}
+    data_start = colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1)
+    yard_loc_map = _build_yard_location_map(backend_rows[data_start:], backend_header)
 
     ws = wb.create_sheet("candidate_vessels")
     prefix_cols = ["cluster_id", "cluster_label", "confidence", "discovery_notes"]
@@ -353,13 +406,36 @@ def build_discovery(args):
         ws.cell(row=r_offset, column=3, value=confidence).fill = fill
         ws.cell(row=r_offset, column=4, value=cand.get("discovery_notes", "")).fill = fill
         # backend cols — row_data is keyed by EXACT backend header strings.
-        row_data = cand.get("row_data", {})
+        row_data = dict(cand.get("row_data", {}))
+        # Yard-location autofill (Discovery SOP §6.7): copy the 7 yard-location
+        # columns from an existing backend row for the same shipbuilder; leave
+        # blank if the shipbuilder is new. This autofill owns those columns —
+        # any values for them in row_data are dropped.
+        provided_yl = [k for k in YARD_LOCATION_COLS if k in row_data]
+        for k in YARD_LOCATION_COLS:
+            row_data.pop(k, None)
+        sb_name = row_data.get("Shipbuilder", "")
+        tag = normalize_builder(sb_name) if sb_name else ""
+        if tag and tag in yard_loc_map:
+            row_data.update(yard_loc_map[tag])
+            if provided_yl:
+                print(f"  [info] candidate {cand.get('cluster_id')}: yard-location "
+                      f"columns {provided_yl} autofilled from backend (shipbuilder "
+                      f"{sb_name!r}); row_data values ignored (SOP §6.7).",
+                      file=sys.stderr)
+        elif provided_yl:
+            print(f"  [info] candidate {cand.get('cluster_id')}: shipbuilder "
+                  f"{sb_name!r} not in backend; yard-location columns left blank "
+                  f"(SOP §6.7).", file=sys.stderr)
         unknown = [k for k in row_data if k not in header_index]
         if unknown:
             print(f"  [warn] candidate {cand.get('cluster_id')}: row_data keys not in "
                   f"backend header (ignored): {unknown}", file=sys.stderr)
         for h, idx in header_index.items():
             val = row_data.get(h, "")
+            if val and h.endswith("[ref]") and "\n" in val:
+                # Multiple URLs in one [ref] cell join with ", " (SOP §4.15).
+                val = ", ".join(p.strip() for p in val.split("\n") if p.strip())
             cell = ws.cell(row=r_offset, column=n_prefix + 1 + idx, value=val)
             cell.alignment = WRAP_ALIGN
             if val:  # only color cells that are populated

@@ -38,7 +38,7 @@ For the `Drive link` column, prefer the Sheets URL.
 
 | Date | Mode | Scope | Local | Drive | Notes |
 |---|---|---|---|---|---|
-| 2026-06-03 | discovery | since May 1 2026 (gap 05-01→06-03, 7 main yards) | [folder](2026-06-03_discovery_since_may_2026/) | _(pending)_ | 3 clusters / 6 vessels (1 green, 5 yellow); 1 status flag; build_workbook full-schema discovery fix |
+| 2026-06-03 | discovery | since May 1 2026 (gap 05-01→06-03, 7 main yards) | [folder](2026-06-03_discovery_since_may_2026/) | _(pending)_ | 3 clusters / 6 vessels (1 green, 5 yellow); 1 status flag; build_workbook full-schema discovery fix; rebuilt under RF17/DC7 (owner stylization, multi-URL ", ", yard-location autofill) |
 
 <!-- Example row format:
 | 2026-05-27 | ref_fill | rows 1148-1167 | [folder](2026-05-27_ref_fill_rows_1148-1167/) | [Sheets](https://docs.google.com/spreadsheets/d/...) | 2 defects corrected, 1 escalation |

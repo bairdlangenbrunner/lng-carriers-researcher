@@ -2,7 +2,7 @@
 
 **Document purpose:** This SOP describes the workflow for discovering LNG carrier and FSRU vessels that are NOT yet in the backend Google Sheet. It complements the [ref]-Fill SOP (which covers citation work on rows that already exist). It is the operating manual for one-time gap analyses and (with adjustments) for recurring catch-up sweeps.
 
-**Last revised:** 2026-05-28 rev 6 (repository migration — output model changed to one committed directory per discovery run under `batches/`; `present_files` references updated for the Git/Claude Code workflow. No research-rule changes from rev 5.). Prior: 2026-05-27 rev 5 (added paywalled-source guidance to §4.6: per [ref]-Fill SOP §3.8b, QA notes quote only publicly-visible content; LNG Prime's editorial entity tags support yellow confidence as corroboration, not green. Surfaced by the same 2026-05-27 F8 finding that drove the [ref]-Fill SOP rev 15.).
+**Last revised:** 2026-06-03 rev 7 (first production discovery batch surfaced three output conventions, now codified: §6.7 — the seven yard-location columns are autofilled from an existing backend row for the same shipbuilder (blank if the shipbuilder is new), never researched and never carried in `candidates.json` row_data; §6.8 / §5.2 — cross-references to the new [ref]-Fill SOP §4.14 (owner/charterer use the backend's short stylization, e.g. `COSCO`) and §4.15 (multiple URLs in a `[ref]` cell join with `", "`). `build_workbook.py` enforces the autofill and the URL join. No four-ring / verification / confidence changes.). Prior: 2026-05-28 rev 6 (repository migration — output model changed to one committed directory per discovery run under `batches/`; `present_files` references updated for the Git/Claude Code workflow. No research-rule changes from rev 5.). Prior: 2026-05-27 rev 5 (added paywalled-source guidance to §4.6: per [ref]-Fill SOP §3.8b, QA notes quote only publicly-visible content; LNG Prime's editorial entity tags support yellow confidence as corroboration, not green. Surfaced by the same 2026-05-27 F8 finding that drove the [ref]-Fill SOP rev 15.).
 
 ---
 
@@ -244,7 +244,7 @@ Generated date, scope, backend snapshot, methodology summary, candidate summary 
 This is so the user can copy a candidate row's backend columns (starting at the first backend column, after the four prefixes) and paste directly into the backend Google Sheet without column-shuffling. Per §6.6, paste-compatibility is the hard requirement.
 
 **Blank cells stay blank.** Per Rule F (see [ref]-Fill SOP §4.13), data cells the discovery workflow doesn't fill remain blank. Their paired `[ref]` cells also stay blank — never orphan a `[ref]`. Specifically:
-- Geolocation cells (lat, lon, plus code, accuracy, lat/lon [ref]) are out of scope per [ref]-Fill SOP §4.8 — leave blank.
+- **Yard-location block** — `Shipbuilder yard country/area` + its `[ref]`, and `Yard location latitude` / `longitude` / `plus code` / `accuracy` + `Yard location lat/lon [ref]` — is **autofilled** from an existing backend row for the same shipbuilder (§6.7); it stays blank only when the shipbuilder is new to the backend. Do NOT research these and do NOT put them in `candidates.json` row_data — the build script owns them. Geolocation itself is still never *researched* ([ref]-Fill SOP §4.8).
 - Researcher, Last updated, [Original source] — these are backend workflow columns, not data values to research — leave blank.
 - For a freshly-announced order where the yard hasn't assigned a hull number yet, Hull / Name / IMO stay blank, and so do their `[ref]` cells. The URLs that confirm the cluster cite the data cells that ARE populated: Shipowner, Shipbuilder, Status, Contract date, Delivery year, Capacity, Vessel type, Operator/charterer, Price.
 
@@ -301,6 +301,22 @@ The `candidate_vessels` sheet must mirror the backend column order exactly (afte
 
 Before building the workbook, always re-read the header row of the freshest backend CSV pull. Don't hardcode the column order from a previous run — the schema may have changed (new columns added, columns reordered). If the schema has changed in a way that affects existing candidate workbooks, mention it in the README.
 
+### 6.7 Yard-location columns are autofilled from the backend, not researched
+
+The seven yard-location columns — `Shipbuilder yard country/area` and its `[ref]`, plus `Yard location latitude`, `Yard location longitude`, `Yard location plus code`, `Yard location accuracy`, and `Yard location lat/lon [ref]` — describe the **yard**, not the vessel. When the candidate's shipbuilder is already in the backend, `build_workbook.py` copies the whole block verbatim from an existing backend row for that shipbuilder (it picks the most fully-populated one). When the shipbuilder is **new** to the backend, all seven stay blank.
+
+Consequences:
+- Do **not** put any of these seven columns in `candidates.json` row_data — the autofill owns them and will drop/override anything placed there (with a build-log note).
+- Do **not** research geolocation ([ref]-Fill SOP §4.8 still holds); the only population path is the mirror-from-backend copy.
+- The copied data value and its copied `[ref]` travel together, so no orphan `[ref]` is created (Rule F holds).
+- Matching is keyed on the normalized shipbuilder (`scripts/normalize.py`), so `Samsung Heavy Industries` / `Samsung HI` / `SHI Geoje` all resolve to the same yard block.
+
+### 6.8 Output-formatting conventions (shared with the [ref]-Fill SOP)
+
+Two formatting rules apply to candidate rows exactly as in the [ref]-Fill SOP:
+- **Owner/charterer stylization** ([ref]-Fill SOP §4.14): write `Shipowner` / `Operator/charterer` using the backend's existing short form (e.g. `COSCO`, not `Cosco Shipping Energy Transportation`). See `refdata/owner_charterer_map.md`.
+- **Multiple URLs in one `[ref]` cell** ([ref]-Fill SOP §4.15): join with `", "`, never a newline. `build_workbook.py` enforces this.
+
 ---
 
 ## 7. Pause-and-ask triggers
@@ -339,3 +355,4 @@ Stop and ask the user before proceeding when:
 - **rev 4** (2026-05-27): Added a cluster-split pagination step to §4.4 — before flagging any specific hull as missing from CSB, sweep every page of the yard, since pagination can split a single owner's cluster across pages (not just split by date). Cross-references [ref]-Fill SOP §6.3 (which now carries the authoritative version of this rule) and §6.4 (which covers hyphen normalization). Surfaced by the 2026-05-27 SFOC reconciliation false-positive on Hull CMHI-282-04, which appeared missing on CSB page 1 but was actually on page 2 — and was further hidden by CSB rendering it with a fullwidth hyphen between `CMHI` and `282`. Also corrected the page-1 row count from ~50 to ~25 to match [ref]-Fill SOP §6.3.
 - **rev 5** (2026-05-27): Added paywalled-source guidance to §4.6 — QA notes quote only publicly-visible content (cross-references [ref]-Fill SOP §3.8b); LNG Prime's editorial entity tag list is a real corroboration signal supporting yellow confidence per §5, not green. Surfaced by a 2026-05-27 F8 finding that quoted paywalled LNG Prime body text in a QA note (same finding that drove [ref]-Fill SOP rev 15). Same workflow guidance applies to TradeWinds and other paywalled trade-press sources.
 - **rev 6** (2026-05-28): Repository migration. Output model changed from `/mnt/user-data/outputs/lng_carrier_candidate_vessels.xlsx` to one committed directory per discovery run under `batches/` (§2 param 5, §5). `present_files` reference in §4.11 replaced with "write notes.md and commit the batch directory." No research-rule changes — the four-ring source model, the §4.10 verification gate, and confidence labeling are unchanged from rev 5.
+- **rev 7** (2026-06-03): First production discovery batch (2026-06-03, since-May-1 window) surfaced three output conventions, now codified. §6.7 — the seven yard-location columns (`Shipbuilder yard country/area` + [ref]; `Yard location latitude` / `longitude` / `plus code` / `accuracy` + lat/lon [ref]) are autofilled by `build_workbook.py` from an existing backend row for the same (normalized) shipbuilder, and left blank when the shipbuilder is new; they are never researched and must not appear in `candidates.json` row_data. §6.8 / §5.2 — cross-reference the new [ref]-Fill SOP §4.14 (owner/charterer names use the backend's existing short stylization, e.g. `COSCO` not `Cosco Shipping Energy Transportation`) and §4.15 (multiple URLs in one `[ref]` cell join with `", "`, not a newline). The 2026-06-03 batch was rebuilt under these rules. No changes to the four-ring model, the §4.10 verification gate, or confidence labeling.

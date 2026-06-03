@@ -4,6 +4,18 @@ Authoritative version: the `_OWNER_MAP` dict in `scripts/normalize.py`. This fil
 
 When you encounter a new owner/charterer in a batch, add it to `normalize.py` AND to this table.
 
+## Display stylization (how the name is written in the sheet)
+
+Two different things live here:
+- the **canonical tag** (lowercase, e.g. `cosco-shipping-energy`) used only for clustering / dedup, and
+- the **display form** — the exact string written into the backend's `Shipowner` / `Operator/charterer` cells.
+
+Per [ref]-Fill SOP §4.14, the display form must **match the backend's existing stylization**, preferring the established **short** form. When the backend already uses a short name, use it; don't introduce a longer legal name. Display forms are recorded in `scripts/normalize.py` (`_OWNER_DISPLAY`, returned by `display_owner()`); this map only needs entries for owners the backend abbreviates.
+
+| Canonical tag | Backend display form | Notes |
+|---|---|---|
+| `cosco-shipping-energy` | **`COSCO`** | Backend writes `COSCO` / `MOL, COSCO`; do NOT write `Cosco Shipping Energy Transportation`. |
+
 ## Why this matters
 
 Cluster-coherence checks (Rule E §4.12) and the dedup index both rely on canonical owner names. "Eastern Pacific Shipping" and "EPS" must resolve to the same tag, otherwise:
@@ -62,7 +74,7 @@ Cluster-coherence checks (Rule E §4.12) and the dedup index both rely on canoni
 | `qatargas` | QatarGas |
 | `nakilat` | Nakilat (Qatar Gas Transport) |
 | `shandong-marine` | Shandong Marine |
-| `cosco-shipping-energy` | COSCO Shipping Energy |
+| `cosco-shipping-energy` | COSCO Shipping Energy, Cosco Shipping Energy Transportation, CSET — **write as `COSCO`** (see Display stylization) |
 | `china-merchants-energy` | China Merchants Energy (Shipping) |
 | `minsheng` | Minsheng Financial Leasing |
 

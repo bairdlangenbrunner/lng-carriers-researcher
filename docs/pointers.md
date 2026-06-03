@@ -7,7 +7,7 @@ The SOPs live in `docs/sops/`:
 - `discovery.md` — abbreviated below as **DC**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
 
-Last reconciled against: RF rev 16, DC rev 6, SR rev 4 (2026-05-28). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the rules or workflow steps indexed here.
+Last reconciled against: RF rev 17, DC rev 7, SR rev 4 (2026-06-03). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8 — all indexed below.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -19,12 +19,14 @@ Last reconciled against: RF rev 16, DC rev 6, SR rev 4 (2026-05-28). Note: the r
 | **A** §4.4 | RF | `Hull number [ref]` URL must explicitly contain the hull number |
 | **B** §4.5 | RF | When `Name` = hull number, `Name [ref]` also needs the hull |
 | 4.7 | RF | NEVER overwrite backend values (additive only) |
-| 4.8 | RF | Skip geolocation `[ref]` fields entirely |
+| 4.8 | RF | Never *research* geolocation `[ref]` — but mirror a known yard's block from the backend (DC §6.7) |
 | 4.9 | RF | Don't fill empty data cells without explicit source support |
 | 4.10 + §9 | RF | IMOs starting with 1 are REAL — run §6a.8 lookup, don't treat as placeholders |
 | **D** §4.11 | RF | Every cited URL must pass the §3.8 verification gate |
 | **E** §4.12 | RF | Every cited URL must be cluster-coherent (owner + yard + ship count or contract date) |
 | **F** §4.13 | RF | Never fill a `[ref]` without a corresponding data value (no orphan citations) |
+| 4.14 | RF | Owner/charterer names use the backend's existing short stylization (e.g. `COSCO`) |
+| 4.15 | RF | Multiple URLs in one `[ref]` cell join with `", "`, never a newline |
 
 ## Workflow steps
 
@@ -83,6 +85,8 @@ Last reconciled against: RF rev 16, DC rev 6, SR rev 4 (2026-05-28). Note: the r
 | Ring D (charterer programs) | DC §4.7 | Only if proposed threshold expanded |
 | Dedup, enrich, confidence | DC §4.8 | Cluster duplicates; apply RF §5 |
 | URL verification | DC §4.10 | Per RF §3.8 |
+| Yard-location autofill | DC §6.7 | 7 yard-location cols copied from an existing backend row for the same shipbuilder; blank if new |
+| Output formatting | DC §6.8 | Owner stylization (RF §4.14) + multi-URL `", "` (RF §4.15) |
 
 ## Pause-and-ask triggers
 
