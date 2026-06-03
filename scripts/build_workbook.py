@@ -325,25 +325,25 @@ def build_discovery(args):
         "Workflow: review candidates -> approve/reject -> manually paste approved rows into backend.",
     ])
 
-    # candidate_vessels sheet — backend-shaped + prefix columns
+    # candidate_vessels sheet — mirrors the LIVE backend column order EXACTLY
+    # after the four prefix columns (Discovery SOP §5.2 / §6.6 paste-compat).
+    # The header is read from the fresh backend pull rather than hardcoded, so
+    # the sheet always tracks the current schema (geolocation, Researcher, Last
+    # updated, [Original source], etc. all appear as blank columns).
+    with open(args.backend, encoding="utf-8") as f:
+        backend_rows = list(csv.reader(f))
+    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
+    backend_header = backend_rows[colmap["_header_row_idx"]]
+    header_index = {h: i for i, h in enumerate(backend_header)}
+
     ws = wb.create_sheet("candidate_vessels")
     prefix_cols = ["cluster_id", "cluster_label", "confidence", "discovery_notes"]
-    # Use a stable schema close to the backend's main columns
-    backend_cols = [
-        "shipowner", "shipowner_ref", "shipbuilder", "shipbuilder_ref",
-        "status", "status_ref", "hull", "hull_ref", "name", "name_ref",
-        "imo", "imo_ref",
-        "capacity", "capacity_ref", "vessel_type", "vessel_type_ref",
-        "propulsion", "propulsion_ref", "cargo_type", "cargo_type_ref",
-        "delivery_year", "delivery_year_ref", "contract_date", "contract_date_ref",
-        "operator_charterer", "operator_charterer_ref",
-        "price", "price_ref",
-    ]
-    headers = prefix_cols + backend_cols
+    headers = prefix_cols + backend_header
     for col_i, h in enumerate(headers, start=1):
         ws.cell(row=1, column=col_i, value=h)
     _apply_header_style(ws, 1)
 
+    n_prefix = len(prefix_cols)
     for r_offset, cand in enumerate(payload.get("candidates", []), start=2):
         confidence = cand.get("confidence", "Y")
         fill = CONFIDENCE_FILLS.get(confidence, FILL_YELLOW)
@@ -352,11 +352,15 @@ def build_discovery(args):
         ws.cell(row=r_offset, column=2, value=cand.get("cluster_label", "")).fill = fill
         ws.cell(row=r_offset, column=3, value=confidence).fill = fill
         ws.cell(row=r_offset, column=4, value=cand.get("discovery_notes", "")).fill = fill
-        # backend cols
+        # backend cols — row_data is keyed by EXACT backend header strings.
         row_data = cand.get("row_data", {})
-        for col_i, key in enumerate(backend_cols, start=len(prefix_cols) + 1):
-            val = row_data.get(key, "")
-            cell = ws.cell(row=r_offset, column=col_i, value=val)
+        unknown = [k for k in row_data if k not in header_index]
+        if unknown:
+            print(f"  [warn] candidate {cand.get('cluster_id')}: row_data keys not in "
+                  f"backend header (ignored): {unknown}", file=sys.stderr)
+        for h, idx in header_index.items():
+            val = row_data.get(h, "")
+            cell = ws.cell(row=r_offset, column=n_prefix + 1 + idx, value=val)
             cell.alignment = WRAP_ALIGN
             if val:  # only color cells that are populated
                 cell.fill = fill
@@ -364,9 +368,10 @@ def build_discovery(args):
     ws.freeze_panes = "E2"
     for col_i, h in enumerate(headers, start=1):
         col_letter = get_column_letter(col_i)
-        if "_ref" in h:
+        if "[ref]" in h:
             ws.column_dimensions[col_letter].width = 50
-        elif h in ("cluster_label", "discovery_notes", "shipowner", "shipbuilder"):
+        elif h in ("cluster_label", "discovery_notes", "Name",
+                   "Shipowner", "Shipbuilder", "Operator/charterer"):
             ws.column_dimensions[col_letter].width = 25
         else:
             ws.column_dimensions[col_letter].width = 15

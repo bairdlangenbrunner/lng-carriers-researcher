@@ -1,0 +1,230 @@
+{
+  "gap_window": "Since 2026-05-01 (today 2026-06-03). Backend latest contract date = 14-May-2026; CSB indexed only through 2026-03. Genuine leading edge investigated: 15-May to 03-Jun-2026.",
+  "yards_swept": ["samsung", "hanwha-ocean", "hyundai-ulsan", "hyundai-samho", "hyundai-mipo", "jiangnan", "hudong-zhonghua"],
+  "candidates": [
+    {
+      "cluster_id": "C1",
+      "cluster_label": "Samsung HI — 1 LNG carrier — undisclosed Bermuda owner",
+      "confidence": "Y",
+      "discovery_notes": "Samsung HI disclosed on 27-May-2026 a five-vessel order (1 LNG carrier + 2 VLGCs + 2 crude tankers) from an unidentified Bermuda-based shipowner; only the 1 LNG carrier is in scope. ~$252M (381.4bn won), delivery Oct-2028. Owner name not disclosed; brokers link it to JP Morgan interests (UNCONFIRMED) -> yellow. Net-new confirmed by reconciliation: Samsung YTD 13 LNG incl 1 FSRU = backend 12 + this 1; and Samsung's 6 May-2026 vessels (1 FSRU + 5 LNG) all already in backend, so the 27-May ship is the only addition. Capacity not disclosed (left blank).",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/",
+        "Shipowner": "Undisclosed (Bermuda-based; brokers link to JP Morgan, unconfirmed)",
+        "Shipowner [ref]": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/\nhttps://indiashippingnews.com/samsung-heavy-wins-over-1-trillion-won-worth-of-orders-from-bermuda-based-company/",
+        "Shipowner country/area": "Bermuda",
+        "Shipowner country/area [ref]": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/",
+        "Shipbuilder": "Samsung Heavy Industries",
+        "Shipbuilder [ref]": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/",
+        "Shipbuilder yard country/area": "South Korea",
+        "Vessel type": "conventional",
+        "Delivery year": "2028",
+        "Delivery year [ref]": "https://lngprime.com/asia/south-koreas-samsung-heavy-to-build-one-lng-carrier-for-252-million/187561/",
+        "Contract date": "27-May-2026",
+        "Contract date [ref]": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/\nhttps://www.hellenicshippingnews.com/samsung-heavy-wins-five-vessel-order/",
+        "Price": "252000000",
+        "Price currency": "USD",
+        "Price [ref]": "https://www.hellenicshippingnews.com/samsung-heavy-wins-five-vessel-order/\nhttps://lngprime.com/asia/south-koreas-samsung-heavy-to-build-one-lng-carrier-for-252-million/187561/"
+      }
+    },
+    {
+      "cluster_id": "C2",
+      "cluster_label": "Hanwha Ocean — 1 LNG carrier — Knutsen OAS (9th ship)",
+      "confidence": "G",
+      "discovery_notes": "Knutsen OAS Shipping exercised an option for its 9th LNG carrier at Hanwha Ocean, announced 29-May-2026: 174,000 cbm, 375.9bn won (~$250M), delivery by Sep-2029. DISTINCT from Knutsen's earlier 08-May order already in backend (row 1205; 363.2bn won, delivery Jun-2029) — Rule E cluster-split on contract date + price + delivery. Count reconciliation: Knutsen's Hanwha orderbook now 9 (7 in Dec-2025 + 1 mid-May + this one). iMarine 35664 carries every value verbatim and is non-paywalled.",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipowner": "Knutsen OAS Shipping",
+        "Shipowner [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipowner country/area": "Norway",
+        "Shipowner country/area [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipbuilder": "Hanwha Ocean",
+        "Shipbuilder [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipbuilder yard country/area": "South Korea",
+        "Capacity": "174000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://www.imarinenews.com/35664.html",
+        "Vessel type": "conventional",
+        "Delivery year": "2029",
+        "Delivery year [ref]": "https://www.imarinenews.com/35664.html",
+        "Contract date": "29-May-2026",
+        "Contract date [ref]": "https://www.imarinenews.com/35664.html",
+        "Price": "250000000",
+        "Price currency": "USD",
+        "Price [ref]": "https://www.imarinenews.com/35664.html"
+      }
+    },
+    {
+      "cluster_id": "C3",
+      "cluster_label": "Jiangnan — COSCO Shipping Energy 4x LNG (Shell charter) — vessel 1/4",
+      "confidence": "Y",
+      "discovery_notes": "COSCO Shipping Energy (via Cosco Shipping LNG Investment Shanghai / CSET) ordered 4x 175,000 cbm LNG carriers at Jiangnan, announced ~02-Jun-2026, on a 7-year charter to Shell (Shell Tankers Singapore). 6.445bn yuan ($953M total, ~$238M/ship), delivery 2029-2030. DISTINCT from the 30-Jan Shandong Ocean Energy/Minsheng quartet already in backend (rows 1158-1161, delivery 2028-29). VERIFICATION CAVEAT: COSCO+Shell+LNG-quartet+on-order are in LNG Prime 188357's publicly-visible title/lead; the yard (Jiangnan), capacity, price and delivery passed the curl content-check but sit in LNG Prime's paywalled body. Corroborating Splash247 + Seatrade returned HTTP 403 in this environment (kept per SOP 3.8a). Recommend a browser spot-check before promoting -> yellow.",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner": "COSCO Shipping Energy Transportation",
+        "Shipowner [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner country/area": "China",
+        "Shipbuilder": "Jiangnan Shipyard",
+        "Shipbuilder [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipbuilder yard country/area": "China",
+        "Capacity": "175000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Vessel type": "conventional",
+        "Delivery year": "2029-2030",
+        "Delivery year [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Operator/charterer": "Shell (Shell Tankers Singapore, 7-yr charter)",
+        "Operator/charterer [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Contract date": "02-Jun-2026",
+        "Contract date [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Price": "238000000",
+        "Price currency": "USD",
+        "Price [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/"
+      }
+    },
+    {
+      "cluster_id": "C3",
+      "cluster_label": "Jiangnan — COSCO Shipping Energy 4x LNG (Shell charter) — vessel 2/4",
+      "confidence": "Y",
+      "discovery_notes": "Sister hull of C3 (COSCO Shipping Energy 4x 175,000 cbm at Jiangnan, ~02-Jun-2026, Shell 7-yr charter, ~$238M/ship, delivery 2029-2030). See vessel 1/4 for the full verification caveat (LNG Prime 188357 paywalled body; Splash247/Seatrade 403-blocked here).",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner": "COSCO Shipping Energy Transportation",
+        "Shipowner [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner country/area": "China",
+        "Shipbuilder": "Jiangnan Shipyard",
+        "Shipbuilder [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipbuilder yard country/area": "China",
+        "Capacity": "175000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Vessel type": "conventional",
+        "Delivery year": "2029-2030",
+        "Delivery year [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Operator/charterer": "Shell (Shell Tankers Singapore, 7-yr charter)",
+        "Operator/charterer [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Contract date": "02-Jun-2026",
+        "Contract date [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Price": "238000000",
+        "Price currency": "USD",
+        "Price [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/"
+      }
+    },
+    {
+      "cluster_id": "C3",
+      "cluster_label": "Jiangnan — COSCO Shipping Energy 4x LNG (Shell charter) — vessel 3/4",
+      "confidence": "Y",
+      "discovery_notes": "Sister hull of C3 (COSCO Shipping Energy 4x 175,000 cbm at Jiangnan, ~02-Jun-2026, Shell 7-yr charter, ~$238M/ship, delivery 2029-2030). See vessel 1/4 for the full verification caveat.",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner": "COSCO Shipping Energy Transportation",
+        "Shipowner [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner country/area": "China",
+        "Shipbuilder": "Jiangnan Shipyard",
+        "Shipbuilder [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipbuilder yard country/area": "China",
+        "Capacity": "175000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Vessel type": "conventional",
+        "Delivery year": "2029-2030",
+        "Delivery year [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Operator/charterer": "Shell (Shell Tankers Singapore, 7-yr charter)",
+        "Operator/charterer [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Contract date": "02-Jun-2026",
+        "Contract date [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Price": "238000000",
+        "Price currency": "USD",
+        "Price [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/"
+      }
+    },
+    {
+      "cluster_id": "C3",
+      "cluster_label": "Jiangnan — COSCO Shipping Energy 4x LNG (Shell charter) — vessel 4/4",
+      "confidence": "Y",
+      "discovery_notes": "Sister hull of C3 (COSCO Shipping Energy 4x 175,000 cbm at Jiangnan, ~02-Jun-2026, Shell 7-yr charter, ~$238M/ship, delivery 2029-2030). See vessel 1/4 for the full verification caveat.",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner": "COSCO Shipping Energy Transportation",
+        "Shipowner [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipowner country/area": "China",
+        "Shipbuilder": "Jiangnan Shipyard",
+        "Shipbuilder [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Shipbuilder yard country/area": "China",
+        "Capacity": "175000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Vessel type": "conventional",
+        "Delivery year": "2029-2030",
+        "Delivery year [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Operator/charterer": "Shell (Shell Tankers Singapore, 7-yr charter)",
+        "Operator/charterer [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Contract date": "02-Jun-2026",
+        "Contract date [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+        "Price": "238000000",
+        "Price currency": "USD",
+        "Price [ref]": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/"
+      }
+    }
+  ],
+  "provenance_log": [
+    {
+      "cluster_id": "C1",
+      "cluster_label": "Samsung HI — 1 LNG carrier — undisclosed Bermuda owner (27-May-2026)",
+      "confidence": "Y",
+      "source_urls": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/ ; https://www.hellenicshippingnews.com/samsung-heavy-wins-five-vessel-order/ ; https://indiashippingnews.com/samsung-heavy-wins-over-1-trillion-won-worth-of-orders-from-bermuda-based-company/ ; https://lngprime.com/asia/south-koreas-samsung-heavy-to-build-one-lng-carrier-for-252-million/187561/",
+      "notes": "Samsung disclosed 27-May a 5-vessel order from an unidentified Bermuda owner; 1 LNG carrier in scope, $252M, delivery Oct-2028. Cyprus + Hellenic visible content carries 'Samsung', 'Bermuda', 'May 27', 'five', 'one LNG', '252', '726'. LNG Prime 187561 title carries '$252 million' and lead carries 'Bermuda'/'October 2028'. Owner identity unconfirmed (broker-linked to JP Morgan). Reconciliation: Samsung YTD 13 LNG incl 1 FSRU = backend 12 + this 1."
+    },
+    {
+      "cluster_id": "C2",
+      "cluster_label": "Hanwha Ocean — 1 LNG carrier — Knutsen OAS 9th ship (29-May-2026)",
+      "confidence": "G",
+      "source_urls": "https://www.imarinenews.com/35664.html ; https://www.imarinenews.com/35017.html ; https://lngprime.com/asia/knutsen-orders-another-lng-carrier-at-hanwha-ocean/187903/",
+      "notes": "iMarine 35664 (non-paywalled) visible content carries verbatim: 'Knutsen', 'Hanwha', '174,000', '375.9', '$250', 'September 2029', 'May 29', 'nine'. Distinct from the 08-May Knutsen order (backend row 1205, 363.2bn won, del Jun-2029) by date/price/delivery (Rule E split). Green: explicit non-paywalled source with all values verbatim + count reconciliation (9th Knutsen-Hanwha ship)."
+    },
+    {
+      "cluster_id": "C3",
+      "cluster_label": "Jiangnan — COSCO Shipping Energy 4x LNG, Shell charter (~02-Jun-2026)",
+      "confidence": "Y",
+      "source_urls": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/ (PASS, body paywalled) ; https://splash247.com/cosco-inks-953m-lng-carrier-order/ (HTTP 403 here) ; https://www.seatrade-maritime.com/shipyards/jiangnan-shipyard-wins-four-lng-carriers-chartered-to-shell (HTTP 403 here)",
+      "notes": "LNG Prime 188357 (pub 02-Jun-2026) visible title/lead confirm COSCO Shipping Energy (CSET) + Shell + LNG-carrier quartet + 'entered into shipbuilding contracts'. The curl content-check also found 'Jiangnan','175,000','953','238','2029','2030' in the fetched page, but these sit in the paywalled body; Splash247 + Seatrade (which carry the same facts publicly) are HTTP 403 in this environment (kept per 3.8a). Distinct from the 30-Jan Shandong/Minsheng Jiangnan quartet already in backend (rows 1158-1161). Yellow pending a browser spot-check of the body values."
+    }
+  ],
+  "backend_status_flags": [
+    {
+      "row_id": "1209-1211",
+      "issue_type": "Contract date verification",
+      "details": "Backend records the Seapeak x3 (Samsung HI, Woodside-chartered) contract date as 01-May-2026. Samsung HI's regulatory disclosure of three 'Oceania' LNG carriers (1.1242tn won), which corresponds to this Seapeak trio, was dated 18-May-2026 (Samsung IR / IndexBox / Cyprus 2026-05-20). The 18-May 'three LNG carriers from Oceania' filing is NOT a new order — it is these same three Seapeak ships (Samsung's May 2026 book = 6 vessels = 1 FSRU + 5 LNG, all already in backend).",
+      "suggested_action": "Confirm whether 01-May (LOI/announcement) or 18-May (firm-contract disclosure) is the intended Contract date for rows 1209-1211; no new vessel implied."
+    }
+  ],
+  "verification_log": [
+    {"url": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/", "status": "200", "soft_error": "no", "content_match": "Samsung, Bermuda, May 27, five, one LNG, 726", "result": "PASS"},
+    {"url": "https://www.hellenicshippingnews.com/samsung-heavy-wins-five-vessel-order/", "status": "200", "soft_error": "no", "content_match": "Samsung, Bermuda, May 27, five, LNG, 252, 726", "result": "PASS"},
+    {"url": "https://indiashippingnews.com/samsung-heavy-wins-over-1-trillion-won-worth-of-orders-from-bermuda-based-company/", "status": "200", "soft_error": "no", "content_match": "Samsung, Bermuda, LNG, 252, trillion", "result": "PASS"},
+    {"url": "https://lngprime.com/asia/south-koreas-samsung-heavy-to-build-one-lng-carrier-for-252-million/187561/", "status": "200", "soft_error": "no", "content_match": "Samsung, Bermuda, $252, October 2028 (lead/title; body paywalled)", "result": "PASS"},
+    {"url": "https://www.imarinenews.com/35664.html", "status": "200", "soft_error": "no", "content_match": "Knutsen, Hanwha, 174,000, 375.9, $250, September 2029, May 29, nine", "result": "PASS"},
+    {"url": "https://www.imarinenews.com/35017.html", "status": "200", "soft_error": "no", "content_match": "Knutsen, Hanwha", "result": "PASS"},
+    {"url": "https://lngprime.com/asia/knutsen-orders-another-lng-carrier-at-hanwha-ocean/187903/", "status": "200", "soft_error": "no", "content_match": "Knutsen, Hanwha (lead; body paywalled)", "result": "PASS"},
+    {"url": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/", "status": "200", "soft_error": "no", "content_match": "Cosco, Jiangnan, Shell, 175,000, 953, 238, 2029, 2030, four (title/lead public; numerics in paywalled body)", "result": "PASS"},
+    {"url": "https://splash247.com/cosco-inks-953m-lng-carrier-order/", "status": "403", "soft_error": "n/a", "content_match": "not fetched", "result": "FAIL — environment-blocked (Cloudflare 403); kept per SOP 3.8a, recommend browser check"},
+    {"url": "https://www.seatrade-maritime.com/shipyards/jiangnan-shipyard-wins-four-lng-carriers-chartered-to-shell", "status": "403", "soft_error": "n/a", "content_match": "not fetched", "result": "FAIL — environment-blocked (403); kept per SOP 3.8a, recommend browser check"}
+  ],
+  "methodology_audit": {
+    "yards": [
+      {"yard": "samsung", "rows_in_window": "CSB p1 LNG newest 2026-03 (all matched backend); backend May Samsung = 6 (1 FSRU + 5 LNG)", "candidates_found": "1 (C1)", "notes": "27-May Bermuda 1-LNG net-new; reconciles Samsung YTD 13 LNG = backend 12 + 1. 18-May 'Oceania 3 LNG' = Seapeak rows 1209-11 (not new)."},
+      {"yard": "hanwha-ocean", "rows_in_window": "CSB p1 LNG newest 2026-03 (all matched); backend May = Knutsen 08-May (row 1205)", "candidates_found": "1 (C2)", "notes": "Knutsen 9th ship (29-May) net-new. Maran 'fresh' = 24-Mar option pair (rows 1172-73, covered)."},
+      {"yard": "hyundai-ulsan", "rows_in_window": "backend May = Hayfin x2 (14-May, rows 1214-15)", "candidates_found": "0", "notes": "HD Hyundai 16 LNG YTD (as of 14-May) = backend 16 (Ulsan 11 + Samho 5). $501M Hayfin pub 15-May = rows 1214-15."},
+      {"yard": "hyundai-samho", "rows_in_window": "backend May = BW LNG x2 (13-May, rows 1212-13)", "candidates_found": "0", "notes": "BW LNG + Sonangol (Apr) covered. CCEC trio = Dec-2025 (out of window). No post-14-May Samho order found."},
+      {"yard": "hyundai-mipo", "rows_in_window": "CSB p1 = 0 LNG/FSRU", "candidates_found": "0", "notes": "Mid-size yard; no in-scope conventional LNGC/FSRU."},
+      {"yard": "jiangnan", "rows_in_window": "CSB p1 LNG newest 2026-01 (all matched); backend = EPS x2 + Minsheng/Shandong x4 (Jan)", "candidates_found": "4 (C3)", "notes": "COSCO Shipping Energy x4 (~02-Jun) net-new. 30-Jan Shandong/Minsheng quartet = rows 1158-61 (covered)."},
+      {"yard": "hudong-zhonghua", "rows_in_window": "CSB p1 LNG newest 2026-02 (all matched); backend = TMS Cardiff x4 + MISC x5 (Jan-Feb)", "candidates_found": "0", "notes": "No post-Feb Hudong large-LNGC order found. Shenzhen Gas 1+1 EXCLUDED (79,960 cbm mid-scale river-sea, out of scope)."},
+      {"yard": "secondary yards (DSIC, CMHI, COSCO yards, Japanese, Zvezda, etc.)", "rows_in_window": "not swept", "candidates_found": "n/a", "notes": "User selected seven-main-yard coverage. Secondary yards not swept this run (May 2026 pilot found 0 across 14 secondary yards). FSRU sweep: only the MISC FSRU at Samsung (04-May, row 1206), already in backend."}
+    ]
+  }
+}
