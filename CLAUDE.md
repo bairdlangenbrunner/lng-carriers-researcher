@@ -30,11 +30,13 @@ This file is read automatically at the start of every Claude Code session in thi
 Trigger phrases: "fill refs for rows X to Y", "[ref]-fill batch", "next batch", "redo batch N", "rebuild rows X-Y".
 
 ```bash
-cd scripts/
+# Run from the repo root (paths.py anchors work/ to the repo root regardless of
+# cwd; the build/recalc paths below are root-relative). This also matches the
+# `Bash(python scripts/*)` allow rule in .claude/settings.json.
 
 # 1. Fresh backend CSV + column-index map
-python pull_backend.py
-# -> ../work/backend.csv + ../work/backend.colmap.json
+python scripts/pull_backend.py
+# -> work/backend.csv + work/backend.colmap.json
 # Re-derive the column map EVERY run. Schema drifts.
 
 # 2. Identify fillable [ref] cells (Rule F: blank [ref] paired with FILLED data value).
@@ -43,27 +45,27 @@ python pull_backend.py
 #    or delivery years diverge ([ref]-Fill SOP §4.12 Rule E rev 6 extension).
 
 # 4. For each yard in batch:
-python csb_fetch.py <yard-slug>
-# -> ../work/csb/<yard>.json. Slugs are in refdata/csb_yard_urls.md.
+python scripts/csb_fetch.py <yard-slug>
+# -> work/csb/<yard>.json. Slugs are in refdata/csb_yard_urls.md.
 
 # 5. For hulls not on CSB: §6a fallback (targeted Google search ->
 #    DART/KIND -> class society -> vessel database -> §6a.8 IMO-tracker ->
 #    §6a.9 negative-result log).
-python imo_tracker.py <imo>  # only at §6a.8, the LAST step before negative result
+python scripts/imo_tracker.py <imo>  # only at §6a.8, the LAST step before negative result
 
 # 6. Trade press / regulatory searches per [ref]-Fill SOP §3.4.
 #    Pick sources via refdata/source_roster.md.
 
 # 7. URL verification gate — Rule D §4.11. EVERY url before it goes in the xlsx.
-python url_verifier.py <url> <expected1> <expected2> ...
+python scripts/url_verifier.py <url> <expected1> <expected2> ...
 
 # 8. Build the workbook.
-python build_workbook.py --mode ref_fill --rows X-Y \
+python scripts/build_workbook.py --mode ref_fill --rows X-Y \
   --citations citations.json \
-  --out ../batches/<date>_rows_X-Y/
+  --out batches/<date>_rows_X-Y/
 
 # 9. Recalc - zero formula errors required.
-python recalc.py ../batches/<date>_rows_X-Y/lng_carrier_backend_ref_fill.xlsx
+python scripts/recalc.py batches/<date>_rows_X-Y/lng_carrier_backend_ref_fill.xlsx
 
 # 10. Write batches/<date>_rows_X-Y/notes.md
 #     (conflicts flagged, defects corrected, escalations, Drive link)
@@ -76,7 +78,9 @@ python recalc.py ../batches/<date>_rows_X-Y/lng_carrier_backend_ref_fill.xlsx
 Trigger phrases: "find new vessels", "discovery run", "gap analysis", "what's missing from the backend", "catch-up sweep".
 
 ```bash
-cd scripts/
+# Run from the repo root (paths.py anchors work/ to the repo root regardless of
+# cwd; the build/recalc paths below are root-relative). This also matches the
+# `Bash(python scripts/*)` allow rule in .claude/settings.json.
 
 # 1. Confirm parameters per Discovery SOP §2:
 #    - Gap window (latest contract date in backend -> today)
@@ -87,13 +91,13 @@ cd scripts/
 #    DO NOT skip this. Discovery is sensitive to scope choices.
 
 # 2. Fresh backend CSV, extract rows in gap window as baseline coverage.
-python pull_backend.py
+python scripts/pull_backend.py
 
 # 3. Build the two dedup indexes.
-python dedup_index.py
+python scripts/dedup_index.py
 
 # 4. Ring A - CSB on each yard in scope.
-python csb_fetch.py <yard-slug>
+python scripts/csb_fetch.py <yard-slug>
 
 # 5. Ring B - regulatory sweep (DART / KIND / Bursa / HKEX).
 #    Use English proxies (en.sedaily.com etc.) by default.
@@ -105,14 +109,14 @@ python csb_fetch.py <yard-slug>
 # 8. Cluster, dedup, confidence-label per [ref]-Fill SOP §5 (rev 12 standard).
 
 # 9. URL verification gate.
-python url_verifier.py <url> <expected>...
+python scripts/url_verifier.py <url> <expected>...
 
 # 10. Build the candidate workbook.
-python build_workbook.py --mode discovery \
+python scripts/build_workbook.py --mode discovery \
   --candidates candidates.json \
-  --out ../batches/<date>_discovery/
+  --out batches/<date>_discovery/
 
-python recalc.py ../batches/<date>_discovery/lng_carrier_candidate_vessels.xlsx
+python scripts/recalc.py batches/<date>_discovery/lng_carrier_candidate_vessels.xlsx
 
 # 11. Commit the batch directory.
 ```
@@ -122,37 +126,50 @@ python recalc.py ../batches/<date>_discovery/lng_carrier_candidate_vessels.xlsx
 Trigger phrases: "data fill", "fill blank data cells", "fill the blanks for rows X-Y", "propose values for missing cells", "fill missing <column>", "data-fill batch".
 
 ```bash
-cd scripts/
+# Run from the repo root (paths.py anchors work/ to the repo root regardless of
+# cwd; the build/recalc paths below are root-relative). This also matches the
+# `Bash(python scripts/*)` allow rule in .claude/settings.json.
 
 # 1. Fresh backend CSV + colmap (MANDATORY — re-derives scope; schema drifts)
-python pull_backend.py
+python scripts/pull_backend.py
 
 # 2. Dedup index (cluster_index for the per-cluster fan-out)
-python dedup_index.py
+python scripts/dedup_index.py
 
 # 3. Derivable autofills + scope + per-cluster research task lists (Data-fill SOP §5-§6)
-python derive_fills.py --since <YYYY-MM-DD>
-# -> ../work/data_fill.json (derivable fills + scope) + ../work/research_tasks.json
+python scripts/derive_fills.py --since <YYYY-MM-DD>
+# -> work/data_fill.json (derivable fills + scope) + work/research_tasks.json
 
 # 4. Research fan-out: one subagent per cluster (Discovery §3 four-ring model,
 #    controlled vocab in refdata/controlled_vocab.md, owner stylization §4.14,
 #    PRESERVE existing refs on `unknown` cells per Data-fill SOP §4). Reuse prior
-#    batches + backend siblings first. Each writes ../work/research_<label>.json.
+#    batches + backend siblings first. Each writes work/research_<label>.json.
 
 # 5. Merge + central §3.8 verification gate.
-python merge_fills.py   # -> ../work/data_fill.json (merged, deduped, re-verified)
+python scripts/merge_fills.py   # -> work/data_fill.json (merged, deduped, re-verified)
 
 # 6. Build the candidate workbook.
-python build_workbook.py --mode data_fill \
-  --fills ../work/data_fill.json \
-  --out ../batches/<date>_data_fill_rows_X-Y/
+python scripts/build_workbook.py --mode data_fill \
+  --fills work/data_fill.json \
+  --out batches/<date>_data_fill_rows_X-Y/
 
 # 7. Recalc - zero formula errors required.
-python recalc.py ../batches/<date>_data_fill_rows_X-Y/lng_carrier_data_fill.xlsx
+python scripts/recalc.py batches/<date>_data_fill_rows_X-Y/lng_carrier_data_fill.xlsx
 
-# 8. Copy ../work/data_fill.json into the batch dir; write notes.md; commit the
+# 8. Copy work/data_fill.json into the batch dir; write notes.md; commit the
 #    batch directory. Do NOT push without user approval.
 ```
+
+### SFOC reconciliation batch
+
+Trigger phrases: "SFOC reconciliation", "reconcile against SFOC", "reconcile the backend against the new SFOC dataset", "SFOC pass".
+
+Less frequent and script-light — there's no fixed scriptchain here. Follow
+`docs/sops/sfoc_reconciliation.md` end-to-end (rev 5): stage the three input
+files in `work/`, run the four-bucket reconciliation (with the capacity cut and
+the normalization mapping), build the nine-sheet workbook, recalc to zero
+formula errors, and commit the batch directory under `batches/`. The SOP is
+authoritative.
 
 ## Hard requirements (these override anything below)
 

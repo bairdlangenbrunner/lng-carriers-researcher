@@ -18,7 +18,7 @@ Read-only bash commands (`ls`, `cat`, `grep`, `head`, `tail`, `diff`, `wc`, `git
 
 ## allow — the batch workflow
 
-- **`Bash(python scripts/*)`** and the pytest/ruff entries cover running the eight scripts plus the optional dev tooling. (Claude Code strips wrappers like `timeout`, so `timeout 60 python scripts/csb_fetch.py samsung` is also covered.)
+- **`Bash(python scripts/*)`** and the pytest/ruff entries cover running the scripts plus the optional dev tooling. The workflow blocks in `CLAUDE.md` invoke them as `python scripts/<name>.py` from the repo root precisely so they match this rule. (Claude Code strips wrappers like `timeout`, so `timeout 60 python scripts/csb_fetch.py samsung` is also covered.)
 - **`Bash(curl *)`** — the SOPs require `curl -A "Mozilla/5.0"` for the Google Sheets export and chinashipbuild.com (web_fetch is blocked for those). curl here is always a read-only GET with no auth, so a broad allow is low-risk. See the caveat below.
 - **`Bash(git add/commit/checkout/branch/...)`** — the whole local git flow except the things that reach the remote or destroy history.
 - **`Edit(...)` / `Write(...)`** — scoped to the project directories. Largely redundant with `acceptEdits` but documents intent and survives a mode change.
