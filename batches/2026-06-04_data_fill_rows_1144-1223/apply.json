@@ -1,0 +1,752 @@
+{
+  "batch": "2026-06-04_data_fill_rows_1144-1223",
+  "mode": "data_fill",
+  "accepted_cells": [
+    {
+      "row_id": "1144",
+      "column": "Shipowner country/area",
+      "value": "United States",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1144",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1145",
+      "column": "Shipowner country/area",
+      "value": "United States",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1145",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Shipowner country/area",
+      "value": "United Kingdom",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.purus.com/our-services/gas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Shipowner country/area",
+      "value": "United Kingdom",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.purus.com/our-services/gas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1166",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1207",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1207",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1208",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1208",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1164",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1164",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/, https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1164",
+      "column": "Price",
+      "value": "250500000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1164",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1164",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1164",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1165",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1165",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/, https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1165",
+      "column": "Price",
+      "value": "250500000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1165",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1165",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1165",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1167",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1167",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924, https://lngprime.com/asia/greeces-tsakos-orders-lng-carriers-in-south-korea/178882/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1167",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1167",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1214",
+      "column": "Shipowner country/area",
+      "value": "United Kingdom",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1214",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768, https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1215",
+      "column": "Shipowner country/area",
+      "value": "United Kingdom",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1215",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768, https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1158",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1158",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1159",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1159",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1160",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1160",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1161",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1161",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Cargo type [ref]",
+      "value": "https://en.portnews.ru/news/391499/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Vessel type [ref]",
+      "value": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Propulsion type [ref]",
+      "value": "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/, https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Price",
+      "value": "254",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931, https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Price currency",
+      "value": "$m",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Cargo type [ref]",
+      "value": "https://en.portnews.ru/news/391499/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Vessel type [ref]",
+      "value": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Propulsion type [ref]",
+      "value": "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/, https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Price",
+      "value": "254",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931, https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Price currency",
+      "value": "$m",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "Cargo type [ref]",
+      "value": "https://en.portnews.ru/news/391499/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "Propulsion type [ref]",
+      "value": "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/, https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Cargo type [ref]",
+      "value": "https://en.portnews.ru/news/391499/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Propulsion type [ref]",
+      "value": "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/, https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Cargo type [ref]",
+      "value": "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://www.imarinenews.com/4851.html, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Capacity",
+      "value": "180000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Capacity [ref]",
+      "value": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcgXanmkhTk8Pl4EN, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Capacity [ref]",
+      "value": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcgXanmkhTk8Pl4EN, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Cargo type [ref]",
+      "value": "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://www.imarinenews.com/4851.html, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Capacity",
+      "value": "180000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Capacity [ref]",
+      "value": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcgXanmkhTk8Pl4EN, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Capacity [ref]",
+      "value": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcgXanmkhTk8Pl4EN, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1206",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1206",
+      "column": "Cargo type [ref]",
+      "value": "https://www.thestar.com.my/business/business-news/2026/05/04/misc-bags-20-year-fsru-contract-from-petronas-gas, https://lngprime.com/asia/south-koreas-samsung-heavy-bags-new-order-for-lng-carrier-duo/186477/, https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/, https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-new-floating-storage-and",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/, https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/, https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 88,
+    "accepted": 62,
+    "hold": 26,
+    "reject": 0,
+    "conflicts": 5
+  }
+}

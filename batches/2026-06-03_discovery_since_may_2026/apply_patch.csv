@@ -1,0 +1,27 @@
+op,key,column,value
+append,C2,Status,on order
+append,C2,Status [ref],https://www.imarinenews.com/35664.html
+append,C2,Shipowner,Knutsen OAS Shipping
+append,C2,Shipowner [ref],https://www.imarinenews.com/35664.html
+append,C2,Shipowner country/area,Norway
+append,C2,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+append,C2,Shipbuilder,Hanwha Ocean
+append,C2,Shipbuilder [ref],https://www.imarinenews.com/35664.html
+append,C2,Capacity,174000
+append,C2,Capacity units,cbm
+append,C2,Capacity [ref],https://www.imarinenews.com/35664.html
+append,C2,Vessel type,conventional
+append,C2,Delivery year,2029
+append,C2,Delivery year [ref],https://www.imarinenews.com/35664.html
+append,C2,Contract date,29-May-2026
+append,C2,Contract date [ref],https://www.imarinenews.com/35664.html
+append,C2,Price,250000000
+append,C2,Price currency,USD
+append,C2,Price [ref],https://www.imarinenews.com/35664.html
+append,C2,Shipbuilder yard country/area,South Korea
+append,C2,Shipbuilder yard country/area [ref],https://www.hanwha.com/companies/hanwha-ocean.do
+append,C2,Yard location latitude,34.87385
+append,C2,Yard location longitude,128.6966
+append,C2,Yard location plus code,"VMCW+V7 Geoje-si, Gyeongsangnam-do"
+append,C2,Yard location accuracy,exact
+append,C2,Yard location lat/lon [ref],https://www.google.com/maps/place/Hanwha+Ocean/data=!3m1!1e3!4m10!1m2!2m1!1sHanwha+Ocean!3m6!1s0x356ecd1d7a72f7db:0x3bfe90e7d8bf93f0!8m2!3d34.8721913!4d128.6956963!15sCgxIYW53aGEgT2NlYW5aDiIMaGFud2hhIG9jZWFukgEfc2hpcGJ1aWxkaW5nX2FuZF9yZXBhaXJfY29tcGFueZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuVFVSUmRYVkVTMWhuRUFF4AEA-gEECAAQLA!16s%2Fg%2F11swmd6_76?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D

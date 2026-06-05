@@ -1,0 +1,46 @@
+{
+  "batch": "2026-06-03_discovery_since_may_2026",
+  "mode": "discovery",
+  "accepted_cells": [],
+  "accepted_new_rows": [
+    {
+      "cluster_id": "C2",
+      "confidence": "G",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipowner": "Knutsen OAS Shipping",
+        "Shipowner [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipowner country/area": "Norway",
+        "Shipowner country/area [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipbuilder": "Hanwha Ocean",
+        "Shipbuilder [ref]": "https://www.imarinenews.com/35664.html",
+        "Capacity": "174000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://www.imarinenews.com/35664.html",
+        "Vessel type": "conventional",
+        "Delivery year": "2029",
+        "Delivery year [ref]": "https://www.imarinenews.com/35664.html",
+        "Contract date": "29-May-2026",
+        "Contract date [ref]": "https://www.imarinenews.com/35664.html",
+        "Price": "250000000",
+        "Price currency": "USD",
+        "Price [ref]": "https://www.imarinenews.com/35664.html",
+        "Shipbuilder yard country/area": "South Korea",
+        "Shipbuilder yard country/area [ref]": "https://www.hanwha.com/companies/hanwha-ocean.do",
+        "Yard location latitude": "34.87385",
+        "Yard location longitude": "128.6966",
+        "Yard location plus code": "VMCW+V7 Geoje-si, Gyeongsangnam-do",
+        "Yard location accuracy": "exact",
+        "Yard location lat/lon [ref]": "https://www.google.com/maps/place/Hanwha+Ocean/data=!3m1!1e3!4m10!1m2!2m1!1sHanwha+Ocean!3m6!1s0x356ecd1d7a72f7db:0x3bfe90e7d8bf93f0!8m2!3d34.8721913!4d128.6956963!15sCgxIYW53aGEgT2NlYW5aDiIMaGFud2hhIG9jZWFukgEfc2hpcGJ1aWxkaW5nX2FuZF9yZXBhaXJfY29tcGFueZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuVFVSUmRYVkVTMWhuRUFF4AEA-gEECAAQLA!16s%2Fg%2F11swmd6_76?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+      }
+    }
+  ],
+  "counts": {
+    "items": 6,
+    "accepted": 1,
+    "hold": 5,
+    "reject": 0,
+    "conflicts": 1
+  }
+}

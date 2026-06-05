@@ -1,0 +1,89 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+1144|Shipowner country/area,fill,1144,,Shipowner country/area,G,True,accept,accept,United States,derived from backend sibling rows for owner 'hanwha shipping'
+1145|Shipowner country/area,fill,1145,,Shipowner country/area,G,True,accept,accept,United States,derived from backend sibling rows for owner 'hanwha shipping'
+1146|Shipowner country/area,fill,1146,,Shipowner country/area,G,True,accept,accept,Greece,derived from backend sibling rows for owner 'gaslog'
+1147|Shipowner country/area,fill,1147,,Shipowner country/area,G,True,accept,accept,Greece,derived from backend sibling rows for owner 'gaslog'
+1152|Shipowner country/area,fill,1152,,Shipowner country/area,G,True,accept,accept,Japan,derived from backend sibling rows for owner 'nyk'
+1153|Shipowner country/area,fill,1153,,Shipowner country/area,G,True,accept,accept,Japan,derived from backend sibling rows for owner 'nyk'
+1154|Shipowner country/area,fill,1154,,Shipowner country/area,G,True,accept,accept,Japan,derived from backend sibling rows for owner 'nyk'
+1155|Shipowner country/area,fill,1155,,Shipowner country/area,G,True,accept,accept,Japan,derived from backend sibling rows for owner 'nyk'
+1156|Shipowner country/area,fill,1156,,Shipowner country/area,G,True,accept,accept,United Kingdom,derived from backend sibling rows for owner 'purus'
+1157|Shipowner country/area,fill,1157,,Shipowner country/area,G,True,accept,accept,United Kingdom,derived from backend sibling rows for owner 'purus'
+1166|Shipowner country/area,fill,1166,,Shipowner country/area,G,True,accept,accept,Denmark,derived from backend sibling rows for owner 'celsius'
+1207|Shipowner country/area,fill,1207,,Shipowner country/area,G,True,accept,accept,Greece,derived from backend sibling rows for owner 'tms-cardiff'
+1208|Shipowner country/area,fill,1208,,Shipowner country/area,G,True,accept,accept,Greece,derived from backend sibling rows for owner 'tms-cardiff'
+1144|Cargo type,fill,1144,,Cargo type,Y,False,hold,hold,membrane,GTT.fr 'two new LNG carriers for the U.S. market' (pub Sep-2025) names the owner
+1144|Propulsion type,fill,1144,,Propulsion type,Y,False,hold,hold,ME-GI,gCaptain (pub 21-Jul-2025): the Hanwha Shipping / Hanwha Philly vessel 'will be 
+1144|Price,fill,1144,,Price,Y,False,hold,hold,252000000,Riviera 86306 reports the Hanwha Shipping LNG carrier orders from Hanwha Philly/
+1144|Price currency,fill,1144,,Price currency,Y,False,hold,hold,USD,Paired currency for the Price=252000000 fill; Riviera states the figure as 'US$2
+1145|Cargo type,fill,1145,,Cargo type,Y,False,hold,hold,membrane,Sibling of row 1144 (same Hanwha Shipping 2-ship Hanwha Philly/Ocean order; GTT 
+1145|Propulsion type,fill,1145,,Propulsion type,Y,False,hold,hold,ME-GI,Sibling of row 1144. gCaptain: Hanwha Shipping / Hanwha Philly vessel equipped w
+1145|Price,fill,1145,,Price,Y,False,hold,hold,252000000,Riviera 86306 is specifically about the SECOND US$252M Hanwha Shipping order in 
+1145|Price currency,fill,1145,,Price currency,Y,False,hold,hold,USD,Paired currency for Price=252000000 on row 1145; Riviera states 'US$252M'. Using
+1164|Shipowner country/area,fill,1164,,Shipowner country/area,G,False,accept,accept,Greece,LNG Prime 175775 visible (non-paywalled) lead: 'Greece's Alpha Gas placed the or
+1164|Price,fill,1164,,Price,G,False,accept,accept,250500000,LNG Prime 175775 visible lead states 'The contract is worth 738.3 billion won ($
+1164|Price currency,fill,1164,,Price currency,G,False,accept,accept,USD,Paired currency for Price=250500000; LNG Prime states the per-vessel figure in U
+1165|Shipowner country/area,fill,1165,,Shipowner country/area,G,False,accept,accept,Greece,Sibling of row 1164 (same Alpha Gas 2-ship order). LNG Prime 175775 ('Greece's A
+1165|Price,fill,1165,,Price,G,False,accept,accept,250500000,Sibling of row 1164. LNG Prime 175775 visible lead: '738.3 billion won ($501 mil
+1165|Price currency,fill,1165,,Price currency,G,False,accept,accept,USD,Paired currency for Price=250500000 on row 1165; US dollars per LNG Prime. Using
+1152|Cargo type,fill,1152,,Cargo type,G,False,accept,accept,membrane,"NYK official PR + LNG Prime 176824 both carry verbatim '200,000 cubic meter ... "
+1152|Propulsion type,fill,1152,,Propulsion type,G,False,accept,accept,X-DF,"Both sources verbatim 'next-generation X-DF2.1 iCER, VCR system, dual-fuel, low-"
+1152|Operator/charterer,fill,1152,,Operator/charterer,G,False,accept,accept,Cheniere,Charterer = Cheniere Marketing International LLP (subsidiary of Cheniere Energy)
+1153|Cargo type,fill,1153,,Cargo type,G,False,accept,accept,membrane,"Rule E sister hull of 1152 (same 05-Jan-2026 NYK/Ocean Yield 4x 200,000 cbm orde"
+1153|Propulsion type,fill,1153,,Propulsion type,G,False,accept,accept,X-DF,Rule E sister hull of 1152. Verbatim 'X-DF2.1 iCER' in both sources -> 'X-DF'.
+1153|Operator/charterer,fill,1153,,Operator/charterer,G,False,accept,accept,Cheniere,Rule E sister hull of 1152. Cheniere Marketing International verbatim in both so
+1154|Cargo type,fill,1154,,Cargo type,G,False,accept,accept,membrane,Rule E sister hull of 1152 (delivery 2029). Verbatim 'membrane-type tank' in bot
+1154|Propulsion type,fill,1154,,Propulsion type,G,False,accept,accept,X-DF,Rule E sister hull of 1152. Verbatim 'X-DF2.1 iCER' -> 'X-DF'.
+1154|Operator/charterer,fill,1154,,Operator/charterer,G,False,accept,accept,Cheniere,Rule E sister hull of 1152. Cheniere Marketing International verbatim in both so
+1155|Cargo type,fill,1155,,Cargo type,G,False,accept,accept,membrane,Rule E sister hull of 1152 (delivery 2029). Verbatim 'membrane-type tank' in bot
+1155|Propulsion type,fill,1155,,Propulsion type,G,False,accept,accept,X-DF,Rule E sister hull of 1152. Verbatim 'X-DF2.1 iCER' -> 'X-DF'.
+1155|Operator/charterer,fill,1155,,Operator/charterer,G,False,accept,accept,Cheniere,Rule E sister hull of 1152. Cheniere Marketing International verbatim in both so
+1167|Shipowner country/area,fill,1167,,Shipowner country/area,G,False,accept,accept,Greece,Riviera headline 'Greek major Tsakos' + LNG Prime visible lead 'Greek shipowner 
+1167|Price,fill,1167,,Price,Y,False,hold,hold,254000000,"Riviera ties US$254M to a SINGLE Tsakos LNG carrier at HD Hyundai, Q3-2028 deliv"
+1167|Price currency,fill,1167,,Price currency,Y,True,accept,accept,USD,Paired currency for the Tsakos Price fill. Riviera states 'US$254M' -> USD. Trav
+1214|Shipowner country/area,fill,1214,,Shipowner country/area,Y,True,accept,accept,United Kingdom,Both sources describe Hayfin Capital Management as 'London-headquartered' (Index
+1215|Shipowner country/area,fill,1215,,Shipowner country/area,Y,True,accept,accept,United Kingdom,Rule E sister hull of 1214 (same 14-May-2026 Hayfin 2x order). London-based per 
+1158|Shipowner country/area,fill,1158,,Shipowner country/area,Y,False,hold,hold,China,"Shipowner = Minsheng Financial Leasing, a China-based lessor; Shandong (Ocean/Ma"
+1158|Cargo type,fill,1158,,Cargo type,G,False,accept,accept,membrane,GTT tank-design order for THIS four-ship Shandong/Jiangnan quartet specifies GTT
+1158|Propulsion type,fill,1158,,Propulsion type,Y,False,hold,hold,X-DF,iMarine 31970 (pub 31-Jan-2026) body: vessels 'equipped with the latest WinGD XD
+1159|Shipowner country/area,fill,1159,,Shipowner country/area,Y,False,hold,hold,China,Sibling of row 1158 (same 30-Jan-2026 Minsheng/Shandong Jiangnan quartet). Minsh
+1159|Cargo type,fill,1159,,Cargo type,G,False,accept,accept,membrane,Sibling of row 1158. GTT Mark III Flex membrane for this Shandong/Jiangnan quart
+1159|Propulsion type,fill,1159,,Propulsion type,Y,False,hold,hold,X-DF,Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> controlled vo
+1160|Shipowner country/area,fill,1160,,Shipowner country/area,Y,False,hold,hold,China,Sibling of row 1158 (delivery 2029 in this row but same order). Minsheng = China
+1160|Cargo type,fill,1160,,Cargo type,G,False,accept,accept,membrane,Sibling of row 1158. GTT Mark III Flex membrane; two cross-checked non-paywalled
+1160|Propulsion type,fill,1160,,Propulsion type,Y,False,hold,hold,X-DF,Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> 'X-DF'. Singl
+1161|Shipowner country/area,fill,1161,,Shipowner country/area,Y,False,hold,hold,China,Sibling of row 1158 (delivery 2029). Minsheng = China-based lessor; both URLs na
+1161|Cargo type,fill,1161,,Cargo type,G,False,accept,accept,membrane,Sibling of row 1158. GTT Mark III Flex membrane; two cross-checked non-paywalled
+1161|Propulsion type,fill,1161,,Propulsion type,Y,False,hold,hold,X-DF,Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> 'X-DF'. Singl
+1148|Shipowner country/area,fill,1148,,Shipowner country/area,Y,False,hold,hold,Singapore,"Entity-level: sources state 'BW LNG, a unit of Singapore-based gas giant BW' / '"
+1148|Cargo type,fill,1148,,Cargo type,G,False,accept,accept,membrane,"portnews names H8340 and H8341 (177,000-cbm three-tank, HD Hyundai Samho, BW LNG"
+1148|Vessel type,fill,1148,,Vessel type,G,False,accept,accept,conventional,"CSB HD Hyundai Samho yard page lists 'Hyundai Samho H8340 ... LNG Tanker, 175,00"
+1148|Propulsion type,fill,1148,,Propulsion type,G,False,accept,accept,X-DF,Both sources name H8340/H8341 and state 'XDF 2.2 propulsion with VCR (variable c
+1148|Price,fill,1148,,Price,G,False,accept,accept,254,Riviera: 'US$508M BW LNG order at HD Hyundai Samho ... priced at about US$254M p
+1148|Price currency,fill,1148,,Price currency,G,False,accept,accept,$m,Currency for the paired Price=254 fill. Source quotes US$254M/ship; backend Pric
+1149|Shipowner country/area,fill,1149,,Shipowner country/area,Y,False,hold,hold,Singapore,Same caveat as 1148: 'Singapore-based BW Group' (parent domicile); CSB entity 'B
+1149|Cargo type,fill,1149,,Cargo type,G,False,accept,accept,membrane,Same order as 1148 (H8340/H8341). portnews names both hulls and the GTT Mark III
+1149|Vessel type,fill,1149,,Vessel type,G,False,accept,accept,conventional,CSB HD Hyundai Samho yard page lists H8341 as 'LNG Tanker' under BW LNG AS — con
+1149|Propulsion type,fill,1149,,Propulsion type,G,False,accept,accept,X-DF,Same order as 1148; both sources name H8340/H8341 with 'XDF 2.2 propulsion' (X-D
+1149|Price,fill,1149,,Price,G,False,accept,accept,254,Same $508M duo / $254M-per-ship order as 1148. Riviera 'about US$254M per ship'.
+1149|Price currency,fill,1149,,Price currency,G,False,accept,accept,$m,Currency for paired Price=254 fill ($m = millions USD).
+1212|Shipowner country/area,fill,1212,,Shipowner country/area,Y,False,hold,hold,Singapore,'Singapore-based BW Group' (parent). Same entity/flag caveat as 1148 (CSB entity
+1212|Cargo type,fill,1212,,Cargo type,G,False,accept,accept,membrane,"13-May-2026 BW LNG order (hulls H8358/H8359, 177,000-cbm three-tank). portnews n"
+1212|Propulsion type,fill,1212,,Propulsion type,G,False,accept,accept,X-DF,"13-May-2026 order. LNG Prime 186420 (this order, names H8340/H8341 lineage + the"
+1213|Shipowner country/area,fill,1213,,Shipowner country/area,Y,False,hold,hold,Singapore,Sister hull of 1212. 'Singapore-based BW Group' (parent); CSB entity BW LNG AS (
+1213|Cargo type,fill,1213,,Cargo type,G,False,accept,accept,membrane,"Sister hull of 1212 (same 13-May-2026 BW LNG order, H8358/H8359). portnews 39149"
+1213|Propulsion type,fill,1213,,Propulsion type,G,False,accept,accept,X-DF,Sister hull of 1212. LNG Prime 186420 + safety4sea state 'XDF 2.2 propulsion' (X
+1216|Cargo type,fill,1216,,Cargo type,G,False,accept,accept,membrane,Reused from the cluster-coherent CMHI-282 program sources. LNG Prime 69940 (4+2+
+1216|Capacity,fill,1216,,Capacity,G,False,accept,accept,180000,"Matches backend siblings 251-256 (180,000). Deltamarin (names CMHI-282-01..08): "
+1216|Capacity units,fill,1216,,Capacity units,G,False,accept,accept,cbm,Units for the paired Capacity=180000 fill (controlled vocab: cbm). Matches sibli
+1217|Cargo type,fill,1217,,Cargo type,G,False,accept,accept,membrane,Same CMHI-282 program as 1216 (hull -08). LNG Prime 'GTT membrane technologies' 
+1217|Capacity,fill,1217,,Capacity,G,False,accept,accept,180000,"Same as 1216 (hull -08). 180,000 cbm (Deltamarin/LNG Prime/offshore-energy), sib"
+1217|Capacity units,fill,1217,,Capacity units,G,False,accept,accept,cbm,Units for the paired Capacity=180000 fill (cbm).
+1206|Cargo type,fill,1206,,Cargo type,G,False,accept,accept,membrane,"MISC FSRU, 170,000 cbm at Samsung HI (backend contract 04-May-2026, delivery 202"
+1156|Cargo type,fill,1156,,Cargo type,G,False,accept,accept,membrane,"Purus Marine 2x 174,000 cbm at Samsung HI (contract 22-Dec-2025, delivery 2028/2"
+1157|Cargo type,fill,1157,,Cargo type,G,False,accept,accept,membrane,"Sister hull of 1156 (Purus Marine 2x 174,000 cbm at Samsung HI, contract 22-Dec-"
+1162|Shipowner country/area,fill,1162,,Shipowner country/area,Y,False,hold,hold,United Kingdom,Backend Shipowner = 'Oceonix Services Ltd'. UK Companies House (primary/regulato
+1163|Shipowner country/area,fill,1163,,Shipowner country/area,Y,False,hold,hold,United Kingdom,"Sister hull of 1162 (Oceonix Services Ltd, same 27-Jan-2026 Samsung order). Same"
+1162|Cargo type,fill,1162,,Cargo type,Y,False,hold,hold,membrane,"Oceonix Services Ltd 2x 174,000 cbm at Samsung HI (the 'Oceania Shipping Company"
+1163|Cargo type,fill,1163,,Cargo type,Y,False,hold,hold,membrane,"Sister hull of 1162 (Oceonix Services Ltd 2x 174,000 cbm Samsung, 27-Jan-2026, t"
+1166|Cargo type,fill,1166,,Cargo type,Y,False,hold,hold,membrane,"Celsius Tankers 1x 180,000 cbm at Samsung HI (contract 19-Feb-2026, delivery 202"

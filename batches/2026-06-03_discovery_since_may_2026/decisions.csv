@@ -1,0 +1,7 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+cluster:C1,new_row,,C1,,Y,False,hold,hold,,Samsung HI disclosed on 27-May-2026 a five-vessel order (1 LNG carrier + 2 VLGCs
+cluster:C2,new_row,,C2,,G,False,accept,accept,,Knutsen OAS Shipping exercised an option for its 9th LNG carrier at Hanwha Ocean
+cluster:C3,new_row,,C3,,Y,False,hold,hold,,COSCO Shipping Energy (via Cosco Shipping LNG Investment Shanghai / CSET) ordere
+cluster:C3,new_row,,C3,,Y,False,hold,hold,,"Sister hull of C3 (COSCO Shipping Energy 4x 175,000 cbm at Jiangnan, ~02-Jun-202"
+cluster:C3,new_row,,C3,,Y,False,hold,hold,,"Sister hull of C3 (COSCO Shipping Energy 4x 175,000 cbm at Jiangnan, ~02-Jun-202"
+cluster:C3,new_row,,C3,,Y,False,hold,hold,,"Sister hull of C3 (COSCO Shipping Energy 4x 175,000 cbm at Jiangnan, ~02-Jun-202"

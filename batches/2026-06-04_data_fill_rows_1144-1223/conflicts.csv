@@ -1,0 +1,6 @@
+row_id,column,backend_value,proposed_value,sources,recommendation,decision
+1158-1161,Operator/charterer,Shandong Marine Energy,Shell (Singapore) Trading is the charterer; Shandong (Ocean/Marine) Energy is the commercial manager; Minsheng Financial Leasing is the shipowner/lessor,https://www.imarinenews.com/31970.html ; https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617 ; https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/,"Not a [ref]-fill (Operator/charterer is already populated in the backend, not in my blanks list) -- flagged for transparency only. Backend Operator/charterer = 'Shandong Marine Energy', but sources show the END CHARTERER is Shell (Singapore) Trading on a long-term charter; Shandong handles commercial management. Both roles are defensible; surfaced per SOP 4.7/8 for human review, no overwrite.",hold
+,,,,,,hold
+,,,,,,hold
+,,,,,,hold
+,,,,,,hold
