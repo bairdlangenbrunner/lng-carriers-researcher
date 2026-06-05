@@ -6,10 +6,15 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-06-05 rev 2 (added §5a — the dedupe sweep: `verify_apply.py` now runs
-`dedupe_check.py` over the rows a batch touched/added, so a newly-added row that duplicates an
-existing vessel is caught at apply time. Tiered HIGH/MED/LOW, advisory, writes
-`<dir>/dedupe_report.csv`; also runnable standalone). Prior: 2026-06-05 rev 1 (initial SOP).
+**Last revised:** 2026-06-05 rev 3 (dedupe Tier-2 matching corrected: a row with a real hull
+or IMO is *identified*, never a placeholder — so identified hulls like `Hull 8254 (HSHI)` no
+longer shadow-match genuinely blank slots; delivery-year dropped from the blocking key and
+demoted to a >1-year disqualifier; trailing ordinal markers (`… ECC 1)`, `(Seapeak 2)`) now
+recognized. Fixes the false-negative where ECC 1 flagged but ECC 2/3 did not). Prior: rev 2
+(added §5a — the dedupe sweep: `verify_apply.py` runs `dedupe_check.py` over the rows a batch
+touched/added, so a newly-added row that duplicates an existing vessel is caught at apply time.
+Tiered HIGH/MED/LOW, advisory, writes `<dir>/dedupe_report.csv`; also runnable standalone).
+Prior: 2026-06-05 rev 1 (initial SOP).
 Built after a manual copy/paste column offset corrupted rows 1216/1217 (CMHI-282-07/-08). The
 whole point of this workflow is that the offset class of bug becomes impossible.
 
@@ -107,11 +112,14 @@ group before calling the batch done.
 The scan is tiered, highest-confidence first:
 - **Tier 1 (HIGH)** — two rows share a real **IMO**, or a real **(builder, hull)**. Same
   vessel; merge (keep the most complete row, retire the other).
-- **Tier 2 (MED)** — a **placeholder** row (blank / `unknown` / `Hull …-07` / `TBN`) and
-  another row match on builder + owner + capacity (±8,000 cbm) + delivery year with **no
-  distinguishing hull or IMO**. Probably the same order slot entered twice; verify by source.
+- **Tier 2 (MED)** — an **unidentified slot** (no hull AND no IMO — blank / `unknown` /
+  `TBN` / a discovery row not yet christened) and another row match on builder + owner +
+  capacity (±8,000 cbm), delivery years within a year, with **no distinguishing hull, IMO,
+  or ordinal**. Probably the same order slot entered twice; verify by source. A row that
+  carries a real hull or IMO (e.g. `Hull 8254 (HSHI)`) is *identified*, never a placeholder.
 - **Tier 3** — disqualifiers applied while building Tier 2: distinct non-blank hulls,
-  distinct non-blank IMOs, or clearly different capacities mean *sister ships*, never paired.
+  distinct non-blank IMOs, clearly different capacities, or delivery years >1 apart mean
+  *sister ships / separate orders*, never paired.
 - **Tier 4 (LOW)** — a Tier-2 candidate whose rows carry **different ordinal markers**
   ("8th ship" vs "9th ship", `…-07` vs `…-08`) is downgraded — distinct sisters (the Knutsen
   8th-vs-9th lesson). Reconcile by ordinal, then dismiss.
@@ -157,6 +165,18 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
 
 ## 8. Changelog
 
+- **rev 3** (2026-06-05): Dedupe Tier-2 matching corrected after a false-negative (the
+  scan flagged Capital Clean ECC 1 as a possible dup of the Capital Hull 8254-8257 order but
+  silently dropped ECC 2 and ECC 3). Three fixes in `dedupe_check.py`: (1) a row carrying a
+  real normalized hull or IMO is *identified*, never a placeholder — `placeholder = not hull
+  and not imo` — so identified hulls (`Hull 2656 (SHI)`, IMO present) stopped shadow-matching
+  the genuinely blank discovery slots and the MED count stopped exploding; (2) `delivery_year`
+  removed from the Tier-2 blocking key (one order's sisters slip a year, which an exact-year
+  key split apart, hiding ECC 2/3 at 2029 from the 2028 hulls) and demoted to a >1-year
+  *disqualifier*; (3) the ordinal extractor now catches trailing sister markers (`… ECC 1)`,
+  `(Seapeak 2)`) with a `(?<!\d)` guard so 4-digit hulls/years (`…Geoje 2775`, `…May 2026`)
+  don't masquerade as ordinals — so same-order sisters correctly demote to Tier-4 LOW. No
+  schema change; advisory behavior unchanged.
 - **rev 2** (2026-06-05): Added §5a — the dedupe sweep. `verify_apply.py` runs
   `dedupe_check.py` (`scan_duplicates`) over the rows a batch touched/added and writes
   `<dir>/dedupe_report.csv`; tiered HIGH (shared IMO / builder+hull) / MED (placeholder↔

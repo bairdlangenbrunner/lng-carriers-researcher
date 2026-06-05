@@ -18,13 +18,16 @@ Four tiers, highest-confidence first:
   Tier 1 — HARD KEYS (HIGH): same IMO, or same (builder, hull). Two rows that
            share a real IMO or a real yard hull number are the same vessel.
   Tier 2 — PLACEHOLDER↔IDENTIFIED (MED): rows sharing (builder, owner,
-           capacity-bucket, delivery-year) where nothing hard-distinguishes them
-           (at least one lacks a hull AND an IMO, or they share them). A named
-           vessel and a placeholder slot that match on every soft key but carry
-           no distinguishing hull/IMO are probably the same order slot.
+           capacity-bucket) where one side is an unidentified slot (no hull AND no
+           IMO) and nothing hard-distinguishes the pair. A named/identified vessel
+           and a placeholder slot on the same soft key, no distinguishing
+           hull/IMO/ordinal and within a year of each other, are probably the same
+           order slot. delivery-year is deliberately NOT in the blocking key — one
+           order's sisters slip a year — but a >1-year gap disqualifies (Tier 3).
   Tier 3 — DISQUALIFIERS: applied while building Tier 2 — two rows with distinct
-           non-blank hulls, distinct non-blank IMOs, or clearly different
-           capacities are sister ships, not dupes, and are never paired.
+           non-blank hulls, distinct non-blank IMOs, clearly different capacities,
+           or delivery years >1 apart are sister ships / separate orders, not
+           dupes, and are never paired.
   Tier 4 — ORDINAL RECONCILIATION: a Tier-2 candidate whose rows carry *different*
            ordinal markers in Name / Original source ("8th ship" vs "9th ship",
            "Hull ...-07" vs "...-08") is downgraded to LOW — distinct sisters, the
@@ -128,6 +131,12 @@ def _ordinals(*texts):
             found.add(int(m.group(1)))
         for m in re.finditer(r"-(\d{2})\b", t):  # CMHI-282-07 style suffix
             found.add(int(m.group(1)))
+        # trailing 1-2 digit marker: "... Capital Clean ECC 1)", "(Seapeak 2)",
+        # "TMS Cardiff Gas 3)" — the sister-ship ordinal at the end of a Name. The
+        # (?<!\d) guard keeps it from grabbing the tail of a longer number — a hull
+        # ("...Geoje 2775" -> not 75) or a trailing year ("...May 2026" -> not 26).
+        for m in re.finditer(r"(?<!\d)(\d{1,2})\s*\)?\s*$", t):
+            found.add(int(m.group(1)))
     return found
 
 
@@ -165,7 +174,14 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
         f["h"] = normalize_hull(f["b"], f["hull_raw"])
         f["cap_i"] = _cap_int(f["capacity"])
         f["cap_bucket"] = _capacity_bucket(f["capacity"])
-        f["placeholder"] = _is_placeholder(f["name"], f["hull_raw"])
+        # An unidentified slot has NO hard identifier — no normalized hull AND no
+        # IMO. A real hull or IMO means the vessel is identified, regardless of how
+        # its Name reads: "Hull 2656 (SHI)" (hull col + IMO 9992103) is a fully
+        # identified ship, not a placeholder, so it must NOT shadow-match the
+        # genuinely blank "Samsung HI Geoje (Seapeak 1)" slots (no hull, no IMO).
+        # The name-based _is_placeholder test is subsumed by this: a "TBN"/blank
+        # name with no hull/IMO is still caught here.
+        f["placeholder"] = not f["h"] and not f["imo"]
         rows.append(f)
 
     groups = []
@@ -212,10 +228,15 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
             })
 
     # --- Tier 2 (+3 disqualifiers, +4 ordinals): soft-key placeholder match -
+    # Block on (builder, owner, capacity-bucket) only. delivery_year is NOT in the
+    # key: sister ships in one order routinely deliver across consecutive years, so
+    # an exact-year key would split a single order and hide dupes (the Capital ECC
+    # 1/2/3 case: ECC 1 was 2028, ECC 2/3 were 2029, same order). Year drift is
+    # instead a *disqualifier* below, with a >2-year tolerance.
     by_soft = defaultdict(list)
     for f in rows:
-        if f["b"] and f["o"] and f["cap_bucket"] and f["delivery_year"]:
-            by_soft[f"{f['b']}|{f['o']}|{f['cap_bucket']}|{f['delivery_year']}"].append(f)
+        if f["b"] and f["o"] and f["cap_bucket"]:
+            by_soft[f"{f['b']}|{f['o']}|{f['cap_bucket']}"].append(f)
 
     for key, fs in by_soft.items():
         if len(fs) < 2:
@@ -233,6 +254,13 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
                     continue
                 if a["cap_i"] and b["cap_i"] and abs(a["cap_i"] - b["cap_i"]) > 8000:
                     continue
+                # delivery years >1 apart => different build program, not a dup.
+                # A single order's sisters slip a year at most in this dataset; a
+                # placeholder 2 years off a known hull (e.g. Seapeak 2029 slot vs
+                # the identified Hull 2656/2027) is a separate order, not the same slot.
+                if (a["delivery_year"] and b["delivery_year"]
+                        and abs(int(a["delivery_year"]) - int(b["delivery_year"])) > 1):
+                    continue
                 # only a candidate if at least one side is an unidentified slot
                 if not (a["placeholder"] or b["placeholder"]):
                     continue
@@ -241,6 +269,9 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
                 oa = _ordinals(a["name"], a["hull_raw"], a["source"])
                 ob = _ordinals(b["name"], b["hull_raw"], b["source"])
                 distinct_ordinals = bool(oa and ob and oa.isdisjoint(ob))
+                yr = ""
+                if a["delivery_year"] and b["delivery_year"] and a["delivery_year"] != b["delivery_year"]:
+                    yr = f"; delivery {a['delivery_year']} vs {b['delivery_year']}"
 
                 seen_pairs.add(_pair_key(ids))
                 if distinct_ordinals:
@@ -248,8 +279,8 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
                         "tier": 4, "severity": "LOW", "row_ids": ids,
                         "builder": a["builder_raw"], "owner": a["owner_raw"],
                         "key": key,
-                        "reason": (f"match on builder/owner/capacity/delivery but rows carry "
-                                   f"distinct ordinals {sorted(oa)} vs {sorted(ob)} — "
+                        "reason": (f"match on builder/owner/capacity but rows carry distinct "
+                                   f"ordinals {sorted(oa)} vs {sorted(ob)}{yr} — "
                                    f"likely distinct sister ships."),
                         "recommendation": "probably NOT a dup; reconcile by ordinal, then dismiss.",
                     })
@@ -259,7 +290,7 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
                         "builder": a["builder_raw"], "owner": a["owner_raw"],
                         "key": key,
                         "reason": (f"placeholder/identified pair matches builder/owner/"
-                                   f"capacity~/delivery with no distinguishing hull or IMO "
+                                   f"capacity~ with no distinguishing hull or IMO{yr} "
                                    f"(names: {a['name']!r} / {b['name']!r})."),
                         "recommendation": "verify by source: is the placeholder the same slot as the named row?",
                     })
