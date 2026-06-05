@@ -5,9 +5,10 @@ Quick lookup for "which SOP section governs X" without re-reading both SOPs. The
 The SOPs live in `docs/sops/`:
 - `ref_fill.md` — abbreviated below as **RF**
 - `discovery.md` — abbreviated below as **DC**
+- `data_fill.md` — abbreviated below as **DF**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
 
-Last reconciled against: RF rev 17, DC rev 7, SR rev 4 (2026-06-03). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8 — all indexed below.
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 4 (2026-06-04). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -58,6 +59,7 @@ Last reconciled against: RF rev 17, DC rev 7, SR rev 4 (2026-06-03). Note: the r
 | candidate_vessels | DC §5.2 | Discovery candidates with prefix columns |
 | QA_review | RF §2.3 / DC §5.3 | Per-cell log, conflicts, candidate fills, defects, verification log |
 | backend_status_flags | DC §5.4 | Non-candidate findings as standalone sheet |
+| backend_data_fill | DF §7.2 | In-scope backend rows with proposed values + preserved/appended refs, color-coded |
 
 ## Hull citation fallback (RF §6a)
 
@@ -88,7 +90,21 @@ Last reconciled against: RF rev 17, DC rev 7, SR rev 4 (2026-06-03). Note: the r
 | Yard-location autofill | DC §6.7 | 7 yard-location cols copied from an existing backend row for the same shipbuilder; blank if new |
 | Output formatting | DC §6.8 | Owner stylization (RF §4.14) + multi-URL `", "` (RF §4.15) |
 
+## Data-fill workflow (DF)
+
+| Phase | Section | What |
+|---|---|---|
+| Scope | DF §1-§2 | Row filter (e.g. `Last updated >= DATE`) + in-scope columns; blank OR literal `unknown` |
+| Blank-vs-`unknown` contract | DF §4 | `unknown` = research the value BUT preserve & append-to the existing `[ref]`, never delete |
+| Derivable autofill | DF §5 | owner country/area (unambiguous sibling-copy), capacity units, price currency, yard-location |
+| Per-batch workflow | DF §6 | pull → dedup → `derive_fills.py` → per-cluster research fan-out → `merge_fills.py` → build → recalc |
+| Output | DF §7 | `backend_data_fill` sheet (gray=existing, color=proposed, peach=appended ref) + QA_review |
+| Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`refdata/controlled_vocab.md`) |
+| Rule F / §4.9 consistency | DF §9 | proposals are paired candidate fills for review, never a backend edit; conflicts → RF §8 |
+| Documented blanks | DF §11 | §6a.9-style negative-result log for cells researched and not found |
+
 ## Pause-and-ask triggers
 
 - **RF §11** — CSB broken AND §6a fallback exhausted; class of values systematically wrong; new rule invalidates prior batches; corroboration too thin even for yellow
 - **DC §7** — >5 candidate clusters in same gap window (systematic gap); single-source broker attribution with no corroboration; whole owner's fleet appears missing; CSB master directory times out; gap window unclear
+- **DF §12** — type value not in the controlled vocab; owner-country ambiguity beyond `mol`/`maran-gas`; a proposed value conflicts with a non-blank backend value (→ RF §8 conflict, not a fill); a near-zero-yield column where filling would mean guessing

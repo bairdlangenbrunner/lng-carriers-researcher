@@ -94,10 +94,11 @@ from pathlib import Path
 
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.comments import Comment
 from openpyxl.utils import get_column_letter
 
 from paths import backend_csv_path
-from normalize import normalize_builder
+from normalize import normalize_builder, normalize_owner
 
 
 # Color conventions
@@ -510,12 +511,251 @@ def build_discovery(args):
     return out_path
 
 
+def _join_refs(existing: str, new_urls) -> str:
+    """Combine an existing [ref] cell value with new corroborator URLs.
+
+    The existing URL(s) come FIRST and are never dropped (the data-fill preserve
+    rule, Data-fill SOP §4). All URLs are de-duplicated and joined with ", "
+    (RF §4.15); any newline in the existing value is normalized to ", " too.
+    """
+    out = []
+
+    def _add(chunk):
+        for part in str(chunk).replace("\n", ", ").split(", "):
+            part = part.strip()
+            if part and part not in out:
+                out.append(part)
+
+    _add(existing or "")
+    for u in (new_urls or []):
+        _add(u)
+    return ", ".join(out)
+
+
+# Controlled vocabularies for the type columns (Data-fill SOP §8). The backend
+# writes values verbatim with no normalizer, so a data_fill proposal MUST use an
+# existing canonical value. Mirrors refdata/controlled_vocab.md.
+_DATA_FILL_VOCAB = {
+    "Cargo type": {"membrane", "spherical", "self-supporting prismatic", "type C"},
+    "Vessel type": {"conventional", "FSRU", "q-flex", "q-max", "icebreaker",
+                    "FSU", "Supporting", "small-scale", "mid-scale"},
+    "Propulsion type": {"X-DF", "DFDE", "steam", "ME-GA", "ME-GI", "SSD",
+                        "steam reheat", "STaGE", "prismatic conventional DFDE",
+                        "prismatic small-scale DFDE"},
+}
+
+
+def _validate_data_fills(fills, header_index, row_by_id):
+    """Print non-fatal Data-fill consistency warnings: orphan refs, Price without
+    currency, Capacity without units, off-vocab type values."""
+    issues = 0
+
+    def _has(rid, header):
+        row = row_by_id.get(rid, [])
+        idx = header_index.get(header)
+        return idx is not None and len(row) > idx and bool(row[idx].strip())
+
+    by_row = {}
+    for f in fills:
+        by_row.setdefault(str(f["row_id"]), {})[f.get("field", "")] = f
+    for rid, fmap in by_row.items():
+        if "Price" in fmap and "Price currency" not in fmap and not _has(rid, "Price currency"):
+            print(f"  [warn] row {rid}: Price proposed without a Price currency", file=sys.stderr); issues += 1
+        if "Capacity" in fmap and "Capacity units" not in fmap and not _has(rid, "Capacity units"):
+            print(f"  [warn] row {rid}: Capacity proposed without Capacity units", file=sys.stderr); issues += 1
+    for f in fills:
+        rid, fld = str(f["row_id"]), f.get("field", "")
+        if fld in _DATA_FILL_VOCAB and f.get("proposed_value", "") not in _DATA_FILL_VOCAB[fld]:
+            print(f"  [warn] row {rid}: {fld} value {f.get('proposed_value')!r} not in controlled vocab",
+                  file=sys.stderr); issues += 1
+        if f.get("new_urls") and not f.get("proposed_value") and not _has(rid, fld):
+            print(f"  [warn] row {rid}: {fld} has URL(s) but no value (orphan-ref risk)",
+                  file=sys.stderr); issues += 1
+    if issues:
+        print(f"  [warn] data_fill: {issues} consistency warning(s) — review before promoting",
+              file=sys.stderr)
+    return issues
+
+
+def build_data_fill(args):
+    """Build the data-fill mode workbook (Data-fill SOP).
+
+    Proposes values + corroborating [ref]s for BLANK and literal-`unknown`
+    backend data cells, for human review. NEVER edits the backend (RF §4.7).
+    `unknown` cells are treated as blank for research, but their existing [ref]
+    URL(s) are preserved and only appended to (DF §4).
+    """
+    payload = json.loads(Path(args.fills).read_text())
+
+    with open(args.backend, encoding="utf-8") as f:
+        backend_rows = list(csv.reader(f))
+    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
+    backend_header = backend_rows[colmap["_header_row_idx"]]
+    header_index = {h: i for i, h in enumerate(backend_header)}
+    data_start = colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1)
+    ci_row = colmap["row_id"]
+    row_by_id = {r[ci_row].strip(): r for r in backend_rows[data_start:]
+                 if len(r) > ci_row and r[ci_row].strip()}
+
+    fills = payload.get("fills", [])
+    scope_ids = [str(x) for x in payload.get("scope", {}).get("row_ids", [])]
+    if not scope_ids:
+        scope_ids = sorted({str(f["row_id"]) for f in fills},
+                           key=lambda s: int(s) if s.isdigit() else 1 << 30)
+
+    CONF_RANK = {"G": 3, "green": 3, "Y": 2, "yellow": 2, "R": 1, "red": 1}
+    data_fill_by = {(str(f["row_id"]), f["field"]): f for f in fills if f.get("field")}
+    ref_fill_by = {(str(f["row_id"]), f["ref_field"]): f for f in fills if f.get("ref_field")}
+
+    wb = Workbook()
+    n_derivable = sum(1 for f in fills if f.get("derivable"))
+    build_readme(wb, payload.get("batch_label", "LNG Carrier Data-fill"), [
+        f"In-scope rows: {len(scope_ids)}",
+        f"Proposed fills: {len(fills)}  (derivable autofill: {n_derivable}, "
+        f"researched: {len(fills) - n_derivable})",
+        f"Documented blanks (researched, not found): {len(payload.get('documented_blanks', []))}",
+        "",
+        "Color coding (backend_data_fill sheet):",
+        "  Gray   = pre-existing backend value, untouched",
+        "  Green/Yellow/Red = PROPOSED fill (confidence) for a blank or 'unknown' cell",
+        "  Peach  = [ref] cell that already had URL(s): existing URL kept FIRST, "
+        "corroborator appended (never replaced)",
+        "",
+        "'unknown' data cells are treated as blank for research; the proposed value carries a",
+        "cell comment 'prev: unknown' and the existing [ref] URL(s) are preserved (peach).",
+        "",
+        "Workflow: review proposals -> accept/reject -> manually enter accepted value + [ref] "
+        "into the backend.",
+        "The backend is NEVER edited by this tool (RF §4.7).",
+    ])
+
+    ws = wb.create_sheet("backend_data_fill")
+    prefix_cols = ["row_id", "cluster_id", "cluster_label", "n_proposed", "max_confidence"]
+    n_prefix = len(prefix_cols)
+    headers = prefix_cols + backend_header
+    for col_i, h in enumerate(headers, start=1):
+        ws.cell(row=1, column=col_i, value=h)
+    _apply_header_style(ws, 1)
+
+    missing = []
+    r_offset = 2
+    for rid in scope_ids:
+        row = row_by_id.get(rid)
+        if row is None:
+            missing.append(rid)
+            continue
+
+        def at(idx):
+            return row[idx] if idx is not None and len(row) > idx else ""
+
+        cluster_label = f"{normalize_builder(at(header_index.get('Shipbuilder')))}|" \
+                        f"{normalize_owner(at(header_index.get('Shipowner')))}"
+        row_fills = [f for f in fills if str(f["row_id"]) == rid]
+        max_rank = max((CONF_RANK.get(f.get("confidence", "R"), 1) for f in row_fills), default=0)
+        ws.cell(row=r_offset, column=1, value=rid)
+        ws.cell(row=r_offset, column=2, value=cluster_label)
+        ws.cell(row=r_offset, column=3, value=cluster_label)
+        ws.cell(row=r_offset, column=4, value=len(row_fills))
+        ws.cell(row=r_offset, column=5, value={3: "G", 2: "Y", 1: "R", 0: ""}[max_rank])
+
+        for h, idx in header_index.items():
+            col = n_prefix + 1 + idx
+            existing = at(idx)
+            if (rid, h) in data_fill_by:                      # proposed data value
+                e = data_fill_by[(rid, h)]
+                c = ws.cell(row=r_offset, column=col, value=e.get("proposed_value", ""))
+                c.fill = CONFIDENCE_FILLS.get(e.get("confidence", "R"), FILL_RED)
+                if e.get("prev_state") == "unknown":
+                    c.comment = Comment('prev: "unknown" (researched & proposed)', "data_fill")
+            elif (rid, h) in ref_fill_by:                     # [ref] cell getting corroborator(s)
+                e = ref_fill_by[(rid, h)]
+                new_urls = e.get("new_urls", [])
+                e["existing_ref_preserved"] = existing        # from FRESH backend, for the QA log
+                c = ws.cell(row=r_offset, column=col, value=_join_refs(existing, new_urls))
+                if existing and new_urls:
+                    c.fill = FILL_PEACH
+                elif new_urls:
+                    c.fill = CONFIDENCE_FILLS.get(e.get("confidence", "R"), FILL_RED)
+                elif existing:
+                    c.fill = FILL_GRAY
+            else:                                             # untouched pre-existing value
+                if existing and h.endswith("[ref]") and "\n" in existing:
+                    existing = ", ".join(p.strip() for p in existing.split("\n") if p.strip())
+                c = ws.cell(row=r_offset, column=col, value=existing)
+                if existing:
+                    c.fill = FILL_GRAY
+            c.alignment = WRAP_ALIGN
+        r_offset += 1
+
+    if missing:
+        print(f"  [warn] scope row_ids not found in backend (skipped): {missing}", file=sys.stderr)
+    _validate_data_fills(fills, header_index, row_by_id)
+
+    ws.freeze_panes = "F2"
+    for col_i, h in enumerate(headers, start=1):
+        letter = get_column_letter(col_i)
+        if "[ref]" in h:
+            ws.column_dimensions[letter].width = 50
+        elif h in ("cluster_id", "cluster_label", "Name", "Shipowner",
+                   "Shipbuilder", "Operator/charterer"):
+            ws.column_dimensions[letter].width = 24
+        else:
+            ws.column_dimensions[letter].width = 15
+
+    # QA_review
+    ws_qa = wb.create_sheet("QA_review")
+    qa_fills = []
+    for f in fills:
+        g = dict(f)
+        nu = g.get("new_urls", [])
+        g["new_urls"] = ", ".join(nu) if isinstance(nu, list) else str(nu)
+        qa_fills.append(g)
+    qa_row = 1
+    sections = [
+        ("Candidate data-value fills",
+         ["row_id", "field", "prev_state", "proposed_value", "new_urls",
+          "existing_ref_preserved", "confidence", "note"], qa_fills),
+        ("Documented blanks (researched, not found)",
+         ["row_id", "field", "searched", "as_of", "note"],
+         payload.get("documented_blanks", [])),
+        ("URL verification log",
+         ["url", "status", "soft_error", "content_match", "result"],
+         payload.get("verification_log", [])),
+    ]
+    for title, cols, items in sections:
+        if not items:
+            continue
+        ws_qa.cell(row=qa_row, column=1, value=title).font = Font(bold=True, size=12)
+        qa_row += 1
+        for col_i, c in enumerate(cols, start=1):
+            cell = ws_qa.cell(row=qa_row, column=col_i, value=c)
+            cell.font = HEADER_FONT
+            cell.fill = FILL_HEADER
+        qa_row += 1
+        for item in items:
+            for col_i, c in enumerate(cols, start=1):
+                ws_qa.cell(row=qa_row, column=col_i,
+                           value=str(item.get(c, ""))).alignment = WRAP_ALIGN
+            qa_row += 1
+        qa_row += 1
+    for letter in "ABCDEFGH":
+        ws_qa.column_dimensions[letter].width = 22
+    ws_qa.column_dimensions["E"].width = 60
+
+    out_path = _resolve_out_path(args.out, "lng_carrier_data_fill.xlsx")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(out_path)
+    print(f"  Wrote {out_path}")
+    return out_path
+
+
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--mode", choices=["ref_fill", "discovery"], required=True)
+    p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill"], required=True)
     p.add_argument("--rows", help="Row range for ref_fill, e.g. '1170-1190'")
     p.add_argument("--citations", help="Path to citations JSON (ref_fill mode)")
     p.add_argument("--candidates", help="Path to candidates JSON (discovery mode)")
+    p.add_argument("--fills", help="Path to fills JSON (data_fill mode)")
     p.add_argument("--backend", default=str(backend_csv_path()),
                    help="Path to backend CSV (default: <work_dir>/backend.csv)")
     p.add_argument("--out",
@@ -528,10 +768,14 @@ def main():
         if not args.citations:
             p.error("--citations required for ref_fill mode")
         build_ref_fill(args)
-    else:
+    elif args.mode == "discovery":
         if not args.candidates:
             p.error("--candidates required for discovery mode")
         build_discovery(args)
+    else:
+        if not args.fills:
+            p.error("--fills required for data_fill mode")
+        build_data_fill(args)
 
 
 if __name__ == "__main__":

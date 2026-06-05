@@ -6,6 +6,7 @@ This file is read automatically at the start of every Claude Code session in thi
 
 - `docs/sops/ref_fill.md` — the [ref]-fill workflow, hard rules (A through F), confidence labels, conflict handling, the §3.8 verification gate. **Authoritative.**
 - `docs/sops/discovery.md` — the discovery workflow, the four-ring source model, candidate workbook structure. **Authoritative.**
+- `docs/sops/data_fill.md` — the data-fill workflow (research blank/`unknown` data cells → candidate value+[ref] pairs; the blank-vs-`unknown` preserve-ref contract, derivable autofills, controlled vocab). **Authoritative.**
 - `docs/sops/sfoc_reconciliation.md` — the SFOC reconciliation workflow (less frequent).
 - `docs/pointers.md` — "which SOP section governs X" index.
 - `docs/inclusion_criteria.md` — what's in scope vs out.
@@ -116,11 +117,49 @@ python recalc.py ../batches/<date>_discovery/lng_carrier_candidate_vessels.xlsx
 # 11. Commit the batch directory.
 ```
 
+### Data-fill batch
+
+Trigger phrases: "data fill", "fill blank data cells", "fill the blanks for rows X-Y", "propose values for missing cells", "fill missing <column>", "data-fill batch".
+
+```bash
+cd scripts/
+
+# 1. Fresh backend CSV + colmap (MANDATORY — re-derives scope; schema drifts)
+python pull_backend.py
+
+# 2. Dedup index (cluster_index for the per-cluster fan-out)
+python dedup_index.py
+
+# 3. Derivable autofills + scope + per-cluster research task lists (Data-fill SOP §5-§6)
+python derive_fills.py --since <YYYY-MM-DD>
+# -> ../work/data_fill.json (derivable fills + scope) + ../work/research_tasks.json
+
+# 4. Research fan-out: one subagent per cluster (Discovery §3 four-ring model,
+#    controlled vocab in refdata/controlled_vocab.md, owner stylization §4.14,
+#    PRESERVE existing refs on `unknown` cells per Data-fill SOP §4). Reuse prior
+#    batches + backend siblings first. Each writes ../work/research_<label>.json.
+
+# 5. Merge + central §3.8 verification gate.
+python merge_fills.py   # -> ../work/data_fill.json (merged, deduped, re-verified)
+
+# 6. Build the candidate workbook.
+python build_workbook.py --mode data_fill \
+  --fills ../work/data_fill.json \
+  --out ../batches/<date>_data_fill_rows_X-Y/
+
+# 7. Recalc - zero formula errors required.
+python recalc.py ../batches/<date>_data_fill_rows_X-Y/lng_carrier_data_fill.xlsx
+
+# 8. Copy ../work/data_fill.json into the batch dir; write notes.md; commit the
+#    batch directory. Do NOT push without user approval.
+```
+
 ## Hard requirements (these override anything below)
 
 - **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited.
 - **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in prior batches — URLs decay.
 - **Rule F applies always** — no orphan `[ref]` cells with no paired data value ([ref]-Fill SOP §4.13).
+- **Data-fill is additive to blanks/`unknown`s only.** It proposes value + verified-`[ref]` pairs for human review, never a backend edit; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (Data-fill SOP §4, §9).
 - **Always pull fresh backend CSV at the start of a batch.**
 - **Re-derive the column-index map** from the fresh header row — don't assume schema is stable.
 - **Never `git push` without explicit user approval.** Local commits are fine; pushing to a public repo is irreversible.
@@ -147,7 +186,9 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
 | `url_verifier.py` | the §3.8 verification gate — HTTP 200 + content check + soft-error detection | Verifier flagging false positives or negatives; new soft-error pattern |
 | `imo_tracker.py` | the §6a.8 IMO->marine-vessel-tracker fallback | marinetraffic.org URL pattern changed; Cloudflare gating |
-| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers | Adding a new sheet section; changing color convention |
+| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill) | Adding a new sheet section; changing color convention |
+| `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
+| `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate | Verifier behavior changes; new research-output key |
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |
 
 Trust the scripts by default. They're versioned scaffolding, not throwaway code. If you fix one, commit the fix in the same batch with a note in `notes.md`.

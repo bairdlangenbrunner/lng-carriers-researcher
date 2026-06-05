@@ -1,0 +1,2718 @@
+{
+  "batch_label": "Data-fill batch — Last updated >= 2026-05-18",
+  "scope": {
+    "filter": "Last updated >= 2026-05-18",
+    "row_ids": [
+      "1144",
+      "1145",
+      "1146",
+      "1147",
+      "1148",
+      "1149",
+      "1150",
+      "1151",
+      "1152",
+      "1153",
+      "1154",
+      "1155",
+      "1156",
+      "1157",
+      "1158",
+      "1159",
+      "1160",
+      "1161",
+      "1162",
+      "1163",
+      "1164",
+      "1165",
+      "1166",
+      "1167",
+      "1206",
+      "1207",
+      "1208",
+      "1209",
+      "1210",
+      "1211",
+      "1212",
+      "1213",
+      "1214",
+      "1215",
+      "1216",
+      "1217",
+      "1218",
+      "1219",
+      "1220",
+      "1221",
+      "1222",
+      "1223"
+    ]
+  },
+  "fills": [
+    {
+      "row_id": "1144",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United States",
+      "new_urls": [
+        "https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'hanwha shipping'"
+    },
+    {
+      "row_id": "1145",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United States",
+      "new_urls": [
+        "https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'hanwha shipping'"
+    },
+    {
+      "row_id": "1146",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Greece",
+      "new_urls": [
+        "https://www.gaslogltd.com/contact-us/",
+        "https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'gaslog'"
+    },
+    {
+      "row_id": "1147",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Greece",
+      "new_urls": [
+        "https://www.gaslogltd.com/contact-us/",
+        "https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'gaslog'"
+    },
+    {
+      "row_id": "1152",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Japan",
+      "new_urls": [
+        "https://www.nyk.com/english/profile/profile/",
+        "https://en.wikipedia.org/wiki/Nippon_Yusen"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'nyk'"
+    },
+    {
+      "row_id": "1153",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Japan",
+      "new_urls": [
+        "https://www.nyk.com/english/profile/profile/",
+        "https://en.wikipedia.org/wiki/Nippon_Yusen"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'nyk'"
+    },
+    {
+      "row_id": "1154",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Japan",
+      "new_urls": [
+        "https://www.nyk.com/english/profile/profile/",
+        "https://en.wikipedia.org/wiki/Nippon_Yusen"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'nyk'"
+    },
+    {
+      "row_id": "1155",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Japan",
+      "new_urls": [
+        "https://www.nyk.com/english/profile/profile/",
+        "https://en.wikipedia.org/wiki/Nippon_Yusen"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'nyk'"
+    },
+    {
+      "row_id": "1156",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United Kingdom",
+      "new_urls": [
+        "https://www.purus.com/our-services/gas"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'purus'"
+    },
+    {
+      "row_id": "1157",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United Kingdom",
+      "new_urls": [
+        "https://www.purus.com/our-services/gas"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'purus'"
+    },
+    {
+      "row_id": "1166",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Denmark",
+      "new_urls": [],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'celsius'"
+    },
+    {
+      "row_id": "1207",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Greece",
+      "new_urls": [
+        "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'tms-cardiff'"
+    },
+    {
+      "row_id": "1208",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Greece",
+      "new_urls": [
+        "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html"
+      ],
+      "prev_state": "blank",
+      "existing_ref_preserved": "",
+      "confidence": "G",
+      "derivable": true,
+      "note": "derived from backend sibling rows for owner 'tms-cardiff'"
+    },
+    {
+      "row_id": "1144",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://gtt.fr/news/gtt-receives-order-hanwha-ocean-tank-design-two-new-lng-carriers-us-market",
+        "https://gcaptain.com/hanwha-philly-shipyard-lands-first-us-lng-carrier-order-in-decades-from-hanwha-affiliate/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "GTT.fr 'two new LNG carriers for the U.S. market' (pub Sep-2025) names the owner 'Hanwha Shipping' verbatim and states the two 174,000 m3 vessels 'will be fitted with the NO96 L03+ membrane containment system' -> cluster-coherent (Hanwha Shipping + 2 ships + 174,000 + delivery Q1-2028) and contains 'membrane'. Paired with non-GTT gCaptain (per SOP 4.3) which corroborates '174,000 cubic meters ... a GTT containment system' (all GTT LNGC containment is membrane-type). Yellow because the literal token 'membrane' is only in the GTT source; the non-GTT corroborator says 'GTT containment system' (membrane-by-definition) rather than printing the word. Controlled vocab = 'membrane'.",
+      "derivable": false
+    },
+    {
+      "row_id": "1144",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "ME-GI",
+      "new_urls": [
+        "https://gcaptain.com/hanwha-philly-shipyard-lands-first-us-lng-carrier-order-in-decades-from-hanwha-affiliate/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "gCaptain (pub 21-Jul-2025): the Hanwha Shipping / Hanwha Philly vessel 'will be equipped with a GTT containment system and an M-type, electronically controlled, gas injection (MEGI) engine.' MEGI = MAN ME-GI -> controlled vocab 'ME-GI'. Cluster-coherent (names Hanwha Shipping + Hanwha Philly + 174,000). Single explicit non-primary source with a stylization gap (source 'MEGI' vs canonical 'ME-GI') -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1144",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "252000000",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Riviera 86306 reports the Hanwha Shipping LNG carrier orders from Hanwha Philly/Hanwha Ocean at 'US$252M' per vessel (the article covers the second of two single-ship orders in a month and references the first). Cluster-coherent (Hanwha Shipping affiliate + Hanwha Ocean/Philly). gCaptain/Maritime Executive corroborate at 'at least $250 million' (slightly lower phrasing), so Yellow rather than Green. Value present verbatim ('252') in the cited source.",
+      "derivable": false
+    },
+    {
+      "row_id": "1144",
+      "field": "Price currency",
+      "ref_field": "Price [ref]",
+      "proposed_value": "USD",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Paired currency for the Price=252000000 fill; Riviera states the figure as 'US$252M' (US dollars). Backend currency vocab = USD/$m; using 'USD'.",
+      "derivable": false
+    },
+    {
+      "row_id": "1145",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://gtt.fr/news/gtt-receives-order-hanwha-ocean-tank-design-two-new-lng-carriers-us-market",
+        "https://gcaptain.com/hanwha-philly-shipyard-lands-first-us-lng-carrier-order-in-decades-from-hanwha-affiliate/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1144 (same Hanwha Shipping 2-ship Hanwha Philly/Ocean order; GTT tank-design order covers both). GTT.fr names 'Hanwha Shipping' + 'NO96 L03+ membrane' + 174,000; non-GTT gCaptain corroborates GTT containment + 174,000 (SOP 4.3 pairing). Literal 'membrane' only in the GTT source -> Yellow. Controlled vocab = 'membrane'.",
+      "derivable": false
+    },
+    {
+      "row_id": "1145",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "ME-GI",
+      "new_urls": [
+        "https://gcaptain.com/hanwha-philly-shipyard-lands-first-us-lng-carrier-order-in-decades-from-hanwha-affiliate/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1144. gCaptain: Hanwha Shipping / Hanwha Philly vessel equipped with 'M-type, electronically controlled, gas injection (MEGI) engine' -> 'ME-GI'. Single explicit non-primary source + 'MEGI' vs 'ME-GI' stylization gap -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1145",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "252000000",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Riviera 86306 is specifically about the SECOND US$252M Hanwha Shipping order in a month (row 1145 = 26-Aug-2025 order), stating 'US$252M' per vessel. Cluster-coherent and value-present ('252'). Corroborated by gCaptain/Maritime Executive 'at least $250 million' -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1145",
+      "field": "Price currency",
+      "ref_field": "Price [ref]",
+      "proposed_value": "USD",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Paired currency for Price=252000000 on row 1145; Riviera states 'US$252M'. Using 'USD'.",
+      "derivable": false
+    },
+    {
+      "row_id": "1164",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Greece",
+      "new_urls": [
+        "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/",
+        "https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "LNG Prime 175775 visible (non-paywalled) lead: 'Greece's Alpha Gas placed the order at the shipbuilder' (also '$501 million', 'two LNG carriers', 'by June 2029') -> 'Greece' present verbatim and cluster-coherent (Alpha Gas + Hanwha Ocean + two). Corroborated by ShippingTelegraph 'Greek shipowner Alpha Gas confirms order for LNG carrier pair in Korea'. Owner domicile confirmed at entity level by a Tier-1 visible lead + a second naming source -> Green.",
+      "derivable": false
+    },
+    {
+      "row_id": "1164",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "250500000",
+      "new_urls": [
+        "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "LNG Prime 175775 visible lead states 'The contract is worth 738.3 billion won ($501 million), or $250.5 million per vessel' for the Alpha Gas 2-ship Hanwha Ocean order. Per-vessel value 250500000 matches the backend per-vessel Price convention (cf. row 1219 = 250000000 for one ship). Explicit verbatim per-vessel figure in a Tier-1 visible (non-paywalled) lead, cluster-coherent (Alpha Gas + Hanwha Ocean + two + 20-Jan-2026 order) -> Green.",
+      "derivable": false
+    },
+    {
+      "row_id": "1164",
+      "field": "Price currency",
+      "ref_field": "Price [ref]",
+      "proposed_value": "USD",
+      "new_urls": [
+        "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Paired currency for Price=250500000; LNG Prime states the per-vessel figure in US dollars ('$250.5 million per vessel'). Using 'USD'.",
+      "derivable": false
+    },
+    {
+      "row_id": "1165",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Greece",
+      "new_urls": [
+        "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/",
+        "https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sibling of row 1164 (same Alpha Gas 2-ship order). LNG Prime 175775 ('Greece's Alpha Gas', visible lead) + ShippingTelegraph ('Greek shipowner Alpha Gas') confirm owner domicile = Greece. Green (entity-level confirmed by Tier-1 visible lead + second naming source).",
+      "derivable": false
+    },
+    {
+      "row_id": "1165",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "250500000",
+      "new_urls": [
+        "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sibling of row 1164. LNG Prime 175775 visible lead: '738.3 billion won ($501 million), or $250.5 million per vessel'. Per-vessel 250500000 matches backend convention; explicit verbatim figure, cluster-coherent -> Green.",
+      "derivable": false
+    },
+    {
+      "row_id": "1165",
+      "field": "Price currency",
+      "ref_field": "Price [ref]",
+      "proposed_value": "USD",
+      "new_urls": [
+        "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Paired currency for Price=250500000 on row 1165; US dollars per LNG Prime. Using 'USD'.",
+      "derivable": false
+    },
+    {
+      "row_id": "1152",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "NYK official PR + LNG Prime 176824 both carry verbatim '200,000 cubic meter ... membrane-type tank ... GTT Mark III Flex+'. 2 cross-checked (one primary owner PR). Controlled vocab 'membrane'. GTT named only inside the LNG Prime/NYK bodies (not cited standalone, per Rule 4.3)."
+    },
+    {
+      "row_id": "1152",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Both sources verbatim 'next-generation X-DF2.1 iCER, VCR system, dual-fuel, low-speed diesel engine'. X-DF2.1 maps to controlled-vocab 'X-DF'. 2 cross-checked (one primary)."
+    },
+    {
+      "row_id": "1152",
+      "field": "Operator/charterer",
+      "ref_field": "Operator/charterer [ref]",
+      "proposed_value": "Cheniere",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Charterer = Cheniere Marketing International LLP (subsidiary of Cheniere Energy), verbatim in NYK PR + LNG Prime 176824. Backend short stylization 'Cheniere' per owner_charterer_map. 2 cross-checked (one primary)."
+    },
+    {
+      "row_id": "1153",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152 (same 05-Jan-2026 NYK/Ocean Yield 4x 200,000 cbm order). Same citation. Verbatim 'membrane-type tank' in both sources."
+    },
+    {
+      "row_id": "1153",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152. Verbatim 'X-DF2.1 iCER' in both sources -> 'X-DF'."
+    },
+    {
+      "row_id": "1153",
+      "field": "Operator/charterer",
+      "ref_field": "Operator/charterer [ref]",
+      "proposed_value": "Cheniere",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152. Cheniere Marketing International verbatim in both sources."
+    },
+    {
+      "row_id": "1154",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152 (delivery 2029). Verbatim 'membrane-type tank' in both sources."
+    },
+    {
+      "row_id": "1154",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152. Verbatim 'X-DF2.1 iCER' -> 'X-DF'."
+    },
+    {
+      "row_id": "1154",
+      "field": "Operator/charterer",
+      "ref_field": "Operator/charterer [ref]",
+      "proposed_value": "Cheniere",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152. Cheniere Marketing International verbatim in both sources."
+    },
+    {
+      "row_id": "1155",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152 (delivery 2029). Verbatim 'membrane-type tank' in both sources."
+    },
+    {
+      "row_id": "1155",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152. Verbatim 'X-DF2.1 iCER' -> 'X-DF'."
+    },
+    {
+      "row_id": "1155",
+      "field": "Operator/charterer",
+      "ref_field": "Operator/charterer [ref]",
+      "proposed_value": "Cheniere",
+      "new_urls": [
+        "https://www.nyk.com/english/news/2026/20260205_01.html",
+        "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Rule E sister hull of 1152. Cheniere Marketing International verbatim in both sources."
+    },
+    {
+      "row_id": "1167",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Greece",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924",
+        "https://lngprime.com/asia/greeces-tsakos-orders-lng-carriers-in-south-korea/178882/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "derivable": false,
+      "note": "Riviera headline 'Greek major Tsakos' + LNG Prime visible lead 'Greek shipowner Tsakos Group'. Both verbatim 'Greek' and cluster-coherent (Tsakos, 174,000 cbm, HD Hyundai). Backend stylization 'Greece' (17 existing Greek rows). Tsakos canonical = Greece (owner_charterer_map)."
+    },
+    {
+      "row_id": "1167",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "254000000",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "Riviera ties US$254M to a SINGLE Tsakos LNG carrier at HD Hyundai, Q3-2028 delivery - cluster-coherent with this single hull (row 1167). Yellow: single non-primary source AND cross-source figures vary (LNG Prime 178882 reports a 2-ship ~$500M Tsakos deal plus a $254M 'Oceania' single ship; the per-ship $254M is consistent but not double-confirmed). If the user prefers $/ship vs total, note this is already a single-ship order so $254M = per ship."
+    },
+    {
+      "row_id": "1167",
+      "field": "Price currency",
+      "ref_field": "Price [ref]",
+      "proposed_value": "USD",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "derivable": true,
+      "note": "Paired currency for the Tsakos Price fill. Riviera states 'US$254M' -> USD. Travels with the Price=254000000 proposal (Rule F pairing)."
+    },
+    {
+      "row_id": "1214",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United Kingdom",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768",
+        "https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "derivable": true,
+      "note": "Both sources describe Hayfin Capital Management as 'London-headquartered' (IndexBox) / 'London' (Riviera 88768, verbatim in body alongside Hayfin + 174,000). Backend stylization 'United Kingdom' (1 existing UK row). Yellow because sources state the CITY 'London' (country inferred, unambiguous); the literal string 'United Kingdom' is not in either body, so value-presence is entity-level/derived, not verbatim."
+    },
+    {
+      "row_id": "1215",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United Kingdom",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768",
+        "https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "derivable": true,
+      "note": "Rule E sister hull of 1214 (same 14-May-2026 Hayfin 2x order). London-based per Riviera 88768 + IndexBox. 'United Kingdom' inferred from 'London' (not verbatim) -> Yellow."
+    },
+    {
+      "row_id": "1158",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "China",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617",
+        "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Shipowner = Minsheng Financial Leasing, a China-based lessor; Shandong (Ocean/Marine) Energy is the China-based commercial manager. Both URLs name 'China' and 'Minsheng' verbatim and are cluster-coherent to the 30-Jan-2026 Jiangnan quartet (Riviera pub 02-Feb-2026, ShipUniverse pub 30-Jan-2026). Country is the owner/financier's domicile (entity-level) -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1158",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/",
+        "https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "GTT tank-design order for THIS four-ship Shandong/Jiangnan quartet specifies GTT Mark III Flex MEMBRANE containment. Two cross-checked publicly-visible sources name 'membrane' + 'Shandong' + 'Jiangnan' + '175,000' verbatim (LNG Prime 177764 pub 17-Feb-2026; IndexBox pub 17-Feb-2026). IndexBox is non-GTT so the pair satisfies SOP 4.3 (not GTT-standalone). Controlled vocab = 'membrane'.",
+      "derivable": false
+    },
+    {
+      "row_id": "1158",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.imarinenews.com/31970.html"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "iMarine 31970 (pub 31-Jan-2026) body: vessels 'equipped with the latest WinGD XDF 2.2 main engine utilizing LNG as primary fuel.' WinGD 'XDF' is the X-DF dual-fuel engine -> controlled vocab 'X-DF'. Single explicit non-primary source with the engine string verbatim; slight stylization gap (source 'XDF 2.2' vs canonical 'X-DF') -> Yellow. Cluster-coherent (names Jiangnan + Shandong + Minsheng + 175,000).",
+      "derivable": false
+    },
+    {
+      "row_id": "1159",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "China",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617",
+        "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1158 (same 30-Jan-2026 Minsheng/Shandong Jiangnan quartet). Minsheng Financial Leasing = China-based lessor; both URLs name 'China'+'Minsheng' verbatim. Entity-level (owner domicile) -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1159",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/",
+        "https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sibling of row 1158. GTT Mark III Flex membrane for this Shandong/Jiangnan quartet; two cross-checked non-paywalled sources name 'membrane' verbatim (LNG Prime 177764 + IndexBox, non-GTT pairing per SOP 4.3).",
+      "derivable": false
+    },
+    {
+      "row_id": "1159",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.imarinenews.com/31970.html"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> controlled vocab 'X-DF'. Single explicit source + stylization gap -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1160",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "China",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617",
+        "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1158 (delivery 2029 in this row but same order). Minsheng = China-based lessor; both URLs name 'China'+'Minsheng' verbatim. Entity-level -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1160",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/",
+        "https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sibling of row 1158. GTT Mark III Flex membrane; two cross-checked non-paywalled sources name 'membrane' verbatim (LNG Prime 177764 + IndexBox).",
+      "derivable": false
+    },
+    {
+      "row_id": "1160",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.imarinenews.com/31970.html"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> 'X-DF'. Single explicit source + stylization gap -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1161",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "China",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617",
+        "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1158 (delivery 2029). Minsheng = China-based lessor; both URLs name 'China'+'Minsheng' verbatim. Entity-level -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1161",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/",
+        "https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sibling of row 1158. GTT Mark III Flex membrane; two cross-checked non-paywalled sources name 'membrane' verbatim (LNG Prime 177764 + IndexBox).",
+      "derivable": false
+    },
+    {
+      "row_id": "1161",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://www.imarinenews.com/31970.html"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> 'X-DF'. Single explicit source + stylization gap -> Yellow.",
+      "derivable": false
+    },
+    {
+      "row_id": "1148",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Singapore",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/",
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Entity-level: sources state 'BW LNG, a unit of Singapore-based gas giant BW' / 'BW Group is a Singapore-based maritime group'. CAVEAT: the contracting entity on CSB is 'BW LNG AS' (Norwegian 'AS'), and Riviera notes the ships are flagged to Liberia. No backend BW consensus to reuse (37 BW rows blank). Yellow — parent domicile Singapore, owner-entity/flag ambiguous; human review.",
+      "derivable": false
+    },
+    {
+      "row_id": "1148",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "portnews names H8340 and H8341 (177,000-cbm three-tank, HD Hyundai Samho, BW LNG) and states the GTT Mark III design is a 'membrane containment system'. Cluster-coherent + value verbatim. Rule F candidate fill (backend Cargo type blank).",
+      "derivable": false
+    },
+    {
+      "row_id": "1148",
+      "field": "Vessel type",
+      "ref_field": "Vessel type [ref]",
+      "proposed_value": "conventional",
+      "new_urls": [
+        "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "CSB HD Hyundai Samho yard page lists 'Hyundai Samho H8340 ... LNG Tanker, 175,000 cbm ... BW LNG AS' (and H8341) — a conventional ocean-going LNGC (not FSRU/q-flex/icebreaker). Mirrors the established project convention used on the CMHI sibling rows (1216/1217 cite the CSB yard page for Vessel type=conventional). Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1148",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Both sources name H8340/H8341 and state 'XDF 2.2 propulsion with VCR (variable compression ratio), shaft generators and a full reliquefaction system' (XDF = X-DF, controlled-vocab canonical). Two cross-checked sources, value in visible body. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1148",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "254",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Riviera: 'US$508M BW LNG order at HD Hyundai Samho ... priced at about US$254M per ship'. LNG Prime: 'two LNG carriers for approximately $508 million'. Per-ship price $254M (2-ship order = $508M). Backend uses $m units elsewhere, so propose 254. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1148",
+      "field": "Price currency",
+      "ref_field": "Price [ref]",
+      "proposed_value": "$m",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Currency for the paired Price=254 fill. Source quotes US$254M/ship; backend Price column convention is $m (millions USD).",
+      "derivable": false
+    },
+    {
+      "row_id": "1149",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Singapore",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/",
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Same caveat as 1148: 'Singapore-based BW Group' (parent domicile); CSB entity 'BW LNG AS' (Norway), Liberia flag. Yellow, human review.",
+      "derivable": false
+    },
+    {
+      "row_id": "1149",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Same order as 1148 (H8340/H8341). portnews names both hulls and the GTT Mark III 'membrane containment system'. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1149",
+      "field": "Vessel type",
+      "ref_field": "Vessel type [ref]",
+      "proposed_value": "conventional",
+      "new_urls": [
+        "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "CSB HD Hyundai Samho yard page lists H8341 as 'LNG Tanker' under BW LNG AS — conventional LNGC. Mirrors CMHI-row convention. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1149",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Same order as 1148; both sources name H8340/H8341 with 'XDF 2.2 propulsion' (X-DF). Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1149",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "254",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Same $508M duo / $254M-per-ship order as 1148. Riviera 'about US$254M per ship'. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1149",
+      "field": "Price currency",
+      "ref_field": "Price [ref]",
+      "proposed_value": "$m",
+      "new_urls": [
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Currency for paired Price=254 fill ($m = millions USD).",
+      "derivable": false
+    },
+    {
+      "row_id": "1212",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Singapore",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/",
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "'Singapore-based BW Group' (parent). Same entity/flag caveat as 1148 (CSB entity BW LNG AS / Norway; Liberia flag). Yellow, human review.",
+      "derivable": false
+    },
+    {
+      "row_id": "1212",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "13-May-2026 BW LNG order (hulls H8358/H8359, 177,000-cbm three-tank). portnews names H8358/H8359 + BW LNG + HD Hyundai Samho and states the GTT Mark III design is a 'membrane containment system'. Cluster-coherent + value verbatim. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1212",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/",
+        "https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "13-May-2026 order. LNG Prime 186420 (this order, names H8340/H8341 lineage + the new duo) and safety4sea both state 'XDF 2.2 propulsion with VCR, shaft generators and a full reliquefaction system' (X-DF). portnews 391499 also lists H8358/H8359 'XDF propulsion'. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1213",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "Singapore",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/",
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sister hull of 1212. 'Singapore-based BW Group' (parent); CSB entity BW LNG AS (Norway), Liberia flag caveat. Yellow, human review.",
+      "derivable": false
+    },
+    {
+      "row_id": "1213",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://en.portnews.ru/news/391499/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sister hull of 1212 (same 13-May-2026 BW LNG order, H8358/H8359). portnews 391499 names both hulls + GTT Mark III 'membrane containment system'. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1213",
+      "field": "Propulsion type",
+      "ref_field": "Propulsion type [ref]",
+      "proposed_value": "X-DF",
+      "new_urls": [
+        "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/",
+        "https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sister hull of 1212. LNG Prime 186420 + safety4sea state 'XDF 2.2 propulsion' (X-DF); portnews lists H8358/H8359 'XDF propulsion'. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1216",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+        "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Reused from the cluster-coherent CMHI-282 program sources. LNG Prime 69940 (4+2+2 contract incl options 7&8) states 'GTT membrane technologies' + 'Mark III Flex containment'. Deltamarin design page names 'CMHI-282-01..08' (explicitly covers -07/-08) and 'GTT Mark III Flex technology' (= membrane). Sibling rows 251-256 are blank on cargo, so value is sourced fresh, not reused. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1216",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "180000",
+      "new_urls": [
+        "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/",
+        "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Matches backend siblings 251-256 (180,000). Deltamarin (names CMHI-282-01..08): 'Cargo capacity of 180,000 cbm, or 176,400 cbm at 98%'. LNG Prime 69940: '180,000-cbm LNG carriers'. offshore-energy also '180,000 cbm'. CSB lists the 176,400 (98%) figure for this hull — same vessel, not a conflict. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1216",
+      "field": "Capacity units",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "cbm",
+      "new_urls": [
+        "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Units for the paired Capacity=180000 fill (controlled vocab: cbm). Matches siblings 251-256.",
+      "derivable": false
+    },
+    {
+      "row_id": "1217",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+        "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Same CMHI-282 program as 1216 (hull -08). LNG Prime 'GTT membrane technologies' + Deltamarin 'CMHI-282-01..08 ... GTT Mark III Flex'. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1217",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "180000",
+      "new_urls": [
+        "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/",
+        "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Same as 1216 (hull -08). 180,000 cbm (Deltamarin/LNG Prime/offshore-energy), sibling-consistent; CSB 176,400 = 98% figure of the same vessel. Rule F candidate fill.",
+      "derivable": false
+    },
+    {
+      "row_id": "1217",
+      "field": "Capacity units",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "cbm",
+      "new_urls": [
+        "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Units for the paired Capacity=180000 fill (cbm).",
+      "derivable": false
+    },
+    {
+      "row_id": "1206",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-new-floating-storage-and",
+        "https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "MISC FSRU, 170,000 cbm at Samsung HI (backend contract 04-May-2026, delivery 2029, Vessel type already 'FSRU'). GTT.fr release (Paris, 12 May 2026) visible body: 'GTT ... received, in the second quarter of 2026, an order from the Samsung Heavy Industries shipyard for the tank design of a new Floating Storage and Regasification Unit (FSRU) ... on behalf of Malaysian ship-owner MISC ... a total capacity of 170,000 m3 ... The tanks will be fitted with GTT's Mark III membrane containment system ... Delivery ... first quarter of 2029.' Mark III = membrane (controlled_vocab 'membrane'). Cluster-coherent (names MISC + Samsung + FSRU + 170,000 + Q1-2029, matching this exact row). LNG Industry (18-May-2026) corroborates (MISC + Samsung + FSRU + membrane in visible content). One primary source (GTT) carrying the value verbatim + a second source -> Green. GTT not sole source (paired with LNG Industry) per SOP 4.3. Note: existing backend Cargo type [ref] is already populated with thestar/lngprime186477/lngindustry; this fill adds the GTT.fr canonical release as the precise containment-system source and re-confirms 'membrane' as the candidate Cargo value (backend Cargo type data cell is currently blank -> Rule F: propose value+ref together for human entry).",
+      "derivable": false
+    },
+    {
+      "row_id": "1156",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/",
+        "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Purus Marine 2x 174,000 cbm at Samsung HI (contract 22-Dec-2025, delivery 2028/2029). LNG Prime 173884 visible body: 'Samsung Heavy Industries will build for London-based Purus Marine ... each offering a total capacity of 174,000 cbm ... tanks will be fitted with its Mark III Flex membrane containment system.' GTT.fr corroborates (names Purus + Samsung + 174,000 m3 + Mark III Flex membrane). Mark III Flex = membrane containment (controlled_vocab 'membrane'). Two sources name THIS cluster by owner+yard+capacity+ship-count -> Rule E satisfied -> Green. GTT not sole source (paired with LNG Prime) per SOP 4.3.",
+      "derivable": false
+    },
+    {
+      "row_id": "1157",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/",
+        "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3"
+      ],
+      "prev_state": "blank",
+      "confidence": "G",
+      "note": "Sister hull of 1156 (Purus Marine 2x 174,000 cbm at Samsung HI, contract 22-Dec-2025; this hull delivery 2029). Same paired sources name Purus + Samsung + 174,000 + Mark III Flex membrane in visible content. Mark III Flex = membrane. Green per Rule E (owner+yard+capacity+ship-count named).",
+      "derivable": false
+    },
+    {
+      "row_id": "1162",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United Kingdom",
+      "new_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/11134011"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Backend Shipowner = 'Oceonix Services Ltd'. UK Companies House (primary/regulatory) record for OCEONIX SERVICES LIMITED (company 11134011): registered office 'Duo, Level 6, 280 Bishopsgate, London, United Kingdom, EC2M 4RB', country of registration United Kingdom (England), status Active. Stylization 'United Kingdom' matches backend convention (e.g. Purus Marine row 250 = 'United Kingdom'). Yellow: single primary source, entity-level (the named Shipowner entity is UK-registered; note JP Morgan beneficial interest is often Bermuda-flagged but the named owner Oceonix Services Ltd is UK).",
+      "derivable": false
+    },
+    {
+      "row_id": "1163",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "United Kingdom",
+      "new_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/11134011"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sister hull of 1162 (Oceonix Services Ltd, same 27-Jan-2026 Samsung order). Same UK Companies House primary record for OCEONIX SERVICES LIMITED (London, United Kingdom, Active). 'United Kingdom' matches backend stylization. Yellow (single primary, entity-level).",
+      "derivable": false
+    },
+    {
+      "row_id": "1162",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://cyprusshippingnews.com/2026/01/20/gtt-entrusted-by-samsung-heavy-industries-with-the-tank-design-of-two-new-lng-carriers-2/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Oceonix Services Ltd 2x 174,000 cbm at Samsung HI (the 'Oceania Shipping Company' Jan-2026 order, contract 27-Jan-2026, delivery 2028/2029; owner identity established by the existing backend ref Cyprus 2026/01/07). Cyprus Shipping News 2026/01/20 (GTT tank-design story) visible body: 'GTT will design the cryogenic tanks ... which will each offer a capacity of 174,000 m3. The tanks will be fitted with the Mark III Flex membrane containment system.' Mark III Flex = membrane. Yellow not Green: the membrane source names yard+ship-count(two)+capacity(174,000)+date-window matching the Oceonix order but does NOT name the owner ('Oceania'/region only); coherence to THIS cluster is via the unique signature + the paired existing Cyprus-07Jan owner-identification ref, not by owner name in the membrane source itself.",
+      "derivable": false
+    },
+    {
+      "row_id": "1163",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://cyprusshippingnews.com/2026/01/20/gtt-entrusted-by-samsung-heavy-industries-with-the-tank-design-of-two-new-lng-carriers-2/"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Sister hull of 1162 (Oceonix Services Ltd 2x 174,000 cbm Samsung, 27-Jan-2026, this hull delivery 2029). Same Cyprus 2026/01/20 GTT membrane source (174,000 m3, Mark III Flex membrane). Yellow for the same reason as 1162 (membrane source matches by yard+ship-count+capacity+date-window, owner named only as 'Oceania'/region; Oceonix identity via existing Cyprus-07Jan ref).",
+      "derivable": false
+    },
+    {
+      "row_id": "1166",
+      "field": "Cargo type",
+      "ref_field": "Cargo type [ref]",
+      "proposed_value": "membrane",
+      "new_urls": [
+        "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-one-new-lng-carrier"
+      ],
+      "prev_state": "blank",
+      "confidence": "Y",
+      "note": "Celsius Tankers 1x 180,000 cbm at Samsung HI (contract 19-Feb-2026, delivery 2028; CSB hull Samsung 2777 = 'LNG Tanker, 180,000 cbm', owner 'Celsius Shipping'). GTT.fr 'one new LNG Carrier' release (pub Q1-2026) visible body: 'GTT ... received ... an order from the shipyard Samsung Heavy Industries ... tank design of one new Liquefied Natural Gas Carrier ... total capacity of 180,000 m3 ... fitted with GTT's Mark III Flex membrane containment system ... delivery of the vessel is expected in 2028.' Mark III Flex = membrane. Unique-signature match to row 1166: single ship + 180,000 m3 (rare; Celsius's signature size) + Samsung + delivery 2028 + Q1-2026 order. Yellow not Green: GTT names owner only as 'a European ship-owner' (Celsius Tankers is Danish/European), not by name. NOTE the Gunvor/Hellenic 'Celsius 4x 180,000 ultra-eco' story is a DIFFERENT, EARLIER order (Oct-2021, delivery 2023/2024) and is cluster-INCOHERENT for row 1166 -> deliberately NOT cited.",
+      "derivable": false
+    }
+  ],
+  "documented_blanks": [
+    {
+      "row_id": "1144",
+      "field": "Vessel type",
+      "searched": "gCaptain (pub 21-Jul-2025), Maritime Executive (jones-act-lng-carrier-from-hanwha-philly), Riviera 86306, FreightWaves, GTT.fr us-market, Hanwha press release",
+      "as_of": "2026-06-04",
+      "note": "Value is almost certainly 'conventional' (standard 174,000 cbm LNGC), but no cluster-coherent source prints the controlled-vocab token 'conventional'; sources describe it as a 'U.S.-built LNG carrier' / discuss Jones Act eligibility (a regulatory status, not a Vessel-type vocab value). Rule F value-presence not met -> left blank. Recommend human vocab decision (derivable 'conventional')."
+    },
+    {
+      "row_id": "1144",
+      "field": "Operator/charterer",
+      "searched": "gCaptain, Maritime Executive, Riviera 86306, FreightWaves, Hanwha press release, WebSearch 'Hanwha Shipping LNG carrier charterer'",
+      "as_of": "2026-06-04",
+      "note": "Hanwha Shipping is the owner (affiliate buyer); no charterer/operator is disclosed in any source for this US-build order (coverage focuses on the Jones Act / joint-build angle). No value to cite -> left blank."
+    },
+    {
+      "row_id": "1145",
+      "field": "Vessel type",
+      "searched": "same as row 1144",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1144 -- 'conventional' not present verbatim in any cluster-coherent source. Left blank."
+    },
+    {
+      "row_id": "1145",
+      "field": "Operator/charterer",
+      "searched": "same as row 1144",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1144 -- no charterer disclosed for the Hanwha Shipping US-build order. Left blank."
+    },
+    {
+      "row_id": "1146",
+      "field": "Cargo type",
+      "searched": "WebSearch 'GasLog Hanwha Ocean 2025 order GTT membrane', offshore-energy GasLog Italy naming, eshiptrading 'GasLog turns to China', LNG Prime/GTT seven-carrier (= Knutsen, not GasLog), iMarine 35351",
+      "as_of": "2026-06-04",
+      "note": "Likely 'membrane' (Hanwha Ocean 174k LNGCs are GTT membrane) but NO cluster-coherent source names GasLog + Hanwha Ocean + the Sep-2025 hulls 2614/2615 together with a containment type. The only seven-ship GTT membrane order at Hanwha Ocean belongs to KNUTSEN (iMarine 35351: 'this same shipowner [Knutsen] had previously placed an order ... for seven LNG carriers'), not GasLog -- citing it here would violate Rule E. The 2024 'GasLog Italy' article is a different vessel/cluster. Left blank; re-check when a GasLog-specific GTT/tank-design source publishes."
+    },
+    {
+      "row_id": "1146",
+      "field": "Vessel type",
+      "searched": "same as row 1146 Cargo type",
+      "as_of": "2026-06-04",
+      "note": "'conventional' not present verbatim in any GasLog-coherent source for these hulls. Rule F value-presence not met. Left blank."
+    },
+    {
+      "row_id": "1146",
+      "field": "Propulsion type",
+      "searched": "same as row 1146 Cargo type; WebSearch 'GasLog Hanwha LNG engine WinGD/MEGI'",
+      "as_of": "2026-06-04",
+      "note": "No GasLog-coherent source names the engine type of hulls 2614/2615. The 2024 GasLog Italy ('HP-2S MEGI engines') is a different vessel (Rule E) and cannot be reused. Left blank."
+    },
+    {
+      "row_id": "1146",
+      "field": "Operator/charterer",
+      "searched": "same as row 1146 Cargo type",
+      "as_of": "2026-06-04",
+      "note": "No charterer disclosed for the GasLog Sep-2025 Hanwha Ocean order (GasLog's earlier Hanwha hulls went to Woodside, but that is a different, earlier order -- Rule E). Left blank."
+    },
+    {
+      "row_id": "1146",
+      "field": "Price",
+      "searched": "same as row 1146 Cargo type; eshiptrading, offshore-energy",
+      "as_of": "2026-06-04",
+      "note": "No firm contract value disclosed for the GasLog Sep-2025 Hanwha Ocean hulls 2614/2615 in any cluster-coherent source. Left blank."
+    },
+    {
+      "row_id": "1147",
+      "field": "Cargo type",
+      "searched": "same as row 1146",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1146 (GasLog hull 2615, 30-Sep-2025). No GasLog-coherent containment source; the seven-ship GTT membrane order is Knutsen's (Rule E). Left blank."
+    },
+    {
+      "row_id": "1147",
+      "field": "Vessel type",
+      "searched": "same as row 1146",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1146 -- 'conventional' not present verbatim. Left blank."
+    },
+    {
+      "row_id": "1147",
+      "field": "Propulsion type",
+      "searched": "same as row 1146",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1146 -- no GasLog-coherent engine source. Left blank."
+    },
+    {
+      "row_id": "1147",
+      "field": "Operator/charterer",
+      "searched": "same as row 1146",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1146 -- no charterer disclosed. Left blank."
+    },
+    {
+      "row_id": "1147",
+      "field": "Price",
+      "searched": "same as row 1146",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1146 -- no firm contract value disclosed. Left blank."
+    },
+    {
+      "row_id": "1164",
+      "field": "Cargo type",
+      "searched": "WebSearch 'Alpha Gas Hanwha NO96 membrane', ShippingTelegraph (Alpha Gas, no containment), Splash247 (403 here), LNG Prime 175775 (visible lead, no containment), GTT.fr 'two new LNG carriers' (owner unnamed), iMarine 35351 (= Knutsen)",
+      "as_of": "2026-06-04",
+      "note": "Likely 'membrane' (Hanwha Ocean 174k LNGCs use GTT NO96 Super+ membrane) but NO source names Alpha Gas together with a containment type. The GTT membrane announcements for Hanwha Ocean in this period are all owner-unnamed ('a European shipowner') or are the Knutsen orders (iMarine 35351/35664) -- attributing any of them to Alpha Gas would violate Rule E. The Alpha-Gas-named sources (ShippingTelegraph, LNG Prime 175775 lead, Splash247) do not print a containment type. Left blank; re-check for an Alpha-Gas-specific GTT/tank source."
+    },
+    {
+      "row_id": "1164",
+      "field": "Vessel type",
+      "searched": "same as row 1164 Cargo type",
+      "as_of": "2026-06-04",
+      "note": "'conventional' not present verbatim in any Alpha-Gas-coherent source. Rule F value-presence not met. Left blank."
+    },
+    {
+      "row_id": "1164",
+      "field": "Propulsion type",
+      "searched": "same as row 1164 Cargo type; WebSearch 'Alpha Gas Hanwha WinGD/MAN engine two-stroke'",
+      "as_of": "2026-06-04",
+      "note": "No Alpha-Gas-coherent source names a single installed engine type. General coverage notes Hanwha's 3D LNGC is 'compatible with WinGD low-pressure engines' and MAN high-pressure options -- that is engine COMPATIBILITY, not a confirmed installed propulsion, and is not Alpha-Gas-specific; it does not map to one controlled-vocab value (X-DF vs ME-GI). Left blank."
+    },
+    {
+      "row_id": "1164",
+      "field": "Operator/charterer",
+      "searched": "ShippingTelegraph, LNG Prime 175775, Splash247 (403), TradeWinds (paywalled), WebSearch 'Alpha Gas Hanwha charter'",
+      "as_of": "2026-06-04",
+      "note": "No charterer/operator disclosed for the Alpha Gas 20-Jan-2026 Hanwha Ocean pair ('Alpha Gas said the vessels will feature the latest energy-efficient technologies' -- no charter named). Alpha Gas's separate 'Energy Fidelity' GAIL charter is a different vessel (Rule E). Left blank."
+    },
+    {
+      "row_id": "1165",
+      "field": "Cargo type",
+      "searched": "same as row 1164",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1164 -- no Alpha-Gas-coherent containment source; GTT membrane pages are owner-unnamed / Knutsen (Rule E). Left blank."
+    },
+    {
+      "row_id": "1165",
+      "field": "Vessel type",
+      "searched": "same as row 1164",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1164 -- 'conventional' not present verbatim. Left blank."
+    },
+    {
+      "row_id": "1165",
+      "field": "Propulsion type",
+      "searched": "same as row 1164",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1164 -- no Alpha-Gas-coherent installed-engine source (only WinGD/MAN compatibility, not vessel-specific). Left blank."
+    },
+    {
+      "row_id": "1165",
+      "field": "Operator/charterer",
+      "searched": "same as row 1164",
+      "as_of": "2026-06-04",
+      "note": "Sibling of 1164 -- no charterer disclosed for the Alpha Gas pair. Left blank."
+    },
+    {
+      "row_id": "1219",
+      "field": "IMO number",
+      "searched": "backend (no IMO present for row 1219), iMarine 35664",
+      "as_of": "2026-06-04",
+      "note": "No IMO in the backend for this just-contracted (29-May-2026) Knutsen vessel, so there is nothing to resolve via the SOP 6a.8 IMO->marine-tracker lookup. Left blank."
+    },
+    {
+      "row_id": "1219",
+      "field": "Name",
+      "searched": "CSB hanwha-ocean (cached 2026-06-03; newest indexed contract 2026-03; only Knutsen rows are the 7 Dec-2025 hulls, hull_assigned=false), iMarine 35664",
+      "as_of": "2026-06-04",
+      "note": "No commercial name or hull label assigned yet for the 29-May-2026 Knutsen order; not indexed on CSB and no IMO in backend. Left blank."
+    },
+    {
+      "row_id": "1219",
+      "field": "Hull number",
+      "searched": "CSB hanwha-ocean (cached 2026-06-03; 29-May order not indexed -- newest = 2026-03), WebSearch 'Knutsen Hanwha Ocean ninth LNG carrier hull', iMarine 35664",
+      "as_of": "2026-06-04",
+      "note": "Knutsen's 9th Hanwha-Ocean LNGC (~6 days old at as_of date) has no hull assigned/indexed on CSB yet, and the backend has no IMO so SOP 6a.8 does not apply. iMarine 35664 (the only cluster-coherent source) carries no hull number. Recommend re-running in 1-3 months when CSB indexes the order."
+    },
+    {
+      "row_id": "1219",
+      "field": "Cargo type",
+      "searched": "iMarine 35664 (no containment in body), WebSearch 'Knutsen Hanwha 29 May 2026 LNG GTT membrane', GTT.fr (no Knutsen 29-May tank-design announcement found)",
+      "as_of": "2026-06-04",
+      "note": "Likely 'membrane' but NO cluster-coherent source names the 29-May-2026 Knutsen order's tank type. iMarine 35664 (the sole 29-May-coherent source) does not mention containment. The NO96-membrane GTT/iMarine 35351 article describes Knutsen's EARLIER 08-May order (363.2bn KRW, delivery Jun-2029 = backend row 1205), a distinct cluster (Rule E split on date/price/delivery) -- not citable for row 1219. Left blank."
+    },
+    {
+      "row_id": "1219",
+      "field": "Propulsion type",
+      "searched": "iMarine 35664 (no engine in body), WebSearch 'Knutsen Hanwha 2026 LNG carrier WinGD/MAN engine'",
+      "as_of": "2026-06-04",
+      "note": "No cluster-coherent source names the 29-May-2026 Knutsen vessel's engine type. Cannot infer from the 08-May Knutsen order (Rule E). Left blank."
+    },
+    {
+      "row_id": "1219",
+      "field": "Operator/charterer",
+      "searched": "iMarine 35664, WebSearch 'Knutsen Hanwha ninth LNG carrier charter'",
+      "as_of": "2026-06-04",
+      "note": "No charterer/operator disclosed for Knutsen's 29-May-2026 follow-on order (iMarine 35664: 'follow-on order from ... Knutsen OAS Shipping', no charter named). Left blank."
+    },
+    {
+      "row_id": "1152",
+      "field": "Vessel type",
+      "searched": "WebSearch 'NYK Ocean Yield 200,000 cbm LNG carrier conventional/Q-Max/largest'; NYK official PR; LNG Prime 176824; Maritime Gateway; CSB (typecap 'LNG Tanker, 200,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No source classifies these 200,000 cbm membrane carriers with a controlled-vocab Vessel type ('conventional'/'q-flex'/'q-max'/etc.). 200,000 cbm is above the conventional norm (~145-180k) but they are membrane (not Moss/spherical) and not Qatari q-flex/q-max class. Left blank rather than guess (Rule F: value must be in source body). Applies identically to sister rows 1153, 1154, 1155."
+    },
+    {
+      "row_id": "1152",
+      "field": "Price",
+      "searched": "WebSearch NYK/Ocean Yield price; LNG Prime 179423 ($1.02bn / $254m-per-vessel / four / by Nov-2029); first-search '$1.04 billion'; NYK PR (no price); Maritime Gateway",
+      "as_of": "2026-06-03",
+      "note": "No verbatim per-ship price unambiguously tied to the 05-Jan-2026 quartet (rows 1152-1155). The ~$1.0bn figures attach to LNG Prime 179423, which describes a contract 'by November 2029' / 'Americas owner' / capacity absent - reads as a later option-exercise tranche, not the 05-Jan order (Rule E cluster-split: distinct delivery + count). Citing it on these rows would risk cross-cluster contamination. Left blank. Applies identically to 1153, 1154, 1155. Recommend revisiting once a per-ship price for the original Jan quartet is published verbatim."
+    },
+    {
+      "row_id": "1167",
+      "field": "Cargo type",
+      "searched": "Riviera 87924; LNG Prime 178882; iMarine 32288; Splash247; SeaNews; CSB",
+      "as_of": "2026-06-03",
+      "note": "No source states tank/containment type for the Tsakos hull 3643. (Almost certainly membrane for an HD Hyundai 174,000 cbm newbuild, but no naming source -> left blank per Rule F.)"
+    },
+    {
+      "row_id": "1167",
+      "field": "Vessel type",
+      "searched": "Riviera 87924; LNG Prime 178882; iMarine 32288; Splash247; CSB ('LNG Tanker, 174,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No source uses a controlled-vocab Vessel type word for this hull. (174,000 cbm is standard 'conventional' size, but not stated verbatim -> left blank per Rule F.)"
+    },
+    {
+      "row_id": "1167",
+      "field": "Propulsion type",
+      "searched": "Riviera 87924; LNG Prime 178882; iMarine 32288; Splash247; SeaNews",
+      "as_of": "2026-06-03",
+      "note": "No source states propulsion/engine type for the Tsakos hull. Left blank."
+    },
+    {
+      "row_id": "1167",
+      "field": "Operator/charterer",
+      "searched": "Riviera 87924; LNG Prime 178882; iMarine 32288; Splash247",
+      "as_of": "2026-06-03",
+      "note": "No charterer named; Tsakos is the owner and no third-party charter is reported for this newbuild. Left blank."
+    },
+    {
+      "row_id": "1214",
+      "field": "IMO number",
+      "searched": "Backend has no IMO for Hayfin rows -> SOP 6a.8 IMO->marinetraffic tracker N/A (no IMO to look up); WebSearch hull/IMO; CSB (Hayfin not indexed at Ulsan)",
+      "as_of": "2026-06-03",
+      "note": "No IMO available in backend and no public source provides one for the 14-May-2026 Hayfin pair (order too fresh; not yet in vessel databases). Documented blank per 6a.9. Applies identically to sister row 1215."
+    },
+    {
+      "row_id": "1214",
+      "field": "Hull number",
+      "searched": "CSB hyundai-ulsan full 50-row sweep (0 Hayfin rows; newest LNG = NYK 2026-03, Tsakos 2026-02); WebSearch '\"Hayfin\" LNG Hull HD Hyundai 3644/3645/3646'; Riviera 88768; IndexBox; LNG Prime 186566; Splash247",
+      "as_of": "2026-06-03",
+      "note": "Hull numbers never publicly disclosed: HD KSOE's regulatory filing cited only an 'Oceania-based client'; brokers attribute the slots to Hayfin (via an Evalend slot transfer) but no PR/DART/class-society/database source prints a hull number. CSB has not yet indexed the 14-May order. Documented blank per 6a.9; recommend re-running in 1-3 months once CSB indexes. Applies identically to sister row 1215."
+    },
+    {
+      "row_id": "1214",
+      "field": "Cargo type",
+      "searched": "Riviera 88768; IndexBox; LNG Prime 186566; Splash247; WebSearch Hayfin specs",
+      "as_of": "2026-06-03",
+      "note": "No source states tank/containment type. (Likely membrane for HD Hyundai 174,000 cbm, but unstated -> blank per Rule F.) Applies identically to 1215."
+    },
+    {
+      "row_id": "1214",
+      "field": "Vessel type",
+      "searched": "Riviera 88768; IndexBox; LNG Prime 186566; Splash247",
+      "as_of": "2026-06-03",
+      "note": "No controlled-vocab Vessel type word in any source for the Hayfin hulls. Left blank per Rule F. Applies identically to 1215."
+    },
+    {
+      "row_id": "1214",
+      "field": "Propulsion type",
+      "searched": "Riviera 88768; IndexBox; LNG Prime 186566; Splash247; WebSearch Hayfin propulsion",
+      "as_of": "2026-06-03",
+      "note": "No source states propulsion/engine type for the Hayfin hulls. Left blank. Applies identically to 1215."
+    },
+    {
+      "row_id": "1215",
+      "field": "IMO number",
+      "searched": "see row 1214 IMO note (sister hull, identical)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1214. No IMO in backend; tracker N/A. Documented blank per 6a.9."
+    },
+    {
+      "row_id": "1215",
+      "field": "Hull number",
+      "searched": "see row 1214 Hull note (sister hull, identical)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1214. No public source discloses a hull number; not on CSB. Documented blank per 6a.9."
+    },
+    {
+      "row_id": "1215",
+      "field": "Cargo type",
+      "searched": "see row 1214 Cargo type note (sister hull, identical)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1214. No tank-type source. Blank per Rule F."
+    },
+    {
+      "row_id": "1215",
+      "field": "Vessel type",
+      "searched": "see row 1214 Vessel type note (sister hull, identical)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1214. No controlled-vocab Vessel type source. Blank per Rule F."
+    },
+    {
+      "row_id": "1215",
+      "field": "Propulsion type",
+      "searched": "see row 1214 Propulsion type note (sister hull, identical)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1214. No propulsion source. Blank per Rule F."
+    },
+    {
+      "row_id": "1158",
+      "field": "Vessel type",
+      "searched": "Riviera 87617, ShipUniverse, iMarine 31970, GTT/LNG Prime 177764, IndexBox",
+      "as_of": "2026-06-03",
+      "note": "Value is almost certainly 'conventional' (standard 175,000 cbm LNGC), but no cluster-coherent source contains the literal token 'conventional' (verified absent in iMarine 31970), so Rule F value-presence is not met. Cannot reuse the COSCO sibling rows' 'conventional' value -- different cluster (Rule E). Left blank; recommend human vocab decision or accept as derivable 'conventional'."
+    },
+    {
+      "row_id": "1158",
+      "field": "Price",
+      "searched": "Riviera 87617, ShipUniverse, iMarine 31970, Splash247 (shandong-marine-in-for-lng-carrier-quartet-at-jiangnan)",
+      "as_of": "2026-06-03",
+      "note": "No firm contract value disclosed for the 30-Jan-2026 Minsheng/Shandong order. Riviera states price not disclosed; ShipUniverse gives only an estimate ('roughly $220 million per ship'), which is broker/analyst estimate not a disclosed value -> not citable as a firm Price under Rule F. Left blank."
+    },
+    {
+      "row_id": "1159",
+      "field": "Vessel type",
+      "searched": "same as row 1158",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1158 -- 'conventional' not present verbatim in any cluster-coherent source; Rule F value-presence not met. Left blank."
+    },
+    {
+      "row_id": "1159",
+      "field": "Price",
+      "searched": "same as row 1158",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1158 -- no disclosed firm contract value (only ~$220M/ship estimate). Left blank."
+    },
+    {
+      "row_id": "1160",
+      "field": "Vessel type",
+      "searched": "same as row 1158",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1158 -- 'conventional' not present verbatim. Left blank."
+    },
+    {
+      "row_id": "1160",
+      "field": "Price",
+      "searched": "same as row 1158",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1158 -- no disclosed firm contract value. Left blank."
+    },
+    {
+      "row_id": "1161",
+      "field": "Vessel type",
+      "searched": "same as row 1158",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1158 -- 'conventional' not present verbatim. Left blank."
+    },
+    {
+      "row_id": "1161",
+      "field": "Price",
+      "searched": "same as row 1158",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1158 -- no disclosed firm contract value. Left blank."
+    },
+    {
+      "row_id": "1220",
+      "field": "Hull number",
+      "searched": "CSB jiangnan p1 (cached 2026-06-03 19:35; H2922-H2933 'COSCO Shipping Lines' rows are CONTAINER ships, not the LNG quartet), WebSearch 'COSCO Shipping Energy Jiangnan four LNG carriers'",
+      "as_of": "2026-06-03",
+      "note": "COSCO/Shell LNG quartet contracted ~02-Jun-2026 (~1 day old); no hull assigned/indexed on CSB yet. Backend has no IMO for this row, so SOP 6a.8 IMO->marine-tracker fallback does not apply. Recommend re-running in 1-3 months when CSB indexes the order."
+    },
+    {
+      "row_id": "1220",
+      "field": "Name",
+      "searched": "CSB jiangnan p1, WebSearch COSCO Jiangnan quartet",
+      "as_of": "2026-06-03",
+      "note": "No commercial name or hull-label assigned yet for the COSCO quartet (no hull on CSB, no IMO in backend). Left blank."
+    },
+    {
+      "row_id": "1220",
+      "field": "IMO number",
+      "searched": "backend (no IMO present), CSB jiangnan p1",
+      "as_of": "2026-06-03",
+      "note": "No IMO in backend for this just-contracted COSCO vessel; nothing to look up via SOP 6a.8. Left blank."
+    },
+    {
+      "row_id": "1220",
+      "field": "Cargo type",
+      "searched": "LNG Prime 188357 (COSCO article, body paywalled -- no tank type in visible content), Splash247 cosco-inks-953m (HTTP 403 here), Seatrade jiangnan-shipyard-wins-four... (HTTP 403 here), WebSearch 'COSCO ... GTT membrane Mark III'",
+      "as_of": "2026-06-03",
+      "note": "Likely 'membrane' (Jiangnan 175k LNGCs are GTT membrane) but NO cluster-coherent source names the COSCO quartet's tank type. The only GTT four-ship Jiangnan tank-design order on record is for SHANDONG Marine Energy (a different cluster) -- citing it here would violate Rule E. No GTT tank-design announcement for the COSCO order found as of 2026-06-03. Left blank; recommend re-check when a COSCO-specific GTT/tank source publishes."
+    },
+    {
+      "row_id": "1220",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 188357 (paywalled body), Splash247 403, Seatrade 403, WebSearch 'COSCO ... WinGD engine type'",
+      "as_of": "2026-06-03",
+      "note": "Likely 'X-DF' (WinGD) by yard/series analogy, but no cluster-coherent source names the COSCO quartet's engine. Cannot infer from the Shandong order (Rule E). Left blank."
+    },
+    {
+      "row_id": "1221",
+      "field": "Hull number",
+      "searched": "CSB jiangnan p1, WebSearch COSCO Jiangnan quartet",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no hull on CSB yet, no IMO in backend. Left blank."
+    },
+    {
+      "row_id": "1221",
+      "field": "Name",
+      "searched": "CSB jiangnan p1",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no name/hull assigned. Left blank."
+    },
+    {
+      "row_id": "1221",
+      "field": "IMO number",
+      "searched": "backend (no IMO), CSB jiangnan p1",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no IMO to look up. Left blank."
+    },
+    {
+      "row_id": "1221",
+      "field": "Cargo type",
+      "searched": "LNG Prime 188357 (paywalled), Splash247 403, Seatrade 403, WebSearch",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no COSCO-coherent tank-type source; Shandong GTT order is a different cluster (Rule E). Left blank."
+    },
+    {
+      "row_id": "1221",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 188357 (paywalled), Splash247 403, Seatrade 403, WebSearch",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no COSCO-coherent propulsion source. Left blank."
+    },
+    {
+      "row_id": "1222",
+      "field": "Hull number",
+      "searched": "CSB jiangnan p1, WebSearch COSCO Jiangnan quartet",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no hull on CSB yet, no IMO in backend. Left blank."
+    },
+    {
+      "row_id": "1222",
+      "field": "Name",
+      "searched": "CSB jiangnan p1",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no name/hull assigned. Left blank."
+    },
+    {
+      "row_id": "1222",
+      "field": "IMO number",
+      "searched": "backend (no IMO), CSB jiangnan p1",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no IMO to look up. Left blank."
+    },
+    {
+      "row_id": "1222",
+      "field": "Cargo type",
+      "searched": "LNG Prime 188357 (paywalled), Splash247 403, Seatrade 403, WebSearch",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no COSCO-coherent tank-type source. Left blank."
+    },
+    {
+      "row_id": "1222",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 188357 (paywalled), Splash247 403, Seatrade 403, WebSearch",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no COSCO-coherent propulsion source. Left blank."
+    },
+    {
+      "row_id": "1223",
+      "field": "Hull number",
+      "searched": "CSB jiangnan p1, WebSearch COSCO Jiangnan quartet",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no hull on CSB yet, no IMO in backend. Left blank."
+    },
+    {
+      "row_id": "1223",
+      "field": "Name",
+      "searched": "CSB jiangnan p1",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no name/hull assigned. Left blank."
+    },
+    {
+      "row_id": "1223",
+      "field": "IMO number",
+      "searched": "backend (no IMO), CSB jiangnan p1",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no IMO to look up. Left blank."
+    },
+    {
+      "row_id": "1223",
+      "field": "Cargo type",
+      "searched": "LNG Prime 188357 (paywalled), Splash247 403, Seatrade 403, WebSearch",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no COSCO-coherent tank-type source. Left blank."
+    },
+    {
+      "row_id": "1223",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 188357 (paywalled), Splash247 403, Seatrade 403, WebSearch",
+      "as_of": "2026-06-03",
+      "note": "Sibling of 1220 -- no COSCO-coherent propulsion source. Left blank."
+    },
+    {
+      "row_id": "1148",
+      "field": "Operator/charterer",
+      "searched": "lngprime 169960, riviera 86931, ships monthly, portnews 384950/391499, shippingtelegraph — BW LNG ordered the H8340/H8341 duo for its own fleet; LNG Prime/Riviera quote BW saying the ships' 'interesting technical options' are to be 'developed further with future charterers', i.e. no charterer named at order.",
+      "as_of": "2026-06-04",
+      "note": "No operator/charterer publicly named for this speculative BW order; leave blank."
+    },
+    {
+      "row_id": "1149",
+      "field": "Operator/charterer",
+      "searched": "same as 1148 (H8340/H8341 duo, no charterer named).",
+      "as_of": "2026-06-04",
+      "note": "No operator/charterer named; leave blank."
+    },
+    {
+      "row_id": "1212",
+      "field": "Vessel type",
+      "searched": "CSB HD Hyundai Samho yard page (50 rows, p1) does NOT yet list the 13-May-2026 BW duo (hulls H8358/H8359 unassigned/un-indexed on CSB); no trade-press source uses the literal token 'conventional'. The established project convention cites CSB 'LNG Tanker' for Vessel type=conventional, which is unavailable here.",
+      "as_of": "2026-06-04",
+      "note": "Conventional LNGC by description, but no value-present source. Leave blank; human can mirror from BW sibling rows once CSB indexes the hull. Re-run when CSB lists H8358/H8359."
+    },
+    {
+      "row_id": "1212",
+      "field": "Hull number",
+      "searched": "CSB HD Hyundai Samho p1 (re-fetched 2026-06-04) — 13-May order not yet indexed. portnews 391499 reports the pair 'are listed as H8358 and H8359' per BW Group's fleet list, both 177,000 cbm / XDF / 2029. DART/KIND/class-society not checked for per-hull (Korean templates omit hulls).",
+      "as_of": "2026-06-04",
+      "note": "CANDIDATE HULLS H8358/H8359 found (portnews 391499, single source, BW fleet-list-derived) but the per-row mapping (1212 vs 1213) is NOT determinable from the source. Left blank pending CSB confirmation + per-row assignment; flagged for human review (see candidate_findings)."
+    },
+    {
+      "row_id": "1213",
+      "field": "Hull number",
+      "searched": "same as 1212 (candidate hulls H8358/H8359 per portnews 391499; not yet on CSB; per-row mapping ambiguous).",
+      "as_of": "2026-06-04",
+      "note": "Candidate hull H8358/H8359 (one of the pair) — see candidate_findings; left blank pending CSB confirmation."
+    },
+    {
+      "row_id": "1212",
+      "field": "IMO number",
+      "searched": "No IMO in backend for this row; imo_tracker.py requires an IMO input. Hull (H8358/H8359) not yet on CSB and not indexed by marinetraffic.org/vesselfinder by hull (newbuild contracted 13-May-2026, ~3 weeks old).",
+      "as_of": "2026-06-04",
+      "note": "No IMO available for IMO->tracker lookup; leave blank. Re-run in 1-3 months."
+    },
+    {
+      "row_id": "1213",
+      "field": "IMO number",
+      "searched": "same as 1212 (no backend IMO, hull not indexed).",
+      "as_of": "2026-06-04",
+      "note": "No IMO available; leave blank."
+    },
+    {
+      "row_id": "1213",
+      "field": "Vessel type",
+      "searched": "same as 1212 (CSB does not yet list H8358/H8359; no 'conventional' token in trade press).",
+      "as_of": "2026-06-04",
+      "note": "Leave blank; mirror from sibling once CSB indexes the hull."
+    },
+    {
+      "row_id": "1216",
+      "field": "IMO number",
+      "searched": "Backend IMO blank for CMHI-282-07; imo_tracker.py needs an IMO. CSB ship-detail page (ship.aspx?...SFFCC) shows 'Under Construction' with no IMO. Web search ('CMHI-282-07' Celsius IMO marinetraffic/vesselfinder) returned no per-hull IMO index. Sibling rows 251-256 carry IMOs (1018676..1066104) but those are IGU-report-sourced and the -07/-08 cells are blank.",
+      "as_of": "2026-06-04",
+      "note": "No public IMO for hull -07 yet (delivery 2028-05; pre-delivery). Leave blank; re-run nearer delivery."
+    },
+    {
+      "row_id": "1217",
+      "field": "IMO number",
+      "searched": "same as 1216 (CMHI-282-08, delivery 2028-09); CSB ship-detail 'Under Construction', no IMO; no per-hull index found.",
+      "as_of": "2026-06-04",
+      "note": "No public IMO for hull -08 yet. Leave blank; re-run nearer delivery."
+    },
+    {
+      "row_id": "1216",
+      "field": "Price",
+      "searched": "lngprime 69940 ('The sources did not provide [the value]'), offshore-energy quartet article, Riviera 78308, Splash247 (Cloudflare-blocked). No public per-ship or per-order price for the CMHI-282 Celsius series found.",
+      "as_of": "2026-06-04",
+      "note": "Order value never disclosed (sources explicitly say so). Leave blank."
+    },
+    {
+      "row_id": "1217",
+      "field": "Price",
+      "searched": "same as 1216 (CMHI-282 series price undisclosed).",
+      "as_of": "2026-06-04",
+      "note": "Leave blank."
+    },
+    {
+      "row_id": "1209",
+      "field": "Cargo type",
+      "searched": "LNG Prime 186747 (PASS; visible body has Seapeak+Samsung+three+X-DF but NO 'membrane'); Splash247 756m-trio (HTTP 403 Cloudflare); TradeWinds trio article; Seapeak.com PR (the only Seapeak/Samsung PR found is the Nov-2022 5-ship MEGA order, not this one); GTT.fr 'three new LNG Carriers' release (= July-2022 Asian-shipowner order, delivery 2025/2026 -> cluster-incoherent); targeted 'Seapeak Samsung membrane Mark III 2026'",
+      "as_of": "2026-06-03",
+      "note": "No cluster-coherent source contains a containment value for the 01-May-2026 Seapeak/Woodside trio. Trade press describes the ships as X-DF only (propulsion), never the tank/containment system. The generic GTT '3 LNGC' release is a different, older order (July 2022, delivery 2025/2026) -> Rule E incoherent, deliberately not cited. Almost certainly membrane once a GTT/tank-design story for this specific trio surfaces, but not yet citable under Rule F. Document-blank; re-check in 1-3 months."
+    },
+    {
+      "row_id": "1210",
+      "field": "Cargo type",
+      "searched": "Same as 1209 (LNG Prime 186747; Splash247 403; TradeWinds; Seapeak PR; GTT 3-LNGC = 2022 order)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No containment source for this trio; X-DF (propulsion) only in visible coverage. Document-blank."
+    },
+    {
+      "row_id": "1211",
+      "field": "Cargo type",
+      "searched": "Same as 1209 (LNG Prime 186747; Splash247 403; TradeWinds; Seapeak PR; GTT 3-LNGC = 2022 order)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No containment source for this trio; X-DF only. Document-blank."
+    },
+    {
+      "row_id": "1209",
+      "field": "Vessel type",
+      "searched": "LNG Prime 186747; Splash247 (403); CSB Samsung orderbook (trio not yet indexed; sister hulls 2775/2776 typed 'LNG Tanker, 174,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No cluster-coherent source contains the controlled-vocab token 'conventional' verbatim. CSB labels Samsung 174k LNGCs 'LNG Tanker'; trade press says 'LNG carrier'. Per controlled_vocab a 174,000 cbm carrier is 'conventional', but Rule F requires the literal value in a cited URL. Document-blank (human can set 'conventional' deterministically). Consistent with sibling subagent samsung_B's treatment of all Samsung 174k rows."
+    },
+    {
+      "row_id": "1210",
+      "field": "Vessel type",
+      "searched": "LNG Prime 186747; Splash247 (403); CSB (not indexed)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No 'conventional' verbatim in any source. Document-blank."
+    },
+    {
+      "row_id": "1211",
+      "field": "Vessel type",
+      "searched": "LNG Prime 186747; Splash247 (403); CSB (not indexed)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No 'conventional' verbatim. Document-blank."
+    },
+    {
+      "row_id": "1209",
+      "field": "Shipowner country/area",
+      "searched": "backend.csv sibling scan (all 35 Seapeak rows have blank Shipowner country/area -> no Rule-E mirror value); LNG Prime 186747 / Splash247 (describe Seapeak as Stonepeak-controlled but state no owner country for the cell)",
+      "as_of": "2026-06-03",
+      "note": "The backend has never populated Shipowner country/area for ANY Seapeak row (35/35 blank), so there is no unambiguous sibling value to mirror (owner-derivable autofill yields nothing) and the established backend convention is to leave Seapeak country/area blank. Not proposing a researched value here (would diverge from 33 sibling rows); document-blank, defer to the backend's existing convention. (Seapeak is Stonepeak-controlled, HQ Glasgow / Bermuda-incorporated, but the cell convention is blank.)"
+    },
+    {
+      "row_id": "1210",
+      "field": "Shipowner country/area",
+      "searched": "backend.csv sibling scan (all Seapeak rows blank); LNG Prime 186747",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. Backend convention leaves Seapeak country/area blank; no sibling value to mirror. Document-blank."
+    },
+    {
+      "row_id": "1211",
+      "field": "Shipowner country/area",
+      "searched": "backend.csv sibling scan (all Seapeak rows blank); LNG Prime 186747",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. Backend convention leaves Seapeak country/area blank; no sibling value to mirror. Document-blank."
+    },
+    {
+      "row_id": "1209",
+      "field": "Hull number",
+      "searched": "CSB Samsung orderbook p1 (Records:149; newest LNG contract indexed = 2026-03; 01-May-2026 trio not yet listed -> hull not assigned/indexed); 6a fallback: targeted '\"Samsung\" Seapeak hull 2026' search returned no hull; backend has no IMO so 6a.8 IMO->tracker N/A; DART standardized template omits hulls",
+      "as_of": "2026-06-03",
+      "note": "No public source contains a hull number for the 01-May-2026 Seapeak trio. CSB has not indexed the order (newest = 2026-03). Document-blank per SOP 6a.9; re-run when CSB indexes the order."
+    },
+    {
+      "row_id": "1210",
+      "field": "Hull number",
+      "searched": "CSB Samsung p1 (not indexed); targeted search; backend IMO blank (6a.8 N/A)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No public hull source. Document-blank per 6a.9."
+    },
+    {
+      "row_id": "1211",
+      "field": "Hull number",
+      "searched": "CSB Samsung p1 (not indexed); targeted search; backend IMO blank (6a.8 N/A)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No public hull source. Document-blank per 6a.9."
+    },
+    {
+      "row_id": "1209",
+      "field": "IMO number",
+      "searched": "backend IMO cell blank -> SOP 6a.8/9 IMO->tracker requires a backend IMO, not applicable; CSB Samsung p1 (order not indexed); no vessel-database entry pre-IMO for a 01-May-2026 order",
+      "as_of": "2026-06-03",
+      "note": "Fresh order (01-May-2026); no IMO assigned/indexed publicly and the backend IMO cell is blank (so no IMO to look up). Document-blank; re-run 6a.8/9 in 1-3 months when an IMO is assigned."
+    },
+    {
+      "row_id": "1210",
+      "field": "IMO number",
+      "searched": "backend IMO blank (6a.8 N/A); CSB (not indexed)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No IMO available/indexed. Document-blank."
+    },
+    {
+      "row_id": "1211",
+      "field": "IMO number",
+      "searched": "backend IMO blank (6a.8 N/A); CSB (not indexed)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1209. No IMO available/indexed. Document-blank."
+    },
+    {
+      "row_id": "1207",
+      "field": "Cargo type",
+      "searched": "LNG Prime 186477 (PASS; visible title/lead/tags name Samsung + TMS Cardiff Gas but NO containment value); en.sedaily.com 545m (PASS; no propulsion/containment in visible text); IndexBox 5056m; Offshore Energy 'TMS Cardiff orders LNG pair at Samsung' (= Nov-2018 order, delivery 2020 -> incoherent); Marine Log 'TMS Cardiff X-DF' (HTTP 403); GTT.fr 'two new LNG Carriers' -4 (= 18-Feb-2026 order, NO owner named -> not attributable to TMS); targeted 'TMS Cardiff Samsung 2026 Mark III membrane'",
+      "as_of": "2026-06-03",
+      "note": "No cluster-coherent source contains a containment value for the 14-May-2026 TMS Cardiff duo. The 'TMS Cardiff + Mark III' hits all describe OLDER TMS/Samsung orders (Nov-2018 delivery-2020; and the 2025-08 hulls 2754-2757), not this 14-May-2026 order. The 18-Feb-2026 GTT 'two LNGC 174,000 Mark III Flex' release names no owner and cannot be attributed to TMS Cardiff under Rule E. Document-blank; likely membrane once a TMS-specific GTT/tank story surfaces."
+    },
+    {
+      "row_id": "1208",
+      "field": "Cargo type",
+      "searched": "Same as 1207 (LNG Prime 186477; en.sedaily 545m; IndexBox; Offshore Energy=2018; Marine Log 403; GTT -4 = Feb-2026 unnamed)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1207. No containment source for the 14-May-2026 order. Document-blank."
+    },
+    {
+      "row_id": "1207",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 186477 (no propulsion in visible content); en.sedaily 545m (no propulsion); IndexBox; Marine Log 'TMS Cardiff X-DF' (HTTP 403, and that article = older order); targeted 'TMS Cardiff Samsung May 2026 X-DF WinGD'",
+      "as_of": "2026-06-03",
+      "note": "No cluster-coherent source states a propulsion value (X-DF/ME-GA/etc.) for the 14-May-2026 TMS Cardiff duo in visible content. The X-DF mentions found attach to earlier TMS orders. Document-blank; re-check when a class-society newbuild entry or yard/owner PR surfaces propulsion for this order."
+    },
+    {
+      "row_id": "1208",
+      "field": "Propulsion type",
+      "searched": "Same as 1207 (LNG Prime 186477; en.sedaily; Marine Log 403 = older order)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1207. No propulsion value for this order in visible content. Document-blank."
+    },
+    {
+      "row_id": "1207",
+      "field": "Vessel type",
+      "searched": "LNG Prime 186477; en.sedaily 545m; CSB Samsung (this duo not indexed; sister TMS hulls 2754-2757 typed 'LNG Tanker, 174,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No source contains 'conventional' verbatim (CSB 'LNG Tanker'; press 'LNG carrier'). Document-blank (human can set 'conventional' deterministically). Consistent with sibling subagent samsung_B."
+    },
+    {
+      "row_id": "1208",
+      "field": "Vessel type",
+      "searched": "LNG Prime 186477; en.sedaily 545m; CSB (not indexed)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1207. No 'conventional' verbatim. Document-blank."
+    },
+    {
+      "row_id": "1207",
+      "field": "Hull number",
+      "searched": "CSB Samsung p1 (newest LNG = 2026-03; 14-May-2026 duo not indexed; CSB TMS hulls 2754-2757 are the 2025-08 order, not this one); 6a fallback targeted '\"Samsung\" \"TMS Cardiff\" 2026 hull'; backend IMO blank (6a.8 N/A); DART template omits hulls",
+      "as_of": "2026-06-03",
+      "note": "No public source contains a hull number for the 14-May-2026 TMS Cardiff Samsung duo. CSB not yet indexed. Document-blank per 6a.9; re-run when CSB indexes the order."
+    },
+    {
+      "row_id": "1208",
+      "field": "Hull number",
+      "searched": "CSB Samsung p1 (not indexed); targeted search; backend IMO blank (6a.8 N/A)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1207. No public hull source. Document-blank per 6a.9."
+    },
+    {
+      "row_id": "1207",
+      "field": "IMO number",
+      "searched": "backend IMO cell blank -> 6a.8 IMO->tracker not applicable; CSB (not indexed); no vessel-DB entry pre-IMO",
+      "as_of": "2026-06-03",
+      "note": "Fresh order (14-May-2026); no IMO assigned/indexed and backend IMO cell blank. Document-blank; re-run 6a.8/9 in 1-3 months."
+    },
+    {
+      "row_id": "1208",
+      "field": "IMO number",
+      "searched": "backend IMO blank (6a.8 N/A); CSB (not indexed)",
+      "as_of": "2026-06-03",
+      "note": "Sister hull of 1207. No IMO available/indexed. Document-blank."
+    },
+    {
+      "row_id": "1206",
+      "field": "Propulsion type",
+      "searched": "GTT.fr FSRU release (states containment 'Mark III membrane' but NO propulsion); LNG Industry FSRU article; thestar 04-May FSRU contract; LNG Prime 186477; targeted 'MISC FSRU Samsung 170,000 propulsion'",
+      "as_of": "2026-06-03",
+      "note": "No public source states a propulsion value for the MISC FSRU. FSRU propulsion/regas configuration not disclosed in visible content (the GTT release covers tank/containment only). MISC LNGC siblings in backend use varying propulsion (X-DF/steam/DFDE), so no deterministic Rule-E mirror, and an FSRU is a different vessel class anyway. Document-blank."
+    },
+    {
+      "row_id": "1206",
+      "field": "Hull number",
+      "searched": "CSB Samsung p1 (no FSRU/MISC row indexed; newest LNG = 2026-03); 6a fallback targeted '\"Samsung\" MISC FSRU hull 2026'; backend IMO blank (6a.8 N/A); GTT/thestar/LNG Industry name no hull",
+      "as_of": "2026-06-03",
+      "note": "No public source contains a hull number for the 04-May-2026 MISC FSRU. CSB has no MISC/FSRU entry for this order. Document-blank per 6a.9; re-run when CSB indexes it."
+    },
+    {
+      "row_id": "1206",
+      "field": "IMO number",
+      "searched": "backend IMO cell blank -> 6a.8 IMO->tracker not applicable; CSB (not indexed); no vessel-DB entry pre-IMO for the FSRU",
+      "as_of": "2026-06-03",
+      "note": "Fresh order (04-May-2026); no IMO assigned/indexed and backend IMO cell blank. Document-blank; re-run 6a.8/9 in 1-3 months."
+    },
+    {
+      "row_id": "1156",
+      "field": "Vessel type",
+      "searched": "LNG Prime 173884; GTT.fr (Purus) -2/-3; Riviera 87266; Splash247 'purus-adds-...' (HTTP 403 Cloudflare); CSB Samsung orderbook (hull Samsung 2773 = 'LNG Tanker, 174,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No cluster-coherent source contains the controlled-vocab value 'conventional' verbatim. CSB says 'LNG Tanker'; trade press/GTT say 'LNG carrier'. Per controlled_vocab a 174,000 cbm carrier is 'conventional' but Rule F requires the literal value in a cited URL. Blank with search log (a human can set 'conventional' as deterministic class)."
+    },
+    {
+      "row_id": "1156",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 173884; GTT.fr (Purus); Riviera 87266; Splash247 (403); targeted search 'Purus Samsung propulsion WinGD X-DF dual fuel'",
+      "as_of": "2026-06-03",
+      "note": "No public source states a propulsion value (X-DF / ME-GA / ME-GI / DFDE) for the Purus duo in visible content. Document-blank; re-check when a class-society newbuild entry or yard PR surfaces propulsion."
+    },
+    {
+      "row_id": "1156",
+      "field": "Operator/charterer",
+      "searched": "LNG Prime 173884 ('it remains unclear whether Celsius is involved'); GTT.fr; Riviera 87266; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "No charterer/operator confirmed. LNG Prime explicitly says charterer involvement (Celsius) is unclear. Document-blank."
+    },
+    {
+      "row_id": "1156",
+      "field": "Price",
+      "searched": "LNG Prime 173884; GTT.fr; Riviera 87266; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "Only an aggregate figure is published ('about $503m' for the two-ship duo); no clean per-ship Price is stated in a cluster-coherent source. Document-blank rather than propose an aggregate/derived per-ship figure (avoids Rule F value-presence mismatch)."
+    },
+    {
+      "row_id": "1157",
+      "field": "Vessel type",
+      "searched": "LNG Prime 173884; GTT.fr (Purus); Riviera 87266; Splash247 (403); CSB (hull Samsung 2774 = 'LNG Tanker, 174,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No source contains 'conventional' verbatim (CSB 'LNG Tanker'; press 'LNG carrier'). Document-blank."
+    },
+    {
+      "row_id": "1157",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 173884; GTT.fr (Purus); Riviera 87266; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "No propulsion value in any visible cluster-coherent source. Document-blank."
+    },
+    {
+      "row_id": "1157",
+      "field": "Operator/charterer",
+      "searched": "LNG Prime 173884 (charterer 'unclear'); GTT.fr; Riviera 87266; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "No charterer named. Document-blank."
+    },
+    {
+      "row_id": "1157",
+      "field": "Price",
+      "searched": "LNG Prime 173884; GTT.fr; Riviera 87266; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "Only aggregate '$503m for the duo'; no clean per-ship Price in a coherent source. Document-blank."
+    },
+    {
+      "row_id": "1162",
+      "field": "Vessel type",
+      "searched": "LNG Prime 180833; Cyprus 2026/01/07 + 2026/01/20; GTT.fr; CSB (hull Samsung 2781 = 'LNG Tanker, 174,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No source contains 'conventional' verbatim (CSB 'LNG Tanker'; press 'LNG carrier'). Document-blank."
+    },
+    {
+      "row_id": "1162",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 180833; Cyprus 2026/01/07 + 2026/01/20; GTT.fr",
+      "as_of": "2026-06-03",
+      "note": "No propulsion value (X-DF/ME-GA/etc.) in any visible cluster-coherent source. Document-blank."
+    },
+    {
+      "row_id": "1162",
+      "field": "Operator/charterer",
+      "searched": "LNG Prime 180833; Cyprus 2026/01/07 ('Oceania Shipping Company'); Splash247 'JP Morgan expands...' (403)",
+      "as_of": "2026-06-03",
+      "note": "No charterer/operator named (this is a JP Morgan owner-side order; no charter party disclosed). Document-blank."
+    },
+    {
+      "row_id": "1162",
+      "field": "Price",
+      "searched": "LNG Prime 180833 ('$252 million'); Cyprus 2026/01/07 (721.1bn won); en.sedaily.com ($526M); search '$505M for two'",
+      "as_of": "2026-06-03",
+      "note": "Published figures are aggregate/round and currency-mixed (721.1bn won for two; ~$252m and ~$252.5m/ship cited loosely; $505m for two). No clean single-ship Price+currency in one coherent URL that matches a backend Price cell unambiguously. Document-blank to avoid a Rule F / currency-conversion mismatch; flag for human pricing decision."
+    },
+    {
+      "row_id": "1163",
+      "field": "Vessel type",
+      "searched": "LNG Prime 180833; Cyprus 2026/01/07 + 2026/01/20; GTT.fr; CSB (hull Samsung 2782 = 'LNG Tanker, 174,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No 'conventional' verbatim in any source. Document-blank."
+    },
+    {
+      "row_id": "1163",
+      "field": "Propulsion type",
+      "searched": "LNG Prime 180833; Cyprus 2026/01/07 + 2026/01/20; GTT.fr",
+      "as_of": "2026-06-03",
+      "note": "No propulsion value in any visible cluster-coherent source. Document-blank."
+    },
+    {
+      "row_id": "1163",
+      "field": "Operator/charterer",
+      "searched": "LNG Prime 180833; Cyprus 2026/01/07; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "No charterer/operator named. Document-blank."
+    },
+    {
+      "row_id": "1163",
+      "field": "Price",
+      "searched": "LNG Prime 180833; Cyprus 2026/01/07 (721.1bn won); en.sedaily.com",
+      "as_of": "2026-06-03",
+      "note": "Aggregate/round, currency-mixed figures only; no clean single-ship Price+currency in a coherent URL. Document-blank; flag for human pricing decision."
+    },
+    {
+      "row_id": "1166",
+      "field": "Vessel type",
+      "searched": "GTT.fr 'one new LNG Carrier'; LNG Prime 178081; Splash247 'celsius-seals-...' (403); CSB (hull Samsung 2777 = 'LNG Tanker, 180,000 cbm')",
+      "as_of": "2026-06-03",
+      "note": "No source contains 'conventional' verbatim (CSB 'LNG Tanker'; press 'LNG carrier'). Document-blank."
+    },
+    {
+      "row_id": "1166",
+      "field": "Propulsion type",
+      "searched": "GTT.fr 'one new LNG Carrier'; LNG Prime 178081; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "No propulsion value stated in any visible cluster-coherent source. Document-blank."
+    },
+    {
+      "row_id": "1166",
+      "field": "Operator/charterer",
+      "searched": "GTT.fr; LNG Prime 178081 (lead: 'unidentified owner in Oceania', no charterer); Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "No charterer/operator named for the single 19-Feb-2026 Celsius order in visible content. (Search surfaced a JERA charter but that attaches to a DIFFERENT 2027-delivery Celsius/Samsung ship, not row 1166 -> not used.) Document-blank."
+    },
+    {
+      "row_id": "1166",
+      "field": "Price",
+      "searched": "GTT.fr; LNG Prime 178081; Splash247 (403); search 'Celsius single 180,000 Samsung Feb 2026 $252m'",
+      "as_of": "2026-06-03",
+      "note": "No firm single-ship Price disclosed in a cluster-coherent source for the 19-Feb-2026 Celsius order (figures in search results conflate with other Celsius/Samsung orders). Document-blank."
+    },
+    {
+      "row_id": "1218",
+      "field": "Shipowner",
+      "searched": "Cyprus 2026/06/02 (existing ref); Hellenic 'samsung-heavy-wins-five-vessel-order'; India Shipping News; Shipping Herald 'samsung-heavy-wins-five-vessel-order' (read: owner = 'a Bermuda-based shipping company', no name); Splash247 'JP Morgan expands...' (403); LNG Prime 187561; search 'Samsung 27 May Bermuda owner identified'",
+      "as_of": "2026-06-03",
+      "note": "Owner remains UNDISCLOSED as of 2026-06-03. All public coverage of the 27-May-2026 Samsung five-vessel order (1 LNG carrier in scope, ~$252M, delivery Oct-2028) describes the buyer only as 'a Bermuda-based shipping company'. Brokers link it to JP Morgan interests, UNCONFIRMED. (Same-order suezmax tankers are reported as contracted by 'Global Meridian', a Bermuda JP Morgan vehicle, but no source attaches a named owner to THIS LNG carrier.) prev_state='unknown'. Not fabricating an owner; no NEW corroborator proposed beyond the existing Cyprus ref (preserved automatically). If a future source names the registered owner, propose then with prev_state='unknown'."
+    },
+    {
+      "row_id": "1218",
+      "field": "IMO number",
+      "searched": "Backend IMO blank -> imo_tracker not applicable (SOP 6a.8 requires a backend IMO); CSB Samsung orderbook (newest indexed LNG ~2026-02/03; the 27-May order not yet listed)",
+      "as_of": "2026-06-03",
+      "note": "Fresh order (contract 27-May-2026), not yet in any vessel database or CSB; no IMO assigned/indexed publicly. Document-blank; re-run §6a.8/§9 in 1-3 months."
+    },
+    {
+      "row_id": "1218",
+      "field": "Name",
+      "searched": "CSB Samsung orderbook (not indexed); Cyprus/Hellenic/India/Shipping Herald/LNG Prime 187561 (no vessel name given)",
+      "as_of": "2026-06-03",
+      "note": "No commercial name or hull-label name published for this 27-May-2026 order. Document-blank."
+    },
+    {
+      "row_id": "1218",
+      "field": "Hull number",
+      "searched": "CSB Samsung orderbook (newest indexed ~2026-02/03, order not yet listed -> hull not assigned/indexed); §6a fallback: DART/KIND not run for a single Bermuda order with no public hull, class-society + vessel-DB have no entry pre-IMO; targeted search '27 May Samsung Bermuda LNG hull'",
+      "as_of": "2026-06-03",
+      "note": "No public source contains a hull number for the 27-May-2026 Samsung Bermuda LNG carrier. CSB not yet indexed; no IMO for §6a.8 tracker lookup. Document-blank per §6a.9; re-run when CSB indexes the order."
+    },
+    {
+      "row_id": "1218",
+      "field": "Capacity",
+      "searched": "Cyprus 2026/06/02; Hellenic; Shipping Herald (read: no capacity figure for the LNG carrier); India Shipping News; LNG Prime 187561; discovery candidates.json C1 ('Capacity not disclosed')",
+      "as_of": "2026-06-03",
+      "note": "Capacity NOT disclosed in any public source for the 27-May-2026 order (discovery C1 also left it blank). Document-blank (would pair with 'cbm' once a figure is published)."
+    },
+    {
+      "row_id": "1218",
+      "field": "Cargo type",
+      "searched": "Cyprus 2026/06/02; Hellenic; Shipping Herald; LNG Prime 187561; no GTT tank-design story yet found for the 27-May Bermuda single LNGC",
+      "as_of": "2026-06-03",
+      "note": "No containment-system source (no GTT tank-design release yet) for this specific 27-May order; cannot assert 'membrane' under Rule F without a cluster-coherent value source. Document-blank; likely membrane once a GTT/tank-design story surfaces, but not yet citable."
+    },
+    {
+      "row_id": "1218",
+      "field": "Propulsion type",
+      "searched": "Cyprus 2026/06/02; Hellenic; Shipping Herald; LNG Prime 187561",
+      "as_of": "2026-06-03",
+      "note": "No propulsion value published for this fresh order. Document-blank."
+    },
+    {
+      "row_id": "1218",
+      "field": "Operator/charterer",
+      "searched": "Cyprus 2026/06/02; Hellenic; Shipping Herald; LNG Prime 187561; Splash247 (403)",
+      "as_of": "2026-06-03",
+      "note": "No charterer/operator named (owner-side order; no charter disclosed). Document-blank."
+    }
+  ],
+  "verification_log": [
+    {
+      "url": "https://gtt.fr/news/gtt-receives-order-hanwha-ocean-tank-design-two-new-lng-carriers-us-market",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Hanwha Shipping, NO96 L03+ membrane, 174,000 m3, two, delivery Q1 2028, 'third quarter of 2025' (full visible body)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://gcaptain.com/hanwha-philly-shipyard-lands-first-us-lng-carrier-order-in-decades-from-hanwha-affiliate/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Hanwha Shipping, Hanwha Philly, 174,000 cubic meters, 'GTT containment system and an M-type, electronically controlled, gas injection (MEGI) engine', 'at least $250 million', delivery first half of 2028 (pub 21-Jul-2025)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "US$252M, LNG carrier, Hanwha (Shipping affiliate buyer), second order in a month, delivery 2028",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Greece's Alpha Gas, $501 million, '738.3 billion won ($501 million), or $250.5 million per vessel', two LNG carriers, by June 2029 (visible non-paywalled lead; remainder paywalled, no containment/propulsion even claimed)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "'Greek shipowner Alpha Gas', Hanwha Ocean, two LNG carriers, delivery 2029 (pre-existing backend ref; re-verified; no containment/propulsion in body)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.imarinenews.com/35664.html",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Knutsen OAS Shipping, Hanwha Ocean, 174,000 CBM, 375.9 billion won, $250 million, September 2029, 'nine LNG carriers on order' (NO containment type, NO engine/propulsion, NO charterer in body)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.imarinenews.com/35351.html",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Knutsen OAS Shipping (NOT Alpha Gas), NO96 Super+ membrane, 174,000 m3, 363.2 billion KRW, Q2 2029, signed 11 May; states Knutsen 'previously placed an order ... for seven LNG carriers ... ~1.75 billion USD' -- used only to DISPROVE GasLog/Alpha-Gas attribution, not cited as a fill",
+      "result": "PASS (Rule E disqualifier, not used as a fill)"
+    },
+    {
+      "url": "https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched -- Cloudflare 'Just a moment...' 403 in this environment; pre-existing backend ref on rows 1164/1165, kept per SOP 3.8a; recommend browser spot-check",
+      "result": "FAIL-environment-blocked (not used as a new fill)"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/gaslogs-174000-cbm-lng-carrier-named-in-south-korea/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "GasLog Italy naming (2024), Hanwha Ocean Geoje, 174,000 cbm, 'two HP-2S MEGI engines' -- DIFFERENT vessel from hulls 2614/2615 (Rule E), examined only, not cited",
+      "result": "PASS (different cluster, not used)"
+    },
+    {
+      "url": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Cheniere, membrane, X-DF, 200,000, Hyundai (all present; primary owner PR)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Cheniere, membrane, X-DF, 200,000, Hyundai (all present; Tier-1 trade press)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.maritimegateway.com/nyk-ocean-yield-order-four-200000-cu-m-lng-carriers-at-hd-hyundai/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "NYK, Ocean Yield, 200,000, Hyundai PASS; but membrane/X-DF NOT in curl body (FAIL for spec citation). NOT cited - kept as cluster context only.",
+      "result": "PASS (cluster identity) / not used for spec citation"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/multiple-newbuild-vessel-charters-with-us-lng-giant-come-nyk-and-ocean-yields-way/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "NYK, Ocean Yield, Cheniere, Hyundai (all present). Corroborator; not needed once NYK PR + LNG Prime gave Green.",
+      "result": "PASS (not cited - avoids URL accumulation per SOP 5)"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Tsakos, 174,000, 254 (all present; not a 429 soft-error)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/greeces-tsakos-orders-lng-carriers-in-south-korea/178882/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Tsakos, Greek, 174,000, Hyundai (all present)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Hayfin, Hyundai, London, 174,000 (all present)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Hayfin, London, Hyundai, 174,000 (all present; 'London-headquartered')",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hd-hyundai-heavy-scores-501-million-lng-carrier-order/186566/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Hayfin, Hyundai present; '174,000' and 'London' NOT in curl body. Not cited (Riviera 88768 + IndexBox carry the country signal).",
+      "result": "PASS (partial) - not cited"
+    },
+    {
+      "url": "https://splash247.com/hayfin-lines-up-lng-carrier-newbuilds-in-south-korea/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched (environment-blocked Cloudflare/paywall). Already a pre-existing backend ref on rows 1214-1215; not added/altered here.",
+      "result": "FAIL - environment-blocked; not used as a new citation"
+    },
+    {
+      "url": "https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched (environment-blocked). Pre-existing backend ref on rows 1152-1155; not added/altered here.",
+      "result": "FAIL - environment-blocked; not used as a new citation"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Jiangnan, Shandong, 175,000, China, Minsheng (pub 02-Feb-2026; describes the 30-Jan Minsheng/Shandong order, NOT COSCO)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "China, Minsheng, Shandong, Jiangnan, 175,000, 2028/2029 (pub 30-Jan-2026)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Shandong, Jiangnan, membrane, 175,000 ('Mark III Flex membrane containment system', four LNG carriers; non-paywalled; pub 17-Feb-2026)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Shandong, Jiangnan, membrane, 175,000 ('Mark III Flex membrane containment system', 'four new Liquefied Natural Gas Carriers'; non-paywalled; pub 17-Feb-2026)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.imarinenews.com/31970.html",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Jiangnan, Shandong, Minsheng, 175,000, XDF, WinGD ('WinGD XDF 2.2 main engine'; pub 31-Jan-2026)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "COSCO/CSET, Shell, Jiangnan, 175,000, four, 953/238, 2029/2030 (title+lead public; numerics in paywalled body) -- NO tank/propulsion type even in body",
+      "result": "PASS (but no cargo/propulsion data)"
+    },
+    {
+      "url": "https://www.seatrade-maritime.com/shipyards/jiangnan-shipyard-wins-four-lng-carriers-chartered-to-shell",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched (Cloudflare/403 in this environment) -- already a pre-existing backend ref on rows 1158-1161; kept per SOP 3.8a",
+      "result": "FAIL-environment-blocked (not used as a new fill)"
+    },
+    {
+      "url": "https://www.hellenicshippingnews.com/gtt-receives-an-order-from-jiangnan-shipyard-for-the-tank-design-of-four-new-lng-carriers/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched (403 in this environment); IndexBox used instead as the non-GTT membrane corroborator",
+      "result": "FAIL-environment-blocked (not used)"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "H8340, H8341, LNG Tanker, BW LNG",
+      "result": "PASS",
+      "used_for": "Vessel type 1148/1149"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcgXanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CMHI-282-07, CMHI-282-08, Celsius, 176,400",
+      "result": "PASS",
+      "used_for": "CMHI cluster identity / CSB cross-check (capacity 176,400 @98%)"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFFCCanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CMHI-282-07, Celsius, 176,400, Contract 2024-05, LNG Tanker",
+      "result": "PASS",
+      "used_for": "CMHI-282-07 hull/owner/capacity confirmation (per-ship CSB page)"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFFCFanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CMHI-282-08, Celsius, 176,400",
+      "result": "PASS",
+      "used_for": "CMHI-282-08 confirmation (per-ship CSB page)"
+    },
+    {
+      "url": "https://en.portnews.ru/news/391499/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "membrane, BW LNG, Hyundai Samho, 177,000, Mark III, H8340, H8341, H8358, H8359, XDF, Singapore",
+      "result": "PASS",
+      "used_for": "Cargo=membrane (1148/1149/1212), owner-country Singapore, candidate hulls H8358/H8359"
+    },
+    {
+      "url": "https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "H8340, H8341, 177,000, XDF, $508 million, BW, Singapore-based, reliquefaction (visible body)",
+      "result": "PASS",
+      "used_for": "Propulsion X-DF + Price 254/508 + owner-country (1148/1149)"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "H8340, H8341, 177,000, XDF 2.2, US$508M, US$254M per ship, BW LNG, Singapore-based, Liberia flag",
+      "result": "PASS",
+      "used_for": "Propulsion X-DF + Price 254 (1148/1149)"
+    },
+    {
+      "url": "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "H8340, H8341, 177,000 (and not 174,000), XDF 2.2, 748.5 billion won, $508m, $254m per vessel, Singapore-based, July 2029 (visible body)",
+      "result": "PASS",
+      "used_for": "Propulsion X-DF + capacity-conflict flag + owner-country (1212/1213)"
+    },
+    {
+      "url": "https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "BW LNG, Hyundai Samho, XDF 2.2, three-tank, second and third quarters of 2029, reliquefaction",
+      "result": "PASS",
+      "used_for": "Propulsion X-DF corroborator (1212/1213)"
+    },
+    {
+      "url": "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Celsius, China Merchants, membrane, 180,000, Mark III Flex, ME-GA, 4+2+2 (visible body)",
+      "result": "PASS",
+      "used_for": "Cargo=membrane + Capacity=180,000 (1216/1217)"
+    },
+    {
+      "url": "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Celsius, China Merchants, CMHI-282-01..08, 180,000 cbm or 176,400 at 98%, Mark III Flex, 5GME-C10-GA (ME-GA)",
+      "result": "PASS",
+      "used_for": "Cargo=membrane corroborator + Capacity=180,000 (1216/1217)"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Celsius, CMHI, 180,000 cbm, ME-GA, quartet, eight (membrane NOT present verbatim)",
+      "result": "PASS",
+      "used_for": "Capacity=180,000 corroborator (1216/1217); does NOT carry 'membrane' so not used as the cargo-type primary"
+    },
+    {
+      "url": "https://splash247.com/celsius-boosts-lng-carrier-orderbook-at-china-merchants/",
+      "status": "200",
+      "soft_error": "yes",
+      "content_match": "Cloudflare 'Just a moment...' interstitial",
+      "result": "FAIL — environment-blocked (Cloudflare); dropped per §3.8/§3.8a, not cited"
+    },
+    {
+      "url": "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-new-floating-storage-and",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "MISC, Samsung, FSRU, 170,000, Mark III, membrane, Q1-2029 (visible body; Paris 12 May 2026)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "MISC, Samsung, FSRU, membrane (visible body; '170,000' present as formatted figure but did not match the literal '170,000' substring check)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.thestar.com.my/business/business-news/2026/05/04/misc-bags-20-year-fsru-contract-from-petronas-gas",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "MISC, FSRU (existing backend ref; re-verified live)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/americas/seapeak-orders-more-lng-carriers-at-samsung-heavy/186747/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Seapeak, Samsung, three (PASS); does NOT contain 'membrane' (negative control for Seapeak Cargo document-blank)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/south-koreas-samsung-heavy-bags-new-order-for-lng-carrier-duo/186477/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Samsung, TMS Cardiff (visible title/lead + editorial tags 'Samsung Heavy Industries','TMS Cardiff Gas'; dated 14-May-2026; no containment/propulsion in visible content)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://en.sedaily.com/finance/2026/05/14/samsung-heavy-wins-545-million-order-for-two-lng-carriers",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Samsung, LNG (14-May-2026, 750.5bn won; no propulsion/containment in visible text)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-4",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Samsung, two, 174,000, Mark III Flex, membrane, Q4-2028/Q1-2029, Paris 18 Feb 2026 — NO owner named (cannot attribute to TMS Cardiff; not cited)",
+      "result": "PASS but NOT CITED (Rule E: no owner named; date 18-Feb != 14-May TMS order)"
+    },
+    {
+      "url": "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-three-new-lng-carriers-0",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Samsung, three, 174,000, Mark III Flex, 'Asian shipowner', deliveries Q3-2025/Q1-2026, Paris 11 Jul 2022 — OLD order, not the Seapeak 2029 trio (not cited)",
+      "result": "PASS but NOT CITED (Rule E: July-2022 order, cluster-incoherent with Seapeak/Woodside 2029 trio)"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/tms-cardiff-gas-orders-lng-pair-at-samsung-heavy/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "TMS Cardiff, Samsung, two, 174,000, X-DF, Mark III Flex — but dated 5 Nov 2018, delivery 2020 (OLD order; not the 14-May-2026 duo; not cited)",
+      "result": "PASS but NOT CITED (Rule E: Nov-2018 order, cluster-incoherent with the 14-May-2026 TMS duo)"
+    },
+    {
+      "url": "https://splash247.com/seapeak-grows-lng-orderbook-with-756m-samsung-heavy-trio/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched — Cloudflare 403 in this environment (already a backend ref on rows 1209-1211; kept by backend per SOP 3.8a; NOT newly cited here)",
+      "result": "FAIL — environment-blocked (Cloudflare 403)"
+    },
+    {
+      "url": "https://www.marinelog.com/news/tms-cardiff-gas-orders-lng-carrier-with-x-df-propulsion/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched — HTTP 403; and content describes an older TMS X-DF order, not the 14-May-2026 duo",
+      "result": "FAIL — environment-blocked (403); not cited"
+    },
+    {
+      "url": "https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Purus, Samsung Heavy, 174,000, membrane (Mark III Flex; visible body/lead)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Purus, Samsung Heavy, 174,000, Mark III Flex, membrane",
+      "result": "PASS"
+    },
+    {
+      "url": "https://cyprusshippingnews.com/2026/01/20/gtt-entrusted-by-samsung-heavy-industries-with-the-tank-design-of-two-new-lng-carriers-2/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Samsung Heavy, 174,000, Mark III Flex, membrane, two",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-one-new-lng-carrier",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Samsung Heavy, 180,000, Mark III Flex, membrane, one (European ship-owner)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://find-and-update.company-information.service.gov.uk/company/11134011",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "OCEONIX SERVICES LIMITED, United Kingdom, London (registered office 280 Bishopsgate; status Active)",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.shippingherald.com/samsung-heavy-wins-five-vessel-order/",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "Samsung Heavy, Bermuda, 252 (owner = 'a Bermuda-based shipping company', unnamed) — corroborates 1218 documented-blank",
+      "result": "PASS"
+    },
+    {
+      "url": "https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched — Cloudflare 'Just a moment...' interstitial",
+      "result": "FAIL — environment-blocked (Cloudflare 403); NOT cited"
+    },
+    {
+      "url": "https://splash247.com/jp-morgan-expands-shipping-bet-with-fresh-tanker-and-gas-carrier-orders-at-samsung/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched — Cloudflare interstitial",
+      "result": "FAIL — environment-blocked (Cloudflare 403); NOT cited"
+    },
+    {
+      "url": "https://splash247.com/celsius-seals-samsung-heavy-lng-carrier-order-2/",
+      "status": "403",
+      "soft_error": "n/a",
+      "content_match": "not fetched — Cloudflare interstitial",
+      "result": "FAIL — environment-blocked (Cloudflare 403); NOT cited"
+    }
+  ],
+  "candidate_findings": [
+    {
+      "row_id": "1158-1161",
+      "field": "Operator/charterer",
+      "backend_value": "Shandong Marine Energy",
+      "research_value": "Shell (Singapore) Trading is the charterer; Shandong (Ocean/Marine) Energy is the commercial manager; Minsheng Financial Leasing is the shipowner/lessor",
+      "source_urls": "https://www.imarinenews.com/31970.html ; https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617 ; https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/",
+      "note": "Not a [ref]-fill (Operator/charterer is already populated in the backend, not in my blanks list) -- flagged for transparency only. Backend Operator/charterer = 'Shandong Marine Energy', but sources show the END CHARTERER is Shell (Singapore) Trading on a long-term charter; Shandong handles commercial management. Both roles are defensible; surfaced per SOP 4.7/8 for human review, no overwrite."
+    },
+    {
+      "rows": "1212,1213",
+      "finding": "Hull numbers for the 13-May-2026 BW LNG / HD Hyundai Samho duo are reported as H8358 and H8359 (portnews 391499, derived from BW Group's published fleet list; both 177,000 cbm, XDF, 2029). Per-row mapping (which row is H8358 vs H8359) is not determinable from the source.",
+      "url": "https://en.portnews.ru/news/391499/",
+      "confidence": "Y",
+      "action": "Single non-primary source; recommend confirming on CSB once the HD Hyundai Samho orderbook indexes the order, then assign per-row. Not entered as a fill (Hull cells blank in backend; Rule F)."
+    },
+    {
+      "rows": "1212,1213",
+      "finding": "Capacity CONFLICT: backend records 174,000 cbm for the 13-May BW duo, but LNG Prime 186420, portnews 391499, safety4sea and Riviera all report these as 177,000-cbm three-tank vessels (same GTT three-tank design as H8340/H8341). LNG Prime body explicitly: 'each have a capacity of 177,000 cbm, and not 174,000 cbm'.",
+      "url": "https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/",
+      "confidence": "G",
+      "action": "Backend Capacity=174,000 on rows 1212/1213 appears low; sources say 177,000. Capacity is not in this row's blank set (already filled) and backend is never overwritten — flag for human review (§8 data-value conflict). Same issue was already resolved to 177,000 on the sibling Nov-2025 rows 1148/1149."
+    },
+    {
+      "rows": "1216,1217",
+      "finding": "Capacity note (NOT a conflict): Deltamarin design page states 'Cargo capacity of 180,000 cbm, or 176,400 cbm at 98%'. CSB lists the 176,400 (98%) figure for hulls -07/-08; backend siblings 251-256 and trade press use 180,000 (nominal). Proposed Capacity fill = 180,000 to match siblings; the CSB 176,400 is the same vessel at 98%.",
+      "url": "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/",
+      "confidence": "G",
+      "action": "Enter 180,000 cbm (sibling-consistent). No conflict flag needed."
+    },
+    {
+      "rows": "251-256 (siblings, FYI only — out of this batch's scope)",
+      "finding": "Sibling CMHI-282-01..06 rows have Cargo type BLANK and Vessel type BLANK while citing only the IGU World LNG Report for Capacity/IMO. The membrane cargo type + 180,000 cbm + ME-GA are now well-sourced (Deltamarin, LNG Prime 69940, offshore-energy) and could be backfilled on those rows too.",
+      "url": "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/",
+      "confidence": "G",
+      "action": "Out of scope for rows 1216/1217 but noted for a future [ref]-fill/data-fill pass on rows 251-256."
+    }
+  ]
+}

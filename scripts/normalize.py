@@ -160,6 +160,13 @@ _OWNER_DISPLAY = {
 }
 
 
+# Seeded owner -> Shipowner country/area, for the data-fill derivable autofill
+# (Data-fill SOP §5) when an owner has NO sibling row in the backend to copy a
+# country from. Populated as owner countries settle (sourced), parallel to
+# _OWNER_DISPLAY. Sibling-copy (see owner_country) is preferred when available.
+_OWNER_COUNTRY = {}
+
+
 def _normalize_input(s: str) -> str:
     """Lowercase, strip, collapse whitespace, remove parenthetical content."""
     if s is None:
@@ -202,6 +209,30 @@ def display_owner(s: str) -> str:
     [ref]-Fill SOP §4.14 — match the backend's existing stylization.
     """
     return _OWNER_DISPLAY.get(normalize_owner(s), s)
+
+
+def owner_country(owner_raw, backend_data=None, owner_idx=None, country_idx=None):
+    """Preferred Shipowner country/area for an owner (Data-fill SOP §5).
+
+    1. If a seeded value exists in _OWNER_COUNTRY, return it.
+    2. Else, if backend_data + the Shipowner / country column indices are given,
+       return the UNAMBIGUOUS country shared by every sibling backend row of the
+       same normalized owner. Returns None if siblings disagree (e.g. 'mol' has
+       Japan + Türkiye; 'maran-gas' has multiple) or none carry a country — those
+       cases must be researched, never sibling-autofilled.
+    """
+    tag = normalize_owner(owner_raw)
+    if tag in _OWNER_COUNTRY:
+        return _OWNER_COUNTRY[tag]
+    if backend_data is None or owner_idx is None or country_idx is None:
+        return None
+    seen = set()
+    for r in backend_data:
+        if len(r) > max(owner_idx, country_idx) and normalize_owner(r[owner_idx]) == tag:
+            v = r[country_idx].strip()
+            if v:
+                seen.add(v)
+    return next(iter(seen)) if len(seen) == 1 else None
 
 
 def normalize_hull(builder_tag: str, hull_raw: str) -> str:

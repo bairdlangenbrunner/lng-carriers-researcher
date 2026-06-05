@@ -16,6 +16,19 @@ Per [ref]-Fill SOP §4.14, the display form must **match the backend's existing 
 |---|---|---|
 | `cosco-shipping-energy` | **`COSCO`** | Backend writes `COSCO` / `MOL, COSCO`; do NOT write `Cosco Shipping Energy Transportation`. |
 
+## Owner → country/area (data-fill derivable autofill)
+
+`Shipowner country/area` is a property of the owner, so the data-fill workflow (Data-fill SOP §5) fills a blank one by copying the **unambiguous** country shared by that owner's sibling rows in the backend — implemented as `owner_country()` in `scripts/normalize.py` (sibling-scan, with an `_OWNER_COUNTRY` seed for owners that have no sibling).
+
+**Hard guard — never sibling-autofill these (their backend rows disagree); research instead:**
+
+| Canonical tag | Conflicting backend values seen |
+|---|---|
+| `mol` | Japan, Türkiye |
+| `maran-gas` | Greece, "Singapore, Norway, Greece, Canada, Japan" |
+
+The guard is data-driven (the per-owner country set is recomputed each run), so a newly-inconsistent owner is caught automatically — this table is the human-readable record, not the enforcement.
+
 ## Why this matters
 
 Cluster-coherence checks (Rule E §4.12) and the dedup index both rely on canonical owner names. "Eastern Pacific Shipping" and "EPS" must resolve to the same tag, otherwise:
