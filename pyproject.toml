@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Research scaffolding for the LNG Carrier Tracker — SOPs, tooling, and per-batch outputs."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
 authors = [
     { name = "LNG Carrier Tracker maintainers" },
 ]

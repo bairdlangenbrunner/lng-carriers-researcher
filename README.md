@@ -48,7 +48,6 @@ class of bug impossible.
 ```
 CLAUDE.md                  Entry point for Claude Code — workflow router + hard rules
 README.md                  This file
-LICENSE                    MIT
 pyproject.toml             Python deps and tooling config (ruff, pytest)
 
 docs/
