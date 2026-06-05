@@ -1,0 +1,85 @@
+{
+  "gap_window": "n/a — targeted roster completion, not a date-window sweep",
+  "yards_swept": ["Hudong-Zhonghua Shipbuilding (targeted: CNOOC/CMES/NYK JV order only)"],
+  "candidates": [
+    {
+      "cluster_id": "C1",
+      "cluster_label": "CNOOC/CMES/NYK JV LNGC at Hudong-Zhonghua (unidentified hull)",
+      "confidence": "G",
+      "discovery_notes": "One of the six 174,000 cbm LNG carriers in the CNOOC + CMES + NYK tri-party JV ordered at Hudong-Zhonghua (shipbuilding/charter contracts signed 2 May 2022; chartered to CNOOC Gas & Power Singapore; managed by OPearl LNG Ship Management). The program is firmly six vessels (NYK PR, Offshore Energy, gCaptain, Maritime Executive). Two of the six are already in the backend with hull/IMO (Hull H1889A / IMO 9994319 and Hull H1890A / IMO 9994321), and one anonymous placeholder is already present (current sheet row 1087, [Original source] IGU). This candidate is the 4th of the program's slots — i.e. the 2nd of the four not-yet-hull-identified ships (1087 being the 1st). Name / Hull number / IMO stay blank: not publicly assigned/indexed yet (Equasis 'OPearl' fleet list or a CCS/class newbuild register is the way to resolve them). Delivery year left blank deliberately: the program delivers 2026-2027 and the two identified sisters are 2026, but the unidentified hulls' individual years are not separately sourced (do not assume 2026).",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://www.nyk.com/english/news/2022/20220502_01.html, https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Shipowner": "CNOOC, CMES, NYK JV",
+        "Shipowner [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/, https://www.offshore-energy.biz/cnooc-nyk-and-cmes-agree-to-set-up-lng-carrier-joint-venture/, https://www.nyk.com/english/news/2022/20220502_01.html",
+        "Shipbuilder": "Hudong-Zhonghua Shipbuilding",
+        "Shipbuilder [ref]": "https://www.nyk.com/english/news/2022/20220502_01.html, https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Capacity": "174000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Propulsion type": "X-DF",
+        "Propulsion type [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/"
+      }
+    },
+    {
+      "cluster_id": "C2",
+      "cluster_label": "CNOOC/CMES/NYK JV LNGC at Hudong-Zhonghua (unidentified hull)",
+      "confidence": "G",
+      "discovery_notes": "Sister of C1 — the 5th of the program's six slots (3rd of the four not-yet-hull-identified ships). Same firm CNOOC + CMES + NYK JV order at Hudong-Zhonghua, 174,000 cbm, X-DF, on order. Name / Hull / IMO blank (not yet publicly assigned). Delivery year blank (2026-2027 program; individual year unsourced). See C1 notes for the full six-ship accounting.",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://www.nyk.com/english/news/2022/20220502_01.html, https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Shipowner": "CNOOC, CMES, NYK JV",
+        "Shipowner [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/, https://www.offshore-energy.biz/cnooc-nyk-and-cmes-agree-to-set-up-lng-carrier-joint-venture/, https://www.nyk.com/english/news/2022/20220502_01.html",
+        "Shipbuilder": "Hudong-Zhonghua Shipbuilding",
+        "Shipbuilder [ref]": "https://www.nyk.com/english/news/2022/20220502_01.html, https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Capacity": "174000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Propulsion type": "X-DF",
+        "Propulsion type [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/"
+      }
+    },
+    {
+      "cluster_id": "C3",
+      "cluster_label": "CNOOC/CMES/NYK JV LNGC at Hudong-Zhonghua (unidentified hull)",
+      "confidence": "G",
+      "discovery_notes": "Sister of C1/C2 — the 6th and last of the program's six slots (4th of the four not-yet-hull-identified ships). Same firm CNOOC + CMES + NYK JV order at Hudong-Zhonghua, 174,000 cbm, X-DF, on order. Name / Hull / IMO blank (not yet publicly assigned). Delivery year blank (2026-2027 program; individual year unsourced). With this row the backend holds all six: H1889A + H1890A (identified) + sheet-row-1087 placeholder + C1 + C2 + C3. See C1 notes.",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://www.nyk.com/english/news/2022/20220502_01.html, https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Shipowner": "CNOOC, CMES, NYK JV",
+        "Shipowner [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/, https://www.offshore-energy.biz/cnooc-nyk-and-cmes-agree-to-set-up-lng-carrier-joint-venture/, https://www.nyk.com/english/news/2022/20220502_01.html",
+        "Shipbuilder": "Hudong-Zhonghua Shipbuilding",
+        "Shipbuilder [ref]": "https://www.nyk.com/english/news/2022/20220502_01.html, https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Capacity": "174000",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/",
+        "Propulsion type": "X-DF",
+        "Propulsion type [ref]": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/"
+      }
+    }
+  ],
+  "backend_status_flags": [
+    {
+      "flag": "row-identity / possible-duplicate watch",
+      "rows": "sheet row 1087 (row_id 1092)",
+      "note": "The existing 'unknown' IGU-sourced row for this JV (sheet 1087) is being treated as the 1st of the four not-yet-identified slots, NOT as a duplicate of H1889A/H1890A. If a future discovery pass resolves a hull/IMO for it, reconcile it against H1889A/H1890A first to be sure it isn't one of those two re-entered from IGU. Its '12/31/2024' is the Last-updated stamp, not a contract date (Contract date is blank on all JV rows)."
+    },
+    {
+      "flag": "naming convention",
+      "rows": "H1889A (sheet 275), H1890A (sheet 276)",
+      "note": "Existing JV rows use Shipowner 'CNOOC, CMES, NYK JV' (comma form) and [Original source] 'IGU'. These three candidates mirror the owner stylization; [Original source] is left blank because they derive from the 2022 order announcement, not the IGU report."
+    }
+  ],
+  "verification_log": [
+    {"url": "https://gcaptain.com/nyk-orders-six-lng-carriers-for-long-term-charter-to-cnooc/", "status": "PASS", "checked_for": "174,000; Hudong; CNOOC; NYK; CMES; X-DF", "note": "single source carrying every cell value verbatim"},
+    {"url": "https://www.nyk.com/english/news/2022/20220502_01.html", "status": "PASS", "checked_for": "Hudong; CNOOC; LNG", "note": "primary owner press release; six LNG carriers, Hudong-Zhonghua, CNOOC charter"},
+    {"url": "https://www.offshore-energy.biz/cnooc-nyk-and-cmes-agree-to-set-up-lng-carrier-joint-venture/", "status": "PASS", "checked_for": "CNOOC; NYK; CMES; joint venture", "note": "JV ownership structure: six single-ship companies"},
+    {"url": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/", "status": "FAIL (HTTP 403)", "checked_for": "Hudong; CNOOC; NYK", "note": "environment-blocked (403); kept for reference per [ref]-Fill SOP §3.8a but NOT cited in any cell"}
+  ],
+  "methodology_audit": {
+    "approach": "Targeted roster completion driven by a vessel-identity question, not a date-window discovery sweep. Two prior research subagents established (a) the unknown sheet-1087 vessel belongs to the CNOOC+CMES+NYK Hudong JV, and (b) that JV is firmly six vessels, all at Hudong-Zhonghua. Backend already holds 2 identified (H1889A/H1890A) + 1 anonymous placeholder (1087); these 3 candidates complete the set of six.",
+    "not_resolvable_publicly": "Name / Hull number / IMO for the four unidentified hulls — unnamed and not indexed in public databases as of 2026-06-05. Equasis 'OPearl LNG Ship Management' fleet list or a CCS/class-society newbuild register is the resolution path (both require a credentialed/human session; they 403'd automated fetch)."
+  }
+}
