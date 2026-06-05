@@ -21,13 +21,15 @@ full batch pipeline or just the research and reasoning.
 This is the intended path — it can run the Python tooling, pull the backend CSV,
 build the xlsx, and commit a batch.
 
-1. Install dependencies: `pip install -e .` (or `pip install -e ".[dev]"` for the test/lint extras)
-2. Open the repo in Claude Code: `claude .`
-3. Claude reads `CLAUDE.md` automatically and routes from there
-4. Give it a trigger phrase, e.g. "fill refs for rows 1148–1167" or "discovery run for the Q2 2026 gap"
+1. Open the repo in Claude Code: `claude .`
+2. Claude reads `CLAUDE.md` automatically and routes from there
+3. Give it a trigger phrase, e.g. "fill refs for rows 1148–1167" or "discovery run for the Q2 2026 gap"
 
-No credentials or `.env` are required — every source the assistant uses is
-publicly accessible.
+Claude Code installs the Python dependencies the first time a script needs them,
+so there's normally nothing to set up by hand. If you'd rather run a script
+yourself (e.g. `python recalc.py …`), install them once with `pip install -e .`
+(add `".[dev]"` for `pytest` / `ruff`). No credentials or `.env` are required —
+every source the assistant uses is publicly accessible.
 
 ### With the Claude desktop app or claude.ai
 
@@ -50,13 +52,14 @@ tracker still has to clear the script-driven verification gates before it ships.
 
 ## Workflows
 
-The assistant runs one of three workflows per batch. `CLAUDE.md` is the router;
+The assistant runs one of four workflows per batch. `CLAUDE.md` is the router;
 `docs/sops/` holds the authoritative procedures.
 
 | Workflow | When to use | Output |
 |---|---|---|
 | **[ref]-fill** | Backfill missing URL citations on existing backend rows | xlsx with verified `[ref]` citations |
 | **Discovery** | Find LNG carriers not yet in the backend | xlsx with new vessel candidates |
+| **Data-fill** | Research blank (or `unknown`) data cells and propose a value + corroborating `[ref]` | xlsx with candidate value/`[ref]` pairs |
 | **SFOC reconciliation** | Reconcile the backend against an updated SFOC dataset | xlsx with staged reconciliations |
 
 Every batch follows the same shape: pull a fresh backend CSV, re-derive the
@@ -68,35 +71,38 @@ zero formula errors, and commit the batch directory with a `notes.md`.
 ```
 CLAUDE.md                  Entry point for Claude Code — workflow router + hard rules
 README.md                  This file
-MIGRATION.md               Notes on repo restructuring / migration history
 LICENSE                    MIT
 pyproject.toml             Python deps and tooling config (ruff, pytest)
 
 docs/
-  sops/                    The three workflow procedures (authoritative)
+  sops/                    The four workflow procedures (authoritative)
     ref_fill.md            [ref]-fill rules A–F, confidence labels, §3.8 verification gate
     discovery.md           Discovery workflow, four-ring source model, candidate workbook
+    data_fill.md           Data-fill workflow, blank-vs-`unknown` preserve-ref contract, derivable autofill
     sfoc_reconciliation.md SFOC reconciliation workflow
   inclusion_criteria.md    What's in scope vs out, status categories
   pointers.md              "Which SOP section governs X" cross-reference index
 
 refdata/                   Reference markdown (read on demand)
   csb_yard_urls.md         Stable ChinaShipBuild yard URLs + slugs
-  owner_charterer_map.md   Canonical owner names and variants
+  owner_charterer_map.md   Canonical owner names, variants, and owner→country map
   source_roster.md         Source tier list for picking corroboration URLs
+  controlled_vocab.md      Exact value sets for the type columns (cargo / vessel / propulsion)
 
 scripts/                   Python tools called by the workflows
   pull_backend.py          curl + parse backend CSV, derive the column-index map
-  normalize.py             Canonical builder/owner names (imported by others)
+  normalize.py             Canonical builder/owner names + owner→country (imported by others)
   dedup_index.py           Build the matching indexes for candidate dedup
   csb_fetch.py             Fetch + parse ChinaShipBuild orderbook tables
   url_verifier.py          The §3.8 gate — HTTP 200 + content check + soft-error detection
   imo_tracker.py           §6a.8 IMO → marine-vessel-tracker fallback
-  build_workbook.py        xlsx scaffolding — sheets, color fills, frozen panes, headers
+  derive_fills.py          Data-fill: scope rows, compute derivable autofills, list research targets
+  merge_fills.py           Data-fill: merge per-cluster research + run the central §3.8 gate
+  build_workbook.py        xlsx scaffolding — sheets, color fills, frozen panes, headers (3 modes)
   recalc.py                Force recalc, return any formula errors (run before committing)
   paths.py                 Shared path helpers
 
-tests/                     Regression tests with cached fixtures
+tests/                     pytest suite (normalize + url_verifier covered; fetcher fixtures planned)
 batches/                   Per-batch outputs (xlsx + notes + Drive links)
 ```
 

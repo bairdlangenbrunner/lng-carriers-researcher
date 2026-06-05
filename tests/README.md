@@ -1,6 +1,17 @@
 # Tests
 
-Regression tests for the scripts. Run with `pytest tests/` from the repo root (after `pip install -e ".[dev]"`).
+Regression tests for the scripts. Run with `pytest tests/` from the repo root (after `pip install -e ".[dev]"`). `conftest.py` puts `scripts/` on `sys.path`, so the flat module names (`import normalize`, `import url_verifier`) resolve without installing the package.
+
+## Current coverage
+
+| Module | Status | File |
+|---|---|---|
+| `normalize.py` | ✅ covered — builder/owner/hull canonicalization, `display_owner`, `owner_country` sibling-copy | `test_normalize.py` |
+| `url_verifier.py` | ✅ covered — the §3.8 gate (HTTP status, soft-error titles, content checks, strict mode), offline via seeded `_CACHE` | `test_url_verifier.py` |
+| `pull_backend.py` | ⬜ planned — needs `fixtures/backend_csv/` schema snapshots | — |
+| `csb_fetch.py` | ⬜ planned — needs `fixtures/csb/` HTML snapshots | — |
+
+The two ✅ modules are pure logic / network-free, so they're tested directly. The two ⬜ modules need captured fixtures (below) before they can be tested without hitting the network — add those when CSB or the backend schema next changes under you and you have a fresh snapshot to freeze.
 
 ## Why tests exist for this project
 

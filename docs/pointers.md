@@ -8,7 +8,7 @@ The SOPs live in `docs/sops/`:
 - `data_fill.md` — abbreviated below as **DF**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 4 (2026-06-04). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
