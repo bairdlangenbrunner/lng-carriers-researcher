@@ -7,6 +7,7 @@ The SOPs live in `docs/sops/`:
 - `discovery.md` — abbreviated below as **DC**
 - `data_fill.md` — abbreviated below as **DF**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
+- `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
 Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
 
@@ -112,6 +113,19 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Owner facts table | `refdata/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
 | Facts loaders + vocab | `scripts/lookups.py` | `load_builder_facts` / `load_owner_facts` + `CONTROLLED_VOCAB` (single source of truth, shared by build + QC). |
 | Seed / refresh tables | `scripts/seed_lookups.py` | Bootstraps both CSVs from the live backend; re-runnable, never clobbers curated rows without `--overwrite`. |
+
+## Apply & verify workflow (AP — 2026-06-05)
+
+The offset-proof round-trip that gets a reviewed batch into the backend. Full SOP: `docs/sops/apply.md`.
+
+| Step | Section | What |
+|---|---|---|
+| Triage | AP §2 | `batch_digest.py` → `digest.md` (auto-safe vs needs-a-decision) |
+| Decisions | AP §3 | `apply_batch.py` → `decisions.csv` (accept/hold/reject; Green/derivable→accept default) — authoritative decision surface |
+| Apply artifacts | AP §2 | `apply_rows.csv` (full-row paste), `apply_patch.csv` (by-name applier), `apply.json` (record) |
+| Apply | AP §2/§7 | full-row paste OR `tools/apply_patch.gs` (by header — offset impossible); never hand cherry-pick |
+| Conflicts | AP §4 | `conflicts.csv` — research vs a non-blank value; decided by hand, never auto-applied (RF §8 / DF §9) |
+| Verify | AP §5 | `verify_apply.py --pull` → `verify_report.csv` (landed/mismatch/missing) + qc the touched rows |
 
 ## Pause-and-ask triggers
 

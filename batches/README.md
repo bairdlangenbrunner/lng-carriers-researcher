@@ -22,6 +22,14 @@ Examples:
 | `lng_carrier_backend_ref_fill.xlsx` / `lng_carrier_candidate_vessels.xlsx` / `lng_carrier_data_fill.xlsx` | The output workbook (by mode) |
 | `notes.md` | Conflicts flagged, defects corrected, escalations, anything that needs human attention |
 | `verification.log` | Optional — full `url_verifier.py` log if useful for audit |
+| `digest.md` | Triage view (auto-safe vs needs-a-decision) — `batch_digest.py` (apply SOP) |
+| `decisions.csv` | Per-proposal accept/hold/reject — the batch's acceptance record (`apply_batch.py`) |
+| `apply_rows.csv` / `apply_patch.csv` / `apply.json` | Offset-proof apply artifacts (`apply_batch.py`); `conflicts.csv` for non-blank conflicts |
+| `verify_report.csv` | Post-apply landed/mismatch/missing diff (`verify_apply.py`) |
+
+After the candidate workbook is reviewed, run the **apply & verify** workflow
+(`docs/sops/apply.md`) to get accepted proposals into the backend offset-proof and confirm
+they landed. Commit `decisions.csv` (and `apply.json`) with the batch as the acceptance record.
 
 ## The batch index
 

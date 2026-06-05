@@ -717,12 +717,15 @@ def build_data_fill(args):
         g = dict(f)
         nu = g.get("new_urls", [])
         g["new_urls"] = ", ".join(nu) if isinstance(nu, list) else str(nu)
+        # Default accept/hold mirrors apply_batch.py / decisions.csv (which is the
+        # authoritative decision surface). Green/derivable -> accept, else hold.
+        g["decision"] = "accept" if (g.get("derivable") or g.get("confidence") == "G") else "hold"
         qa_fills.append(g)
     qa_row = 1
     sections = [
         ("Candidate data-value fills",
          ["row_id", "field", "prev_state", "proposed_value", "new_urls",
-          "existing_ref_preserved", "confidence", "note"], qa_fills),
+          "existing_ref_preserved", "confidence", "decision", "note"], qa_fills),
         ("Documented blanks (researched, not found)",
          ["row_id", "field", "searched", "as_of", "note"],
          payload.get("documented_blanks", [])),

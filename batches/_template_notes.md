@@ -33,6 +33,13 @@ Each entry: row id, field, old URL, why it was wrong, new URL.>
 <List any backend DATA values (not [ref]s) that research suggests are wrong.
 Backend is never overwritten — these go to QA_review for the user to resolve.>
 
+## Apply & verify (docs/sops/apply.md)
+
+<Once reviewed: run batch_digest.py → apply_batch.py → apply (apply_rows.csv or
+apply_patch.gs) → verify_apply.py --pull. Record: how many proposals accepted /
+held / rejected (from decisions.csv), any conflicts resolved, and the verify result
+(landed / mismatch / missing). Commit decisions.csv + apply.json as the record.>
+
 ## Escalations
 
 <Any pause-and-ask triggers hit? See CLAUDE.md "When to escalate".>

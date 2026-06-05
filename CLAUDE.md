@@ -8,6 +8,7 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/discovery.md` — the discovery workflow, the four-ring source model, candidate workbook structure. **Authoritative.**
 - `docs/sops/data_fill.md` — the data-fill workflow (research blank/`unknown` data cells → candidate value+[ref] pairs; the blank-vs-`unknown` preserve-ref contract, derivable autofills, controlled vocab). **Authoritative.**
 - `docs/sops/sfoc_reconciliation.md` — the SFOC reconciliation workflow (less frequent).
+- `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
 - `docs/inclusion_criteria.md` — what's in scope vs out.
 - `refdata/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
@@ -172,6 +173,32 @@ the normalization mapping), build the nine-sheet workbook, recalc to zero
 formula errors, and commit the batch directory under `batches/`. The SOP is
 authoritative.
 
+### Apply a reviewed batch
+
+Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
+
+Governed by `docs/sops/apply.md` (AP rev 1). This is the offset-proof round-trip that
+replaces manual copy/paste (which corrupted rows 1216/1217).
+
+```bash
+# 1. Triage — split auto-safe vs needs-a-decision.
+python scripts/batch_digest.py --batch batches/<dir>          # -> digest.md
+
+# 2. Decisions + apply artifacts. First run pre-fills decisions.csv by confidence;
+#    edit the holds, then re-run to finalize.
+python scripts/apply_batch.py --batch batches/<dir>
+#   -> decisions.csv, apply.json, apply_rows.csv, apply_patch.csv, conflicts.csv
+
+# 3. Apply (offset-proof, pick one): paste apply_rows.csv full rows over matching
+#    backend rows, OR run tools/apply_patch.gs on apply_patch.csv (by-name, DRY_RUN first).
+
+# 4. Verify — re-pull and confirm everything landed.
+python scripts/verify_apply.py --batch batches/<dir> --pull   # -> verify_report.csv
+```
+
+Conflicts (research vs a non-blank backend value) go to `conflicts.csv` and are decided
+by hand — never auto-applied (additive-to-blanks holds).
+
 ## Hard requirements (these override anything below)
 
 - **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited.
@@ -211,6 +238,9 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
 | `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate | Verifier behavior changes; new research-output key |
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |
+| `batch_digest.py` | triage a batch into auto-safe vs needs-a-decision (`digest.md`) | Changing the triage split or digest format |
+| `apply_batch.py` | reviewed batch → `decisions.csv` + offset-proof apply artifacts (`apply_rows.csv`, `apply_patch.csv`, `apply.json`, `conflicts.csv`) | New batch mode; changing the patch/decision schema |
+| `verify_apply.py` | re-pull + diff backend vs `apply.json` (landed/mismatch/missing) + qc the touched rows | Changing match logic; new verify check |
 
 Trust the scripts by default. They're versioned scaffolding, not throwaway code. If you fix one, commit the fix in the same batch with a note in `notes.md`.
 
