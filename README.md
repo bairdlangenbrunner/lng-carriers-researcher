@@ -66,6 +66,14 @@ Every batch follows the same shape: pull a fresh backend CSV, re-derive the
 column map, gather and verify sources, build a workbook, recalc it to confirm
 zero formula errors, and commit the batch directory with a `notes.md`.
 
+Once a candidate workbook has been reviewed, the **apply & verify** round-trip
+(`docs/sops/apply.md`) gets the accepted proposals back into the backend
+offset-proof — triage (`batch_digest.py`) → decisions + apply artifacts
+(`apply_batch.py`) → paste or by-name apply → re-pull and confirm
+(`verify_apply.py`, which also runs the QC and dedupe sweeps). It exists because
+a manual column-misaligned paste once corrupted two rows; this loop makes that
+class of bug impossible.
+
 ## Repository layout
 
 ```
@@ -80,6 +88,7 @@ docs/
     discovery.md           Discovery workflow, four-ring source model, candidate workbook
     data_fill.md           Data-fill workflow, blank-vs-`unknown` preserve-ref contract, derivable autofill
     sfoc_reconciliation.md SFOC reconciliation workflow
+    apply.md               Apply & verify round-trip — offset-proof batch incorporation + dedupe sweep
   inclusion_criteria.md    What's in scope vs out, status categories
   pointers.md              "Which SOP section governs X" cross-reference index
 
@@ -91,16 +100,26 @@ refdata/                   Reference markdown (read on demand)
 
 scripts/                   Python tools called by the workflows
   pull_backend.py          curl + parse backend CSV, derive the column-index map
+  qc_backend.py            Backend QC sanity check — column-offset / misplaced-value detection
   normalize.py             Canonical builder/owner names + owner→country (imported by others)
+  lookups.py               refdata loaders — controlled vocab + builder/owner facts tables
+  seed_lookups.py          Seed/refresh the builder/owner facts CSVs from the live backend
   dedup_index.py           Build the matching indexes for candidate dedup
   csb_fetch.py             Fetch + parse ChinaShipBuild orderbook tables
   url_verifier.py          The §3.8 gate — HTTP 200 + content check + soft-error detection
   imo_tracker.py           §6a.8 IMO → marine-vessel-tracker fallback
   derive_fills.py          Data-fill: scope rows, compute derivable autofills, list research targets
   merge_fills.py           Data-fill: merge per-cluster research + run the central §3.8 gate
-  build_workbook.py        xlsx scaffolding — sheets, color fills, frozen panes, headers (3 modes)
+  build_workbook.py        xlsx scaffolding — sheets, color fills, frozen panes, headers (4 modes)
   recalc.py                Force recalc, return any formula errors (run before committing)
+  batch_digest.py          Apply: triage a batch into auto-safe vs needs-a-decision
+  apply_batch.py           Apply: reviewed batch → decisions.csv + offset-proof apply artifacts
+  verify_apply.py          Apply: re-pull + diff backend vs apply.json, qc + dedupe the touched rows
+  dedupe_check.py          Internal duplicate scan (tiered HIGH/MED/LOW; advisory)
   paths.py                 Shared path helpers
+
+tools/
+  apply_patch.gs           Apps Script by-name applier (writes each cell by row_id + header)
 
 tests/                     pytest suite (normalize + url_verifier covered; fetcher fixtures planned)
 batches/                   Per-batch outputs (xlsx + notes + Drive links)

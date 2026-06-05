@@ -48,6 +48,7 @@ For the `Drive link` column, prefer the Sheets URL.
 |---|---|---|---|---|---|
 | 2026-06-03 | discovery | since May 1 2026 (gap 05-01→06-03, 7 main yards) | [folder](2026-06-03_discovery_since_may_2026/) | _(pending)_ | 3 clusters / 6 vessels (1 green, 5 yellow); 1 status flag; build_workbook full-schema discovery fix; rebuilt under RF17/DC7 (owner stylization, multi-URL ", ", yard-location autofill) |
 | 2026-06-04 | data_fill | Last updated ≥ 2026-05-18 (rows 1144-1223, 42 rows) | [folder](2026-06-04_data_fill_rows_1144-1223/) | _(pending)_ | 88 fills (59 green, 29 yellow); 140 documented blanks; 1 unknown preserved (O1213); 5 candidate findings; new data_fill workflow (DF rev 1) |
+| 2026-06-05 | discovery | CNOOC/CMES/NYK JV roster completion (Hudong-Zhonghua) | [folder](2026-06-05_1509ET_discovery_cnooc-cmes-nyk-jv_hudong/) | _(pending)_ | 3 green placeholder candidates (C1-C3) completing the firm six-ship JV order; backend held 3 (H1889A + H1890A + sheet-1087 placeholder); Name/Hull/IMO/delivery-year left blank (unindexed); row-1087 dup-watch flagged |
 
 <!-- Example row format:
 | 2026-05-27 | ref_fill | rows 1148-1167 | [folder](2026-05-27_ref_fill_rows_1148-1167/) | [Sheets](https://docs.google.com/spreadsheets/d/...) | 2 defects corrected, 1 escalation |
