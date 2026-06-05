@@ -171,7 +171,8 @@ Less frequent and script-light — there's no fixed scriptchain here. Follow
 files in `work/`, run the four-bucket reconciliation (with the capacity cut and
 the normalization mapping), build the nine-sheet workbook, recalc to zero
 formula errors, and commit the batch directory under `batches/`. The SOP is
-authoritative.
+authoritative. Close the pass with a full-backend dedupe scan
+(`python scripts/dedupe_check.py` -> `work/dedupe_report.csv`; apply.md §5a).
 
 ### Apply a reviewed batch
 
@@ -192,12 +193,15 @@ python scripts/apply_batch.py --batch batches/<dir>
 # 3. Apply (offset-proof, pick one): paste apply_rows.csv full rows over matching
 #    backend rows, OR run tools/apply_patch.gs on apply_patch.csv (by-name, DRY_RUN first).
 
-# 4. Verify — re-pull and confirm everything landed.
+# 4. Verify — re-pull and confirm everything landed. Also runs the dedupe sweep
+#    (apply.md §5a) over touched/added rows -> <dir>/dedupe_report.csv (advisory).
 python scripts/verify_apply.py --batch batches/<dir> --pull   # -> verify_report.csv
 ```
 
 Conflicts (research vs a non-blank backend value) go to `conflicts.csv` and are decided
-by hand — never auto-applied (additive-to-blanks holds).
+by hand — never auto-applied (additive-to-blanks holds). Review any HIGH/MED group in
+`dedupe_report.csv` before calling the batch done — a newly-added row may duplicate an
+existing vessel (apply.md §5a). Run standalone any time: `python scripts/dedupe_check.py`.
 
 ## Hard requirements (these override anything below)
 
@@ -240,7 +244,8 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |
 | `batch_digest.py` | triage a batch into auto-safe vs needs-a-decision (`digest.md`) | Changing the triage split or digest format |
 | `apply_batch.py` | reviewed batch → `decisions.csv` + offset-proof apply artifacts (`apply_rows.csv`, `apply_patch.csv`, `apply.json`, `conflicts.csv`) | New batch mode; changing the patch/decision schema |
-| `verify_apply.py` | re-pull + diff backend vs `apply.json` (landed/mismatch/missing) + qc the touched rows | Changing match logic; new verify check |
+| `verify_apply.py` | re-pull + diff backend vs `apply.json` (landed/mismatch/missing) + qc the touched rows + dedupe sweep over touched/added rows | Changing match logic; new verify check |
+| `dedupe_check.py` | internal duplicate scan — tiered (IMO/builder+hull → HIGH; placeholder↔identified on builder+owner+capacity+delivery → MED; distinct ordinals → LOW sister ships). Advisory; `work/dedupe_report.csv`; `--rows`, `--strict` (apply.md §5a) | New dup signal/tier; a false positive/negative; new disqualifier |
 
 Trust the scripts by default. They're versioned scaffolding, not throwaway code. If you fix one, commit the fix in the same batch with a note in `notes.md`.
 

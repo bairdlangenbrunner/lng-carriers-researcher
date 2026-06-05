@@ -22,6 +22,7 @@ from pathlib import Path
 from paths import backend_csv_path, repo_root
 from apply_batch import _load_backend
 import qc_backend
+import dedupe_check
 
 
 def _norm(s):
@@ -60,26 +61,41 @@ def main():
             mismatch.append((rid, col, want, got))
 
     # discovery: each accepted new row should now exist (match by Name or Hull number)
-    new_missing, new_present = [], []
+    new_missing, new_present, new_row_ids = [], [], set()
+    rid_i = colmap["row_id"]
     for nr in apply_doc.get("accepted_new_rows", []):
         rd = nr.get("row_data", {})
         keys = {h: rd.get(h, "") for h in ("Name", "Hull number") if rd.get(h)}
         if not keys:
             new_present.append(("(unverifiable — no Name/Hull)", nr.get("cluster_id", "")))
             continue
-        found = any(
-            any(_norm(r[H[h]]) == _norm(v) for h, v in keys.items()
-                if h in H and len(r) > H[h])
-            for r in row_by_id.values())
-        (new_present if found else new_missing).append((nr.get("cluster_id", ""), keys))
+        match = next(
+            (r for r in row_by_id.values()
+             if any(_norm(r[H[h]]) == _norm(v) for h, v in keys.items()
+                    if h in H and len(r) > H[h])),
+            None)
+        if match is not None:
+            new_present.append((nr.get("cluster_id", ""), keys))
+            if len(match) > rid_i and match[rid_i]:
+                new_row_ids.add(str(match[rid_i]))
+        else:
+            new_missing.append((nr.get("cluster_id", ""), keys))
 
     # qc the touched rows so an apply-time offset is caught now
     touched_ids = {str(c["row_id"]) for c in apply_doc.get("accepted_cells", [])}
-    rid_i = colmap["row_id"]
     findings, _, _ = qc_backend.scan(
         header, list(row_by_id.values()), rid_i,
         row_filter=(lambda rid: rid in touched_ids) if touched_ids else None)
     qc_hi_med = [f for f in findings if f["severity"] in ("HIGH", "MED")]
+
+    # dedupe sweep (advisory): did anything this batch touched/added duplicate an
+    # existing vessel? Focus on the touched + newly-landed rows (Apply SOP §dedupe-sweep).
+    focus = touched_ids | new_row_ids
+    dupe_groups = dedupe_check.scan_duplicates(
+        header, list(row_by_id.values()), colmap, focus_rows=focus or None)
+    dupe_hi_med = [g for g in dupe_groups if g["severity"] in ("HIGH", "MED")]
+    if dupe_groups:
+        dedupe_check.write_report(dupe_groups, batch_dir / "dedupe_report.csv")
 
     # report
     rep = batch_dir / "verify_report.csv"
@@ -114,8 +130,17 @@ def main():
     if qc_hi_med:
         print(f"  ⚠ qc_backend flags {len(qc_hi_med)} HIGH/MED issue(s) in touched rows "
               "— run scripts/qc_backend.py for detail", file=sys.stderr)
+    if dupe_hi_med:
+        print(f"  ⚠ dedupe_check flags {len(dupe_hi_med)} possible duplicate group(s) "
+              f"involving this batch's rows:", file=sys.stderr)
+        for g in dupe_hi_med[:10]:
+            print(f"      [{g['severity']}] rows {' + '.join(map(str, g['row_ids']))} · {g['key']}",
+                  file=sys.stderr)
+        print(f"      see {batch_dir / 'dedupe_report.csv'}", file=sys.stderr)
     print(f"  report: {rep}", file=sys.stderr)
 
+    # Duplicates are judgment calls (placeholder vs sister ship), so they're
+    # advisory — surfaced loudly but never fail the apply by themselves.
     problems = bool(mismatch or missing or new_missing or qc_hi_med)
     if not problems:
         print("  ✓ everything accepted landed cleanly", file=sys.stderr)

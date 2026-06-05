@@ -6,9 +6,12 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-06-05 rev 1 (initial SOP). Built after a manual copy/paste column
-offset corrupted rows 1216/1217 (CMHI-282-07/-08). The whole point of this workflow is
-that the offset class of bug becomes impossible.
+**Last revised:** 2026-06-05 rev 2 (added §5a — the dedupe sweep: `verify_apply.py` now runs
+`dedupe_check.py` over the rows a batch touched/added, so a newly-added row that duplicates an
+existing vessel is caught at apply time. Tiered HIGH/MED/LOW, advisory, writes
+`<dir>/dedupe_report.csv`; also runnable standalone). Prior: 2026-06-05 rev 1 (initial SOP).
+Built after a manual copy/paste column offset corrupted rows 1216/1217 (CMHI-282-07/-08). The
+whole point of this workflow is that the offset class of bug becomes impossible.
 
 ---
 
@@ -48,6 +51,8 @@ python scripts/apply_batch.py --batch batches/<dir>
 # 4. Verify: re-pull the backend and confirm everything landed.
 python scripts/verify_apply.py --batch batches/<dir> --pull
 #   -> <dir>/verify_report.csv  (landed / MISMATCH / MISSING per accepted cell)
+#      <dir>/dedupe_report.csv  (advisory: did a touched/added row duplicate an existing
+#                                vessel? — §5a; also runnable standalone via dedupe_check.py)
 ```
 
 ## 3. Decisions & acceptance tracking (`decisions.csv`)
@@ -89,6 +94,38 @@ introduced *during* apply is caught immediately (this is the check that would ha
 1216/1217 the moment it happened). `--strict` exits non-zero if anything didn't land —
 suitable for gating. A clean verify is the definition of "batch incorporated."
 
+## 5a. Dedupe sweep (`dedupe_check.py`) — did this batch shadow an existing vessel?
+
+`verify_apply.py` also runs an **internal duplicate scan** over the rows this batch
+touched or newly added (`dedupe_check.scan_duplicates`, focused on those row_ids), so a
+freshly-added row that duplicates a vessel already in the tracker is caught at apply time —
+before it ossifies. Hits are written to `<dir>/dedupe_report.csv` and surfaced on stderr.
+The sweep is **advisory**: duplicates are judgment calls (a placeholder slot vs a distinct
+sister ship), so they never fail the apply by themselves — but you must look at any HIGH/MED
+group before calling the batch done.
+
+The scan is tiered, highest-confidence first:
+- **Tier 1 (HIGH)** — two rows share a real **IMO**, or a real **(builder, hull)**. Same
+  vessel; merge (keep the most complete row, retire the other).
+- **Tier 2 (MED)** — a **placeholder** row (blank / `unknown` / `Hull …-07` / `TBN`) and
+  another row match on builder + owner + capacity (±8,000 cbm) + delivery year with **no
+  distinguishing hull or IMO**. Probably the same order slot entered twice; verify by source.
+- **Tier 3** — disqualifiers applied while building Tier 2: distinct non-blank hulls,
+  distinct non-blank IMOs, or clearly different capacities mean *sister ships*, never paired.
+- **Tier 4 (LOW)** — a Tier-2 candidate whose rows carry **different ordinal markers**
+  ("8th ship" vs "9th ship", `…-07` vs `…-08`) is downgraded — distinct sisters (the Knutsen
+  8th-vs-9th lesson). Reconcile by ordinal, then dismiss.
+
+Run it standalone over the whole backend (or a focus set) any time, not just at apply:
+
+```bash
+python scripts/dedupe_check.py [--rows 1216,1217] [--strict]   # -> work/dedupe_report.csv
+```
+
+`--rows` limits output to groups touching those row_ids (the "did my new rows duplicate
+anything?" sweep); `--strict` exits non-zero if any HIGH/MED group exists. The SFOC
+reconciliation pass should run the standalone full-backend scan as its closing step too.
+
 ## 6. Publishing the candidate workbook (optional, for shared review)
 
 To share the xlsx for review (the digest + decisions.csv cover local review):
@@ -105,9 +142,17 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   neither can land a value in the wrong column.
 - **Always `verify_apply.py --pull` after applying.** An unverified apply is an open loop.
 - **Conflicts are decided, not auto-applied.** Additive-to-blanks holds.
+- **Review the dedupe sweep before calling a batch done.** §5a is advisory (it won't fail
+  the apply), but a HIGH/MED group means a row may duplicate an existing vessel — resolve it.
 
 ## 8. Changelog
 
+- **rev 2** (2026-06-05): Added §5a — the dedupe sweep. `verify_apply.py` runs
+  `dedupe_check.py` (`scan_duplicates`) over the rows a batch touched/added and writes
+  `<dir>/dedupe_report.csv`; tiered HIGH (shared IMO / builder+hull) / MED (placeholder↔
+  identified on builder+owner+capacity+delivery, no distinguishing hull/IMO) / LOW (distinct
+  ordinal markers → sister ships). Advisory — never fails the apply. Also runnable standalone
+  (`python scripts/dedupe_check.py [--rows …] [--strict]`), which the SFOC pass closes with.
 - **rev 1** (2026-06-05): Initial SOP. Adds `batch_digest.py` (triage), `apply_batch.py`
   (decisions + `apply.json`/`apply_rows.csv`/`apply_patch.csv`/`conflicts.csv`),
   `verify_apply.py` (re-pull diff + qc), and `tools/apply_patch.gs` (by-name applier).
