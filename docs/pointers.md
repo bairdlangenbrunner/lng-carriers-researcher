@@ -103,6 +103,16 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Rule F / §4.9 consistency | DF §9 | proposals are paired candidate fills for review, never a backend edit; conflicts → RF §8 |
 | Documented blanks | DF §11 | §6a.9-style negative-result log for cells researched and not found |
 
+## QC sanity check + authoritative facts tables (2026-06-04)
+
+| Thing | Where | What |
+|---|---|---|
+| Backend QC scan | `scripts/qc_backend.py` | Run after `pull_backend.py`. Flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs, Rule F, lookup-table disagreement). Advisory (writes `work/qc_report.csv`); `--strict` exits non-zero on HIGH/MED findings; `--rows X-Y` scopes. Silence known-legit cells in `refdata/qc_allowlist.csv`. |
+| Builder facts table | `refdata/shipbuilder_facts.csv` | Authoritative yard country/area + yard-location block, keyed by `normalize_builder`. Autofill reads it first (DF §5). |
+| Owner facts table | `refdata/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
+| Facts loaders + vocab | `scripts/lookups.py` | `load_builder_facts` / `load_owner_facts` + `CONTROLLED_VOCAB` (single source of truth, shared by build + QC). |
+| Seed / refresh tables | `scripts/seed_lookups.py` | Bootstraps both CSVs from the live backend; re-runnable, never clobbers curated rows without `--overwrite`. |
+
 ## Pause-and-ask triggers
 
 - **RF §11** — CSB broken AND §6a fallback exhausted; class of values systematically wrong; new rule invalidates prior batches; corroboration too thin even for yellow

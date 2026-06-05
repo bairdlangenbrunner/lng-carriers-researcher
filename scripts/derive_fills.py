@@ -20,7 +20,8 @@ from pathlib import Path
 
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner, owner_country
-from build_workbook import YARD_LOCATION_COLS, _build_yard_location_map
+from build_workbook import YARD_LOCATION_COLS, _yard_location_map_table_first
+from lookups import owner_facts, load_owner_facts
 
 # Primary researchable columns (exact backend headers) + their paired [ref].
 # Capacity units / Price currency are NOT listed here — they are dependent
@@ -96,7 +97,8 @@ def main():
     LU, OWN, CTRY, CTRY_REF = H["Last updated"], H["Shipowner"], \
         H["Shipowner country/area"], H["Shipowner country/area [ref]"]
     CAP, UNITS = H["Capacity"], H["Capacity units"]
-    yard_map = _build_yard_location_map(data, hdr)
+    yard_map = _yard_location_map_table_first(data, hdr)
+    owner_facts_tbl = load_owner_facts()
 
     in_scope = [r for r in data if len(r) > LU and (parse_date(r[LU]) or (0, 0, 0)) >= cut]
     scope_ids = [r[RID].strip() for r in in_scope]
@@ -122,19 +124,27 @@ def main():
                     fills.append(_derivable(rid, h, v,
                                             note=f"yard-location for '{builder_tag}' (DC §6.7)"))
 
-        # --- derivable: Shipowner country/area sibling-copy (DF §5) ---
+        # --- derivable: Shipowner country/area — refdata table first, then
+        #     backend sibling-copy (DF §5) ---
         if not val("Shipowner country/area"):
-            c = owner_country(val("Shipowner"), data, OWN, CTRY)
+            facts = owner_facts(val("Shipowner"), owner_facts_tbl)
+            c = facts.get("Shipowner country/area")
             if c:
-                sib_ref = _sibling_country_ref(data, owner_tag, OWN, CTRY, CTRY_REF)
+                ref = facts.get("Shipowner country/area [ref]", "")
+                note = f"from refdata/shipowner_facts.csv for owner '{owner_tag}'" \
+                       + ("" if ref else " (no [ref] in table; value only)")
+            else:
+                c = owner_country(val("Shipowner"), data, OWN, CTRY)
+                ref = _sibling_country_ref(data, owner_tag, OWN, CTRY, CTRY_REF) if c else ""
+                note = (f"derived from backend sibling rows for owner '{owner_tag}'"
+                        + ("" if ref else " (no sibling country [ref]; value only)")) if c else ""
+            if c:
                 fills.append({
                     "row_id": rid, "field": "Shipowner country/area",
                     "ref_field": "Shipowner country/area [ref]",
-                    "proposed_value": c, "new_urls": [sib_ref] if sib_ref else [],
+                    "proposed_value": c, "new_urls": [ref] if ref else [],
                     "prev_state": "blank", "existing_ref_preserved": "",
-                    "confidence": "G", "derivable": True,
-                    "note": f"derived from backend sibling rows for owner '{owner_tag}'"
-                            + ("" if sib_ref else " (no sibling country [ref]; value only)"),
+                    "confidence": "G", "derivable": True, "note": note,
                 })
 
         # --- derivable: Capacity units = cbm when Capacity already present ---

@@ -55,5 +55,7 @@ and note it in the batch `notes.md`.
   follow whatever the cited source states (flag if a source gives KRW/another currency that
   would need conversion before entry).
 
-The canonical mirror used by `build_workbook.py`'s data-fill validator is `_DATA_FILL_VOCAB`
-in `scripts/build_workbook.py` — keep the two in sync.
+The canonical machine-readable copy is `CONTROLLED_VOCAB` in `scripts/lookups.py` — imported by
+`build_workbook.py`'s data-fill validator AND by `qc_backend.py` (which uses it to detect a
+controlled value sitting in the wrong column). This markdown is the human mirror; keep the two in
+sync.

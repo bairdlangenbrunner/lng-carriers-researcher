@@ -99,6 +99,8 @@ from openpyxl.utils import get_column_letter
 
 from paths import backend_csv_path
 from normalize import normalize_builder, normalize_owner
+from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, load_builder_facts,
+                     YARD_FACT_COLS as YARD_LOCATION_COLS)
 
 
 # Color conventions
@@ -315,19 +317,11 @@ def build_ref_fill(args):
 
 # Discovery yard-location autofill (Discovery SOP §6.7). The yard-location block
 # is a property of the shipbuilder (yard), not the individual vessel, so on a
-# candidate row these 7 columns are filled by copying from an existing backend
-# row for the SAME shipbuilder. If the shipbuilder is new to the backend they
-# stay blank. row_data must NOT carry these columns — this autofill owns them.
-# (Exact backend header strings; must match the live schema.)
-YARD_LOCATION_COLS = [
-    "Shipbuilder yard country/area",
-    "Shipbuilder yard country/area [ref]",
-    "Yard location latitude",
-    "Yard location longitude",
-    "Yard location plus code",
-    "Yard location accuracy",
-    "Yard location lat/lon [ref]",
-]
+# candidate row these 7 columns are filled from the authoritative
+# refdata/shipbuilder_facts.csv table (with the backend-sibling scan as a
+# fallback). If the shipbuilder is new to both, they stay blank. row_data must
+# NOT carry these columns — this autofill owns them. YARD_LOCATION_COLS is the
+# canonical list in lookups.YARD_FACT_COLS (imported above).
 
 
 def _build_yard_location_map(backend_data, backend_header):
@@ -355,6 +349,26 @@ def _build_yard_location_map(backend_data, backend_header):
         if score and (tag not in best or score > best[tag][0]):
             best[tag] = (score, block)
     return {tag: block for tag, (_, block) in best.items()}
+
+
+def _yard_location_map_table_first(backend_data, backend_header):
+    """Yard-location map with the authoritative refdata table taking priority.
+
+    Starts from the backend-sibling scan (_build_yard_location_map) and overlays
+    refdata/shipbuilder_facts.csv: a non-blank table cell wins; cells the table
+    leaves blank fall back to the sibling value. A builder absent from the table
+    is fully sibling-derived, so this never regresses prior coverage.
+    """
+    merged = _build_yard_location_map(backend_data, backend_header)
+    for tag, block in load_builder_facts().items():
+        usable = {k: v for k, v in block.items()
+                  if k in YARD_LOCATION_COLS and v and v != AMBIGUOUS}
+        if not usable:
+            continue
+        row = dict(merged.get(tag, {}))
+        row.update(usable)
+        merged[tag] = row
+    return merged
 
 
 def build_discovery(args):
@@ -388,7 +402,7 @@ def build_discovery(args):
     backend_header = backend_rows[colmap["_header_row_idx"]]
     header_index = {h: i for i, h in enumerate(backend_header)}
     data_start = colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1)
-    yard_loc_map = _build_yard_location_map(backend_rows[data_start:], backend_header)
+    yard_loc_map = _yard_location_map_table_first(backend_rows[data_start:], backend_header)
 
     ws = wb.create_sheet("candidate_vessels")
     prefix_cols = ["cluster_id", "cluster_label", "confidence", "discovery_notes"]
@@ -534,15 +548,9 @@ def _join_refs(existing: str, new_urls) -> str:
 
 # Controlled vocabularies for the type columns (Data-fill SOP §8). The backend
 # writes values verbatim with no normalizer, so a data_fill proposal MUST use an
-# existing canonical value. Mirrors refdata/controlled_vocab.md.
-_DATA_FILL_VOCAB = {
-    "Cargo type": {"membrane", "spherical", "self-supporting prismatic", "type C"},
-    "Vessel type": {"conventional", "FSRU", "q-flex", "q-max", "icebreaker",
-                    "FSU", "Supporting", "small-scale", "mid-scale"},
-    "Propulsion type": {"X-DF", "DFDE", "steam", "ME-GA", "ME-GI", "SSD",
-                        "steam reheat", "STaGE", "prismatic conventional DFDE",
-                        "prismatic small-scale DFDE"},
-}
+# existing canonical value. Single source of truth: lookups.CONTROLLED_VOCAB
+# (mirrors refdata/controlled_vocab.md), shared with qc_backend.py.
+_DATA_FILL_VOCAB = CONTROLLED_VOCAB
 
 
 def _validate_data_fills(fills, header_index, row_by_id):

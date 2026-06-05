@@ -22,6 +22,7 @@ This file is read automatically at the start of every Claude Code session in thi
 2. Check `docs/pointers.md` for the rule-to-section lookup map.
 3. If SOP cross-references look inconsistent (Discovery SOP citing a [ref]-Fill SOP rev older than the current one), flag to the user before proceeding.
 4. Pull a fresh backend CSV — **mandatory first step** ([ref]-Fill SOP §3.0). The user edits the backend between batches.
+5. Run the backend QC sanity check on the fresh pull — `python scripts/qc_backend.py`. It flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs). Advisory by default; review `work/qc_report.csv` and surface anything in the batch's scope to the user before building.
 
 ## Workflow router
 
@@ -198,6 +199,9 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | Script | Purpose | Read source when |
 |---|---|---|
 | `pull_backend.py` | curl + parse CSV, derive column-index map from header row | Schema changed; column indices look wrong |
+| `qc_backend.py` | backend QC sanity check — column-offset / misplaced-value detection (`work/qc_report.csv`; `--strict`, `--rows`) | New column-shape rule; a false positive/negative; new check |
+| `lookups.py` | refdata loaders: `CONTROLLED_VOCAB` (shared by build + QC) + builder/owner facts tables | Adding a vocab value; changing the facts-table schema |
+| `seed_lookups.py` | seed/refresh `refdata/shipbuilder_facts.csv` + `shipowner_facts.csv` from the live backend | New yard/owner to capture; re-deriving facts after backend edits |
 | `normalize.py` | canonical builder/owner names (module, imported by others) | Adding a new yard or owner; clusters over- or under-merging |
 | `dedup_index.py` | builds the two indexes used for matching candidates against backend | New batch type that needs a different index shape |
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
