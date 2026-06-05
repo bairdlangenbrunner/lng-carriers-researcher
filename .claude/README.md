@@ -26,8 +26,9 @@ Read-only bash commands (`ls`, `cat`, `grep`, `head`, `tail`, `diff`, `wc`, `git
 
 ## ask — confirm first, then proceed
 
-- **`Bash(git push *)`, `Bash(git remote *)`, `Bash(gh *)`** — anything that touches the public remote. CLAUDE.md already says never push without approval; this enforces it at the harness level. Put in `ask` rather than `deny` so you *can* approve a push in-conversation when you mean to.
 - **`Bash(pip install *)`, `Bash(npm *)`** — installing new packages is worth a glance. The two specific installs you'll actually run (`pip install -e .` and `pip install -e .[dev]`) are on the allow list, so those don't prompt; anything else does.
+
+> **Note on remote git / `gh`.** `git push`, `git remote`, and `gh` were previously in `ask` here. They've been removed because the user's global `~/.claude/settings.json` allows `Bash(git:*)` and `Bash(gh:*)` outright. Keeping them in `ask` at the project level would still force a prompt — permission rules merge across sources and are evaluated **deny → ask → allow, first match wins**, so a project `ask` beats a global `allow`. Force-push stays blocked: `git push --force` / `git push -f` are in `deny` below, and deny beats everything regardless of source.
 
 ## deny — never, even if asked
 
