@@ -13,42 +13,11 @@ not the dataset.
 
 ## Running the assistant
 
-There are two ways to drive the assistant, depending on whether you need the
-full batch pipeline or just the research and reasoning.
-
-### With Claude Code (full pipeline)
-
-This is the intended path — it can run the Python tooling, pull the backend CSV,
-build the xlsx, and commit a batch.
-
-1. Open the repo in Claude Code: `claude .`
-2. Claude reads `CLAUDE.md` automatically and routes from there
-3. Give it a trigger phrase, e.g. "fill refs for rows 1148–1167" or "discovery run for the Q2 2026 gap"
-
-Claude Code installs the Python dependencies the first time a script needs them,
-so there's normally nothing to set up by hand. If you'd rather run a script
-yourself (e.g. `python recalc.py …`), install them once with `pip install -e .`
-(add `".[dev]"` for `pytest` / `ruff`). No credentials or `.env` are required —
-every source the assistant uses is publicly accessible.
-
-### With the Claude desktop app or claude.ai
-
-You can also point a regular Claude chat at this repository, no local setup
-required. This is good for the research-and-reasoning half of a batch and for
-reviewing work against the SOPs.
-
-1. **Give Claude the repo.** Either enable the GitHub connector and point the chat at this repository, or create a [Project](https://www.anthropic.com/news/projects) and add the repo (at minimum `CLAUDE.md`, `docs/sops/`, and `refdata/`) as project knowledge.
-2. **Tell it to follow the procedures.** Ask Claude to read `CLAUDE.md` and the relevant SOP end-to-end before doing anything — `CLAUDE.md` is the router and `docs/sops/` holds the authoritative rules.
-3. **Give it a research task.** Use the same trigger phrases ("fill refs for rows 1148–1167", "discovery run for the Q2 2026 gap"). With web search enabled, Claude can cluster the rows, search the public sources, apply the confidence labels, sanity-check URLs, and draft the citation or candidate set as JSON or a table.
-
-**What's different from Claude Code:** the desktop app does the reasoning, not
-the plumbing. It can't run the Python tooling, pull the backend CSV via
-`pull_backend.py`, build the workbook with `build_workbook.py`, run the
-`url_verifier.py` / `recalc.py` gates, or commit a batch directory — those need
-a local checkout. So use it to (a) do the source research and hand you a draft
-citation/candidate set you then feed into `build_workbook.py` in Claude Code, or
-(b) review and QA an existing batch against the SOPs. Anything destined for the
-tracker still has to clear the script-driven verification gates before it ships.
+Open the repo in [Claude Code](https://docs.claude.com/en/docs/claude-code)
+(`claude .`) and give it a trigger phrase, e.g. "fill refs for rows 1148–1167"
+or "discovery run for the Q2 2026 gap". Claude reads `CLAUDE.md` automatically
+and routes from there. Dependencies install on first use; no credentials are
+required — every source is public.
 
 ## Workflows
 
@@ -164,17 +133,3 @@ as citation sources; the reasons are documented in the SOPs.
 Scope (which vessels qualify, the proposed / on-order / active status
 categories) is defined in [docs/inclusion_criteria.md](docs/inclusion_criteria.md).
 
-## Contributing
-
-This is an open project. If you spot an error in the tracker:
-
-1. Open an issue with the row(s), the proposed correction, and a public URL supporting it, or
-2. If you have a batch's worth of corrections, open a PR against `batches/` with the xlsx and notes.
-
-The [SOPs](docs/sops/) describe the rules a citation has to meet. Submissions
-that follow the SOPs are easier to merge.
-
-## License
-
-Code is [MIT](LICENSE). Data and SOPs are intended for reuse under CC-BY-4.0
-(formal data license pending).
