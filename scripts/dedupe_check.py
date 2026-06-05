@@ -30,15 +30,25 @@ Four tiers, highest-confidence first:
            "Hull ...-07" vs "...-08") is downgraded to LOW — distinct sisters, the
            Knutsen 8th-vs-9th lesson. Same/no ordinals → stays MED.
 
+Row identity: every group is reported by its **live Google Sheet tab row** as well
+as its `row_id`. `row_id` is column A ("original order in sheet") — a static stamp
+that drifts from the live row as rows are deleted — so it is NOT the tab row. The
+report's `sheet_rows` column and the stderr lines lead with the live row; matching
+is still keyed on `row_id` (the stable, offset-proof identifier across pulls).
+
 CLI:
-    python scripts/dedupe_check.py [--backend <csv>] [--rows 1216,1217] [--strict]
-    # writes work/dedupe_report.csv; --rows limits output to groups touching
-    # those row_ids (the end-of-update "did my new rows duplicate anything?" sweep);
-    # --strict exits 1 if any HIGH/MED group is found.
+    python scripts/dedupe_check.py [--backend <csv>] [--rows ...] [--sheet-rows ...] [--strict]
+    # writes work/dedupe_report.csv (with a sheet_rows column).
+    # --rows N,...        focus by row_id (column-A "original order")
+    # --sheet-rows N,...  focus by LIVE sheet tab row (what you see in the sheet)
+    # --strict            exit 1 if any HIGH/MED group is found
+    # (the end-of-update "did my new rows duplicate anything?" sweep)
 
 Library:
     from dedupe_check import scan_duplicates
-    groups = scan_duplicates(header, data, colmap, focus_rows={"1216", "1217"})
+    from apply_batch import sheet_row_map
+    srmap = sheet_row_map(backend_csv_path)
+    groups = scan_duplicates(header, data, colmap, focus_rows={"1216"}, sheet_rows=srmap)
 """
 import argparse
 import csv
@@ -50,7 +60,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from normalize import normalize_builder, normalize_owner, normalize_hull
 from paths import backend_csv_path, work_dir
-from apply_batch import _load_backend
+from apply_batch import _load_backend, sheet_row_map
 
 
 # A name that doesn't identify a specific delivered/named vessel — a slot, not a ship.
@@ -135,12 +145,15 @@ def _row_fields(row, colmap):
     }
 
 
-def scan_duplicates(header, data, colmap, focus_rows=None):
+def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
     """Return a list of candidate-duplicate groups.
 
-    Each group: dict(tier, severity, row_ids, builder, owner, key, reason,
-    recommendation). `focus_rows` (a set of row_id strings) limits the result to
-    groups that include at least one of those rows; None = report everything.
+    Each group: dict(tier, severity, row_ids, sheet_rows, builder, owner, key,
+    reason, recommendation). `row_ids` are column-A "original order in sheet"
+    stamps; `sheet_rows` are the live tab rows resolved via `sheet_rows` (a
+    {row_id: sheet_row} map) — always report the live rows to humans. `focus_rows`
+    (a set of row_id strings) limits the result to groups that include at least
+    one of those rows; None = report everything.
     """
     rows = []
     for r in data:
@@ -255,18 +268,35 @@ def scan_duplicates(header, data, colmap, focus_rows=None):
         focus = {str(x) for x in focus_rows}
         groups = [g for g in groups if focus & {str(r) for r in g["row_ids"]}]
 
+    # Resolve live sheet rows for every group (row_id is the column-A stamp, not
+    # the tab row) — always present the live rows to humans.
+    for g in groups:
+        g["sheet_rows"] = ([sheet_rows.get(str(r)) for r in g["row_ids"]]
+                           if sheet_rows else [None] * len(g["row_ids"]))
+
     sev_rank = {"HIGH": 0, "MED": 1, "LOW": 2}
     groups.sort(key=lambda g: (sev_rank[g["severity"]], g["tier"]))
     return groups
 
 
+def _fmt_rows(g):
+    """'sheet 1087 (id 1092) + sheet 1083 (id 263)' — lead with the live tab row."""
+    parts = []
+    for rid, sr in zip(g["row_ids"], g.get("sheet_rows") or [None] * len(g["row_ids"])):
+        parts.append(f"sheet {sr} (id {rid})" if sr else f"id {rid}")
+    return " + ".join(parts)
+
+
 def write_report(groups, out_path):
     with open(out_path, "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["tier", "severity", "row_ids", "builder", "owner",
+        w.writerow(["tier", "severity", "sheet_rows", "row_ids", "builder", "owner",
                     "match_key", "reason", "recommendation"])
         for g in groups:
-            w.writerow([g["tier"], g["severity"], " + ".join(str(x) for x in g["row_ids"]),
+            sr = " + ".join(str(x) if x is not None else "?"
+                            for x in (g.get("sheet_rows") or []))
+            w.writerow([g["tier"], g["severity"], sr,
+                        " + ".join(str(x) for x in g["row_ids"]),
                         g["builder"], g["owner"], g["key"], g["reason"],
                         g["recommendation"]])
 
@@ -274,16 +304,26 @@ def write_report(groups, out_path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", default=str(backend_csv_path()))
-    ap.add_argument("--rows", default="", help="comma-separated row_ids to focus on")
+    ap.add_argument("--rows", default="",
+                    help="comma-separated row_ids (column-A 'original order') to focus on")
+    ap.add_argument("--sheet-rows", default="",
+                    help="comma-separated LIVE sheet tab rows to focus on")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any HIGH/MED candidate is found")
     args = ap.parse_args()
 
     header, row_by_id, colmap = _load_backend(args.backend)
     data = list(row_by_id.values())
-    focus = {x.strip() for x in args.rows.split(",") if x.strip()} or None
+    srmap = sheet_row_map(args.backend, colmap)
 
-    groups = scan_duplicates(header, data, colmap, focus_rows=focus)
+    focus = {x.strip() for x in args.rows.split(",") if x.strip()}
+    if args.sheet_rows:  # translate live sheet rows -> row_id for matching
+        want = {x.strip() for x in args.sheet_rows.split(",") if x.strip()}
+        inv = {str(sr): rid for rid, sr in srmap.items()}
+        focus |= {inv[s] for s in want if s in inv}
+    focus = focus or None
+
+    groups = scan_duplicates(header, data, colmap, focus_rows=focus, sheet_rows=srmap)
 
     out = work_dir() / "dedupe_report.csv"
     write_report(groups, out)
@@ -292,9 +332,9 @@ def main():
     med = [g for g in groups if g["severity"] == "MED"]
     low = [g for g in groups if g["severity"] == "LOW"]
     print(f"dedupe_check: {len(hi)} HIGH, {len(med)} MED, {len(low)} LOW candidate group(s)"
-          + (f" (focus rows {sorted(focus)})" if focus else ""), file=sys.stderr)
+          + (f" (focus row_ids {sorted(focus)})" if focus else ""), file=sys.stderr)
     for g in (hi + med)[:20]:
-        print(f"  [{g['severity']} T{g['tier']}] rows {' + '.join(map(str, g['row_ids']))}"
+        print(f"  [{g['severity']} T{g['tier']}] {_fmt_rows(g)}"
               f" · {g['key']}\n      {g['reason']}", file=sys.stderr)
     print(f"  report: {out}", file=sys.stderr)
 

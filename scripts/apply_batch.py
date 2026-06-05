@@ -52,6 +52,27 @@ def _load_backend(backend_path):
     return header, row_by_id, colmap
 
 
+def sheet_row_map(backend_path, colmap=None):
+    """Map ``row_id`` -> live Google Sheet tab row (1-based).
+
+    ``row_id`` is column A ("original order in sheet") — a static stamp that drifts
+    from the live row as rows are deleted, so it is NOT the tab row. The backend
+    pull is 1:1 with the sheet, so the live row = CSV line index + 1. Use this
+    whenever a row is reported to a human (they navigate the actual sheet).
+    """
+    rows = list(csv.reader(open(backend_path, encoding="utf-8")))
+    cm = colmap or json.loads(
+        Path(backend_path).with_suffix(".colmap.json").read_text())
+    ri = cm["row_id"]
+    ds = cm.get("_data_starts_at", cm["_header_row_idx"] + 1)
+    out = {}
+    for idx in range(ds, len(rows)):
+        r = rows[idx]
+        if len(r) > ri and r[ri].strip():
+            out[r[ri].strip()] = idx + 1
+    return out
+
+
 def _detect(batch_dir):
     for fname, mode in (("data_fill.json", "data_fill"),
                         ("candidates.json", "discovery"),

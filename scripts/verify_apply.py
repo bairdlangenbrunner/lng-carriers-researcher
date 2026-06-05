@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 from paths import backend_csv_path, repo_root
-from apply_batch import _load_backend
+from apply_batch import _load_backend, sheet_row_map
 import qc_backend
 import dedupe_check
 
@@ -46,6 +46,10 @@ def main():
 
     header, row_by_id, colmap = _load_backend(args.backend)
     H = {h: i for i, h in enumerate(header)}
+    # row_id is column-A "original order in sheet"; report the LIVE tab row to humans.
+    srmap = sheet_row_map(args.backend, colmap)
+    def sr(rid):
+        return srmap.get(str(rid), "?")
 
     landed, mismatch, missing = [], [], []
     for cell in apply_doc.get("accepted_cells", []):
@@ -92,7 +96,8 @@ def main():
     # existing vessel? Focus on the touched + newly-landed rows (Apply SOP §dedupe-sweep).
     focus = touched_ids | new_row_ids
     dupe_groups = dedupe_check.scan_duplicates(
-        header, list(row_by_id.values()), colmap, focus_rows=focus or None)
+        header, list(row_by_id.values()), colmap, focus_rows=focus or None,
+        sheet_rows=srmap)
     dupe_hi_med = [g for g in dupe_groups if g["severity"] in ("HIGH", "MED")]
     if dupe_groups:
         dedupe_check.write_report(dupe_groups, batch_dir / "dedupe_report.csv")
@@ -102,13 +107,13 @@ def main():
     import csv
     with open(rep, "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["status", "row_id", "column", "accepted_value", "backend_value"])
+        w.writerow(["status", "sheet_row", "row_id", "column", "accepted_value", "backend_value"])
         for rid, col in landed:
-            w.writerow(["landed", rid, col, "", ""])
+            w.writerow(["landed", sr(rid), rid, col, "", ""])
         for rid, col, want, got in mismatch:
-            w.writerow(["MISMATCH", rid, col, want, got])
+            w.writerow(["MISMATCH", sr(rid), rid, col, want, got])
         for rid, col, want, got in missing:
-            w.writerow(["MISSING", rid, col, want, got])
+            w.writerow(["MISSING", sr(rid), rid, col, want, got])
 
     print(f"verify_apply {batch_dir.name}", file=sys.stderr)
     print(f"  cells: {len(landed)} landed, {len(mismatch)} mismatch, {len(missing)} missing",
@@ -119,12 +124,13 @@ def main():
     if mismatch:
         print("  MISMATCH (backend differs from accepted):", file=sys.stderr)
         for rid, col, want, got in mismatch[:10]:
-            print(f"    row {rid} · {col}: accepted {want!r} but backend has {got!r}",
-                  file=sys.stderr)
+            print(f"    sheet row {sr(rid)} (id {rid}) · {col}: accepted {want!r} "
+                  f"but backend has {got!r}", file=sys.stderr)
     if missing:
         print("  MISSING (accepted value not in backend):", file=sys.stderr)
         for rid, col, want, got in missing[:10]:
-            print(f"    row {rid} · {col}: expected {want!r}", file=sys.stderr)
+            print(f"    sheet row {sr(rid)} (id {rid}) · {col}: expected {want!r}",
+                  file=sys.stderr)
     if new_missing:
         print(f"  NEW ROWS not found: {[c for c, _ in new_missing]}", file=sys.stderr)
     if qc_hi_med:
@@ -134,7 +140,7 @@ def main():
         print(f"  ⚠ dedupe_check flags {len(dupe_hi_med)} possible duplicate group(s) "
               f"involving this batch's rows:", file=sys.stderr)
         for g in dupe_hi_med[:10]:
-            print(f"      [{g['severity']}] rows {' + '.join(map(str, g['row_ids']))} · {g['key']}",
+            print(f"      [{g['severity']}] {dedupe_check._fmt_rows(g)} · {g['key']}",
                   file=sys.stderr)
         print(f"      see {batch_dir / 'dedupe_report.csv'}", file=sys.stderr)
     print(f"  report: {rep}", file=sys.stderr)

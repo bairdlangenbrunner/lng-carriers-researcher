@@ -119,12 +119,22 @@ The scan is tiered, highest-confidence first:
 Run it standalone over the whole backend (or a focus set) any time, not just at apply:
 
 ```bash
-python scripts/dedupe_check.py [--rows 1216,1217] [--strict]   # -> work/dedupe_report.csv
+python scripts/dedupe_check.py [--rows 1216,1217] [--sheet-rows 1211,1212] [--strict]
+#   -> work/dedupe_report.csv
 ```
 
-`--rows` limits output to groups touching those row_ids (the "did my new rows duplicate
-anything?" sweep); `--strict` exits non-zero if any HIGH/MED group exists. The SFOC
-reconciliation pass should run the standalone full-backend scan as its closing step too.
+`--rows` focuses by `row_id`; `--sheet-rows` focuses by live tab row; `--strict` exits
+non-zero if any HIGH/MED group exists. The SFOC reconciliation pass should run the
+standalone full-backend scan as its closing step too.
+
+**Row identity — always read the live sheet row.** `row_id` (colmap `row_id`) is column A,
+*"original order in sheet"* — a static stamp that drifts from the live tab row as rows are
+deleted (on the 2026-06-05 pull, row_id 1216 sat at sheet row 1211). Every report
+(`verify_report.csv`, `dedupe_report.csv`) carries a `sheet_row`/`sheet_rows` column and the
+stderr lines lead with the live row (`sheet row 1211 (id 1216)`), resolved by
+`apply_batch.sheet_row_map` (live row = CSV line index + 1). Matching and pasting still key
+on `row_id` — it's the stable, offset-proof identifier — so the apply itself is unaffected;
+only the human-facing presentation uses sheet rows.
 
 ## 6. Publishing the candidate workbook (optional, for shared review)
 
@@ -152,7 +162,11 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   `<dir>/dedupe_report.csv`; tiered HIGH (shared IMO / builder+hull) / MED (placeholder↔
   identified on builder+owner+capacity+delivery, no distinguishing hull/IMO) / LOW (distinct
   ordinal markers → sister ships). Advisory — never fails the apply. Also runnable standalone
-  (`python scripts/dedupe_check.py [--rows …] [--strict]`), which the SFOC pass closes with.
+  (`python scripts/dedupe_check.py [--rows …] [--sheet-rows …] [--strict]`), which the SFOC
+  pass closes with. Reports now resolve and lead with the **live sheet row** (`row_id` is the
+  static column-A "original order in sheet" stamp, not the tab row) via the new
+  `apply_batch.sheet_row_map`; `verify_report.csv` gained a `sheet_row` column,
+  `dedupe_report.csv` a `sheet_rows` column. Matching still keys on `row_id`.
 - **rev 1** (2026-06-05): Initial SOP. Adds `batch_digest.py` (triage), `apply_batch.py`
   (decisions + `apply.json`/`apply_rows.csv`/`apply_patch.csv`/`conflicts.csv`),
   `verify_apply.py` (re-pull diff + qc), and `tools/apply_patch.gs` (by-name applier).

@@ -245,7 +245,7 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `batch_digest.py` | triage a batch into auto-safe vs needs-a-decision (`digest.md`) | Changing the triage split or digest format |
 | `apply_batch.py` | reviewed batch → `decisions.csv` + offset-proof apply artifacts (`apply_rows.csv`, `apply_patch.csv`, `apply.json`, `conflicts.csv`) | New batch mode; changing the patch/decision schema |
 | `verify_apply.py` | re-pull + diff backend vs `apply.json` (landed/mismatch/missing) + qc the touched rows + dedupe sweep over touched/added rows | Changing match logic; new verify check |
-| `dedupe_check.py` | internal duplicate scan — tiered (IMO/builder+hull → HIGH; placeholder↔identified on builder+owner+capacity+delivery → MED; distinct ordinals → LOW sister ships). Advisory; `work/dedupe_report.csv`; `--rows`, `--strict` (apply.md §5a) | New dup signal/tier; a false positive/negative; new disqualifier |
+| `dedupe_check.py` | internal duplicate scan — tiered (IMO/builder+hull → HIGH; placeholder↔identified on builder+owner+capacity+delivery → MED; distinct ordinals → LOW sister ships). Advisory; `work/dedupe_report.csv` (reports lead with **live sheet row**, not the column-A `row_id`); `--rows`, `--sheet-rows`, `--strict` (apply.md §5a) | New dup signal/tier; a false positive/negative; new disqualifier |
 
 Trust the scripts by default. They're versioned scaffolding, not throwaway code. If you fix one, commit the fix in the same batch with a note in `notes.md`.
 
