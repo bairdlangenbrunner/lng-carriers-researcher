@@ -1,0 +1,222 @@
+{
+  "batch_label": "Fix — Name placeholder normalization (pre-release QC)",
+  "reason": "Normalize inconsistent placeholder vessel names in the Name column ahead of the data release. Same yard was spelled multiple ways across sibling rows: 'Hyundai Samho HI' vs 'HD Hyundai Samho Yeongam'; 'Hudong-Zhonghua Shanghai' vs 'Hudong-Zhonghua'; 'HD Hyundai HI (HHI) Ulsan' vs 'HD Hyundai HI Ulsan' (unified by dropping the parenthetical (HHI) token cluster-wide). Owner-portion fixes: 'Hanwha Ocean (Knutsen)' -> '(Knutsen OAS 2)' (canonical owner form + missing ordinal, sister of (Knutsen OAS 1)); 'Samsung HI Geoje (shipowner unknown)' -> '(owner unknown)'. All edits are cosmetic/derived-name changes; existing Name [ref]s (which document the underlying order, not the literal string) are preserved via preserve_ref.",
+  "corrections": [
+    {
+      "row_id": "1152",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan 3635",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan 3635'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1153",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan 3636",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan 3636'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1154",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan 3637",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan 3637'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1155",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan 3638",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan 3638'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1193",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai Samho Yeongam (Capital Clean ECC 1)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hyundai Samho HI (Capital Clean ECC 1)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1194",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai Samho Yeongam (Capital Clean ECC 2)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hyundai Samho HI (Capital Clean ECC 2)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1195",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai Samho Yeongam (Capital Clean ECC 3)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hyundai Samho HI (Capital Clean ECC 3)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1196",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hudong-Zhonghua (MISC 1)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hudong-Zhonghua Shanghai (MISC 1)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1197",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hudong-Zhonghua (MISC 2)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hudong-Zhonghua Shanghai (MISC 2)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1198",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hudong-Zhonghua (MISC 3)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hudong-Zhonghua Shanghai (MISC 3)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1199",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hudong-Zhonghua (MISC 4)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hudong-Zhonghua Shanghai (MISC 4)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1200",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hudong-Zhonghua (MISC 5)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hudong-Zhonghua Shanghai (MISC 5)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1201",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan (NYK, Ocean Yield 1)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan (NYK, Ocean Yield 1)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1202",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan (NYK, Ocean Yield 2)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan (NYK, Ocean Yield 2)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1203",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan (NYK, Ocean Yield 3)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan (NYK, Ocean Yield 3)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1204",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "HD Hyundai HI Ulsan (NYK, Ocean Yield 4)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'HD Hyundai HI (HHI) Ulsan (NYK, Ocean Yield 4)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1218",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Samsung HI Geoje (owner unknown)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Samsung HI Geoje (shipowner unknown)'); builder/owner refs preserved"
+        }
+      ]
+    },
+    {
+      "row_id": "1219",
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hanwha Ocean (Knutsen OAS 2)",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "placeholder name normalization (was 'Hanwha Ocean (Knutsen)'); builder/owner refs preserved"
+        }
+      ]
+    }
+  ]
+}

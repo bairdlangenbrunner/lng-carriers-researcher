@@ -787,6 +787,16 @@ def build_fix(args):
                 "note": "CSB 176,400 = 98% figure; nominal 180,000 per 3 sources" }
             ] } ] }
 
+    preserve_ref:true on a cell is the escape hatch for cosmetic / derived-value
+    edits (e.g. normalizing a synthetic placeholder Name like
+    "Hudong-Zhonghua Shanghai (MISC 1)" -> "Hudong-Zhonghua (MISC 1)"). The paired
+    [ref] there documents the underlying ORDER (builder/owner/contract), not the
+    literal name string, so the §3.8c value↔ref gate doesn't apply — running it
+    would wrongly drop good discovery refs (no page contains the exact placeholder
+    string). With preserve_ref:true the value is rewritten, the existing [ref] cell
+    is left byte-for-byte untouched, the gate is skipped, and a PRESERVED line is
+    logged to QA_review. `refs`/`drop_refs` are ignored on such a cell.
+
     Each cell sets both the value column (`field`) and its paired `field + ' [ref]'`
     column. The corrected rows are emitted full-width in backend column order, so
     they paste straight over the matching backend rows. The backend is NEVER
@@ -846,10 +856,18 @@ def build_fix(args):
                 ri = header_index[ref_field]
                 cur = row_by_id[rid]
                 existing_ref = cur[ri] if len(cur) > ri else ""
-            drop_set = set(cell.get("drop_refs", []))
+            preserve_ref = bool(cell.get("preserve_ref"))
+            drop_set = set() if preserve_ref else set(cell.get("drop_refs", []))
 
             kept = []
-            for ref in cell.get("refs", []):
+            if preserve_ref:
+                qa_rows.append({"row_id": rid, "field": field, "value": new_value,
+                                "url": existing_ref,
+                                "verdict": "PRESERVED (cosmetic/derived value; paired [ref] "
+                                           "documents the order, not the literal string — "
+                                           "§3.8c gate N/A)",
+                                "note": cell.get("note", "")})
+            for ref in (cell.get("refs", []) if not preserve_ref else []):
                 url = ref["url"] if isinstance(ref, dict) else ref
                 soft = bool(ref.get("soft")) if isinstance(ref, dict) else False
                 ok, reason = corroborates(url, new_value)
@@ -878,7 +896,7 @@ def build_fix(args):
                     cur.append("")
                 cur[vi] = new_value
                 changed[(rid, field)] = {"kind": "value", "conf": cell.get("confidence", "G")}
-            if ref_field in header_index:
+            if ref_field in header_index and not preserve_ref:
                 ri = header_index[ref_field]
                 while len(cur) <= ri:
                     cur.append("")

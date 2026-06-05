@@ -7,6 +7,7 @@ The SOPs live in `docs/sops/`:
 - `discovery.md` — abbreviated below as **DC**
 - `data_fill.md` — abbreviated below as **DF**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
+- `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
 Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
@@ -113,6 +114,19 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Owner facts table | `refdata/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
 | Facts loaders + vocab | `scripts/lookups.py` | `load_builder_facts` / `load_owner_facts` + `CONTROLLED_VOCAB` (single source of truth, shared by build + QC). |
 | Seed / refresh tables | `scripts/seed_lookups.py` | Bootstraps both CSVs from the live backend; re-runnable, never clobbers curated rows without `--overwrite`. |
+
+## Pre-release QC workflow (QC — 2026-06-05)
+
+The whole-backend consistency/corruption sweep before a data release. Full SOP: `docs/sops/qc_release.md`.
+
+| Phase | Section | What |
+|---|---|---|
+| Name conventions | QC §2 | The two placeholder forms (`Hull NNNN (Yard)`; `Shipbuilder (Owner N)`) + consistency rules B1 (one builder label per yard), B2 (canonical owner form), B3 (contiguous ordinals) |
+| Scan + triage | QC §3 | `pull_backend.py` → `qc_backend.py` (whole-sheet) → triage by check; corruption (HIGH/MED) escalates, Name drift (LOW) → fix batch |
+| Fix batch | QC §4 | `build_workbook.py --mode fix`; `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep `[ref]`, skip §3.8c gate); sourced corrections pass the gate |
+| Apply + release gate | QC §5 | Land via the Apply SOP unchanged; re-pull + re-run `qc_backend.py` — clear when HIGH/MED resolved/allowlisted and Name checks at zero |
+
+Name-column QC checks (in `qc_backend.py`): `name-builder-drift` (same yard, different builder label across placeholders) and `name-ordinal-gap` (placeholder missing its sequence number while cluster siblings are numbered) — both LOW/advisory.
 
 ## Apply & verify workflow (AP — 2026-06-05)
 

@@ -30,6 +30,10 @@ Checks:
   - lookup-mismatch : yard/owner country disagreeing with the facts tables     [MED]
   - missing-pair    : Capacity without units / Price without currency          [LOW]
   - column-offset   : a row with >=3 cell findings — the offset signature       [HIGH]
+  - name-builder-drift : same yard written with different builder labels across
+                      its 'Builder (Owner N)' placeholder names                  [LOW]
+  - name-ordinal-gap : a placeholder missing its sequence number while cluster
+                      siblings are numbered                                      [LOW]
 """
 import argparse
 import csv
@@ -278,6 +282,107 @@ def scan(header, data, rid_idx, row_filter=None):
     return findings, builders_missing, owners_missing
 
 
+def _placeholder_parts(name):
+    """For a synthetic placeholder name 'Builder (Owner N)', return
+    (builder_label, inner) where inner is the text in the LAST parenthetical.
+    Returns None for real names, blanks, and the 'Hull NNNN (Yard)' convention
+    (hull-known placeholders, a different namespace)."""
+    s = (name or "").strip()
+    if not s.endswith(")"):
+        return None
+    lp = s.rfind("(")
+    if lp <= 0:
+        return None
+    label = s[:lp].strip()
+    inner = s[lp + 1:-1].strip()
+    if not label or re.match(r"(?i)^hull\b", label):
+        return None
+    return label, inner
+
+
+# parenthetical tails that are intentional descriptors, not an owner+ordinal
+_NAME_DESCRIPTOR_TAILS = {"unknown", "owner unknown", "shipowner unknown", "fsru", "tbd"}
+
+
+def scan_names(header, data, rid_idx, row_filter=None):
+    """Cross-row consistency of the synthetic placeholder Name 'Builder (Owner N)'.
+
+    Two advisory (LOW) checks, both pre-data-release hygiene:
+      - name-builder-drift : the same yard (normalized Shipbuilder) written with
+                             different builder labels across its placeholder rows
+                             (e.g. 'Hudong-Zhonghua' vs 'Hudong-Zhonghua Shanghai';
+                             'HD Hyundai Samho Yeongam' vs 'Hyundai Samho HI').
+      - name-ordinal-gap   : a placeholder in a (Shipbuilder, Shipowner) cluster
+                             whose siblings carry a trailing ordinal but this one
+                             doesn't (e.g. 'Hanwha Ocean (Knutsen)' next to
+                             '(Knutsen OAS 1)'). Singletons and descriptor tails
+                             ('owner unknown', 'MISC FSRU') are never flagged.
+    """
+    H = {h: i for i, h in enumerate(header) if h.strip()}
+    ni, bi, oi = H.get("Name"), H.get("Shipbuilder"), H.get("Shipowner")
+    if ni is None or bi is None:
+        return []
+
+    def get(r, i):
+        return r[i].strip() if i is not None and len(r) > i else ""
+
+    # collect placeholder rows
+    ph = []  # (rid, name, builder_label, inner, btag, owner_raw)
+    for r in data:
+        rid = r[rid_idx].strip() if len(r) > rid_idx else ""
+        if row_filter and not row_filter(rid):
+            continue
+        parts = _placeholder_parts(get(r, ni))
+        if not parts:
+            continue
+        label, inner = parts
+        ph.append((rid, get(r, ni), label, inner,
+                   normalize_builder(get(r, bi)), get(r, oi)))
+
+    findings = []
+
+    def add(rid, val, check, msg):
+        findings.append({"row_id": rid, "column": "Name", "value": val,
+                         "check": check, "severity": LOW, "message": msg})
+
+    # (a) builder-label drift per normalized yard tag
+    by_tag = defaultdict(list)
+    for rec in ph:
+        if rec[4]:
+            by_tag[rec[4]].append(rec)
+    for tag, recs in by_tag.items():
+        labels = Counter(rec[2] for rec in recs)
+        if len(labels) > 1:
+            for rid, name, label, _inner, _t, _o in recs:
+                others = sorted(l for l in labels if l != label)
+                add(rid, name, "name-builder-drift",
+                    f"builder label {label!r} for yard {tag!r} also written as "
+                    f"{others} on sibling rows — pick one form")
+
+    # (b) ordinal gap within a (Shipbuilder, Shipowner) cluster
+    def has_ordinal(inner):
+        return bool(re.search(r"\d\s*$", inner))
+
+    by_cluster = defaultdict(list)
+    for rec in ph:
+        by_cluster[(rec[4], rec[5])].append(rec)
+    for (tag, owner), recs in by_cluster.items():
+        if len(recs) < 2:
+            continue
+        if not any(has_ordinal(rec[3]) for rec in recs):
+            continue
+        for rid, name, _label, inner, _t, _o in recs:
+            if has_ordinal(inner):
+                continue
+            if inner.lower() in _NAME_DESCRIPTOR_TAILS:
+                continue
+            add(rid, name, "name-ordinal-gap",
+                f"placeholder {inner!r} lacks a trailing ordinal but its "
+                f"cluster siblings are numbered — add the sequence number")
+
+    return findings
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", default=str(backend_csv_path()))
@@ -299,6 +404,7 @@ def main():
         row_filter = lambda rid: rid.isdigit() and lo <= int(rid) <= hi
 
     findings, builders_missing, owners_missing = scan(header, data, rid_idx, row_filter)
+    findings += scan_names(header, data, rid_idx, row_filter)
 
     allow = load_allowlist()
     kept = [f for f in findings if (f["row_id"], f["column"]) not in allow]

@@ -8,6 +8,7 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/discovery.md` — the discovery workflow, the four-ring source model, candidate workbook structure. **Authoritative.**
 - `docs/sops/data_fill.md` — the data-fill workflow (research blank/`unknown` data cells → candidate value+[ref] pairs; the blank-vs-`unknown` preserve-ref contract, derivable autofills, controlled vocab). **Authoritative.**
 - `docs/sops/sfoc_reconciliation.md` — the SFOC reconciliation workflow (less frequent).
+- `docs/sops/qc_release.md` — the **pre-release QC** workflow: whole-backend consistency/corruption sweep before a data release, the authoritative Name-column placeholder conventions, and the `fix`-mode correction batch (incl. the `preserve_ref` escape hatch). **Authoritative.**
 - `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
 - `docs/inclusion_criteria.md` — what's in scope vs out.
@@ -174,6 +175,40 @@ formula errors, and commit the batch directory under `batches/`. The SOP is
 authoritative. Close the pass with a full-backend dedupe scan
 (`python scripts/dedupe_check.py` -> `work/dedupe_report.csv`; apply.md §5a).
 
+### Pre-release QC batch
+
+Trigger phrases: "qc pass", "pre-release qc", "qc the backend", "prep for data release", "check the names before release", "name consistency check".
+
+Governed by `docs/sops/qc_release.md` (QC rev 1). A whole-backend consistency/corruption
+sweep before a data release; mechanical defects get packaged as a `fix`-mode batch and
+routed through the Apply SOP.
+
+```bash
+# Run from the repo root.
+
+# 1. Fresh backend CSV + colmap (MANDATORY first step).
+python scripts/pull_backend.py
+
+# 2. Full-backend QC scan (no --rows — release pass is whole-sheet).
+python scripts/qc_backend.py          # -> work/qc_report.csv ; --strict to gate
+#   Triage by check (QC §3): column-offset / misplaced-vocab / url-in-value / bad-shape
+#   (corruption — escalate); orphan-ref / lookup-mismatch (MED); name-builder-drift /
+#   name-ordinal-gap (LOW — the Name-column consistency checks, QC §2). Confirm the
+#   canonical target form with the user before any mass rename.
+
+# 3. Mechanical corrections -> fix.json (keyed by row_id). For cosmetic / derived-value
+#    edits (e.g. placeholder Name normalization) set preserve_ref:true on the cell so the
+#    value is rewritten but the paired [ref] is preserved and the §3.8c gate is skipped
+#    (QC §4). Sourced value corrections supply refs and pass the gate as usual.
+python scripts/build_workbook.py --mode fix --fix work/<name>_fix.json \
+  --out batches/<date>_<HHMMET>_<label>/
+python scripts/recalc.py batches/<date>_<HHMMET>_<label>/lng_carrier_fix.xlsx
+
+# 4. Copy fix.json into the batch dir, write notes.md, commit the batch directory.
+#    Apply via the Apply SOP unchanged. Release gate: re-pull + re-run qc_backend.py;
+#    clear when HIGH/MED are resolved/allowlisted and the Name checks are at zero.
+```
+
 ### Apply a reviewed batch
 
 Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
@@ -230,7 +265,7 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | Script | Purpose | Read source when |
 |---|---|---|
 | `pull_backend.py` | curl + parse CSV, derive column-index map from header row | Schema changed; column indices look wrong |
-| `qc_backend.py` | backend QC sanity check — column-offset / misplaced-value detection (`work/qc_report.csv`; `--strict`, `--rows`) | New column-shape rule; a false positive/negative; new check |
+| `qc_backend.py` | backend QC sanity check — column-offset / misplaced-value detection + Name-column consistency (`name-builder-drift`, `name-ordinal-gap`; QC §2) (`work/qc_report.csv`; `--strict`, `--rows`) | New column-shape rule; a false positive/negative; new check |
 | `lookups.py` | refdata loaders: `CONTROLLED_VOCAB` (shared by build + QC) + builder/owner facts tables | Adding a vocab value; changing the facts-table schema |
 | `seed_lookups.py` | seed/refresh `refdata/shipbuilder_facts.csv` + `shipowner_facts.csv` from the live backend | New yard/owner to capture; re-deriving facts after backend edits |
 | `normalize.py` | canonical builder/owner names (module, imported by others) | Adding a new yard or owner; clusters over- or under-merging |
@@ -238,7 +273,7 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
 | `url_verifier.py` | the §3.8 verification gate — HTTP 200 + content check + soft-error detection | Verifier flagging false positives or negatives; new soft-error pattern |
 | `imo_tracker.py` | the §6a.8 IMO->marine-vessel-tracker fallback | marinetraffic.org URL pattern changed; Cloudflare gating |
-| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value) | Adding a new sheet section; changing color convention; changing fix-mode gating |
+| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate) | Adding a new sheet section; changing color convention; changing fix-mode gating |
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
 | `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate | Verifier behavior changes; new research-output key |
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |
