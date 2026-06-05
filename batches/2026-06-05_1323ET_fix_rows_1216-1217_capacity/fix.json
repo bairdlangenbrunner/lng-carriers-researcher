@@ -1,0 +1,40 @@
+{
+  "batch_label": "Fix — rows 1216/1217 structural + capacity (176,400 → 180,000), gated refs",
+  "reason": "Two problems in the live backend rows 1216/1217: (1) the column-offset corruption from the earlier structural fix was never applied (cols 25-26 stray dup; cols 37-47 tail shifted +5); (2) Capacity read 176,400 (CSB's 98%-fill figure) while citing the Deltamarin ref whose headline figure is 180,000 — a value↔ref conflict. This batch builds on the reviewed corrected_rows.csv (correct structural layout) via --base, and applies the gated capacity correction on top: value → nominal 180,000 (per LNG Prime 69940, offshore-energy, Deltamarin; siblings 251-256 also 180,000), CSB dropped from the capacity [ref] (its 176,400 = 98% figure). Pasting these two rows fixes both problems at once.",
+  "corrections": [
+    {
+      "row_id": "1216",
+      "cells": [
+        {
+          "field": "Capacity",
+          "new_value": "180000",
+          "confidence": "G",
+          "refs": [
+            {"url": "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/", "soft": false},
+            {"url": "https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/", "soft": false},
+            {"url": "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/", "soft": true}
+          ],
+          "drop_refs": ["http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcgXanmkhTk8Pl4EN"],
+          "note": "CSB lists 176,400 = 98%-fill figure; nominal 180,000 per LNG Prime/offshore-energy/Deltamarin. Deltamarin soft-blocked from curl (HTTP 000) but content-confirmed via browser: 'Cargo capacity of 180,000 cbm, or 176,400 cbm at 98%'."
+        }
+      ]
+    },
+    {
+      "row_id": "1217",
+      "cells": [
+        {
+          "field": "Capacity",
+          "new_value": "180000",
+          "confidence": "G",
+          "refs": [
+            {"url": "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/", "soft": false},
+            {"url": "https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/", "soft": false},
+            {"url": "https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/", "soft": true}
+          ],
+          "drop_refs": ["http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcgXanmkhTk8Pl4EN"],
+          "note": "Same as 1216 (hull -08). Nominal 180,000 cbm; CSB 176,400 = 98% figure, dropped from capacity [ref]."
+        }
+      ]
+    }
+  ]
+}

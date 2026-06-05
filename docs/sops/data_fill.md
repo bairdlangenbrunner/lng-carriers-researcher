@@ -2,7 +2,7 @@
 
 **Document purpose:** Operating manual for the **data-fill** workflow — researching **blank** (and literal-`unknown`) backend data cells and proposing a value plus a corroborating `[ref]` URL for each, packaged as a candidate workbook for human review. It complements the [ref]-Fill SOP (which cites *existing* values) and the Discovery SOP (which finds *new vessels*). **Authoritative** for this workflow.
 
-**Last revised:** 2026-06-04 rev 1 (initial SOP, written alongside the first data-fill batch — rows with `Last updated >= 2026-05-18`. Inherits the [ref]-Fill SOP §4 rules wholesale; adds the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5), and the `data_fill` build mode + output structure (§7). Abbreviated **DF**.).
+**Last revised:** 2026-06-05 rev 2 (added §3 pointer to [ref]-Fill SOP §3.8c — the value↔ref corroboration gate (hard-block) now enforced centrally in `merge_fills.py`: a `[ref]` is dropped from any cell whose proposed value its live page does not contain, and the conflict is logged to `candidate_findings` rather than kept; includes the dual-figure capacity rule. No workflow-structure changes.). Prior: 2026-06-04 rev 1 (initial SOP, written alongside the first data-fill batch — rows with `Last updated >= 2026-05-18`. Inherits the [ref]-Fill SOP §4 rules wholesale; adds the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5), and the `data_fill` build mode + output structure (§7). Abbreviated **DF**.).
 
 ---
 
@@ -32,6 +32,7 @@ The scope is a **moving target** — the user edits the backend between and duri
 Data-fill **inherits all [ref]-Fill SOP §4 rules**. The load-bearing ones:
 - **§3.8 URL verification gate** — every URL passes HTTP 200 + content match + soft-error check before it enters the xlsx.
 - **§3.8a** — environment-blocked URLs are kept/flagged, not deleted.
+- **§3.8c value↔ref corroboration gate (hard-block)** — a `[ref]` may only be cited on a cell whose proposed value its live page actually contains; a live page that states a *different* figure is dropped from that cell and the conflict is logged to `candidate_findings`, never kept. `merge_fills.py` enforces this centrally (`corroborates()` / `value_variants()`). Includes the dual-figure rule (nominal vs 98%-fill capacity → carry the nominal).
 - **§4.7** — never edit the backend; output is a candidate workbook.
 - **§4.8** — never *research* geolocation (but see §5: the yard-location block is *mirrored* from a sibling row).
 - **§4.9** — don't fill empty cells without explicit source support; surface as candidate fills. **Data-fill is this path executed in batch** (see §6 of [ref]-Fill, and §9 below).
@@ -194,4 +195,5 @@ Every cell researched without a sourceable value gets a `documented_blanks` entr
 
 ## 13. Changelog
 
+- **rev 2** (2026-06-05): Added a §3 pointer to the new [ref]-Fill SOP §3.8c value↔ref corroboration gate (hard-block) — `merge_fills.py` now drops any `[ref]` whose live page does not contain the cell's proposed value and logs the conflict to `candidate_findings` instead of keeping it; includes the dual-figure capacity rule (carry the nominal). Surfaced by the 2026-06-05 rows 1216/1217 capacity defect. No data-fill workflow-structure changes.
 - **rev 1** (2026-06-04): Initial SOP, written with the first data-fill batch (rows `Last updated >= 2026-05-18`: 42 rows, 88 fills, 140 documented blanks, 1 `unknown` preserved at O1213). Establishes the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5; `scripts/derive_fills.py`, `normalize.owner_country`), the per-cluster research fan-out + central §3.8 merge (`scripts/merge_fills.py`), the `data_fill` build mode + `backend_data_fill` output sheet (§7), and the controlled-vocab guard (§8; `refdata/controlled_vocab.md`). Inherits [ref]-Fill SOP §4 rules wholesale.

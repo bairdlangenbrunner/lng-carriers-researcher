@@ -17,10 +17,15 @@ build. The cache is in-memory only — clear between builds.
 CLI usage:
     python url_verifier.py <url> <expected1> [<expected2> ...]
     # exits 0 if URL passes, 1 if not
+    python url_verifier.py --value <value> <url>
+    # corroboration gate: exits 0 iff the page actually contains <value>
 
 Library usage:
-    from url_verifier import verify_url, verify_and_format
+    from url_verifier import verify_url, verify_and_format, corroborates
     ok, reason = verify_url("https://...", ["Owner Name", "Yard Name", "174,000"])
+    # value↔ref corroboration gate (a ref may only be cited on a cell whose
+    # value it actually contains — see corroborates / value_variants):
+    ok, reason = corroborates("https://...", "180000")
     # or
     url_or_none = verify_and_format(url, expected)  # None if failed
 """
@@ -140,6 +145,85 @@ def verify_url(url: str, expected: list[str], strict: bool = False,
     return True, "OK"
 
 
+def value_variants(value) -> list[str]:
+    """Plausible page renderings of a data value, for the corroboration gate.
+
+    The gate matches a cell value against a page case-insensitively, but raw
+    values rarely appear verbatim: ``180000`` shows as "180,000", a price of
+    ``250000000`` shows as "$250 million" or "$250m". This generates the family
+    of forms so a hard-block gate doesn't reject legitimately-worded sources.
+
+    Text values yield themselves (+ lowercase). Numeric values additionally
+    yield comma-grouped, plain, and millions/billions-abbreviated forms.
+    """
+    v = str(value).strip()
+    if not v:
+        return []
+    out = {v, v.lower()}
+
+    m = re.match(r"^\$?\s*([\d,]+(?:\.\d+)?)", v)
+    if m:
+        try:
+            num = float(m.group(1).replace(",", ""))
+        except ValueError:
+            num = None
+        if num is not None:
+            if num == int(num):
+                num = int(num)
+            out.add(str(num))
+            if isinstance(num, int):
+                out.add(f"{num:,}")
+                if num >= 1_000_000:
+                    for mm in {num / 1_000_000, round(num / 1_000_000)}:
+                        s = f"{mm:g}"
+                        out.update({f"{s}m", f"${s}m", f"{s} million"})
+                    if num >= 1_000_000_000:
+                        for bb in {num / 1_000_000_000, round(num / 1_000_000_000, 2)}:
+                            s = f"{bb:g}"
+                            out.update({f"{s}bn", f"${s}bn", f"{s} billion"})
+    return [s for s in out if s]
+
+
+def corroborates(url: str, value, strict: bool = False) -> tuple[bool, str]:
+    """The value↔ref corroboration gate ([ref]-Fill SOP §3.8 / Rule D §4.11).
+
+    A ref may only be cited on a cell whose VALUE the ref's live page actually
+    contains (in some rendering — see ``value_variants``). This is the hard-block
+    that stops a ref corroborating a *different* number than the cell carries
+    (e.g. a 180,000-cbm source pinned to a 176,400 cell).
+
+    A blank value has nothing to corroborate -> passes (use ``verify_url`` for
+    entity-only checks). On failure with ``strict``, raises CitationError.
+
+    Returns (ok, reason).
+    """
+    variants = value_variants(value)
+    if not variants:
+        return True, "no value to corroborate"
+    ok, reason = verify_url(url, variants, strict=False, require_all=False)
+
+    # Multi-word text fallback: an owner "Knutsen OAS" legitimately appears as
+    # "Knutsen OAS Shipping"; a builder "China Merchants Heavy Industries" as
+    # "China Merchants". Accept when every significant token (alnum, len>=3) is
+    # present, so hard-block doesn't reject correctly-sourced text whose exact
+    # phrasing differs. Numeric values (leading digit) never use this fallback —
+    # 180,000 must appear as the figure, not as scattered digits.
+    if not ok and reason.startswith("none of expected"):
+        v = str(value).strip()
+        is_numeric = bool(re.match(r"^\$?\s*[\d,]", v))
+        tokens = [t for t in re.findall(r"[A-Za-z0-9]+", v) if len(t) >= 3]
+        if not is_numeric and len(tokens) >= 2:
+            status, text = _fetch(url)
+            if status == "200":
+                tl = text.lower()
+                if all(t.lower() in tl for t in tokens):
+                    return True, "OK (all tokens present)"
+        reason = f"page does not contain value {v!r}"
+    if not ok and strict:
+        raise CitationError(f"ref does not corroborate value ({reason}): {url}")
+    return ok, reason
+
+
 def verify_and_format(url: str, expected: list[str]) -> str | None:
     """
     Verify a URL. If it passes, return the URL.
@@ -161,11 +245,23 @@ def clear_cache() -> None:
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python url_verifier.py <url> [<expected1> <expected2> ...]")
+    args = sys.argv[1:]
+    if args and args[0] == "--value":
+        if len(args) < 3:
+            print("Usage: python url_verifier.py --value <value> <url>")
+            sys.exit(2)
+        value, url = args[1], args[2]
+        ok, reason = corroborates(url, value)
+        print(f"  URL: {url}")
+        print(f"  Value: {value!r}  (variants: {value_variants(value)})")
+        print(f"  Corroborates: {'PASS' if ok else 'FAIL'}  ({reason})")
+        sys.exit(0 if ok else 1)
+    if not args:
+        print("Usage: python url_verifier.py <url> [<expected> ...]")
+        print("       python url_verifier.py --value <value> <url>")
         sys.exit(2)
-    url = sys.argv[1]
-    expected = sys.argv[2:]
+    url = args[0]
+    expected = args[1:]
     ok, reason = verify_url(url, expected, strict=False, require_all=True)
     print(f"  URL: {url}")
     print(f"  Expected: {expected}")

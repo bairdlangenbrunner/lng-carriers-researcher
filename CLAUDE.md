@@ -234,7 +234,7 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
 | `url_verifier.py` | the §3.8 verification gate — HTTP 200 + content check + soft-error detection | Verifier flagging false positives or negatives; new soft-error pattern |
 | `imo_tracker.py` | the §6a.8 IMO->marine-vessel-tracker fallback | marinetraffic.org URL pattern changed; Cloudflare gating |
-| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill) | Adding a new sheet section; changing color convention |
+| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value) | Adding a new sheet section; changing color convention; changing fix-mode gating |
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
 | `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate | Verifier behavior changes; new research-output key |
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |

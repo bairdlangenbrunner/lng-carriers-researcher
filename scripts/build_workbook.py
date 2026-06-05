@@ -760,13 +760,213 @@ def build_data_fill(args):
     return out_path
 
 
+def build_fix(args):
+    """Build a correction-batch workbook (column-offset / value / ref repairs).
+
+    Unlike the earlier hand-built CSV corrections (which bypassed every gate and
+    is how the 176,400-vs-180,000 capacity defect shipped), a fix batch routes
+    every corrected (value, [ref]) pair through the §3.8 value↔ref corroboration
+    gate: a ref may only stay on a cell whose value its live page actually
+    contains. Non-corroborating refs are dropped and surfaced in QA_review;
+    explicitly listed drop_refs are removed; soft-blocked refs (HTTP 000/403,
+    e.g. Cloudflare) are kept ONLY when flagged soft:true (a human attests §3.8a
+    out-of-band content confirmation) and are commented as such.
+
+    fix.json schema:
+      {
+        "batch_label": "Fix — rows 1216/1217 capacity",
+        "reason": "free-text why",
+        "corrections": [
+          { "row_id": "1216",
+            "cells": [
+              { "field": "Capacity",            # backend value column header
+                "new_value": "180000",
+                "confidence": "G",
+                "refs": [ {"url": "https://...", "soft": false}, ... ],
+                "drop_refs": ["http://...csb..."],   # remove from the [ref] cell
+                "note": "CSB 176,400 = 98% figure; nominal 180,000 per 3 sources" }
+            ] } ] }
+
+    Each cell sets both the value column (`field`) and its paired `field + ' [ref]'`
+    column. The corrected rows are emitted full-width in backend column order, so
+    they paste straight over the matching backend rows. The backend is NEVER
+    edited here (RF §4.7).
+    """
+    from url_verifier import corroborates
+
+    payload = json.loads(Path(args.fix).read_text())
+    with open(args.backend, encoding="utf-8") as f:
+        backend_rows = list(csv.reader(f))
+    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
+    backend_header = backend_rows[colmap["_header_row_idx"]]
+    header_index = {h: i for i, h in enumerate(backend_header)}
+    data_start = colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1)
+    ci_row = colmap["row_id"]
+    row_by_id = {r[ci_row].strip(): r for r in backend_rows[data_start:]
+                 if len(r) > ci_row and r[ci_row].strip()}
+
+    # --base: build on an already-reviewed corrected-rows CSV instead of the live
+    # backend row. Use this when the live row is still corrupted (e.g. a prior
+    # structural fix wasn't applied yet) — the base supplies the correct full-row
+    # layout, this batch's cells apply the gated value/ref corrections on top.
+    # Rows are remapped to live-backend column order BY HEADER NAME, so any
+    # trailing/stray columns absent from the base are cleared.
+    if getattr(args, "base", None):
+        with open(args.base, encoding="utf-8") as f:
+            base_rows = list(csv.reader(f))
+        base_header = base_rows[0]
+        for br in base_rows[1:]:
+            if not any(c.strip() for c in br):
+                continue
+            d = {base_header[i]: (br[i] if i < len(br) else "")
+                 for i in range(len(base_header))}
+            rid = d.get(backend_header[ci_row], "").strip()
+            if not rid:
+                continue
+            row_by_id[rid] = [d.get(h, "") if h else "" for h in backend_header]
+
+    corrections = payload.get("corrections", [])
+    scope_ids = [str(c["row_id"]) for c in corrections]
+    # changed-cell map: (row_id, header) -> {kind, conf, value} for styling
+    changed = {}
+    qa_rows = []          # per-ref verification results for QA_review
+    missing = []
+
+    for corr in corrections:
+        rid = str(corr["row_id"])
+        if rid not in row_by_id:
+            missing.append(rid)
+            continue
+        for cell in corr.get("cells", []):
+            field = cell["field"]
+            ref_field = field + " [ref]"
+            new_value = str(cell.get("new_value", ""))
+            existing_ref = ""
+            if ref_field in header_index:
+                ri = header_index[ref_field]
+                cur = row_by_id[rid]
+                existing_ref = cur[ri] if len(cur) > ri else ""
+            drop_set = set(cell.get("drop_refs", []))
+
+            kept = []
+            for ref in cell.get("refs", []):
+                url = ref["url"] if isinstance(ref, dict) else ref
+                soft = bool(ref.get("soft")) if isinstance(ref, dict) else False
+                ok, reason = corroborates(url, new_value)
+                if ok:
+                    kept.append(url)
+                    verdict = "PASS (corroborates)"
+                elif soft and (reason.startswith("HTTP") or "soft-error" in reason):
+                    kept.append(url)
+                    verdict = f"SOFT-KEPT §3.8a ({reason}; human-confirmed off-band)"
+                elif reason.startswith("HTTP") or "soft-error" in reason:
+                    verdict = f"DROPPED — unreachable, not §3.8a-flagged ({reason})"
+                else:
+                    verdict = f"DROPPED — does NOT corroborate {new_value!r} ({reason})"
+                qa_rows.append({"row_id": rid, "field": field, "value": new_value,
+                                "url": url, "verdict": verdict, "note": cell.get("note", "")})
+            for u in drop_set:
+                qa_rows.append({"row_id": rid, "field": field, "value": new_value,
+                                "url": u, "verdict": "REMOVED (drop_refs: conflicts with value)",
+                                "note": cell.get("note", "")})
+
+            # write into the working backend row copy
+            cur = list(row_by_id[rid])
+            vi = header_index.get(field)
+            if vi is not None:
+                while len(cur) <= vi:
+                    cur.append("")
+                cur[vi] = new_value
+                changed[(rid, field)] = {"kind": "value", "conf": cell.get("confidence", "G")}
+            if ref_field in header_index:
+                ri = header_index[ref_field]
+                while len(cur) <= ri:
+                    cur.append("")
+                joined = ", ".join(kept)
+                cur[ri] = joined
+                changed[(rid, ref_field)] = {"kind": "ref", "had_existing": bool(existing_ref)}
+            row_by_id[rid] = cur
+
+    if missing:
+        print(f"  [warn] correction row_ids not in backend (skipped): {missing}", file=sys.stderr)
+
+    dropped = [q for q in qa_rows if q["verdict"].startswith(("DROPPED", "REMOVED"))]
+
+    wb = Workbook()
+    build_readme(wb, payload.get("batch_label", "LNG Carrier Fix"), [
+        payload.get("reason", ""),
+        "",
+        f"Rows corrected: {len(scope_ids)}   Refs checked: {len(qa_rows)}   "
+        f"Refs dropped/removed: {len(dropped)}",
+        "",
+        "Every corrected (value, [ref]) pair passed the §3.8 value↔ref corroboration",
+        "gate: a ref stays only if its live page contains the cell's value. Refs that",
+        "named a DIFFERENT value were dropped (see QA_review). The backend is NEVER",
+        "edited by this tool (RF §4.7) — paste the corrected rows over the matching",
+        "backend rows.",
+        "",
+        "Color coding (fix sheet):",
+        "  Green/Yellow/Red = corrected value (confidence)",
+        "  Peach = [ref] cell rewritten (corroborating refs only)",
+        "  Gray  = pre-existing cell, untouched",
+    ])
+
+    ws = wb.create_sheet("fix")
+    for col_i, h in enumerate(backend_header, start=1):
+        ws.cell(row=1, column=col_i, value=h)
+    _apply_header_style(ws, 1)
+    r_offset = 2
+    for rid in scope_ids:
+        row = row_by_id.get(rid)
+        if row is None:
+            continue
+        for idx, h in enumerate(backend_header):
+            val = row[idx] if len(row) > idx else ""
+            c = ws.cell(row=r_offset, column=idx + 1, value=val)
+            ch = changed.get((rid, h))
+            if ch and ch["kind"] == "value":
+                c.fill = CONFIDENCE_FILLS.get(ch["conf"], FILL_GREEN)
+            elif ch and ch["kind"] == "ref":
+                c.fill = FILL_PEACH
+            elif val:
+                c.fill = FILL_GRAY
+            c.alignment = WRAP_ALIGN
+        r_offset += 1
+    ws.freeze_panes = "B2"
+    for col_i, h in enumerate(backend_header, start=1):
+        letter = get_column_letter(col_i)
+        ws.column_dimensions[letter].width = 50 if "[ref]" in h else 18
+
+    ws_qa = wb.create_sheet("QA_review")
+    cols = ["row_id", "field", "value", "url", "verdict", "note"]
+    for col_i, c in enumerate(cols, start=1):
+        cell = ws_qa.cell(row=1, column=col_i, value=c)
+        cell.font = HEADER_FONT
+        cell.fill = FILL_HEADER
+    for r_i, q in enumerate(qa_rows, start=2):
+        for col_i, c in enumerate(cols, start=1):
+            ws_qa.cell(row=r_i, column=col_i, value=str(q.get(c, ""))).alignment = WRAP_ALIGN
+    for letter, w in {"A": 8, "B": 16, "C": 12, "D": 60, "E": 44, "F": 50}.items():
+        ws_qa.column_dimensions[letter].width = w
+    ws_qa.freeze_panes = "A2"
+
+    out_path = _resolve_out_path(args.out, "lng_carrier_fix.xlsx")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(out_path)
+    print(f"  Wrote {out_path}  ({len(dropped)} ref(s) dropped by the gate)")
+    return out_path
+
+
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill"], required=True)
+    p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill", "fix"], required=True)
     p.add_argument("--rows", help="Row range for ref_fill, e.g. '1170-1190'")
     p.add_argument("--citations", help="Path to citations JSON (ref_fill mode)")
     p.add_argument("--candidates", help="Path to candidates JSON (discovery mode)")
     p.add_argument("--fills", help="Path to fills JSON (data_fill mode)")
+    p.add_argument("--fix", help="Path to corrections JSON (fix mode)")
+    p.add_argument("--base", help="Optional reviewed corrected-rows CSV to build on "
+                                  "instead of the live (possibly corrupted) backend row (fix mode)")
     p.add_argument("--backend", default=str(backend_csv_path()),
                    help="Path to backend CSV (default: <work_dir>/backend.csv)")
     p.add_argument("--out",
@@ -783,10 +983,14 @@ def main():
         if not args.candidates:
             p.error("--candidates required for discovery mode")
         build_discovery(args)
-    else:
+    elif args.mode == "data_fill":
         if not args.fills:
             p.error("--fills required for data_fill mode")
         build_data_fill(args)
+    else:
+        if not args.fix:
+            p.error("--fix required for fix mode")
+        build_fix(args)
 
 
 if __name__ == "__main__":
