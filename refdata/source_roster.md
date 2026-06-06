@@ -48,7 +48,7 @@ Authoritative version: [ref]-Fill SOP §7. This file is for picking sources at q
 ## Forbidden
 
 - **SFOC** (any URL) — project's data origin, not a citable URL
-- **GEM** (any URL) — excluded entirely
+- **GEM** (any URL, incl. `gem.wiki`) — excluded entirely (GEM is downstream of this tracker; citing it is circular)
 - **GTT standalone** — pair with non-GTT source; GTT alone fails Rule 4.3
 
 ## English-language proxies for Korean reg filings (faster than parsing DART)

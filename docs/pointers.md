@@ -17,7 +17,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Rule | Section | One-line summary |
 |---|---|---|
 | 4.1 | RF | NEVER cite SFOC as a `[ref]` URL |
-| 4.2 | RF | NEVER cite GEM |
+| 4.2 | RF | NEVER cite GEM (incl. `gem.wiki`) |
 | 4.3 | RF | NEVER cite GTT standalone — always pair with non-GTT |
 | **A** §4.4 | RF | `Hull number [ref]` URL must explicitly contain the hull number |
 | **B** §4.5 | RF | When `Name` = hull number, `Name [ref]` also needs the hull |

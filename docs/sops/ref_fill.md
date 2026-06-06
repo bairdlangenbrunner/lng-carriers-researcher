@@ -131,7 +131,7 @@ Surfaced by the 2026-06-05 rows 1216/1217 capacity defect: the cell carried `176
 SFOC is the project's data origin (and remains in the `[Original source]` column), but it is NOT a citable URL for any `[ref]` cell. Every `[ref]` URL must point to an independent, publicly-accessible source.
 
 ### 4.2 NEVER cite GEM
-GEM is excluded as a source entirely.
+GEM (Global Energy Monitor) is excluded as a source entirely. This covers **`gem.wiki`** (the GEM wiki) and **any other GEM-published page or dataset** — never use one as a `[ref]` URL or as corroboration, regardless of what it confirms. GEM is downstream of this tracker; citing it would be circular.
 
 ### 4.3 NEVER cite GTT standalone
 GTT marketing pages and announcements are useful but may not be the sole source for any `[ref]` cell. Always pair with a non-GTT corroborating URL.
@@ -523,7 +523,7 @@ This makes the blank auditable and prevents the next batch from re-searching the
 
 ### Forbidden
 - SFOC (any URL)
-- GEM (any URL)
+- GEM (any URL, incl. `gem.wiki`) — excluded entirely
 - GTT standalone (always pair with non-GTT)
 
 ---
