@@ -1,0 +1,77 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+17|Name,fill,17,,Name,G,False,accept,accept,Rex Tillerson,"MOL naming-ceremony press release, Riviera inauguration article, VesselFinder (I"
+17|Shipbuilder,fill,17,,Shipbuilder,G,False,accept,accept,Hudong-Zhonghua Shipbuilding,All four sources identify Hudong-Zhonghua Shipbuilding as the builder of Rex Til
+17|Shipowner,fill,17,,Shipowner,G,False,accept,accept,MOL,"MOL press release (MOL is the owner/operator), Riviera, and Ships Monthly all na"
+17|Capacity,fill,17,,Capacity,G,False,accept,accept,174000,"All four sources state 174,000 cbm capacity for Rex Tillerson."
+17|Delivery year,fill,17,,Delivery year,G,False,accept,accept,2024,"MOL release (Sept 2024 naming/delivery), VesselFinder (built 2024), Riviera, and"
+18|Name,fill,18,,Name,G,False,accept,accept,Umm Ghuwailina,"MOL naming-ceremony release, VesselFinder (IMO 9953250), Baird review, and Ships"
+18|Shipbuilder,fill,18,,Shipbuilder,G,False,accept,accept,Hudong-Zhonghua Shipbuilding,"MOL release, Baird review, and Ships Monthly identify Hudong-Zhonghua Shipbuildi"
+18|Shipowner,fill,18,,Shipowner,G,False,accept,accept,MOL,MOL press release and Ships Monthly both name MOL as owner/operator of Umm Ghuwa
+18|Capacity,fill,18,,Capacity,G,False,accept,accept,174000,"All three sources state 174,000 cbm for Umm Ghuwailina."
+18|Delivery year,fill,18,,Delivery year,G,False,accept,accept,2024,"MOL release (Sept 2024), VesselFinder (built 2024), Baird, and Ships Monthly all"
+19|Name,fill,19,,Name,G,False,accept,accept,Hlaitan,"LNG Prime delivery article, Shipping Telegraph, VesselFinder (IMO 9953262), and "
+19|Shipbuilder,fill,19,,Shipbuilder,G,False,accept,accept,Hudong-Zhonghua Shipbuilding,"LNG Prime, Shipping Telegraph, and Baird identify Hudong-Zhonghua Shipbuilding a"
+19|Shipowner,fill,19,,Shipowner,G,False,accept,accept,MOL,LNG Prime and Shipping Telegraph both name MOL as a co-owner/operator chartering
+19|Capacity,fill,19,,Capacity,G,False,accept,accept,174000,"LNG Prime and Baird both state 174,000 cbm for Hlaitan. (Shipping Telegraph did "
+19|Delivery year,fill,19,,Delivery year,G,False,accept,accept,2024,"LNG Prime (Dec 2024 delivery), Shipping Telegraph, VesselFinder (built 2024), an"
+22|Name,fill,22,,Name,G,False,accept,accept,Greenergy Ocean,"MOL naming-ceremony release, Baird review, Hellenic Shipping News, and VesselFin"
+22|Shipbuilder,fill,22,,Shipbuilder,G,False,accept,accept,Hudong-Zhonghua Shipbuilding,"MOL release, Baird review, and Hellenic all identify Hudong-Zhonghua Shipbuildin"
+22|Shipowner,fill,22,,Shipowner,G,False,accept,accept,MOL,"MOL release (MOL co-owns/commercially manages), Baird, and Hellenic all name MOL"
+22|Capacity,fill,22,,Capacity,G,False,accept,accept,174000,"All three sources state 174,000 cbm for Greenergy Ocean."
+22|Delivery year,fill,22,,Delivery year,G,False,accept,accept,2024,"MOL release (May 2024 naming), Baird, Hellenic, and VesselFinder (built 2024) al"
+20|Name,fill,20,,Name,G,False,accept,accept,Huashan,4 independent domains name the vessel Huashan: LNG Prime delivery article (IMO/d
+20|Shipbuilder,fill,20,,Shipbuilder,G,False,accept,accept,Hudong-Zhonghua Shipbuilding,3 independent domains state Hudong-Zhonghua Shipbuilding as builder of Huashan; 
+20|Shipowner,fill,20,,Shipowner,Y,False,hold,hold,United Liquefied Gas,PARTIAL (1 domain). LNG Prime names 'United Liquefied Gas Shipping' as the order
+20|Capacity,fill,20,,Capacity,G,False,accept,accept,174000,"3 independent domains state 174,000 cbm for Huashan / the series. Verified as '1"
+20|Delivery year,fill,20,,Delivery year,G,False,accept,accept,2024,"LNG Prime reports delivery on May 30, 2024; VesselFinder lists Year of Build 202"
+21|Name,fill,21,,Name,G,False,accept,accept,Kongtong,"4 independent domains name the vessel Kongtong: LNG Prime delivery article, Vess"
+21|Shipbuilder,fill,21,,Shipbuilder,G,False,accept,accept,Hudong-Zhonghua Shipbuilding,3 independent domains state Hudong-Zhonghua Shipbuilding as builder of Kongtong;
+21|Shipowner,fill,21,,Shipowner,Y,False,hold,hold,United Liquefied Gas,PARTIAL (1 domain). LNG Prime names 'United Liquefied Gas Shipping' as the order
+21|Capacity,fill,21,,Capacity,G,False,accept,accept,174000,"3 independent domains state 174,000 cbm for Kongtong / the series. Verified as '"
+21|Delivery year,fill,21,,Delivery year,G,False,accept,accept,2024,"LNG Prime reports delivery on September 26, 2024; VesselFinder lists Year of Bui"
+3|Name,fill,3,,Name,G,False,accept,accept,Pyotr Stolypin,VesselFinder per-IMO (9904675) + trade press name the vessel directly
+3|Shipbuilder,fill,3,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+3|Shipowner,fill,3,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+3|Capacity,fill,3,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+3|Delivery year,fill,3,,Delivery year,G,False,accept,accept,2026,VesselFinder per-IMO (9904675) lists Year of Build 2026; Maritime Executive: Sov
+4|Name,fill,4,,Name,G,False,accept,accept,Sergei Witte,VesselFinder per-IMO (9904687) + trade press name the vessel directly
+4|Shipbuilder,fill,4,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+4|Shipowner,fill,4,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+4|Capacity,fill,4,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+4|Delivery year,fill,4,,Delivery year,G,False,accept,accept,2026,VesselFinder per-IMO (9904687) lists Year of Build 2026; Maritime Executive: Sov
+5|Shipbuilder,fill,5,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+5|Shipowner,fill,5,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+5|Capacity,fill,5,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+6|Shipbuilder,fill,6,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+6|Shipowner,fill,6,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+6|Capacity,fill,6,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+7|Shipbuilder,fill,7,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+7|Shipowner,fill,7,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+7|Capacity,fill,7,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+8|Shipbuilder,fill,8,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+8|Shipowner,fill,8,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+8|Capacity,fill,8,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+9|Shipbuilder,fill,9,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+9|Shipowner,fill,9,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+9|Capacity,fill,9,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+10|Shipbuilder,fill,10,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+10|Shipowner,fill,10,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+10|Capacity,fill,10,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+11|Shipbuilder,fill,11,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+11|Shipowner,fill,11,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+11|Capacity,fill,11,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+12|Shipbuilder,fill,12,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+12|Shipowner,fill,12,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+12|Capacity,fill,12,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+13|Shipbuilder,fill,13,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+13|Shipowner,fill,13,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+13|Capacity,fill,13,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+14|Shipbuilder,fill,14,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+14|Shipowner,fill,14,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+14|Capacity,fill,14,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+15|Shipbuilder,fill,15,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+15|Shipowner,fill,15,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+15|Capacity,fill,15,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"
+16|Shipbuilder,fill,16,,Shipbuilder,Y,False,hold,hold,Zvezda Shipbuilding,series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Com
+16|Shipowner,fill,16,,Shipowner,Y,False,hold,hold,Smart LNG,series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel
+16|Capacity,fill,16,,Capacity,Y,False,hold,hold,172600,"series-level: each carrier 172,600 cbm (GTT Mark III)"

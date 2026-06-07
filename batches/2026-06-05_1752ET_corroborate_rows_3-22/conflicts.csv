@@ -1,0 +1,3 @@
+row_id,column,backend_value,proposed_value,sources,recommendation,decision
+20,Shipowner,United Liquefied Gas,United Liquefied Gas,https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/,only 1 surviving corroborator(s); need >=2. IGU kept; cell left partially corroborated — find another independent source before promotion.,hold
+21,Shipowner,United Liquefied Gas,United Liquefied Gas,https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/,only 1 surviving corroborator(s); need >=2. IGU kept; cell left partially corroborated — find another independent source before promotion.,hold
