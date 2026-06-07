@@ -126,8 +126,10 @@ The assistant draws only on publicly-accessible sources: the IGU report, yard
 orderbooks ([ChinaShipBuild](http://www.chinashipbuild.com/)), regulatory
 filings (DART, KIND, Bursa Malaysia, HKEX, class societies), and trade press
 (see [refdata/source_roster.md](refdata/source_roster.md) for the tier list).
-GEM and SFOC contribute supplementary data to the tracker but are **not** used
-as citation sources; the reasons are documented in the SOPs.
+GEM (Global Energy Monitor, including `gem.wiki`) and SFOC contribute
+supplementary data to the tracker but are **never** used as citation or
+corroboration sources — GEM is downstream of this tracker, so citing it would be
+circular. The reasons are documented in the SOPs.
 
 Scope (which vessels qualify, the proposed / on-order / active status
 categories) is defined in [docs/inclusion_criteria.md](docs/inclusion_criteria.md).
