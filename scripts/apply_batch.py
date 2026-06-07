@@ -98,6 +98,9 @@ def _items_and_conflicts(mode, payload, header, colmap):
                 "ref_value": ", ".join(f.get("new_urls", []) or []),
                 "confidence": f.get("confidence", "R"), "derivable": bool(f.get("derivable")),
                 "note": f.get("note", ""), "prev_state": f.get("prev_state", "blank"),
+                # corroborate fills append refs only — the data value is unchanged,
+                # so the value column must never be (re)written (see value-write guard).
+                "ref_only": f.get("prev_state") == "corroborate",
                 "row_data": None,
             })
         for c in payload.get("candidate_findings", []):
@@ -244,7 +247,7 @@ def main():
         touched[rid] = base + [""] * (len(header) - len(base))
         base = touched[rid]
         H = {h: i for i, h in enumerate(header)}
-        if it["kind"] == "fill" and it["column"] in H:
+        if it["kind"] == "fill" and it["column"] in H and not it.get("ref_only"):
             base[H[it["column"]]] = it["value"]
             patch.append(["set", rid, it["column"], it["value"]])
             cells.append({"row_id": rid, "column": it["column"], "value": it["value"],

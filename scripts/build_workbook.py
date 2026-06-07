@@ -612,7 +612,11 @@ def build_data_fill(args):
                            key=lambda s: int(s) if s.isdigit() else 1 << 30)
 
     CONF_RANK = {"G": 3, "green": 3, "Y": 2, "yellow": 2, "R": 1, "red": 1}
-    data_fill_by = {(str(f["row_id"]), f["field"]): f for f in fills if f.get("field")}
+    # corroborate fills leave the data value untouched (they only append [ref]s), so
+    # they are excluded from data_fill_by — the value cell stays gray, not painted as
+    # a proposed change; they still flow through ref_fill_by to get the peach append.
+    data_fill_by = {(str(f["row_id"]), f["field"]): f for f in fills
+                    if f.get("field") and f.get("prev_state") != "corroborate"}
     ref_fill_by = {(str(f["row_id"]), f["ref_field"]): f for f in fills if f.get("ref_field")}
 
     wb = Workbook()

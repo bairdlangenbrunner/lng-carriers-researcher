@@ -107,6 +107,31 @@ def main():
                 "url": u, "action": "dropped by §3.8 value↔ref gate; reconcile by hand",
             })
 
+        # Corroborate batch: the grandfathered IGU ref is kept out of new_urls by the
+        # selector, so the gate never tested it — re-prepend it (it stays FIRST) and
+        # require >=2 SURVIVING independent corroborators for "full". The value is
+        # never dropped here (a corroborate batch never writes the value column);
+        # a cell short of two survivors is flagged "partial" for a human follow-up.
+        if f.get("prev_state") == "corroborate":
+            igu = base.get("scope", {}).get("igu_url", "")
+            corrob = [u for u in kept if u != igu]
+            f["new_urls"] = ([igu] + corrob) if igu else corrob
+            if len(corrob) >= 2:
+                f["corroboration"] = "full"
+            else:
+                f["corroboration"] = "partial"
+                # keys chosen to match apply_batch._conflict_row so conflicts.csv is populated
+                findings.append({
+                    "row_id": f["row_id"], "column": f.get("field", ""),
+                    "backend_value": val, "proposed_value": val,
+                    "sources": "; ".join(corrob) or "(none)",
+                    "recommendation": (f"only {len(corrob)} surviving corroborator(s); need >=2. "
+                                       "IGU kept; cell left partially corroborated — "
+                                       "find another independent source before promotion."),
+                })
+            survivors.append(f)
+            continue
+
         # Derivable fills stand on backend-internal consistency, so a dropped
         # copied sibling ref loses the URL but never the value. Research fills that
         # lose ALL their URLs are demoted to documented_blanks (no value without a
@@ -129,8 +154,12 @@ def main():
         base["candidate_findings"] = findings
     (wd / "data_fill.json").write_text(json.dumps(base, indent=2, ensure_ascii=False))
 
+    n_partial = sum(1 for f in survivors if f.get("corroboration") == "partial")
+    n_full = sum(1 for f in survivors if f.get("corroboration") == "full")
     print(f"\nfinal fills: {len(survivors)}  (demoted {demoted} for losing all URLs; "
           f"{conflicts_logged} ref(s) dropped by value↔ref gate)")
+    if n_full or n_partial:
+        print(f"corroborate: {n_full} full (>=2 survivors), {n_partial} partial (<2; IGU kept, flagged)")
     print(f"documented_blanks: {len(blanks)}  candidate_findings: {len(findings)}  "
           f"verify_log: {len(vlog)}")
     if conflicts_logged:

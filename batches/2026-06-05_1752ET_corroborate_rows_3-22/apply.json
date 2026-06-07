@@ -1,0 +1,206 @@
+{
+  "batch": "2026-06-05_1752ET_corroborate_rows_3-22",
+  "mode": "data_fill",
+  "accepted_cells": [
+    {
+      "row_id": "17",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269, https://www.vesselfinder.com/vessels/details/9953248, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "17",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds, https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "17",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "17",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds, https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "17",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.vesselfinder.com/vessels/details/9953248, https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "18",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.vesselfinder.com/vessels/details/9953250, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "18",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "18",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "18",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "18",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0911.html, https://www.vesselfinder.com/vessels/details/9953250, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds, https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "19",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/, https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/, https://www.vesselfinder.com/vessels/details/9953262, https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "confidence": "G"
+    },
+    {
+      "row_id": "19",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/, https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/, https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "confidence": "G"
+    },
+    {
+      "row_id": "19",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/, https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "19",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/, https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "confidence": "G"
+    },
+    {
+      "row_id": "19",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/, https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/, https://www.vesselfinder.com/vessels/details/9953262, https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "confidence": "G"
+    },
+    {
+      "row_id": "22",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0515.html, https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade, https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/, https://www.vesselfinder.com/vessels/details/9961477",
+      "confidence": "G"
+    },
+    {
+      "row_id": "22",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0515.html, https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade, https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "22",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0515.html, https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade, https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "22",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0515.html, https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade, https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "22",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.mol.co.jp/en/info/article/2024/0515.html, https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade, https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/, https://www.vesselfinder.com/vessels/details/9961477",
+      "confidence": "G"
+    },
+    {
+      "row_id": "20",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/, https://www.vesselfinder.com/vessels/details/9958652, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities, https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "20",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities, https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "20",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/, https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities, https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "20",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/, https://www.vesselfinder.com/vessels/details/9958652",
+      "confidence": "G"
+    },
+    {
+      "row_id": "21",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/, https://www.vesselfinder.com/vessels/details/9958664, https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade, https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "21",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/, https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade, https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "21",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/, https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade, https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "21",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/, https://www.vesselfinder.com/vessels/details/9958664",
+      "confidence": "G"
+    },
+    {
+      "row_id": "3",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.vesselfinder.com/vessels/details/9904675, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.trusteddocks.com/vessel/9904675-pyotr-stolypin",
+      "confidence": "G"
+    },
+    {
+      "row_id": "3",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.vesselfinder.com/vessels/details/9904675, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+      "confidence": "G"
+    },
+    {
+      "row_id": "4",
+      "column": "Name [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.vesselfinder.com/vessels/details/9904687, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "4",
+      "column": "Delivery year [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.vesselfinder.com/vessels/details/9904687, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 76,
+    "accepted": 32,
+    "hold": 44,
+    "reject": 0,
+    "conflicts": 2
+  }
+}

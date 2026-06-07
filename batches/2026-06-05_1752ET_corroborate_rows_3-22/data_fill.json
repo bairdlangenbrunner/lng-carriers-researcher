@@ -1,0 +1,2144 @@
+{
+  "batch_label": "Corroborate IGU-only refs — rows 3-22",
+  "scope": {
+    "filter": "sole-ref == IGU 2025; priority fields; row_id in [3, 22]",
+    "row_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22"
+    ],
+    "igu_url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+    "priority_fields": [
+      "Name",
+      "Shipbuilder",
+      "Shipowner",
+      "Capacity",
+      "Delivery year"
+    ]
+  },
+  "fills": [
+    {
+      "row_id": "17",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Rex Tillerson",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+        "https://www.vesselfinder.com/vessels/details/9953248",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL naming-ceremony press release, Riviera inauguration article, VesselFinder (IMO 9953248), and Ships Monthly all name the vessel Rex Tillerson.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "17",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Hudong-Zhonghua Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "All four sources identify Hudong-Zhonghua Shipbuilding as the builder of Rex Tillerson.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "17",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "MOL",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL press release (MOL is the owner/operator), Riviera, and Ships Monthly all name MOL for Rex Tillerson.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "17",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "174000",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "All four sources state 174,000 cbm capacity for Rex Tillerson.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "17",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2024",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.vesselfinder.com/vessels/details/9953248",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL release (Sept 2024 naming/delivery), VesselFinder (built 2024), Riviera, and Ships Monthly all support 2024 delivery.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "18",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Umm Ghuwailina",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.vesselfinder.com/vessels/details/9953250",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL naming-ceremony release, VesselFinder (IMO 9953250), Baird review, and Ships Monthly all name Umm Ghuwailina.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "18",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Hudong-Zhonghua Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL release, Baird review, and Ships Monthly identify Hudong-Zhonghua Shipbuilding as builder of Umm Ghuwailina.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "18",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "MOL",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL press release and Ships Monthly both name MOL as owner/operator of Umm Ghuwailina.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "18",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "174000",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "All three sources state 174,000 cbm for Umm Ghuwailina.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "18",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2024",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0911.html",
+        "https://www.vesselfinder.com/vessels/details/9953250",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+        "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL release (Sept 2024), VesselFinder (built 2024), Baird, and Ships Monthly all support 2024 delivery.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "19",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Hlaitan",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+        "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+        "https://www.vesselfinder.com/vessels/details/9953262",
+        "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "LNG Prime delivery article, Shipping Telegraph, VesselFinder (IMO 9953262), and Baird all name Hlaitan.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "19",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Hudong-Zhonghua Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+        "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+        "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "LNG Prime, Shipping Telegraph, and Baird identify Hudong-Zhonghua Shipbuilding as builder of Hlaitan.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "19",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "MOL",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+        "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "LNG Prime and Shipping Telegraph both name MOL as a co-owner/operator chartering Hlaitan to QatarEnergy Trading.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "19",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "174000",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+        "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "LNG Prime and Baird both state 174,000 cbm for Hlaitan. (Shipping Telegraph did not state the figure.)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "19",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2024",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+        "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+        "https://www.vesselfinder.com/vessels/details/9953262",
+        "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "LNG Prime (Dec 2024 delivery), Shipping Telegraph, VesselFinder (built 2024), and Baird all support 2024 delivery.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "22",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Greenergy Ocean",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0515.html",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+        "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+        "https://www.vesselfinder.com/vessels/details/9961477"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL naming-ceremony release, Baird review, Hellenic Shipping News, and VesselFinder (IMO 9961477) all name Greenergy Ocean.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "22",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Hudong-Zhonghua Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0515.html",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+        "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL release, Baird review, and Hellenic all identify Hudong-Zhonghua Shipbuilding as builder of Greenergy Ocean.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "22",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "MOL",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0515.html",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+        "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL release (MOL co-owns/commercially manages), Baird, and Hellenic all name MOL for Greenergy Ocean.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "22",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "174000",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0515.html",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+        "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "All three sources state 174,000 cbm for Greenergy Ocean.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "22",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2024",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.mol.co.jp/en/info/article/2024/0515.html",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+        "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+        "https://www.vesselfinder.com/vessels/details/9961477"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "MOL release (May 2024 naming), Baird, Hellenic, and VesselFinder (built 2024) all support 2024 delivery.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "20",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Huashan",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+        "https://www.vesselfinder.com/vessels/details/9958652",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "4 independent domains name the vessel Huashan: LNG Prime delivery article (IMO/delivery context), VesselFinder (IMO 9958652), Baird Maritime vessel review, and Riviera record-deliveries piece naming the Shaolin/Wudang/Kunlun/Emei/Huashan/Kongtong series.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "20",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Hudong-Zhonghua Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "3 independent domains state Hudong-Zhonghua Shipbuilding as builder of Huashan; full 'Hudong-Zhonghua Shipbuilding' string verified on each.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "20",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "United Liquefied Gas",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "PARTIAL (1 domain). LNG Prime names 'United Liquefied Gas Shipping' as the ordering owner (a Cosco Shipping 81% / PetroChina 19% JV). OWNER DISCREPANCY: vessel databases (VesselFinder/MarineTraffic) and Baird Maritime label the owner/operator as 'COSCO Shipping Energy Transportation' (and registered owner 'United Success LNG Shipping Co' on some DB pages), not 'United Liquefied Gas'. Could not find a second independent domain that verbatim contains 'United Liquefied Gas' (Splash247, lngjournal, lngindustry, COSCO press, marinevesseltraffic all 403/blocked or named only COSCO/PetroChina). Human review of owner stylization recommended.",
+      "corroboration": "partial"
+    },
+    {
+      "row_id": "20",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "174000",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+        "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "3 independent domains state 174,000 cbm for Huashan / the series. Verified as '174,000' on each.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "20",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2024",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+        "https://www.vesselfinder.com/vessels/details/9958652"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "LNG Prime reports delivery on May 30, 2024; VesselFinder lists Year of Build 2024 (IMO 9958652).",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "21",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Kongtong",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+        "https://www.vesselfinder.com/vessels/details/9958664",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "4 independent domains name the vessel Kongtong: LNG Prime delivery article, VesselFinder (IMO 9958664), Baird Maritime vessel review, and Riviera record-deliveries series list.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "21",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Hudong-Zhonghua Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "3 independent domains state Hudong-Zhonghua Shipbuilding as builder of Kongtong; full 'Hudong-Zhonghua Shipbuilding' string verified on each.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "21",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "United Liquefied Gas",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "PARTIAL (1 domain). LNG Prime names 'United Liquefied Gas Shipping' as the ordering owner (Cosco Shipping 81% / PetroChina 19% JV). OWNER DISCREPANCY: vessel databases and Baird Maritime label owner/operator as 'COSCO Shipping Energy Transportation' (registered owner 'United Success LNG Shipping Co' on some DB pages), not 'United Liquefied Gas'. No second independent domain found that verbatim contains 'United Liquefied Gas' (others 403/blocked or named only COSCO/PetroChina). Human review of owner stylization recommended.",
+      "corroboration": "partial"
+    },
+    {
+      "row_id": "21",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "174000",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+        "https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "3 independent domains state 174,000 cbm for Kongtong / the series. Verified as '174,000' on each.",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "21",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2024",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+        "https://www.vesselfinder.com/vessels/details/9958664"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "LNG Prime reports delivery on September 26, 2024; VesselFinder lists Year of Build 2024 (IMO 9958664).",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "3",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Pyotr Stolypin",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.vesselfinder.com/vessels/details/9904675",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.trusteddocks.com/vessel/9904675-pyotr-stolypin"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "VesselFinder per-IMO (9904675) + trade press name the vessel directly",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "3",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "3",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "3",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "3",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2026",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.vesselfinder.com/vessels/details/9904675",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "VesselFinder per-IMO (9904675) lists Year of Build 2026; Maritime Executive: Sovcomflot expects two more from Zvezda 'next year' (2026) after Dec 2025 first delivery",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "4",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "Sergei Witte",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.vesselfinder.com/vessels/details/9904687",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "VesselFinder per-IMO (9904687) + trade press name the vessel directly",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "4",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "4",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "4",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "4",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "2026",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.vesselfinder.com/vessels/details/9904687",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier"
+      ],
+      "confidence": "G",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "VesselFinder per-IMO (9904687) lists Year of Build 2026; Maritime Executive: Sovcomflot expects two more from Zvezda 'next year' (2026) after Dec 2025 first delivery",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "5",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "5",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "5",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "6",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "6",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "6",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "7",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "7",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "7",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "8",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "8",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "8",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "9",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "9",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "9",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "10",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "10",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "10",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "11",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "11",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "11",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "12",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "12",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "12",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "13",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "13",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "13",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "14",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "14",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "14",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "15",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "15",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "15",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "16",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "Zvezda Shipbuilding",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "16",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "Smart LNG",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+        "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+        "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
+      "corroboration": "full"
+    },
+    {
+      "row_id": "16",
+      "field": "Capacity",
+      "ref_field": "Capacity [ref]",
+      "proposed_value": "172600",
+      "new_urls": [
+        "https://www.igu.org/igu-reports/2025-world-lng-report",
+        "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+        "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+        "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+        "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
+      ],
+      "confidence": "Y",
+      "derivable": false,
+      "prev_state": "corroborate",
+      "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
+      "corroboration": "full"
+    }
+  ],
+  "documented_blanks": [
+    {
+      "row_id": "20",
+      "field": "Shipowner",
+      "existing_value": "United Liquefied Gas",
+      "note": "Owner-name discrepancy. Only LNG Prime (lngprime.com) verbatim contains 'United Liquefied Gas' (as 'United Liquefied Gas Shipping', a Cosco 81% / PetroChina 19% JV). Independent vessel databases (VesselFinder, MarineTraffic) and Baird Maritime name the owner/operator as 'COSCO Shipping Energy Transportation'; some DB pages list registered owner as 'United Success LNG Shipping Co'. So 'United Liquefied Gas' is supported by exactly 1 independent domain (partial, <2). Human review of whether the backend value should remain 'United Liquefied Gas' vs COSCO entity."
+    },
+    {
+      "row_id": "21",
+      "field": "Shipowner",
+      "existing_value": "United Liquefied Gas",
+      "note": "Same owner-name discrepancy as row 20. 'United Liquefied Gas' verified only on LNG Prime (1 domain, partial). Other independent sources name COSCO Shipping Energy Transportation / United Success LNG Shipping Co. Human review recommended."
+    },
+    {
+      "row_id": "5",
+      "field": "Name",
+      "searched": "IMO 9904699 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "6",
+      "field": "Name",
+      "searched": "IMO 9904704 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "7",
+      "field": "Name",
+      "searched": "IMO 9918779 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "8",
+      "field": "Name",
+      "searched": "IMO 9918781 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "9",
+      "field": "Name",
+      "searched": "IMO 9918793 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "10",
+      "field": "Name",
+      "searched": "IMO 9918808 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "11",
+      "field": "Name",
+      "searched": "IMO 9918810 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "12",
+      "field": "Name",
+      "searched": "IMO 9918822 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "13",
+      "field": "Name",
+      "searched": "IMO 9918834 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "14",
+      "field": "Name",
+      "searched": "IMO 9918846 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "15",
+      "field": "Name",
+      "searched": "IMO 9918858 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    },
+    {
+      "row_id": "16",
+      "field": "Name",
+      "searched": "IMO 9918860 on VesselFinder (shows 'ZVEZDA 0XX'), trade press, war-sanctions registry",
+      "as_of": "2026-06-05",
+      "note": "placeholder hull name 'Hull 0XX (Zvezda)'; no public source contains this literal string (databases list it as 'ZVEZDA 0XX')"
+    }
+  ],
+  "verification_log": [
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9953248",
+      "value": "Rex Tillerson",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9953248",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9953250",
+      "value": "Umm Ghuwailina",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9953262",
+      "value": "Hlaitan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9961477",
+      "value": "Greenergy Ocean",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9961477",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0911.html",
+      "value": "Rex Tillerson",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0911.html",
+      "value": "Umm Ghuwailina",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0911.html",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0911.html",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0911.html",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0911.html",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+      "value": "Rex Tillerson",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+      "value": "Umm Ghuwailina",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-rex-tillerson-umm-ghuwailina-qatarenergy-expands-lng-carrier-fleet-with-174000cbm-newbuilds",
+      "value": "MOL",
+      "result": "FAIL"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+      "value": "Rex Tillerson",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/qatarenergy-inaugurates-rex-tillerson-and-chooses-esd-partner-for-samsung-newbuildings-82269",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "value": "Umm Ghuwailina",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "value": "Rex Tillerson",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shipsmonthly.com/news/new-lng-carrier-delivered-for-qatarenergy/",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+      "value": "Hlaitan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-new-qatarenergy-lng-carrier/138020/",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+      "value": "Hlaitan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+      "value": "174000",
+      "result": "FAIL"
+    },
+    {
+      "url": "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://shippingtelegraph.com/freight-news/mol-charters-newbuild-lng-carrier-to-qatarenergy-trading/",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "value": "Hlaitan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/qatarenergy-welcomes-new-lng-carrier-to-fleet",
+      "value": "MOL",
+      "result": "FAIL"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0515.html",
+      "value": "Greenergy Ocean",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0515.html",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0515.html",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0515.html",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.mol.co.jp/en/info/article/2024/0515.html",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+      "value": "Greenergy Ocean",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-greenergy-ocean-greenergy-pearl-gas-carrier-pair-to-support-chinas-global-lng-trade",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "value": "Greenergy Ocean",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "value": "174000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.hellenicshippingnews.com/mol-holds-naming-ceremony-for-newbuilding-lng-carrier-greenergy-ocean-to-serve-china-national-offshore-oil-corporation-first-in-series-of-6-newbuilding-lng-carriers/",
+      "value": "MOL",
+      "result": "PASS"
+    },
+    {
+      "url": "http://en.energy.coscoshipping.com/col/col21116/art/2024/art_3fcbe19735e74976af63c99ffc43be8c.html",
+      "value": "Rex Tillerson",
+      "result": "FAIL"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+      "value": "Huashan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+      "value": "United Liquefied Gas",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+      "value": "174,000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+      "value": "Kongtong",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+      "value": "United Liquefied Gas",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+      "value": "174,000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9958652",
+      "value": "Huashan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9958652",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9958664",
+      "value": "Kongtong",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9958664",
+      "value": "2024",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities",
+      "value": "Huashan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities",
+      "value": "174,000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade",
+      "value": "Kongtong",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/gas/vessel-review-kongtong-large-lng-carrier-to-support-petrochinas-global-gas-trade",
+      "value": "174,000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "value": "Huashan",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "value": "Kongtong",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "value": "Hudong-Zhonghua Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "value": "174,000",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.bairdmaritime.com/shipping/tankers/gas/vessel-review-huashan-large-lng-carrier-for-petrochinas-gas-transportation-activities",
+      "value": "United Liquefied Gas (FALSE POSITIVE — page body names COSCO, not this owner; NOT used)",
+      "result": "REJECTED"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/chinas-hudong-zhonghua-shipyard-hits-record-lng-carrier-deliveries-86921",
+      "value": "United Liquefied Gas",
+      "result": "FAIL"
+    },
+    {
+      "url": "https://splash247.com/cosco-and-petrochina-back-at-hudong-zhonghua-for-more-lng-carriers/",
+      "value": "United Liquefied Gas",
+      "result": "FAIL (HTTP 403)"
+    },
+    {
+      "url": "https://lngjournal.com/index.php/latest-news-mainmenu-47/item/104544-cosco-shipping-energy-of-china-orders-three-lng-newbuilds-and-gives-purchase-and-delivery-details",
+      "value": "United Liquefied Gas",
+      "result": "FAIL (HTTP 403)"
+    },
+    {
+      "url": "http://en.energy.coscoshipping.com/col/col21116/art/2024/art_61cd347bc09d4b9e99962d2d291dd4ad.html",
+      "value": "Huashan",
+      "result": "FAIL (curl body does not contain value)"
+    },
+    {
+      "url": "https://www.marinevesseltraffic.com/vessels/HUDONG-ZHONGHUA-H1836A/CURRENT-POSITION/9958664/1",
+      "value": "Kongtong",
+      "result": "FAIL (HTTP 403)"
+    },
+    {
+      "url": "https://www.marinetraffic.com/en/ais/details/ships/shipid:8581888/mmsi:477945600/imo:9958652/vessel:HUASHAN",
+      "value": "HUASHAN",
+      "result": "FAIL (HTTP 403)"
+    },
+    {
+      "url": "https://www.trusteddocks.com/vessel/9958664-kongtong",
+      "value": "174,000",
+      "result": "FAIL (value only in 'similar vessels' boilerplate; not used)"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9904675",
+      "value": "Pyotr Stolypin",
+      "result": "PASS"
+    },
+    {
+      "url": "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+      "value": "Pyotr Stolypin",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+      "value": "Pyotr Stolypin",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.trusteddocks.com/vessel/9904675-pyotr-stolypin",
+      "value": "Pyotr Stolypin",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+      "value": "Zvezda Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+      "value": "Zvezda Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+      "value": "Zvezda Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+      "value": "Zvezda Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+      "value": "Zvezda Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "value": "Zvezda Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "value": "Zvezda Shipbuilding",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+      "value": "Smart LNG",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+      "value": "Smart LNG",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "value": "Smart LNG",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
+      "value": "Smart LNG",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "value": "Smart LNG",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+      "value": "172600",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+      "value": "172600",
+      "result": "PASS"
+    },
+    {
+      "url": "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+      "value": "172600",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "value": "172600",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9904675",
+      "value": "2026",
+      "result": "PASS"
+    },
+    {
+      "url": "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+      "value": "2026",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9904687",
+      "value": "Sergei Witte",
+      "result": "PASS"
+    },
+    {
+      "url": "https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160",
+      "value": "Sergei Witte",
+      "result": "PASS"
+    },
+    {
+      "url": "https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/",
+      "value": "Sergei Witte",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/",
+      "value": "Sergei Witte",
+      "result": "PASS"
+    },
+    {
+      "url": "https://www.vesselfinder.com/vessels/details/9904687",
+      "value": "2026",
+      "result": "PASS"
+    }
+  ],
+  "candidate_findings": [
+    {
+      "row_id": "20",
+      "column": "Shipowner",
+      "backend_value": "United Liquefied Gas",
+      "proposed_value": "United Liquefied Gas",
+      "sources": "https://lngprime.com/asia/hudong-zhonghua-delivers-coscos-lng-carrier/113639/",
+      "recommendation": "only 1 surviving corroborator(s); need >=2. IGU kept; cell left partially corroborated — find another independent source before promotion."
+    },
+    {
+      "row_id": "21",
+      "column": "Shipowner",
+      "backend_value": "United Liquefied Gas",
+      "proposed_value": "United Liquefied Gas",
+      "sources": "https://lngprime.com/asia/hudong-zhonghua-hands-over-coscos-lng-carrier/127019/",
+      "recommendation": "only 1 surviving corroborator(s); need >=2. IGU kept; cell left partially corroborated — find another independent source before promotion."
+    }
+  ]
+}
