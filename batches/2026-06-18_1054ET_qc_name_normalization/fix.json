@@ -1,0 +1,26 @@
+{
+  "batch_label": "QC — pre-release Name normalization + orphan-ref cleanup",
+  "reason": "Pre-release QC pass (qc_release.md rev 1). Whole-backend scan found no corruption. Mechanical fixes only: (1) unify drifting builder labels in 'Builder (Owner N)' placeholder Names across three yards (B1), (2) add the missing ordinal + canonical owner form to one Hanwha placeholder (B2/B3), (3) drop two orphan [ref]s whose paired value is blank (Rule F). All Name edits are cosmetic/derived (preserve_ref:true — paired [ref] documents the order, not the literal string). Canonical forms confirmed with user 2026-06-18: Hudong-Zhonghua (drop 'Shanghai'); HD Hyundai Samho (drop 'Yeongam', drop 'HI'); HD Hyundai HI (HHI) Ulsan (keep '(HHI)').",
+  "corrections": [
+    { "row_id": "1196", "cells": [ { "field": "Name", "new_value": "Hudong-Zhonghua (MISC 1)", "preserve_ref": true, "confidence": "G", "note": "B1: drop redundant 'Shanghai' geography to match the 11 'Hudong-Zhonghua' sibling placeholders" } ] },
+    { "row_id": "1197", "cells": [ { "field": "Name", "new_value": "Hudong-Zhonghua (MISC 2)", "preserve_ref": true, "confidence": "G", "note": "B1: drop 'Shanghai'" } ] },
+    { "row_id": "1198", "cells": [ { "field": "Name", "new_value": "Hudong-Zhonghua (MISC 3)", "preserve_ref": true, "confidence": "G", "note": "B1: drop 'Shanghai'" } ] },
+    { "row_id": "1199", "cells": [ { "field": "Name", "new_value": "Hudong-Zhonghua (MISC 4)", "preserve_ref": true, "confidence": "G", "note": "B1: drop 'Shanghai'" } ] },
+    { "row_id": "1200", "cells": [ { "field": "Name", "new_value": "Hudong-Zhonghua (MISC 5)", "preserve_ref": true, "confidence": "G", "note": "B1: drop 'Shanghai'" } ] },
+
+    { "row_id": "1189", "cells": [ { "field": "Name", "new_value": "HD Hyundai Samho (Hyundai Glovis 1)", "preserve_ref": true, "confidence": "G", "note": "B1: unify samho yard label to 'HD Hyundai Samho' (drop 'Yeongam' geography)" } ] },
+    { "row_id": "1193", "cells": [ { "field": "Name", "new_value": "HD Hyundai Samho (Capital Clean ECC 1)", "preserve_ref": true, "confidence": "G", "note": "B1: unify samho yard label to 'HD Hyundai Samho' (was 'Hyundai Samho HI')" } ] },
+    { "row_id": "1194", "cells": [ { "field": "Name", "new_value": "HD Hyundai Samho (Capital Clean ECC 2)", "preserve_ref": true, "confidence": "G", "note": "B1: unify samho yard label to 'HD Hyundai Samho'" } ] },
+    { "row_id": "1195", "cells": [ { "field": "Name", "new_value": "HD Hyundai Samho (Capital Clean ECC 3)", "preserve_ref": true, "confidence": "G", "note": "B1: unify samho yard label to 'HD Hyundai Samho'" } ] },
+    { "row_id": "1212", "cells": [ { "field": "Name", "new_value": "HD Hyundai Samho (BW LNG 1)", "preserve_ref": true, "confidence": "G", "note": "B1: unify samho yard label to 'HD Hyundai Samho' (drop 'Yeongam')" } ] },
+    { "row_id": "1213", "cells": [ { "field": "Name", "new_value": "HD Hyundai Samho (BW LNG 2)", "preserve_ref": true, "confidence": "G", "note": "B1: unify samho yard label to 'HD Hyundai Samho' (drop 'Yeongam')" } ] },
+
+    { "row_id": "1214", "cells": [ { "field": "Name", "new_value": "HD Hyundai HI (HHI) Ulsan (Hayfin 1)", "preserve_ref": true, "confidence": "G", "note": "B1: add '(HHI)' to match the established ulsan sibling form" } ] },
+    { "row_id": "1215", "cells": [ { "field": "Name", "new_value": "HD Hyundai HI (HHI) Ulsan (Hayfin 2)", "preserve_ref": true, "confidence": "G", "note": "B1: add '(HHI)' to match the established ulsan sibling form" } ] },
+
+    { "row_id": "1219", "cells": [ { "field": "Name", "new_value": "Hanwha Ocean (Knutsen OAS 2)", "preserve_ref": true, "confidence": "G", "note": "B3: add missing ordinal '2' (sibling row_id 1205 is 'Knutsen OAS 1'); B2: canonical owner form 'Knutsen OAS', not 'Knutsen'" } ] },
+
+    { "row_id": "1041", "cells": [ { "field": "IMO number", "new_value": "", "drop_refs": ["https://www.igu.org/igu-reports/2025-world-lng-report"], "confidence": "G", "note": "Rule F: orphan [ref] — IMO number is blank (FSRU on order, no IMO assigned). Drop the stray blanket citation from the IMO [ref] cell." } ] },
+    { "row_id": "1206", "cells": [ { "field": "Cargo type", "new_value": "", "drop_refs": ["https://www.thestar.com.my/business/business-news/2026/05/04/misc-bags-20-year-fsru-contract-from-petronas-gas", "https://lngprime.com/asia/south-koreas-samsung-heavy-bags-new-order-for-lng-carrier-duo/186477/", "https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/"], "confidence": "G", "note": "Rule F: orphan [ref] — Cargo type is blank. Drop the stray blanket citation from the Cargo type [ref] cell." } ] }
+  ]
+}
