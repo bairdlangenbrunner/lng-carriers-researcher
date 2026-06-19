@@ -1,0 +1,42 @@
+{
+  "gap_window": "2026-05-01 to 2026-06-19 (today). Backend's latest contract date at pull time: 29-May-2026.",
+  "yards_swept": [
+    "Ring A / CSB — all yards in scope (7 main + 14 secondary): samsung, hanwha-ocean, hyundai-ulsan, hyundai-samho, hyundai-mipo, jiangnan, hudong-zhonghua, dsic-dalian, mitsubishi-hi, kawasaki-kobe, zvezda, jmu-tsu, jmu-ariake, nacks, dacks, imabari-marugame, cosco-yangzhou, cosco-qidong, cosco-dalian, cosco-zhoushan, yantai-cimc. CSB LNG/FSRU leading edge is March 2026 — zero LNG/FSRU contracts indexed >= 2026-05; backend already extends past CSB's edge (to 29-May-2026), so Ring A surfaced no missing vessels.",
+    "Ring B / regulatory — DART (English proxies en.sedaily.com, asiae.co.kr/Asia Business Daily), KIND, Bursa Malaysia (TheStar/BusinessToday/The Edge), HKEX/SSE.",
+    "Ring C / trade press — LNG Prime, Splash247, TradeWinds, Riviera, Seatrade, Offshore Energy, gCaptain, IndexBox, Hellenic Shipping News.",
+    "Ring D / charterer programs + GTT cross-check + FSRU — QatarEnergy, Cheniere, Venture Global, Excelerate, etc.; GTT tank-design releases; FSRU newbuild orders."
+  ],
+  "candidates": [
+    {
+      "cluster_id": "C1",
+      "cluster_label": "Samsung HI LNG carrier for unidentified owner (Oceania/Bermuda region; possibly Purus Marine)",
+      "confidence": "Y",
+      "discovery_notes": "Single new LNG carrier order disclosed by Samsung Heavy Industries on 08-Jun-2026 via a Korean single sales/supply-contract disclosure (DART), reported same day by Asia Business Daily (asiae.co.kr) and LNG Prime. The buyer is UNIDENTIFIED: Samsung's disclosure names only a 'shipping company in the Oceania region' (asiae); LNG Prime reports the filing cites a 'Bermuda-based owner' and notes the order has been LINKED to London-based Purus Marine but that it 'could not verify this immediately.' Purus already has a 2026 Samsung series in the backend (1x 20-Mar-2026, 2x 22-Dec-2025), so a 4th Purus hull is plausible but UNCONFIRMED — Shipowner is therefore left as 'unknown' (backend convention, matching the 27-May-2026 unknown Samsung row) rather than asserting Purus. CONFIRMED, citeable cells: Shipbuilder = Samsung Heavy Industries; Status = on order (signed shipbuilding contract); Contract date = 08-Jun-2026; Price = USD 252,000,000 (385.5 billion won per asiae; ~$252m per LNG Prime); Delivery year = 2029 (LNG Prime: 'by January 2029'). NOT disclosed in any public source: Capacity, Propulsion type, Name/Hull/IMO (left blank). COUNT: asiae and the DART disclosure say ONE vessel and the 385.5bn-won value is consistent with a single 174k-class hull (~$250m each, matching the May-2026 backend cluster prices); Riviera's headline says 'two LNG carriers' but that appears to conflate Purus's earlier Samsung pair — treat as ONE pending confirmation. Confidence YELLOW: the contract event/yard/value/delivery are well-sourced (primary DART coverage + LNG Prime), but owner identity is unidentified/contested and the count had a minor cross-source discrepancy.",
+      "row_data": {
+        "Status": "on order",
+        "Status [ref]": "https://www.asiae.co.kr/en/article/IT/2026060809373146202, https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/",
+        "Shipowner": "unknown",
+        "Shipbuilder": "Samsung Heavy Industries",
+        "Shipbuilder [ref]": "https://www.asiae.co.kr/en/article/IT/2026060809373146202, https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/",
+        "Delivery year": "2029",
+        "Delivery year [ref]": "https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/",
+        "Contract date": "08-Jun-2026",
+        "Contract date [ref]": "https://www.asiae.co.kr/en/article/IT/2026060809373146202, https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/",
+        "Price": "252000000",
+        "Price [ref]": "https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/"
+      }
+    }
+  ],
+  "backend_status_flags": [
+    {
+      "flag": "placeholder-identity / dedup watch",
+      "rows": "this candidate (C1) vs existing Samsung HI unknown/Purus rows",
+      "note": "C1 is a NEW contract (08-Jun-2026, dlv 2029, $252m) and is distinct from: (a) the existing 27-May-2026 'unknown' Samsung row (dlv 2028, $252m) — different contract date and delivery year; (b) the existing Purus Marine Samsung rows (20-Mar-2026 dlv 2029; 22-Dec-2025 x2). If a future pass identifies C1's owner as Purus, it would be a 4th Purus/Samsung hull — still a distinct contract, not a duplicate. Reconcile then."
+    }
+  ],
+  "verification_log": [
+    {"url": "https://www.asiae.co.kr/en/article/IT/2026060809373146202", "status": "PASS", "checked_for": "Samsung; 385.5; Oceania; LNG", "note": "Asia Business Daily English coverage of the 08-Jun-2026 Samsung DART single-supply-contract disclosure; publicly visible body states 'one LNG carrier', 'Oceania region' owner, '385.5 billion won', dated 08 Jun 2026"},
+    {"url": "https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/", "status": "PASS", "checked_for": "Samsung; LNG; 2029; Bermuda; 252", "note": "LNG Prime, pub 08-Jun-2026; visible lead carries Bermuda owner, ~$252m, delivery by January 2029; Purus attribution explicitly unverified in the body"},
+    {"url": "https://www.tradewindsnews.com/gas/purus-linked-to-lng-carrier-order-at-samsung-heavy-industries/2-1-2000639", "status": "PASS", "checked_for": "Purus; Samsung", "note": "TradeWinds, pub 08-Jun-2026; headline links order to Purus Marine. Body paywalled; supports the (unverified) Purus possibility only, NOT cited in any data cell (owner left 'unknown')"}
+  ]
+}
