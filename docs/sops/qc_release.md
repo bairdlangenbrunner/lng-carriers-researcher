@@ -94,7 +94,7 @@ Triage `work/qc_report.csv` by check:
 
 Confirm the canonical target form with the user before mass-renaming (which builder label
 wins; how to unify a label that itself contains parens). Known-legit oddities go in
-`refdata/qc_allowlist.csv`, not into a fix.
+`data/qc_allowlist.csv`, not into a fix.
 
 ---
 

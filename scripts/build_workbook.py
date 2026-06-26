@@ -318,7 +318,7 @@ def build_ref_fill(args):
 # Discovery yard-location autofill (Discovery SOP §6.7). The yard-location block
 # is a property of the shipbuilder (yard), not the individual vessel, so on a
 # candidate row these 7 columns are filled from the authoritative
-# refdata/shipbuilder_facts.csv table (with the backend-sibling scan as a
+# data/shipbuilder_facts.csv table (with the backend-sibling scan as a
 # fallback). If the shipbuilder is new to both, they stay blank. row_data must
 # NOT carry these columns — this autofill owns them. YARD_LOCATION_COLS is the
 # canonical list in lookups.YARD_FACT_COLS (imported above).
@@ -352,10 +352,10 @@ def _build_yard_location_map(backend_data, backend_header):
 
 
 def _yard_location_map_table_first(backend_data, backend_header):
-    """Yard-location map with the authoritative refdata table taking priority.
+    """Yard-location map with the authoritative data table taking priority.
 
     Starts from the backend-sibling scan (_build_yard_location_map) and overlays
-    refdata/shipbuilder_facts.csv: a non-blank table cell wins; cells the table
+    data/shipbuilder_facts.csv: a non-blank table cell wins; cells the table
     leaves blank fall back to the sibling value. A builder absent from the table
     is fully sibling-derived, so this never regresses prior coverage.
     """
@@ -549,7 +549,7 @@ def _join_refs(existing: str, new_urls) -> str:
 # Controlled vocabularies for the type columns (Data-fill SOP §8). The backend
 # writes values verbatim with no normalizer, so a data_fill proposal MUST use an
 # existing canonical value. Single source of truth: lookups.CONTROLLED_VOCAB
-# (mirrors refdata/controlled_vocab.md), shared with qc_backend.py.
+# (mirrors data/controlled_vocab.md), shared with qc_backend.py.
 _DATA_FILL_VOCAB = CONTROLLED_VOCAB
 
 

@@ -72,7 +72,7 @@ def _offset_row():
 
 @pytest.fixture(autouse=True)
 def _no_facts(monkeypatch):
-    # Keep tests hermetic: don't consult the live refdata facts CSVs.
+    # Keep tests hermetic: don't consult the live data facts CSVs.
     monkeypatch.setattr(qc, "load_builder_facts", lambda: {})
     monkeypatch.setattr(qc, "load_owner_facts", lambda: {})
 

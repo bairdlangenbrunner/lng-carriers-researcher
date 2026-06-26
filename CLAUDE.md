@@ -12,9 +12,9 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
 - `docs/inclusion_criteria.md` — what's in scope vs out.
-- `refdata/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
-- `refdata/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
-- `refdata/source_roster.md` — source tier list for picking corroboration URLs.
+- `data/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
+- `data/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
+- `data/source_roster.md` — source tier list for picking corroboration URLs.
 - `scripts/` — the Python tooling.
 - `batches/` — per-batch outputs, one directory per batch.
 
@@ -49,7 +49,7 @@ python scripts/pull_backend.py
 
 # 4. For each yard in batch:
 python scripts/csb_fetch.py <yard-slug>
-# -> work/csb/<yard>.json. Slugs are in refdata/csb_yard_urls.md.
+# -> work/csb/<yard>.json. Slugs are in data/csb_yard_urls.md.
 
 # 5. For hulls not on CSB: §6a fallback (targeted Google search ->
 #    DART/KIND -> class society -> vessel database -> §6a.8 IMO-tracker ->
@@ -57,7 +57,7 @@ python scripts/csb_fetch.py <yard-slug>
 python scripts/imo_tracker.py <imo>  # only at §6a.8, the LAST step before negative result
 
 # 6. Trade press / regulatory searches per [ref]-Fill SOP §3.4.
-#    Pick sources via refdata/source_roster.md.
+#    Pick sources via data/source_roster.md.
 
 # 7. URL verification gate — Rule D §4.11. EVERY url before it goes in the xlsx.
 python scripts/url_verifier.py <url> <expected1> <expected2> ...
@@ -144,7 +144,7 @@ python scripts/derive_fills.py --since <YYYY-MM-DD>
 # -> work/data_fill.json (derivable fills + scope) + work/research_tasks.json
 
 # 4. Research fan-out: one subagent per cluster (Discovery §3 four-ring model,
-#    controlled vocab in refdata/controlled_vocab.md, owner stylization §4.14,
+#    controlled vocab in data/controlled_vocab.md, owner stylization §4.14,
 #    PRESERVE existing refs on `unknown` cells per Data-fill SOP §4). Reuse prior
 #    batches + backend siblings first. Each writes work/research_<label>.json.
 
@@ -242,7 +242,7 @@ existing vessel (apply.md §5a). Run standalone any time: `python scripts/dedupe
 
 - **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited.
 - **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in prior batches — URLs decay.
-- **Never cite GEM as a data source** — this includes `gem.wiki` and any other GEM-published page or dataset, as a `[ref]` URL or as corroboration ([ref]-Fill SOP §4.2; Forbidden lists in `docs/sops/ref_fill.md` and `refdata/source_roster.md`). GEM is downstream of this tracker, so citing it would be circular.
+- **Never cite GEM as a data source** — this includes `gem.wiki` and any other GEM-published page or dataset, as a `[ref]` URL or as corroboration ([ref]-Fill SOP §4.2; Forbidden lists in `docs/sops/ref_fill.md` and `data/source_roster.md`). GEM is downstream of this tracker, so citing it would be circular.
 - **Rule F applies always** — no orphan `[ref]` cells with no paired data value ([ref]-Fill SOP §4.13).
 - **Data-fill is additive to blanks/`unknown`s only.** It proposes value + verified-`[ref]` pairs for human review, never a backend edit; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (Data-fill SOP §4, §9).
 - **Always pull fresh backend CSV at the start of a batch.**
@@ -267,8 +267,8 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 |---|---|---|
 | `pull_backend.py` | curl + parse CSV, derive column-index map from header row | Schema changed; column indices look wrong |
 | `qc_backend.py` | backend QC sanity check — column-offset / misplaced-value detection + Name-column consistency (`name-builder-drift`, `name-ordinal-gap`; QC §2) (`work/qc_report.csv`; `--strict`, `--rows`) | New column-shape rule; a false positive/negative; new check |
-| `lookups.py` | refdata loaders: `CONTROLLED_VOCAB` (shared by build + QC) + builder/owner facts tables | Adding a vocab value; changing the facts-table schema |
-| `seed_lookups.py` | seed/refresh `refdata/shipbuilder_facts.csv` + `shipowner_facts.csv` from the live backend | New yard/owner to capture; re-deriving facts after backend edits |
+| `lookups.py` | data loaders: `CONTROLLED_VOCAB` (shared by build + QC) + builder/owner facts tables | Adding a vocab value; changing the facts-table schema |
+| `seed_lookups.py` | seed/refresh `data/shipbuilder_facts.csv` + `shipowner_facts.csv` from the live backend | New yard/owner to capture; re-deriving facts after backend edits |
 | `normalize.py` | canonical builder/owner names (module, imported by others) | Adding a new yard or owner; clusters over- or under-merging |
 | `dedup_index.py` | builds the two indexes used for matching candidates against backend | New batch type that needs a different index shape |
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |

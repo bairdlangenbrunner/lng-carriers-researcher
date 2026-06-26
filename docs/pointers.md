@@ -101,7 +101,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Derivable autofill | DF §5 | owner country/area (unambiguous sibling-copy), capacity units, price currency, yard-location |
 | Per-batch workflow | DF §6 | pull → dedup → `derive_fills.py` → per-cluster research fan-out → `merge_fills.py` → build → recalc |
 | Output | DF §7 | `backend_data_fill` sheet (gray=existing, color=proposed, peach=appended ref) + QA_review |
-| Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`refdata/controlled_vocab.md`) |
+| Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`data/controlled_vocab.md`) |
 | Rule F / §4.9 consistency | DF §9 | proposals are paired candidate fills for review, never a backend edit; conflicts → RF §8 |
 | Documented blanks | DF §11 | §6a.9-style negative-result log for cells researched and not found |
 
@@ -109,9 +109,9 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 
 | Thing | Where | What |
 |---|---|---|
-| Backend QC scan | `scripts/qc_backend.py` | Run after `pull_backend.py`. Flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs, Rule F, lookup-table disagreement). Advisory (writes `work/qc_report.csv`); `--strict` exits non-zero on HIGH/MED findings; `--rows X-Y` scopes. Silence known-legit cells in `refdata/qc_allowlist.csv`. |
-| Builder facts table | `refdata/shipbuilder_facts.csv` | Authoritative yard country/area + yard-location block, keyed by `normalize_builder`. Autofill reads it first (DF §5). |
-| Owner facts table | `refdata/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
+| Backend QC scan | `scripts/qc_backend.py` | Run after `pull_backend.py`. Flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs, Rule F, lookup-table disagreement). Advisory (writes `work/qc_report.csv`); `--strict` exits non-zero on HIGH/MED findings; `--rows X-Y` scopes. Silence known-legit cells in `data/qc_allowlist.csv`. |
+| Builder facts table | `data/shipbuilder_facts.csv` | Authoritative yard country/area + yard-location block, keyed by `normalize_builder`. Autofill reads it first (DF §5). |
+| Owner facts table | `data/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
 | Facts loaders + vocab | `scripts/lookups.py` | `load_builder_facts` / `load_owner_facts` + `CONTROLLED_VOCAB` (single source of truth, shared by build + QC). |
 | Seed / refresh tables | `scripts/seed_lookups.py` | Bootstraps both CSVs from the live backend; re-runnable, never clobbers curated rows without `--overwrite`. |
 
