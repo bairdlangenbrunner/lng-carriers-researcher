@@ -270,6 +270,89 @@ def normalize_hull(builder_tag: str, hull_raw: str) -> str:
     return h.strip()
 
 
+# --- Vessel-name normalization (FSRU reconciliation, Phase A) ------------------
+# Used by fsru_reconcile.py to join the GIIGNL FSRU fleet table (no IMO column)
+# to the backend on vessel name. The join keys on {current name} ∪ {ex_names}, so
+# this only needs to collapse cosmetic noise — diacritics (GIIGNL "Höegh" vs
+# backend "Hoegh"), "(ex …)"/"(MISC FSRU)" parentheticals, case, whitespace. It
+# deliberately does NOT rewrite owner rebrands (Golar→Energos, Transgas→Energos):
+# GIIGNL supplies the former name as an ex_name, so the name union already bridges
+# a rebrand without a fragile rewrite table. New, additive — the existing
+# builder/owner normalizers are untouched.
+import unicodedata
+
+
+def _strip_diacritics(s: str) -> str:
+    """Fold accented letters to ASCII: 'Höegh' -> 'Hoegh', 'Türkiye' -> 'Turkiye'."""
+    nfkd = unicodedata.normalize("NFKD", s)
+    return "".join(c for c in nfkd if not unicodedata.combining(c))
+
+
+def normalize_vessel_name(s: str) -> str:
+    """Canonical key for matching a vessel name across GIIGNL and the backend.
+
+    Lowercase, fold diacritics, drop parenthetical content ('(ex …)', '(MISC
+    FSRU)'), strip surrounding quotes/punctuation, collapse whitespace. Empty in
+    -> empty out. Conservative: it does not strip 'FSRU'/'LNG' tokens or rewrite
+    rebrands, so distinct vessels stay distinct.
+    """
+    if not s:
+        return ""
+    s = _strip_diacritics(str(s)).lower()
+    s = re.sub(r"\([^)]*\)", " ", s)          # remove (ex …) / (MISC FSRU) etc.
+    s = re.sub(r"[\"'`]", "", s)               # drop stray quotes
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+# FSRU owner / lessor aliases — collapse the many stylings GIIGNL and the backend
+# use for the same lessor so an owner DIFF in the reconciliation means a real
+# disagreement, not "Energos Inf." vs "Energos". Substring match, lowercased.
+# Kept SEPARATE from _OWNER_MAP / normalize_owner so the shared toolchain
+# (dedup, data-fill autofill, qc facts) is unaffected. Resolution is per-token
+# (callers split multi-owner cells like "Karpowership, MOL" on commas first).
+_FSRU_OWNER_ALIASES = {
+    "energos": "energos",
+    "hoegh": "hoegh",                 # diacritics already folded before lookup
+    "karmol": "karmol",
+    "karpowership": "karmol",
+    "snam": "snam",
+    "excelerate": "excelerate",
+    "mitsui osk": "mol",
+    "mol": "mol",
+    "bw lng": "bw", "bw ": "bw", "bw,": "bw",
+    "swan energy": "swan",
+    "exmar": "exmar",
+    "gazprom": "gazprom",
+    "botas": "botas",
+    "gaslog": "gaslog",
+    "klaipedos": "klaipedos-nafta",
+    "lng hrvatska": "lng-croatia", "lng croatia": "lng-croatia",
+}
+
+
+def fsru_owner_tags(raw: str) -> set:
+    """Set of canonical owner tags from a (possibly multi-owner) owner cell.
+
+    Splits on comma / '&' / '/' so 'Karpowership, MOL' -> {'karmol', 'mol'} and
+    'Hoegh, MOL, TLTC' -> {'hoegh', 'mol', 'tltc'}. Each piece resolves through
+    _FSRU_OWNER_ALIASES (substring), else falls back to its own cleaned text so
+    unknown owners still compare against themselves. Used for the advisory owner
+    diff only — never to make a join decision.
+    """
+    if not raw:
+        return set()
+    base = _strip_diacritics(str(raw)).lower()
+    tags = set()
+    for piece in re.split(r"[,/&]| and ", base):
+        p = re.sub(r"\s+", " ", re.sub(r"\([^)]*\)", " ", piece)).strip()
+        if not p:
+            continue
+        tag = next((t for k, t in _FSRU_OWNER_ALIASES.items() if k in p), p)
+        tags.add(tag)
+    return tags
+
+
 def main():
     """CLI smoke test."""
     samples = [

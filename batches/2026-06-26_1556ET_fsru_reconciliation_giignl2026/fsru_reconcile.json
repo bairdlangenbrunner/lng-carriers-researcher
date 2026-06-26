@@ -1,0 +1,2912 @@
+{
+  "edition_year": 2025,
+  "fleet_count": 54,
+  "backend_fsru_count": 49,
+  "summary": {
+    "matched": 47,
+    "reclassify": 2,
+    "manual": 1,
+    "candidates": 4,
+    "candidates_small_scale": 4,
+    "backend_only": 1,
+    "backend_fsu": 10,
+    "orderbook": 4
+  },
+  "matched": [
+    {
+      "giignl": {
+        "built_year": 1977,
+        "converted_year": 2012,
+        "vessel_name": "Nusantara Regas Satu",
+        "ex_names": [
+          "Khannur"
+        ],
+        "storage_m3": 125000,
+        "ccs": "Moss",
+        "sendout_mtpa": 3.0,
+        "vessel_owner": "Energos Inf.",
+        "builder": "Jurong Shipyard",
+        "location_site": "Nusantara",
+        "location_country": "Indonesia",
+        "location_status": "deployed",
+        "location_raw": "Nusantara, Indonesia"
+      },
+      "backend": {
+        "sheet_row": 923,
+        "name": "Nusantara Regas Satu",
+        "norm": "nusantara regas satu",
+        "imo": "7382744",
+        "capacity": 125000,
+        "builder": "Rosenberg Verft",
+        "owner": "Energos",
+        "delivery_year": 1977,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 125000,
+          "backend_capacity": 125000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Jurong Shipyard",
+          "backend": "Rosenberg Verft",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 1977,
+          "backend_delivery": 1977,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Inf.",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 1977,
+        "converted_year": 2010,
+        "vessel_name": "Energos Freeze",
+        "ex_names": [
+          "Golar Freeze"
+        ],
+        "storage_m3": 125000,
+        "ccs": "Moss",
+        "sendout_mtpa": 3.6,
+        "vessel_owner": "Energos Inf.",
+        "builder": "Keppel Shipyard",
+        "location_site": "Manzanillo",
+        "location_country": "Dominican Republic",
+        "location_status": "deployed",
+        "location_raw": "Manzanillo, Dominican Republic"
+      },
+      "backend": {
+        "sheet_row": 549,
+        "name": "Energos Freeze",
+        "norm": "energos freeze",
+        "imo": "7361922",
+        "capacity": 125000,
+        "builder": "HDW",
+        "owner": "Energos",
+        "delivery_year": 1977,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 125000,
+          "backend_capacity": 125000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Keppel Shipyard",
+          "backend": "HDW",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 1977,
+          "backend_delivery": 1977,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Inf.",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 1991,
+        "converted_year": 2022,
+        "vessel_name": "KARMOL LNGT Powership Asia",
+        "ex_names": [
+          "Northwest Shearwater"
+        ],
+        "storage_m3": 127500,
+        "ccs": "Moss",
+        "sendout_mtpa": 2.7,
+        "vessel_owner": "KARMOL",
+        "builder": "Sembcorp",
+        "location_site": "Sepetiba",
+        "location_country": "Brazil",
+        "location_status": "deployed",
+        "location_raw": "Sepetiba, Brazil"
+      },
+      "backend": {
+        "sheet_row": 717,
+        "name": "Karmol LNGT Powership Asia",
+        "norm": "karmol lngt powership asia",
+        "imo": "8608705",
+        "capacity": 127000,
+        "builder": "Kawasaki Heavy Industries",
+        "owner": "Karpowership, MOL",
+        "delivery_year": 1991,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 127500,
+          "backend_capacity": 127000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Sembcorp",
+          "backend": "Kawasaki Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 1991,
+          "backend_delivery": 1991,
+          "same": true
+        },
+        "owner": {
+          "giignl": "KARMOL",
+          "backend": "Karpowership, MOL",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 1994,
+        "converted_year": 2021,
+        "vessel_name": "KARMOL LNGT Powership Africa",
+        "ex_names": [
+          "Dwiputra"
+        ],
+        "storage_m3": 127386,
+        "ccs": "Moss",
+        "sendout_mtpa": 1.0,
+        "vessel_owner": "KARMOL",
+        "builder": "Sembcorp",
+        "location_site": "Senegal",
+        "location_country": "",
+        "location_status": "deployed",
+        "location_raw": "Senegal"
+      },
+      "backend": {
+        "sheet_row": 715,
+        "name": "Karmol LNGT Powership Africa",
+        "norm": "karmol lngt powership africa",
+        "imo": "9043677",
+        "capacity": 127386,
+        "builder": "Mitsubishi Heavy Industries",
+        "owner": "Karpowership, MOL",
+        "delivery_year": 1994,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 127386,
+          "backend_capacity": 127386,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Sembcorp",
+          "backend": "Mitsubishi Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 1994,
+          "backend_delivery": 1994,
+          "same": true
+        },
+        "owner": {
+          "giignl": "KARMOL",
+          "backend": "Karpowership, MOL",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 1994,
+        "converted_year": 2023,
+        "vessel_name": "KARMOL LNGT Powership Europe",
+        "ex_names": [
+          "LNG Vesta"
+        ],
+        "storage_m3": 127547,
+        "ccs": "Moss",
+        "sendout_mtpa": null,
+        "vessel_owner": "Mitsui OSK Lines",
+        "builder": "Keppel Shipyard",
+        "location_site": "Mozambique",
+        "location_country": "",
+        "location_status": "deployed",
+        "location_raw": "Mozambique"
+      },
+      "backend": {
+        "sheet_row": 718,
+        "name": "Karmol LNGT Powership Europe",
+        "norm": "karmol lngt powership europe",
+        "imo": "9020766",
+        "capacity": 128000,
+        "builder": "Mitsubishi Heavy Industries",
+        "owner": "Karpowership, MOL",
+        "delivery_year": 1994,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 127547,
+          "backend_capacity": 128000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Keppel Shipyard",
+          "backend": "Mitsubishi Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 1994,
+          "backend_delivery": 1994,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Mitsui OSK Lines",
+          "backend": "Karpowership, MOL",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2002,
+        "converted_year": 2024,
+        "vessel_name": "Etyfa Prometheas",
+        "ex_names": [
+          "Galea"
+        ],
+        "storage_m3": 136967,
+        "ccs": "Moss",
+        "sendout_mtpa": null,
+        "vessel_owner": "DEFA",
+        "builder": "COSCO HI (Shanghai)",
+        "location_site": "Cyprus",
+        "location_country": "",
+        "location_status": "deployed",
+        "location_raw": "Cyprus"
+      },
+      "backend": {
+        "sheet_row": 580,
+        "name": "Etyfa Prometheas",
+        "norm": "etyfa prometheas",
+        "imo": "9236614",
+        "capacity": 135000,
+        "builder": "Mitsubishi Heavy Industries",
+        "owner": "Natural Gas Infrastructure Company of Cyprus",
+        "delivery_year": 2002,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 136967,
+          "backend_capacity": 135000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "COSCO HI (Shanghai)",
+          "backend": "Mitsubishi Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2002,
+          "backend_delivery": 2002,
+          "same": true
+        },
+        "owner": {
+          "giignl": "DEFA",
+          "backend": "Natural Gas Infrastructure Company of Cyprus",
+          "overlap": false
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2002,
+        "converted_year": 2021,
+        "vessel_name": "BW Tatiana",
+        "ex_names": [
+          "Gallina"
+        ],
+        "storage_m3": 137001,
+        "ccs": "Moss",
+        "sendout_mtpa": 2.0,
+        "vessel_owner": "BW LNG",
+        "builder": "Keppel Shipyard",
+        "location_site": "El Salvador",
+        "location_country": "",
+        "location_status": "deployed",
+        "location_raw": "El Salvador"
+      },
+      "backend": {
+        "sheet_row": 453,
+        "name": "BW Tatiana",
+        "norm": "bw tatiana",
+        "imo": "9236626",
+        "capacity": 136600,
+        "builder": "Mitsubishi Heavy Industries",
+        "owner": "BW, Invenenergy Investment Company",
+        "delivery_year": 2002,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 137001,
+          "backend_capacity": 136600,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Keppel Shipyard",
+          "backend": "Mitsubishi Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2002,
+          "backend_delivery": 2002,
+          "same": true
+        },
+        "owner": {
+          "giignl": "BW LNG",
+          "backend": "BW, Invenenergy Investment Company",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2003,
+        "converted_year": 2013,
+        "vessel_name": "FSRU Toscana",
+        "ex_names": [],
+        "storage_m3": 137500,
+        "ccs": "Moss",
+        "sendout_mtpa": 2.8,
+        "vessel_owner": "OLT Offshore",
+        "builder": "Drydocks World Dubai",
+        "location_site": "Toscana",
+        "location_country": "Italy",
+        "location_status": "deployed",
+        "location_raw": "Toscana, Italy"
+      },
+      "backend": {
+        "sheet_row": 608,
+        "name": "FSRU Toscana",
+        "norm": "fsru toscana",
+        "imo": "9253284",
+        "capacity": 137100,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "OLT Offshore LNG Toscana",
+        "delivery_year": 2004,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 137500,
+          "backend_capacity": 137100,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Drydocks World Dubai",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2003,
+          "backend_delivery": 2004,
+          "same": false
+        },
+        "owner": {
+          "giignl": "OLT Offshore",
+          "backend": "OLT Offshore LNG Toscana",
+          "overlap": false
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2006,
+        "converted_year": null,
+        "vessel_name": "Summit LNG",
+        "ex_names": [
+          "Excelerate"
+        ],
+        "storage_m3": 138000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.8,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Summit LNG",
+        "location_country": "Bangladesh",
+        "location_status": "deployed",
+        "location_raw": "Summit LNG, Bangladesh"
+      },
+      "backend": {
+        "sheet_row": 1058,
+        "name": "Summit LNG",
+        "norm": "summit lng",
+        "imo": "9322255",
+        "capacity": 138000,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2006,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 138000,
+          "backend_capacity": 138000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2006,
+          "backend_delivery": 2006,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2005,
+        "converted_year": null,
+        "vessel_name": "Excellence",
+        "ex_names": [],
+        "storage_m3": 138000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.8,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Moheshkhali",
+        "location_country": "Bangladesh",
+        "location_status": "deployed",
+        "location_raw": "Moheshkhali, Bangladesh"
+      },
+      "backend": {
+        "sheet_row": 583,
+        "name": "Excellence",
+        "norm": "excellence",
+        "imo": "9252539",
+        "capacity": 138000,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2005,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 138000,
+          "backend_capacity": 138000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2005,
+          "backend_delivery": 2005,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2005,
+        "converted_year": null,
+        "vessel_name": "Excelsior",
+        "ex_names": [],
+        "storage_m3": 138000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.5,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Wilhelmshaven",
+        "location_country": "Germany",
+        "location_status": "deployed",
+        "location_raw": "Wilhelmshaven, Germany"
+      },
+      "backend": {
+        "sheet_row": 584,
+        "name": "Excelsior",
+        "norm": "excelsior",
+        "imo": "9239616",
+        "capacity": 138000,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2005,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 138000,
+          "backend_capacity": 138000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2005,
+          "backend_delivery": 2005,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2004,
+        "converted_year": 2009,
+        "vessel_name": "Energos Winter",
+        "ex_names": [
+          "Golar Winter"
+        ],
+        "storage_m3": 138000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.8,
+        "vessel_owner": "Energos Inf.",
+        "builder": "Keppel Shipyard",
+        "location_site": "Damietta",
+        "location_country": "Egypt",
+        "location_status": "deployed",
+        "location_raw": "Damietta, Egypt"
+      },
+      "backend": {
+        "sheet_row": 557,
+        "name": "Energos Winter",
+        "norm": "energos winter",
+        "imo": "9256614",
+        "capacity": 138000,
+        "builder": "Hanwha Ocean",
+        "owner": "Energos",
+        "delivery_year": 2004,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 138000,
+          "backend_capacity": 138000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Keppel Shipyard",
+          "backend": "Hanwha Ocean",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2004,
+          "backend_delivery": 2004,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Inf.",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2005,
+        "converted_year": 2020,
+        "vessel_name": "LNG Croatia",
+        "ex_names": [
+          "Golar Viking"
+        ],
+        "storage_m3": 140208,
+        "ccs": "Membrane",
+        "sendout_mtpa": 2.1,
+        "vessel_owner": "LNG Croatia",
+        "builder": "Huarun Dadong",
+        "location_site": "Kirk",
+        "location_country": "Croatia",
+        "location_status": "deployed",
+        "location_raw": "Kirk, Croatia"
+      },
+      "backend": {
+        "sheet_row": 761,
+        "name": "LNG Croatia",
+        "norm": "lng croatia",
+        "imo": "9256767",
+        "capacity": 138000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "LNG Hrvatska",
+        "delivery_year": 2005,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 140208,
+          "backend_capacity": 138000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Huarun Dadong",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2005,
+          "backend_delivery": 2005,
+          "same": true
+        },
+        "owner": {
+          "giignl": "LNG Croatia",
+          "backend": "LNG Hrvatska",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2010,
+        "converted_year": null,
+        "vessel_name": "Cape Ann",
+        "ex_names": [
+          "GDF Suez Cape Ann"
+        ],
+        "storage_m3": 145130,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.7,
+        "vessel_owner": "Hoegh LNG Partners",
+        "builder": "SHI",
+        "location_site": "Le Havre",
+        "location_country": "France",
+        "location_status": "deployed",
+        "location_raw": "Le Havre, France"
+      },
+      "backend": {
+        "sheet_row": 456,
+        "name": "Cape Ann",
+        "norm": "cape ann",
+        "imo": "9390680",
+        "capacity": 145000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Hoegh, MOL, TLTC",
+        "delivery_year": 2010,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 145130,
+          "backend_capacity": 145000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2010,
+          "backend_delivery": 2010,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG Partners",
+          "backend": "Hoegh, MOL, TLTC",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2009,
+        "converted_year": null,
+        "vessel_name": "Neptune",
+        "ex_names": [
+          "GDF Suez Neptune"
+        ],
+        "storage_m3": 145130,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.8,
+        "vessel_owner": "Hoegh LNG Partners",
+        "builder": "SHI",
+        "location_site": "Lubmin",
+        "location_country": "Germany",
+        "location_status": "deployed",
+        "location_raw": "Lubmin, Germany"
+      },
+      "backend": {
+        "sheet_row": 908,
+        "name": "Neptune",
+        "norm": "neptune",
+        "imo": "9385673",
+        "capacity": 145000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Hoegh, MOL, TLTC",
+        "delivery_year": 2009,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 145130,
+          "backend_capacity": 145000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2009,
+          "backend_delivery": 2009,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG Partners",
+          "backend": "Hoegh, MOL, TLTC",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2008,
+        "converted_year": null,
+        "vessel_name": "Explorer",
+        "ex_names": [],
+        "storage_m3": 150900,
+        "ccs": "Membrane",
+        "sendout_mtpa": 6.0,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Jebel Ali, Dubai",
+        "location_country": "UAE",
+        "location_status": "deployed",
+        "location_raw": "Jebel Ali, Dubai, UAE"
+      },
+      "backend": {
+        "sheet_row": 588,
+        "name": "Explorer",
+        "norm": "explorer",
+        "imo": "9361079",
+        "capacity": 150900,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2008,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 150900,
+          "backend_capacity": 150900,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2008,
+          "backend_delivery": 2008,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2010,
+        "converted_year": null,
+        "vessel_name": "Exemplar",
+        "ex_names": [],
+        "storage_m3": 150900,
+        "ccs": "Membrane",
+        "sendout_mtpa": 4.8,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Inkoo",
+        "location_country": "Finland",
+        "location_status": "deployed",
+        "location_raw": "Inkoo, Finland"
+      },
+      "backend": {
+        "sheet_row": 585,
+        "name": "Exemplar",
+        "norm": "exemplar",
+        "imo": "9444649",
+        "capacity": 150900,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2010,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 150900,
+          "backend_capacity": 150900,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2010,
+          "backend_delivery": 2010,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2010,
+        "converted_year": null,
+        "vessel_name": "Expedient",
+        "ex_names": [],
+        "storage_m3": 150900,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.2,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "GNL Escobar",
+        "location_country": "Argentina",
+        "location_status": "deployed",
+        "location_raw": "GNL Escobar, Argentina"
+      },
+      "backend": {
+        "sheet_row": 586,
+        "name": "Expedient",
+        "norm": "expedient",
+        "imo": "9389643",
+        "capacity": 150900,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2010,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 150900,
+          "backend_capacity": 150900,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2010,
+          "backend_delivery": 2010,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2009,
+        "converted_year": null,
+        "vessel_name": "Exquisite",
+        "ex_names": [],
+        "storage_m3": 150900,
+        "ccs": "Membrane",
+        "sendout_mtpa": 4.8,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Port Qasim Karachi",
+        "location_country": "Pakistan",
+        "location_status": "deployed",
+        "location_raw": "Port Qasim Karachi, Pakistan"
+      },
+      "backend": {
+        "sheet_row": 590,
+        "name": "Exquisite",
+        "norm": "exquisite",
+        "imo": "9381134",
+        "capacity": 150900,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy, Nakilat",
+        "delivery_year": 2009,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 150900,
+          "backend_capacity": 150900,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2009,
+          "backend_delivery": 2009,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy, Nakilat",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2009,
+        "converted_year": null,
+        "vessel_name": "Express",
+        "ex_names": [],
+        "storage_m3": 151000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.8,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "",
+        "location_country": "",
+        "location_status": "spot_or_laidup",
+        "location_raw": "LNGC"
+      },
+      "backend": {
+        "sheet_row": 589,
+        "name": "Express",
+        "norm": "express",
+        "imo": "9361445",
+        "capacity": 150900,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2009,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 151000,
+          "backend_capacity": 150900,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2009,
+          "backend_delivery": 2009,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2014,
+        "converted_year": null,
+        "vessel_name": "Energos Eskimo",
+        "ex_names": [
+          "Golar Eskimo"
+        ],
+        "storage_m3": 160000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.8,
+        "vessel_owner": "Energos Inf.",
+        "builder": "SHI",
+        "location_site": "Ain Sokhna",
+        "location_country": "Egypt",
+        "location_status": "deployed",
+        "location_raw": "Ain Sokhna, Egypt"
+      },
+      "backend": {
+        "sheet_row": 547,
+        "name": "Energos Eskimo",
+        "norm": "energos eskimo",
+        "imo": "9624940",
+        "capacity": 160000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Energos",
+        "delivery_year": 2014,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 160000,
+          "backend_capacity": 160000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2014,
+          "backend_delivery": 2014,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Inf.",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2013,
+        "converted_year": 2023,
+        "vessel_name": "Energos Celsius",
+        "ex_names": [
+          "Golar Celsius"
+        ],
+        "storage_m3": 160000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 6.0,
+        "vessel_owner": "Energos Inf.",
+        "builder": "SHI",
+        "location_site": "Barcarena",
+        "location_country": "Brazil",
+        "location_status": "deployed",
+        "location_raw": "Barcarena, Brazil"
+      },
+      "backend": {
+        "sheet_row": 546,
+        "name": "Energos Celsius",
+        "norm": "energos celsius",
+        "imo": "9626027",
+        "capacity": 160000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Energos",
+        "delivery_year": 2013,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 160000,
+          "backend_capacity": 160000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2013,
+          "backend_delivery": 2013,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Inf.",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2018,
+        "converted_year": null,
+        "vessel_name": "Energos Nanook",
+        "ex_names": [
+          "Golar Nanook"
+        ],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.5,
+        "vessel_owner": "Energos Inf.",
+        "builder": "SHI",
+        "location_site": "Sergipe",
+        "location_country": "Brazil",
+        "location_status": "deployed",
+        "location_raw": "Sergipe, Brazil"
+      },
+      "backend": {
+        "sheet_row": 553,
+        "name": "Energos Nanook",
+        "norm": "energos nanook",
+        "imo": "9785500",
+        "capacity": 170000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Energos",
+        "delivery_year": 2018,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2018,
+          "backend_delivery": 2018,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Inf.",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2018,
+        "converted_year": null,
+        "vessel_name": "Höegh Gannet",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.7,
+        "vessel_owner": "Hoegh LNG",
+        "builder": "HHI",
+        "location_site": "Brunsbüttel",
+        "location_country": "Germany",
+        "location_status": "deployed",
+        "location_raw": "Brunsbüttel, Germany"
+      },
+      "backend": {
+        "sheet_row": 680,
+        "name": "Hoegh Gannet",
+        "norm": "hoegh gannet",
+        "imo": "9822451",
+        "capacity": 170000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Hoegh",
+        "delivery_year": 2018,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2018,
+          "backend_delivery": 2018,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG",
+          "backend": "Hoegh",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2017,
+        "converted_year": null,
+        "vessel_name": "BW Integrity",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.0,
+        "vessel_owner": "BW LNG",
+        "builder": "SHI",
+        "location_site": "Port Qasim GasPort",
+        "location_country": "Pakistan",
+        "location_status": "deployed",
+        "location_raw": "Port Qasim GasPort, Pakistan"
+      },
+      "backend": {
+        "sheet_row": 442,
+        "name": "BW Integrity",
+        "norm": "bw integrity",
+        "imo": "9724946",
+        "capacity": 173400,
+        "builder": "Samsung Heavy Industries",
+        "owner": "BW, MOL",
+        "delivery_year": 2017,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 173400,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2017,
+          "backend_delivery": 2017,
+          "same": true
+        },
+        "owner": {
+          "giignl": "BW LNG",
+          "backend": "BW, MOL",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2017,
+        "converted_year": null,
+        "vessel_name": "Höegh Giant",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.7,
+        "vessel_owner": "Hoegh LNG",
+        "builder": "HHI",
+        "location_site": "Santos",
+        "location_country": "Brazil",
+        "location_status": "deployed",
+        "location_raw": "Santos, Brazil"
+      },
+      "backend": {
+        "sheet_row": 681,
+        "name": "Hoegh Giant",
+        "norm": "hoegh giant",
+        "imo": "9762962",
+        "capacity": 170000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Hoegh",
+        "delivery_year": 2017,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2017,
+          "backend_delivery": 2017,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG",
+          "backend": "Hoegh",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2016,
+        "converted_year": null,
+        "vessel_name": "Höegh Grace",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 2.8,
+        "vessel_owner": "Hoegh LNG Partners",
+        "builder": "HHI",
+        "location_site": "Cartagena",
+        "location_country": "Colombia",
+        "location_status": "deployed",
+        "location_raw": "Cartagena, Colombia"
+      },
+      "backend": {
+        "sheet_row": 682,
+        "name": "Hoegh Grace",
+        "norm": "hoegh grace",
+        "imo": "9674907",
+        "capacity": 170000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Hoegh",
+        "delivery_year": 2016,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2016,
+          "backend_delivery": 2016,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG Partners",
+          "backend": "Hoegh",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2015,
+        "converted_year": null,
+        "vessel_name": "BW Singapore",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.7,
+        "vessel_owner": "SNAM SpA",
+        "builder": "SHI",
+        "location_site": "Ravenna",
+        "location_country": "Italy",
+        "location_status": "deployed",
+        "location_raw": "Ravenna, Italy"
+      },
+      "backend": {
+        "sheet_row": 452,
+        "name": "BW Singapore",
+        "norm": "bw singapore",
+        "imo": "9684495",
+        "capacity": 170200,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Snam",
+        "delivery_year": 2015,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170200,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2015,
+          "backend_delivery": 2015,
+          "same": true
+        },
+        "owner": {
+          "giignl": "SNAM SpA",
+          "backend": "Snam",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2015,
+        "converted_year": null,
+        "vessel_name": "Italis LNG",
+        "ex_names": [
+          "Golar Tundra"
+        ],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.5,
+        "vessel_owner": "SNAM SpA",
+        "builder": "SHI",
+        "location_site": "Piombino",
+        "location_country": "Italy",
+        "location_status": "deployed",
+        "location_raw": "Piombino, Italy"
+      },
+      "backend": {
+        "sheet_row": 648,
+        "name": "Golar Tundra",
+        "norm": "golar tundra",
+        "imo": "9655808",
+        "capacity": 170000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Snam",
+        "delivery_year": 2015,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2015,
+          "backend_delivery": 2015,
+          "same": true
+        },
+        "owner": {
+          "giignl": "SNAM SpA",
+          "backend": "Snam",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2014,
+        "converted_year": null,
+        "vessel_name": "PGN FSRU Lampung",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 2.7,
+        "vessel_owner": "Hoegh LNG Partners",
+        "builder": "HHI",
+        "location_site": "Lampung LNG",
+        "location_country": "Indonesia",
+        "location_status": "deployed",
+        "location_raw": "Lampung LNG, Indonesia"
+      },
+      "backend": {
+        "sheet_row": 952,
+        "name": "PGN FSRU Lampung",
+        "norm": "pgn fsru lampung",
+        "imo": "9629524",
+        "capacity": 170000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Hoegh",
+        "delivery_year": 2014,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2014,
+          "backend_delivery": 2014,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG Partners",
+          "backend": "Hoegh",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2014,
+        "converted_year": null,
+        "vessel_name": "Energos Igloo",
+        "ex_names": [
+          "Golar Igloo"
+        ],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.8,
+        "vessel_owner": "Energos Inf.",
+        "builder": "SHI",
+        "location_site": "Eemshaven",
+        "location_country": "Netherlands",
+        "location_status": "deployed",
+        "location_raw": "Eemshaven, Netherlands"
+      },
+      "backend": {
+        "sheet_row": 551,
+        "name": "Energos Igloo",
+        "norm": "energos igloo",
+        "imo": "9633991",
+        "capacity": 170000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Energos",
+        "delivery_year": 2014,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2014,
+          "backend_delivery": 2014,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Inf.",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2014,
+        "converted_year": null,
+        "vessel_name": "Höegh Gallant",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 2.8,
+        "vessel_owner": "Hoegh LNG",
+        "builder": "HHI",
+        "location_site": "Old Harbour",
+        "location_country": "Jamaica",
+        "location_status": "deployed",
+        "location_raw": "Old Harbour, Jamaica"
+      },
+      "backend": {
+        "sheet_row": 677,
+        "name": "Hoegh Gallant",
+        "norm": "hoegh gallant",
+        "imo": "9653678",
+        "capacity": 170100,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Hoegh",
+        "delivery_year": 2014,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170100,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2014,
+          "backend_delivery": 2014,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG",
+          "backend": "Hoegh",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2014,
+        "converted_year": null,
+        "vessel_name": "Independence",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 2.9,
+        "vessel_owner": "Hoegh LNG",
+        "builder": "HHI",
+        "location_site": "Klaipeda",
+        "location_country": "Lithuania",
+        "location_status": "deployed",
+        "location_raw": "Klaipeda, Lithuania"
+      },
+      "backend": {
+        "sheet_row": 699,
+        "name": "Independence",
+        "norm": "independence",
+        "imo": "9629536",
+        "capacity": 170100,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Klaipedos Nafta",
+        "delivery_year": 2014,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170100,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2014,
+          "backend_delivery": 2014,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG",
+          "backend": "Klaipedos Nafta",
+          "overlap": false
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2021,
+        "converted_year": null,
+        "vessel_name": "Ertugrul Gazi",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 4.1,
+        "vessel_owner": "BOTAS",
+        "builder": "HHI",
+        "location_site": "Dörtyol",
+        "location_country": "Türkiye",
+        "location_status": "deployed",
+        "location_raw": "Dörtyol, Türkiye"
+      },
+      "backend": {
+        "sheet_row": 578,
+        "name": "Ertugrul Gazi",
+        "norm": "ertugrul gazi",
+        "imo": "9859820",
+        "capacity": 170000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Turkish Petroleum Corp",
+        "delivery_year": 2021,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2021,
+          "backend_delivery": 2021,
+          "same": true
+        },
+        "owner": {
+          "giignl": "BOTAS",
+          "backend": "Turkish Petroleum Corp",
+          "overlap": false
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2021,
+        "converted_year": null,
+        "vessel_name": "Jawa Satu",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 2.4,
+        "vessel_owner": "PT Jawa Satu Regas",
+        "builder": "SHI",
+        "location_site": "Java",
+        "location_country": "Indonesia",
+        "location_status": "deployed",
+        "location_raw": "Java, Indonesia"
+      },
+      "backend": {
+        "sheet_row": 702,
+        "name": "Jawa Satu",
+        "norm": "jawa satu",
+        "imo": "9854935",
+        "capacity": 170000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Jawa Satu Regas",
+        "delivery_year": 2021,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2021,
+          "backend_delivery": 2021,
+          "same": true
+        },
+        "owner": {
+          "giignl": "PT Jawa Satu Regas",
+          "backend": "Jawa Satu Regas",
+          "overlap": false
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2019,
+        "converted_year": null,
+        "vessel_name": "Höegh Galleon",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.7,
+        "vessel_owner": "Hoegh LNG",
+        "builder": "SHI",
+        "location_site": "",
+        "location_country": "",
+        "location_status": "spot_or_laidup",
+        "location_raw": "LNGC"
+      },
+      "backend": {
+        "sheet_row": 678,
+        "name": "Hoegh Galleon",
+        "norm": "hoegh galleon",
+        "imo": "9820013",
+        "capacity": 170000,
+        "builder": "Samsung Heavy Industries",
+        "owner": "Hoegh",
+        "delivery_year": 2019,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "SHI",
+          "backend": "Samsung Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2019,
+          "backend_delivery": 2019,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG",
+          "backend": "Hoegh",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2009,
+        "converted_year": 2019,
+        "vessel_name": "BW Batangas",
+        "ex_names": [
+          "BW Paris"
+        ],
+        "storage_m3": 162500,
+        "ccs": "Membrane",
+        "sendout_mtpa": 4.2,
+        "vessel_owner": "BW LNG",
+        "builder": "Keppel Shipyard",
+        "location_site": "Batangas",
+        "location_country": "Philippines",
+        "location_status": "deployed",
+        "location_raw": "Batangas, Philippines"
+      },
+      "backend": {
+        "sheet_row": 433,
+        "name": "BW Batangas",
+        "norm": "bw batangas",
+        "imo": "9368302",
+        "capacity": 162400,
+        "builder": "Hanwha Ocean",
+        "owner": "BW",
+        "delivery_year": 2009,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 162500,
+          "backend_capacity": 162400,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Keppel Shipyard",
+          "backend": "Hanwha Ocean",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2009,
+          "backend_delivery": 2009,
+          "same": true
+        },
+        "owner": {
+          "giignl": "BW LNG",
+          "backend": "BW",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2019,
+        "converted_year": null,
+        "vessel_name": "Turquoise P",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.7,
+        "vessel_owner": "Pardus Energy",
+        "builder": "HHI",
+        "location_site": "Etki",
+        "location_country": "Türkiye",
+        "location_status": "deployed",
+        "location_raw": "Etki, Türkiye"
+      },
+      "backend": {
+        "sheet_row": 1081,
+        "name": "Turquoise P",
+        "norm": "turquoise p",
+        "imo": "9823883",
+        "capacity": 170000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Pardus Energy",
+        "delivery_year": 2019,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2019,
+          "backend_delivery": 2019,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Pardus Energy",
+          "backend": "Pardus Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2014,
+        "converted_year": null,
+        "vessel_name": "Experience",
+        "ex_names": [],
+        "storage_m3": 173400,
+        "ccs": "Membrane",
+        "sendout_mtpa": 6.0,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Guanabara Bay",
+        "location_country": "Brazil",
+        "location_status": "deployed",
+        "location_raw": "Guanabara Bay, Brazil"
+      },
+      "backend": {
+        "sheet_row": 587,
+        "name": "Experience",
+        "norm": "experience",
+        "imo": "9638525",
+        "capacity": 173400,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2014,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 173400,
+          "backend_capacity": 173400,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2014,
+          "backend_delivery": 2014,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2020,
+        "converted_year": null,
+        "vessel_name": "Excelerate Sequoia",
+        "ex_names": [],
+        "storage_m3": 173400,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.6,
+        "vessel_owner": "Excelerate Energy",
+        "builder": "DSME",
+        "location_site": "Bahia",
+        "location_country": "Brazil",
+        "location_status": "deployed",
+        "location_raw": "Bahia, Brazil"
+      },
+      "backend": {
+        "sheet_row": 582,
+        "name": "Excelerate Sequoia",
+        "norm": "excelerate sequoia",
+        "imo": "9820843",
+        "capacity": 173400,
+        "builder": "Hanwha Ocean",
+        "owner": "Excelerate Energy",
+        "delivery_year": 2020,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 173400,
+          "backend_capacity": 173400,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2020,
+          "backend_delivery": 2020,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Excelerate Energy",
+          "backend": "Excelerate Energy",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2019,
+        "converted_year": null,
+        "vessel_name": "BW Magna",
+        "ex_names": [],
+        "storage_m3": 173400,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.7,
+        "vessel_owner": "BW LNG",
+        "builder": "DSME",
+        "location_site": "Port Açu",
+        "location_country": "Brazil",
+        "location_status": "deployed",
+        "location_raw": "Port Açu, Brazil"
+      },
+      "backend": {
+        "sheet_row": 445,
+        "name": "BW Magna",
+        "norm": "bw magna",
+        "imo": "9792591",
+        "capacity": 173400,
+        "builder": "Hanwha Ocean",
+        "owner": "BW",
+        "delivery_year": 2019,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 173400,
+          "backend_capacity": 173400,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2019,
+          "backend_delivery": 2019,
+          "same": true
+        },
+        "owner": {
+          "giignl": "BW LNG",
+          "backend": "BW",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2021,
+        "converted_year": null,
+        "vessel_name": "Energos Force",
+        "ex_names": [
+          "Transgas Force"
+        ],
+        "storage_m3": 174000,
+        "ccs": "Membrane",
+        "sendout_mtpa": null,
+        "vessel_owner": "Energos Infrastructure",
+        "builder": "HZ",
+        "location_site": "Aqaba",
+        "location_country": "Jordan",
+        "location_status": "deployed",
+        "location_raw": "Aqaba, Jordan"
+      },
+      "backend": {
+        "sheet_row": 548,
+        "name": "Energos Force",
+        "norm": "energos force",
+        "imo": "9861811",
+        "capacity": 174000,
+        "builder": "Hudong-Zhonghua Shipbuilding",
+        "owner": "Energos",
+        "delivery_year": 2021,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 174000,
+          "backend_capacity": 174000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HZ",
+          "backend": "Hudong-Zhonghua Shipbuilding",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2021,
+          "backend_delivery": 2021,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Infrastructure",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2021,
+        "converted_year": null,
+        "vessel_name": "Energos Power",
+        "ex_names": [
+          "Transgas Power"
+        ],
+        "storage_m3": 174000,
+        "ccs": "Membrane",
+        "sendout_mtpa": null,
+        "vessel_owner": "Energos Infrastructure",
+        "builder": "HZ",
+        "location_site": "Ain Sokhna",
+        "location_country": "Egypt",
+        "location_status": "deployed",
+        "location_raw": "Ain Sokhna, Egypt"
+      },
+      "backend": {
+        "sheet_row": 555,
+        "name": "Energos Power",
+        "norm": "energos power",
+        "imo": "9861809",
+        "capacity": 174000,
+        "builder": "Hudong-Zhonghua Shipbuilding",
+        "owner": "Energos",
+        "delivery_year": 2021,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 174000,
+          "backend_capacity": 174000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HZ",
+          "backend": "Hudong-Zhonghua Shipbuilding",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2021,
+          "backend_delivery": 2021,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Energos Infrastructure",
+          "backend": "Energos",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2018,
+        "converted_year": null,
+        "vessel_name": "Marshal Vasilevskiy",
+        "ex_names": [],
+        "storage_m3": 174100,
+        "ccs": "Membrane",
+        "sendout_mtpa": 2.0,
+        "vessel_owner": "Gazprom",
+        "builder": "HHI",
+        "location_site": "Kaliningrad",
+        "location_country": "Russia",
+        "location_status": "deployed",
+        "location_raw": "Kaliningrad, Russia"
+      },
+      "backend": {
+        "sheet_row": 846,
+        "name": "Marshal Vasilevskiy",
+        "norm": "marshal vasilevskiy",
+        "imo": "9778313",
+        "capacity": 174000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Gazprom",
+        "delivery_year": 2018,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 174100,
+          "backend_capacity": 174000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2018,
+          "backend_delivery": 2018,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Gazprom",
+          "backend": "Gazprom",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2020,
+        "converted_year": null,
+        "vessel_name": "Saros",
+        "ex_names": [
+          "Vasant 1"
+        ],
+        "storage_m3": 180000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 5.0,
+        "vessel_owner": "Swan Energy",
+        "builder": "HHI",
+        "location_site": "Saros",
+        "location_country": "Türkiye",
+        "location_status": "deployed",
+        "location_raw": "Saros, Türkiye"
+      },
+      "backend": {
+        "sheet_row": 1089,
+        "name": "Vasant 1",
+        "norm": "vasant 1",
+        "imo": "9837066",
+        "capacity": 180000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Botas",
+        "delivery_year": 2020,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 180000,
+          "backend_capacity": 180000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2020,
+          "backend_delivery": 2020,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Swan Energy",
+          "backend": "Botas",
+          "overlap": false
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 2017,
+        "converted_year": null,
+        "vessel_name": "Bauhinia Spirit",
+        "ex_names": [
+          "MOL FSRU Challenger"
+        ],
+        "storage_m3": 263000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 4.1,
+        "vessel_owner": "Mitsui OSK Lines",
+        "builder": "DSME",
+        "location_site": "Hong Kong",
+        "location_country": "",
+        "location_status": "deployed",
+        "location_raw": "Hong Kong"
+      },
+      "backend": {
+        "sheet_row": 414,
+        "name": "Bauhinia Spirit",
+        "norm": "bauhinia spirit",
+        "imo": "9713105",
+        "capacity": 263000,
+        "builder": "Hanwha Ocean",
+        "owner": "MOL",
+        "delivery_year": 2017,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 263000,
+          "backend_capacity": 263000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "DSME",
+          "backend": "Hanwha Ocean",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2017,
+          "backend_delivery": 2017,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Mitsui OSK Lines",
+          "backend": "MOL",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 1989,
+        "converted_year": 2025,
+        "vessel_name": "KARMOL LNGT Powership Antarctica",
+        "ex_names": [
+          "LNGT Antarctica"
+        ],
+        "storage_m3": 127500,
+        "ccs": "Moss",
+        "sendout_mtpa": null,
+        "vessel_owner": "KARMOL",
+        "builder": "Seatrium Admiralty",
+        "location_site": "",
+        "location_country": "",
+        "location_status": "unassigned",
+        "location_raw": "TBC / KARMOL deployment"
+      },
+      "backend": {
+        "sheet_row": 716,
+        "name": "Karmol LNGT Powership Antarctica",
+        "norm": "karmol lngt powership antarctica",
+        "imo": "8608872",
+        "capacity": null,
+        "builder": "Seatrium Admiralty",
+        "owner": "Karpowership, MOL",
+        "delivery_year": 1989,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 127500,
+          "backend_capacity": null,
+          "agree": null
+        },
+        "builder": {
+          "giignl": "Seatrium Admiralty",
+          "backend": "Seatrium Admiralty",
+          "same_tag": true,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 1989,
+          "backend_delivery": 1989,
+          "same": true
+        },
+        "owner": {
+          "giignl": "KARMOL",
+          "backend": "Karpowership, MOL",
+          "overlap": true
+        }
+      }
+    }
+  ],
+  "reclassify": [
+    {
+      "giignl": {
+        "built_year": 2010,
+        "converted_year": 2023,
+        "vessel_name": "Alexandroupolis",
+        "ex_names": [
+          "Gaslog Chelsea"
+        ],
+        "storage_m3": 153000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 4.0,
+        "vessel_owner": "GasLog",
+        "builder": "Keppel Shipyard",
+        "location_site": "Alexandroupolis",
+        "location_country": "Greece",
+        "location_status": "deployed",
+        "location_raw": "Alexandroupolis, Greece"
+      },
+      "backend": {
+        "sheet_row": 376,
+        "name": "Alexandroupolis",
+        "norm": "alexandroupolis",
+        "imo": "9390185",
+        "capacity": 153000,
+        "builder": "Hanjin H.I.",
+        "owner": "GasLog",
+        "delivery_year": 2010,
+        "vessel_type": "conventional"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 153000,
+          "backend_capacity": 153000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Keppel Shipyard",
+          "backend": "Hanjin H.I.",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2010,
+          "backend_delivery": 2010,
+          "same": true
+        },
+        "owner": {
+          "giignl": "GasLog",
+          "backend": "GasLog",
+          "overlap": true
+        }
+      }
+    },
+    {
+      "giignl": {
+        "built_year": 1994,
+        "converted_year": 2025,
+        "vessel_name": "KARMOL LNGT Powership Americas",
+        "ex_names": [
+          "LNGT Americas"
+        ],
+        "storage_m3": 127606,
+        "ccs": "Moss",
+        "sendout_mtpa": null,
+        "vessel_owner": "KARMOL",
+        "builder": "Seatrium Admiralty",
+        "location_site": "",
+        "location_country": "",
+        "location_status": "unassigned",
+        "location_raw": "TBC / candidate conversion"
+      },
+      "backend": {
+        "sheet_row": 806,
+        "name": "LNGT Americas",
+        "norm": "lngt americas",
+        "imo": "9045132",
+        "capacity": 126800,
+        "builder": "Mitsubishi Heavy Industries",
+        "owner": "Karpowership",
+        "delivery_year": 1994,
+        "vessel_type": "conventional"
+      },
+      "matched_on": "name/ex-name",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 127606,
+          "backend_capacity": 126800,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "Seatrium Admiralty",
+          "backend": "Mitsubishi Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 1994,
+          "backend_delivery": 1994,
+          "same": true
+        },
+        "owner": {
+          "giignl": "KARMOL",
+          "backend": "Karpowership",
+          "overlap": true
+        }
+      }
+    }
+  ],
+  "manual": [
+    {
+      "giignl": {
+        "built_year": 2018,
+        "converted_year": null,
+        "vessel_name": "Höegh Esperanza",
+        "ex_names": [],
+        "storage_m3": 170000,
+        "ccs": "Membrane",
+        "sendout_mtpa": 3.8,
+        "vessel_owner": "Hoegh LNG",
+        "builder": "HHI",
+        "location_site": "Wilhelmshaven",
+        "location_country": "Germany",
+        "location_status": "deployed",
+        "location_raw": "Wilhelmshaven, Germany"
+      },
+      "suggested_backend": {
+        "sheet_row": 676,
+        "name": "Hoegh",
+        "norm": "hoegh",
+        "imo": "9780354",
+        "capacity": 170000,
+        "builder": "HD Hyundai Heavy Industries",
+        "owner": "Esperanza Hoegh",
+        "delivery_year": 2018,
+        "vessel_type": "FSRU"
+      },
+      "matched_on": "capacity+delivery/owner (no name match)",
+      "diffs": {
+        "capacity": {
+          "giignl_storage_m3": 170000,
+          "backend_capacity": 170000,
+          "agree": true
+        },
+        "builder": {
+          "giignl": "HHI",
+          "backend": "HD Hyundai Heavy Industries",
+          "same_tag": false,
+          "note": "giignl lists conversion yard for converted units; informational"
+        },
+        "delivery_year": {
+          "giignl_built": 2018,
+          "backend_delivery": 2018,
+          "same": true
+        },
+        "owner": {
+          "giignl": "Hoegh LNG",
+          "backend": "Esperanza Hoegh",
+          "overlap": true
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "giignl": {
+        "built_year": 2016,
+        "converted_year": 2020,
+        "vessel_name": "EDN 1",
+        "ex_names": [
+          "Hua Xiang 8"
+        ],
+        "storage_m3": 14000,
+        "ccs": "Other",
+        "sendout_mtpa": 0.1,
+        "vessel_owner": "PT Sulawesi Regas",
+        "builder": "Zhoushan Dashenzhou",
+        "location_site": "Maleo",
+        "location_country": "Indonesia",
+        "location_status": "deployed",
+        "location_raw": "Maleo, Indonesia"
+      },
+      "small_scale_review": true,
+      "review_reason": "storage < 60k m³ / CCS 'Other' — confirm FSRU vs small-scale/FSU before adding"
+    },
+    {
+      "giignl": {
+        "built_year": 2017,
+        "converted_year": null,
+        "vessel_name": "Eemshaven LNG",
+        "ex_names": [
+          "S188"
+        ],
+        "storage_m3": 25000,
+        "ccs": "Other",
+        "sendout_mtpa": 4.6,
+        "vessel_owner": "Exmar Offshore",
+        "builder": "Wison Zhoushan",
+        "location_site": "Eemshaven",
+        "location_country": "Netherlands",
+        "location_status": "deployed",
+        "location_raw": "Eemshaven, Netherlands"
+      },
+      "small_scale_review": true,
+      "review_reason": "storage < 60k m³ / CCS 'Other' — confirm FSRU vs small-scale/FSU before adding"
+    },
+    {
+      "giignl": {
+        "built_year": 2018,
+        "converted_year": null,
+        "vessel_name": "Karunia Dewata",
+        "ex_names": [],
+        "storage_m3": 26000,
+        "ccs": "Other",
+        "sendout_mtpa": 0.4,
+        "vessel_owner": "Jaya Samudra",
+        "builder": "PaxOcean Zhoushan",
+        "location_site": "Benoa",
+        "location_country": "Indonesia",
+        "location_status": "deployed",
+        "location_raw": "Benoa, Indonesia"
+      },
+      "small_scale_review": true,
+      "review_reason": "storage < 60k m³ / CCS 'Other' — confirm FSRU vs small-scale/FSU before adding"
+    },
+    {
+      "giignl": {
+        "built_year": 2020,
+        "converted_year": null,
+        "vessel_name": "Torman",
+        "ex_names": [],
+        "storage_m3": 28000,
+        "ccs": "Other",
+        "sendout_mtpa": 2.0,
+        "vessel_owner": "Access LNG",
+        "builder": "Jiangnan SY Group",
+        "location_site": "Tema LNG",
+        "location_country": "Ghana",
+        "location_status": "deployed",
+        "location_raw": "Tema LNG, Ghana"
+      },
+      "small_scale_review": true,
+      "review_reason": "storage < 60k m³ / CCS 'Other' — confirm FSRU vs small-scale/FSU before adding"
+    }
+  ],
+  "backend_only": [
+    {
+      "sheet_row": 1201,
+      "name": "Samsung HI (MISC FSRU)",
+      "norm": "samsung hi",
+      "imo": "",
+      "capacity": 170000,
+      "builder": "Samsung Heavy Industries",
+      "owner": "MISC",
+      "delivery_year": 2029,
+      "vessel_type": "FSRU"
+    }
+  ],
+  "backend_fsu": [
+    {
+      "sheet_row": 399,
+      "name": "Armada LNG Mediterrana",
+      "norm": "armada lng mediterrana",
+      "imo": "8125868",
+      "capacity": 127209,
+      "builder": "Mitsui E&S Shipbuilding",
+      "owner": "Bumi Armada Berhad",
+      "delivery_year": 1985,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 581,
+      "name": "Excalibur",
+      "norm": "excalibur",
+      "imo": "9230050",
+      "capacity": 138000,
+      "builder": "Hanwha Ocean",
+      "owner": "Exmar",
+      "delivery_year": 2002,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 629,
+      "name": "GasLog Singapore",
+      "norm": "gaslog singapore",
+      "imo": "9355604",
+      "capacity": 155000,
+      "builder": "Samsung Heavy Industries",
+      "owner": "GasLog",
+      "delivery_year": 2010,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 701,
+      "name": "Ish",
+      "norm": "ish",
+      "imo": "9035864",
+      "capacity": 137300,
+      "builder": "Mitsubishi Heavy Industries",
+      "owner": "National Gas Shipping Co",
+      "delivery_year": 1995,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 862,
+      "name": "Methane Alison Victoria",
+      "norm": "methane alison victoria",
+      "imo": "9321768",
+      "capacity": 145000,
+      "builder": "Samsung Heavy Industries",
+      "owner": "GasLog",
+      "delivery_year": 2007,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 955,
+      "name": "Portovyy",
+      "norm": "portovyy",
+      "imo": "9246621",
+      "capacity": 138100,
+      "builder": "Hanwha Ocean",
+      "owner": "Gazprom",
+      "delivery_year": 2003,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 994,
+      "name": "Seapeak Bahrain",
+      "norm": "seapeak bahrain",
+      "imo": "9771080",
+      "capacity": 173400,
+      "builder": "Hanwha Ocean",
+      "owner": "Seapeak",
+      "delivery_year": 2018,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 1072,
+      "name": "Tenaga Empat",
+      "norm": "tenaga empat",
+      "imo": "7428433",
+      "capacity": 130000,
+      "builder": "CNIM (Constructions Industrielles de la Méditerranée)",
+      "owner": "MISC",
+      "delivery_year": 1981,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 1073,
+      "name": "Tenaga Satu",
+      "norm": "tenaga satu",
+      "imo": "7428457",
+      "capacity": 130000,
+      "builder": "Dunkerque Shipyard (Ateliers et Chantiers de France, ACF)",
+      "owner": "MISC",
+      "delivery_year": 1982,
+      "vessel_type": "FSU"
+    },
+    {
+      "sheet_row": 1076,
+      "name": "Torman II",
+      "norm": "torman ii",
+      "imo": "9006681",
+      "capacity": 127700,
+      "builder": "Kawasaki Heavy Industries",
+      "owner": "NYK Line",
+      "delivery_year": 1993,
+      "vessel_type": "FSU"
+    }
+  ],
+  "orderbook": [
+    {
+      "expected_year": 2027,
+      "vessel_name": "N/B Hyundai HI",
+      "storage_m3": 174000,
+      "ccs": "Membrane",
+      "vessel_owner": "Mitsui OSK Lines",
+      "builder": "Hyundai HI (Ulsan)"
+    },
+    {
+      "expected_year": 2026,
+      "vessel_name": "Excelerate Acadia",
+      "storage_m3": 170000,
+      "ccs": "Membrane",
+      "vessel_owner": "Excelerate Energy",
+      "builder": "Hyundai HI (Ulsan)"
+    },
+    {
+      "expected_year": 2027,
+      "vessel_name": "N/B Hanwha Ocean",
+      "storage_m3": 200000,
+      "ccs": "",
+      "vessel_owner": "Mitsui OSK Lines",
+      "builder": "Hanwha Ocean"
+    },
+    {
+      "expected_year": 2026,
+      "vessel_name": "LNGT Oceania",
+      "storage_m3": 127747,
+      "ccs": "Aluminium",
+      "vessel_owner": "KARMOL",
+      "builder": "Sembcorp Admiralty"
+    }
+  ]
+}

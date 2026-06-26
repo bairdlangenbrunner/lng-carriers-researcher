@@ -8,6 +8,7 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/discovery.md` — the discovery workflow, the four-ring source model, candidate workbook structure. **Authoritative.**
 - `docs/sops/data_fill.md` — the data-fill workflow (research blank/`unknown` data cells → candidate value+[ref] pairs; the blank-vs-`unknown` preserve-ref contract, derivable autofills, controlled vocab). **Authoritative.**
 - `docs/sops/sfoc_reconciliation.md` — the SFOC reconciliation workflow (less frequent).
+- `docs/sops/fsru_reconciliation.md` — the **FSRU reconciliation** workflow: name-keyed comparison of the backend's FSRUs against the GIIGNL Annual Report fleet table (GIIGNL has no IMO → join by name; comparison artifact, not a citable `[ref]`). **Authoritative.**
 - `docs/sops/qc_release.md` — the **pre-release QC** workflow: whole-backend consistency/corruption sweep before a data release, the authoritative Name-column placeholder conventions, and the `fix`-mode correction batch (incl. the `preserve_ref` escape hatch). **Authoritative.**
 - `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
@@ -175,6 +176,40 @@ formula errors, and commit the batch directory under `batches/`. The SOP is
 authoritative. Close the pass with a full-backend dedupe scan
 (`python scripts/dedupe_check.py` -> `work/dedupe_report.csv`; apply.md §5a).
 
+### FSRU reconciliation batch
+
+Trigger phrases: "FSRU reconciliation", "compare FSRUs to GIIGNL", "reconcile FSRUs against the GIIGNL report", "how complete is our FSRU coverage", "FSRU gap analysis".
+
+Governed by `docs/sops/fsru_reconciliation.md` (FR rev 1). Name-keyed comparison of the
+backend's FSRUs against the GIIGNL Annual Report fleet table — GIIGNL has no IMO column, so
+the join is by vessel name ({current} ∪ {ex_names}, `normalize_vessel_name`) corroborated by
+storage capacity (builder is informational — conversion yard ≠ original builder). GIIGNL is a
+**comparison artifact, not a citable `[ref]`** (like SFOC). The backend is never auto-edited;
+vetted candidates promote through the Apply SOP.
+
+```bash
+# Run from the repo root.
+
+# 1. Fresh backend CSV + colmap (MANDATORY first step).
+python scripts/pull_backend.py
+
+# 2. Extract the GIIGNL fleet table — REUSE the terminals repo parser (don't rebuild).
+python ../lng-terminals-researcher/scripts/giignl_fsru_fleet.py \
+    data/GIIGNL-<year>-Annual-Report-<ver>.pdf --output work/giignl_fsru_fleet.json
+
+# 3. Reconcile (name join + capacity corroborator + five buckets).
+python scripts/fsru_reconcile.py        # -> work/fsru_reconcile.json
+
+# 4. Build the 10-sheet reconciliation workbook + recalc to zero errors.
+python scripts/build_workbook.py --mode fsru --reconcile work/fsru_reconcile.json \
+    --out batches/<date>_<HHMMET>_fsru_reconciliation_giignl<year>/
+python scripts/recalc.py batches/<dir>/lng_carrier_fsru_reconciliation.xlsx
+
+# 5. Advisory dedupe sweep; copy fsru_reconcile.json into the batch dir; write
+#    notes.md; commit the batch directory. Do NOT push without user approval.
+python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §5a)
+```
+
 ### Pre-release QC batch
 
 Trigger phrases: "qc pass", "pre-release qc", "qc the backend", "prep for data release", "check the names before release", "name consistency check".
@@ -271,10 +306,11 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `seed_lookups.py` | seed/refresh `data/shipbuilder_facts.csv` + `shipowner_facts.csv` from the live backend | New yard/owner to capture; re-deriving facts after backend edits |
 | `normalize.py` | canonical builder/owner names (module, imported by others) | Adding a new yard or owner; clusters over- or under-merging |
 | `dedup_index.py` | builds the two indexes used for matching candidates against backend | New batch type that needs a different index shape |
+| `fsru_reconcile.py` | FSRU reconciliation: name-keyed join of the GIIGNL fleet JSON ({current}∪{ex_names}, `normalize_vessel_name`) against backend FSRUs, capacity-corroborated; emits the five-bucket `work/fsru_reconcile.json` (matched / reclassify / manual / candidates / backend_only + FSU exclusions + orderbook). Advisory; never edits the backend | New bucket; changing the capacity tolerance or small-scale cutoff; manual-pairing guard tuning |
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
 | `url_verifier.py` | the §3.8 verification gate — HTTP 200 + content check + soft-error detection | Verifier flagging false positives or negatives; new soft-error pattern |
 | `imo_tracker.py` | the §6a.8 IMO->marine-vessel-tracker fallback | marinetraffic.org URL pattern changed; Cloudflare gating |
-| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate) | Adding a new sheet section; changing color convention; changing fix-mode gating |
+| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix / fsru). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate). `fsru` mode renders the `work/fsru_reconcile.json` buckets into a 10-sheet GIIGNL↔backend comparison workbook (no `[ref]` cells — GIIGNL not citable) | Adding a new sheet section; changing color convention; changing fix-mode gating; changing the fsru sheet set |
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
 | `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate | Verifier behavior changes; new research-output key |
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |

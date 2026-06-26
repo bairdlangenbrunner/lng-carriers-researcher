@@ -7,6 +7,7 @@ The SOPs live in `docs/sops/`:
 - `discovery.md` — abbreviated below as **DC**
 - `data_fill.md` — abbreviated below as **DF**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
+- `fsru_reconciliation.md` — abbreviated below as **FR** (the name-keyed GIIGNL-FSRU comparison)
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
@@ -140,6 +141,19 @@ The offset-proof round-trip that gets a reviewed batch into the backend. Full SO
 | Apply | AP §2/§7 | full-row paste OR `tools/apply_patch.gs` (by header — offset impossible); never hand cherry-pick |
 | Conflicts | AP §4 | `conflicts.csv` — research vs a non-blank value; decided by hand, never auto-applied (RF §8 / DF §9) |
 | Verify | AP §5 | `verify_apply.py --pull` → `verify_report.csv` (landed/mismatch/missing) + qc the touched rows |
+
+## FSRU reconciliation workflow (FR — 2026-06-26)
+
+Name-keyed comparison of the backend's FSRUs against the GIIGNL Annual Report's in-service FSRU fleet table (GIIGNL has no IMO column, so the join is by name, not IMO as in SR). Full SOP: `docs/sops/fsru_reconciliation.md`.
+
+| Phase | Section | What |
+|---|---|---|
+| Scope / positioning | FR §1 | FSRUs only; FSUs logged as exclusions; GIIGNL is a comparison artifact, NOT a citable `[ref]` (like SFOC) |
+| Parameters | FR §2 | GIIGNL edition, small-scale cutoff (<60k m³ / CCS "Other"), capacity tolerance (max 6000 m³ / 3%), output name |
+| Name join | FR §3 | key = {current} ∪ {ex_names}, `normalize_vessel_name`; capacity corroborates, builder is informational (conversion-yard ≠ original builder); manual pairing requires owner-tag overlap |
+| Five buckets | FR §4 | matched / reclassify (typed non-FSRU) / manual pairing / candidates-to-add / backend-only (expected) + FSU exclusions + orderbook passthrough |
+| Workflow | FR §5 | pull → terminals-repo extractor → `fsru_reconcile.py` → `build_workbook.py --mode fsru` → recalc → dedupe sweep → commit |
+| Promotion | FR §6 | vetted candidates run through the Apply SOP unchanged; backend never auto-edited; GIIGNL never the `[ref]` |
 
 ## Pause-and-ask triggers
 
