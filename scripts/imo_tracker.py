@@ -25,40 +25,17 @@ Usage:
     # Also checks that the page yard label matches the expected yard
 """
 import argparse
-import os
 import re
-import subprocess
 import sys
-import tempfile
 import time
 
-
-_UA = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/120.0.0.0 Safari/537.36"
-)
+from fetch import fetch_text, page_title
 
 
 def fetch(url: str, timeout: int = 30) -> tuple[str, str, str]:
     """Returns (status, body, title)."""
-    tmp = os.path.join(tempfile.gettempdir(), f"lngct_imo_{os.getpid()}.html")
-    result = subprocess.run(
-        ["curl", "-sL", "-A", _UA, "-o", tmp,
-         "-w", "%{http_code}", "--max-time", str(timeout), url],
-        capture_output=True, text=True, timeout=timeout + 5,
-    )
-    status = result.stdout.strip() or "000"
-    try:
-        with open(tmp, encoding="utf-8", errors="replace") as f:
-            body = f.read()
-    except Exception:
-        body = ""
-    title = ""
-    m = re.search(r"<title[^>]*>([^<]+)</title>", body, re.IGNORECASE)
-    if m:
-        title = m.group(1).strip()
-    return status, body, title
+    status, body = fetch_text(url, timeout=timeout)
+    return status, body, page_title(body)
 
 
 def lookup_imo(imo: int | str) -> dict:

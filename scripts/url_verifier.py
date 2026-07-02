@@ -29,11 +29,12 @@ Library usage:
     # or
     url_or_none = verify_and_format(url, expected)  # None if failed
 """
-import os
+import argparse
 import re
-import subprocess
 import sys
-import tempfile
+
+from fetch import CHROME_UA as _DEFAULT_UA
+from fetch import fetch_text
 
 
 class CitationError(Exception):
@@ -42,12 +43,6 @@ class CitationError(Exception):
 
 # Per-process cache so the same URL isn't re-fetched within a build
 _CACHE: dict[str, tuple[str, str]] = {}
-
-_DEFAULT_UA = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/120.0.0.0 Safari/537.36"
-)
 
 # Soft-error signals: HTTP 200 but title indicates an error template
 _SOFT_ERROR_TITLES = (
@@ -65,23 +60,7 @@ def _fetch(url: str, timeout: int = 30, ua: str = _DEFAULT_UA) -> tuple[str, str
     """Fetch URL, return (status_code, body_text). Cached per URL per process."""
     if url in _CACHE:
         return _CACHE[url]
-
-    # Use a per-process scratch file under the OS temp dir, not a fixed
-    # /tmp path. Avoids collisions if multiple verifier processes run.
-    tmp = os.path.join(tempfile.gettempdir(), f"lngct_verify_{os.getpid()}.html")
-    result = subprocess.run(
-        ["curl", "-sL", "-A", ua, "-o", tmp,
-         "-w", "%{http_code}", "--max-time", str(timeout), url],
-        capture_output=True, text=True, timeout=timeout + 5,
-    )
-    status = result.stdout.strip() or "000"
-    try:
-        with open(tmp, "rb") as f:
-            body = f.read()
-        text = body.decode("utf-8", errors="replace")
-    except Exception:
-        text = ""
-
+    status, text = fetch_text(url, timeout=timeout, ua=ua)
     _CACHE[url] = (status, text)
     return status, text
 
@@ -245,26 +224,29 @@ def clear_cache() -> None:
 
 
 def main():
-    args = sys.argv[1:]
-    if args and args[0] == "--value":
-        if len(args) < 3:
-            print("Usage: python url_verifier.py --value <value> <url>")
-            sys.exit(2)
-        value, url = args[1], args[2]
-        ok, reason = corroborates(url, value)
-        print(f"  URL: {url}")
-        print(f"  Value: {value!r}  (variants: {value_variants(value)})")
+    p = argparse.ArgumentParser(
+        description="The §3.8 URL verification gate: HTTP 200 + content check "
+                    "+ soft-error detection. Exits 0 on PASS, 1 on FAIL.")
+    p.add_argument("url", help="URL to verify")
+    p.add_argument("expected", nargs="*",
+                   help="Substrings that must all appear in the page body "
+                        "(e.g. owner, yard, capacity)")
+    p.add_argument("--value",
+                   help="Corroboration-gate mode: pass iff the page contains "
+                        "this cell VALUE in some plausible rendering "
+                        "(ignores positional <expected> args)")
+    args = p.parse_args()
+
+    if args.value is not None:
+        ok, reason = corroborates(args.url, args.value)
+        print(f"  URL: {args.url}")
+        print(f"  Value: {args.value!r}  (variants: {value_variants(args.value)})")
         print(f"  Corroborates: {'PASS' if ok else 'FAIL'}  ({reason})")
         sys.exit(0 if ok else 1)
-    if not args:
-        print("Usage: python url_verifier.py <url> [<expected> ...]")
-        print("       python url_verifier.py --value <value> <url>")
-        sys.exit(2)
-    url = args[0]
-    expected = args[1:]
-    ok, reason = verify_url(url, expected, strict=False, require_all=True)
-    print(f"  URL: {url}")
-    print(f"  Expected: {expected}")
+
+    ok, reason = verify_url(args.url, args.expected, strict=False, require_all=True)
+    print(f"  URL: {args.url}")
+    print(f"  Expected: {args.expected}")
     print(f"  Result: {'PASS' if ok else 'FAIL'}  ({reason})")
     sys.exit(0 if ok else 1)
 
