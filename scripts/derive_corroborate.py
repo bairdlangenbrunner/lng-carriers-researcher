@@ -127,7 +127,7 @@ def main():
         "mode": "corroborate", "igu_url": igu,
         "instructions": (
             "For each row's `corroborate` entries, find >=2 INDEPENDENT sources (Tier 1-2 per "
-            "refdata/source_roster.md; never IGU, GTT-standalone, SFOC, or GEM) that each contain "
+            "data/source_roster.md; never IGU, GTT-standalone, SFOC, or GEM) that each contain "
             "the EXACT existing_value for that field. Run every URL through scripts/url_verifier.py "
             "first. Emit fills shaped like data_fill: "
             "{row_id, field, ref_field, proposed_value=<existing_value verbatim>, "

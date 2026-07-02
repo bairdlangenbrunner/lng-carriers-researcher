@@ -6,6 +6,9 @@ work/
 # Local backend pulls (also live under work/, but ignore at root too just in case)
 backend.csv
 backend.colmap.json
+# Stray backend snapshots/exports — these belong in gitignored work/, not committed
+# reference data. The committed data/ holds curated reference files + the GIIGNL PDFs.
+data/gem_export*.csv
 
 # Claude Code — commit settings.json (shared), ignore personal local overrides
 .claude/settings.local.json

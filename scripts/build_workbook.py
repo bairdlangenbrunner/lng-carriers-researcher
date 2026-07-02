@@ -97,7 +97,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.comments import Comment
 from openpyxl.utils import get_column_letter
 
-from paths import backend_csv_path
+from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
 from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, load_builder_facts,
                      YARD_FACT_COLS as YARD_LOCATION_COLS)
@@ -318,7 +318,7 @@ def build_ref_fill(args):
 # Discovery yard-location autofill (Discovery SOP §6.7). The yard-location block
 # is a property of the shipbuilder (yard), not the individual vessel, so on a
 # candidate row these 7 columns are filled from the authoritative
-# refdata/shipbuilder_facts.csv table (with the backend-sibling scan as a
+# data/shipbuilder_facts.csv table (with the backend-sibling scan as a
 # fallback). If the shipbuilder is new to both, they stay blank. row_data must
 # NOT carry these columns — this autofill owns them. YARD_LOCATION_COLS is the
 # canonical list in lookups.YARD_FACT_COLS (imported above).
@@ -352,10 +352,10 @@ def _build_yard_location_map(backend_data, backend_header):
 
 
 def _yard_location_map_table_first(backend_data, backend_header):
-    """Yard-location map with the authoritative refdata table taking priority.
+    """Yard-location map with the authoritative data table taking priority.
 
     Starts from the backend-sibling scan (_build_yard_location_map) and overlays
-    refdata/shipbuilder_facts.csv: a non-blank table cell wins; cells the table
+    data/shipbuilder_facts.csv: a non-blank table cell wins; cells the table
     leaves blank fall back to the sibling value. A builder absent from the table
     is fully sibling-derived, so this never regresses prior coverage.
     """
@@ -549,7 +549,7 @@ def _join_refs(existing: str, new_urls) -> str:
 # Controlled vocabularies for the type columns (Data-fill SOP §8). The backend
 # writes values verbatim with no normalizer, so a data_fill proposal MUST use an
 # existing canonical value. Single source of truth: lookups.CONTROLLED_VOCAB
-# (mirrors refdata/controlled_vocab.md), shared with qc_backend.py.
+# (mirrors data/controlled_vocab.md), shared with qc_backend.py.
 _DATA_FILL_VOCAB = CONTROLLED_VOCAB
 
 
@@ -979,14 +979,313 @@ def build_fix(args):
     return out_path
 
 
+# --- FSRU reconciliation mode (GIIGNL fleet table ↔ backend) -------------------
+def _table_sheet(wb, title, cols, rows, fills=None, widths=None, header_note=None):
+    """Render a simple header+rows sheet. `rows` is a list of dicts keyed by the
+    column names in `cols`. `fills` is an optional list (parallel to rows) of a
+    PatternFill or None to color that data row. `widths` maps column-letter->width.
+    `header_note` is an italic line written above the table."""
+    ws = wb.create_sheet(title)
+    top = 1
+    if header_note:
+        c = ws.cell(row=1, column=1, value=header_note)
+        c.font = Font(name="Calibri", size=10, italic=True)
+        c.alignment = WRAP_ALIGN
+        top = 2
+    for col_i, h in enumerate(cols, start=1):
+        ws.cell(row=top, column=col_i, value=h)
+    _apply_header_style(ws, top)
+    for r_off, item in enumerate(rows):
+        fill = (fills[r_off] if fills else None)
+        for col_i, c in enumerate(cols, start=1):
+            cell = ws.cell(row=top + 1 + r_off, column=col_i, value=item.get(c, ""))
+            cell.alignment = WRAP_ALIGN
+            if fill:
+                cell.fill = fill
+    if widths:
+        for letter, w in widths.items():
+            ws.column_dimensions[letter].width = w
+    ws.freeze_panes = ws.cell(row=top + 1, column=1).coordinate
+    return ws
+
+
+def _yn(v):
+    """Tri-state agree flag -> human label."""
+    return {True: "yes", False: "NO", None: "?"}.get(v, "?")
+
+
+def build_fsru(args):
+    """Build the FSRU reconciliation workbook from work/fsru_reconcile.json.
+
+    Renders the GIIGNL↔backend buckets for human review. GIIGNL is a COMPARISON
+    ARTIFACT, not a citable [ref] (same status as SFOC): GIIGNL-derived values are
+    starting points to verify, and NO [ref] cells are pre-filled — a primary
+    source must be attached via url_verifier.py before any candidate is promoted.
+    The backend is never edited here (additive candidate workbook only)."""
+    rec = json.loads(Path(args.reconcile).read_text())
+    s = rec["summary"]
+
+    with open(args.backend, encoding="utf-8") as f:
+        backend_rows = list(csv.reader(f))
+    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
+    backend_header = backend_rows[colmap["_header_row_idx"]]
+    header_index = {h: i for i, h in enumerate(backend_header)}
+
+    wb = Workbook()
+    build_readme(wb, f"FSRU reconciliation — GIIGNL {rec.get('edition_year')} fleet vs backend", [
+        f"GIIGNL in-service FSRU fleet: {rec['fleet_count']}   |   backend FSRUs: {rec['backend_fsru_count']}",
+        "",
+        "Buckets (one sheet each):",
+        f"  Matched_with_diffs   {s['matched']:>3}  GIIGNL FSRU already in backend as FSRU (field diffs flagged)",
+        f"  Reclassify           {s['reclassify']:>3}  GIIGNL FSRU present but typed non-FSRU in backend (typing finding)",
+        f"  Manual_pairing       {s['manual']:>3}  no name match; capacity+owner suggest a backend row (human pairs)",
+        f"  Candidates_to_add    {s['candidates']:>3}  in GIIGNL, absent from backend ({s['candidates_small_scale']} need FSRU-vs-small-scale review)",
+        f"  Backend_only         {s['backend_only']:>3}  backend FSRUs absent from GIIGNL (expected: on-order/idle)",
+        f"  FSU_exclusions       {s['backend_fsu']:>3}  backend FSUs (storage-only, out of scope) — known exclusions",
+        f"  GIIGNL_orderbook     {s['orderbook']:>3}  GIIGNL future deliveries (Phase B reference)",
+        "",
+        "Join: GIIGNL has no IMO column, so the match is by vessel name over",
+        "{current name} ∪ {ex_names}, normalized (diacritics/parentheticals folded).",
+        "CAPACITY (storage m³ ↔ backend Capacity cbm) is the corroborator — it agreed",
+        "on every matched pair. BUILDER is informational only: for converted units",
+        "GIIGNL lists the conversion yard while the backend keeps the original builder.",
+        "",
+        "Color: Green = full-size gap to add / clean; Yellow = needs a human decision",
+        "(small-scale review, reclassification, manual pairing); Gray = expected non-finding.",
+        "",
+        "SOURCE RULE: GIIGNL is NOT citable (it is downstream of Clarksons; comparison",
+        "artifact only). Every promoted value needs a primary [ref] via url_verifier.py.",
+        "Promote vetted rows through the apply pipeline — the backend is never auto-edited.",
+    ])
+
+    # --- Summary sheet ---------------------------------------------------------
+    summary_rows = [
+        {"metric": "GIIGNL in-service FSRU fleet", "count": rec["fleet_count"]},
+        {"metric": "Backend FSRUs (Vessel type = FSRU)", "count": rec["backend_fsru_count"]},
+        {"metric": "— Matched (already FSRU in backend)", "count": s["matched"]},
+        {"metric": "— Reclassify (present, typed non-FSRU)", "count": s["reclassify"]},
+        {"metric": "— Manual pairing (name defect / no name match)", "count": s["manual"]},
+        {"metric": "— Candidates to add (genuine gaps)", "count": s["candidates"]},
+        {"metric": "     of which small-scale review", "count": s["candidates_small_scale"]},
+        {"metric": "Backend-only FSRUs (absent from GIIGNL)", "count": s["backend_only"]},
+        {"metric": "Backend FSUs (excluded, storage-only)", "count": s["backend_fsu"]},
+        {"metric": "GIIGNL orderbook (future)", "count": s["orderbook"]},
+    ]
+    _table_sheet(
+        wb, "Summary", ["metric", "count"], summary_rows,
+        widths={"A": 48, "B": 10},
+        header_note=("Headline: the tracker's coverage of GIIGNL's in-service FSRU fleet is "
+                     "essentially complete — every full-size in-service FSRU is present (a few "
+                     "mistyped/misnamed); the only genuine absences are small/power-barge units "
+                     "pending FSRU-vs-small-scale review."))
+
+    # --- Candidates_to_add (backend column order) ------------------------------
+    ws = wb.create_sheet("Candidates_to_add")
+    prefix_cols = ["candidate_id", "giignl_name", "small_scale_review", "review_reason",
+                   "giignl_owner", "giignl_builder", "giignl_sendout_mtpa",
+                   "giignl_terminal", "giignl_status"]
+    headers = prefix_cols + backend_header
+    for col_i, h in enumerate(headers, start=1):
+        ws.cell(row=1, column=col_i, value=h)
+    _apply_header_style(ws, 1)
+    n_prefix = len(prefix_cols)
+    for r_off, cand in enumerate(rec.get("candidates", []), start=2):
+        g = cand["giignl"]
+        small = cand["small_scale_review"]
+        fill = FILL_YELLOW if small else FILL_GREEN
+        prefix = {
+            "candidate_id": f"FSRU-C{r_off-1}",
+            "giignl_name": g["vessel_name"],
+            "small_scale_review": "yes" if small else "no",
+            "review_reason": cand["review_reason"],
+            "giignl_owner": g.get("vessel_owner", ""),
+            "giignl_builder": g.get("builder", ""),
+            "giignl_sendout_mtpa": g.get("sendout_mtpa", ""),
+            "giignl_terminal": g.get("location_raw", ""),
+            "giignl_status": g.get("location_status", ""),
+        }
+        for col_i, h in enumerate(prefix_cols, start=1):
+            ws.cell(row=r_off, column=col_i, value=prefix[h]).fill = fill
+        # backend-column starting values: structural fields only. Vessel type is
+        # left BLANK for small-scale (that's the open question); [ref] cells stay
+        # blank (GIIGNL not citable). Owner/builder live in the prefix to verify.
+        row_data = {
+            "Name": g["vessel_name"],
+            "Capacity": g.get("storage_m3", ""),
+            "Capacity units": "cbm" if g.get("storage_m3") else "",
+        }
+        if not small:
+            row_data["Vessel type"] = "FSRU"
+        for h, idx in header_index.items():
+            val = row_data.get(h, "")
+            cell = ws.cell(row=r_off, column=n_prefix + 1 + idx, value=val)
+            cell.alignment = WRAP_ALIGN
+            if val:
+                cell.fill = fill
+    ws.freeze_panes = ws.cell(row=2, column=n_prefix + 1).coordinate
+    for col_i, h in enumerate(headers, start=1):
+        letter = get_column_letter(col_i)
+        if "[ref]" in h:
+            ws.column_dimensions[letter].width = 40
+        elif h in ("review_reason", "giignl_terminal", "Name", "giignl_owner",
+                   "giignl_builder", "Shipowner", "Shipbuilder"):
+            ws.column_dimensions[letter].width = 26
+        else:
+            ws.column_dimensions[letter].width = 14
+
+    # --- Matched_with_diffs ----------------------------------------------------
+    mcols = ["giignl_name", "backend_name", "live_sheet_row", "imo",
+             "cap_giignl", "cap_backend", "cap_agree",
+             "built_giignl", "delivery_backend", "delivery_agree",
+             "owner_giignl", "owner_backend", "owner_overlap",
+             "builder_giignl", "builder_backend", "builder_note"]
+    mrows, mfills = [], []
+    for r in rec["matched"]:
+        g, be, df = r["giignl"], r["backend"], r["diffs"]
+        cap_ok = df["capacity"]["agree"]
+        yr_ok = df["delivery_year"]["same"]
+        own_ok = df["owner"]["overlap"]
+        # color only GENUINE diffs: capacity disagreement = red; delivery or owner
+        # mismatch = yellow; builder diffs are expected/informational (no color).
+        fill = (FILL_RED if cap_ok is False else
+                FILL_YELLOW if (yr_ok is False or own_ok is False) else None)
+        mrows.append({
+            "giignl_name": g["vessel_name"], "backend_name": be["name"],
+            "live_sheet_row": be["sheet_row"], "imo": be["imo"],
+            "cap_giignl": df["capacity"]["giignl_storage_m3"],
+            "cap_backend": df["capacity"]["backend_capacity"], "cap_agree": _yn(cap_ok),
+            "built_giignl": df["delivery_year"]["giignl_built"],
+            "delivery_backend": df["delivery_year"]["backend_delivery"],
+            "delivery_agree": _yn(yr_ok),
+            "owner_giignl": df["owner"]["giignl"], "owner_backend": df["owner"]["backend"],
+            "owner_overlap": _yn(own_ok),
+            "builder_giignl": df["builder"]["giignl"], "builder_backend": df["builder"]["backend"],
+            "builder_note": ("conversion-yard/abbrev (informational)"
+                             if df["builder"]["same_tag"] is False else ""),
+        })
+        mfills.append(fill)
+    _table_sheet(wb, "Matched_with_diffs", mcols, mrows, fills=mfills,
+                 widths={"A": 24, "B": 24, "K": 26, "L": 26, "N": 22, "O": 22, "P": 30},
+                 header_note=("Capacity is the join corroborator (agreed on all matches). "
+                              "Builder differences are EXPECTED — GIIGNL lists the conversion "
+                              "yard / an abbreviation; the backend keeps the original builder."))
+
+    # --- Reclassify ------------------------------------------------------------
+    rcols = ["giignl_name", "giignl_ex_names", "live_sheet_row", "backend_name",
+             "backend_type", "cap_giignl", "cap_backend", "cap_agree",
+             "giignl_owner", "giignl_terminal", "giignl_status", "suggested_action"]
+    rrows = []
+    for r in rec["reclassify"]:
+        g, be, df = r["giignl"], r["backend"], r["diffs"]
+        rrows.append({
+            "giignl_name": g["vessel_name"],
+            "giignl_ex_names": ", ".join(g.get("ex_names", [])),
+            "live_sheet_row": be["sheet_row"], "backend_name": be["name"],
+            "backend_type": be["vessel_type"],
+            "cap_giignl": df["capacity"]["giignl_storage_m3"],
+            "cap_backend": df["capacity"]["backend_capacity"],
+            "cap_agree": _yn(df["capacity"]["agree"]),
+            "giignl_owner": g.get("vessel_owner", ""),
+            "giignl_terminal": g.get("location_raw", ""),
+            "giignl_status": g.get("location_status", ""),
+            "suggested_action": ("GIIGNL lists as FSRU; confirm and reclassify backend "
+                                 "Vessel type (check 'candidate conversion' status before changing)"),
+        })
+    _table_sheet(wb, "Reclassify", rcols, rrows, fills=[FILL_YELLOW] * len(rrows),
+                 widths={"A": 26, "B": 18, "D": 20, "I": 22, "J": 24, "L": 44})
+
+    # --- Manual_pairing --------------------------------------------------------
+    pcols = ["giignl_name", "live_sheet_row", "backend_name", "backend_type",
+             "cap_giignl", "cap_backend", "owner_giignl", "owner_backend", "note"]
+    prows = []
+    for r in rec["manual"]:
+        g, be, df = r["giignl"], r["suggested_backend"], r["diffs"]
+        prows.append({
+            "giignl_name": g["vessel_name"], "live_sheet_row": be["sheet_row"],
+            "backend_name": be["name"], "backend_type": be["vessel_type"],
+            "cap_giignl": df["capacity"]["giignl_storage_m3"],
+            "cap_backend": df["capacity"]["backend_capacity"],
+            "owner_giignl": df["owner"]["giignl"], "owner_backend": df["owner"]["backend"],
+            "note": ("no name match; capacity+owner corroborate. Backend Name may be a "
+                     "placeholder/defect (e.g. 'Hoegh' for 'Höegh Esperanza') — confirm "
+                     "the pairing and fix the backend Name."),
+        })
+    _table_sheet(wb, "Manual_pairing", pcols, prows, fills=[FILL_YELLOW] * len(prows),
+                 widths={"A": 24, "C": 20, "G": 20, "H": 20, "I": 60})
+
+    # --- Backend_only ----------------------------------------------------------
+    bcols = ["live_sheet_row", "backend_name", "imo", "capacity", "delivery_year",
+             "classification", "note"]
+    brows = [{
+        "live_sheet_row": be["sheet_row"], "backend_name": be["name"], "imo": be["imo"],
+        "capacity": be["capacity"], "delivery_year": be["delivery_year"],
+        "classification": "expected (on-order / idle / spot)",
+        "note": "GIIGNL is in-service only; verify it's not an FSU reclassification.",
+    } for be in rec["backend_only"]]
+    _table_sheet(wb, "Backend_only", bcols, brows, fills=[FILL_GRAY] * len(brows),
+                 widths={"B": 26, "F": 30, "G": 50})
+
+    # --- FSU_exclusions --------------------------------------------------------
+    fcols = ["live_sheet_row", "name", "capacity", "owner", "note"]
+    frows = [{
+        "live_sheet_row": be["sheet_row"], "name": be["name"],
+        "capacity": be["capacity"], "owner": be["owner"],
+        "note": "FSU = storage-only, out of scope (inclusion_criteria.md).",
+    } for be in rec["backend_fsu"]]
+    _table_sheet(wb, "FSU_exclusions", fcols, frows, fills=[FILL_GRAY] * len(frows),
+                 widths={"B": 26, "D": 24, "E": 48},
+                 header_note=("Known exclusions so they don't resurface as gaps. NOTE: the "
+                              "small-scale Candidates_to_add (e.g. Torman vs backend FSU "
+                              "'Torman II') also pend FSRU-vs-small-scale/FSU adjudication."))
+
+    # --- GIIGNL_orderbook (Phase B reference) ----------------------------------
+    ocols = ["expected_year", "vessel_name", "storage_m3", "ccs", "owner", "builder"]
+    orows = [{
+        "expected_year": o.get("expected_year"), "vessel_name": o["vessel_name"],
+        "storage_m3": o.get("storage_m3"), "ccs": o.get("ccs"),
+        "owner": o.get("vessel_owner", ""), "builder": o.get("builder", ""),
+    } for o in rec.get("orderbook", [])]
+    _table_sheet(wb, "GIIGNL_orderbook", ocols, orows,
+                 widths={"B": 24, "E": 22, "F": 24},
+                 header_note="GIIGNL future deliveries — Phase B (on-order coverage), not added here.")
+
+    # --- QA_review -------------------------------------------------------------
+    qa_rows = [
+        {"item": "Join method", "detail": "vessel name over {current} ∪ {ex_names}, "
+         "normalize_vessel_name (diacritics + parentheticals folded). GIIGNL has no IMO."},
+        {"item": "Corroborator", "detail": "capacity (storage m³ ↔ backend Capacity cbm); "
+         f"agreed on all {s['matched']} matched pairs."},
+        {"item": "Builder caveat", "detail": "informational only — GIIGNL lists the conversion "
+         "yard for converted units; the backend keeps the original builder."},
+        {"item": "Manual-match rule", "detail": "no-name suggestions require BOTH capacity "
+         "agreement AND owner-tag overlap (guards coincidental capacity pairs)."},
+        {"item": "Source rule", "detail": "GIIGNL is a comparison artifact, NOT a citable [ref]. "
+         "No [ref] cells pre-filled; attach a primary source via url_verifier.py before promoting."},
+        {"item": "Backend safety", "detail": "additive candidate workbook only; the backend is "
+         "never auto-edited. Promote via the apply pipeline (digest → apply → verify)."},
+        {"item": "URL verification gate", "detail": "§3.8 applies to any URL added during "
+         "promotion research — not exercised here (no URLs cited)."},
+    ]
+    _table_sheet(wb, "QA_review", ["item", "detail"], qa_rows,
+                 widths={"A": 24, "B": 110})
+
+    out_path = _resolve_out_path(args.out, "lng_carrier_fsru_reconciliation.xlsx")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(out_path)
+    print(f"  Wrote {out_path}")
+    return out_path
+
+
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill", "fix"], required=True)
+    p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill", "fix", "fsru"], required=True)
     p.add_argument("--rows", help="Row range for ref_fill, e.g. '1170-1190'")
     p.add_argument("--citations", help="Path to citations JSON (ref_fill mode)")
     p.add_argument("--candidates", help="Path to candidates JSON (discovery mode)")
     p.add_argument("--fills", help="Path to fills JSON (data_fill mode)")
     p.add_argument("--fix", help="Path to corrections JSON (fix mode)")
+    p.add_argument("--reconcile", help="Path to FSRU reconciliation JSON (fsru mode; "
+                                       "default work/fsru_reconcile.json)")
     p.add_argument("--base", help="Optional reviewed corrected-rows CSV to build on "
                                   "instead of the live (possibly corrupted) backend row (fix mode)")
     p.add_argument("--backend", default=str(backend_csv_path()),
@@ -1009,6 +1308,10 @@ def main():
         if not args.fills:
             p.error("--fills required for data_fill mode")
         build_data_fill(args)
+    elif args.mode == "fsru":
+        if not args.reconcile:
+            args.reconcile = str(work_dir() / "fsru_reconcile.json")
+        build_fsru(args)
     else:
         if not args.fix:
             p.error("--fix required for fix mode")

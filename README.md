@@ -60,7 +60,7 @@ docs/
   inclusion_criteria.md    What's in scope vs out, status categories
   pointers.md              "Which SOP section governs X" cross-reference index
 
-refdata/                   Reference markdown (read on demand)
+data/                   Reference markdown (read on demand)
   csb_yard_urls.md         Stable ChinaShipBuild yard URLs + slugs
   owner_charterer_map.md   Canonical owner names, variants, and owner→country map
   source_roster.md         Source tier list for picking corroboration URLs
@@ -70,7 +70,7 @@ scripts/                   Python tools called by the workflows
   pull_backend.py          curl + parse backend CSV, derive the column-index map
   qc_backend.py            Backend QC sanity check — column-offset / misplaced-value detection
   normalize.py             Canonical builder/owner names + owner→country (imported by others)
-  lookups.py               refdata loaders — controlled vocab + builder/owner facts tables
+  lookups.py               data loaders — controlled vocab + builder/owner facts tables
   seed_lookups.py          Seed/refresh the builder/owner facts CSVs from the live backend
   dedup_index.py           Build the matching indexes for candidate dedup
   csb_fetch.py             Fetch + parse ChinaShipBuild orderbook tables
@@ -125,7 +125,7 @@ verification, and conflict handling.
 The assistant draws only on publicly-accessible sources: the IGU report, yard
 orderbooks ([ChinaShipBuild](http://www.chinashipbuild.com/)), regulatory
 filings (DART, KIND, Bursa Malaysia, HKEX, class societies), and trade press
-(see [refdata/source_roster.md](refdata/source_roster.md) for the tier list).
+(see [data/source_roster.md](data/source_roster.md) for the tier list).
 GEM (Global Energy Monitor, including `gem.wiki`) and SFOC contribute
 supplementary data to the tracker but are **never** used as citation or
 corroboration sources — GEM is downstream of this tracker, so citing it would be

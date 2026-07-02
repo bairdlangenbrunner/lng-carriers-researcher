@@ -1,18 +1,18 @@
 """
-Reference-data loaders — the single source of truth for refdata/.
+Reference-data loaders — the single source of truth for data/.
 
 Two kinds of reference data the toolchain reads, both centralized here so the
 lists/tables live in exactly one place:
 
 1. Controlled vocabularies for the type columns (Data-fill SOP §8) — the exact
    canonical value sets the backend uses. build_workbook.py's data-fill validator
-   and qc_backend.py both import CONTROLLED_VOCAB from here. refdata/controlled_vocab.md
+   and qc_backend.py both import CONTROLLED_VOCAB from here. data/controlled_vocab.md
    is the human-readable mirror.
 
 2. Builder / owner FACTS tables — facts that belong to the shipyard or the owner,
    NOT the individual vessel: the yard-location block (keyed by normalize_builder)
    and the shipowner country/area (keyed by normalize_owner). Stored as editable
-   CSVs in refdata/ and AUTHORITATIVE — the autofill (build_workbook, derive_fills)
+   CSVs in data/ and AUTHORITATIVE — the autofill (build_workbook, derive_fills)
    reads them first, and qc_backend.py flags backend rows that disagree with them.
    Seed / refresh them from the live backend with seed_lookups.py.
 
@@ -26,7 +26,7 @@ from paths import repo_root
 from normalize import normalize_builder, normalize_owner
 
 
-# --- 1. Controlled vocabularies (mirrors refdata/controlled_vocab.md) ----------
+# --- 1. Controlled vocabularies (mirrors data/controlled_vocab.md) ----------
 # A proposal for these columns must use one of these exact canonical values, and
 # a value appearing in a DIFFERENT column is the signal qc_backend.py keys on.
 CONTROLLED_VOCAB = {
@@ -65,13 +65,13 @@ OWNER_FACT_COLS = ["Shipowner country/area", "Shipowner country/area [ref]"]
 AMBIGUOUS = "AMBIGUOUS"
 
 
-def refdata_dir() -> Path:
-    return repo_root() / "refdata"
+def data_dir() -> Path:
+    return repo_root() / "data"
 
 
 def _load_facts(filename: str, key_col: str) -> dict:
-    """tag -> {column header: value} from a refdata facts CSV. {} if absent."""
-    path = refdata_dir() / filename
+    """tag -> {column header: value} from a data/ facts CSV. {} if absent."""
+    path = data_dir() / filename
     if not path.exists():
         return {}
     out = {}

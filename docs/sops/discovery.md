@@ -314,7 +314,7 @@ Consequences:
 ### 6.8 Output-formatting conventions (shared with the [ref]-Fill SOP)
 
 Two formatting rules apply to candidate rows exactly as in the [ref]-Fill SOP:
-- **Owner/charterer stylization** ([ref]-Fill SOP §4.14): write `Shipowner` / `Operator/charterer` using the backend's existing short form (e.g. `COSCO`, not `Cosco Shipping Energy Transportation`). See `refdata/owner_charterer_map.md`.
+- **Owner/charterer stylization** ([ref]-Fill SOP §4.14): write `Shipowner` / `Operator/charterer` using the backend's existing short form (e.g. `COSCO`, not `Cosco Shipping Energy Transportation`). See `data/owner_charterer_map.md`.
 - **Multiple URLs in one `[ref]` cell** ([ref]-Fill SOP §4.15): join with `", "`, never a newline. `build_workbook.py` enforces this.
 
 ---

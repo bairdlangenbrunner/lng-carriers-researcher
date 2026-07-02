@@ -7,6 +7,7 @@ The SOPs live in `docs/sops/`:
 - `discovery.md` — abbreviated below as **DC**
 - `data_fill.md` — abbreviated below as **DF**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
+- `fsru_reconciliation.md` — abbreviated below as **FR** (the name-keyed GIIGNL-FSRU comparison)
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
@@ -101,7 +102,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Derivable autofill | DF §5 | owner country/area (unambiguous sibling-copy), capacity units, price currency, yard-location |
 | Per-batch workflow | DF §6 | pull → dedup → `derive_fills.py` → per-cluster research fan-out → `merge_fills.py` → build → recalc |
 | Output | DF §7 | `backend_data_fill` sheet (gray=existing, color=proposed, peach=appended ref) + QA_review |
-| Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`refdata/controlled_vocab.md`) |
+| Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`data/controlled_vocab.md`) |
 | Rule F / §4.9 consistency | DF §9 | proposals are paired candidate fills for review, never a backend edit; conflicts → RF §8 |
 | Documented blanks | DF §11 | §6a.9-style negative-result log for cells researched and not found |
 
@@ -109,9 +110,9 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 
 | Thing | Where | What |
 |---|---|---|
-| Backend QC scan | `scripts/qc_backend.py` | Run after `pull_backend.py`. Flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs, Rule F, lookup-table disagreement). Advisory (writes `work/qc_report.csv`); `--strict` exits non-zero on HIGH/MED findings; `--rows X-Y` scopes. Silence known-legit cells in `refdata/qc_allowlist.csv`. |
-| Builder facts table | `refdata/shipbuilder_facts.csv` | Authoritative yard country/area + yard-location block, keyed by `normalize_builder`. Autofill reads it first (DF §5). |
-| Owner facts table | `refdata/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
+| Backend QC scan | `scripts/qc_backend.py` | Run after `pull_backend.py`. Flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs, Rule F, lookup-table disagreement). Advisory (writes `work/qc_report.csv`); `--strict` exits non-zero on HIGH/MED findings; `--rows X-Y` scopes. Silence known-legit cells in `data/qc_allowlist.csv`. |
+| Builder facts table | `data/shipbuilder_facts.csv` | Authoritative yard country/area + yard-location block, keyed by `normalize_builder`. Autofill reads it first (DF §5). |
+| Owner facts table | `data/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
 | Facts loaders + vocab | `scripts/lookups.py` | `load_builder_facts` / `load_owner_facts` + `CONTROLLED_VOCAB` (single source of truth, shared by build + QC). |
 | Seed / refresh tables | `scripts/seed_lookups.py` | Bootstraps both CSVs from the live backend; re-runnable, never clobbers curated rows without `--overwrite`. |
 
@@ -140,6 +141,19 @@ The offset-proof round-trip that gets a reviewed batch into the backend. Full SO
 | Apply | AP §2/§7 | full-row paste OR `tools/apply_patch.gs` (by header — offset impossible); never hand cherry-pick |
 | Conflicts | AP §4 | `conflicts.csv` — research vs a non-blank value; decided by hand, never auto-applied (RF §8 / DF §9) |
 | Verify | AP §5 | `verify_apply.py --pull` → `verify_report.csv` (landed/mismatch/missing) + qc the touched rows |
+
+## FSRU reconciliation workflow (FR — 2026-06-26)
+
+Name-keyed comparison of the backend's FSRUs against the GIIGNL Annual Report's in-service FSRU fleet table (GIIGNL has no IMO column, so the join is by name, not IMO as in SR). Full SOP: `docs/sops/fsru_reconciliation.md`.
+
+| Phase | Section | What |
+|---|---|---|
+| Scope / positioning | FR §1 | FSRUs only; FSUs logged as exclusions; GIIGNL is a comparison artifact, NOT a citable `[ref]` (like SFOC) |
+| Parameters | FR §2 | GIIGNL edition, small-scale cutoff (<60k m³ / CCS "Other"), capacity tolerance (max 6000 m³ / 3%), output name |
+| Name join | FR §3 | key = {current} ∪ {ex_names}, `normalize_vessel_name`; capacity corroborates, builder is informational (conversion-yard ≠ original builder); manual pairing requires owner-tag overlap |
+| Five buckets | FR §4 | matched / reclassify (typed non-FSRU) / manual pairing / candidates-to-add / backend-only (expected) + FSU exclusions + orderbook passthrough |
+| Workflow | FR §5 | pull → terminals-repo extractor → `fsru_reconcile.py` → `build_workbook.py --mode fsru` → recalc → dedupe sweep → commit |
+| Promotion | FR §6 | vetted candidates run through the Apply SOP unchanged; backend never auto-edited; GIIGNL never the `[ref]` |
 
 ## Pause-and-ask triggers
 

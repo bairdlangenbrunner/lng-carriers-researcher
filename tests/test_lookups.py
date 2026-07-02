@@ -2,7 +2,7 @@
 
 These guard the authoritative builder/owner facts layer: that the loaders resolve
 raw names through normalize, drop blank/AMBIGUOUS facts so they're never
-auto-applied, and that the refdata table wins over the backend-sibling scan.
+auto-applied, and that the data table wins over the backend-sibling scan.
 Pure logic, no network — see tests/README.md.
 """
 import lookups

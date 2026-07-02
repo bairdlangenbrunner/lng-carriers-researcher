@@ -124,14 +124,14 @@ def main():
                     fills.append(_derivable(rid, h, v,
                                             note=f"yard-location for '{builder_tag}' (DC §6.7)"))
 
-        # --- derivable: Shipowner country/area — refdata table first, then
+        # --- derivable: Shipowner country/area — data table first, then
         #     backend sibling-copy (DF §5) ---
         if not val("Shipowner country/area"):
             facts = owner_facts(val("Shipowner"), owner_facts_tbl)
             c = facts.get("Shipowner country/area")
             if c:
                 ref = facts.get("Shipowner country/area [ref]", "")
-                note = f"from refdata/shipowner_facts.csv for owner '{owner_tag}'" \
+                note = f"from data/shipowner_facts.csv for owner '{owner_tag}'" \
                        + ("" if ref else " (no [ref] in table; value only)")
             else:
                 c = owner_country(val("Shipowner"), data, OWN, CTRY)

@@ -15,7 +15,7 @@ Run after pull_backend.py (reads work/backend.csv + work/backend.colmap.json):
     python scripts/qc_backend.py --rows 1216-1217 # scope to a row-id range
 
 Writes work/qc_report.csv (row_id, column, value, check, severity, message).
-Known-legit oddities can be silenced in refdata/qc_allowlist.csv
+Known-legit oddities can be silenced in data/qc_allowlist.csv
 (columns: row_id, column, reason; a blank `column` silences a row-level finding).
 
 Checks:
@@ -45,7 +45,7 @@ from pathlib import Path
 
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
-from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, refdata_dir,
+from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, data_dir,
                      load_builder_facts, load_owner_facts)
 from derive_fills import parse_date
 
@@ -166,7 +166,7 @@ def is_ref(h):
 
 def load_allowlist():
     """{(row_id, column)} to silence; column '' silences a row-level finding."""
-    path = refdata_dir() / "qc_allowlist.csv"
+    path = data_dir() / "qc_allowlist.csv"
     out = set()
     if path.exists():
         with open(path, encoding="utf-8", newline="") as f:

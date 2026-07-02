@@ -6,8 +6,8 @@ The yard-location block (a property of the yard) and the shipowner country/area
 This script lifts them into two editable, deduplicated CSVs that become the
 canonical source the autofill and qc_backend.py read:
 
-  refdata/shipbuilder_facts.csv   builder_tag -> 7-column yard-location block
-  refdata/shipowner_facts.csv     owner_tag   -> Shipowner country/area (+[ref])
+  data/shipbuilder_facts.csv   builder_tag -> 7-column yard-location block
+  data/shipowner_facts.csv     owner_tag   -> Shipowner country/area (+[ref])
 
 Re-runnable. By default it MERGES: adds newly-seen tags, and REPORTS (to stderr)
 any tag whose backend-derived value differs from the curated file — but never
@@ -28,7 +28,7 @@ from pathlib import Path
 from paths import backend_csv_path
 from normalize import normalize_owner
 from build_workbook import _build_yard_location_map
-from lookups import (refdata_dir, YARD_FACT_COLS, OWNER_FACT_COLS, AMBIGUOUS,
+from lookups import (data_dir, YARD_FACT_COLS, OWNER_FACT_COLS, AMBIGUOUS,
                      BUILDER_FACTS_CSV, OWNER_FACTS_CSV)
 
 
@@ -101,12 +101,12 @@ def main():
     builder_derived = _build_yard_location_map(data, hdr)
     owner_derived = derive_owner_facts(data, H)
 
-    refdata_dir().mkdir(parents=True, exist_ok=True)
+    data_dir().mkdir(parents=True, exist_ok=True)
     for name, key_col, cols, derived in [
         (BUILDER_FACTS_CSV, "builder_tag", YARD_FACT_COLS, builder_derived),
         (OWNER_FACTS_CSV, "owner_tag", OWNER_FACT_COLS, owner_derived),
     ]:
-        path = refdata_dir() / name
+        path = data_dir() / name
         added, changed, total = write_facts(path, key_col, cols, derived, args.overwrite)
         print(f"{name}: {total} rows  (+{len(added)} new, {len(changed)} differ from backend)")
         if added:
@@ -116,7 +116,7 @@ def main():
     amb = [t for t, b in owner_derived.items() if b["Shipowner country/area"] == AMBIGUOUS]
     if amb:
         print(f"  ambiguous owners (won't autofill, research per-vessel): {', '.join(sorted(amb))}")
-    print("Review the two CSVs in refdata/ before relying on them.")
+    print("Review the two CSVs in data/ before relying on them.")
 
 
 if __name__ == "__main__":
