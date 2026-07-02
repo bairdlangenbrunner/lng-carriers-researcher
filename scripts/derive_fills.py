@@ -59,11 +59,33 @@ def _derivable(row_id, field, value, ref_field="", new_urls=None, note=""):
     }
 
 
+def _check_stale_research(force):
+    """Leftover work/research_*.json from a prior batch silently pollute merge_fills
+    (it globs them all — a past incident merged 6 stale files into 133 spurious fills).
+    Refuse to start a new batch over them unless --force."""
+    stale = sorted(work_dir().glob("research_*.json"))
+    stale = [p for p in stale if p.name != "research_tasks.json"]
+    if not stale:
+        return
+    names = ", ".join(p.name for p in stale)
+    if force:
+        print(f"  [warn] leaving {len(stale)} existing research file(s) in work/: {names}",
+              file=sys.stderr)
+    else:
+        sys.exit(f"error: {len(stale)} research file(s) from a prior batch in work/: {names}\n"
+                 "merge_fills.py merges EVERY work/research_*.json, so stale ones corrupt "
+                 "the new batch.\nDelete them (rm work/research_*.json) or pass --force to "
+                 "keep them on purpose.")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", required=True, help="Last updated >= this date (YYYY-MM-DD)")
     ap.add_argument("--backend", default=str(backend_csv_path()))
+    ap.add_argument("--force", action="store_true",
+                    help="proceed even if work/ holds research_*.json from a prior batch")
     args = ap.parse_args()
+    _check_stale_research(args.force)
     cut = tuple(int(x) for x in args.since.split("-"))
 
     be = load_backend(args.backend)

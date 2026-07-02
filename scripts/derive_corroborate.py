@@ -57,11 +57,16 @@ def _parse_rows(spec):
 
 
 def main():
+    from derive_fills import _check_stale_research
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", required=True, help="row_id range, inclusive (e.g. 3-22)")
     ap.add_argument("--igu-url", default=IGU_URL, help="the sole-source URL to corroborate")
     ap.add_argument("--backend", default=str(backend_csv_path()))
+    ap.add_argument("--force", action="store_true",
+                    help="proceed even if work/ holds research_*.json from a prior batch")
     args = ap.parse_args()
+    _check_stale_research(args.force)
     lo, hi = _parse_rows(args.rows)
     igu = args.igu_url.strip()
 

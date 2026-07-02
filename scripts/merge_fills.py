@@ -42,7 +42,9 @@ def main():
     vlog = list(base.get("verification_log", []))
     findings = list(base.get("candidate_findings", []))
 
-    for rf in sorted(glob.glob(str(wd / "research_*.json"))):
+    research_files = [p for p in sorted(glob.glob(str(wd / "research_*.json")))
+                      if Path(p).name != "research_tasks.json"]
+    for rf in research_files:
         d = json.loads(Path(rf).read_text())
         fills += d.get("fills", [])
         blanks += d.get("documented_blanks", [])
@@ -51,6 +53,10 @@ def main():
             findings += d.get(k, [])
         print(f"  merged {Path(rf).name}: +{len(d.get('fills', []))} fills, "
               f"+{len(d.get('documented_blanks', []))} blanks", file=sys.stderr)
+    print(f"  merged {len(research_files)} research file(s) from {wd}", file=sys.stderr)
+    if not research_files:
+        print("  [warn] no work/research_*.json found — output will hold only the "
+              "derivable fills already in data_fill.json", file=sys.stderr)
 
     # Dedup on (row_id, field) — clusters are disjoint, but derivable + research
     # could in principle both touch a cell. Keep the first (derivable wins).
