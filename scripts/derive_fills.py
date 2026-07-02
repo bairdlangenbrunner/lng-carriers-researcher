@@ -12,15 +12,13 @@ The researched fills (produced by per-cluster subagents) are merged into
 work/data_fill.json later, before the §3.8 verification gate and the build.
 """
 import argparse
-import csv
 import json
-import re
 from collections import defaultdict
-from pathlib import Path
 
+from backend_io import load_backend, parse_date  # noqa: F401 — parse_date re-exported
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner, owner_country
-from build_workbook import YARD_LOCATION_COLS, _yard_location_map_table_first
+from build_workbook import _yard_location_map_table_first
 from lookups import owner_facts, load_owner_facts
 
 # Primary researchable columns (exact backend headers) + their paired [ref].
@@ -41,27 +39,6 @@ RESEARCH_COLS = [
     ("Contract date", "Contract date [ref]"),
     ("Price", "Price [ref]"),
 ]
-
-_MONTHS = {m: i for i, m in enumerate(
-    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
-
-
-def parse_date(s):
-    """Parse M/D/YYYY, YYYY-MM-DD, or DD-Mon-YYYY into a (y, m, d) tuple; None if unparseable."""
-    s = (s or "").strip()
-    if not s:
-        return None
-    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", s)
-    if m:
-        return (int(m[3]), int(m[1]), int(m[2]))
-    m = re.match(r"(\d{4})-(\d{1,2})-(\d{1,2})", s)
-    if m:
-        return (int(m[1]), int(m[2]), int(m[3]))
-    m = re.match(r"(\d{1,2})[-\s]([A-Za-z]{3})[-\s](\d{4})", s)
-    if m:
-        return (int(m[3]), _MONTHS.get(m[2].lower(), 0), int(m[1]))
-    return None
-
 
 def _sibling_country_ref(data, owner_tag, own_i, ctry_i, ctry_ref_i):
     """A sibling row's Shipowner country/area [ref] for this owner, if any has one."""
@@ -88,12 +65,9 @@ def main():
     args = ap.parse_args()
     cut = tuple(int(x) for x in args.since.split("-"))
 
-    rows = list(csv.reader(open(args.backend, encoding="utf-8")))
-    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
-    hdr = rows[colmap["_header_row_idx"]]
-    H = {h: i for i, h in enumerate(hdr)}
-    data = rows[colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1):]
-    RID = colmap["row_id"]
+    be = load_backend(args.backend)
+    hdr, H, data = be.header, be.header_index, be.data
+    RID = be.colmap["row_id"]
     LU, OWN, CTRY, CTRY_REF = H["Last updated"], H["Shipowner"], \
         H["Shipowner country/area"], H["Shipowner country/area [ref]"]
     CAP, UNITS = H["Capacity"], H["Capacity units"]

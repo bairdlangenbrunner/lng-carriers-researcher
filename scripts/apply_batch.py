@@ -31,6 +31,7 @@ import json
 import sys
 from pathlib import Path
 
+from backend_io import load_backend
 from paths import backend_csv_path
 from normalize import normalize_builder
 from build_workbook import _join_refs, _yard_location_map_table_first, YARD_LOCATION_COLS
@@ -43,34 +44,21 @@ def _default_decision(confidence, derivable):
 
 
 def _load_backend(backend_path):
-    rows = list(csv.reader(open(backend_path, encoding="utf-8")))
-    colmap = json.loads(Path(backend_path).with_suffix(".colmap.json").read_text())
-    header = rows[colmap["_header_row_idx"]]
-    data = rows[colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1):]
-    rid_i = colmap["row_id"]
-    row_by_id = {r[rid_i].strip(): r for r in data if len(r) > rid_i and r[rid_i].strip()}
-    return header, row_by_id, colmap
+    """(header, row_by_id, colmap) — thin wrapper kept for the downstream
+    importers (batch_digest, dedupe_check, verify_apply)."""
+    be = load_backend(backend_path)
+    return be.header, be.row_by_id(), be.colmap
 
 
 def sheet_row_map(backend_path, colmap=None):
     """Map ``row_id`` -> live Google Sheet tab row (1-based).
 
     ``row_id`` is column A ("original order in sheet") — a static stamp that drifts
-    from the live row as rows are deleted, so it is NOT the tab row. The backend
-    pull is 1:1 with the sheet, so the live row = CSV line index + 1. Use this
+    from the live row as rows are deleted, so it is NOT the tab row. Use this
     whenever a row is reported to a human (they navigate the actual sheet).
+    Delegates to backend_io.Backend.sheet_row_map.
     """
-    rows = list(csv.reader(open(backend_path, encoding="utf-8")))
-    cm = colmap or json.loads(
-        Path(backend_path).with_suffix(".colmap.json").read_text())
-    ri = cm["row_id"]
-    ds = cm.get("_data_starts_at", cm["_header_row_idx"] + 1)
-    out = {}
-    for idx in range(ds, len(rows)):
-        r = rows[idx]
-        if len(r) > ri and r[ri].strip():
-            out[r[ri].strip()] = idx + 1
-    return out
+    return load_backend(backend_path).sheet_row_map()
 
 
 def _detect(batch_dir):

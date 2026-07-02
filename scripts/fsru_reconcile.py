@@ -34,11 +34,11 @@ Usage:
         --backend work/backend.csv --output work/fsru_reconcile.json
 """
 import argparse
-import csv
 import json
 from collections import defaultdict
 from pathlib import Path
 
+import backend_io
 from paths import backend_csv_path, work_dir
 from normalize import normalize_vessel_name, normalize_builder, fsru_owner_tags
 
@@ -60,12 +60,8 @@ def _int(s):
 
 def load_backend(path):
     """Return (header, data_rows, colmap, data_start_idx)."""
-    path = Path(path)
-    rows = list(csv.reader(open(path, encoding="utf-8")))
-    cm = json.loads(path.with_suffix(".colmap.json").read_text())
-    hi = cm["_header_row_idx"]
-    ds = cm.get("_data_starts_at", hi + 1)
-    return rows[hi], rows[ds:], cm, ds
+    be = backend_io.load_backend(path)
+    return be.header, be.data, be.colmap, be.data_start
 
 
 def _idx(cm, hdr, key, header_name):

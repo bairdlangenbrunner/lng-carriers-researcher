@@ -21,10 +21,9 @@ researched per-vessel (matches the normalize.owner_country guard).
 """
 import argparse
 import csv
-import json
 from collections import defaultdict
-from pathlib import Path
 
+from backend_io import load_backend
 from paths import backend_csv_path
 from normalize import normalize_owner
 from build_workbook import _build_yard_location_map
@@ -92,11 +91,8 @@ def main():
                     help="Regenerate from the backend, discarding curated edits")
     args = ap.parse_args()
 
-    rows = list(csv.reader(open(args.backend, encoding="utf-8")))
-    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
-    hdr = rows[colmap["_header_row_idx"]]
-    H = {h: i for i, h in enumerate(hdr)}
-    data = rows[colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1):]
+    be = load_backend(args.backend)
+    hdr, H, data = be.header, be.header_index, be.data
 
     builder_derived = _build_yard_location_map(data, hdr)
     owner_derived = derive_owner_facts(data, H)

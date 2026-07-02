@@ -25,11 +25,10 @@ propulsion, cargo/vessel type) are out of scope by design.
     python scripts/derive_corroborate.py --rows 3-22
 """
 import argparse
-import csv
 import json
 from collections import defaultdict
-from pathlib import Path
 
+from backend_io import load_backend
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
 
@@ -65,12 +64,9 @@ def main():
     lo, hi = _parse_rows(args.rows)
     igu = args.igu_url.strip()
 
-    rows = list(csv.reader(open(args.backend, encoding="utf-8")))
-    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
-    hdr = rows[colmap["_header_row_idx"]]
-    H = {h: i for i, h in enumerate(hdr)}
-    data = rows[colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1):]
-    RID = colmap["row_id"]
+    be = load_backend(args.backend)
+    H, data = be.header_index, be.data
+    RID = be.colmap["row_id"]
 
     scope_ids = []
     research = defaultdict(list)
