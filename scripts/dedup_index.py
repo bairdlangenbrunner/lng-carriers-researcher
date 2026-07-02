@@ -81,9 +81,9 @@ def build_indexes(csv_path: str) -> tuple[dict, dict, list]:
 def main():
     csv_path = str(backend_csv_path())
     hull_idx, cluster_idx, data = build_indexes(csv_path)
-    print(f"  Backend rows: {len(data)}")
-    print(f"  Hull index keys (builder|hull): {len(hull_idx)}")
-    print(f"  Cluster index keys (builder|owner|month): {len(cluster_idx)}")
+    print(f"  Backend rows: {len(data)}", file=sys.stderr)
+    print(f"  Hull index keys (builder|hull): {len(hull_idx)}", file=sys.stderr)
+    print(f"  Cluster index keys (builder|owner|month): {len(cluster_idx)}", file=sys.stderr)
 
     out = {
         "hull_index": hull_idx,
@@ -96,16 +96,16 @@ def main():
     }
     out_path = str(dedup_index_path())
     Path(out_path).write_text(json.dumps(out, indent=2, default=str))
-    print(f"  Saved to {out_path}")
+    print(f"  Saved to {out_path}", file=sys.stderr)
 
     # Sanity print: collisions (hulls/clusters with >1 row)
-    print(f"\n  Hull-key collisions (>1 row, possible dupes):")
+    print("\n  Hull-key collisions (>1 row, possible dupes):", file=sys.stderr)
     for k, v in hull_idx.items():
         if len(v) > 1:
-            print(f"    {k}: {len(v)} rows -> {[r['row_id'] for r in v]}")
-    print(f"\n  First 5 cluster keys:")
+            print(f"    {k}: {len(v)} rows -> {[r['row_id'] for r in v]}", file=sys.stderr)
+    print("\n  First 5 cluster keys:", file=sys.stderr)
     for k in list(cluster_idx.keys())[:5]:
-        print(f"    {k}: {len(cluster_idx[k])} row(s)")
+        print(f"    {k}: {len(cluster_idx[k])} row(s)", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -13,6 +13,7 @@ work/data_fill.json later, before the §3.8 verification gate and the build.
 """
 import argparse
 import json
+import sys
 from collections import defaultdict
 
 from backend_io import load_backend, parse_date  # noqa: F401 — parse_date re-exported
@@ -155,11 +156,12 @@ def main():
         json.dumps({"since": args.since, "clusters": research}, indent=2, ensure_ascii=False))
 
     n_cells = sum(len(x["blanks"]) + len(x["unknowns"]) for v in research.values() for x in v)
-    print(f"in-scope rows:           {len(scope_ids)}  (ids {scope_ids[0]}..{scope_ids[-1]})")
-    print(f"derivable fills:         {len(fills)}")
-    print(f"clusters needing research: {len(research)}")
-    print(f"cells needing research:  {n_cells}")
-    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json")
+    print(f"in-scope rows:           {len(scope_ids)}  (ids {scope_ids[0]}..{scope_ids[-1]})",
+          file=sys.stderr)
+    print(f"derivable fills:         {len(fills)}", file=sys.stderr)
+    print(f"clusters needing research: {len(research)}", file=sys.stderr)
+    print(f"cells needing research:  {n_cells}", file=sys.stderr)
+    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json", file=sys.stderr)
 
 
 if __name__ == "__main__":

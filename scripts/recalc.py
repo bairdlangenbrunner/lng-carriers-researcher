@@ -11,7 +11,9 @@ Usage:
 Exit code:
     0 = no errors found
     1 = errors found (printed to stderr)
+    2 = usage / file not found
 """
+import argparse
 import sys
 from pathlib import Path
 
@@ -45,19 +47,19 @@ def check_workbook(xlsx_path: str) -> tuple[int, int]:
 
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python recalc.py <xlsx_path>")
-        sys.exit(2)
-    path = sys.argv[1]
-    if not Path(path).exists():
-        print(f"File not found: {path}", file=sys.stderr)
-        sys.exit(2)
-    sheets, errors = check_workbook(path)
-    print(f"  Checked {sheets} sheet(s) in {path}")
+    ap = argparse.ArgumentParser(
+        description="Check an xlsx for formula errors (#REF!, #NAME?, ...). "
+                    "Run after build_workbook.py, before committing the batch.")
+    ap.add_argument("xlsx", help="path to the workbook to check")
+    args = ap.parse_args()
+    if not Path(args.xlsx).exists():
+        ap.error(f"file not found: {args.xlsx}")
+    sheets, errors = check_workbook(args.xlsx)
+    print(f"  Checked {sheets} sheet(s) in {args.xlsx}", file=sys.stderr)
     if errors:
-        print(f"  Found {errors} formula error(s) — see stderr above")
+        print(f"  Found {errors} formula error(s) — see stderr above", file=sys.stderr)
         sys.exit(1)
-    print(f"  Zero formula errors")
+    print("  Zero formula errors", file=sys.stderr)
     sys.exit(0)
 
 

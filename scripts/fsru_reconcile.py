@@ -35,6 +35,7 @@ Usage:
 """
 import argparse
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -257,6 +258,10 @@ def main(argv=None):
     backend_path = Path(args.backend) if args.backend else backend_csv_path()
     out_path = Path(args.output) if args.output else work_dir() / "fsru_reconcile.json"
 
+    if not fleet_path.exists():
+        sys.exit(f"error: {fleet_path} not found — extract the GIIGNL fleet table first:\n"
+                 "  python ../lng-terminals-researcher/scripts/giignl_fsru_fleet.py "
+                 "data/GIIGNL-<year>-Annual-Report-<ver>.pdf --output work/giignl_fsru_fleet.json")
     fleet = json.loads(fleet_path.read_text())
     hdr, data, cm, ds = load_backend(backend_path)
     backend = backend_entries(hdr, data, cm, ds)
@@ -266,11 +271,11 @@ def main(argv=None):
 
     s = result["summary"]
     print(f"  GIIGNL edition {result['edition_year']}: {result['fleet_count']} fleet FSRUs "
-          f"vs {result['backend_fsru_count']} backend FSRUs")
+          f"vs {result['backend_fsru_count']} backend FSRUs", file=sys.stderr)
     print(f"  matched={s['matched']}  reclassify={s['reclassify']}  manual={s['manual']}  "
           f"candidates={s['candidates']} (small-scale {s['candidates_small_scale']})  "
-          f"backend_only={s['backend_only']}")
-    print(f"  Saved reconciliation to {out_path}")
+          f"backend_only={s['backend_only']}", file=sys.stderr)
+    print(f"  Saved reconciliation to {out_path}", file=sys.stderr)
     return 0
 
 

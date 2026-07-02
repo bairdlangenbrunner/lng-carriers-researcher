@@ -21,6 +21,7 @@ researched per-vessel (matches the normalize.owner_country guard).
 """
 import argparse
 import csv
+import sys
 from collections import defaultdict
 
 from backend_io import load_backend
@@ -104,15 +105,18 @@ def main():
     ]:
         path = data_dir() / name
         added, changed, total = write_facts(path, key_col, cols, derived, args.overwrite)
-        print(f"{name}: {total} rows  (+{len(added)} new, {len(changed)} differ from backend)")
+        print(f"{name}: {total} rows  (+{len(added)} new, {len(changed)} differ from backend)",
+              file=sys.stderr)
         if added:
-            print(f"    new tags: {', '.join(sorted(added))}")
+            print(f"    new tags: {', '.join(sorted(added))}", file=sys.stderr)
         if changed:
-            print(f"    backend differs (curated kept — review): {', '.join(sorted(changed))}")
+            print(f"    backend differs (curated kept — review): {', '.join(sorted(changed))}",
+                  file=sys.stderr)
     amb = [t for t, b in owner_derived.items() if b["Shipowner country/area"] == AMBIGUOUS]
     if amb:
-        print(f"  ambiguous owners (won't autofill, research per-vessel): {', '.join(sorted(amb))}")
-    print("Review the two CSVs in data/ before relying on them.")
+        print(f"  ambiguous owners (won't autofill, research per-vessel): {', '.join(sorted(amb))}",
+              file=sys.stderr)
+    print("Review the two CSVs in data/ before relying on them.", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -38,7 +38,11 @@ def main():
     args = ap.parse_args()
     batch_dir = Path(args.batch)
 
-    apply_doc = json.loads((batch_dir / "apply.json").read_text())
+    apply_path = batch_dir / "apply.json"
+    if not apply_path.exists():
+        sys.exit(f"error: {apply_path} not found — run `python scripts/apply_batch.py "
+                 f"--batch {batch_dir}` first")
+    apply_doc = json.loads(apply_path.read_text())
 
     if args.pull:
         subprocess.run([sys.executable, str(repo_root() / "scripts" / "pull_backend.py")],
@@ -150,6 +154,11 @@ def main():
     problems = bool(mismatch or missing or new_missing or qc_hi_med)
     if not problems:
         print("  ✓ everything accepted landed cleanly", file=sys.stderr)
+    else:
+        print(f"  ✗ PROBLEMS: {len(mismatch)} mismatch, {len(missing)} missing, "
+              f"{len(new_missing)} new-row missing, {len(qc_hi_med)} qc HIGH/MED "
+              f"— see {rep}" + ("" if args.strict else " (exit 0 without --strict)"),
+              file=sys.stderr)
     if args.strict and problems:
         sys.exit(1)
 

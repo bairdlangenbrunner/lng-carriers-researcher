@@ -26,6 +26,7 @@ propulsion, cargo/vessel type) are out of scope by design.
 """
 import argparse
 import json
+import sys
 from collections import defaultdict
 
 from backend_io import load_backend
@@ -133,10 +134,11 @@ def main():
     }, indent=2, ensure_ascii=False))
 
     print(f"in-scope rows:           {len(scope_ids)}"
-          + (f"  (ids {scope_ids[0]}..{scope_ids[-1]})" if scope_ids else "  (none)"))
-    print(f"clusters needing research: {len(research)}")
-    print(f"IGU-only priority cells: {n_cells}")
-    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json")
+          + (f"  (ids {scope_ids[0]}..{scope_ids[-1]})" if scope_ids else "  (none)"),
+          file=sys.stderr)
+    print(f"clusters needing research: {len(research)}", file=sys.stderr)
+    print(f"IGU-only priority cells: {n_cells}", file=sys.stderr)
+    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json", file=sys.stderr)
 
 
 if __name__ == "__main__":
