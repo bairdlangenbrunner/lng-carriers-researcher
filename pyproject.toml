@@ -7,11 +7,10 @@ requires-python = ">=3.11"
 authors = [
     { name = "LNG Carrier Tracker maintainers" },
 ]
+# NOTE: all network fetching shells out to the system `curl` binary (see
+# scripts/fetch.py), which pip cannot declare — install curl separately.
 dependencies = [
     "openpyxl>=3.1.2",      # build_workbook.py, recalc.py
-    "requests>=2.31.0",     # url_verifier.py, csb_fetch.py
-    "beautifulsoup4>=4.12",  # csb_fetch.py HTML parsing
-    "lxml>=5.0",             # bs4 backend
 ]
 
 [project.optional-dependencies]

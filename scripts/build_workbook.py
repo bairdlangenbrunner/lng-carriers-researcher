@@ -7,7 +7,8 @@ Per [ref]-Fill SOP §2 and Discovery SOP §5, output structure:
     Sheets: README, backend_ref_fill, QA_review
 
   discovery mode -> <out>/lng_carrier_candidate_vessels.xlsx
-    Sheets: README, candidate_vessels, QA_review, backend_status_flags
+    Sheets: README, candidate_vessels, QA_review
+    (backend status flags live in a QA_review section, not their own sheet)
 
 The --out argument is the DIRECTORY the xlsx is written into; the filename is
 fixed by mode. Normally this is the batch directory under batches/, e.g.
@@ -118,6 +119,22 @@ CONFIDENCE_FILLS = {
     "peach": FILL_PEACH, "P": FILL_PEACH,
 }
 
+# The one color key, worded identically in every mode's README sheet
+# (RF §2.2 / DC §5.2). Mode-specific meaning goes in the "What to do"
+# paragraph or per-sheet notes — never by rewording this key.
+UNIVERSAL_COLOR_KEY = [
+    "Color key (identical in every workbook this tool builds):",
+    "  Green  = proposed value, HIGH confidence (2+ independent sources, or one "
+    "primary/regulatory source carrying the value verbatim)",
+    "  Yellow = proposed value, MEDIUM confidence (entity-level corroboration; "
+    "some detail implied or contested)",
+    "  Red    = proposed value, LOW confidence — review before accepting",
+    "  Peach  = the cell's existing backend [ref] is involved: preserved-and-appended "
+    "(data-fill) or overridden/rewritten (ref-fill, fix) — compare before pasting",
+    "  Gray   = pre-existing backend value, untouched (context only)",
+    "  (no fill) = blank cell — see the QA_review sheet for why",
+]
+
 HEADER_FONT = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
 HEADER_ALIGN = Alignment(horizontal="left", vertical="center", wrap_text=True)
 WRAP_ALIGN = Alignment(horizontal="left", vertical="top", wrap_text=True)
@@ -216,14 +233,12 @@ def build_ref_fill(args):
         f"Candidate data fills: {len(citations.get('candidate_data_fills', []))}",
         f"Defects corrected: {len(citations.get('defects_corrected', []))}",
         "",
-        "Color coding:",
-        "  Green  = high confidence (multi-source or primary/regulatory + value verbatim)",
-        "  Yellow = medium confidence (entity-level or contested)",
-        "  Red    = low confidence / review needed",
-        "  Peach  = override of pre-existing backend [ref]",
-        "  Gray   = pre-existing backend value, untouched",
+        *UNIVERSAL_COLOR_KEY,
         "",
-        "See QA_review sheet for per-cell provenance log.",
+        "What to do with this workbook: each colored [ref] cell on backend_ref_fill is a",
+        "proposed citation for an already-filled data value. Review it (the QA_review sheet",
+        "holds the per-cell provenance log), then manually enter accepted URLs into the",
+        "backend. The backend is NEVER edited by this tool (RF §4.7).",
     ])
 
     # backend_ref_fill sheet
@@ -311,7 +326,7 @@ def build_ref_fill(args):
     out_path = _resolve_out_path(args.out, "lng_carrier_backend_ref_fill.xlsx")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out_path)
-    print(f"  Wrote {out_path}")
+    print(f"  Wrote {out_path}", file=sys.stderr)
     return out_path
 
 
@@ -383,12 +398,12 @@ def build_discovery(args):
         f"Candidate clusters: {len(payload.get('candidates', []))}",
         f"Backend status flags: {len(payload.get('backend_status_flags', []))}",
         "",
-        "Color coding (on candidate_vessels sheet):",
-        "  Green  = 2+ cross-checked sources OR 1 primary/regulatory source with value verbatim",
-        "  Yellow = entity-level confirmation; some data point implied/contested",
-        "  Red    = single source / weak corroboration — review before promoting",
+        *UNIVERSAL_COLOR_KEY,
         "",
-        "Workflow: review candidates -> approve/reject -> manually paste approved rows into backend.",
+        "What to do with this workbook: each row on candidate_vessels is a vessel (or cluster",
+        "member) found in the gap window that is NOT in the backend; its color is the cluster's",
+        "confidence. Review each candidate against the QA_review provenance log, then manually",
+        "paste approved rows into the backend. The backend is NEVER edited by this tool (RF §4.7).",
     ])
 
     # candidate_vessels sheet — mirrors the LIVE backend column order EXACTLY
@@ -467,13 +482,33 @@ def build_discovery(args):
         else:
             ws.column_dimensions[col_letter].width = 15
 
-    # QA_review sheet
+    # QA_review sheet. The per-candidate provenance log is the sheet's reason to
+    # exist — if the payload doesn't carry one, derive it from the candidates'
+    # [ref] cells so the section never silently disappears (as it did in the
+    # 2026-06-05/06-19 batches, leaving "Backend status flags" as the first title).
+    provenance = payload.get("provenance_log", [])
+    if not provenance:
+        for cand in payload.get("candidates", []):
+            urls = []
+            for h, v in cand.get("row_data", {}).items():
+                if h.endswith("[ref]") and v:
+                    for u in str(v).replace("\n", ", ").split(", "):
+                        if u.strip() and u.strip() not in urls:
+                            urls.append(u.strip())
+            provenance.append({
+                "cluster_id": cand.get("cluster_id", ""),
+                "cluster_label": cand.get("cluster_label", ""),
+                "confidence": cand.get("confidence", ""),
+                "source_urls": ", ".join(urls),
+                "notes": cand.get("discovery_notes", ""),
+            })
+
     ws_qa = wb.create_sheet("QA_review")
     qa_row = 1
     sections = [
         ("Per-candidate provenance log",
          ["cluster_id", "cluster_label", "confidence", "source_urls", "notes"],
-         payload.get("provenance_log", [])),
+         provenance),
         ("Backend status flags",
          ["row_id", "issue_type", "details", "suggested_action"],
          payload.get("backend_status_flags", [])),
@@ -504,24 +539,13 @@ def build_discovery(args):
     for col_letter in "ABCDE":
         ws_qa.column_dimensions[col_letter].width = 30
 
-    # backend_status_flags sheet (mirror of QA section 2)
-    if payload.get("backend_status_flags"):
-        ws_bsf = wb.create_sheet("backend_status_flags")
-        cols = ["row_id", "issue_type", "details", "suggested_action"]
-        for col_i, c in enumerate(cols, start=1):
-            ws_bsf.cell(row=1, column=col_i, value=c)
-        _apply_header_style(ws_bsf, 1)
-        for r_offset, item in enumerate(payload["backend_status_flags"], start=2):
-            for col_i, c in enumerate(cols, start=1):
-                ws_bsf.cell(row=r_offset, column=col_i,
-                            value=str(item.get(c, ""))).alignment = WRAP_ALIGN
-        for col_letter in "ABCD":
-            ws_bsf.column_dimensions[col_letter].width = 30
+    # (backend_status_flags used to get a mirror sheet of QA section 2; dropped —
+    # one home for the flags, inside QA_review.)
 
     out_path = _resolve_out_path(args.out, "lng_carrier_candidate_vessels.xlsx")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out_path)
-    print(f"  Wrote {out_path}")
+    print(f"  Wrote {out_path}", file=sys.stderr)
     return out_path
 
 
@@ -627,18 +651,14 @@ def build_data_fill(args):
         f"researched: {len(fills) - n_derivable})",
         f"Documented blanks (researched, not found): {len(payload.get('documented_blanks', []))}",
         "",
-        "Color coding (backend_data_fill sheet):",
-        "  Gray   = pre-existing backend value, untouched",
-        "  Green/Yellow/Red = PROPOSED fill (confidence) for a blank or 'unknown' cell",
-        "  Peach  = [ref] cell that already had URL(s): existing URL kept FIRST, "
-        "corroborator appended (never replaced)",
+        *UNIVERSAL_COLOR_KEY,
         "",
-        "'unknown' data cells are treated as blank for research; the proposed value carries a",
-        "cell comment 'prev: unknown' and the existing [ref] URL(s) are preserved (peach).",
-        "",
-        "Workflow: review proposals -> accept/reject -> manually enter accepted value + [ref] "
-        "into the backend.",
-        "The backend is NEVER edited by this tool (RF §4.7).",
+        "What to do with this workbook: each colored cell on backend_data_fill is a proposed",
+        "value + [ref] pair for a cell that was blank or 'unknown' in the backend. 'unknown'",
+        "cells are treated as blank for research; the proposed value carries a cell comment",
+        "'prev: unknown' and any existing [ref] URL(s) are preserved FIRST in the peach [ref]",
+        "cell (never replaced). Review, then manually enter accepted value + [ref] into the",
+        "backend. The backend is NEVER edited by this tool (RF §4.7).",
     ])
 
     ws = wb.create_sheet("backend_data_fill")
@@ -760,7 +780,7 @@ def build_data_fill(args):
     out_path = _resolve_out_path(args.out, "lng_carrier_data_fill.xlsx")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out_path)
-    print(f"  Wrote {out_path}")
+    print(f"  Wrote {out_path}", file=sys.stderr)
     return out_path
 
 
@@ -923,14 +943,13 @@ def build_fix(args):
         "",
         "Every corrected (value, [ref]) pair passed the §3.8 value↔ref corroboration",
         "gate: a ref stays only if its live page contains the cell's value. Refs that",
-        "named a DIFFERENT value were dropped (see QA_review). The backend is NEVER",
-        "edited by this tool (RF §4.7) — paste the corrected rows over the matching",
-        "backend rows.",
+        "named a DIFFERENT value were dropped (see QA_review).",
         "",
-        "Color coding (fix sheet):",
-        "  Green/Yellow/Red = corrected value (confidence)",
-        "  Peach = [ref] cell rewritten (corroborating refs only)",
-        "  Gray  = pre-existing cell, untouched",
+        *UNIVERSAL_COLOR_KEY,
+        "",
+        "What to do with this workbook: the fix sheet holds full corrected rows. Review the",
+        "colored corrections, then paste accepted rows over the matching backend rows (or run",
+        "the apply pipeline). The backend is NEVER edited by this tool (RF §4.7).",
     ])
 
     ws = wb.create_sheet("fix")
@@ -1031,15 +1050,26 @@ def build_fsru(args):
     backend_header = backend_rows[colmap["_header_row_idx"]]
     header_index = {h: i for i, h in enumerate(backend_header)}
 
+    # The fleet table is dated to the END of the year BEFORE the report edition
+    # ("FSRU FLEET AT THE END OF <fleet_year>" in the GIIGNL <fleet_year + 1>
+    # Annual Report). edition_year in the fleet JSON is the fleet year. Label the
+    # source ONE way everywhere so report-year/fleet-year confusion can't recur.
+    fleet_year = rec.get("edition_year")
+    if isinstance(fleet_year, int):
+        src_label = f"GIIGNL {fleet_year + 1} Annual Report (fleet as of end-{fleet_year})"
+    else:
+        src_label = "GIIGNL Annual Report"
+
     wb = Workbook()
-    build_readme(wb, f"FSRU reconciliation — GIIGNL {rec.get('edition_year')} fleet vs backend", [
+    build_readme(wb, f"FSRU reconciliation — {src_label} vs backend", [
+        f"Source: {src_label}",
         f"GIIGNL in-service FSRU fleet: {rec['fleet_count']}   |   backend FSRUs: {rec['backend_fsru_count']}",
         "",
         "Buckets (one sheet each):",
         f"  Matched_with_diffs   {s['matched']:>3}  GIIGNL FSRU already in backend as FSRU (field diffs flagged)",
         f"  Reclassify           {s['reclassify']:>3}  GIIGNL FSRU present but typed non-FSRU in backend (typing finding)",
         f"  Manual_pairing       {s['manual']:>3}  no name match; capacity+owner suggest a backend row (human pairs)",
-        f"  Candidates_to_add    {s['candidates']:>3}  in GIIGNL, absent from backend ({s['candidates_small_scale']} need FSRU-vs-small-scale review)",
+        f"  Candidates_to_add    {s['candidates']:>3}  in GIIGNL, absent from backend ({s['candidates_small_scale']} need FSRU-vs-small-scale review; green = clean add, yellow = review)",
         f"  Backend_only         {s['backend_only']:>3}  backend FSRUs absent from GIIGNL (expected: on-order/idle)",
         f"  FSU_exclusions       {s['backend_fsu']:>3}  backend FSUs (storage-only, out of scope) — known exclusions",
         f"  GIIGNL_orderbook     {s['orderbook']:>3}  GIIGNL future deliveries (Phase B reference)",
@@ -1050,8 +1080,8 @@ def build_fsru(args):
         "on every matched pair. BUILDER is informational only: for converted units",
         "GIIGNL lists the conversion yard while the backend keeps the original builder.",
         "",
-        "Color: Green = full-size gap to add / clean; Yellow = needs a human decision",
-        "(small-scale review, reclassification, manual pairing); Gray = expected non-finding.",
+        "Colors here flag bucket STATUS, not source confidence (this workbook proposes no",
+        "[ref]s) — each sheet's header note says what its colors mean.",
         "",
         "SOURCE RULE: GIIGNL is NOT citable (it is downstream of Clarksons; comparison",
         "artifact only). Every promoted value needs a primary [ref] via url_verifier.py.",
@@ -1074,10 +1104,10 @@ def build_fsru(args):
     _table_sheet(
         wb, "Summary", ["metric", "count"], summary_rows,
         widths={"A": 48, "B": 10},
-        header_note=("Headline: the tracker's coverage of GIIGNL's in-service FSRU fleet is "
-                     "essentially complete — every full-size in-service FSRU is present (a few "
-                     "mistyped/misnamed); the only genuine absences are small/power-barge units "
-                     "pending FSRU-vs-small-scale review."))
+        header_note=(f"Headline: {s['matched'] + s['reclassify'] + s['manual']} of "
+                     f"{rec['fleet_count']} GIIGNL in-service FSRUs are present in the backend "
+                     f"(matched + reclassify + manual pairing); {s['candidates']} absent, of "
+                     f"which {s['candidates_small_scale']} pend FSRU-vs-small-scale review."))
 
     # --- Candidates_to_add (backend column order) ------------------------------
     ws = wb.create_sheet("Candidates_to_add")
@@ -1168,7 +1198,9 @@ def build_fsru(args):
                  widths={"A": 24, "B": 24, "K": 26, "L": 26, "N": 22, "O": 22, "P": 30},
                  header_note=("Capacity is the join corroborator (agreed on all matches). "
                               "Builder differences are EXPECTED — GIIGNL lists the conversion "
-                              "yard / an abbreviation; the backend keeps the original builder."))
+                              "yard / an abbreviation; the backend keeps the original builder. "
+                              "Row colors: red = capacity disagrees, yellow = delivery-year or "
+                              "owner mismatch, no fill = clean match."))
 
     # --- Reclassify ------------------------------------------------------------
     rcols = ["giignl_name", "giignl_ex_names", "live_sheet_row", "backend_name",
@@ -1192,7 +1224,9 @@ def build_fsru(args):
                                  "Vessel type (check 'candidate conversion' status before changing)"),
         })
     _table_sheet(wb, "Reclassify", rcols, rrows, fills=[FILL_YELLOW] * len(rrows),
-                 widths={"A": 26, "B": 18, "D": 20, "I": 22, "J": 24, "L": 44})
+                 widths={"A": 26, "B": 18, "D": 20, "I": 22, "J": 24, "L": 44},
+                 header_note=("All rows yellow — each is a Vessel type decision a human "
+                              "must confirm before the backend is touched."))
 
     # --- Manual_pairing --------------------------------------------------------
     pcols = ["giignl_name", "live_sheet_row", "backend_name", "backend_type",
@@ -1211,7 +1245,9 @@ def build_fsru(args):
                      "the pairing and fix the backend Name."),
         })
     _table_sheet(wb, "Manual_pairing", pcols, prows, fills=[FILL_YELLOW] * len(prows),
-                 widths={"A": 24, "C": 20, "G": 20, "H": 20, "I": 60})
+                 widths={"A": 24, "C": 20, "G": 20, "H": 20, "I": 60},
+                 header_note=("All rows yellow — no name match; a human confirms (or rejects) "
+                              "each suggested pairing."))
 
     # --- Backend_only ----------------------------------------------------------
     bcols = ["live_sheet_row", "backend_name", "imo", "capacity", "delivery_year",
@@ -1223,7 +1259,9 @@ def build_fsru(args):
         "note": "GIIGNL is in-service only; verify it's not an FSU reclassification.",
     } for be in rec["backend_only"]]
     _table_sheet(wb, "Backend_only", bcols, brows, fills=[FILL_GRAY] * len(brows),
-                 widths={"B": 26, "F": 30, "G": 50})
+                 widths={"B": 26, "F": 30, "G": 50},
+                 header_note=("All rows gray — expected non-findings (GIIGNL lists in-service "
+                              "only, so on-order/idle backend FSRUs are absent by design)."))
 
     # --- FSU_exclusions --------------------------------------------------------
     fcols = ["live_sheet_row", "name", "capacity", "owner", "note"]
@@ -1234,9 +1272,10 @@ def build_fsru(args):
     } for be in rec["backend_fsu"]]
     _table_sheet(wb, "FSU_exclusions", fcols, frows, fills=[FILL_GRAY] * len(frows),
                  widths={"B": 26, "D": 24, "E": 48},
-                 header_note=("Known exclusions so they don't resurface as gaps. NOTE: the "
-                              "small-scale Candidates_to_add (e.g. Torman vs backend FSU "
-                              "'Torman II') also pend FSRU-vs-small-scale/FSU adjudication."))
+                 header_note=("All rows gray — known exclusions so they don't resurface as "
+                              "gaps. NOTE: the small-scale Candidates_to_add (e.g. Torman vs "
+                              "backend FSU 'Torman II') also pend FSRU-vs-small-scale/FSU "
+                              "adjudication."))
 
     # --- GIIGNL_orderbook (Phase B reference) ----------------------------------
     ocols = ["expected_year", "vessel_name", "storage_m3", "ccs", "owner", "builder"]
@@ -1272,7 +1311,7 @@ def build_fsru(args):
     out_path = _resolve_out_path(args.out, "lng_carrier_fsru_reconciliation.xlsx")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out_path)
-    print(f"  Wrote {out_path}")
+    print(f"  Wrote {out_path}", file=sys.stderr)
     return out_path
 
 

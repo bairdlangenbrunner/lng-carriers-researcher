@@ -1,59 +1,64 @@
-# Batch <YYYY-MM-DD> — <mode> — <scope>
+# <YYYY-MM-DD> <HHMMET> — <mode> — <scope>
 
-**SOP revs at time of batch:** RF rev XX, DC rev XX
+**SOP revs at time of batch:** <every SOP that governed this batch, e.g. RF rev 18, DC rev 8, DF rev 2, SR rev 5, FR rev 1, QC rev 1, AP rev 3 — omit the ones that didn't apply>
 
 **Backend pull:** <bytes>, <N> data rows, header row index <i>
 
 ## Scope
 
-- Rows / gap window:
-- Yards in scope:
-- Mode-specific parameters: <e.g. proposed threshold, FSRU handling>
+- Rows / gap window / target:
+- Yards in scope (if applicable):
+- Mode-specific parameters: <e.g. proposed threshold, FSRU handling, --since date, fleet table edition>
 
 ## Summary
 
-<2-3 sentences: what was filled or discovered, how many cells, how many conflicts, anything unusual>
+<2–3 sentences: what was proposed or found, headline counts, anything unusual. This is
+what gets condensed into the batch-index row in batches/README.md.>
 
-## Confidence breakdown
+## Outcome
+
+<ONE table, matched to the mode:>
+
+<ref-fill / discovery / data-fill / corroborate — confidence breakdown:>
 
 | Confidence | Count |
 |---|---|
 | Green | |
 | Yellow | |
 | Red | |
-| Blank (with §6a.9 negative log) | |
+| Blank (with §6a.9 negative log / documented blank) | |
 
-## Defects corrected
+<reconciliations (SFOC / FSRU) — bucket counts:>
 
-<List any pre-existing backend [ref] URLs that were overridden, per RF §3.0 step 3.
-Each entry: row id, field, old URL, why it was wrong, new URL.>
+| Bucket | Count |
+|---|---|
+| Matched | |
+| ... | |
 
-## Conflicts flagged for human review
+<fix / QC — check counts:>
 
-<List any backend DATA values (not [ref]s) that research suggests are wrong.
-Backend is never overwritten — these go to QA_review for the user to resolve.>
+| Check | Findings | Corrected |
+|---|---|---|
+| ... | | |
 
-## Apply & verify (docs/sops/apply.md)
+## Conflicts / escalations
 
-<Once reviewed: run batch_digest.py → apply_batch.py → apply (apply_rows.csv or
-apply_patch.gs) → verify_apply.py --pull. Record: how many proposals accepted /
-held / rejected (from decisions.csv), any conflicts resolved, and the verify result
-(landed / mismatch / missing). Commit decisions.csv + apply.json as the record.>
+<Backend DATA values research says are wrong (never overwritten — they go to QA_review),
+defects corrected (row id, field, old URL, why wrong, new URL), and any pause-and-ask
+triggers hit (CLAUDE.md "When to escalate"). Write "none" explicitly if none.>
 
-## Escalations
+## Apply status
 
-<Any pause-and-ask triggers hit? See CLAUDE.md "When to escalate".>
-
-## Sources used
-
-<Optional: rough breakdown of which tiers were used — useful for spotting
-over-reliance on a single source.>
-
-## Drive link
-
-<Paste the Google Sheets share link once the xlsx is uploaded.>
+<One of: not yet reviewed / reviewed, awaiting apply / applied + verified on <date>.
+Once applied: proposals accepted / held / rejected (from decisions.csv), conflicts
+resolved, verify result (landed / mismatch / missing), dedupe sweep result.>
 
 ## Script changes
 
-<If any scripts/*.py were modified during this batch, list them here. The commit
-will show the diff, but a one-line summary helps future-you.>
+<If any scripts/*.py were modified during this batch, list them with a one-line summary.
+Write "none" explicitly if none.>
+
+---
+
+<Free-form sections below this line: per-cluster narrative, source notes, methodology
+detail — whatever this batch needs. The sections above are the required core.>

@@ -37,17 +37,15 @@ Checks:
 """
 import argparse
 import csv
-import json
 import re
 import sys
 from collections import Counter, defaultdict
-from pathlib import Path
 
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
 from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, data_dir,
                      load_builder_facts, load_owner_facts)
-from derive_fills import parse_date
+from backend_io import load_backend, parse_date
 
 HIGH, MED, LOW = "HIGH", "MED", "LOW"
 URL_RE = re.compile(r"https?://", re.I)
@@ -392,15 +390,16 @@ def main():
     ap.add_argument("--out", default=str(work_dir() / "qc_report.csv"))
     args = ap.parse_args()
 
-    rows = list(csv.reader(open(args.backend, encoding="utf-8")))
-    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
-    header = rows[colmap["_header_row_idx"]]
-    data = rows[colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1):]
-    rid_idx = colmap["row_id"]
+    be = load_backend(args.backend)
+    header, data = be.header, be.data
+    rid_idx = be.colmap["row_id"]
 
     row_filter = None
     if args.rows:
-        lo, hi = (int(x) for x in args.rows.split("-"))
+        m = re.fullmatch(r"(\d+)-(\d+)", args.rows.strip())
+        if not m:
+            ap.error(f"--rows expects a row-id range like 1216-1217 (got {args.rows!r})")
+        lo, hi = sorted((int(m.group(1)), int(m.group(2))))
         row_filter = lambda rid: rid.isdigit() and lo <= int(rid) <= hi
 
     findings, builders_missing, owners_missing = scan(header, data, rid_idx, row_filter)

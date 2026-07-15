@@ -23,6 +23,7 @@ ONLY after out-of-band content confirmation that they carry the value.
 """
 import glob
 import json
+import sys
 from pathlib import Path
 
 from paths import work_dir
@@ -31,13 +32,19 @@ from url_verifier import corroborates
 
 def main():
     wd = work_dir()
-    base = json.loads((wd / "data_fill.json").read_text())
+    base_path = wd / "data_fill.json"
+    if not base_path.exists():
+        sys.exit(f"error: {base_path} not found — run `python scripts/derive_fills.py "
+                 "--since <YYYY-MM-DD>` (or derive_corroborate.py) first")
+    base = json.loads(base_path.read_text())
     fills = list(base.get("fills", []))
     blanks = list(base.get("documented_blanks", []))
     vlog = list(base.get("verification_log", []))
     findings = list(base.get("candidate_findings", []))
 
-    for rf in sorted(glob.glob(str(wd / "research_*.json"))):
+    research_files = [p for p in sorted(glob.glob(str(wd / "research_*.json")))
+                      if Path(p).name != "research_tasks.json"]
+    for rf in research_files:
         d = json.loads(Path(rf).read_text())
         fills += d.get("fills", [])
         blanks += d.get("documented_blanks", [])
@@ -45,7 +52,11 @@ def main():
         for k in ("candidate_findings", "conflicts", "data_conflicts"):
             findings += d.get(k, [])
         print(f"  merged {Path(rf).name}: +{len(d.get('fills', []))} fills, "
-              f"+{len(d.get('documented_blanks', []))} blanks")
+              f"+{len(d.get('documented_blanks', []))} blanks", file=sys.stderr)
+    print(f"  merged {len(research_files)} research file(s) from {wd}", file=sys.stderr)
+    if not research_files:
+        print("  [warn] no work/research_*.json found — output will hold only the "
+              "derivable fills already in data_fill.json", file=sys.stderr)
 
     # Dedup on (row_id, field) — clusters are disjoint, but derivable + research
     # could in principle both touch a cell. Keep the first (derivable wins).
@@ -53,7 +64,7 @@ def main():
     for f in fills:
         key = (str(f["row_id"]), f.get("field", ""))
         if key in seen:
-            print(f"  [warn] duplicate fill {key} dropped")
+            print(f"  [warn] duplicate fill {key} dropped", file=sys.stderr)
             continue
         seen.add(key)
         deduped.append(f)
@@ -95,7 +106,8 @@ def main():
                 # live page that does not carry this cell's value -> hard-block
                 dropped_conflict.append(u)
                 tag = f"DROP-conflict ({reason})"
-            print(f"  [verify {f['row_id']}/{f.get('field','')}={val!r}] {tag}: {u}")
+            print(f"  [verify {f['row_id']}/{f.get('field','')}={val!r}] {tag}: {u}",
+                  file=sys.stderr)
 
         for u in dropped_conflict:
             conflicts_logged += 1
@@ -157,13 +169,15 @@ def main():
     n_partial = sum(1 for f in survivors if f.get("corroboration") == "partial")
     n_full = sum(1 for f in survivors if f.get("corroboration") == "full")
     print(f"\nfinal fills: {len(survivors)}  (demoted {demoted} for losing all URLs; "
-          f"{conflicts_logged} ref(s) dropped by value↔ref gate)")
+          f"{conflicts_logged} ref(s) dropped by value↔ref gate)", file=sys.stderr)
     if n_full or n_partial:
-        print(f"corroborate: {n_full} full (>=2 survivors), {n_partial} partial (<2; IGU kept, flagged)")
+        print(f"corroborate: {n_full} full (>=2 survivors), {n_partial} partial (<2; IGU kept, flagged)",
+              file=sys.stderr)
     print(f"documented_blanks: {len(blanks)}  candidate_findings: {len(findings)}  "
-          f"verify_log: {len(vlog)}")
+          f"verify_log: {len(vlog)}", file=sys.stderr)
     if conflicts_logged:
-        print(f"  ⚠ {conflicts_logged} value↔ref conflict(s) logged to candidate_findings — review before build")
+        print(f"  ⚠ {conflicts_logged} value↔ref conflict(s) logged to candidate_findings "
+              "— review before build", file=sys.stderr)
 
 
 if __name__ == "__main__":

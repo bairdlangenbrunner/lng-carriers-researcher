@@ -9,8 +9,13 @@ hard-coding offsets.
 
 Usage:
     python pull_backend.py                          # default output path
-    python pull_backend.py --out /tmp/backend.csv   # custom path
+    python pull_backend.py --out work/backend.csv   # custom path
     python pull_backend.py --map-only               # just print column indices
+    python pull_backend.py --url <csv-export-url>   # pull a different sheet
+
+The backend URL defaults to this project's Google Sheet (public CSV export,
+no credentials). To point the pipeline at a different sheet, pass --url or
+set the LNGCT_BACKEND_URL environment variable.
 
 Output:
     <repo_root>/work/backend.csv (or specified path)
@@ -19,19 +24,22 @@ Output:
 import argparse
 import csv
 import json
-import re
-import subprocess
+import os
 import sys
 from pathlib import Path
 
+from fetch import FetchError, download
 from paths import backend_csv_path
 
 
-BACKEND_CSV_URL = (
+DEFAULT_BACKEND_CSV_URL = (
     "https://docs.google.com/spreadsheets/d/"
     "1FjjeQD8AlQ_kQAMrohA3jAV3yZy7Lb61djt25D-4Fh8/"
     "export?format=csv&gid=243795339"
 )
+
+# Back-compat alias (older scripts/docs referenced this name)
+BACKEND_CSV_URL = DEFAULT_BACKEND_CSV_URL
 
 
 # Columns we care about — keyed by canonical short name, value is the
@@ -71,22 +79,10 @@ EXPECTED_COLUMNS = {
 }
 
 
-def fetch_csv(out_path: str) -> None:
+def fetch_csv(out_path: str, url: str = DEFAULT_BACKEND_CSV_URL) -> None:
     """curl the public CSV export. web_fetch is blocked by Google robots.txt."""
-    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
-    result = subprocess.run(
-        ["curl", "-sL", "-A", "Mozilla/5.0", "--max-time", "60",
-         BACKEND_CSV_URL, "-o", out_path],
-        capture_output=True, text=True,
-    )
-    if result.returncode != 0:
-        raise RuntimeError(f"curl failed: {result.stderr}")
+    download(url, out_path, timeout=60, min_bytes=1000)
     size = Path(out_path).stat().st_size
-    if size < 1000:
-        raise RuntimeError(
-            f"CSV suspiciously small ({size} bytes) — check the URL and that "
-            f"the sheet is still publicly accessible."
-        )
     print(f"  Pulled {size:,} bytes to {out_path}", file=sys.stderr)
 
 
@@ -137,14 +133,22 @@ def derive_column_map(csv_path: str) -> dict:
 
 
 def main():
-    p = argparse.ArgumentParser()
+    p = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
     p.add_argument("--out", default=str(backend_csv_path()))
+    p.add_argument("--url",
+                   default=os.environ.get("LNGCT_BACKEND_URL",
+                                          DEFAULT_BACKEND_CSV_URL),
+                   help="Backend CSV export URL (default: this project's sheet; "
+                        "also settable via LNGCT_BACKEND_URL)")
     p.add_argument("--map-only", action="store_true",
                    help="Skip the fetch; just derive the map from an existing CSV")
     args = p.parse_args()
 
     if not args.map_only:
-        fetch_csv(args.out)
+        try:
+            fetch_csv(args.out, url=args.url)
+        except FetchError as e:
+            sys.exit(f"error: {e}")
 
     col_map = derive_column_map(args.out)
 
@@ -159,11 +163,13 @@ def main():
     missing = [k for k, v in col_map.items()
                if not k.startswith("_") and v is None]
     if missing:
-        print(f"\n  WARNING: {len(missing)} expected columns not found:")
+        print(f"\n  WARNING: {len(missing)} expected columns not found:",
+              file=sys.stderr)
         for k in missing:
-            print(f"    {k}  (expected header text: {EXPECTED_COLUMNS[k]!r})")
+            print(f"    {k}  (expected header text: {EXPECTED_COLUMNS[k]!r})",
+                  file=sys.stderr)
         print(f"\n  Schema may have changed — check the backend header row "
-              f"before proceeding with the batch.")
+              f"before proceeding with the batch.", file=sys.stderr)
 
     # Also save the map next to the CSV for downstream scripts
     map_path = Path(args.out).with_suffix(".colmap.json")

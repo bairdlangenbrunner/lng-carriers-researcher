@@ -12,15 +12,14 @@ The researched fills (produced by per-cluster subagents) are merged into
 work/data_fill.json later, before the §3.8 verification gate and the build.
 """
 import argparse
-import csv
 import json
-import re
+import sys
 from collections import defaultdict
-from pathlib import Path
 
+from backend_io import load_backend, parse_date  # noqa: F401 — parse_date re-exported
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner, owner_country
-from build_workbook import YARD_LOCATION_COLS, _yard_location_map_table_first
+from build_workbook import _yard_location_map_table_first
 from lookups import owner_facts, load_owner_facts
 
 # Primary researchable columns (exact backend headers) + their paired [ref].
@@ -42,27 +41,6 @@ RESEARCH_COLS = [
     ("Price", "Price [ref]"),
 ]
 
-_MONTHS = {m: i for i, m in enumerate(
-    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
-
-
-def parse_date(s):
-    """Parse M/D/YYYY, YYYY-MM-DD, or DD-Mon-YYYY into a (y, m, d) tuple; None if unparseable."""
-    s = (s or "").strip()
-    if not s:
-        return None
-    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", s)
-    if m:
-        return (int(m[3]), int(m[1]), int(m[2]))
-    m = re.match(r"(\d{4})-(\d{1,2})-(\d{1,2})", s)
-    if m:
-        return (int(m[1]), int(m[2]), int(m[3]))
-    m = re.match(r"(\d{1,2})[-\s]([A-Za-z]{3})[-\s](\d{4})", s)
-    if m:
-        return (int(m[3]), _MONTHS.get(m[2].lower(), 0), int(m[1]))
-    return None
-
-
 def _sibling_country_ref(data, owner_tag, own_i, ctry_i, ctry_ref_i):
     """A sibling row's Shipowner country/area [ref] for this owner, if any has one."""
     for r in data:
@@ -81,19 +59,38 @@ def _derivable(row_id, field, value, ref_field="", new_urls=None, note=""):
     }
 
 
+def _check_stale_research(force):
+    """Leftover work/research_*.json from a prior batch silently pollute merge_fills
+    (it globs them all — a past incident merged 6 stale files into 133 spurious fills).
+    Refuse to start a new batch over them unless --force."""
+    stale = sorted(work_dir().glob("research_*.json"))
+    stale = [p for p in stale if p.name != "research_tasks.json"]
+    if not stale:
+        return
+    names = ", ".join(p.name for p in stale)
+    if force:
+        print(f"  [warn] leaving {len(stale)} existing research file(s) in work/: {names}",
+              file=sys.stderr)
+    else:
+        sys.exit(f"error: {len(stale)} research file(s) from a prior batch in work/: {names}\n"
+                 "merge_fills.py merges EVERY work/research_*.json, so stale ones corrupt "
+                 "the new batch.\nDelete them (rm work/research_*.json) or pass --force to "
+                 "keep them on purpose.")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", required=True, help="Last updated >= this date (YYYY-MM-DD)")
     ap.add_argument("--backend", default=str(backend_csv_path()))
+    ap.add_argument("--force", action="store_true",
+                    help="proceed even if work/ holds research_*.json from a prior batch")
     args = ap.parse_args()
+    _check_stale_research(args.force)
     cut = tuple(int(x) for x in args.since.split("-"))
 
-    rows = list(csv.reader(open(args.backend, encoding="utf-8")))
-    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
-    hdr = rows[colmap["_header_row_idx"]]
-    H = {h: i for i, h in enumerate(hdr)}
-    data = rows[colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1):]
-    RID = colmap["row_id"]
+    be = load_backend(args.backend)
+    hdr, H, data = be.header, be.header_index, be.data
+    RID = be.colmap["row_id"]
     LU, OWN, CTRY, CTRY_REF = H["Last updated"], H["Shipowner"], \
         H["Shipowner country/area"], H["Shipowner country/area [ref]"]
     CAP, UNITS = H["Capacity"], H["Capacity units"]
@@ -181,11 +178,12 @@ def main():
         json.dumps({"since": args.since, "clusters": research}, indent=2, ensure_ascii=False))
 
     n_cells = sum(len(x["blanks"]) + len(x["unknowns"]) for v in research.values() for x in v)
-    print(f"in-scope rows:           {len(scope_ids)}  (ids {scope_ids[0]}..{scope_ids[-1]})")
-    print(f"derivable fills:         {len(fills)}")
-    print(f"clusters needing research: {len(research)}")
-    print(f"cells needing research:  {n_cells}")
-    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json")
+    print(f"in-scope rows:           {len(scope_ids)}  (ids {scope_ids[0]}..{scope_ids[-1]})",
+          file=sys.stderr)
+    print(f"derivable fills:         {len(fills)}", file=sys.stderr)
+    print(f"clusters needing research: {len(research)}", file=sys.stderr)
+    print(f"cells needing research:  {n_cells}", file=sys.stderr)
+    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json", file=sys.stderr)
 
 
 if __name__ == "__main__":

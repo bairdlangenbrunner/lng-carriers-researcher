@@ -23,12 +23,12 @@ Output:
 import argparse
 import json
 import re
-import subprocess
 import sys
 import time
 from html import unescape
 from pathlib import Path
 
+from fetch import FetchError, download
 from paths import csb_dir
 
 
@@ -102,17 +102,7 @@ def fetch_yard_page(yard: str, page: int = 1) -> Path:
         url = url + "aORDERBOOK" + page_tokens[page]
 
     out = out_dir / f"{yard}_p{page}.html"
-    result = subprocess.run(
-        ["curl", "-sL", "-A", "Mozilla/5.0", "--max-time", "60",
-         url, "-o", str(out)],
-        capture_output=True, text=True,
-    )
-    if result.returncode != 0:
-        raise RuntimeError(f"curl failed for {yard}: {result.stderr}")
-
-    size = out.stat().st_size
-    if size < 1000:
-        raise RuntimeError(f"{yard} p{page} suspiciously small ({size} bytes)")
+    download(url, out, timeout=60, min_bytes=1000)
     return out
 
 
@@ -207,24 +197,31 @@ def main():
         p.error("Specify a yard, --all-main, --all-secondary, or --list")
 
     all_rows = []
+    ok_yards = []
     out_dir = csb_dir()
     for yard in yards:
         try:
             rows = fetch_and_parse(yard, lng_only=args.lng_only, since=args.since)
-        except Exception as e:
+        except (FetchError, RuntimeError, ValueError) as e:
             print(f"  [FAIL] {yard}: {e}", file=sys.stderr)
             continue
         out_json = out_dir / f"{yard}.json"
         out_json.write_text(json.dumps(rows, indent=2))
-        print(f"  {yard:20} {len(rows):3} rows -> {out_json}")
+        print(f"  {yard:20} {len(rows):3} rows -> {out_json}", file=sys.stderr)
         all_rows.extend(rows)
+        ok_yards.append(yard)
         if len(yards) > 1:
             time.sleep(0.5)  # be polite to CSB
 
     if len(yards) > 1:
         combined = out_dir / "combined.json"
         combined.write_text(json.dumps(all_rows, indent=2))
-        print(f"\n  Combined: {len(all_rows)} rows across {len(yards)} yards -> {combined}")
+        print(f"\n  Combined: {len(all_rows)} rows across {len(ok_yards)} yards -> {combined}",
+              file=sys.stderr)
+
+    if not ok_yards:
+        sys.exit(f"error: all {len(yards)} yard fetch(es) failed — CSB may be "
+                 f"down or blocking; see [FAIL] lines above.")
 
 
 if __name__ == "__main__":

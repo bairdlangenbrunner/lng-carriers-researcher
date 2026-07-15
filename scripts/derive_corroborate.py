@@ -25,11 +25,11 @@ propulsion, cargo/vessel type) are out of scope by design.
     python scripts/derive_corroborate.py --rows 3-22
 """
 import argparse
-import csv
 import json
+import sys
 from collections import defaultdict
-from pathlib import Path
 
+from backend_io import load_backend
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
 
@@ -57,20 +57,22 @@ def _parse_rows(spec):
 
 
 def main():
+    from derive_fills import _check_stale_research
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", required=True, help="row_id range, inclusive (e.g. 3-22)")
     ap.add_argument("--igu-url", default=IGU_URL, help="the sole-source URL to corroborate")
     ap.add_argument("--backend", default=str(backend_csv_path()))
+    ap.add_argument("--force", action="store_true",
+                    help="proceed even if work/ holds research_*.json from a prior batch")
     args = ap.parse_args()
+    _check_stale_research(args.force)
     lo, hi = _parse_rows(args.rows)
     igu = args.igu_url.strip()
 
-    rows = list(csv.reader(open(args.backend, encoding="utf-8")))
-    colmap = json.loads(Path(args.backend).with_suffix(".colmap.json").read_text())
-    hdr = rows[colmap["_header_row_idx"]]
-    H = {h: i for i, h in enumerate(hdr)}
-    data = rows[colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1):]
-    RID = colmap["row_id"]
+    be = load_backend(args.backend)
+    H, data = be.header_index, be.data
+    RID = be.colmap["row_id"]
 
     scope_ids = []
     research = defaultdict(list)
@@ -137,10 +139,11 @@ def main():
     }, indent=2, ensure_ascii=False))
 
     print(f"in-scope rows:           {len(scope_ids)}"
-          + (f"  (ids {scope_ids[0]}..{scope_ids[-1]})" if scope_ids else "  (none)"))
-    print(f"clusters needing research: {len(research)}")
-    print(f"IGU-only priority cells: {n_cells}")
-    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json")
+          + (f"  (ids {scope_ids[0]}..{scope_ids[-1]})" if scope_ids else "  (none)"),
+          file=sys.stderr)
+    print(f"clusters needing research: {len(research)}", file=sys.stderr)
+    print(f"IGU-only priority cells: {n_cells}", file=sys.stderr)
+    print(f"wrote {work_dir() / 'data_fill.json'} and research_tasks.json", file=sys.stderr)
 
 
 if __name__ == "__main__":
