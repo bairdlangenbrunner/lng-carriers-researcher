@@ -43,3 +43,6 @@ Thumbs.db
 
 # Cached CSB HTML — keep test fixtures under tests/fixtures/, but cache misc HTML
 # fetched at batch time goes in work/csb/ which is already ignored.
+
+# codegraph local index
+.codegraph/
