@@ -18,6 +18,7 @@ This file is read automatically at the start of every Claude Code session in thi
 - `data/source_roster.md` — source tier list for picking corroboration URLs.
 - `scripts/` — the Python tooling.
 - `batches/` — per-batch outputs, one directory per batch.
+- `../lng-carriers-map` — sibling repo: live FSRU/FSU fleet map (aisstream.io AIS → GitHub Actions cron → GitHub Pages). Its `data/fleet.json` is exported from this repo's `work/backend.csv` via its `tools/export_fleet.py` — re-export after fleet changes.
 
 ## Before any batch
 
@@ -278,6 +279,7 @@ existing vessel (apply.md §5a). Run standalone any time: `python scripts/dedupe
 - **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited.
 - **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in prior batches — URLs decay.
 - **Never cite GEM as a data source** — this includes `gem.wiki` and any other GEM-published page or dataset, as a `[ref]` URL or as corroboration ([ref]-Fill SOP §4.2; Forbidden lists in `docs/sops/ref_fill.md` and `data/source_roster.md`). GEM is downstream of this tracker, so citing it would be circular.
+- **Banned source: abarrelfull** (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — never use it as a reference, ever, even corroborated; it must not appear in any output or lane (Baird directive 2026-07-17, all GEM researcher projects). Chase the primary source it footnotes and cite that.
 - **Rule F applies always** — no orphan `[ref]` cells with no paired data value ([ref]-Fill SOP §4.13).
 - **Data-fill is additive to blanks/`unknown`s only.** It proposes value + verified-`[ref]` pairs for human review, never a backend edit; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (Data-fill SOP §4, §9).
 - **Always pull fresh backend CSV at the start of a batch.**

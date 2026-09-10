@@ -17,10 +17,9 @@
 
 **What we are filling.** The backend has many `[ref]` columns that sit next to corresponding data columns (e.g. `IMO number` paired with `IMO number [ref]`). The data columns are populated; many `[ref]` columns are blank. Our job is to fill blank `[ref]` cells with publicly-accessible URLs that support the data value.
 
-**Backend file.** Public CSV export of the "backend" tab:
-`https://docs.google.com/spreadsheets/d/1FjjeQD8AlQ_kQAMrohA3jAV3yZy7Lb61djt25D-4Fh8/export?format=csv&gid=243795339`
+**Backend file.** The "data - backend" tab (gid `243795339`) of spreadsheet `1FjjeQD8AlQ_kQAMrohA3jAV3yZy7Lb61djt25D-4Fh8`.
 
-`web_fetch` is blocked by Google's robots.txt for this URL; download via `bash + curl -A "Mozilla/5.0"`.
+Anonymous CSV export URLs (gviz, `/export?format=csv`, etc.) were deliberately disabled org-wide 2026-07-29 and now 401 by design. Pull via `python scripts/pull_backend.py`, which reads the tab through the authenticated `gws` CLI work profile — never via a public export URL.
 
 ---
 
@@ -58,7 +57,7 @@ Up to five sections (sections appear only when the batch produces relevant entri
 
 When the user gives a row range (e.g. "rows 1148–1167"):
 
-**3.0 BACKEND-PRIORITY (MANDATORY first step).** Always start by pulling the LATEST backend CSV from the public export URL — the user is actively editing it between batches, and existing `[ref]` URLs are often filled in. The workbook this batch produces must:
+**3.0 BACKEND-PRIORITY (MANDATORY first step).** Always start by pulling the LATEST backend CSV via `python scripts/pull_backend.py` (authenticated `gws` CLI work profile — anonymous export URLs are dead) — the user is actively editing it between batches, and existing `[ref]` URLs are often filled in. The workbook this batch produces must:
   1. Copy every existing backend `[ref]` URL verbatim into the workbook (with light-gray fill to mark "pre-existing, not researched this batch")
   2. ONLY perform new research for `[ref]` cells that are genuinely blank in the fresh backend
   3. ONLY override an existing backend `[ref]` URL when there is a specific identified defect (broken URL, wrong cluster, etc.) and the override should be flagged in `QA_review > Defects corrected` with the old URL, why it was wrong, the new URL, and the reason for replacement
@@ -524,6 +523,7 @@ This makes the blank auditable and prevents the next batch from re-searching the
 ### Forbidden
 - SFOC (any URL)
 - GEM (any URL, incl. `gem.wiki`) — excluded entirely
+- abarrelfull (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — banned outright, even corroborated (Baird directive 2026-07-17)
 - GTT standalone (always pair with non-GTT)
 
 ---
@@ -604,7 +604,7 @@ Practical reminders that aren't codified elsewhere as rules.
 
 **`web_fetch` vs `bash + curl`.** `web_fetch` doesn't send a User-Agent that chinashipbuild.com requires. Always use `curl -A "Mozilla/5.0"` for that domain.
 
-**Google Sheets CSV export.** Blocked by robots.txt for `web_fetch`. Use `curl -A "Mozilla/5.0" "URL" -o file.csv`.
+**Backend pull.** Anonymous Google Sheets CSV export URLs were deliberately disabled org-wide 2026-07-29 (401 by design) — never curl an export URL. Use `python scripts/pull_backend.py`, which reads the tab via the authenticated `gws` CLI work profile.
 
 **Don't assume non-9XXXXXX IMOs are placeholders.** The backend often has IMOs starting with 1 (e.g. 1157109). Per §9, always look these up via §6a.8 — they are typically real, indexed IMOs for newbuilds.
 

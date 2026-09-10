@@ -50,6 +50,7 @@ Authoritative version: [ref]-Fill SOP §7. This file is for picking sources at q
 - **SFOC** (any URL) — project's data origin, not a citable URL
 - **GIIGNL Annual Report** (the FSRU fleet table and any other GIIGNL table) — a **comparison artifact, not a citable `[ref]`**, same status as SFOC. GIIGNL's source line is "Clarksons Research, GIIGNL" (downstream aggregation), so its values are starting points to verify against a primary source via `url_verifier.py`, never cited directly. See `docs/sops/fsru_reconciliation.md`.
 - **GEM** (any URL, incl. `gem.wiki`) — excluded entirely (GEM is downstream of this tracker; citing it is circular)
+- **abarrelfull** (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — banned outright, even corroborated; must never appear in any output (Baird directive 2026-07-17, all GEM researcher projects). Chase the primary source it footnotes.
 - **GTT standalone** — pair with non-GTT source; GTT alone fails Rule 4.3
 
 ## English-language proxies for Korean reg filings (faster than parsing DART)
