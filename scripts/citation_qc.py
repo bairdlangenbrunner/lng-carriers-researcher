@@ -52,9 +52,9 @@ import time
 from collections import Counter, defaultdict
 from urllib.parse import urlsplit
 
+import url_verifier
 from backend_io import load_backend
 from paths import backend_csv_path, work_dir
-import url_verifier
 from url_verifier import check_url, classify, corroborates
 
 _URL_SPLIT = re.compile(r"[\s,;|]+")
@@ -140,7 +140,7 @@ def main():
     hosts = [h.strip().lower() for h in args.hosts.split(",") if h.strip()] or None
     by_url = collect(be, _parse_range(args.rows), _parse_range(args.sheet_rows), hosts)
 
-    prior = {}
+    prior, carried = {}, {}
     if args.resume:
         try:
             with open(args.out, encoding="utf-8") as f:
@@ -148,6 +148,10 @@ def main():
                     prior[row["url"]] = row
         except FileNotFoundError:
             pass
+        # Rows outside this run's selection (--hosts / --rows / --sheet-rows)
+        # are carried into the output untouched, so a filtered re-run never
+        # shrinks the sweep file.
+        carried = {u: r for u, r in prior.items() if u not in by_url}
         regrade = {v.strip() for v in args.regrade.split(",") if v.strip()}
         if regrade:
             prior = {u: r for u, r in prior.items() if r["verdict"] not in regrade}
@@ -196,6 +200,10 @@ def main():
 
     fields = ["url", "host", "verdict", "status", "reason", "final_url", "title", "is_pdf",
               "n_cells", "n_rows", "sheet_rows", "fields"]
+    if carried:
+        results.extend(carried.values())
+        print(f"carried {len(carried)} previously graded URL(s) outside this selection",
+              file=sys.stderr)
     order = {"banned": 0, "dead": 1, "blocked": 2, "ok": 3}
     results.sort(key=lambda r: (order.get(r["verdict"], 9), -int(r["n_cells"]), r["url"]))
     with open(args.out, "w", newline="", encoding="utf-8") as f:

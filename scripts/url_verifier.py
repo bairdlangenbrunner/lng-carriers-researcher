@@ -79,7 +79,7 @@ import re
 import sys
 import time
 import unicodedata
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from urllib.parse import quote, urlsplit
 
 from fetch import CHROME_UA as _DEFAULT_UA
@@ -230,7 +230,7 @@ def set_log_path(path: str | None) -> None:
 def _log(record: dict) -> None:
     if not _LOG_PATH:
         return
-    record = {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"), **record}
+    record = {"ts": datetime.now(UTC).isoformat(timespec="seconds"), **record}
     try:
         with open(_LOG_PATH, "a", encoding="utf-8") as fh:
             fh.write(json.dumps(record, ensure_ascii=False) + "\n")
@@ -249,7 +249,8 @@ def _as_page(v) -> Page:
     return Page(status=str(status), text=text or "")
 
 
-def _fetch(url: str, timeout: int = 30, ua: str = _DEFAULT_UA) -> Page:
+def _fetch(url: str, timeout: int = 30, ua: str = _DEFAULT_UA,
+           headers: dict | None = None) -> Page:
     """Fetch URL (cached per process). Returns a fetch.Page."""
     if url in _CACHE:
         return _as_page(_CACHE[url])
@@ -258,7 +259,7 @@ def _fetch(url: str, timeout: int = 30, ua: str = _DEFAULT_UA) -> Page:
         ua = _SEC_UA      # sec.gov rejects browser UAs from non-browsers
     if FETCH_DELAY:
         time.sleep(FETCH_DELAY)
-    page = fetch_page(url, timeout=timeout, ua=ua)
+    page = fetch_page(url, timeout=timeout, ua=ua, headers=headers)
     _CACHE[url] = page
     return page
 
@@ -446,19 +447,132 @@ def _title_hit(title: str, fragments, wb=()) -> str | None:
         if bad in wb:
             if re.search(r"(?<![a-z])" + re.escape(bad) + r"(?![a-z])", tl):
                 return bad
+        elif bad.strip().isdigit():
+            # A status code must stand alone: "IMO 1162403" is not a 403 and
+            # "IMO 1040447" is not a 404 (marinetraffic.org titles, 2026-09-16).
+            if re.search(r"(?<!\d)" + re.escape(bad) + r"(?!\d)", tl):
+                return bad
         elif bad in tl:
             return bad
     return None
+
+
+# Cloudflare Bot Management injects this beacon into EVERY page of a protected
+# site (marinetraffic.com's SPA shell included); it is telemetry, not a wall.
+# Real challenges live under /cdn-cgi/challenge-platform/h/... and still match.
+_CF_JSD_BEACON = "/cdn-cgi/challenge-platform/scripts/jsd/"
 
 
 def _bot_wall_body(body: str) -> str | None:
     vis = _fold(visible_text(body))
     if len(vis) > _MAX_BOTWALL_BODY:
         return None
-    low = (body or "").lower()
+    low = (body or "").lower().replace(_CF_JSD_BEACON, "/cdn-cgi/jsd-beacon/")
     for m in _BOT_BLOCK_BODY_MARKERS:
         if m in vis or m in low:
             return m
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Host adapters — single-page apps whose HTML shell carries no data
+# ---------------------------------------------------------------------------
+#
+# The vessel-tracker SPAs return a 200 shell with the vessel facts loaded by
+# XHR, so a body match on the shell can never corroborate anything. Each
+# adapter fetches the JSON the page itself calls and renders it as "key: value"
+# lines that are appended to the page text before the content check. An
+# adapter returns (extra_text, None) or (None, reason) — a reason in the dead
+# grammar ("soft-error page (...)") when the record does not exist, in the
+# blocked grammar when the API itself was walled.
+
+SHIPVAULT_API = "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/{id}"
+_SHIPVAULT_PAGE_RE = re.compile(r"^/ships/(\d+)/?$")
+# shipvault's Angular bundle sends this fixed tenant header on shipsearch calls.
+SHIPVAULT_HEADERS = {"tx": "06fa22ce-fd30-44e9-a7d3-2147d4b72d26",
+                     "Origin": "https://www.shipvault.com", "Accept": "application/json"}
+MARINETRAFFIC_COM_API = "https://www.marinetraffic.com/en/vesselDetails/vesselInfo/shipid:{id}"
+_MARINETRAFFIC_COM_RE = re.compile(r"/shipid:(\d+)")
+_MARINETRAFFIC_COM_HEADERS = {"Vessel-Image": "0", "X-Requested-With": "XMLHttpRequest"}
+
+
+def _json_body(page: Page):
+    """Parse a JSON page body; shipvault double-encodes some answers (a JSON
+    string that itself holds JSON). None when the body is not JSON."""
+    try:
+        d = json.loads(page.text)
+    except (ValueError, TypeError):
+        return None
+    if isinstance(d, str):
+        try:
+            d = json.loads(d)
+        except (ValueError, TypeError):
+            return None
+    return d
+
+
+def _render_record(rec: dict) -> str:
+    """'key: value' lines for the content matcher (nested values as JSON)."""
+    lines = []
+    for k, v in rec.items():
+        if v in (None, "", [], {}):
+            continue
+        if isinstance(v, (dict, list)):
+            v = json.dumps(v, ensure_ascii=False)
+        lines.append(f"{k}: {v}")
+    return "\n".join(lines)
+
+
+def _shipvault_adapter(url: str, page: Page) -> tuple[str | None, str | None]:
+    m = _SHIPVAULT_PAGE_RE.match(urlsplit(url).path)
+    if not m:
+        return "", None
+    uid = m.group(1)
+    api = _fetch(SHIPVAULT_API.format(id=uid), headers=SHIPVAULT_HEADERS)
+    if api.status != "200":
+        cls = "blocked: " if api.status in _BOT_BLOCK_STATUSES else ""
+        return None, f"{cls}shipvault unit {uid} API HTTP {api.status}"
+    data = _json_body(api)
+    if not isinstance(data, list) or not data or not isinstance(data[0], dict):
+        return None, f"soft-error page (shipvault unit {uid} has no record)"
+    rec = dict(data[0])
+    built, month = rec.get("built"), rec.get("month")
+    if built and month:
+        rec["delivery"] = f"{built}-{int(month):02d}"
+    page.notes.append("shipvault_api")
+    return _render_record(rec), None
+
+
+def _marinetraffic_com_adapter(url: str, page: Page) -> tuple[str | None, str | None]:
+    m = _MARINETRAFFIC_COM_RE.search(urlsplit(url).path)
+    if not m:
+        return "", None          # news pages etc. are ordinary HTML
+    sid = m.group(1)
+    api = _fetch(MARINETRAFFIC_COM_API.format(id=sid),
+                 headers={**_MARINETRAFFIC_COM_HEADERS, "Referer": url})
+    if api.status == "404":
+        return None, f"soft-error page (marinetraffic.com shipid {sid} not found)"
+    if api.status != "200":
+        cls = "blocked: " if api.status in _BOT_BLOCK_STATUSES else ""
+        return None, f"{cls}marinetraffic.com vesselInfo HTTP {api.status}"
+    data = _json_body(api)
+    if not isinstance(data, dict) or not data.get("name"):
+        return None, f"blocked: marinetraffic.com vesselInfo for shipid {sid} is not JSON"
+    page.notes.append("marinetraffic_api")
+    return _render_record(data), None
+
+
+_HOST_ADAPTERS = {
+    "shipvault.com": _shipvault_adapter,
+    "marinetraffic.com": _marinetraffic_com_adapter,
+}
+
+
+def _adapter_for(url: str):
+    host = _host(url)
+    for suffix, fn in _HOST_ADAPTERS.items():
+        if host == suffix or host.endswith("." + suffix):
+            return fn
     return None
 
 
@@ -661,6 +775,13 @@ def verify_url(url: str, expected: list[str], strict: bool = False,
                            strict, page, expected)
         if not text.strip():
             return _finish(url, False, "soft-error page (empty body)", strict, page, expected)
+        adapter = _adapter_for(url)
+        if adapter:
+            extra, err = adapter(url, page)
+            if err:
+                return _finish(url, False, err, strict, page, expected)
+            if extra:
+                text = text + "\n" + extra
 
     ok, reason = _content_check(text, expected, require_all)
     if ok and page.notes:

@@ -12,11 +12,18 @@ fails loudly instead of silently going online.
 import json
 
 import pytest
-
 import url_verifier
 from fetch import Page
-from url_verifier import (CitationError, check_url, classify, clear_cache,
-                          corroborates, url_ban_reason, value_variants, verify_url)
+from url_verifier import (
+    CitationError,
+    check_url,
+    classify,
+    clear_cache,
+    corroborates,
+    url_ban_reason,
+    value_variants,
+    verify_url,
+)
 
 
 def seed(url, status, body):
@@ -203,6 +210,20 @@ class TestSoftErrorDetection:
         # narrower case: only 'signs in'.
         seed(url, "200", _page("Signs in the market for LNG carriers", "Maran Gas"))
         assert verify_url(url, ["Maran Gas"])[0] is True
+
+    def test_status_code_fragments_need_digit_boundaries(self):
+        # marinetraffic.org titles carry the IMO: "IMO 1162403" is not a 403,
+        # "IMO 1040447" is not a 404.
+        url = "https://www.marinetraffic.org/ship-owner-manager-ism-data/SAMSUNG-2774/1162403/1"
+        seed(url, "200", _page("SAMSUNG 2774 - LNG Tanker, IMO 1162403", "IMO 1162403"))
+        assert verify_url(url, ["1162403"])[0] is True
+        url2 = "https://www.marinetraffic.org/ship-owner-manager-ism-data/LNG-PING-HU/1040447/1"
+        seed(url2, "200", _page("PING HU 3 - LNG Tanker, IMO 1040447", "Delivered"))
+        assert verify_url(url2, ["Delivered"])[0] is True
+        # a bare code still counts
+        seed(url, "200", _page("403 Forbidden", "IMO 1162403"))
+        seed_no_wayback(url)
+        assert "blocked" in verify_url(url, ["1162403"])[1]
 
     def test_incapsula_body_marker_is_blocked(self):
         url = "https://example.com/x"
@@ -495,7 +516,7 @@ class TestAuditLog:
         seed(url, "200", _page("t", "Samsung"))
         verify_url(url, ["Samsung"])
         verify_url("https://www.gem.wiki/X", ["x"])
-        recs = [json.loads(l) for l in log.read_text().splitlines()]
+        recs = [json.loads(line) for line in log.read_text().splitlines()]
         assert len(recs) == 2
         assert recs[0]["url"] == url and recs[0]["ok"] is True and recs[0]["status"] == "200"
         assert recs[1]["ok"] is False and classify(recs[1]["reason"]) == "banned"
@@ -638,3 +659,76 @@ class TestRawSourceMatching:
         assert url_verifier._page_contains(self.CSS_PAGE, "3418")
         assert url_verifier._page_contains(self.CSS_PAGE, "9975521")
         assert url_verifier._page_contains(self.CSS_PAGE, "Woodside Energy")
+
+
+class TestHostAdapters:
+    """SPA shells (shipvault.com, marinetraffic.com) are verified against the
+    JSON the page itself loads — the shell alone can never corroborate."""
+
+    SV_PAGE = "https://www.shipvault.com/ships/465056"
+    SV_API = url_verifier.SHIPVAULT_API.format(id="465056")
+    MT_PAGE = ("https://www.marinetraffic.com/en/ais/details/ships/shipid:9034461/"
+               "mmsi:636023560/imo:9953274/vessel:LIMAIL")
+    MT_API = url_verifier.MARINETRAFFIC_COM_API.format(id="9034461")
+    SHELL = _page("ShipVault", "<app-root></app-root>")
+
+    def test_shipvault_matches_against_unit_record(self):
+        seed_page(self.SV_PAGE, "200", self.SHELL, notes=["cf_impersonate"])
+        seed(self.SV_API, "200", json.dumps([{"unitid": 465056, "name": "HULL 2580",
+                                              "owner": "MITSUI OSK LINES LTD", "imo": 1140761,
+                                              "yard": "HANWHA OCEAN", "yardno": "2580",
+                                              "built": 2027, "month": 3, "events": []}]))
+        ok, reason = verify_url(self.SV_PAGE, ["HULL 2580", "MITSUI OSK", "1140761", "2027-03"])
+        assert ok and reason == "OK (cf_impersonate, shipvault_api)"
+        ok, reason = verify_url(self.SV_PAGE, ["HULL 9999"])
+        assert not ok and classify(reason) == "uncorroborated"
+
+    def test_shipvault_unknown_unit_is_dead(self):
+        seed(self.SV_PAGE, "200", self.SHELL)
+        seed(self.SV_API, "200", "[]")
+        ok, reason = verify_url(self.SV_PAGE, ["x"])
+        assert not ok and classify(reason) == "dead"
+        assert "465056" in reason
+
+    def test_shipvault_api_wall_is_blocked_not_dead(self):
+        seed(self.SV_PAGE, "200", self.SHELL)
+        seed(self.SV_API, "403", "")
+        ok, reason = verify_url(self.SV_PAGE, ["x"])
+        assert not ok and classify(reason) == "blocked"
+
+    def test_shipvault_double_encoded_json(self):
+        seed(self.SV_PAGE, "200", self.SHELL)
+        seed(self.SV_API, "200", json.dumps(json.dumps([{"name": "HULL 2580"}])))
+        assert verify_url(self.SV_PAGE, ["HULL 2580"])[0]
+
+    def test_marinetraffic_com_matches_against_vesselinfo(self):
+        seed(self.MT_PAGE, "200", _page("MarineTraffic: Global Ship Tracking", "<div id=app>"))
+        seed(self.MT_API, "200", json.dumps({"name": "LIMAIL", "imo": 9953274,
+                                             "typeSpecific": "LNG Tanker", "yearBuilt": 2025}))
+        ok, reason = verify_url(self.MT_PAGE, ["LIMAIL", "9953274", "LNG Tanker"])
+        assert ok and reason == "OK (marinetraffic_api)"
+        assert not verify_url(self.MT_PAGE, ["EVER GIVEN"])[0]
+
+    def test_marinetraffic_com_unknown_shipid_is_dead(self):
+        seed(self.MT_PAGE, "200", _page("MarineTraffic", "<div id=app>"))
+        seed(self.MT_API, "404", "")
+        ok, reason = verify_url(self.MT_PAGE, ["LIMAIL"])
+        assert not ok and classify(reason) == "dead"
+
+    def test_marinetraffic_com_news_page_has_no_adapter(self):
+        url = "https://www.marinetraffic.com/is/maritime-news/16/general/2025/12432/cnooc-story"
+        seed(url, "200", _page("CNOOC takes delivery", "<p>Greenergy Star delivered by Hudong</p>"))
+        assert verify_url(url, ["Greenergy Star"]) == (True, "OK")
+
+    def test_cloudflare_telemetry_beacon_is_not_a_wall(self):
+        # every page of a Bot-Management site carries this script; only the
+        # /h/ challenge path means a wall.
+        url = "https://www.marinetraffic.com/is/maritime-news/1/x"
+        seed(url, "200", _page("Greenergy Star delivered",
+             "<p>short</p><script>a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js'</script>"))
+        assert verify_url(url, ["Greenergy"]) == (True, "OK")
+        wall = "https://www.example.com/walled"
+        seed(wall, "200", _page("Site", "<script src='/cdn-cgi/challenge-platform/h/b/orchestrate/x'>"))
+        seed_no_wayback(wall)
+        ok, reason = verify_url(wall, ["x"])
+        assert not ok and classify(reason) == "blocked"

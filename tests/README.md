@@ -7,11 +7,12 @@ Regression tests for the scripts. Run with `pytest tests/` from the repo root (a
 | Module | Status | File |
 |---|---|---|
 | `normalize.py` | ✅ covered — builder/owner/hull canonicalization, `display_owner`, `owner_country` sibling-copy | `test_normalize.py` |
-| `url_verifier.py` | ✅ covered — the §3.8 gate (banned URL shapes, HTTP status grades, soft-error vs bot-wall titles/body markers, Wayback fallback, redirect re-check incl. slug drift, PDF text, normalised/numeric-boundary matching, §3.8c corroboration, audit log), offline via seeded `_CACHE` + a fetch stub that fails loudly on any network call | `test_url_verifier.py` |
+| `url_verifier.py` | ✅ covered — the §3.8 gate (banned URL shapes, HTTP status grades, soft-error vs bot-wall titles/body markers, Wayback fallback, redirect re-check incl. slug drift, PDF text, normalised/numeric-boundary matching, §3.8c corroboration, audit log, shipvault / marinetraffic.com host adapters), offline via seeded `_CACHE` + a fetch stub that fails loudly on any network call | `test_url_verifier.py` |
+| `fetch.py` + `cf_clearance.py` | ✅ covered — the Cloudflare escalation ladder (wall detection, `curl_cffi` impersonation, clearance-cookie retry with the cookie's own UA, one Chrome launch per host, `LNGCT_NO_BROWSER`) and the cookie store (suffix match, expiry, forget), with `_curl` / `_cffi_get` / `refresh` stubbed and the store in a temp dir | `test_fetch.py` |
 | `pull_backend.py` | ⬜ planned — needs `fixtures/backend_csv/` schema snapshots | — |
 | `csb_fetch.py` | ⬜ planned — needs `fixtures/csb/` HTML snapshots | — |
 
-The two ✅ modules are pure logic / network-free, so they're tested directly. The two ⬜ modules need captured fixtures (below) before they can be tested without hitting the network — add those when CSB or the backend schema next changes under you and you have a fresh snapshot to freeze.
+The ✅ modules are pure logic / network-free, so they're tested directly. The two ⬜ modules need captured fixtures (below) before they can be tested without hitting the network — add those when CSB or the backend schema next changes under you and you have a fresh snapshot to freeze.
 
 ## Why tests exist for this project
 

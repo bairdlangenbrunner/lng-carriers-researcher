@@ -41,7 +41,9 @@ Authoritative version: [ref]-Fill SOP §7. This file is for picking sources at q
 ## Tier 3 — Vessel databases (real IMOs and newbuilds pre-IMO)
 
 - VesselFinder
-- MarineTraffic / **marinetraffic.org** (the §6a.8 IMO tracker fallback uses this — see `scripts/imo_tracker.py`; Cloudflare-blocked from curl since mid-2026, browser-only — for 9XXXXXX IMOs prefer **vesselfinder.com** `/vessels/details/{IMO}`, which the verifier can read)
+- **shipvault.com** (`/ships/{id}` — the §6a.8 IMO tracker's first stop since 2026-09-16, see `scripts/imo_tracker.py`; open backend API, record carries hull / IMO / owner / yard / status / delivery / capacity and the verifier corroborates against it; indexes pre-delivery 1XXXXXX IMOs)
+- MarineTraffic / **marinetraffic.org** (the §6a.8 fallback for IMOs shipvault lacks; Cloudflare JS challenge cleared automatically by `scripts/fetch.py` + `cf_clearance.py`)
+- marinetraffic.com (delivered vessels with an AIS identity; verifier reads its `vesselInfo` JSON)
 - marinevesseltraffic.com
 - BalticShipping
 

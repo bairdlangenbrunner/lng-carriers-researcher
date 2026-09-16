@@ -12,6 +12,10 @@ raw FileNotFoundError.
 Library usage:
     from fetch import download, fetch_text, fetch_page, CHROME_UA, FetchError
 
+CLI (any page, through the whole ladder — use this before concluding a URL
+is unreachable):
+    python scripts/fetch.py <url> [--text | --head 2000]
+
     download(url, out_path, timeout=60)          # save body to a file
     status, body = fetch_text(url, timeout=30)   # ("200", "<html>...")
     page = fetch_page(url)                       # Page(status, text, content_type,
@@ -35,6 +39,11 @@ the terminals/pipelines verifiers' fetch layers):
     `insecure_tls` — the bytes are real, the host identity was not verified);
     a 000/empty-body response retries once WITHOUT the browser UA (a few hosts
     abort on a Chrome UA and serve curl's default fine).
+  - Cloudflare walls (2026-09-16): a firewall page retries through `curl_cffi`
+    (Chrome TLS fingerprint); a JS challenge earns a `cf_clearance` cookie via
+    a real Chrome (`cf_clearance.py`) and retries with it. Notes
+    `cf_impersonate` / `cf_clearance` record the route. See the block above
+    `_curl`.
 """
 import codecs
 import os
@@ -180,7 +189,7 @@ def _pdf_ocr(path: str, lang: str = "eng+kor+chi_sim") -> str:
     try:
         langs = subprocess.run(["tesseract", "--list-langs"], capture_output=True,
                                text=True, timeout=30).stdout.split()
-        lang = "+".join(l for l in lang.split("+") if l in langs) or "eng"
+        lang = "+".join(x for x in lang.split("+") if x in langs) or "eng"
     except (FileNotFoundError, subprocess.SubprocessError):
         lang = "eng"
     try:
@@ -252,7 +261,8 @@ def _looks_like_pdf(url: str, content_type: str, raw: bytes) -> bool:
 # The fetch
 # ---------------------------------------------------------------------------
 
-def _curl(url: str, tmp: str, timeout: int, ua: str | None, insecure: bool):
+def _curl(url: str, tmp: str, timeout: int, ua: str | None, insecure: bool,
+          headers: dict | None = None, cookie: str | None = None):
     cmd = ["curl", "-sL", "--compressed", "-o", tmp,
            "-w", "%{http_code}\t%{content_type}\t%{url_effective}",
            "--max-time", str(timeout)]
@@ -260,15 +270,133 @@ def _curl(url: str, tmp: str, timeout: int, ua: str | None, insecure: bool):
         cmd += ["-A", ua]
     if insecure:
         cmd += ["-k"]
+    for k, v in (headers or {}).items():
+        cmd += ["-H", f"{k}: {v}"]
+    if cookie:
+        cmd += ["-b", cookie]
     return subprocess.run(cmd + [url], capture_output=True, text=True,
                           timeout=timeout + 10)
 
 
-def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA) -> Page:
+# ---------------------------------------------------------------------------
+# Cloudflare walls (2026-09-16)
+# ---------------------------------------------------------------------------
+#
+# Two kinds, two answers:
+#   - the "Attention Required! | Cloudflare" firewall page (shipvault.com,
+#     marinetraffic.com) keys on the TLS fingerprint. `curl_cffi` impersonating
+#     Chrome's handshake gets HTTP 200 — no cookie, no browser.
+#   - the JS managed challenge ("Just a moment...", cf-mitigated: challenge;
+#     marinetraffic.org, marinevesseltraffic.com) needs a real browser once:
+#     cf_clearance.refresh() drives Google Chrome over DevTools, and the
+#     cf_clearance cookie it earns then works from plain curl for a year, as
+#     long as the User-Agent matches that Chrome.
+# fetch_page tries them in that order (impersonation first — no window pops),
+# once per host per process, and labels the Page notes so the verifier's OK
+# reason shows which route was used ("cf_impersonate" / "cf_clearance").
+
+_CF_WALL_STATUSES = {"403", "503", "429"}
+_CF_WALL_MARKERS = (b"just a moment", b"attention required", b"cf-mitigated",
+                    b"challenge-platform", b"cf_chl_", b"cf-chl", b"cloudflare",
+                    b"enable javascript and cookies to continue")
+# hosts where impersonation already cleared a wall this process: skip curl.
+_IMPERSONATE_HOSTS: set[str] = set()
+# hosts we already tried to earn a cookie for this process (one launch each).
+_CLEARANCE_TRIED: set[str] = set()
+_CFFI_HINTED = False
+
+
+def _is_cf_wall(status: str, raw: bytes) -> bool:
+    if status not in _CF_WALL_STATUSES:
+        return False
+    head = raw[:20000].lower()
+    return any(m in head for m in _CF_WALL_MARKERS)
+
+
+def _host(url: str) -> str:
+    from urllib.parse import urlsplit
+    try:
+        return (urlsplit(url).hostname or "").lower()
+    except ValueError:
+        return ""
+
+
+def _cffi_get(url: str, timeout: int, ua: str | None, headers: dict | None,
+              cookie: str | None):
+    """(status, content_type, final_url, raw) via curl_cffi, or None if unavailable."""
+    global _CFFI_HINTED
+    try:
+        from curl_cffi import requests as cffi_requests
+    except ImportError:
+        if not _CFFI_HINTED:
+            _CFFI_HINTED = True
+            print("  [fetch] curl_cffi not installed — Cloudflare firewall pages cannot be "
+                  "passed (pip install curl_cffi)", file=sys.stderr)
+        return None
+    hdrs = dict(headers or {})
+    if ua:
+        hdrs["User-Agent"] = ua
+    cookies = {}
+    if cookie and "=" in cookie:
+        k, v = cookie.split("=", 1)
+        cookies[k] = v
+    try:
+        r = cffi_requests.get(url, impersonate="chrome", headers=hdrs, cookies=cookies,
+                              timeout=timeout, allow_redirects=True)
+    except Exception as e:  # transport / TLS / timeout
+        print(f"  [fetch] curl_cffi error for {url}: {e}", file=sys.stderr)
+        return None
+    return (str(r.status_code), (r.headers.get("content-type") or "").lower(),
+            str(r.url or ""), r.content or b"")
+
+
+def _clearance_cookie(url: str) -> tuple[str | None, str | None]:
+    """(cookie header value, UA it was earned with) from the cf_clearance store."""
+    try:
+        from cf_clearance import cookie_for
+    except ImportError:
+        return None, None
+    hit = cookie_for(url)
+    if not hit:
+        return None, None
+    value, ua = hit
+    return f"cf_clearance={value}", (ua or None)
+
+
+def _earn_clearance(url: str) -> tuple[str | None, str | None]:
+    """Launch Chrome once for this host to earn a cf_clearance cookie."""
+    host = _host(url)
+    if host in _CLEARANCE_TRIED:
+        return None, None
+    _CLEARANCE_TRIED.add(host)
+    try:
+        from cf_clearance import ClearanceError, browser_allowed, forget, refresh
+    except ImportError:
+        return None, None
+    if not browser_allowed():
+        print(f"  [fetch] {host}: Cloudflare challenge; browser refresh disabled "
+              f"(LNGCT_NO_BROWSER)", file=sys.stderr)
+        return None, None
+    forget(url)
+    print(f"  [fetch] {host}: Cloudflare challenge — opening Chrome to clear it",
+          file=sys.stderr)
+    try:
+        refresh([url])
+    except ClearanceError as e:
+        print(f"  [fetch] {host}: clearance failed: {e}", file=sys.stderr)
+        return None, None
+    return _clearance_cookie(url)
+
+
+def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
+               headers: dict | None = None) -> Page:
     """
     Fetch `url` and return a Page. HTTP errors are reported in `status`
     ("404", "000" when curl couldn't connect), never raised — callers like the
     §3.8 gate turn them into (False, reason). Only a missing curl binary raises.
+
+    `headers` are extra request headers (a host's JSON API may need them).
+    Cloudflare walls are escalated automatically — see the block above _curl.
 
     The body lands in a private temp file that is always cleaned up. A fixed
     filename would let concurrent verifier runs (parallel subagents in one
@@ -279,42 +407,36 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA) -> Page:
     os.close(fd)
     notes: list[str] = []
     status, content_type, final_url, raw = "000", "", "", b""
+    host = _host(url)
+    cookie, cookie_ua = _clearance_cookie(url)
+    if cookie:
+        ua = cookie_ua or ua          # the cookie is only honoured with its own UA
     try:
-        # attempt 1: browser UA; attempt 2: same but -k after an SSL failure;
-        # attempt 3: no UA after a transport failure / empty body.
-        attempts = [(ua, False)]
-        while attempts:
-            cur_ua, insecure = attempts.pop(0)
-            try:
-                result = _curl(url, tmp, timeout, cur_ua, insecure)
-            except subprocess.TimeoutExpired:
-                status = "000"
-                break
-            parts = (result.stdout or "").split("\t")
-            status = (parts[0].strip() if parts and parts[0].strip() else "000")
-            content_type = parts[1].strip().lower() if len(parts) > 1 else ""
-            final_url = parts[2].strip() if len(parts) > 2 else ""
-            try:
-                raw = Path(tmp).read_bytes()
-            except OSError:
-                raw = b""
-            if result.returncode == 0 and (raw or status not in ("000", "")):
-                if insecure:
-                    notes.append("insecure_tls")
-                if cur_ua is None:
-                    notes.append("no_ua_retry")
-                break
-            err = (result.stderr or "").strip()
-            if result.returncode in _CURL_SSL_EXITS and not insecure:
-                attempts.append((cur_ua, True))
-                continue
-            if status in ("000", "") and cur_ua is not None:
-                attempts.append((None, insecure))
-                continue
-            if err:
-                # Surface the failure instead of silently treating it as an
-                # empty page (the old behavior masked DNS/TLS errors).
-                print(f"  [fetch] curl error for {url}: {err}", file=sys.stderr)
+        if host in _IMPERSONATE_HOSTS:
+            got = _cffi_get(url, timeout, ua, headers, cookie)
+            if got and not _is_cf_wall(got[0], got[3]):
+                status, content_type, final_url, raw = got
+                notes.append("cf_impersonate")
+            else:
+                _IMPERSONATE_HOSTS.discard(host)     # the wall changed; run the full ladder
+        if not notes:
+            status, content_type, final_url, raw = _curl_attempts(
+                url, tmp, timeout, ua, headers, cookie, notes)
+            if _is_cf_wall(status, raw):
+                # 1. TLS-fingerprint impersonation (no window, no cookie).
+                got = _cffi_get(url, timeout, ua, headers, cookie)
+                if got and not _is_cf_wall(got[0], got[3]):
+                    status, content_type, final_url, raw = got
+                    notes.append("cf_impersonate")
+                    _IMPERSONATE_HOSTS.add(host)
+                else:
+                    # 2. JS challenge: earn a cf_clearance cookie with real Chrome.
+                    cookie, cookie_ua = _earn_clearance(url)
+                    if cookie:
+                        status, content_type, final_url, raw = _curl_attempts(
+                            url, tmp, timeout, cookie_ua or ua, headers, cookie, notes)
+            if cookie and status == "200":
+                notes.append("cf_clearance")
 
         is_pdf = _looks_like_pdf(url, content_type, raw)
         if is_pdf and raw[:5] != b"%PDF-" and raw.lstrip()[:1] == b"<":
@@ -323,6 +445,7 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA) -> Page:
             # / bot-wall checks can see it.
             is_pdf = False
         if is_pdf:
+            Path(tmp).write_bytes(raw)
             text, pdf_notes = pdf_text(tmp)
             notes.extend(pdf_notes)
         else:
@@ -336,10 +459,51 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA) -> Page:
             pass
 
 
-def fetch_text(url: str, *, timeout: int = 30,
-               ua: str = CHROME_UA) -> tuple[str, str]:
+def _curl_attempts(url: str, tmp: str, timeout: int, ua: str | None,
+                   headers: dict | None, cookie: str | None,
+                   notes: list[str]) -> tuple[str, str, str, bytes]:
+    """The curl retry ladder: browser UA; -k after an SSL failure; no UA after
+    a transport failure / empty body. Returns (status, content_type, final_url, raw)."""
+    status, content_type, final_url, raw = "000", "", "", b""
+    attempts = [(ua, False)]
+    while attempts:
+        cur_ua, insecure = attempts.pop(0)
+        try:
+            result = _curl(url, tmp, timeout, cur_ua, insecure, headers, cookie)
+        except subprocess.TimeoutExpired:
+            return "000", "", "", b""
+        parts = (result.stdout or "").split("\t")
+        status = (parts[0].strip() if parts and parts[0].strip() else "000")
+        content_type = parts[1].strip().lower() if len(parts) > 1 else ""
+        final_url = parts[2].strip() if len(parts) > 2 else ""
+        try:
+            raw = Path(tmp).read_bytes()
+        except OSError:
+            raw = b""
+        if result.returncode == 0 and (raw or status not in ("000", "")):
+            if insecure:
+                notes.append("insecure_tls")
+            if cur_ua is None:
+                notes.append("no_ua_retry")
+            break
+        err = (result.stderr or "").strip()
+        if result.returncode in _CURL_SSL_EXITS and not insecure:
+            attempts.append((cur_ua, True))
+            continue
+        if status in ("000", "") and cur_ua is not None:
+            attempts.append((None, insecure))
+            continue
+        if err:
+            # Surface the failure instead of silently treating it as an
+            # empty page (the old behavior masked DNS/TLS errors).
+            print(f"  [fetch] curl error for {url}: {err}", file=sys.stderr)
+    return status, content_type, final_url, raw
+
+
+def fetch_text(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
+               headers: dict | None = None) -> tuple[str, str]:
     """(http_status, body_text) — the simple form. See fetch_page for the rest."""
-    p = fetch_page(url, timeout=timeout, ua=ua)
+    p = fetch_page(url, timeout=timeout, ua=ua, headers=headers)
     return p.status, p.text
 
 
@@ -347,3 +511,30 @@ def page_title(body: str) -> str:
     """Extract the <title> text of an HTML body ("" if none)."""
     m = re.search(r"<title[^>]*>([^<]+)</title>", body, re.IGNORECASE)
     return m.group(1).strip() if m else ""
+
+
+def main():
+    """CLI: fetch one URL through the whole ladder and print status, notes, body."""
+    import argparse
+    p = argparse.ArgumentParser(
+        description="Fetch a URL through the full escalation ladder (curl -> curl_cffi -> "
+                    "Chrome clearance cookie) and print what came back.")
+    p.add_argument("url")
+    p.add_argument("--text", action="store_true", help="print the body (HTML or PDF text)")
+    p.add_argument("--head", type=int, default=0, help="print only the first N body characters")
+    p.add_argument("--timeout", type=int, default=30)
+    args = p.parse_args()
+    page = fetch_page(args.url, timeout=args.timeout)
+    print(f"status: {page.status}  content-type: {page.content_type or '-'}  "
+          f"bytes: {page.raw_len}  pdf: {page.is_pdf}")
+    if page.final_url and page.final_url != args.url:
+        print(f"final url: {page.final_url}")
+    print(f"title: {page_title(page.text) or '-'}")
+    print(f"notes: {', '.join(page.notes) or '-'}")
+    if args.text or args.head:
+        body = page.text[:args.head] if args.head else page.text
+        print(body)
+
+
+if __name__ == "__main__":
+    main()

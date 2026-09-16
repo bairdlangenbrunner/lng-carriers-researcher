@@ -181,34 +181,65 @@ Run: `python scripts/citation_qc.py --delay 3` over the 2026-09-16 pull
 `--resume --regrade dead,blocked` after the verifier fixes below. Output in
 `work/citation_qc.csv` (gitignored); rows are live sheet rows.
 
-### Tally (regrade pass)
+### Tally (regrade pass, after the Cloudflare pass-through)
 
-| verdict | URLs | ref cells |
-|---|---|---|
-| ok | 288 | 14,511 |
-| blocked | 129 | 498 |
-| dead | 19 | 25 |
-| banned | 0 | 0 |
+| verdict | URLs | ref cells | before the pass-through |
+|---|---|---|---|
+| ok | 408 | 14,967 | 288 / 14,511 |
+| blocked | 7 | 40 | 129 / 498 |
+| dead | 21 | 27 | 19 / 25 |
+| banned | 0 | 0 | 0 / 0 |
 
 No GEM or abarrelfull URL is cited anywhere in the backend.
 
 ### Blocked (keep — §3.8a)
 
-All but a handful are the four Cloudflare vessel-tracker hosts:
-marinetraffic.org (55 URLs), shipvault.com (27), marinetraffic.com (20),
-marinevesseltraffic.com (9). The refs were added by the June 2026 data-fill
-and corroborate batches and passed the same verifier at HTTP 200 then; the
-sites now serve a JS managed challenge (marinetraffic.org,
-marinevesseltraffic) or an "Attention Required" firewall page (shipvault,
-marinetraffic.com) to every non-browser client, from this machine and from
-Anthropic egress alike. Wayback has no captures of the per-vessel pages.
-Treatment: keep, spot-check a sample in a browser, record
-"environment-blocked — kept". No scripted workaround (RF §6a.8 caveat).
-Remaining blocked hosts (bairdmaritime challenge platform, seatrade-maritime,
-trusteddocks, chantiers-atlantique HTTP 418, businesstoday.com.my, dnv,
-bloomberg, dnb, hls.co.kr) are ordinary bot walls; same treatment.
+The four Cloudflare vessel-tracker hosts (131 URLs: marinetraffic.org 55,
+shipvault.com 27, marinetraffic.com 20, marinevesseltraffic.com 9) were the
+bulk of the 129 blocked verdicts in the first regrade. They now grade `ok`
+(130) through the fetch ladder landed the same evening (`docs/plans/
+2026-09-16_cloudflare_access.md`; RF §6a.8 Cloudflare note): shipvault and
+marinetraffic.com via `curl_cffi` TLS impersonation with the verifier's JSON
+adapters, marinetraffic.org and marinevesseltraffic via a real-Chrome
+`cf_clearance` cookie replayed by curl. The one exception is a data finding,
+not a wall (see Dead). Three marinetraffic.org pages had graded blocked/dead
+on their *titles* — "IMO 1162403" was read as a 403, "IMO 1040447" as a 404 —
+fixed in the verifier (status-code fragments now need digit boundaries).
+bairdmaritime, seatrade-maritime, trusteddocks and dnb cleared the same way.
+
+Still blocked (7 URLs / 40 cells), all ordinary bot walls or outages — keep,
+record "environment-blocked — kept":
+- jnshipyard.com.cn (HTTP 000; rows 631, 673, 711, 749, 750, 937, 938, 93…)
+  and hls.co.kr (row 695, "403 Forbidden" body): geo/WAF blocks.
+- chantiers-atlantique.com (HTTP 418; rows 21, 25, 26, 32, 127, 131, 160):
+  its check sets no replayable cookie — needs the rendered-DOM tier if ever
+  built.
+- businesstoday.com.my (rows 1154–1156, 1177, 1178): the Chrome challenge did
+  not clear within 60 s during the sweep — retry once by hand.
+- dnv.com (rows 749, 750): Chrome clears the challenge but dnv sets no
+  `cf_clearance` cookie, so curl cannot replay it — rendered-DOM tier.
+- bloomberg.com (row 124): paywall, no Wayback capture.
+- investors.seatrium.com (row 11): Imperva 202 to curl, but a real browser
+  gets a genuine 404 — treat as **dead** in the Stream 5 fix batch.
+
+Wayback's availability API rate-limited (HTTP 429) part of the sweep; the
+"Wayback rate-limited" suffix on a reason means the fallback was not
+consulted, not that no snapshot exists.
 
 ### Dead (fix batch — Stream 5 input)
+
+- **Row 751 (Hull number [ref])**: marinevesseltraffic.com
+  `HANWHA-OCEAN-2537/…/9961398` now redirects to `MARAN-GAS-SYROS/9961398/
+  241958000` — IMO 9961398 has been delivered and named Maran Gas Syros, and the
+  hull-number slug page is gone. Re-cite the redirect target (it still carries
+  the IMO; check it shows the hull) or the shipvault record for the IMO.
+- **Row 752 (Hull number / Name / Status [ref]s)**: marinetraffic.org
+  `HANWHA-OCEAN-2538/9961403` is live but the page is now titled DANUTA
+  SIEDZIKOWNA-INKA; it corroborates Name/IMO, no longer the hull number
+  (grades `uncorroborated` for the Hull cell under §3.8c).
+- **Row 800 (Status [ref])**: marinetraffic.org `LNG-PING-HU/1040447` is live
+  (title PING HU 3) but does not contain "Delivered" — Status needs a
+  different ref.
 
 - **TradeWinds Woodside rows 1205–1219** (Status [ref], 15 cells): the URLs
   are sequential guesses `2-1-1875729` … `2-1-1875743` off the real article
