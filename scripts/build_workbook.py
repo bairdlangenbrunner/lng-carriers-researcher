@@ -826,7 +826,7 @@ def build_fix(args):
     they paste straight over the matching backend rows. The backend is NEVER
     edited here (RF §4.7).
     """
-    from url_verifier import corroborates
+    from url_verifier import classify, corroborates
 
     payload = json.loads(Path(args.fix).read_text())
     with open(args.backend, encoding="utf-8") as f:
@@ -895,13 +895,19 @@ def build_fix(args):
                 url = ref["url"] if isinstance(ref, dict) else ref
                 soft = bool(ref.get("soft")) if isinstance(ref, dict) else False
                 ok, reason = corroborates(url, new_value)
+                grade = classify(reason)
                 if ok:
                     kept.append(url)
-                    verdict = "PASS (corroborates)"
-                elif soft and (reason.startswith("HTTP") or "soft-error" in reason):
+                    verdict = "PASS (corroborates)" if reason == "OK" else f"PASS ({reason})"
+                elif soft and grade in ("dead", "blocked"):
                     kept.append(url)
                     verdict = f"SOFT-KEPT §3.8a ({reason}; human-confirmed off-band)"
-                elif reason.startswith("HTTP") or "soft-error" in reason:
+                elif grade == "banned":
+                    verdict = f"DROPPED — banned source ({reason})"
+                elif grade == "blocked":
+                    verdict = (f"DROPPED — blocked, not §3.8a-flagged ({reason}); "
+                               f"bot-block ≠ dead: retry or set soft:true after off-band confirm")
+                elif grade == "dead":
                     verdict = f"DROPPED — unreachable, not §3.8a-flagged ({reason})"
                 else:
                     verdict = f"DROPPED — does NOT corroborate {new_value!r} ({reason})"

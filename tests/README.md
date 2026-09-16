@@ -7,7 +7,7 @@ Regression tests for the scripts. Run with `pytest tests/` from the repo root (a
 | Module | Status | File |
 |---|---|---|
 | `normalize.py` | ✅ covered — builder/owner/hull canonicalization, `display_owner`, `owner_country` sibling-copy | `test_normalize.py` |
-| `url_verifier.py` | ✅ covered — the §3.8 gate (HTTP status, soft-error titles, content checks, strict mode), offline via seeded `_CACHE` | `test_url_verifier.py` |
+| `url_verifier.py` | ✅ covered — the §3.8 gate (banned URL shapes, HTTP status grades, soft-error vs bot-wall titles/body markers, Wayback fallback, redirect re-check incl. slug drift, PDF text, normalised/numeric-boundary matching, §3.8c corroboration, audit log), offline via seeded `_CACHE` + a fetch stub that fails loudly on any network call | `test_url_verifier.py` |
 | `pull_backend.py` | ⬜ planned — needs `fixtures/backend_csv/` schema snapshots | — |
 | `csb_fetch.py` | ⬜ planned — needs `fixtures/csb/` HTML snapshots | — |
 

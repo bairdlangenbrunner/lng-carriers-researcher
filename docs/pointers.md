@@ -45,7 +45,8 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Build workbook | RF §3.6 | Encode citations into build script |
 | QA flag conflicts | RF §3.7 | Flag any conflicts vs backend |
 | **URL verification gate** | RF §3.8 | MANDATORY before committing the batch |
-| 404 sweep of pre-existing | RF §3.8a | Distinguish dead URLs vs environment blocks |
+| Rot sweep of pre-existing refs | RF §3.8a | `citation_qc.py` → graded ok / banned / dead / blocked; **bot-block ≠ dead** — keep blocked URLs, replace dead/banned |
+| Verifier grades / banned URL shapes | RF §3.8 (rev 19 table), RF §7 Forbidden | `classify(reason)`; shorteners, navigation URLs, `web.archive.org/save/` are banned in code; PDFs verified on extracted text; Wayback fallback for blocked pages |
 
 ## Confidence labels (RF §5, current rev 12)
 
