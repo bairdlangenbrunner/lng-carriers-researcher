@@ -5311,8 +5311,8 @@
   "counts": {
     "items": 468,
     "accepted": 443,
-    "hold": 25,
-    "reject": 0,
+    "hold": 24,
+    "reject": 1,
     "conflicts": 0
   }
 }

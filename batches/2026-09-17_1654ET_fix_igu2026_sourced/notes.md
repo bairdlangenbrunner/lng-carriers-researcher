@@ -18,14 +18,14 @@ All row numbers are **live sheet rows**.
   live and is the right document — the per-vessel reading is the extractor's (`igu_fleet.py`,
   check-digit + per-page count validated). Each cell's note gives the table and PDF page.
 
-## Contents — 468 cells / 328 rows (443 accept / 25 hold)
+## Contents — 468 cells / 328 rows (443 accept / 24 hold / 1 reject)
 
 | Group | Cells | Decision |
 |---|---|---|
 | Blank Vessel type filled from IGU's Vessel Type column (74 active + 210 on order) | 284 | accept |
 | Blank Cargo type | 78 | accept |
 | Blank Propulsion type (4), Capacity (2: rows 11, 1004, + `cbm` units) | 8 | accept |
-| Vessel type Rule-F refs on rows IGU does not list (value unchanged) | 10 | 7 accept; rows 61 (open FSU question), 994, 1118 (no Capacity) hold |
+| Vessel type Rule-F refs on rows IGU does not list (value unchanged) | 10 | 7 accept; rows 994, 1118 (no Capacity) hold; row 61 **rejected** 2026-09-17 (Baird) — batch 9 (`1702ET_fix_scrapped_status`) proposes `FSU` there |
 | Names — 19 renames / sales, 5 truncated or mis-spelt backend names (88, 294, 446, 461, 584), `Vivit` 624, `Clean Sirocco` 790, `Greenergy` 780 / 781 / 915 / 916, row 909 `Fath Al Khair` | 28 | accept |
 | Names — Karadeniz restylings 11 / 20 / 29 / 39, row 785 `Al Kheesah` | 5 | hold |
 | Delivery year 2025 → 2026 on 13 active rows IGU still had on order at end-2025, + row 800, + row 929 (→ 2025) | 15 | accept |

@@ -22,7 +22,7 @@ nothing applied.
 | 5 | `2026-09-17_0505ET_ref_fill_rule_f` | Rule-F orphan `[ref]`s | 8 refs (hold), 11 negatives |
 | 6 | `2026-09-17_1114ET_shipvault_companion_refs` | existing shipvault `[ref]`s that render blank: unit-record URL appended as a second ref (values untouched) | 175 cells / 27 rows — all accept |
 | 7 | `2026-09-17_1458ET_igu_reconciliation_igu2026` | whole backend vs the IGU World LNG Report 2026 (fleet at end-2025; 2025 edition as the baseline the backend was loaded from) — IMO-keyed, IG rev 1 | comparison only, never applied: 1,054 matched, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate |
-| 8 | `2026-09-17_1654ET_fix_igu2026_sourced` | follow-up to 7: what IGU 2026 prints, as proposals citing the report PDF as sole ref (interim rule, IG §5.4) — blank Vessel / Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499–501 / 509 | 468 cells / 328 rows — 443 accept, 25 hold; 32 manual-review values |
+| 8 | `2026-09-17_1654ET_fix_igu2026_sourced` | follow-up to 7: what IGU 2026 prints, as proposals citing the report PDF as sole ref (interim rule, IG §5.4) — blank Vessel / Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499–501 / 509 | 468 cells / 328 rows — 443 accept, 24 hold, 1 reject (row 61 Vessel type ref — batch 9 proposes `FSU`); 32 manual-review values |
 | 9 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G) |
 
 Apply 1–2 before 4 (they rename rows 4 also touches; all artifacts are keyed by row_id, so

@@ -9,7 +9,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 726|Name,fill,726,,Name,Y,False,hold,hold,Karadeniz LNGT Powership Black Sea,'KLNGTP Black Sea' -> 'Karadeniz LNGT Powership Black Sea': IGU restyling of a K
 727|Name,fill,727,,Name,Y,False,hold,hold,Karadeniz LNGT Powership Marmara,'KLNGTP Marmara' -> 'Karadeniz LNGT Powership Marmara': IGU restyling of a Karad
 535|Name,fill,535,,Name,G,False,accept,accept,Arctic Vostok,renamed / restyled since the load: 'East Energy' -> IGU 2026 'Arctic Vostok' (IG
-969|Vessel type,fill,969,,Vessel type,Y,False,hold,hold,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this
+969|Vessel type,fill,969,,Vessel type,Y,False,hold,reject,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this
 1004|Name,fill,1004,,Name,G,False,accept,accept,Seapeak Jupiter,renamed / restyled since the load: 'Seapeak Hispania' -> IGU 2026 'Seapeak Jupit
 562|Name,fill,562,,Name,G,False,accept,accept,Arunika Jaya,renamed / restyled since the load: 'Energy Frontier' -> IGU 2026 'Arunika Jaya' 
 648|Name,fill,648,,Name,G,False,accept,accept,SC Serenity,renamed / restyled since the load: 'Golar Arctic' -> IGU 2026 'SC SERENITY' (IGU
