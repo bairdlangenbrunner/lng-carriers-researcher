@@ -1,0 +1,13 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+cluster:C1.1,new_row,,C1.1,,Y,False,hold,hold,,"Samsung Heavy disclosed (DART, Mon 14-Sep-2026) a contract with an unidentified "
+cluster:C1.2,new_row,,C1.2,,Y,False,hold,hold,,"Samsung Heavy disclosed (DART, Mon 14-Sep-2026) a contract with an unidentified "
+cluster:C1.3,new_row,,C1.3,,Y,False,hold,hold,,"Samsung Heavy disclosed (DART, Mon 14-Sep-2026) a contract with an unidentified "
+cluster:C1.4,new_row,,C1.4,,Y,False,hold,hold,,"Samsung Heavy disclosed (DART, Mon 14-Sep-2026) a contract with an unidentified "
+cluster:C2,new_row,,C2,,G,False,accept,accept,,"TEN Ltd's own press release (GlobeNewswire, 01-Jul-2026) announces a SECOND LNG "
+cluster:C3,new_row,,C3,,Y,False,hold,hold,,"HD Korea Shipbuilding & Offshore Engineering (HD KSOE) disclosed, alongside the "
+cluster:C4.1,new_row,,C4.1,,G,False,accept,accept,,"NEW cluster, not in baseline. ADNOC Logistics & Services ordered 4 firm 175,000 "
+cluster:C4.2,new_row,,C4.2,,G,False,accept,accept,,"NEW cluster, not in baseline. ADNOC Logistics & Services ordered 4 firm 175,000 "
+cluster:C4.3,new_row,,C4.3,,G,False,accept,accept,,"NEW cluster, not in baseline. ADNOC Logistics & Services ordered 4 firm 175,000 "
+cluster:C4.4,new_row,,C4.4,,G,False,accept,accept,,"NEW cluster, not in baseline. ADNOC Logistics & Services ordered 4 firm 175,000 "
+cluster:C5.1,new_row,,C5.1,,G,False,accept,accept,,"NEW cluster, not in baseline. ADNOC L&S exercised options for 2 more 175,000 cbm"
+cluster:C5.2,new_row,,C5.2,,G,False,accept,accept,,"NEW cluster, not in baseline. ADNOC L&S exercised options for 2 more 175,000 cbm"

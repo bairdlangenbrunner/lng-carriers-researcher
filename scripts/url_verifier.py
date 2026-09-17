@@ -835,6 +835,12 @@ _DELIVERED_PHRASES = (
     "naming and delivery", "joined the fleet", "joins the fleet", "entered service",
     "maiden voyage", "first cargo")
 
+_ORDERED_PHRASES = (
+    "on order", "has ordered", "have ordered", "ordered", "order for", "orders for", "wins order",
+    "won an order", "won orders", "secured an order", "shipbuilding contract", "newbuilding contract",
+    "contract to build", "contract for the construction", "orderbook", "order book",
+    "carrier order", "fsru order", "order at", "order of a", "order with", "under construction")
+
 _MONTHS = {a.lower(): (i + 1, a, f) for i, (a, f) in enumerate([
     ("Jan", "January"), ("Feb", "February"), ("Mar", "March"), ("Apr", "April"),
     ("May", "May"), ("Jun", "June"), ("Jul", "July"), ("Aug", "August"),
@@ -859,7 +865,8 @@ def value_variants(value) -> list[str]:
 
     # Backend hull numbers carry a yard tag the source never prints:
     # "Hull 2598 (Hanwha)" -> the page says "Hull 2598", "H2598", "hull no. 2598".
-    hm = re.match(r"^Hull\s+(\S+)\s+\(.+\)$", v, re.I)
+    # Chinese-yard hulls carry no tag at all ("Hull H2706"); same treatment.
+    hm = re.match(r"^Hull\s+(\S+)(?:\s+\(.+\))?$", v, re.I)
     if hm:
         no = hm.group(1)
         out.update({f"Hull {no}", f"hull no. {no}", f"hull number {no}", f"H{no}", f"HN{no}",
@@ -872,6 +879,12 @@ def value_variants(value) -> list[str]:
     # it writes a past-tense delivery. Future-tense ("will be delivered") must not pass.
     if v.lower() == "active":
         out.update(_DELIVERED_PHRASES)
+        return [s for s in out if s]
+
+    # Status "on order" = a firm newbuilding contract exists. Press reports the order
+    # ("has ordered", "shipbuilding contract"), never the tracker's status word.
+    if v.lower() == "on order":
+        out.update(_ORDERED_PHRASES)
         return [s for s in out if s]
 
     # Backend dates are DD-Mon-YYYY ("08-Jun-2026", "02-June-2026"); pages write

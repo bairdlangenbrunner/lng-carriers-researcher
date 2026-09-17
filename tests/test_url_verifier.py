@@ -755,3 +755,14 @@ class TestHostAdapters:
         seed_no_wayback(wall)
         ok, reason = verify_url(wall, ["x"])
         assert not ok and classify(reason) == "blocked"
+
+
+def test_status_on_order_corroborated_by_order_wording():
+    vs = [x.lower() for x in url_verifier.value_variants("on order")]
+    assert "has ordered" in vs and "shipbuilding contract" in vs
+    assert "delivered" not in vs
+
+
+def test_untagged_hull_number():
+    vs = url_verifier.value_variants("Hull H2706")
+    assert "H2706" in vs and "Hull H2706" in vs
