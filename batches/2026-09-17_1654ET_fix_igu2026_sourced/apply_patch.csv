@@ -1,0 +1,885 @@
+op,key,column,value
+set,721,Cargo type,spherical
+set,721,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,721,Propulsion type,steam
+set,721,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,721,Capacity,125000
+set,721,Capacity [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,721,Capacity units,cbm
+set,971,Name,American Energy
+set,971,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,535,Name,Arctic Vostok
+set,535,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1004,Name,Seapeak Jupiter
+set,1004,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,562,Name,Arunika Jaya
+set,562,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,648,Name,SC Serenity
+set,648,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,866,Name,Arctic Metagas
+set,866,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,686,Name,Hongkong Energy
+set,686,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,801,Name,Gas Garuda
+set,801,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,958,Name,Arctic Pioneer
+set,958,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,459,Name,LNG Soars
+set,459,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1062,Name,Blue Dragon I
+set,1062,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,869,Name,Shandong Redwood
+set,869,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,377,Name,LNGT Karadeniz
+set,377,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,437,Name,BW ENN Crystal Sky
+set,437,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,649,Name,Italis LNG
+set,649,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,729,Name,Cool Baltic
+set,729,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,467,Name,Cesi Lianyungang
+set,467,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,568,Vessel type,conventional
+set,568,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,568,Propulsion type,DFDE
+set,568,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,679,Name,Hoegh Esperanza
+set,679,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1044,Vessel type,conventional
+set,1044,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1045,Vessel type,conventional
+set,1045,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,563,Vessel type,conventional
+set,563,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,563,Propulsion type,DFDE
+set,563,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,565,Vessel type,conventional
+set,565,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,565,Propulsion type,DFDE
+set,565,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,573,Vessel type,conventional
+set,573,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,573,Propulsion type,DFDE
+set,573,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,599,Cargo type,membrane
+set,599,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,781,Vessel type,small-scale
+set,781,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,781,Propulsion type,DFDE
+set,781,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,993,Name,La Perouse
+set,993,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,559,Name,Energy Endeavour
+set,559,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1100,Name,Vivit City LNG
+set,1100,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,924,Name,Voskhod
+set,924,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,39,Vessel type,conventional
+set,39,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,39,Cargo type,membrane
+set,39,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,40,Vessel type,conventional
+set,40,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,40,Delivery year,2026
+set,40,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,41,Vessel type,conventional
+set,41,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,41,Delivery year,2026
+set,41,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,42,Vessel type,conventional
+set,42,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,42,Delivery year,2026
+set,42,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,59,Vessel type,conventional
+set,59,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,59,Cargo type,membrane
+set,59,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,93,Vessel type,conventional
+set,93,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,93,Cargo type,membrane
+set,93,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,95,Vessel type,conventional
+set,95,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,95,Cargo type,membrane
+set,95,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,97,Vessel type,conventional
+set,97,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,97,Cargo type,membrane
+set,97,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,104,Vessel type,conventional
+set,104,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,104,Cargo type,membrane
+set,104,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,105,Vessel type,conventional
+set,105,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,105,Cargo type,membrane
+set,105,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,106,Vessel type,conventional
+set,106,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,106,Cargo type,membrane
+set,106,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,106,Propulsion type,ME-GA
+set,106,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,107,Vessel type,conventional
+set,107,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,107,Cargo type,membrane
+set,107,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,110,Vessel type,conventional
+set,110,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,110,Cargo type,membrane
+set,110,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,111,Vessel type,conventional
+set,111,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,111,Cargo type,membrane
+set,111,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,112,Vessel type,conventional
+set,112,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,112,Cargo type,membrane
+set,112,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,112,Propulsion type,X-DF
+set,112,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,114,Vessel type,conventional
+set,114,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,114,Cargo type,membrane
+set,114,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,115,Vessel type,conventional
+set,115,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,115,Cargo type,membrane
+set,115,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,116,Vessel type,conventional
+set,116,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,116,Delivery year,2026
+set,116,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,117,Vessel type,conventional
+set,117,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,117,Delivery year,2026
+set,117,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,118,Vessel type,conventional
+set,118,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,118,Delivery year,2026
+set,118,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,121,Vessel type,conventional
+set,121,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,121,Delivery year,2026
+set,121,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,180,Vessel type,conventional
+set,180,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,180,Cargo type,membrane
+set,180,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,182,Vessel type,conventional
+set,182,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,182,Cargo type,membrane
+set,182,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,183,Vessel type,conventional
+set,183,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,183,Delivery year,2026
+set,183,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,226,Vessel type,conventional
+set,226,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,226,Cargo type,membrane
+set,226,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,230,Vessel type,conventional
+set,230,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,230,Cargo type,membrane
+set,230,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,257,Vessel type,conventional
+set,257,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,257,Cargo type,membrane
+set,257,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,261,Vessel type,conventional
+set,261,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,261,Cargo type,membrane
+set,261,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,262,Vessel type,conventional
+set,262,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,262,Cargo type,membrane
+set,262,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,266,Vessel type,conventional
+set,266,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,266,Cargo type,membrane
+set,266,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,266,Name,Greenergy Star
+set,266,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,267,Vessel type,conventional
+set,267,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,267,Cargo type,membrane
+set,267,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,267,Name,Greenergy Moon
+set,267,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,276,Vessel type,conventional
+set,276,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,276,Cargo type,membrane
+set,276,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,277,Vessel type,conventional
+set,277,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,277,Cargo type,membrane
+set,277,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,288,Vessel type,conventional
+set,288,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,288,Cargo type,membrane
+set,288,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,371,Vessel type,conventional
+set,371,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,371,Cargo type,membrane
+set,371,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,371,Propulsion type,X-DF
+set,371,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,432,Vessel type,conventional
+set,432,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,432,Delivery year,2026
+set,432,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,445,Vessel type,conventional
+set,445,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,445,Delivery year,2026
+set,445,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,482,Vessel type,conventional
+set,482,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,482,Cargo type,membrane
+set,482,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,482,Propulsion type,ME-GA
+set,482,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,483,Vessel type,conventional
+set,483,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,483,Cargo type,membrane
+set,483,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,483,Propulsion type,ME-GA
+set,483,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,488,Vessel type,conventional
+set,488,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,488,Name,Clean Sirocco
+set,488,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,488,Delivery year,2026
+set,488,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,612,Vessel type,conventional
+set,612,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,612,Cargo type,membrane
+set,612,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,670,Vessel type,conventional
+set,670,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,670,Cargo type,membrane
+set,670,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,670,Propulsion type,X-DF
+set,670,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,671,Vessel type,conventional
+set,671,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,671,Cargo type,membrane
+set,671,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,672,Vessel type,conventional
+set,672,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,672,Cargo type,membrane
+set,672,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,676,Vessel type,conventional
+set,676,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,676,Cargo type,membrane
+set,676,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,701,Vessel type,conventional
+set,701,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,701,Cargo type,membrane
+set,701,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,703,Vessel type,icebreaker
+set,703,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,749,Vessel type,conventional
+set,749,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,749,Cargo type,membrane
+set,749,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,752,Vessel type,icebreaker
+set,752,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,797,Vessel type,conventional
+set,797,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,797,Delivery year,2026
+set,797,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,849,Vessel type,conventional
+set,849,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,849,Cargo type,membrane
+set,849,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,864,Vessel type,conventional
+set,864,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,864,Cargo type,membrane
+set,864,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,885,Vessel type,conventional
+set,885,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,885,Cargo type,membrane
+set,885,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,915,Vessel type,conventional
+set,915,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,915,Cargo type,membrane
+set,915,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,916,Vessel type,icebreaker
+set,916,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,917,Vessel type,icebreaker
+set,917,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,927,Vessel type,conventional
+set,927,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,927,Cargo type,membrane
+set,927,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,933,Vessel type,conventional
+set,933,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,933,Cargo type,membrane
+set,933,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,934,Vessel type,conventional
+set,934,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,934,Cargo type,membrane
+set,934,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,939,Vessel type,conventional
+set,939,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,939,Cargo type,membrane
+set,939,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,972,Vessel type,conventional
+set,972,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,972,Cargo type,membrane
+set,972,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,981,Vessel type,icebreaker
+set,981,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,994,Vessel type,conventional
+set,994,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,994,Delivery year,2026
+set,994,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,995,Vessel type,conventional
+set,995,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,996,Vessel type,conventional
+set,996,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,996,Delivery year,2026
+set,996,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,997,Vessel type,conventional
+set,997,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,997,Cargo type,membrane
+set,997,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1091,Vessel type,conventional
+set,1091,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1091,Cargo type,membrane
+set,1091,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1096,Vessel type,conventional
+set,1096,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1096,Cargo type,membrane
+set,1096,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1098,Vessel type,conventional
+set,1098,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1098,Cargo type,membrane
+set,1098,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1107,Vessel type,conventional
+set,1107,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1107,Cargo type,membrane
+set,1107,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1111,Vessel type,conventional
+set,1111,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1111,Cargo type,membrane
+set,1111,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1132,Vessel type,conventional
+set,1132,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1132,Cargo type,membrane
+set,1132,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1143,Vessel type,icebreaker
+set,1143,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,43,Vessel type,conventional
+set,43,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,43,Cargo type,membrane
+set,43,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,43,Propulsion type,ME-GA
+set,43,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,44,Vessel type,conventional
+set,44,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,44,Cargo type,membrane
+set,44,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,44,Capacity,174000
+set,44,Capacity [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,44,Propulsion type,ME-GA
+set,44,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,45,Vessel type,conventional
+set,45,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,47,Vessel type,conventional
+set,47,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,47,Cargo type,membrane
+set,47,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,48,Vessel type,conventional
+set,48,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,48,Cargo type,membrane
+set,48,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,49,Vessel type,conventional
+set,49,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,50,Vessel type,conventional
+set,50,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,51,Vessel type,conventional
+set,51,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,52,Vessel type,conventional
+set,52,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,53,Vessel type,conventional
+set,53,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,53,Cargo type,membrane
+set,53,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,54,Vessel type,conventional
+set,54,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,54,Cargo type,membrane
+set,54,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,55,Vessel type,conventional
+set,55,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,55,Cargo type,membrane
+set,55,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,56,Vessel type,conventional
+set,56,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,56,Cargo type,membrane
+set,56,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,57,Vessel type,conventional
+set,57,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,57,Cargo type,membrane
+set,57,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,58,Vessel type,conventional
+set,58,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,60,Vessel type,conventional
+set,60,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,61,Vessel type,conventional
+set,61,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,62,Vessel type,conventional
+set,62,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,63,Vessel type,conventional
+set,63,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,64,Vessel type,conventional
+set,64,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,65,Vessel type,conventional
+set,65,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,66,Vessel type,conventional
+set,66,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,67,Vessel type,conventional
+set,67,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,68,Vessel type,conventional
+set,68,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,69,Vessel type,conventional
+set,69,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,71,Vessel type,conventional
+set,71,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,109,Vessel type,conventional
+set,109,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,113,Vessel type,conventional
+set,113,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,113,Cargo type,membrane
+set,113,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,119,Vessel type,conventional
+set,119,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,120,Vessel type,conventional
+set,120,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,122,Vessel type,conventional
+set,122,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,123,Vessel type,conventional
+set,123,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,129,Vessel type,conventional
+set,129,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,130,Vessel type,conventional
+set,130,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,131,Vessel type,conventional
+set,131,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,132,Vessel type,conventional
+set,132,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,137,Vessel type,conventional
+set,137,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,141,Vessel type,conventional
+set,141,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,144,Vessel type,conventional
+set,144,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,145,Vessel type,conventional
+set,145,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,162,Vessel type,conventional
+set,162,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,181,Vessel type,conventional
+set,181,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,181,Cargo type,membrane
+set,181,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,184,Vessel type,conventional
+set,184,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,185,Vessel type,conventional
+set,185,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,186,Vessel type,conventional
+set,186,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,187,Vessel type,conventional
+set,187,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,188,Vessel type,conventional
+set,188,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,189,Vessel type,conventional
+set,189,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,189,Cargo type,membrane
+set,189,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,190,Vessel type,conventional
+set,190,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,190,Cargo type,membrane
+set,190,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,191,Vessel type,conventional
+set,191,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,192,Vessel type,conventional
+set,192,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,193,Vessel type,conventional
+set,193,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,194,Vessel type,conventional
+set,194,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,195,Vessel type,conventional
+set,195,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,196,Vessel type,FSRU
+set,196,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,197,Vessel type,conventional
+set,197,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,231,Vessel type,conventional
+set,231,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,232,Vessel type,conventional
+set,232,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,232,Cargo type,membrane
+set,232,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,233,Vessel type,conventional
+set,233,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,233,Cargo type,membrane
+set,233,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,235,Vessel type,conventional
+set,235,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,236,Vessel type,conventional
+set,236,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,237,Vessel type,conventional
+set,237,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,238,Vessel type,conventional
+set,238,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,241,Vessel type,conventional
+set,241,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,251,Vessel type,conventional
+set,251,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,252,Vessel type,conventional
+set,252,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,263,Vessel type,conventional
+set,263,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,263,Cargo type,membrane
+set,263,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,263,Name,Fath Al Khair
+set,263,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,264,Vessel type,conventional
+set,264,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,264,Cargo type,membrane
+set,264,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,265,Vessel type,conventional
+set,265,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,265,Cargo type,membrane
+set,265,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,268,Vessel type,conventional
+set,268,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,269,Vessel type,conventional
+set,269,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,270,Vessel type,conventional
+set,270,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,271,Vessel type,conventional
+set,271,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,271,Name,Greenergy Sea
+set,271,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,272,Vessel type,conventional
+set,272,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,272,Name,Greenergy Whale
+set,272,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,273,Vessel type,conventional
+set,273,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,274,Vessel type,conventional
+set,274,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,275,Vessel type,conventional
+set,275,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,278,Vessel type,conventional
+set,278,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,279,Vessel type,conventional
+set,279,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,281,Vessel type,conventional
+set,281,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,289,Vessel type,conventional
+set,289,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,318,Vessel type,conventional
+set,318,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,319,Vessel type,conventional
+set,319,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,324,Vessel type,conventional
+set,324,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,372,Vessel type,conventional
+set,372,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,372,Cargo type,membrane
+set,372,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,373,Vessel type,conventional
+set,373,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,375,Vessel type,icebreaker
+set,375,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,375,Cargo type,membrane
+set,375,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,375,Status,active
+set,375,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,375,Delivery year,2025
+set,375,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,384,Vessel type,conventional
+set,384,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,386,Vessel type,conventional
+set,386,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,476,Vessel type,conventional
+set,476,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,515,Vessel type,conventional
+set,515,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,516,Vessel type,conventional
+set,516,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,517,Vessel type,conventional
+set,517,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,674,Vessel type,conventional
+set,674,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,674,Cargo type,membrane
+set,674,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,674,Propulsion type,X-DF
+set,674,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,708,Vessel type,conventional
+set,708,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,708,Cargo type,membrane
+set,708,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,709,Vessel type,conventional
+set,709,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,710,Vessel type,conventional
+set,710,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,714,Vessel type,conventional
+set,714,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,714,Cargo type,membrane
+set,714,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,976,Vessel type,conventional
+set,976,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,976,Cargo type,membrane
+set,976,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,976,Propulsion type,ME-GA
+set,976,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,978,Vessel type,conventional
+set,978,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,73,Vessel type,conventional
+set,73,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,76,Vessel type,conventional
+set,76,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,99,Vessel type,conventional
+set,99,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,100,Vessel type,conventional
+set,100,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,124,Vessel type,conventional
+set,124,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,125,Vessel type,conventional
+set,125,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,126,Vessel type,conventional
+set,126,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,127,Vessel type,conventional
+set,127,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,128,Vessel type,conventional
+set,128,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,135,Vessel type,conventional
+set,135,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,147,Vessel type,conventional
+set,147,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,156,Vessel type,conventional
+set,156,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,157,Vessel type,conventional
+set,157,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,198,Vessel type,conventional
+set,198,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,199,Vessel type,conventional
+set,199,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,200,Vessel type,conventional
+set,200,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,201,Vessel type,conventional
+set,201,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,202,Vessel type,conventional
+set,202,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,203,Vessel type,conventional
+set,203,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,204,Vessel type,conventional
+set,204,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,207,Vessel type,conventional
+set,207,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,208,Vessel type,conventional
+set,208,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,209,Vessel type,conventional
+set,209,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,210,Vessel type,conventional
+set,210,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,211,Vessel type,conventional
+set,211,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,212,Vessel type,conventional
+set,212,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,213,Vessel type,conventional
+set,213,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,214,Vessel type,conventional
+set,214,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,215,Vessel type,conventional
+set,215,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,216,Vessel type,conventional
+set,216,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,217,Vessel type,conventional
+set,217,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,218,Vessel type,conventional
+set,218,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,219,Vessel type,conventional
+set,219,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,220,Vessel type,conventional
+set,220,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,221,Vessel type,conventional
+set,221,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,239,Vessel type,conventional
+set,239,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,240,Vessel type,conventional
+set,240,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,242,Vessel type,conventional
+set,242,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,243,Vessel type,conventional
+set,243,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,248,Vessel type,conventional
+set,248,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,249,Vessel type,conventional
+set,249,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,253,Vessel type,conventional
+set,253,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,254,Vessel type,conventional
+set,254,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,255,Vessel type,conventional
+set,255,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,256,Vessel type,conventional
+set,256,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,258,Vessel type,conventional
+set,258,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,259,Vessel type,conventional
+set,259,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,260,Vessel type,conventional
+set,260,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,280,Vessel type,conventional
+set,280,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,387,Vessel type,conventional
+set,387,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,408,Vessel type,conventional
+set,408,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,408,Propulsion type,X-DF
+set,408,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,408,Capacity,174000
+set,408,Capacity [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,408,Capacity units,cbm
+set,487,Vessel type,conventional
+set,487,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,489,Vessel type,conventional
+set,489,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,507,Vessel type,conventional
+set,507,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,510,Vessel type,conventional
+set,510,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,513,Vessel type,conventional
+set,513,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,514,Vessel type,conventional
+set,514,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,518,Vessel type,conventional
+set,518,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,519,Vessel type,conventional
+set,519,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,541,Vessel type,conventional
+set,541,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,541,Cargo type,membrane
+set,541,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,639,Vessel type,FSRU
+set,639,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,711,Vessel type,conventional
+set,711,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,712,Vessel type,conventional
+set,712,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,80,Vessel type,conventional
+set,80,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,81,Vessel type,conventional
+set,81,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,82,Vessel type,conventional
+set,82,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,83,Vessel type,conventional
+set,83,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,84,Vessel type,conventional
+set,84,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,85,Vessel type,conventional
+set,85,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,86,Vessel type,conventional
+set,86,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,88,Vessel type,conventional
+set,88,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,133,Vessel type,conventional
+set,133,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,134,Vessel type,conventional
+set,134,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,136,Vessel type,conventional
+set,136,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,138,Vessel type,conventional
+set,138,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,139,Vessel type,conventional
+set,139,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,140,Vessel type,conventional
+set,140,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,142,Vessel type,conventional
+set,142,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,143,Vessel type,conventional
+set,143,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,146,Vessel type,conventional
+set,146,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,148,Vessel type,conventional
+set,148,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,150,Vessel type,conventional
+set,150,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,151,Vessel type,conventional
+set,151,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,152,Vessel type,conventional
+set,152,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,153,Vessel type,conventional
+set,153,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,154,Vessel type,conventional
+set,154,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,155,Vessel type,conventional
+set,155,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,158,Vessel type,conventional
+set,158,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,159,Vessel type,conventional
+set,159,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,160,Vessel type,conventional
+set,160,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,161,Vessel type,conventional
+set,161,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,205,Vessel type,conventional
+set,205,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,206,Vessel type,conventional
+set,206,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,222,Vessel type,conventional
+set,222,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,223,Vessel type,conventional
+set,223,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,244,Vessel type,conventional
+set,244,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,245,Vessel type,conventional
+set,245,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,246,Vessel type,conventional
+set,246,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,247,Vessel type,conventional
+set,247,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,282,Vessel type,conventional
+set,282,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,283,Vessel type,conventional
+set,283,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,284,Vessel type,conventional
+set,284,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,285,Vessel type,conventional
+set,285,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,286,Vessel type,conventional
+set,286,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,287,Vessel type,conventional
+set,287,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,508,Vessel type,conventional
+set,508,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,509,Vessel type,conventional
+set,509,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,511,Vessel type,conventional
+set,511,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,512,Vessel type,conventional
+set,512,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1146,Vessel type,conventional
+set,1146,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1146,Propulsion type,ME-GI
+set,1146,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1147,Vessel type,conventional
+set,1147,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1147,Propulsion type,ME-GI
+set,1147,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1219,Vessel type,conventional
+set,1219,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1220,Vessel type,conventional
+set,1220,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1221,Vessel type,conventional
+set,1221,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1222,Vessel type,conventional
+set,1222,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1223,Vessel type,conventional
+set,1223,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf

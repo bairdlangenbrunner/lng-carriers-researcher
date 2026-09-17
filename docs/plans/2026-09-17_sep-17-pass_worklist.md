@@ -32,6 +32,7 @@ research pass. Tick items as you go. Detail behind every item is in
 | 4 | `0511ET_data_fill_on_order` | 1,003 cells / 483 rows, incl. 48 order-total Prices (all hold) | 493 / 510 |
 | 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives | 0 / 8 |
 | 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | all accept |
+| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 25, plus 32 manual-review |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 1) |
 
 Discovery candidates in batch 3: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y);
@@ -49,9 +50,10 @@ Edit the `hold` rows in each batch's `decisions.csv`, then re-run
       Equinor (1186) and Mozambique LNG slots (1187–1203) stay `proposed`. Also the
       Mozambique owner/yard split flagged in the discovery batch.
 - [ ] **Likely duplicates**: Hanwha Philly 1083 ↔ 1085 and 1132 ↔ 1086.
-- [ ] **Vessel type / Cargo type rule.** "conventional" is a tracker classification, never
-      page wording, so it can't pass the ref gate (10 Rule-F orphans; most type fills are Y).
-      Decide: let a capacity-derived type stand on the Capacity ref, or leave it unreffed.
+- [x] **Vessel type / Cargo type rule — decided 2026-09-17: cite the IGU 2026 report** (IG §5.4).
+      Batch 8 does it: IGU's Vessel Type column for listed vessels, the report's size-class scheme
+      for the 10 Rule-F orphans IGU does not list (rows 61, 994, 1118 on hold — open FSU question /
+      no Capacity). Batch 4's Y type fills on IGU-listed rows are re-proposed there as G.
 - [ ] **Price convention**: backend mixes `250` + `$m` with `250000000` + `USD`. New fills
       use full USD. (Shipvault contract prices were left unused — single-source.)
 - [ ] **`Greenenergy …` names** look wrong — shipvault and AIS both say `Greenergy`.
@@ -132,6 +134,30 @@ leads, so each accepted item needs a verified ref and goes into a follow-up `fix
   counterparts — no gap); five `active` rows IGU never listed (6, 7, 61, 487, 488 — all
   active on shipvault).
 
+## 1c. Batch 8 — IGU-2026-sourced fix (`1654ET_fix_igu2026_sourced`)
+
+Decided 2026-09-17: **what IGU 2026 prints is a sufficient sole source for now** — no second ref is
+chased. Batch 8 turns the §1b findings IGU actually prints into proposals citing the report PDF.
+Covered there (so no separate research is owed): the 13 delivery years + rows 800 / 929, the load
+corruption rows, the renames and backend name defects, `Greenergy` (780 / 781 / 915 / 916), row 909,
+rows 843 / 844, row 503, the ME-GA ↔ X-DF flips. **Not** covered: the 18 scrapped rows (IGU's
+silence is not a statement — separate fix batch with demolition refs), rows 873 / 910 spellings,
+`Maran Gas Efessos` (discovery).
+
+- [ ] **REMINDER — open decision (Baird asked to be reminded):** should IGU-2026-only cells get a
+      second reference at the ref-validation step? They are identifiable by the PDF URL being their
+      only ref. Raise at apply / next citation-QC pass / pre-release QC, whichever is first.
+- [ ] **25 holds** in `decisions.csv`: Status → `on order` + delivery year on row 814 and the six
+      Arctic LNG 2 hulls (797, 799, 805, 806, 812, 823); Vessel type row 81 → FSU and row 270 →
+      FSRU; Karadeniz restylings (11, 20, 29, 39); row 785 `Al Kheesah`; row 929 `TFDE`; rows 61 /
+      994 / 1118 Vessel type refs.
+- [ ] **`QC-max` vocabulary decision**: IGU types the 24 × 271,000 cbm QatarEnergy ships (rows
+      1070–1074, 1119–1131, 1174–1176, 1179–1181) `QC-max`; the vocabulary has no such value, so
+      their blank Vessel type is unproposed (`manual_review.json`).
+- [ ] **8 owner / builder changes** in `manual_review.json` (rows 70, 818, 819 owner; 11, 268, 567,
+      929, 941 builder) — IGU prints short labels; pick the canonical name (a builder change
+      cascades into the yard-location columns).
+
 ## 2. Apply and verify (Apply SOP, `docs/sops/apply.md`)
 
 Apply 1–2 before 4 (they rename rows 4 also touches; artifacts are keyed by row_id, so the
@@ -143,6 +169,8 @@ order is about readability, not safety).
 - [ ] Batch 4 — apply + verify
 - [ ] Batch 5 — apply + verify
 - [ ] Batch 6 — apply via `apply_patch.csv` (not full rows) + verify
+- [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
+      agree in value) + verify. After batch 6: both touch row 814's Status `[ref]`.
 - [ ] Review any HIGH/MED group in each `dedupe_report.csv` (apply.md §5a). Known MED
       pairs: Knutsen × Hanwha 1145/1146 vs 1161/1172 are different orders (Dec-2025 vs
       May-2026) and get distinct hull numbers from batch 4; Hanwha Philly is the duplicate
