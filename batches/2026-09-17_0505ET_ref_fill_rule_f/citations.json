@@ -1,0 +1,535 @@
+{
+ "batch_label": "Rule-F [ref]-fill - orphan data values with a blank [ref] (whole backend, 2026-09-17)",
+ "cells": [
+  {
+   "row_id": "415",
+   "field": "capacity_ref",
+   "url": "https://www.shipvault.com/ships/73086",
+   "confidence": "Y",
+   "note": "live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record"
+  },
+  {
+   "row_id": "663",
+   "field": "capacity_ref",
+   "url": "https://www.shipvault.com/ships/73085",
+   "confidence": "Y",
+   "note": "live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record"
+  },
+  {
+   "row_id": "969",
+   "field": "capacity_ref",
+   "url": "https://www.shipvault.com/ships/113754",
+   "confidence": "Y",
+   "note": "live row 61: Rule F fill - Capacity = '135000' corroborated by the shipvault unit record"
+  },
+  {
+   "row_id": "1044",
+   "field": "capacity_ref",
+   "url": "https://www.shipvault.com/ships/373877",
+   "confidence": "Y",
+   "note": "live row 487: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record"
+  },
+  {
+   "row_id": "1045",
+   "field": "capacity_ref",
+   "url": "https://www.shipvault.com/ships/373876",
+   "confidence": "Y",
+   "note": "live row 488: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record"
+  },
+  {
+   "row_id": "121",
+   "field": "hull_ref",
+   "url": "https://www.shipvault.com/ships/450944",
+   "confidence": "Y",
+   "note": "live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the shipvault unit record"
+  },
+  {
+   "row_id": "226",
+   "field": "hull_ref",
+   "url": "https://www.shipvault.com/ships/448545",
+   "confidence": "Y",
+   "note": "live row 775: Rule F fill - Hull number = 'Hull 8102 (HDHHI)' corroborated by the shipvault unit record"
+  },
+  {
+   "row_id": "230",
+   "field": "hull_ref",
+   "url": "https://www.shipvault.com/ships/461187",
+   "confidence": "Y",
+   "note": "live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by the shipvault unit record"
+  }
+ ],
+ "qa_log": [
+  {
+   "row_id": "415",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/73086",
+   "status": "PASS",
+   "note": "live row 6: value '126750': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "415",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/73086",
+   "status": "PASS",
+   "note": "live row 6: value '126750': OK (cf_impersonate, shipvault_api, shipvault_api)"
+  },
+  {
+   "row_id": "663",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/73085",
+   "status": "PASS",
+   "note": "live row 7: value '126750': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "663",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/73085",
+   "status": "PASS",
+   "note": "live row 7: value '126750': OK (cf_impersonate, shipvault_api, shipvault_api)"
+  },
+  {
+   "row_id": "969",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/113754",
+   "status": "PASS",
+   "note": "live row 61: value '135000': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "969",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/113754",
+   "status": "PASS",
+   "note": "live row 61: value '135000': OK (cf_impersonate, shipvault_api, shipvault_api)"
+  },
+  {
+   "row_id": "969",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/113754",
+   "status": "FAIL",
+   "note": "live row 61: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "969",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/113754",
+   "status": "FAIL",
+   "note": "live row 61: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "969",
+   "field": "Vessel type",
+   "url": "https://www.mes.co.jp/en/",
+   "status": "FAIL",
+   "note": "live row 61: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "969",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/(%E6%A0%AA)%E4%B8%89%E4%BA%95%EF%BC%A5%EF%BC%86%EF%BC%B3+%E5%8D%83%E8%91%89%E4%BA%8B%E6%A5%AD%E5%A0%B4/@35.5961305",
+   "status": "FAIL",
+   "note": "live row 61: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1044",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/373877",
+   "status": "PASS",
+   "note": "live row 487: value '174000': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "1044",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/373877",
+   "status": "PASS",
+   "note": "live row 487: value '174000': OK (cf_impersonate, shipvault_api, shipvault_api)"
+  },
+  {
+   "row_id": "1044",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/373877",
+   "status": "FAIL",
+   "note": "live row 487: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1044",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/373877",
+   "status": "FAIL",
+   "note": "live row 487: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1044",
+   "field": "Vessel type",
+   "url": "https://www.samsungshi.com/En/Default.aspx",
+   "status": "FAIL",
+   "note": "live row 487: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1044",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Samsung+Heavy+industries/data=!3m1!1e3!4m10!1m2!2m1!1ssamsung+heavy+industries!3m6!1s0x356ecd83691a8fb5:0xd4204e9a1bb0ef10!8m2!3d34.8969682!4d128.6046376!15sChhzYW1zdW5nIGhlYXZ5IGluZHVzdHJpZXOSAQhzaGlweWFyZOABAA!16s%2Fg%2F1tgcpry6?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 487: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1045",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/373876",
+   "status": "PASS",
+   "note": "live row 488: value '174000': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "1045",
+   "field": "Capacity",
+   "url": "https://www.shipvault.com/ships/373876",
+   "status": "PASS",
+   "note": "live row 488: value '174000': OK (cf_impersonate, shipvault_api, shipvault_api)"
+  },
+  {
+   "row_id": "1045",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/373876",
+   "status": "FAIL",
+   "note": "live row 488: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1045",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/373876",
+   "status": "FAIL",
+   "note": "live row 488: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1045",
+   "field": "Vessel type",
+   "url": "https://www.samsungshi.com/En/Default.aspx",
+   "status": "FAIL",
+   "note": "live row 488: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1045",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Samsung+Heavy+industries/data=!3m1!1e3!4m10!1m2!2m1!1ssamsung+heavy+industries!3m6!1s0x356ecd83691a8fb5:0xd4204e9a1bb0ef10!8m2!3d34.8969682!4d128.6046376!15sChhzYW1zdW5nIGhlYXZ5IGluZHVzdHJpZXOSAQhzaGlweWFyZOABAA!16s%2Fg%2F1tgcpry6?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 488: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1135",
+   "field": "Shipowner country/area",
+   "url": "https://www.shipvault.com/ships/452015",
+   "status": "FAIL",
+   "note": "live row 652: value 'China': page does not contain value 'China'"
+  },
+  {
+   "row_id": "1135",
+   "field": "Shipowner country/area",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "status": "PASS",
+   "note": "live row 652: value 'China': OK"
+  },
+  {
+   "row_id": "1135",
+   "field": "Shipowner country/area",
+   "url": "https://www.shipyards.gr/shipyards/new-buildings-shipyards/newbuilding-farest-pacific-ocean/newbuilding-far-east-china-sea/china-south/hudong-zhonghua-shipbuilding-group-coltd",
+   "status": "PASS",
+   "note": "live row 652: value 'China': OK"
+  },
+  {
+   "row_id": "121",
+   "field": "Hull number",
+   "url": "https://www.shipvault.com/ships/450944",
+   "status": "PASS",
+   "note": "live row 771: value 'Hull 2651 (SHI)': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "121",
+   "field": "Hull number",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "status": "FAIL",
+   "note": "live row 771: value 'Hull 2651 (SHI)': page does not contain value 'Hull 2651 (SHI)'"
+  },
+  {
+   "row_id": "121",
+   "field": "Hull number",
+   "url": "https://www.samsungshi.com/En/Default.aspx",
+   "status": "FAIL",
+   "note": "live row 771: value 'Hull 2651 (SHI)': page does not contain value 'Hull 2651 (SHI)'"
+  },
+  {
+   "row_id": "121",
+   "field": "Hull number",
+   "url": "https://www.google.com/maps/place/Samsung+Heavy+industries/data=!3m1!1e3!4m10!1m2!2m1!1ssamsung+heavy+industries!3m6!1s0x356ecd83691a8fb5:0xd4204e9a1bb0ef10!8m2!3d34.8969682!4d128.6046376!15sChhzYW1zdW5nIGhlYXZ5IGluZHVzdHJpZXOSAQhzaGlweWFyZOABAA!16s%2Fg%2F1tgcpry6?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 771: value 'Hull 2651 (SHI)': page does not contain value 'Hull 2651 (SHI)'"
+  },
+  {
+   "row_id": "226",
+   "field": "Hull number",
+   "url": "https://www.shipvault.com/ships/448545",
+   "status": "PASS",
+   "note": "live row 775: value 'Hull 8102 (HDHHI)': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "226",
+   "field": "Hull number",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "status": "FAIL",
+   "note": "live row 775: value 'Hull 8102 (HDHHI)': page does not contain value 'Hull 8102 (HDHHI)'"
+  },
+  {
+   "row_id": "226",
+   "field": "Hull number",
+   "url": "https://www.hd.com/en/main",
+   "status": "FAIL",
+   "note": "live row 775: value 'Hull 8102 (HDHHI)': page does not contain value 'Hull 8102 (HDHHI)'"
+  },
+  {
+   "row_id": "226",
+   "field": "Hull number",
+   "url": "https://www.google.com/maps/place/HD+Hyundai+Heavy+Industries+Ulsan+Shipyard/data=!3m1!1e3!4m10!1m2!2m1!1sHD+Hyundai!3m6!1s0x3567ce56ebbfb645:0xd94a696f9fca5d90!8m2!3d35.5167468!4d129.4380269!15sCgpIRCBIeXVuZGFpkgEIc2hpcHlhcmTgAQA!16s%2Fg%2F1tfhd8y1?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 775: value 'Hull 8102 (HDHHI)': page does not contain value 'Hull 8102 (HDHHI)'"
+  },
+  {
+   "row_id": "230",
+   "field": "Hull number",
+   "url": "https://www.shipvault.com/ships/461187",
+   "status": "PASS",
+   "note": "live row 776: value 'Hull 8181 (HDHHI)': OK (cf_impersonate, shipvault_api)"
+  },
+  {
+   "row_id": "230",
+   "field": "Hull number",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "status": "FAIL",
+   "note": "live row 776: value 'Hull 8181 (HDHHI)': page does not contain value 'Hull 8181 (HDHHI)'"
+  },
+  {
+   "row_id": "230",
+   "field": "Hull number",
+   "url": "https://www.hd.com/en/main",
+   "status": "FAIL",
+   "note": "live row 776: value 'Hull 8181 (HDHHI)': page does not contain value 'Hull 8181 (HDHHI)'"
+  },
+  {
+   "row_id": "230",
+   "field": "Hull number",
+   "url": "https://www.google.com/maps/place/HD+Hyundai+Heavy+Industries+Ulsan+Shipyard/data=!3m1!1e3!4m10!1m2!2m1!1sHD+Hyundai!3m6!1s0x3567ce56ebbfb645:0xd94a696f9fca5d90!8m2!3d35.5167468!4d129.4380269!15sCgpIRCBIeXVuZGFpkgEIc2hpcHlhcmTgAQA!16s%2Fg%2F1tfhd8y1?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 776: value 'Hull 8181 (HDHHI)': page does not contain value 'Hull 8181 (HDHHI)'"
+  },
+  {
+   "row_id": "250",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/487159",
+   "status": "FAIL",
+   "note": "live row 994: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "250",
+   "field": "Vessel type",
+   "url": "https://www.shipvault.com/ships/487159",
+   "status": "FAIL",
+   "note": "live row 994: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "250",
+   "field": "Vessel type",
+   "url": "https://www.purus.com/our-services/gas",
+   "status": "FAIL",
+   "note": "live row 994: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "250",
+   "field": "Vessel type",
+   "url": "https://www.hshi.co.kr/eng/",
+   "status": "FAIL",
+   "note": "live row 994: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "250",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Hyundai+Samho+Heavy+Industries+Entrance/data=!3m1!1e3!4m10!1m2!2m1!1sHyundai+Samho+Heavy+Industries!3m6!1s0x3573a4568dfe21d7:0x865a025eb9b373b5!8m2!3d34.75066!4d126.386691!15sCh5IeXVuZGFpIFNhbWhvIEhlYXZ5IEluZHVzdHJpZXOSAQhidXNfc3RvcOABAA!16s%2Fg%2F11b77sqk26?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 994: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1218",
+   "field": "Vessel type",
+   "url": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/",
+   "status": "FAIL",
+   "note": "live row 1118: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1218",
+   "field": "Vessel type",
+   "url": "https://indiashippingnews.com/samsung-heavy-wins-over-1-trillion-won-worth-of-orders-from-bermuda-based-company/",
+   "status": "FAIL",
+   "note": "live row 1118: value 'conventional': soft-error page (redirected to site root https://indiashippingnews.com/)"
+  },
+  {
+   "row_id": "1218",
+   "field": "Vessel type",
+   "url": "https://www.samsungshi.com/En/Default.aspx",
+   "status": "FAIL",
+   "note": "live row 1118: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1218",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Samsung+Heavy+industries/data=!3m1!1e3!4m10!1m2!2m1!1ssamsung+heavy+industries!3m6!1s0x356ecd83691a8fb5:0xd4204e9a1bb0ef10!8m2!3d34.8969682!4d128.6046376!15sChhzYW1zdW5nIGhlYXZ5IGluZHVzdHJpZXOSAQhzaGlweWFyZOABAA!16s%2Fg%2F1tgcpry6?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 1118: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1218",
+   "field": "Vessel type",
+   "url": "https://lngprime.com/asia/south-koreas-samsung-heavy-to-build-one-lng-carrier-for-252-million/187561/",
+   "status": "FAIL",
+   "note": "live row 1118: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1218",
+   "field": "Vessel type",
+   "url": "https://www.hellenicshippingnews.com/samsung-heavy-wins-five-vessel-order/",
+   "status": "FAIL",
+   "note": "live row 1118: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1219",
+   "field": "Vessel type",
+   "url": "https://www.imarinenews.com/35664.html",
+   "status": "FAIL",
+   "note": "live row 1172: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1219",
+   "field": "Vessel type",
+   "url": "https://www.hanwha.com/companies/hanwha-ocean.do",
+   "status": "FAIL",
+   "note": "live row 1172: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1219",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Hanwha+Ocean/data=!3m1!1e3!4m10!1m2!2m1!1sHanwha+Ocean!3m6!1s0x356ecd1d7a72f7db:0x3bfe90e7d8bf93f0!8m2!3d34.8721913!4d128.6956963!15sCgxIYW53aGEgT2NlYW5aDiIMaGFud2hhIG9jZWFukgEfc2hpcGJ1aWxkaW5nX2FuZF9yZXBhaXJfY29tcGFueZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuVFVSUmRYVkVTMWhuRUFF4AEA-gEECAAQLA!16s%2Fg%2F11swmd6_76?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+   "status": "FAIL",
+   "note": "live row 1172: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1220",
+   "field": "Vessel type",
+   "url": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+   "status": "FAIL",
+   "note": "live row 1182: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1220",
+   "field": "Vessel type",
+   "url": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+   "status": "FAIL",
+   "note": "live row 1182: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1220",
+   "field": "Vessel type",
+   "url": "https://www.jnshipyard.com.cn/",
+   "status": "FAIL",
+   "note": "live row 1182: value 'conventional': blocked: HTTP 000 (4 Wayback snapshot(s) lack expected content)"
+  },
+  {
+   "row_id": "1220",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Jiangnan+Shipyard+%EF%BC%88Group%EF%BC%89+Co.",
+   "status": "FAIL",
+   "note": "live row 1182: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1221",
+   "field": "Vessel type",
+   "url": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+   "status": "FAIL",
+   "note": "live row 1183: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1221",
+   "field": "Vessel type",
+   "url": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+   "status": "FAIL",
+   "note": "live row 1183: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1221",
+   "field": "Vessel type",
+   "url": "https://www.jnshipyard.com.cn/",
+   "status": "FAIL",
+   "note": "live row 1183: value 'conventional': blocked: HTTP 000 (4 Wayback snapshot(s) lack expected content)"
+  },
+  {
+   "row_id": "1221",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Jiangnan+Shipyard+%EF%BC%88Group%EF%BC%89+Co.",
+   "status": "FAIL",
+   "note": "live row 1183: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1222",
+   "field": "Vessel type",
+   "url": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+   "status": "FAIL",
+   "note": "live row 1184: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1222",
+   "field": "Vessel type",
+   "url": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+   "status": "FAIL",
+   "note": "live row 1184: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1222",
+   "field": "Vessel type",
+   "url": "https://www.jnshipyard.com.cn/",
+   "status": "FAIL",
+   "note": "live row 1184: value 'conventional': blocked: HTTP 000 (4 Wayback snapshot(s) lack expected content)"
+  },
+  {
+   "row_id": "1222",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Jiangnan+Shipyard+%EF%BC%88Group%EF%BC%89+Co.",
+   "status": "FAIL",
+   "note": "live row 1184: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1223",
+   "field": "Vessel type",
+   "url": "https://lngprime.com/asia/cosco-shipping-orders-lng-carrier-quartet-for-charter-to-shell/188357/",
+   "status": "FAIL",
+   "note": "live row 1185: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1223",
+   "field": "Vessel type",
+   "url": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+   "status": "FAIL",
+   "note": "live row 1185: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "1223",
+   "field": "Vessel type",
+   "url": "https://www.jnshipyard.com.cn/",
+   "status": "FAIL",
+   "note": "live row 1185: value 'conventional': blocked: HTTP 000 (4 Wayback snapshot(s) lack expected content)"
+  },
+  {
+   "row_id": "1223",
+   "field": "Vessel type",
+   "url": "https://www.google.com/maps/place/Jiangnan+Shipyard+%EF%BC%88Group%EF%BC%89+Co.",
+   "status": "FAIL",
+   "note": "live row 1185: value 'conventional': page does not contain value 'conventional'"
+  }
+ ],
+ "data_conflicts": [],
+ "candidate_data_fills": [],
+ "defects_corrected": []
+}

@@ -1,0 +1,68 @@
+[
+ {
+  "live_row": 61,
+  "row_id": "969",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 487,
+  "row_id": "1044",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 488,
+  "row_id": "1045",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 652,
+  "row_id": "1135",
+  "field": "Shipowner country/area",
+  "value": "China"
+ },
+ {
+  "live_row": 994,
+  "row_id": "250",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 1118,
+  "row_id": "1218",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 1172,
+  "row_id": "1219",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 1182,
+  "row_id": "1220",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 1183,
+  "row_id": "1221",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 1184,
+  "row_id": "1222",
+  "field": "Vessel type",
+  "value": "conventional"
+ },
+ {
+  "live_row": 1185,
+  "row_id": "1223",
+  "field": "Vessel type",
+  "value": "conventional"
+ }
+]

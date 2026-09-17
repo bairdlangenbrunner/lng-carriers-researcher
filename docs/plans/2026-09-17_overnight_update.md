@@ -24,10 +24,10 @@ step and commit batch dirs as they finish (branch -> PR -> merge is pre-authoriz
 - [x] 1. Watchdog running (`work/overnight/watchdog.sh`, log `work/overnight/watchdog.log`).
 - [x] 2. Shipvault sweep of all on-order/proposed rows -> `work/overnight/shipvault_sweep.json`.
 - [x] 3. Delivery roll-forward fix batch(es) from the sweep (+ agent research for rows shipvault cannot resolve).
-- [ ] 4. Discovery batch (window above).
+- [x] 4. Discovery batch (window above) -> `batches/2026-09-17_0431ET_discovery_since_jun_2026/` (12 candidates, 5 clusters) + `batches/2026-09-17_0458ET_fix_delivery_confirmed/`.
 - [x] 5. Proposed-bucket review (Mozambique LNG 01-17, Woodside 01-16, Equinor).
 - [ ] 6. On-order data-fill batch (core facts; rows not covered by step 3).
-- [ ] 7. Rule-F ref-fill (20 cells) — only if time remains.
+- [x] 7. Rule-F ref-fill -> `batches/2026-09-17_0505ET_ref_fill_rule_f/` (8 refs proposed, 11 documented negatives).
 - [ ] 8. Final: qc_backend, dedupe_check, digests + apply artifacts for every batch, morning summary at `docs/plans/2026-09-17_overnight_summary.md`, merge to main, write `work/overnight/DONE`.
 
 ## Log (append newest last)
@@ -46,3 +46,4 @@ step and commit batch dirs as they finish (branch -> PR -> merge is pre-authoriz
 - 01:35 local (clock note: this machine runs ~3 h behind ET; deadline 07:30 is LOCAL; batch dir stamps stay ET). roll-forward batch `batches/2026-09-17_0421ET_fix_delivery_rollforward/` built, gated, recalc clean, apply artifacts written (apply_batch.py now has a `fix` mode). step 3 done.
 - shipvault on-order enumeration done -> `work/overnight/sv_orderbook.jsonl`; `work/research_sv.json` holds 81 central hull/IMO/capacity fills for the data-fill merge. discovery agent outputs in `work/overnight/discovery_*.json`, proposed review in `proposed_review.json`.
 - delivery-check agent 2 finished (`delivery_check_2.out.json`: 1 delivered, 2 sea trials, 10 unresolved); agent 1 + 8 data-fill agents (`work/research_of1..8.json`) still running. on restart relaunch only the missing N.
+- 02:10 local: all 8 data-fill agents done (`work/research_of1..8.json`, `research_sv.json`, `research_leads.json`, `research_zz_companions.json`); pre-merge sanity filter run; `merge_fills.py` running in background -> `work/overnight/merge.log` (base copy `work/overnight/data_fill.base.json`). If restarting: check merge.log ends with "final fills:"; if not, `cp work/overnight/data_fill.base.json work/data_fill.json` and re-run merge, then build step 6.
