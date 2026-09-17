@@ -1,0 +1,5318 @@
+{
+  "batch": "2026-09-17_1654ET_fix_igu2026_sourced",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "721",
+      "column": "Cargo type",
+      "value": "spherical",
+      "confidence": "G"
+    },
+    {
+      "row_id": "721",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "721",
+      "column": "Propulsion type",
+      "value": "steam",
+      "confidence": "G"
+    },
+    {
+      "row_id": "721",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "721",
+      "column": "Capacity",
+      "value": "125000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "721",
+      "column": "Capacity [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "721",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "G"
+    },
+    {
+      "row_id": "971",
+      "column": "Name",
+      "value": "American Energy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "971",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "535",
+      "column": "Name",
+      "value": "Arctic Vostok",
+      "confidence": "G"
+    },
+    {
+      "row_id": "535",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1004",
+      "column": "Name",
+      "value": "Seapeak Jupiter",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1004",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "562",
+      "column": "Name",
+      "value": "Arunika Jaya",
+      "confidence": "G"
+    },
+    {
+      "row_id": "562",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "648",
+      "column": "Name",
+      "value": "SC Serenity",
+      "confidence": "G"
+    },
+    {
+      "row_id": "648",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "866",
+      "column": "Name",
+      "value": "Arctic Metagas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "866",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "686",
+      "column": "Name",
+      "value": "Hongkong Energy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "686",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "801",
+      "column": "Name",
+      "value": "Gas Garuda",
+      "confidence": "G"
+    },
+    {
+      "row_id": "801",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "958",
+      "column": "Name",
+      "value": "Arctic Pioneer",
+      "confidence": "G"
+    },
+    {
+      "row_id": "958",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "459",
+      "column": "Name",
+      "value": "LNG Soars",
+      "confidence": "G"
+    },
+    {
+      "row_id": "459",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1062",
+      "column": "Name",
+      "value": "Blue Dragon I",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1062",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "869",
+      "column": "Name",
+      "value": "Shandong Redwood",
+      "confidence": "G"
+    },
+    {
+      "row_id": "869",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "377",
+      "column": "Name",
+      "value": "LNGT Karadeniz",
+      "confidence": "G"
+    },
+    {
+      "row_id": "377",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "437",
+      "column": "Name",
+      "value": "BW ENN Crystal Sky",
+      "confidence": "G"
+    },
+    {
+      "row_id": "437",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "649",
+      "column": "Name",
+      "value": "Italis LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "649",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "729",
+      "column": "Name",
+      "value": "Cool Baltic",
+      "confidence": "G"
+    },
+    {
+      "row_id": "729",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "467",
+      "column": "Name",
+      "value": "Cesi Lianyungang",
+      "confidence": "G"
+    },
+    {
+      "row_id": "467",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "568",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "568",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "568",
+      "column": "Propulsion type",
+      "value": "DFDE",
+      "confidence": "G"
+    },
+    {
+      "row_id": "568",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "679",
+      "column": "Name",
+      "value": "Hoegh Esperanza",
+      "confidence": "G"
+    },
+    {
+      "row_id": "679",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1044",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1044",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1045",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1045",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "563",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "563",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "563",
+      "column": "Propulsion type",
+      "value": "DFDE",
+      "confidence": "G"
+    },
+    {
+      "row_id": "563",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "565",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "565",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "565",
+      "column": "Propulsion type",
+      "value": "DFDE",
+      "confidence": "G"
+    },
+    {
+      "row_id": "565",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "573",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "573",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "573",
+      "column": "Propulsion type",
+      "value": "DFDE",
+      "confidence": "G"
+    },
+    {
+      "row_id": "573",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "599",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "599",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "781",
+      "column": "Vessel type",
+      "value": "small-scale",
+      "confidence": "G"
+    },
+    {
+      "row_id": "781",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "781",
+      "column": "Propulsion type",
+      "value": "DFDE",
+      "confidence": "G"
+    },
+    {
+      "row_id": "781",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "993",
+      "column": "Name",
+      "value": "La Perouse",
+      "confidence": "G"
+    },
+    {
+      "row_id": "993",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "559",
+      "column": "Name",
+      "value": "Energy Endeavour",
+      "confidence": "G"
+    },
+    {
+      "row_id": "559",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1100",
+      "column": "Name",
+      "value": "Vivit City LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1100",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "924",
+      "column": "Name",
+      "value": "Voskhod",
+      "confidence": "G"
+    },
+    {
+      "row_id": "924",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "39",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "39",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "39",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "39",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "40",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "40",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "40",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "40",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "41",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "41",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "41",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "41",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "42",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "42",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "42",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "42",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "59",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "59",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "59",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "59",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "93",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "93",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "93",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "93",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "95",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "95",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "95",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "95",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "97",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "97",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "97",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "97",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "104",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "104",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "104",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "104",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "105",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "105",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "105",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "105",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "106",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "106",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "106",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "106",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "106",
+      "column": "Propulsion type",
+      "value": "ME-GA",
+      "confidence": "G"
+    },
+    {
+      "row_id": "106",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "107",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "107",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "107",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "107",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "110",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "110",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "110",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "110",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "111",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "111",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "111",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "111",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "112",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "112",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "112",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "112",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "112",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "112",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "114",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "114",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "114",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "114",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "115",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "115",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "115",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "115",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "116",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "116",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "116",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "116",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "117",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "117",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "117",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "117",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "118",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "118",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "118",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "118",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "180",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "180",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "180",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "180",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "182",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "182",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "182",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "182",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "226",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "226",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "226",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "226",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "230",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "230",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "230",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "230",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "257",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "257",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "257",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "257",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "261",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "261",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "261",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "261",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "262",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "262",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "262",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "262",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "266",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "266",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "266",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "266",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "266",
+      "column": "Name",
+      "value": "Greenergy Star",
+      "confidence": "G"
+    },
+    {
+      "row_id": "266",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "267",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "267",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "267",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "267",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "267",
+      "column": "Name",
+      "value": "Greenergy Moon",
+      "confidence": "G"
+    },
+    {
+      "row_id": "267",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "277",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "277",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "277",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "277",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "288",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "288",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "288",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "288",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "371",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "371",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "371",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "371",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "371",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "371",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "432",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "432",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "432",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "432",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "445",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "445",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "445",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "445",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "482",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "482",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "482",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "482",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "482",
+      "column": "Propulsion type",
+      "value": "ME-GA",
+      "confidence": "G"
+    },
+    {
+      "row_id": "482",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "483",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "483",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "483",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "483",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "483",
+      "column": "Propulsion type",
+      "value": "ME-GA",
+      "confidence": "G"
+    },
+    {
+      "row_id": "483",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Name",
+      "value": "Clean Sirocco",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "612",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "612",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "612",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "612",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "671",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "671",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "671",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "671",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "672",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "672",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "672",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "672",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "676",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "676",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "676",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "676",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "701",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "701",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "701",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "701",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "703",
+      "column": "Vessel type",
+      "value": "icebreaker",
+      "confidence": "G"
+    },
+    {
+      "row_id": "703",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "749",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "749",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "749",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "749",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "752",
+      "column": "Vessel type",
+      "value": "icebreaker",
+      "confidence": "G"
+    },
+    {
+      "row_id": "752",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "797",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "797",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "797",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "797",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "885",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "885",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "885",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "885",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "915",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "915",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "915",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "915",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "916",
+      "column": "Vessel type",
+      "value": "icebreaker",
+      "confidence": "G"
+    },
+    {
+      "row_id": "916",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "917",
+      "column": "Vessel type",
+      "value": "icebreaker",
+      "confidence": "G"
+    },
+    {
+      "row_id": "917",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "927",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "927",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "927",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "927",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "933",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "933",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "933",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "933",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "934",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "934",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "934",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "934",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "939",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "939",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "939",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "939",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "981",
+      "column": "Vessel type",
+      "value": "icebreaker",
+      "confidence": "G"
+    },
+    {
+      "row_id": "981",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "994",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "994",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "994",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "994",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "995",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "995",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "996",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "996",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "996",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "996",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "997",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "997",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "997",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "997",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1091",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1091",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1091",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1091",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1096",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1096",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1096",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1096",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1098",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1098",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1098",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1098",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1143",
+      "column": "Vessel type",
+      "value": "icebreaker",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1143",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Propulsion type",
+      "value": "ME-GA",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Capacity [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Propulsion type",
+      "value": "ME-GA",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "52",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "52",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "61",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "61",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "62",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "62",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "67",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "67",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "68",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "68",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "69",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "69",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "71",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "71",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "129",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "129",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "130",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "130",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "131",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "131",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "132",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "132",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "137",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "137",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "141",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "141",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "162",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "162",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "186",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "186",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "187",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "187",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "188",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "188",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "191",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "191",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Vessel type",
+      "value": "FSRU",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "251",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "251",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "252",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "252",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Name",
+      "value": "Fath Al Khair",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "268",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "268",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "269",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "269",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "270",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "270",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "271",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "271",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "271",
+      "column": "Name",
+      "value": "Greenergy Sea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "271",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "272",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "272",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "272",
+      "column": "Name",
+      "value": "Greenergy Whale",
+      "confidence": "G"
+    },
+    {
+      "row_id": "272",
+      "column": "Name [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "278",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "278",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "279",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "279",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "281",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "281",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "318",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "318",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "319",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "319",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "324",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "324",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "373",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "373",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Vessel type",
+      "value": "icebreaker",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Status [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "384",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "384",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "476",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "476",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "515",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "515",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "517",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "517",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "709",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "709",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "710",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "710",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Propulsion type",
+      "value": "ME-GA",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "73",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "73",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "76",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "76",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "99",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "99",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "100",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "100",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "124",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "124",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "125",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "125",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "126",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "126",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "127",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "127",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "128",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "128",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "147",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "147",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "201",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "201",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "202",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "202",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "203",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "203",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "204",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "204",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "239",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "239",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "240",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "240",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "242",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "242",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "243",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "243",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "248",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "248",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "249",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "249",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "253",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "253",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "254",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "254",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "255",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "255",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "256",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "256",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "280",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "280",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "387",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "387",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Capacity [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "513",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "513",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "514",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "514",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "518",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "518",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Cargo type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "639",
+      "column": "Vessel type",
+      "value": "FSRU",
+      "confidence": "G"
+    },
+    {
+      "row_id": "639",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "711",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "711",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "712",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "712",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "136",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "136",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "138",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "138",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "140",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "140",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "142",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "142",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "148",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "148",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "150",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "150",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "151",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "151",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "152",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "152",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "153",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "153",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "155",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "155",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "205",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "205",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "206",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "206",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "244",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "244",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "246",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "246",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "282",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "282",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "283",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "283",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "284",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "284",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "285",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "285",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "286",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "286",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "287",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "287",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "508",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "508",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Propulsion type",
+      "value": "ME-GI",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Propulsion type",
+      "value": "ME-GI",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1219",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1219",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1220",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1220",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1221",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1221",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1222",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1222",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1223",
+      "column": "Vessel type",
+      "value": "conventional",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1223",
+      "column": "Vessel type [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 468,
+    "accepted": 443,
+    "hold": 25,
+    "reject": 0,
+    "conflicts": 0
+  }
+}
