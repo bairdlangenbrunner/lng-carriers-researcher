@@ -1942,5 +1942,257 @@
   "ok": true,
   "reason": "OK (cf_impersonate, shipvault_api)",
   "grade": "ok"
+ },
+ {
+  "row_id": "207",
+  "field": "Name",
+  "value": "Al Ghuwair",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHUWAIR/1048918/538000000",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "208",
+  "field": "Name",
+  "value": "Wadi Sultana",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-SULTANA/1048920/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "209",
+  "field": "Name",
+  "value": "Lesha",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LESHA/1048932/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "210",
+  "field": "Name",
+  "value": "Al Jazi",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-JAZI/1048944/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "211",
+  "field": "Name",
+  "value": "Al Mashrab",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MASHRAB/1048956/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "212",
+  "field": "Name",
+  "value": "Al Mirzam",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MIRZAM/1048982/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "213",
+  "field": "Name",
+  "value": "Maqdeem",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/MAQDEEM/1048994/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "214",
+  "field": "Name",
+  "value": "Al Rufaa",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-RUFAA/1049003/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "215",
+  "field": "Name",
+  "value": "Al Nekhsh",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NEKHSH/1049015/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "216",
+  "field": "Name",
+  "value": "Leh'saien",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LEH'SAIEN/1049027/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "217",
+  "field": "Name",
+  "value": "Le'shara",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LE'SHARA/1049039/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "218",
+  "field": "Name",
+  "value": "Librega",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBREGA/1049041/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "219",
+  "field": "Name",
+  "value": "Eshairej",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ESHAIREJ/1049053/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "220",
+  "field": "Name",
+  "value": "Mneefa",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/MNEEFA/1049065/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "221",
+  "field": "Name",
+  "value": "Ezhara",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/EZHARA/1049089/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "258",
+  "field": "Name",
+  "value": "Al Sabsab",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SABSAB/9986570/636025823",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "510",
+  "field": "Name",
+  "value": "Alliance Venture",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ALLIANCE-VENTURE/1030569/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "541",
+  "field": "Name",
+  "value": "Elisa Halcyon",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ELISA-HALCYON/9980552/228488900",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "509",
+  "field": "Name",
+  "value": "Friendship Venture",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/FRIENDSHIP-VENTURE/1030557/636025371",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "507",
+  "field": "Name",
+  "value": "Prime Creativity",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-CREATIVITY/1058327/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "519",
+  "field": "Name",
+  "value": "Prime Unity",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-UNITY/1058315/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "639",
+  "field": "Name",
+  "value": "Solidarity",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/SOLIDARITY/1056410/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "508",
+  "field": "Name",
+  "value": "Prime Glory",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-GLORY/1069194/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "239",
+  "field": "Name",
+  "value": "Diamond Gas Nexus",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/DIAMOND-GAS-NEXUS/1023877/563334400",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "240",
+  "field": "Name",
+  "value": "Grace Himawari",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-HIMAWARI/1023889/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "242",
+  "field": "Name",
+  "value": "Grace Gerbera",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-GERBERA/1023906/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "243",
+  "field": "Name",
+  "value": "Ferdy Vanguard",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/FERDY-VANGUARD/1023918/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "259",
+  "field": "Name",
+  "value": "Al Fanar",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-FANAR/9986582/636025824",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
  }
 ]

@@ -1,12 +1,12 @@
 # Batch digest — 2026-09-17_0421ET_fix_delivery_rollforward
 
-**Mode:** fix  ·  **Proposals:** 214 (auto-safe 143, needs-decision 71)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
+**Mode:** fix  ·  **Proposals:** 223 (auto-safe 168, needs-decision 55)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
 
 ## ✅ Auto-safe — accept in bulk (Green / derivable)
 
-By field: Status ×60, Name ×60, Delivery year ×23
+By field: Name ×79, Status ×63, Delivery year ×26
 
-These 143 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
+These 168 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
 
 ## ⚠️ Needs a decision (Yellow / Red / unknown)
 
@@ -38,30 +38,14 @@ These 143 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 147** · Name: `Al Seej` (Y) — placeholder 'Hull 2700 (SHI)' -> vessel named
 - **row 201** · Name: `Clean Astraeus` (Y) — placeholder 'Hull 3452 (HDHHI)' -> vessel named
 - **row 202** · Name: `Clean Azeus` (Y) — placeholder 'Hull 3453 (HDHHI)' -> vessel named
-- **row 207** · Name: `Al Ghuwair` (Y) — placeholder 'Hull 3476 (HDHHI)' -> vessel named
-- **row 208** · Name: `Wadi Sultana` (Y) — placeholder 'Hull 3477 (HDHHI)' -> vessel named
-- **row 209** · Name: `Lesha` (Y) — placeholder 'Hull 3478 (HDHHI)' -> vessel named
-- **row 210** · Name: `Al Jazi` (Y) — placeholder 'Hull 3479 (HDHHI)' -> vessel named
-- **row 211** · Name: `Al Mashrab` (Y) — placeholder 'Hull 3480 (HDHHI)' -> vessel named
-- **row 212** · Name: `Al Mirzam` (Y) — placeholder 'Hull 3481 (HDHHI)' -> vessel named
-- **row 213** · Name: `Maqdeem` (Y) — placeholder 'Hull 3482 (HDHHI)' -> vessel named
-- **row 214** · Name: `Al Rufaa` (Y) — placeholder 'Hull 3483 (HDHHI)' -> vessel named
-- **row 215** · Name: `Al Nekhsh` (Y) — placeholder 'Hull 3484 (HDHHI)' -> vessel named
-- **row 216** · Name: `Leh'saien` (Y) — placeholder 'Hull 3485 (HDHHI)' -> vessel named
-- **row 217** · Name: `Le'shara` (Y) — placeholder 'Hull 3486 (HDHHI)' -> vessel named
-- **row 218** · Name: `Librega` (Y) — placeholder 'Hull 3487 (HDHHI)' -> vessel named
-- **row 219** · Name: `Eshairej` (Y) — placeholder 'Hull 3488 (HDHHI)' -> vessel named
-- **row 220** · Name: `Mneefa` (Y) — placeholder 'Hull 3489 (HDHHI)' -> vessel named
-- **row 221** · Name: `Ezhara` (Y) — placeholder 'Hull 3490 (HDHHI)' -> vessel named
-- **row 258** · Name: `Al Sabsab` (Y) — placeholder 'Hull H1794A' -> vessel named
-- **row 487** · Status: `active` (Y) — shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3434; single-source (no vesselfinder name/MMSI)
-- **row 487** · Delivery year: `2026` (Y) — backend 2027 -> delivered 2026-07-06 per shipvault
-- **row 489** · Status: `active` (Y) — shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3433; single-source (no vesselfinder name/MMSI)
-- **row 489** · Delivery year: `2026` (Y) — backend 2027 -> delivered 2026-04-30 per shipvault
-- **row 510** · Name: `Alliance Venture` (Y) — backend 'Dalian No 1 G175K-13' differs from registry name
-- **row 541** · Status: `active` (Y) — shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8174; single-source (no vesselfinder name/MMSI)
-- **row 541** · Delivery year: `2025` (Y) — backend 2027 -> delivered 2025-10-31 per shipvault
-- **row 541** · Name: `Elisa Halcyon` (Y) — backend 'Elisa Halycon' differs from registry name
+- **row 239** · Name: `Diamond Gas Nexus` (Y) — placeholder 'Hull 8208 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023877 as DIAMOND GAS NEXUS (MMSI 563334400); shipvault still carries a hull placeholder - single source
+- **row 240** · Name: `Grace Himawari` (Y) — placeholder 'Hull 8209 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023889 as GRACE HIMAWARI; shipvault still carries a hull placeholder - single source
+- **row 242** · Name: `Grace Gerbera` (Y) — placeholder 'Hull 8238 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023906 as GRACE GERBERA; shipvault still carries a hull placeholder - single source
+- **row 243** · Name: `Ferdy Vanguard` (Y) — placeholder 'Hull 8239 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023918 as FERDY VANGUARD; shipvault still carries a hull placeholder - single source
+- **row 259** · Name: `Al Fanar` (Y) — placeholder 'Hull H1795A' -> vessel named; marinetraffic.org lists IMO 9986582 as AL FANAR (MMSI 636025824); shipvault still carries a hull placeholder - single source
+- **row 507** · Name: `Prime Creativity` (Y) — placeholder 'Dalian No 1 G175K-10' -> vessel named; marinetraffic.org lists IMO 1058327 as PRIME CREATIVITY; shipvault still carries a hull placeholder - single source
+- **row 519** · Name: `Prime Unity` (Y) — placeholder 'Dalian No 1 G175K-9' -> vessel named; marinetraffic.org lists IMO 1058315 as PRIME UNITY; shipvault still carries a hull placeholder - single source
+- **row 639** · Name: `Solidarity` (Y) — placeholder 'Gdansk FSRU' -> vessel named; marinetraffic.org lists IMO 1056410 as SOLIDARITY; shipvault still carries a hull placeholder - single source
 - **row 80** · Name: `Al Nasraniya` (Y) — placeholder 'Hull 2585 (Hanwha)' -> vessel named
 - **row 81** · Name: `Al Yousifiya` (Y) — placeholder 'Hull 2586 (Hanwha)' -> vessel named
 - **row 82** · Name: `Athba` (Y) — placeholder 'Hull 2587 (Hanwha)' -> vessel named
@@ -80,7 +64,7 @@ These 143 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 154** · Name: `Al Nouf` (Y) — placeholder 'Hull 2706 (SHI)' -> vessel named
 - **row 222** · Name: `Izghawa` (Y) — placeholder 'Hull 3491 (HDHHI)' -> vessel named
 - **row 223** · Name: `Al Wa'ab` (Y) — placeholder 'Hull 3492 (HDHHI)' -> vessel named
-- **row 509** · Name: `Friendship Venture` (Y) — backend 'Dalian No 1 G175K-12' differs from registry name
+- **row 508** · Name: `Prime Glory` (Y) — placeholder 'Dalian No 1 G175K-11' -> vessel named; marinetraffic.org lists IMO 1069194 as PRIME GLORY; shipvault still carries a hull placeholder - single source
 
 These are default-`hold`. Flip to `accept`/`reject` in `decisions.csv`, then re-run `apply_batch.py`.
 

@@ -1,6 +1,6 @@
 {
- "batch_label": "Delivery roll-forward - on-order rows checked against shipvault + vesselfinder (2026-09-17)",
- "reason": "Backend had not moved since June 2026. Every on-order row with an IMO was looked up in shipvault (status / delivered date / yard no.) and vesselfinder (AIS-registered name, MMSI, year built). Delivered vessels move to active with their real name; delivery years are corrected to the actual year; undelivered 2026 rows that shipvault now schedules for 2027+ are rolled forward.",
+ "batch_label": "Delivery roll-forward - on-order rows checked against shipvault + vesselfinder + marinetraffic.org (2026-09-17)",
+ "reason": "Backend had not moved since June 2026. Every on-order row with an IMO was looked up in shipvault (status / delivered date / yard no.) and vesselfinder (AIS-registered name, MMSI, year built). Delivered vessels move to active with their real name; delivery years are corrected to the actual year; undelivered 2026 rows that shipvault now schedules for 2027+ are rolled forward. The rows vesselfinder never answered (IP ban at ~150/323) were cross-checked on marinetraffic.org the same afternoon (95 IMOs, paced).",
  "corrections": [
   {
    "row_id": "6",
@@ -3349,7 +3349,7 @@
     {
      "field": "Name",
      "new_value": "Al Ghuwair",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478305",
@@ -3358,9 +3358,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478305",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHUWAIR/1048918/538000000",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3476 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3476 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1048918 as AL GHUWAIR (MMSI 538000000)"
     }
    ]
   },
@@ -3371,7 +3375,7 @@
     {
      "field": "Name",
      "new_value": "Wadi Sultana",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478306",
@@ -3380,9 +3384,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478306",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-SULTANA/1048920/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3477 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3477 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1048920 as WADI SULTANA"
     }
    ]
   },
@@ -3393,7 +3401,7 @@
     {
      "field": "Name",
      "new_value": "Lesha",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478307",
@@ -3402,9 +3410,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478307",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LESHA/1048932/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3478 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3478 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1048932 as LESHA"
     }
    ]
   },
@@ -3415,7 +3427,7 @@
     {
      "field": "Name",
      "new_value": "Al Jazi",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478308",
@@ -3424,9 +3436,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478308",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-JAZI/1048944/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3479 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3479 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1048944 as AL JAZI"
     }
    ]
   },
@@ -3437,7 +3453,7 @@
     {
      "field": "Name",
      "new_value": "Al Mashrab",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478309",
@@ -3446,9 +3462,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478309",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MASHRAB/1048956/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3480 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3480 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1048956 as AL MASHRAB"
     }
    ]
   },
@@ -3459,7 +3479,7 @@
     {
      "field": "Name",
      "new_value": "Al Mirzam",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478310",
@@ -3468,9 +3488,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478310",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MIRZAM/1048982/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3481 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3481 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1048982 as AL MIRZAM"
     }
    ]
   },
@@ -3481,7 +3505,7 @@
     {
      "field": "Name",
      "new_value": "Maqdeem",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478311",
@@ -3490,9 +3514,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478311",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/MAQDEEM/1048994/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3482 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3482 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1048994 as MAQDEEM"
     }
    ]
   },
@@ -3503,7 +3531,7 @@
     {
      "field": "Name",
      "new_value": "Al Rufaa",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478312",
@@ -3512,9 +3540,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478312",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-RUFAA/1049003/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3483 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3483 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049003 as AL RUFAA"
     }
    ]
   },
@@ -3525,7 +3557,7 @@
     {
      "field": "Name",
      "new_value": "Al Nekhsh",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478313",
@@ -3534,9 +3566,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478313",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NEKHSH/1049015/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3484 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3484 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049015 as AL NEKHSH"
     }
    ]
   },
@@ -3547,7 +3583,7 @@
     {
      "field": "Name",
      "new_value": "Leh'saien",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478314",
@@ -3556,9 +3592,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478314",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LEH'SAIEN/1049027/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3485 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3485 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049027 as LEH'SAIEN"
     }
    ]
   },
@@ -3569,7 +3609,7 @@
     {
      "field": "Name",
      "new_value": "Le'shara",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478315",
@@ -3578,9 +3618,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478315",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LE'SHARA/1049039/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3486 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3486 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049039 as LE'SHARA"
     }
    ]
   },
@@ -3591,7 +3635,7 @@
     {
      "field": "Name",
      "new_value": "Librega",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478316",
@@ -3600,9 +3644,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478316",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBREGA/1049041/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3487 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3487 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049041 as LIBREGA"
     }
    ]
   },
@@ -3613,7 +3661,7 @@
     {
      "field": "Name",
      "new_value": "Eshairej",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478317",
@@ -3622,9 +3670,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478317",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ESHAIREJ/1049053/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3488 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3488 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049053 as ESHAIREJ"
     }
    ]
   },
@@ -3635,7 +3687,7 @@
     {
      "field": "Name",
      "new_value": "Mneefa",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478318",
@@ -3644,9 +3696,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/MNEEFA/1049065/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3489 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3489 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049065 as MNEEFA"
     }
    ]
   },
@@ -3657,7 +3713,7 @@
     {
      "field": "Name",
      "new_value": "Ezhara",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478319",
@@ -3666,9 +3722,85 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/EZHARA/1049089/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3490 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3490 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049089 as EZHARA"
+    }
+   ]
+  },
+  {
+   "row_id": "239",
+   "_live_row": 988,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Diamond Gas Nexus",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/DIAMOND-GAS-NEXUS/1023877/563334400",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8208 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023877 as DIAMOND GAS NEXUS (MMSI 563334400); shipvault still carries a hull placeholder - single source"
+    }
+   ]
+  },
+  {
+   "row_id": "240",
+   "_live_row": 989,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Grace Himawari",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-HIMAWARI/1023889/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8209 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023889 as GRACE HIMAWARI; shipvault still carries a hull placeholder - single source"
+    }
+   ]
+  },
+  {
+   "row_id": "242",
+   "_live_row": 990,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Grace Gerbera",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-GERBERA/1023906/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8238 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023906 as GRACE GERBERA; shipvault still carries a hull placeholder - single source"
+    }
+   ]
+  },
+  {
+   "row_id": "243",
+   "_live_row": 991,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Ferdy Vanguard",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/FERDY-VANGUARD/1023918/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8239 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023918 as FERDY VANGUARD; shipvault still carries a hull placeholder - single source"
     }
    ]
   },
@@ -3679,7 +3811,7 @@
     {
      "field": "Name",
      "new_value": "Al Sabsab",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462933",
@@ -3688,9 +3820,31 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SABSAB/9986570/636025823",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull H1794A' -> vessel named"
+     "note": "placeholder 'Hull H1794A' -> vessel named; marinetraffic.org independently lists IMO 9986570 as AL SABSAB (MMSI 636025823)"
+    }
+   ]
+  },
+  {
+   "row_id": "259",
+   "_live_row": 1000,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Fanar",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-FANAR/9986582/636025824",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull H1795A' -> vessel named; marinetraffic.org lists IMO 9986582 as AL FANAR (MMSI 636025824); shipvault still carries a hull placeholder - single source"
     }
    ]
   },
@@ -3701,7 +3855,7 @@
     {
      "field": "Status",
      "new_value": "active",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/466740",
@@ -3712,12 +3866,12 @@
        "soft": false
       }
      ],
-     "note": "shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3434; single-source (no vesselfinder name/MMSI)"
+     "note": "shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3434; marinetraffic.org shows CLEAN RIO GRANDE with MMSI 249569000 (AIS-registered) - cross-check, not cited"
     },
     {
      "field": "Delivery year",
      "new_value": "2026",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/466740",
@@ -3728,7 +3882,7 @@
        "soft": false
       }
      ],
-     "note": "backend 2027 -> delivered 2026-07-06 per shipvault"
+     "note": "backend 2027 -> delivered 2026-07-06 per shipvault; marinetraffic.org shows CLEAN RIO GRANDE with MMSI 249569000 (AIS-registered) - cross-check, not cited"
     }
    ]
   },
@@ -3739,7 +3893,7 @@
     {
      "field": "Status",
      "new_value": "active",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/466739",
@@ -3750,12 +3904,12 @@
        "soft": false
       }
      ],
-     "note": "shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3433; single-source (no vesselfinder name/MMSI)"
+     "note": "shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3433; marinetraffic.org shows CLEAN TEXAS with MMSI 249342000 (AIS-registered) - cross-check, not cited"
     },
     {
      "field": "Delivery year",
      "new_value": "2026",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/466739",
@@ -3766,7 +3920,25 @@
        "soft": false
       }
      ],
-     "note": "backend 2027 -> delivered 2026-04-30 per shipvault"
+     "note": "backend 2027 -> delivered 2026-04-30 per shipvault; marinetraffic.org shows CLEAN TEXAS with MMSI 249342000 (AIS-registered) - cross-check, not cited"
+    }
+   ]
+  },
+  {
+   "row_id": "507",
+   "_live_row": 1007,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Prime Creativity",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-CREATIVITY/1058327/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Dalian No 1 G175K-10' -> vessel named; marinetraffic.org lists IMO 1058327 as PRIME CREATIVITY; shipvault still carries a hull placeholder - single source"
     }
    ]
   },
@@ -3777,7 +3949,7 @@
     {
      "field": "Name",
      "new_value": "Alliance Venture",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/469428",
@@ -3786,9 +3958,31 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469428",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ALLIANCE-VENTURE/1030569/1",
+       "soft": false
       }
      ],
-     "note": "backend 'Dalian No 1 G175K-13' differs from registry name"
+     "note": "backend 'Dalian No 1 G175K-13' differs from registry name; marinetraffic.org independently lists IMO 1030569 as ALLIANCE VENTURE"
+    }
+   ]
+  },
+  {
+   "row_id": "519",
+   "_live_row": 1012,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Prime Unity",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-UNITY/1058315/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Dalian No 1 G175K-9' -> vessel named; marinetraffic.org lists IMO 1058315 as PRIME UNITY; shipvault still carries a hull placeholder - single source"
     }
    ]
   },
@@ -3799,7 +3993,7 @@
     {
      "field": "Status",
      "new_value": "active",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461185",
@@ -3810,12 +4004,12 @@
        "soft": false
       }
      ],
-     "note": "shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8174; single-source (no vesselfinder name/MMSI)"
+     "note": "shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8174; marinetraffic.org shows ELISA HALCYON with MMSI 228488900 (AIS-registered) - cross-check, not cited"
     },
     {
      "field": "Delivery year",
      "new_value": "2025",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461185",
@@ -3826,12 +4020,12 @@
        "soft": false
       }
      ],
-     "note": "backend 2027 -> delivered 2025-10-31 per shipvault"
+     "note": "backend 2027 -> delivered 2025-10-31 per shipvault; marinetraffic.org shows ELISA HALCYON with MMSI 228488900 (AIS-registered) - cross-check, not cited"
     },
     {
      "field": "Name",
      "new_value": "Elisa Halcyon",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461185",
@@ -3840,9 +4034,31 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ELISA-HALCYON/9980552/228488900",
+       "soft": false
       }
      ],
-     "note": "backend 'Elisa Halycon' differs from registry name"
+     "note": "backend 'Elisa Halycon' differs from registry name; marinetraffic.org independently lists IMO 9980552 as ELISA HALCYON (MMSI 228488900)"
+    }
+   ]
+  },
+  {
+   "row_id": "639",
+   "_live_row": 1014,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Solidarity",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/SOLIDARITY/1056410/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Gdansk FSRU' -> vessel named; marinetraffic.org lists IMO 1056410 as SOLIDARITY; shipvault still carries a hull placeholder - single source"
     }
    ]
   },
@@ -4243,13 +4459,31 @@
    ]
   },
   {
+   "row_id": "508",
+   "_live_row": 1079,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Prime Glory",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-GLORY/1069194/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Dalian No 1 G175K-11' -> vessel named; marinetraffic.org lists IMO 1069194 as PRIME GLORY; shipvault still carries a hull placeholder - single source"
+    }
+   ]
+  },
+  {
    "row_id": "509",
    "_live_row": 1080,
    "cells": [
     {
      "field": "Name",
      "new_value": "Friendship Venture",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/469427",
@@ -4258,9 +4492,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469427",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/FRIENDSHIP-VENTURE/1030557/636025371",
+       "soft": false
       }
      ],
-     "note": "backend 'Dalian No 1 G175K-12' differs from registry name"
+     "note": "backend 'Dalian No 1 G175K-12' differs from registry name; marinetraffic.org independently lists IMO 1030557 as FRIENDSHIP VENTURE (MMSI 636025371)"
     }
    ]
   }

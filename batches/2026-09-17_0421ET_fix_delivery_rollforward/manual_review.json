@@ -268,5 +268,47 @@
   "row_id": "203",
   "imo": "1032713",
   "why": "vesselfinder names it 'GAS AMPHITRITE' (backend 'Hull 3454 (HDHHI)'); shipvault still has a hull placeholder - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 973,
+  "row_id": "207",
+  "imo": "1048918",
+  "why": "shipvault ON ORDER but marinetraffic.org shows AL GHUWAIR with MMSI 538000000 (looks like a placeholder MMSI, not a real AIS registration) - sea trials or delivered; check press"
+ },
+ {
+  "live_row": 988,
+  "row_id": "239",
+  "imo": "1023877",
+  "why": "shipvault ON ORDER but marinetraffic.org shows DIAMOND GAS NEXUS with MMSI 563334400 (AIS-registered) - sea trials or delivered; check press"
+ },
+ {
+  "live_row": 999,
+  "row_id": "258",
+  "imo": "9986570",
+  "why": "shipvault ON ORDER but marinetraffic.org shows AL SABSAB with MMSI 636025823 (AIS-registered) - sea trials or delivered; check press"
+ },
+ {
+  "live_row": 1000,
+  "row_id": "259",
+  "imo": "9986582",
+  "why": "shipvault ON ORDER but marinetraffic.org shows AL FANAR with MMSI 636025824 (AIS-registered) - sea trials or delivered; check press"
+ },
+ {
+  "live_row": 1002,
+  "row_id": "280",
+  "imo": "9997684",
+  "why": "shipvault ON ORDER but marinetraffic.org shows PUTERI KELANTAN with MMSI 563337800 (AIS-registered) - sea trials or delivered; check press"
+ },
+ {
+  "live_row": 1015,
+  "row_id": "711",
+  "imo": "1013913",
+  "why": "shipvault ON ORDER but marinetraffic.org shows PRIME PURITY with MMSI 563346100 (AIS-registered) - sea trials or delivered; check press"
+ },
+ {
+  "live_row": 1080,
+  "row_id": "509",
+  "imo": "1030557",
+  "why": "shipvault ON ORDER but marinetraffic.org shows FRIENDSHIP VENTURE with MMSI 636025371 (AIS-registered) - sea trials or delivered; check press"
  }
 ]

@@ -7,22 +7,22 @@ apply still runs per batch through the Apply SOP, in the order on the README she
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results.xlsx` — 15 sheets. `all_proposals` is every proposed
-  change (1,186 lines: 685 accept / 501 hold by default; 647 G / 539 Y) with **live sheet
+- `lng_carrier_sep-17-pass_results.xlsx` — 16 sheets. `all_proposals` is every proposed
+  change (1,424 lines: 843 accept / 581 hold by default; 670 G / 754 Y) with **live sheet
   row**, current backend value, proposed value, source URL(s), confidence, decision and
   gate verdict. `all_changes_backend_shape` is all six batches merged into the backend's own
   structure: columns A:AT are the backend columns in backend order, one full row per vessel,
-  sorted by live sheet row (532 edited rows, 12 new rows at the bottom, the 3 Woodside
-  duplicates struck through as DELETE ROW; 2,390 changed cells, 999 on hold). Accepts *and*
+  sorted by live sheet row (549 edited rows, 12 new rows at the bottom, the 3 Woodside
+  duplicates struck through as DELETE ROW; 2,685 changed cells, 1,111 on hold). Accepts *and*
   holds are laid in — fill = confidence (peach = an existing `[ref]` rewritten/appended),
   italics = hold, cell comment = batch / decision / old value / note — so it is a review
   surface, not a blind paste: the per-batch `apply_rows.csv` files stay the accept-only
   apply artifacts. Helper columns AU:AZ (live sheet row, row action, holds) sit right of
-  the backend columns. `flags_conflicts` are not laid in. `open_decisions` lists the nine decisions waiting on a person. `b1_`–`b5_`
+  the backend columns. `flags_conflicts` are not laid in. `open_decisions` lists the nine decisions waiting on a person. `b1_`–`b6_`
   are each batch's wide paste-ready sheet with a live-row column prepended (data-fill
-  filtered to rows with at least one proposal). Then `flags_conflicts` (206),
-  `manual_review` (45), `proposed_bucket`, `shipvault_unmatched`, `documented_blanks`
-  (841) and `url_verification` (442).
+  filtered to rows with at least one proposal). Then `flags_conflicts` (155),
+  `manual_review` (52), `proposed_bucket`, `shipvault_unmatched`, `documented_blanks`
+  (818) and `url_verification` (458).
 - `report_data.json` — the same data as JSON, input to the report page.
 - `build_combined.py` — builds the two files above. Read-only over the batch dirs and
   `work/backend.csv`.
@@ -63,3 +63,12 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   all Y / `hold`; 23 of them were previously documented blanks. Workbook rebuilt: 1,415
   proposals (818 accept / 597 hold); no non-derivable proposal is without a URL. The published
   report page still predates this.
+- **marinetraffic.org cross-check (late-afternoon rebuild).** vesselfinder never answered for 176
+  on-order IMOs; the 95 that are named or deliver in 2027 were re-checked on marinetraffic.org
+  (`scripts/sweep.py`, paced) and folded into batch 1 — see that batch's notes.md, last section.
+  Batch 1 is now 223 cells / 150 rows, 168 accept / 55 hold (19 names Y → G with a marinetraffic.org
+  second ref, 6 Status / Delivery-year cells Y → G, 9 new marinetraffic.org-only names on hold);
+  `manual_review` is 52 + 24. Workbook rebuilt: **1,424 proposals (843 accept / 581 hold; 670 G /
+  754 Y), 16 sheets**; backend-shape tab 549 edited rows + 12 new / 2,685 changed cells,
+  1,111 on hold. `report_template.html`'s hard-coded counts were refreshed to these numbers (six
+  batches) and the report page republished.

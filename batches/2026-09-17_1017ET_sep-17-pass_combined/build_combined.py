@@ -33,7 +33,7 @@ B6 = "2026-09-17_1114ET_shipvault_companion_refs"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
-     "on-order rows checked against shipvault + vesselfinder: status, delivery year, names"),
+     "on-order rows checked against shipvault + vesselfinder / marinetraffic.org: status, delivery year, names"),
     (2, B2, "delivery confirmed by press", "lng_carrier_fix.xlsx", "fix",
      "deliveries confirmed by trade press where shipvault still says on order"),
     (3, B3, "discovery since Jun 2026", "lng_carrier_candidate_vessels.xlsx", "candidate_vessels",
@@ -386,7 +386,7 @@ DECISIONS = [
      "Backend mixes 250 + $m with 250000000 + USD. New fills use full USD. Shipvault contract prices were not used "
      "(single-source, unverifiable).", ""),
     ("'Greenenergy ...' names", "", "Look wrong against both shipvault and AIS ('Greenergy').", ""),
-    ("Manual-review rows", "45 + 24",
+    ("Manual-review rows", "52 + 24",
      "Mostly ships AIS-live while shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls "
      "(status untouched).", "manual_review"),
     ("Backend flags from discovery", "1168/1169; 1162",
@@ -618,8 +618,8 @@ ws.cell(r, 1, "Caveats").font = FONT_B
 for line in [
     "Every cited URL passed the value-to-ref corroboration gate (the live page contains the cell's value). "
     "shipvault is treated as single-source (yellow) and never used for owners: it had IMO typos and wrong owner tags.",
-    "Coverage is thinner than a normal run: the web-search budget ran out mid-way, vesselfinder throttled all "
-    "night (cited nowhere), and TradeWinds/Upstream paywalls block many contract dates and prices.",
+    "Coverage is thinner than a normal run: the web-search budget ran out mid-way, vesselfinder blocked our IP "
+    "part-way (cited nowhere; 95 of the 176 IMOs it missed were re-checked on marinetraffic.org), and TradeWinds/Upstream paywalls block many contract dates and prices.",
     "Data-fill research covered on-order rows only; blanks on active rows were not researched. The citation "
     "rot-sweep (fixing existing dead refs) is paused and not part of this file.",
 ]:
