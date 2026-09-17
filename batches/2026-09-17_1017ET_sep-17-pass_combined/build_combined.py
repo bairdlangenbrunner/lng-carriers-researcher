@@ -42,6 +42,8 @@ B7 = "2026-09-17_1458ET_igu_reconciliation_igu2026"
 # B9: the dropped bucket -> Status scrapped (rows are never deleted) + row 61 -> FSU
 B8 = "2026-09-17_1654ET_fix_igu2026_sourced"
 B9 = "2026-09-17_1702ET_fix_scrapped_status"
+# B10: RF 4.16 - every Name change in B1 / B2 / B8 carries the former Name into Other names
+B10 = "2026-09-17_1737ET_fix_other_names_former"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
@@ -63,6 +65,9 @@ BATCH_INFO = [
     (9, B9, "scrapped status + FSU", "lng_carrier_fix.xlsx", "fix",
      "the 18 active rows IGU 2026 dropped -> Status scrapped (press + shipvault refs; rows are never deleted), "
      "and live row 61 Puteri Delima Satu -> Vessel type FSU (two MISC documents)"),
+    (10, B10, "former names -> Other names", "lng_carrier_fix.xlsx", "fix",
+     "every Name change proposed by batches 1, 2 and 8 also moves the row's former Name into Other names "
+     "(appended, nothing removed; RF 4.16). Each line is decided with its Name line"),
 ]
 
 FONT = Font(name="Calibri", size=10)
@@ -137,7 +142,7 @@ PROP_COLS = ["apply order", "batch", "kind", "live sheet row", "row_id", "cluste
 for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
     qa = qa_sections(BATCHES / bdir / wbname)
     urls, verdicts, prev = defaultdict(list), defaultdict(list), {}
-    if bdir in (B1, B2, B8, B9):
+    if bdir in (B1, B2, B8, B9, B10):
         for q in next(iter(qa.values())):
             k = (str(q["row_id"]), q["field"])
             if q.get("url"):
@@ -451,6 +456,8 @@ n_wide[8] = copy_wide(BATCHES / B8 / "lng_carrier_fix.xlsx", "fix", "b8_igu_sour
                       add_live_row_from="original order in sheet")
 n_wide[9] = copy_wide(BATCHES / B9 / "lng_carrier_fix.xlsx", "fix", "b9_scrapped_rows",
                       add_live_row_from="original order in sheet")
+n_wide[10] = copy_wide(BATCHES / B10 / "lng_carrier_fix.xlsx", "fix", "b10_former_names_rows",
+                       add_live_row_from="original order in sheet")
 
 # flags + conflicts
 flags = []
@@ -683,7 +690,8 @@ for j, h in enumerate(heads, 1):
 first = r + 1
 wide_name = {1: "b1_rollforward_rows", 2: "b2_confirmed_rows", 3: "b3_new_vessels",
              4: "b4_data_fill_rows", 5: "b5_ref_fill_rows", 6: "b6_shipvault_companions",
-             8: "b8_igu_sourced_rows", 9: "b9_scrapped_rows"}
+             8: "b8_igu_sourced_rows", 9: "b9_scrapped_rows",
+             10: "b10_former_names_rows"}
 for order, bdir, label, _w, _s, what in BATCH_INFO:
     r += 1
     mine = [p for p in proposals if p["apply order"] == order]
@@ -703,12 +711,13 @@ r += 1
 ws.cell(r, 1, "Counts are of the lines on all_proposals (default decisions, before any review edits). Apply 1-2 before 4 (they rename rows 4 also touches; "
               "artifacts are keyed by row_id, so order is about readability, not safety). There is no apply order 7: "
               "batch 7 is the IGU comparison (igu_findings), which is never applied. Batches 8 and 9 both touch row 61 "
-              "Vessel type: 9 (FSU, sourced) supersedes 8's held 'conventional' ref.").font = FONT
+              "Vessel type: 9 (FSU, sourced) supersedes 8's held 'conventional' ref. Batch 10 rides on the Name lines of "
+              "1, 2 and 8: accept, hold or reject each Other names line together with its Name line.").font = FONT
 r += 2
 ws.cell(r, 1, "Sheets").font = FONT_B
 for name, desc in [
     ("open_decisions", f"the {len(DECISIONS)} judgment calls waiting on a human"),
-    ("all_proposals", "EVERY proposed change from all eight proposal batches, one line per cell (or per new vessel): current "
+    ("all_proposals", "EVERY proposed change from all nine proposal batches, one line per cell (or per new vessel): current "
                       "backend value, proposed value, source URL, confidence, default decision, note. Filter here first."),
     ("all_changes_backend_shape",
      f"ALL of the above merged into the backend's own structure: columns A:AT are the backend columns in backend "
@@ -720,7 +729,7 @@ for name, desc in [
      "row, row action, holds) sit to the right so A:AT pastes straight over the backend row. flags_conflicts are "
      "not laid in (never auto-applied)."),
     ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows"),
-    ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows",
+    ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows / b10_former_names_rows",
      "fix batches: full corrected backend rows (paste-ready shape)"),
     ("b4_data_fill_rows", "data fill: the 477 backend rows that received at least one proposal (the other 743 "
                           "in-scope rows were unchanged and are left out)"),

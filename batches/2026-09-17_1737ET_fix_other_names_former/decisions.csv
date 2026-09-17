@@ -1,0 +1,132 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+6|Other names,fill,6,,Other names,Y,False,hold,hold,Hull 045 (Zvezda),former Name 'Hull 045 (Zvezda)'; the row is renamed 'Konstantin Posiet' by 2026-
+25|Other names,fill,25,,Other names,G,False,accept,accept,Hull 2316 (SHI),former Name 'Hull 2316 (SHI)'; the row is renamed 'Atlantic Success' by 2026-09-
+43|Other names,fill,43,,Other names,G,False,accept,accept,Hull 2541 (Hanwha),former Name 'Hull 2541 (Hanwha)'; the row is renamed 'Venture Pelican' by 2026-0
+44|Other names,fill,44,,Other names,G,False,accept,accept,Hull 2542 (Hanwha),former Name 'Hull 2542 (Hanwha)'; the row is renamed 'Venture Iberia' by 2026-09
+45|Other names,fill,45,,Other names,G,False,accept,accept,Hull 2543 (Hanwha),former Name 'Hull 2543 (Hanwha)'; the row is renamed 'Venture Cameron' by 2026-0
+47|Other names,fill,47,,Other names,G,False,accept,accept,Hull 2549 (Hanwha),former Name 'Hull 2549 (Hanwha)'; the row is renamed 'Al Kharrarah' by 2026-09-1
+48|Other names,fill,48,,Other names,G,False,accept,accept,Hull 2550 (Hanwha),former Name 'Hull 2550 (Hanwha)'; the row is renamed 'Archy Vanguard' by 2026-09
+49|Other names,fill,49,,Other names,G,False,accept,accept,Hull 2551 (Hanwha),former Name 'Hull 2551 (Hanwha)'; the row is renamed 'Harmonic Breeze' by 2026-0
+50|Other names,fill,50,,Other names,G,False,accept,accept,Hull 2552 (Hanwha),former Name 'Hull 2552 (Hanwha)'; the row is renamed 'Lake Modro' by 2026-09-17_
+51|Other names,fill,51,,Other names,G,False,accept,accept,Hull 2553 (Hanwha),former Name 'Hull 2553 (Hanwha)'; the row is renamed 'Lake Morskie Oko' by 2026-
+53|Other names,fill,53,,Other names,G,False,accept,accept,Hull 2559 (Hanwha),former Name 'Hull 2559 (Hanwha)'; the row is renamed 'Al Sakhamah' by 2026-09-17
+54|Other names,fill,54,,Other names,G,False,accept,accept,Hull 2561 (Hanwha),former Name 'Hull 2561 (Hanwha)'; the row is renamed 'Al Galayel' by 2026-09-17_
+55|Other names,fill,55,,Other names,G,False,accept,accept,Hull 2562 (Hanwha),former Name 'Hull 2562 (Hanwha)'; the row is renamed 'Bu Nakhlah' by 2026-09-17_
+56|Other names,fill,56,,Other names,G,False,accept,accept,Hull 2563 (Hanwha),former Name 'Hull 2563 (Hanwha)'; the row is renamed 'Al Sene' by 2026-09-17_042
+57|Other names,fill,57,,Other names,G,False,accept,accept,Hull 2564 (Hanwha),former Name 'Hull 2564 (Hanwha)'; the row is renamed 'Shafallah' by 2026-09-17_0
+58|Other names,fill,58,,Other names,G,False,accept,accept,Hull 2565 (Hanwha),former Name 'Hull 2565 (Hanwha)'; the row is renamed 'Hasbah' by 2026-09-17_0421
+60|Other names,fill,60,,Other names,G,False,accept,accept,Hull 2567 (Hanwha),former Name 'Hull 2567 (Hanwha)'; the row is renamed 'Esteem Cormorant' by 2026-
+61|Other names,fill,61,,Other names,G,False,accept,accept,Hull 2568 (Hanwha),former Name 'Hull 2568 (Hanwha)'; the row is renamed 'Esteem Denali' by 2026-09-
+62|Other names,fill,62,,Other names,G,False,accept,accept,Hull 2569 (Hanwha),former Name 'Hull 2569 (Hanwha)'; the row is renamed 'Esteem Penguin' by 2026-09
+63|Other names,fill,63,,Other names,G,False,accept,accept,Hull 2570 (Hanwha),former Name 'Hull 2570 (Hanwha)'; the row is renamed 'Seri Dian' by 2026-09-17_0
+64|Other names,fill,64,,Other names,G,False,accept,accept,Hull 2571 (Hanwha),former Name 'Hull 2571 (Hanwha)'; the row is renamed 'Seri Dayang' by 2026-09-17
+65|Other names,fill,65,,Other names,G,False,accept,accept,Hull 2572 (Hanwha),former Name 'Hull 2572 (Hanwha)'; the row is renamed 'Al Thurayya' by 2026-09-17
+66|Other names,fill,66,,Other names,G,False,accept,accept,Hull 2573 (Hanwha),former Name 'Hull 2573 (Hanwha)'; the row is renamed 'Al Majhoulah' by 2026-09-1
+67|Other names,fill,67,,Other names,G,False,accept,accept,Hull 2574 (Hanwha),former Name 'Hull 2574 (Hanwha)'; the row is renamed 'Venture Manatee' by 2026-0
+109|Other names,fill,109,,Other names,G,False,accept,accept,Hull 2636 (SHI),former Name 'Hull 2636 (SHI)'; the row is renamed 'Spirit LNG' by 2026-09-17_042
+113|Other names,fill,113,,Other names,G,False,accept,accept,Hull 2640 (SHI),former Name 'Hull 2640 (SHI)'; the row is renamed 'Qtaifan' by 2026-09-17_0421ET
+119|Other names,fill,119,,Other names,G,False,accept,accept,Hull 2646 (SHI),former Name 'Hull 2646 (SHI)'; the row is renamed 'Umm Heesh' by 2026-09-17_0421
+120|Other names,fill,120,,Other names,G,False,accept,accept,Hull 2647 (SHI),former Name 'Hull 2647 (SHI)'; the row is renamed 'Umm Al Shubrum' by 2026-09-17
+122|Other names,fill,122,,Other names,G,False,accept,accept,Hull 2652 (SHI),former Name 'Hull 2652 (SHI)'; the row is renamed 'Minerva Eleonora' by 2026-09-
+123|Other names,fill,123,,Other names,G,False,accept,accept,Hull 2653 (SHI),former Name 'Hull 2653 (SHI)'; the row is renamed 'Minerva Roxanne' by 2026-09-1
+129|Other names,fill,129,,Other names,G,False,accept,accept,Hull 2662 (SHI),former Name 'Hull 2662 (SHI)'; the row is renamed 'Gamy Vanguard' by 2026-09-17_
+131|Other names,fill,131,,Other names,G,False,accept,accept,Hull 2664 (SHI),former Name 'Hull 2664 (SHI)'; the row is renamed 'Diamond Gas Jade' by 2026-09-
+132|Other names,fill,132,,Other names,G,False,accept,accept,Hull 2665 (SHI),former Name 'Hull 2665 (SHI)'; the row is renamed 'Toho Emerald' by 2026-09-17_0
+144|Other names,fill,144,,Other names,Y,False,hold,hold,Hull 2697 (SHI),"former Name 'Hull 2697 (SHI)'; the row is renamed ""E'saila"" by 2026-09-17_0421ET"
+181|Other names,fill,181,,Other names,G,False,accept,accept,Hull 3371 (HDHHI),former Name 'Hull 3371 (HDHHI)'; the row is renamed 'Puteri Sarawak' by 2026-09-
+184|Other names,fill,184,,Other names,G,False,accept,accept,Hull 3385 (HDHHI),former Name 'Hull 3385 (HDHHI)'; the row is renamed 'Barzan' by 2026-09-17_0421E
+185|Other names,fill,185,,Other names,G,False,accept,accept,Hull 3386 (HDHHI),former Name 'Hull 3386 (HDHHI)'; the row is renamed 'Umm Wishah' by 2026-09-17_0
+189|Other names,fill,189,,Other names,G,False,accept,accept,Hull 3395 (HDHHI),former Name 'Hull 3395 (HDHHI)'; the row is renamed 'Al Zuwair' by 2026-09-17_04
+190|Other names,fill,190,,Other names,G,False,accept,accept,Hull 3396 (HDHHI),former Name 'Hull 3396 (HDHHI)'; the row is renamed 'Sharq' by 2026-09-17_0421ET
+192|Other names,fill,192,,Other names,G,False,accept,accept,Hull 3398 (HDHHI),former Name 'Hull 3398 (HDHHI)'; the row is renamed 'Halwan' by 2026-09-17_0421E
+193|Other names,fill,193,,Other names,G,False,accept,accept,Hull 3399 (HDHHI),former Name 'Hull 3399 (HDHHI)'; the row is renamed 'Al Thumaid' by 2026-09-17_0
+194|Other names,fill,194,,Other names,G,False,accept,accept,Hull 3400 (HDHHI),former Name 'Hull 3400 (HDHHI)'; the row is renamed 'Al Mazrooah' by 2026-09-17_
+195|Other names,fill,195,,Other names,G,False,accept,accept,Hull 3401 (HDHHI),former Name 'Hull 3401 (HDHHI)'; the row is renamed 'Qaffal' by 2026-09-17_0421E
+196|Other names,fill,196,,Other names,G,False,accept,accept,Hull 3407 (HDHHI),former Name 'Hull 3407 (HDHHI)'; the row is renamed 'Excelerate Acadia' by 2026-
+231|Other names,fill,231,,Other names,G,False,accept,accept,Hull 8182 (HSHI),former Name 'Hull 8182 (HSHI)'; the row is renamed 'Parthenon LNG' by 2026-09-17
+232|Other names,fill,232,,Other names,G,False,accept,accept,Hull 8188 (HSHI),former Name 'Hull 8188 (HSHI)'; the row is renamed 'Puteri Selangor' by 2026-09-
+233|Other names,fill,233,,Other names,G,False,accept,accept,Hull 8189 (HSHI),former Name 'Hull 8189 (HSHI)'; the row is renamed 'Puteri Terengganu' by 2026-0
+235|Other names,fill,235,,Other names,G,False,accept,accept,Hull 8200 (HSHI),former Name 'Hull 8200 (HSHI)'; the row is renamed 'Olympus LNG' by 2026-09-17_0
+236|Other names,fill,236,,Other names,G,False,accept,accept,Hull 8201 (HSHI),former Name 'Hull 8201 (HSHI)'; the row is renamed 'Frontier LNG' by 2026-09-17_
+237|Other names,fill,237,,Other names,G,False,accept,accept,Hull 8204 (HSHI),former Name 'Hull 8204 (HSHI)'; the row is renamed 'Muscat LNG' by 2026-09-17_04
+238|Other names,fill,238,,Other names,G,False,accept,accept,Hull 8205 (HSHI),former Name 'Hull 8205 (HSHI)'; the row is renamed 'Musandam LNG' by 2026-09-17_
+264|Other names,fill,264,,Other names,G,False,accept,accept,Hull H1800A,former Name 'Hull H1800A'; the row is renamed 'Mihzem' by 2026-09-17_0421ET_fix_
+265|Other names,fill,265,,Other names,G,False,accept,accept,Hull H1801A,former Name 'Hull H1801A'; the row is renamed 'Idd Al Shargi' by 2026-09-17_0421
+289|Other names,fill,289,,Other names,G,False,accept,accept,Hull H1909A,former Name 'Hull H1909A'; the row is renamed 'Tianshan' by 2026-09-17_0421ET_fi
+318|Other names,fill,318,,Other names,G,False,accept,accept,Hull YZJ2022-1475,former Name 'Hull YZJ2022-1475'; the row is renamed 'Yangze LNG 01' by 2026-09-1
+517|Other names,fill,517,,Other names,Y,False,hold,hold,Dalian No 1 G175K-7,former Name 'Dalian No 1 G175K-7'; the row is renamed 'Sea Charity' by 2026-09-1
+26|Other names,fill,26,,Other names,Y,False,hold,hold,Hull 2317 (SHI),former Name 'Hull 2317 (SHI)'; the row is renamed 'Mediterranean Success' by 202
+27|Other names,fill,27,,Other names,Y,False,hold,hold,Hull 2318 (SHI),former Name 'Hull 2318 (SHI)'; the row is renamed 'Caribbean Success' by 2026-09
+74|Other names,fill,74,,Other names,Y,False,hold,hold,Hull 2582 (Hanwha),former Name 'Hull 2582 (Hanwha)'; the row is renamed 'Maran Gas Poliegos' by 202
+135|Other names,fill,135,,Other names,G,False,accept,accept,Hull 2687 (SHI),former Name 'Hull 2687 (SHI)'; the row is renamed 'Barthy Vanguard' by 2026-09-1
+147|Other names,fill,147,,Other names,Y,False,hold,hold,Hull 2700 (SHI),former Name 'Hull 2700 (SHI)'; the row is renamed 'Al Seej' by 2026-09-17_0421ET
+201|Other names,fill,201,,Other names,Y,False,hold,hold,Hull 3452 (HDHHI),former Name 'Hull 3452 (HDHHI)'; the row is renamed 'Clean Astraeus' by 2026-09-
+202|Other names,fill,202,,Other names,Y,False,hold,hold,Hull 3453 (HDHHI),former Name 'Hull 3453 (HDHHI)'; the row is renamed 'Clean Azeus' by 2026-09-17_
+207|Other names,fill,207,,Other names,G,False,accept,accept,Hull 3476 (HDHHI),former Name 'Hull 3476 (HDHHI)'; the row is renamed 'Al Ghuwair' by 2026-09-17_0
+208|Other names,fill,208,,Other names,G,False,accept,accept,Hull 3477 (HDHHI),former Name 'Hull 3477 (HDHHI)'; the row is renamed 'Wadi Sultana' by 2026-09-17
+209|Other names,fill,209,,Other names,G,False,accept,accept,Hull 3478 (HDHHI),former Name 'Hull 3478 (HDHHI)'; the row is renamed 'Lesha' by 2026-09-17_0421ET
+210|Other names,fill,210,,Other names,G,False,accept,accept,Hull 3479 (HDHHI),former Name 'Hull 3479 (HDHHI)'; the row is renamed 'Al Jazi' by 2026-09-17_0421
+211|Other names,fill,211,,Other names,G,False,accept,accept,Hull 3480 (HDHHI),former Name 'Hull 3480 (HDHHI)'; the row is renamed 'Al Mashrab' by 2026-09-17_0
+212|Other names,fill,212,,Other names,G,False,accept,accept,Hull 3481 (HDHHI),former Name 'Hull 3481 (HDHHI)'; the row is renamed 'Al Mirzam' by 2026-09-17_04
+213|Other names,fill,213,,Other names,G,False,accept,accept,Hull 3482 (HDHHI),former Name 'Hull 3482 (HDHHI)'; the row is renamed 'Maqdeem' by 2026-09-17_0421
+214|Other names,fill,214,,Other names,G,False,accept,accept,Hull 3483 (HDHHI),former Name 'Hull 3483 (HDHHI)'; the row is renamed 'Al Rufaa' by 2026-09-17_042
+215|Other names,fill,215,,Other names,G,False,accept,accept,Hull 3484 (HDHHI),former Name 'Hull 3484 (HDHHI)'; the row is renamed 'Al Nekhsh' by 2026-09-17_04
+216|Other names,fill,216,,Other names,G,False,accept,accept,Hull 3485 (HDHHI),"former Name 'Hull 3485 (HDHHI)'; the row is renamed ""Leh'saien"" by 2026-09-17_04"
+217|Other names,fill,217,,Other names,G,False,accept,accept,Hull 3486 (HDHHI),"former Name 'Hull 3486 (HDHHI)'; the row is renamed ""Le'shara"" by 2026-09-17_042"
+218|Other names,fill,218,,Other names,G,False,accept,accept,Hull 3487 (HDHHI),former Name 'Hull 3487 (HDHHI)'; the row is renamed 'Librega' by 2026-09-17_0421
+219|Other names,fill,219,,Other names,G,False,accept,accept,Hull 3488 (HDHHI),former Name 'Hull 3488 (HDHHI)'; the row is renamed 'Eshairej' by 2026-09-17_042
+220|Other names,fill,220,,Other names,G,False,accept,accept,Hull 3489 (HDHHI),former Name 'Hull 3489 (HDHHI)'; the row is renamed 'Mneefa' by 2026-09-17_0421E
+221|Other names,fill,221,,Other names,G,False,accept,accept,Hull 3490 (HDHHI),former Name 'Hull 3490 (HDHHI)'; the row is renamed 'Ezhara' by 2026-09-17_0421E
+239|Other names,fill,239,,Other names,Y,False,hold,hold,Hull 8208 (HSHI),former Name 'Hull 8208 (HSHI)'; the row is renamed 'Diamond Gas Nexus' by 2026-0
+240|Other names,fill,240,,Other names,Y,False,hold,hold,Hull 8209 (HSHI),former Name 'Hull 8209 (HSHI)'; the row is renamed 'Grace Himawari' by 2026-09-1
+242|Other names,fill,242,,Other names,Y,False,hold,hold,Hull 8238 (HSHI),former Name 'Hull 8238 (HSHI)'; the row is renamed 'Grace Gerbera' by 2026-09-17
+243|Other names,fill,243,,Other names,Y,False,hold,hold,Hull 8239 (HSHI),former Name 'Hull 8239 (HSHI)'; the row is renamed 'Ferdy Vanguard' by 2026-09-1
+258|Other names,fill,258,,Other names,G,False,accept,accept,Hull H1794A,former Name 'Hull H1794A'; the row is renamed 'Al Sabsab' by 2026-09-17_0421ET_f
+259|Other names,fill,259,,Other names,Y,False,hold,hold,Hull H1795A,former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fi
+507|Other names,fill,507,,Other names,Y,False,hold,hold,Dalian No 1 G175K-10,former Name 'Dalian No 1 G175K-10'; the row is renamed 'Prime Creativity' by 202
+510|Other names,fill,510,,Other names,Y,False,hold,hold,Dalian No 1 G175K-13,former Name 'Dalian No 1 G175K-13'; the row is renamed 'Alliance Venture' by 202
+519|Other names,fill,519,,Other names,Y,False,hold,hold,Dalian No 1 G175K-9,former Name 'Dalian No 1 G175K-9'; the row is renamed 'Prime Unity' by 2026-09-1
+639|Other names,fill,639,,Other names,Y,False,hold,hold,Gdansk FSRU,former Name 'Gdansk FSRU'; the row is renamed 'Solidarity' by 2026-09-17_0421ET_
+80|Other names,fill,80,,Other names,G,False,accept,accept,Hull 2585 (Hanwha),former Name 'Hull 2585 (Hanwha)'; the row is renamed 'Al Nasraniya' by 2026-09-1
+81|Other names,fill,81,,Other names,G,False,accept,accept,Hull 2586 (Hanwha),former Name 'Hull 2586 (Hanwha)'; the row is renamed 'Al Yousifiya' by 2026-09-1
+82|Other names,fill,82,,Other names,G,False,accept,accept,Hull 2587 (Hanwha),former Name 'Hull 2587 (Hanwha)'; the row is renamed 'Athba' by 2026-09-17_0421E
+83|Other names,fill,83,,Other names,G,False,accept,accept,Hull 2588 (Hanwha),former Name 'Hull 2588 (Hanwha)'; the row is renamed 'E Qab' by 2026-09-17_0421E
+84|Other names,fill,84,,Other names,G,False,accept,accept,Hull 2589 (Hanwha),former Name 'Hull 2589 (Hanwha)'; the row is renamed 'Ghash Sham' by 2026-09-17_
+85|Other names,fill,85,,Other names,G,False,accept,accept,Hull 2590 (Hanwha),former Name 'Hull 2590 (Hanwha)'; the row is renamed 'Al Egdah' by 2026-09-17_04
+86|Other names,fill,86,,Other names,G,False,accept,accept,Hull 2591 (Hanwha),former Name 'Hull 2591 (Hanwha)'; the row is renamed 'Al Khbaib' by 2026-09-17_0
+88|Other names,fill,88,,Other names,G,False,accept,accept,Hull 2592 (Hanwha),former Name 'Hull 2592 (Hanwha)'; the row is renamed 'Khowzan' by 2026-09-17_042
+136|Other names,fill,136,,Other names,Y,False,hold,hold,Hull 2693 (Hanwha),former Name 'Hull 2693 (Hanwha)'; the row is renamed 'Al Ghafat' by 2026-09-17_0
+138|Other names,fill,138,,Other names,Y,False,hold,hold,Hull 2694 (Hanwha),former Name 'Hull 2694 (Hanwha)'; the row is renamed 'Al Sidriya' by 2026-09-17_
+139|Other names,fill,139,,Other names,G,False,accept,accept,Hull 2694 (SHI),former Name 'Hull 2694 (SHI)'; the row is renamed 'Lekhraib' by 2026-09-17_0421E
+140|Other names,fill,140,,Other names,Y,False,hold,hold,Hull 2695 (Hanwha),former Name 'Hull 2695 (Hanwha)'; the row is renamed 'Ain Snan' by 2026-09-17_04
+142|Other names,fill,142,,Other names,Y,False,hold,hold,Hull 2696 (Hanwha),former Name 'Hull 2696 (Hanwha)'; the row is renamed 'Al Wasmi' by 2026-09-17_04
+143|Other names,fill,143,,Other names,G,False,accept,accept,Hull 2696 (SHI),former Name 'Hull 2696 (SHI)'; the row is renamed 'Wadi Al Askar' by 2026-09-17_
+146|Other names,fill,146,,Other names,G,False,accept,accept,Hull 2699 (SHI),former Name 'Hull 2699 (SHI)'; the row is renamed 'Al Shaheen' by 2026-09-17_042
+150|Other names,fill,150,,Other names,Y,False,hold,hold,Hull 2702 (SHI),former Name 'Hull 2702 (SHI)'; the row is renamed 'Libsayer' by 2026-09-17_0421E
+154|Other names,fill,154,,Other names,G,False,accept,accept,Hull 2706 (SHI),former Name 'Hull 2706 (SHI)'; the row is renamed 'Al Nouf' by 2026-09-17_0421ET
+222|Other names,fill,222,,Other names,G,False,accept,accept,Hull 3491 (HDHHI),former Name 'Hull 3491 (HDHHI)'; the row is renamed 'Izghawa' by 2026-09-17_0421
+223|Other names,fill,223,,Other names,G,False,accept,accept,Hull 3492 (HDHHI),"former Name 'Hull 3492 (HDHHI)'; the row is renamed ""Al Wa'ab"" by 2026-09-17_042"
+508|Other names,fill,508,,Other names,Y,False,hold,hold,Dalian No 1 G175K-11,former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-
+509|Other names,fill,509,,Other names,Y,False,hold,hold,Dalian No 1 G175K-12,former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2
+186|Other names,fill,186,,Other names,Y,False,hold,hold,Hull 3387 (HDHHI),former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_04
+721|Other names,fill,721,,Other names,Y,False,hold,hold,Karmol LNGT Powership Antarctica,former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LN
+811|Other names,fill,811,,Other names,Y,False,hold,hold,LNGT Americas,former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 202
+971|Other names,fill,971,,Other names,G,False,accept,accept,Puteri Intan,former Name 'Puteri Intan'; the row is renamed 'American Energy' by 2026-09-17_1
+726|Other names,fill,726,,Other names,Y,False,hold,hold,KLNGTP Black Sea,former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Bla
+727|Other names,fill,727,,Other names,Y,False,hold,hold,KLNGTP Marmara,former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marma
+535|Other names,fill,535,,Other names,Y,False,hold,hold,East Energy,former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654
+1004|Other names,fill,1004,,Other names,G,False,accept,accept,Seapeak Hispania,former Name 'Seapeak Hispania'; the row is renamed 'Seapeak Jupiter' by 2026-09-
+562|Other names,fill,562,,Other names,G,False,accept,accept,Energy Frontier,former Name 'Energy Frontier'; the row is renamed 'Arunika Jaya' by 2026-09-17_1
+648|Other names,fill,648,,Other names,G,False,accept,accept,Golar Arctic,former Name 'Golar Arctic'; the row is renamed 'SC Serenity' by 2026-09-17_1654E
+866|Other names,fill,866,,Other names,G,False,accept,accept,Metagas Everest,former Name 'Metagas Everest'; the row is renamed 'Arctic Metagas' by 2026-09-17
+801|Other names,fill,801,,Other names,G,False,accept,accept,LNG River Orashi,former Name 'LNG River Orashi'; the row is renamed 'Gas Garuda' by 2026-09-17_16
+958|Other names,fill,958,,Other names,G,False,accept,accept,LNG Pioneer; Pioneer Spirit,former Name 'Pioneer Spirit'; the row is renamed 'Arctic Pioneer' by 2026-09-17_
+459|Other names,fill,459,,Other names,Y,False,hold,hold,Condor LNG; CCH LNG,former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_i
+1062|Other names,fill,1062,,Other names,Y,False,hold,hold,Stena Blue Sky,former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1
+869|Other names,fill,869,,Other names,G,False,accept,accept,Methane Heather Sally,former Name 'Methane Heather Sally'; the row is renamed 'Shandong Redwood' by 20
+377|Other names,fill,377,,Other names,Y,False,hold,hold,Alto Acrux,former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654
+649|Other names,fill,649,,Other names,G,False,accept,accept,Golar Tundra,former Name 'Golar Tundra'; the row is renamed 'Italis LNG' by 2026-09-17_1654ET
+729|Other names,fill,729,,Other names,G,False,accept,accept,Kool Baltic,former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET
+993|Other names,fill,993,,Other names,G,False,accept,accept,SCF La Perouse,former Name 'SCF La Perouse'; the row is renamed 'La Perouse' by 2026-09-17_1654
+924|Other names,fill,924,,Other names,Y,False,hold,hold,North Mountain,former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_
+263|Other names,fill,263,,Other names,Y,False,hold,hold,Hull H1799A,former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654

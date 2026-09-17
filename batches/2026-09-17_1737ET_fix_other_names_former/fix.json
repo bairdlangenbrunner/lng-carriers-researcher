@@ -1,0 +1,2722 @@
+{
+ "batch_label": "Former names -> Other names (RF §4.16)",
+ "reason": "Every Name change proposed by 2026-09-17_0421ET_fix_delivery_rollforward, 2026-09-17_0458ET_fix_delivery_confirmed, 2026-09-17_1654ET_fix_igu2026_sourced moves the row's former Name into Other names (appended; existing entries and refs kept). Apply each line together with its Name line.",
+ "corrections": [
+  {
+   "row_id": "6",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 045 (Zvezda)",
+     "gate_value": "Hull 045 (Zvezda)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 045 (Zvezda)'; the row is renamed 'Konstantin Posiet' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "25",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2316 (SHI)",
+     "gate_value": "Hull 2316 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/432642",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432642",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2316 (SHI)'; the row is renamed 'Atlantic Success' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "43",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2541 (Hanwha)",
+     "gate_value": "Hull 2541 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455308",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455308",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2541 (Hanwha)'; the row is renamed 'Venture Pelican' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "44",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2542 (Hanwha)",
+     "gate_value": "Hull 2542 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455309",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455309",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2542 (Hanwha)'; the row is renamed 'Venture Iberia' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "45",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2543 (Hanwha)",
+     "gate_value": "Hull 2543 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455310",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455310",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2543 (Hanwha)'; the row is renamed 'Venture Cameron' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "47",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2549 (Hanwha)",
+     "gate_value": "Hull 2549 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457495",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457495",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2549 (Hanwha)'; the row is renamed 'Al Kharrarah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "48",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2550 (Hanwha)",
+     "gate_value": "Hull 2550 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/464056",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464056",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2550 (Hanwha)'; the row is renamed 'Archy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "49",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2551 (Hanwha)",
+     "gate_value": "Hull 2551 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459086",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459086",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2551 (Hanwha)'; the row is renamed 'Harmonic Breeze' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "50",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2552 (Hanwha)",
+     "gate_value": "Hull 2552 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457498",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457498",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2552 (Hanwha)'; the row is renamed 'Lake Modro' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "51",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2553 (Hanwha)",
+     "gate_value": "Hull 2553 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457499",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457499",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2553 (Hanwha)'; the row is renamed 'Lake Morskie Oko' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "53",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2559 (Hanwha)",
+     "gate_value": "Hull 2559 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465038",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465038",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2559 (Hanwha)'; the row is renamed 'Al Sakhamah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "54",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2561 (Hanwha)",
+     "gate_value": "Hull 2561 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465040",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465040",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2561 (Hanwha)'; the row is renamed 'Al Galayel' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "55",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2562 (Hanwha)",
+     "gate_value": "Hull 2562 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465041",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2562 (Hanwha)'; the row is renamed 'Bu Nakhlah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "56",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2563 (Hanwha)",
+     "gate_value": "Hull 2563 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465042",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2563 (Hanwha)'; the row is renamed 'Al Sene' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "57",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2564 (Hanwha)",
+     "gate_value": "Hull 2564 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465043",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2564 (Hanwha)'; the row is renamed 'Shafallah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "58",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2565 (Hanwha)",
+     "gate_value": "Hull 2565 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465044",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465044",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2565 (Hanwha)'; the row is renamed 'Hasbah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "60",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2567 (Hanwha)",
+     "gate_value": "Hull 2567 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465046",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465046",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2567 (Hanwha)'; the row is renamed 'Esteem Cormorant' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "61",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2568 (Hanwha)",
+     "gate_value": "Hull 2568 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465047",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465047",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2568 (Hanwha)'; the row is renamed 'Esteem Denali' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "62",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2569 (Hanwha)",
+     "gate_value": "Hull 2569 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465048",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465048",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2569 (Hanwha)'; the row is renamed 'Esteem Penguin' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "63",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2570 (Hanwha)",
+     "gate_value": "Hull 2570 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465049",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465049",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2570 (Hanwha)'; the row is renamed 'Seri Dian' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "64",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2571 (Hanwha)",
+     "gate_value": "Hull 2571 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465050",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465050",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2571 (Hanwha)'; the row is renamed 'Seri Dayang' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "65",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2572 (Hanwha)",
+     "gate_value": "Hull 2572 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465051",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465051",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2572 (Hanwha)'; the row is renamed 'Al Thurayya' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "66",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2573 (Hanwha)",
+     "gate_value": "Hull 2573 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465052",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465052",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2573 (Hanwha)'; the row is renamed 'Al Majhoulah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "67",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2574 (Hanwha)",
+     "gate_value": "Hull 2574 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465053",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465053",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2574 (Hanwha)'; the row is renamed 'Venture Manatee' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "109",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2636 (SHI)",
+     "gate_value": "Hull 2636 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456923",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456923",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2636 (SHI)'; the row is renamed 'Spirit LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "113",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2640 (SHI)",
+     "gate_value": "Hull 2640 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457608",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457608",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2640 (SHI)'; the row is renamed 'Qtaifan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "119",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2646 (SHI)",
+     "gate_value": "Hull 2646 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457614",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457614",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2646 (SHI)'; the row is renamed 'Umm Heesh' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "120",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2647 (SHI)",
+     "gate_value": "Hull 2647 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457615",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457615",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2647 (SHI)'; the row is renamed 'Umm Al Shubrum' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "122",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2652 (SHI)",
+     "gate_value": "Hull 2652 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461095",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461095",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2652 (SHI)'; the row is renamed 'Minerva Eleonora' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "123",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2653 (SHI)",
+     "gate_value": "Hull 2653 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461096",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461096",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2653 (SHI)'; the row is renamed 'Minerva Roxanne' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "129",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2662 (SHI)",
+     "gate_value": "Hull 2662 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/463994",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463994",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2662 (SHI)'; the row is renamed 'Gamy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "131",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2664 (SHI)",
+     "gate_value": "Hull 2664 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465878",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465878",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2664 (SHI)'; the row is renamed 'Diamond Gas Jade' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "132",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2665 (SHI)",
+     "gate_value": "Hull 2665 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465879",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465879",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2665 (SHI)'; the row is renamed 'Toho Emerald' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "144",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2697 (SHI)",
+     "gate_value": "Hull 2697 (SHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479142",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2697 (SHI)'; the row is renamed \"E'saila\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "181",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3371 (HDHHI)",
+     "gate_value": "Hull 3371 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467719",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3371 (HDHHI)'; the row is renamed 'Puteri Sarawak' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "184",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3385 (HDHHI)",
+     "gate_value": "Hull 3385 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458163",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3385 (HDHHI)'; the row is renamed 'Barzan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "185",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3386 (HDHHI)",
+     "gate_value": "Hull 3386 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458164",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458164",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3386 (HDHHI)'; the row is renamed 'Umm Wishah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "189",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3395 (HDHHI)",
+     "gate_value": "Hull 3395 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459079",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459079",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3395 (HDHHI)'; the row is renamed 'Al Zuwair' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "190",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3396 (HDHHI)",
+     "gate_value": "Hull 3396 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459080",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459080",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3396 (HDHHI)'; the row is renamed 'Sharq' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "192",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3398 (HDHHI)",
+     "gate_value": "Hull 3398 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459082",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459082",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3398 (HDHHI)'; the row is renamed 'Halwan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "193",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3399 (HDHHI)",
+     "gate_value": "Hull 3399 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459083",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459083",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3399 (HDHHI)'; the row is renamed 'Al Thumaid' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "194",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3400 (HDHHI)",
+     "gate_value": "Hull 3400 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459084",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459084",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3400 (HDHHI)'; the row is renamed 'Al Mazrooah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "195",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3401 (HDHHI)",
+     "gate_value": "Hull 3401 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459085",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459085",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3401 (HDHHI)'; the row is renamed 'Qaffal' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "196",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3407 (HDHHI)",
+     "gate_value": "Hull 3407 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/460369",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3407 (HDHHI)'; the row is renamed 'Excelerate Acadia' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "231",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8182 (HSHI)",
+     "gate_value": "Hull 8182 (HSHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/428603",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/428603",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8182 (HSHI)'; the row is renamed 'Parthenon LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "232",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8188 (HSHI)",
+     "gate_value": "Hull 8188 (HSHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456920",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456920",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8188 (HSHI)'; the row is renamed 'Puteri Selangor' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "233",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8189 (HSHI)",
+     "gate_value": "Hull 8189 (HSHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456921",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456921",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8189 (HSHI)'; the row is renamed 'Puteri Terengganu' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "235",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8200 (HSHI)",
+     "gate_value": "Hull 8200 (HSHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458170",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458170",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8200 (HSHI)'; the row is renamed 'Olympus LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "236",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8201 (HSHI)",
+     "gate_value": "Hull 8201 (HSHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458171",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458171",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8201 (HSHI)'; the row is renamed 'Frontier LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "237",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8204 (HSHI)",
+     "gate_value": "Hull 8204 (HSHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461955",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461955",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8204 (HSHI)'; the row is renamed 'Muscat LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "238",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8205 (HSHI)",
+     "gate_value": "Hull 8205 (HSHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461956",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8205 (HSHI)'; the row is renamed 'Musandam LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "264",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1800A",
+     "gate_value": "Hull H1800A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462939",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull H1800A'; the row is renamed 'Mihzem' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "265",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1801A",
+     "gate_value": "Hull H1801A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462940",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull H1801A'; the row is renamed 'Idd Al Shargi' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "289",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1909A",
+     "gate_value": "Hull H1909A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467899",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull H1909A'; the row is renamed 'Tianshan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "318",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull YZJ2022-1475",
+     "gate_value": "Hull YZJ2022-1475",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/475022",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/475022",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull YZJ2022-1475'; the row is renamed 'Yangze LNG 01' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "517",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dalian No 1 G175K-7",
+     "gate_value": "Dalian No 1 G175K-7",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Dalian No 1 G175K-7'; the row is renamed 'Sea Charity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "26",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2317 (SHI)",
+     "gate_value": "Hull 2317 (SHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/432643",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432643",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2317 (SHI)'; the row is renamed 'Mediterranean Success' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "27",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2318 (SHI)",
+     "gate_value": "Hull 2318 (SHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/432644",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432644",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2318 (SHI)'; the row is renamed 'Caribbean Success' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "74",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2582 (Hanwha)",
+     "gate_value": "Hull 2582 (Hanwha)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/470097",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2582 (Hanwha)'; the row is renamed 'Maran Gas Poliegos' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "135",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2687 (SHI)",
+     "gate_value": "Hull 2687 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/471277",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2687 (SHI)'; the row is renamed 'Barthy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "147",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2700 (SHI)",
+     "gate_value": "Hull 2700 (SHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479145",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479145",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2700 (SHI)'; the row is renamed 'Al Seej' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "201",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3452 (HDHHI)",
+     "gate_value": "Hull 3452 (HDHHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462869",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462869",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3452 (HDHHI)'; the row is renamed 'Clean Astraeus' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "202",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3453 (HDHHI)",
+     "gate_value": "Hull 3453 (HDHHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462870",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462870",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3453 (HDHHI)'; the row is renamed 'Clean Azeus' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "207",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3476 (HDHHI)",
+     "gate_value": "Hull 3476 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478305",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478305",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3476 (HDHHI)'; the row is renamed 'Al Ghuwair' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "208",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3477 (HDHHI)",
+     "gate_value": "Hull 3477 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478306",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478306",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3477 (HDHHI)'; the row is renamed 'Wadi Sultana' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "209",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3478 (HDHHI)",
+     "gate_value": "Hull 3478 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478307",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478307",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3478 (HDHHI)'; the row is renamed 'Lesha' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "210",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3479 (HDHHI)",
+     "gate_value": "Hull 3479 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478308",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478308",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3479 (HDHHI)'; the row is renamed 'Al Jazi' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "211",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3480 (HDHHI)",
+     "gate_value": "Hull 3480 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478309",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478309",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3480 (HDHHI)'; the row is renamed 'Al Mashrab' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "212",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3481 (HDHHI)",
+     "gate_value": "Hull 3481 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478310",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478310",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3481 (HDHHI)'; the row is renamed 'Al Mirzam' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "213",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3482 (HDHHI)",
+     "gate_value": "Hull 3482 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478311",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478311",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3482 (HDHHI)'; the row is renamed 'Maqdeem' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "214",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3483 (HDHHI)",
+     "gate_value": "Hull 3483 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478312",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478312",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3483 (HDHHI)'; the row is renamed 'Al Rufaa' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "215",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3484 (HDHHI)",
+     "gate_value": "Hull 3484 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478313",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478313",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3484 (HDHHI)'; the row is renamed 'Al Nekhsh' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "216",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3485 (HDHHI)",
+     "gate_value": "Hull 3485 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478314",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478314",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3485 (HDHHI)'; the row is renamed \"Leh'saien\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "217",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3486 (HDHHI)",
+     "gate_value": "Hull 3486 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478315",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478315",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3486 (HDHHI)'; the row is renamed \"Le'shara\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "218",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3487 (HDHHI)",
+     "gate_value": "Hull 3487 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478316",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478316",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3487 (HDHHI)'; the row is renamed 'Librega' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "219",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3488 (HDHHI)",
+     "gate_value": "Hull 3488 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478317",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478317",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3488 (HDHHI)'; the row is renamed 'Eshairej' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "220",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3489 (HDHHI)",
+     "gate_value": "Hull 3489 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478318",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3489 (HDHHI)'; the row is renamed 'Mneefa' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "221",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3490 (HDHHI)",
+     "gate_value": "Hull 3490 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478319",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3490 (HDHHI)'; the row is renamed 'Ezhara' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "239",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8208 (HSHI)",
+     "gate_value": "Hull 8208 (HSHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 8208 (HSHI)'; the row is renamed 'Diamond Gas Nexus' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "240",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8209 (HSHI)",
+     "gate_value": "Hull 8209 (HSHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 8209 (HSHI)'; the row is renamed 'Grace Himawari' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "242",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8238 (HSHI)",
+     "gate_value": "Hull 8238 (HSHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 8238 (HSHI)'; the row is renamed 'Grace Gerbera' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "243",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 8239 (HSHI)",
+     "gate_value": "Hull 8239 (HSHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 8239 (HSHI)'; the row is renamed 'Ferdy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "258",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1794A",
+     "gate_value": "Hull H1794A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462933",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull H1794A'; the row is renamed 'Al Sabsab' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "259",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1795A",
+     "gate_value": "Hull H1795A",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "507",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dalian No 1 G175K-10",
+     "gate_value": "Dalian No 1 G175K-10",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Dalian No 1 G175K-10'; the row is renamed 'Prime Creativity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "510",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dalian No 1 G175K-13",
+     "gate_value": "Dalian No 1 G175K-13",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Dalian No 1 G175K-13'; the row is renamed 'Alliance Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "519",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dalian No 1 G175K-9",
+     "gate_value": "Dalian No 1 G175K-9",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Dalian No 1 G175K-9'; the row is renamed 'Prime Unity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "639",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Gdansk FSRU",
+     "gate_value": "Gdansk FSRU",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Gdansk FSRU'; the row is renamed 'Solidarity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "80",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2585 (Hanwha)",
+     "gate_value": "Hull 2585 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476659",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2585 (Hanwha)'; the row is renamed 'Al Nasraniya' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "81",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2586 (Hanwha)",
+     "gate_value": "Hull 2586 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476660",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2586 (Hanwha)'; the row is renamed 'Al Yousifiya' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "82",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2587 (Hanwha)",
+     "gate_value": "Hull 2587 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476661",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2587 (Hanwha)'; the row is renamed 'Athba' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "83",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2588 (Hanwha)",
+     "gate_value": "Hull 2588 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476662",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2588 (Hanwha)'; the row is renamed 'E Qab' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "84",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2589 (Hanwha)",
+     "gate_value": "Hull 2589 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478215",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2589 (Hanwha)'; the row is renamed 'Ghash Sham' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "85",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2590 (Hanwha)",
+     "gate_value": "Hull 2590 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478216",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2590 (Hanwha)'; the row is renamed 'Al Egdah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "86",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2591 (Hanwha)",
+     "gate_value": "Hull 2591 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478217",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2591 (Hanwha)'; the row is renamed 'Al Khbaib' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "88",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2592 (Hanwha)",
+     "gate_value": "Hull 2592 (Hanwha)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478218",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2592 (Hanwha)'; the row is renamed 'Khowzan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "136",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2693 (Hanwha)",
+     "gate_value": "Hull 2693 (Hanwha)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 2693 (Hanwha)'; the row is renamed 'Al Ghafat' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "138",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2694 (Hanwha)",
+     "gate_value": "Hull 2694 (Hanwha)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 2694 (Hanwha)'; the row is renamed 'Al Sidriya' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "139",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2694 (SHI)",
+     "gate_value": "Hull 2694 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479139",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2694 (SHI)'; the row is renamed 'Lekhraib' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "140",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2695 (Hanwha)",
+     "gate_value": "Hull 2695 (Hanwha)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 2695 (Hanwha)'; the row is renamed 'Ain Snan' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "142",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2696 (Hanwha)",
+     "gate_value": "Hull 2696 (Hanwha)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 2696 (Hanwha)'; the row is renamed 'Al Wasmi' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "143",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2696 (SHI)",
+     "gate_value": "Hull 2696 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479141",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2696 (SHI)'; the row is renamed 'Wadi Al Askar' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "146",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2699 (SHI)",
+     "gate_value": "Hull 2699 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479144",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2699 (SHI)'; the row is renamed 'Al Shaheen' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "150",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2702 (SHI)",
+     "gate_value": "Hull 2702 (SHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 2702 (SHI)'; the row is renamed 'Libsayer' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "154",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2706 (SHI)",
+     "gate_value": "Hull 2706 (SHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479151",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2706 (SHI)'; the row is renamed 'Al Nouf' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "222",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3491 (HDHHI)",
+     "gate_value": "Hull 3491 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478320",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3491 (HDHHI)'; the row is renamed 'Izghawa' by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "223",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3492 (HDHHI)",
+     "gate_value": "Hull 3492 (HDHHI)",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478321",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3492 (HDHHI)'; the row is renamed \"Al Wa'ab\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+    }
+   ]
+  },
+  {
+   "row_id": "508",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dalian No 1 G175K-11",
+     "gate_value": "Dalian No 1 G175K-11",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "509",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dalian No 1 G175K-12",
+     "gate_value": "Dalian No 1 G175K-12",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "186",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3387 (HDHHI)",
+     "gate_value": "Hull 3387 (HDHHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_0458ET_fix_delivery_confirmed — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "721",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Karmol LNGT Powership Antarctica",
+     "gate_value": "Karmol LNGT Powership Antarctica",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "811",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "LNGT Americas",
+     "gate_value": "LNGT Americas",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "971",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Puteri Intan",
+     "gate_value": "Puteri Intan",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Puteri Intan'; the row is renamed 'American Energy' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "726",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "KLNGTP Black Sea",
+     "gate_value": "KLNGTP Black Sea",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "727",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "KLNGTP Marmara",
+     "gate_value": "KLNGTP Marmara",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "535",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "East Energy",
+     "gate_value": "East Energy",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "1004",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Seapeak Hispania",
+     "gate_value": "Seapeak Hispania",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/115017",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Seapeak Hispania'; the row is renamed 'Seapeak Jupiter' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "562",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Energy Frontier",
+     "gate_value": "Energy Frontier",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/116125",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Energy Frontier'; the row is renamed 'Arunika Jaya' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "648",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Golar Arctic",
+     "gate_value": "Golar Arctic",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/116640",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116640",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Golar Arctic'; the row is renamed 'SC Serenity' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "866",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Metagas Everest",
+     "gate_value": "Metagas Everest",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Metagas Everest'; the row is renamed 'Arctic Metagas' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "801",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "LNG River Orashi",
+     "gate_value": "LNG River Orashi",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'LNG River Orashi'; the row is renamed 'Gas Garuda' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "958",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "LNG Pioneer; Pioneer Spirit",
+     "gate_value": "Pioneer Spirit",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Pioneer Spirit'; the row is renamed 'Arctic Pioneer' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "459",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Condor LNG; CCH LNG",
+     "gate_value": "CCH LNG",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "1062",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Stena Blue Sky",
+     "gate_value": "Stena Blue Sky",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "869",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Methane Heather Sally",
+     "gate_value": "Methane Heather Sally",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Methane Heather Sally'; the row is renamed 'Shandong Redwood' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "377",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Alto Acrux",
+     "gate_value": "Alto Acrux",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "649",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Golar Tundra",
+     "gate_value": "Golar Tundra",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Golar Tundra'; the row is renamed 'Italis LNG' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "729",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Kool Baltic",
+     "gate_value": "Kool Baltic",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/3928",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "993",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "SCF La Perouse",
+     "gate_value": "SCF La Perouse",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'SCF La Perouse'; the row is renamed 'La Perouse' by 2026-09-17_1654ET_fix_igu2026_sourced"
+    }
+   ]
+  },
+  {
+   "row_id": "924",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "North Mountain",
+     "gate_value": "North Mountain",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "263",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1799A",
+     "gate_value": "Hull H1799A",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  }
+ ]
+}

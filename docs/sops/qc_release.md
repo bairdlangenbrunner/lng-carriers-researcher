@@ -100,7 +100,7 @@ wins; how to unify a label that itself contains parens). Known-legit oddities go
 
 ## 4. The fix batch (mechanical corrections)
 
-For mechanical corrections, build a `fix`-mode candidate workbook. Two kinds of cell edit:
+For mechanical corrections, build a `fix`-mode candidate workbook. Three kinds of cell edit:
 
 - **Sourced value correction** (e.g. a wrong capacity): supply `refs`; each is routed through
   the **§3.8c value↔ref corroboration gate** — a ref stays only if its live page contains the
@@ -111,10 +111,18 @@ For mechanical corrections, build a `fix`-mode candidate workbook. Two kinds of 
   underlying order, not the literal string, so the gate would wrongly drop it (no page contains
   a synthetic placeholder name). A `PRESERVED` line is logged to QA_review. `refs`/`drop_refs`
   are ignored on a `preserve_ref` cell.
+- **Addition to a multi-valued cell** — `Other names`, where a Name change moves the former
+  Name in ([ref]-Fill SOP §4.16): set **`append_ref: true`**, with `new_value` the full cell
+  text (`LNG Pioneer; Pioneer Spirit`) and `gate_value` the element being added. The gate runs
+  on `gate_value` and passing refs are **appended** to the existing `[ref]`, never replacing it.
+  Don't write these by hand — `python scripts/other_names.py --batch <dir>` derives them from
+  the batch's Name cells. A placeholder → placeholder normalization yields none (the old string
+  was never a name); a placeholder → real name does.
 
 ```bash
 # fix.json keyed by row_id (the column-A stamp), Name cells with preserve_ref:true for
 # placeholder normalization. Schema: see build_workbook.py build_fix docstring.
+python scripts/other_names.py --batch work/<name>_fix.json   # RF §4.16 — former Names -> Other names
 python scripts/build_workbook.py --mode fix --fix work/<name>_fix.json \
   --out batches/<date>_<HHMMET>_<label>/
 

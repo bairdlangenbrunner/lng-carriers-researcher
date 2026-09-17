@@ -1,0 +1,5861 @@
+{
+ "proposed": [
+  {
+   "row_id": "6",
+   "live_row": 827,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 045 (Zvezda)",
+   "new": "Konstantin Posiet",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 045 (Zvezda)",
+    "gate_value": "Hull 045 (Zvezda)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 045 (Zvezda)'; the row is renamed 'Konstantin Posiet' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "25",
+   "live_row": 838,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2316 (SHI)",
+   "new": "Atlantic Success",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2316 (SHI)",
+    "gate_value": "Hull 2316 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/432642",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432642",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2316 (SHI)'; the row is renamed 'Atlantic Success' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "43",
+   "live_row": 843,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2541 (Hanwha)",
+   "new": "Venture Pelican",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2541 (Hanwha)",
+    "gate_value": "Hull 2541 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/455308",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455308",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2541 (Hanwha)'; the row is renamed 'Venture Pelican' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "44",
+   "live_row": 844,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2542 (Hanwha)",
+   "new": "Venture Iberia",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2542 (Hanwha)",
+    "gate_value": "Hull 2542 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/455309",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455309",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2542 (Hanwha)'; the row is renamed 'Venture Iberia' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "45",
+   "live_row": 845,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2543 (Hanwha)",
+   "new": "Venture Cameron",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2543 (Hanwha)",
+    "gate_value": "Hull 2543 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/455310",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455310",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2543 (Hanwha)'; the row is renamed 'Venture Cameron' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "47",
+   "live_row": 846,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2549 (Hanwha)",
+   "new": "Al Kharrarah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2549 (Hanwha)",
+    "gate_value": "Hull 2549 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/457495",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457495",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2549 (Hanwha)'; the row is renamed 'Al Kharrarah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "48",
+   "live_row": 847,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2550 (Hanwha)",
+   "new": "Archy Vanguard",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2550 (Hanwha)",
+    "gate_value": "Hull 2550 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/464056",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464056",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2550 (Hanwha)'; the row is renamed 'Archy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "49",
+   "live_row": 848,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2551 (Hanwha)",
+   "new": "Harmonic Breeze",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2551 (Hanwha)",
+    "gate_value": "Hull 2551 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/459086",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459086",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2551 (Hanwha)'; the row is renamed 'Harmonic Breeze' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "50",
+   "live_row": 849,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2552 (Hanwha)",
+   "new": "Lake Modro",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2552 (Hanwha)",
+    "gate_value": "Hull 2552 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/457498",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457498",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2552 (Hanwha)'; the row is renamed 'Lake Modro' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "51",
+   "live_row": 850,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2553 (Hanwha)",
+   "new": "Lake Morskie Oko",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2553 (Hanwha)",
+    "gate_value": "Hull 2553 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/457499",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457499",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2553 (Hanwha)'; the row is renamed 'Lake Morskie Oko' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "53",
+   "live_row": 852,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2559 (Hanwha)",
+   "new": "Al Sakhamah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2559 (Hanwha)",
+    "gate_value": "Hull 2559 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465038",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465038",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2559 (Hanwha)'; the row is renamed 'Al Sakhamah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "54",
+   "live_row": 853,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2561 (Hanwha)",
+   "new": "Al Galayel",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2561 (Hanwha)",
+    "gate_value": "Hull 2561 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465040",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465040",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2561 (Hanwha)'; the row is renamed 'Al Galayel' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "55",
+   "live_row": 854,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2562 (Hanwha)",
+   "new": "Bu Nakhlah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2562 (Hanwha)",
+    "gate_value": "Hull 2562 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465041",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2562 (Hanwha)'; the row is renamed 'Bu Nakhlah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "56",
+   "live_row": 855,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2563 (Hanwha)",
+   "new": "Al Sene",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2563 (Hanwha)",
+    "gate_value": "Hull 2563 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465042",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2563 (Hanwha)'; the row is renamed 'Al Sene' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "57",
+   "live_row": 856,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2564 (Hanwha)",
+   "new": "Shafallah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2564 (Hanwha)",
+    "gate_value": "Hull 2564 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465043",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2564 (Hanwha)'; the row is renamed 'Shafallah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "58",
+   "live_row": 857,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2565 (Hanwha)",
+   "new": "Hasbah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2565 (Hanwha)",
+    "gate_value": "Hull 2565 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465044",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465044",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2565 (Hanwha)'; the row is renamed 'Hasbah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "60",
+   "live_row": 858,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2567 (Hanwha)",
+   "new": "Esteem Cormorant",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2567 (Hanwha)",
+    "gate_value": "Hull 2567 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465046",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465046",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2567 (Hanwha)'; the row is renamed 'Esteem Cormorant' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "61",
+   "live_row": 859,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2568 (Hanwha)",
+   "new": "Esteem Denali",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2568 (Hanwha)",
+    "gate_value": "Hull 2568 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465047",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465047",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2568 (Hanwha)'; the row is renamed 'Esteem Denali' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "62",
+   "live_row": 860,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2569 (Hanwha)",
+   "new": "Esteem Penguin",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2569 (Hanwha)",
+    "gate_value": "Hull 2569 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465048",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465048",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2569 (Hanwha)'; the row is renamed 'Esteem Penguin' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "63",
+   "live_row": 861,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2570 (Hanwha)",
+   "new": "Seri Dian",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2570 (Hanwha)",
+    "gate_value": "Hull 2570 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465049",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465049",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2570 (Hanwha)'; the row is renamed 'Seri Dian' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "64",
+   "live_row": 862,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2571 (Hanwha)",
+   "new": "Seri Dayang",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2571 (Hanwha)",
+    "gate_value": "Hull 2571 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465050",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465050",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2571 (Hanwha)'; the row is renamed 'Seri Dayang' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "65",
+   "live_row": 863,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2572 (Hanwha)",
+   "new": "Al Thurayya",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2572 (Hanwha)",
+    "gate_value": "Hull 2572 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465051",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465051",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2572 (Hanwha)'; the row is renamed 'Al Thurayya' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "66",
+   "live_row": 864,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2573 (Hanwha)",
+   "new": "Al Majhoulah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2573 (Hanwha)",
+    "gate_value": "Hull 2573 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465052",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465052",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2573 (Hanwha)'; the row is renamed 'Al Majhoulah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "67",
+   "live_row": 865,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2574 (Hanwha)",
+   "new": "Venture Manatee",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2574 (Hanwha)",
+    "gate_value": "Hull 2574 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465053",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465053",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2574 (Hanwha)'; the row is renamed 'Venture Manatee' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "109",
+   "live_row": 869,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2636 (SHI)",
+   "new": "Spirit LNG",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2636 (SHI)",
+    "gate_value": "Hull 2636 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/456923",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456923",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2636 (SHI)'; the row is renamed 'Spirit LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "113",
+   "live_row": 870,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2640 (SHI)",
+   "new": "Qtaifan",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2640 (SHI)",
+    "gate_value": "Hull 2640 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/457608",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457608",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2640 (SHI)'; the row is renamed 'Qtaifan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "119",
+   "live_row": 871,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2646 (SHI)",
+   "new": "Umm Heesh",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2646 (SHI)",
+    "gate_value": "Hull 2646 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/457614",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457614",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2646 (SHI)'; the row is renamed 'Umm Heesh' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "120",
+   "live_row": 872,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2647 (SHI)",
+   "new": "Umm Al Shubrum",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2647 (SHI)",
+    "gate_value": "Hull 2647 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/457615",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457615",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2647 (SHI)'; the row is renamed 'Umm Al Shubrum' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "122",
+   "live_row": 873,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2652 (SHI)",
+   "new": "Minerva Eleonora",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2652 (SHI)",
+    "gate_value": "Hull 2652 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/461095",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461095",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2652 (SHI)'; the row is renamed 'Minerva Eleonora' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "123",
+   "live_row": 874,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2653 (SHI)",
+   "new": "Minerva Roxanne",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2653 (SHI)",
+    "gate_value": "Hull 2653 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/461096",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461096",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2653 (SHI)'; the row is renamed 'Minerva Roxanne' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "129",
+   "live_row": 875,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2662 (SHI)",
+   "new": "Gamy Vanguard",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2662 (SHI)",
+    "gate_value": "Hull 2662 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/463994",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463994",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2662 (SHI)'; the row is renamed 'Gamy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "131",
+   "live_row": 877,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2664 (SHI)",
+   "new": "Diamond Gas Jade",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2664 (SHI)",
+    "gate_value": "Hull 2664 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465878",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465878",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2664 (SHI)'; the row is renamed 'Diamond Gas Jade' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "132",
+   "live_row": 878,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2665 (SHI)",
+   "new": "Toho Emerald",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2665 (SHI)",
+    "gate_value": "Hull 2665 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/465879",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465879",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2665 (SHI)'; the row is renamed 'Toho Emerald' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "144",
+   "live_row": 881,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2697 (SHI)",
+   "new": "E'saila",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2697 (SHI)",
+    "gate_value": "Hull 2697 (SHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/479142",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2697 (SHI)'; the row is renamed \"E'saila\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "181",
+   "live_row": 884,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3371 (HDHHI)",
+   "new": "Puteri Sarawak",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3371 (HDHHI)",
+    "gate_value": "Hull 3371 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/467719",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3371 (HDHHI)'; the row is renamed 'Puteri Sarawak' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "184",
+   "live_row": 885,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3385 (HDHHI)",
+   "new": "Barzan",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3385 (HDHHI)",
+    "gate_value": "Hull 3385 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/458163",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3385 (HDHHI)'; the row is renamed 'Barzan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "185",
+   "live_row": 886,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3386 (HDHHI)",
+   "new": "Umm Wishah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3386 (HDHHI)",
+    "gate_value": "Hull 3386 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/458164",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458164",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3386 (HDHHI)'; the row is renamed 'Umm Wishah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "189",
+   "live_row": 890,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3395 (HDHHI)",
+   "new": "Al Zuwair",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3395 (HDHHI)",
+    "gate_value": "Hull 3395 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/459079",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459079",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3395 (HDHHI)'; the row is renamed 'Al Zuwair' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "190",
+   "live_row": 891,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3396 (HDHHI)",
+   "new": "Sharq",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3396 (HDHHI)",
+    "gate_value": "Hull 3396 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/459080",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459080",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3396 (HDHHI)'; the row is renamed 'Sharq' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "192",
+   "live_row": 893,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3398 (HDHHI)",
+   "new": "Halwan",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3398 (HDHHI)",
+    "gate_value": "Hull 3398 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/459082",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459082",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3398 (HDHHI)'; the row is renamed 'Halwan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "193",
+   "live_row": 894,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3399 (HDHHI)",
+   "new": "Al Thumaid",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3399 (HDHHI)",
+    "gate_value": "Hull 3399 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/459083",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459083",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3399 (HDHHI)'; the row is renamed 'Al Thumaid' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "194",
+   "live_row": 895,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3400 (HDHHI)",
+   "new": "Al Mazrooah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3400 (HDHHI)",
+    "gate_value": "Hull 3400 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/459084",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459084",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3400 (HDHHI)'; the row is renamed 'Al Mazrooah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "195",
+   "live_row": 896,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3401 (HDHHI)",
+   "new": "Qaffal",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3401 (HDHHI)",
+    "gate_value": "Hull 3401 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/459085",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459085",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3401 (HDHHI)'; the row is renamed 'Qaffal' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "196",
+   "live_row": 897,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3407 (HDHHI)",
+   "new": "Excelerate Acadia",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3407 (HDHHI)",
+    "gate_value": "Hull 3407 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/460369",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3407 (HDHHI)'; the row is renamed 'Excelerate Acadia' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "231",
+   "live_row": 899,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8182 (HSHI)",
+   "new": "Parthenon LNG",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8182 (HSHI)",
+    "gate_value": "Hull 8182 (HSHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/428603",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/428603",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 8182 (HSHI)'; the row is renamed 'Parthenon LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "232",
+   "live_row": 900,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8188 (HSHI)",
+   "new": "Puteri Selangor",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8188 (HSHI)",
+    "gate_value": "Hull 8188 (HSHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/456920",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456920",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 8188 (HSHI)'; the row is renamed 'Puteri Selangor' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "233",
+   "live_row": 901,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8189 (HSHI)",
+   "new": "Puteri Terengganu",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8189 (HSHI)",
+    "gate_value": "Hull 8189 (HSHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/456921",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456921",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 8189 (HSHI)'; the row is renamed 'Puteri Terengganu' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "235",
+   "live_row": 902,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8200 (HSHI)",
+   "new": "Olympus LNG",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8200 (HSHI)",
+    "gate_value": "Hull 8200 (HSHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/458170",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458170",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 8200 (HSHI)'; the row is renamed 'Olympus LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "236",
+   "live_row": 903,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8201 (HSHI)",
+   "new": "Frontier LNG",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8201 (HSHI)",
+    "gate_value": "Hull 8201 (HSHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/458171",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458171",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 8201 (HSHI)'; the row is renamed 'Frontier LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "237",
+   "live_row": 904,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8204 (HSHI)",
+   "new": "Muscat LNG",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8204 (HSHI)",
+    "gate_value": "Hull 8204 (HSHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/461955",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461955",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 8204 (HSHI)'; the row is renamed 'Muscat LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "238",
+   "live_row": 905,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8205 (HSHI)",
+   "new": "Musandam LNG",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8205 (HSHI)",
+    "gate_value": "Hull 8205 (HSHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/461956",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 8205 (HSHI)'; the row is renamed 'Musandam LNG' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "264",
+   "live_row": 910,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull H1800A",
+   "new": "Mihzem",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull H1800A",
+    "gate_value": "Hull H1800A",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/462939",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull H1800A'; the row is renamed 'Mihzem' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "265",
+   "live_row": 911,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull H1801A",
+   "new": "Idd Al Shargi",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull H1801A",
+    "gate_value": "Hull H1801A",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/462940",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull H1801A'; the row is renamed 'Idd Al Shargi' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "289",
+   "live_row": 923,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull H1909A",
+   "new": "Tianshan",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull H1909A",
+    "gate_value": "Hull H1909A",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/467899",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull H1909A'; the row is renamed 'Tianshan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "318",
+   "live_row": 924,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull YZJ2022-1475",
+   "new": "Yangze LNG 01",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull YZJ2022-1475",
+    "gate_value": "Hull YZJ2022-1475",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/475022",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/475022",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull YZJ2022-1475'; the row is renamed 'Yangze LNG 01' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "517",
+   "live_row": 935,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Dalian No 1 G175K-7",
+   "new": "Sea Charity",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Dalian No 1 G175K-7",
+    "gate_value": "Dalian No 1 G175K-7",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Dalian No 1 G175K-7'; the row is renamed 'Sea Charity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "26",
+   "live_row": 944,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2317 (SHI)",
+   "new": "Mediterranean Success",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2317 (SHI)",
+    "gate_value": "Hull 2317 (SHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/432643",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432643",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2317 (SHI)'; the row is renamed 'Mediterranean Success' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "27",
+   "live_row": 945,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2318 (SHI)",
+   "new": "Caribbean Success",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2318 (SHI)",
+    "gate_value": "Hull 2318 (SHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/432644",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432644",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2318 (SHI)'; the row is renamed 'Caribbean Success' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "74",
+   "live_row": 948,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2582 (Hanwha)",
+   "new": "Maran Gas Poliegos",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2582 (Hanwha)",
+    "gate_value": "Hull 2582 (Hanwha)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/470097",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2582 (Hanwha)'; the row is renamed 'Maran Gas Poliegos' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "135",
+   "live_row": 960,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2687 (SHI)",
+   "new": "Barthy Vanguard",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2687 (SHI)",
+    "gate_value": "Hull 2687 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/471277",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2687 (SHI)'; the row is renamed 'Barthy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "147",
+   "live_row": 961,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2700 (SHI)",
+   "new": "Al Seej",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2700 (SHI)",
+    "gate_value": "Hull 2700 (SHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/479145",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479145",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2700 (SHI)'; the row is renamed 'Al Seej' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "201",
+   "live_row": 969,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3452 (HDHHI)",
+   "new": "Clean Astraeus",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3452 (HDHHI)",
+    "gate_value": "Hull 3452 (HDHHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/462869",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462869",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3452 (HDHHI)'; the row is renamed 'Clean Astraeus' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "202",
+   "live_row": 970,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3453 (HDHHI)",
+   "new": "Clean Azeus",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3453 (HDHHI)",
+    "gate_value": "Hull 3453 (HDHHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/462870",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462870",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3453 (HDHHI)'; the row is renamed 'Clean Azeus' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "207",
+   "live_row": 973,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3476 (HDHHI)",
+   "new": "Al Ghuwair",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3476 (HDHHI)",
+    "gate_value": "Hull 3476 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478305",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478305",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3476 (HDHHI)'; the row is renamed 'Al Ghuwair' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "208",
+   "live_row": 974,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3477 (HDHHI)",
+   "new": "Wadi Sultana",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3477 (HDHHI)",
+    "gate_value": "Hull 3477 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478306",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478306",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3477 (HDHHI)'; the row is renamed 'Wadi Sultana' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "209",
+   "live_row": 975,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3478 (HDHHI)",
+   "new": "Lesha",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3478 (HDHHI)",
+    "gate_value": "Hull 3478 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478307",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478307",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3478 (HDHHI)'; the row is renamed 'Lesha' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "210",
+   "live_row": 976,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3479 (HDHHI)",
+   "new": "Al Jazi",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3479 (HDHHI)",
+    "gate_value": "Hull 3479 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478308",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478308",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3479 (HDHHI)'; the row is renamed 'Al Jazi' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "211",
+   "live_row": 977,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3480 (HDHHI)",
+   "new": "Al Mashrab",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3480 (HDHHI)",
+    "gate_value": "Hull 3480 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478309",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478309",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3480 (HDHHI)'; the row is renamed 'Al Mashrab' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "212",
+   "live_row": 978,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3481 (HDHHI)",
+   "new": "Al Mirzam",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3481 (HDHHI)",
+    "gate_value": "Hull 3481 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478310",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478310",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3481 (HDHHI)'; the row is renamed 'Al Mirzam' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "213",
+   "live_row": 979,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3482 (HDHHI)",
+   "new": "Maqdeem",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3482 (HDHHI)",
+    "gate_value": "Hull 3482 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478311",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478311",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3482 (HDHHI)'; the row is renamed 'Maqdeem' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "214",
+   "live_row": 980,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3483 (HDHHI)",
+   "new": "Al Rufaa",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3483 (HDHHI)",
+    "gate_value": "Hull 3483 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478312",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478312",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3483 (HDHHI)'; the row is renamed 'Al Rufaa' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "215",
+   "live_row": 981,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3484 (HDHHI)",
+   "new": "Al Nekhsh",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3484 (HDHHI)",
+    "gate_value": "Hull 3484 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478313",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478313",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3484 (HDHHI)'; the row is renamed 'Al Nekhsh' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "216",
+   "live_row": 982,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3485 (HDHHI)",
+   "new": "Leh'saien",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3485 (HDHHI)",
+    "gate_value": "Hull 3485 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478314",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478314",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3485 (HDHHI)'; the row is renamed \"Leh'saien\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "217",
+   "live_row": 983,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3486 (HDHHI)",
+   "new": "Le'shara",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3486 (HDHHI)",
+    "gate_value": "Hull 3486 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478315",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478315",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3486 (HDHHI)'; the row is renamed \"Le'shara\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "218",
+   "live_row": 984,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3487 (HDHHI)",
+   "new": "Librega",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3487 (HDHHI)",
+    "gate_value": "Hull 3487 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478316",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478316",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3487 (HDHHI)'; the row is renamed 'Librega' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "219",
+   "live_row": 985,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3488 (HDHHI)",
+   "new": "Eshairej",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3488 (HDHHI)",
+    "gate_value": "Hull 3488 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478317",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478317",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3488 (HDHHI)'; the row is renamed 'Eshairej' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "220",
+   "live_row": 986,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3489 (HDHHI)",
+   "new": "Mneefa",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3489 (HDHHI)",
+    "gate_value": "Hull 3489 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478318",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3489 (HDHHI)'; the row is renamed 'Mneefa' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "221",
+   "live_row": 987,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3490 (HDHHI)",
+   "new": "Ezhara",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3490 (HDHHI)",
+    "gate_value": "Hull 3490 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478319",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3490 (HDHHI)'; the row is renamed 'Ezhara' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "239",
+   "live_row": 988,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8208 (HSHI)",
+   "new": "Diamond Gas Nexus",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8208 (HSHI)",
+    "gate_value": "Hull 8208 (HSHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 8208 (HSHI)'; the row is renamed 'Diamond Gas Nexus' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "240",
+   "live_row": 989,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8209 (HSHI)",
+   "new": "Grace Himawari",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8209 (HSHI)",
+    "gate_value": "Hull 8209 (HSHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 8209 (HSHI)'; the row is renamed 'Grace Himawari' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "242",
+   "live_row": 990,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8238 (HSHI)",
+   "new": "Grace Gerbera",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8238 (HSHI)",
+    "gate_value": "Hull 8238 (HSHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 8238 (HSHI)'; the row is renamed 'Grace Gerbera' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "243",
+   "live_row": 991,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 8239 (HSHI)",
+   "new": "Ferdy Vanguard",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 8239 (HSHI)",
+    "gate_value": "Hull 8239 (HSHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 8239 (HSHI)'; the row is renamed 'Ferdy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "258",
+   "live_row": 999,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull H1794A",
+   "new": "Al Sabsab",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull H1794A",
+    "gate_value": "Hull H1794A",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/462933",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull H1794A'; the row is renamed 'Al Sabsab' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "259",
+   "live_row": 1000,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull H1795A",
+   "new": "Al Fanar",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull H1795A",
+    "gate_value": "Hull H1795A",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "507",
+   "live_row": 1007,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Dalian No 1 G175K-10",
+   "new": "Prime Creativity",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Dalian No 1 G175K-10",
+    "gate_value": "Dalian No 1 G175K-10",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Dalian No 1 G175K-10'; the row is renamed 'Prime Creativity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "510",
+   "live_row": 1008,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Dalian No 1 G175K-13",
+   "new": "Alliance Venture",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Dalian No 1 G175K-13",
+    "gate_value": "Dalian No 1 G175K-13",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Dalian No 1 G175K-13'; the row is renamed 'Alliance Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "519",
+   "live_row": 1012,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Dalian No 1 G175K-9",
+   "new": "Prime Unity",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Dalian No 1 G175K-9",
+    "gate_value": "Dalian No 1 G175K-9",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Dalian No 1 G175K-9'; the row is renamed 'Prime Unity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "639",
+   "live_row": 1014,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Gdansk FSRU",
+   "new": "Solidarity",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Gdansk FSRU",
+    "gate_value": "Gdansk FSRU",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Gdansk FSRU'; the row is renamed 'Solidarity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "80",
+   "live_row": 1017,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2585 (Hanwha)",
+   "new": "Al Nasraniya",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2585 (Hanwha)",
+    "gate_value": "Hull 2585 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/476659",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2585 (Hanwha)'; the row is renamed 'Al Nasraniya' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "81",
+   "live_row": 1018,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2586 (Hanwha)",
+   "new": "Al Yousifiya",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2586 (Hanwha)",
+    "gate_value": "Hull 2586 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/476660",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2586 (Hanwha)'; the row is renamed 'Al Yousifiya' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "82",
+   "live_row": 1019,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2587 (Hanwha)",
+   "new": "Athba",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2587 (Hanwha)",
+    "gate_value": "Hull 2587 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/476661",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2587 (Hanwha)'; the row is renamed 'Athba' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "83",
+   "live_row": 1020,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2588 (Hanwha)",
+   "new": "E Qab",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2588 (Hanwha)",
+    "gate_value": "Hull 2588 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/476662",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2588 (Hanwha)'; the row is renamed 'E Qab' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "84",
+   "live_row": 1021,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2589 (Hanwha)",
+   "new": "Ghash Sham",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2589 (Hanwha)",
+    "gate_value": "Hull 2589 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478215",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2589 (Hanwha)'; the row is renamed 'Ghash Sham' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "85",
+   "live_row": 1022,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2590 (Hanwha)",
+   "new": "Al Egdah",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2590 (Hanwha)",
+    "gate_value": "Hull 2590 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478216",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2590 (Hanwha)'; the row is renamed 'Al Egdah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "86",
+   "live_row": 1023,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2591 (Hanwha)",
+   "new": "Al Khbaib",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2591 (Hanwha)",
+    "gate_value": "Hull 2591 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478217",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2591 (Hanwha)'; the row is renamed 'Al Khbaib' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "88",
+   "live_row": 1024,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2592 (Hanwha)",
+   "new": "Khowzan",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2592 (Hanwha)",
+    "gate_value": "Hull 2592 (Hanwha)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478218",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2592 (Hanwha)'; the row is renamed 'Khowzan' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "136",
+   "live_row": 1031,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2693 (Hanwha)",
+   "new": "Al Ghafat",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2693 (Hanwha)",
+    "gate_value": "Hull 2693 (Hanwha)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 2693 (Hanwha)'; the row is renamed 'Al Ghafat' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "138",
+   "live_row": 1032,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2694 (Hanwha)",
+   "new": "Al Sidriya",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2694 (Hanwha)",
+    "gate_value": "Hull 2694 (Hanwha)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 2694 (Hanwha)'; the row is renamed 'Al Sidriya' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "139",
+   "live_row": 1033,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2694 (SHI)",
+   "new": "Lekhraib",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2694 (SHI)",
+    "gate_value": "Hull 2694 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/479139",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2694 (SHI)'; the row is renamed 'Lekhraib' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "140",
+   "live_row": 1034,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2695 (Hanwha)",
+   "new": "Ain Snan",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2695 (Hanwha)",
+    "gate_value": "Hull 2695 (Hanwha)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 2695 (Hanwha)'; the row is renamed 'Ain Snan' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "142",
+   "live_row": 1035,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2696 (Hanwha)",
+   "new": "Al Wasmi",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2696 (Hanwha)",
+    "gate_value": "Hull 2696 (Hanwha)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 2696 (Hanwha)'; the row is renamed 'Al Wasmi' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "143",
+   "live_row": 1036,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2696 (SHI)",
+   "new": "Wadi Al Askar",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2696 (SHI)",
+    "gate_value": "Hull 2696 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/479141",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2696 (SHI)'; the row is renamed 'Wadi Al Askar' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "146",
+   "live_row": 1037,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2699 (SHI)",
+   "new": "Al Shaheen",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2699 (SHI)",
+    "gate_value": "Hull 2699 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/479144",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2699 (SHI)'; the row is renamed 'Al Shaheen' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "150",
+   "live_row": 1039,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2702 (SHI)",
+   "new": "Libsayer",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2702 (SHI)",
+    "gate_value": "Hull 2702 (SHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 2702 (SHI)'; the row is renamed 'Libsayer' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "154",
+   "live_row": 1043,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 2706 (SHI)",
+   "new": "Al Nouf",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2706 (SHI)",
+    "gate_value": "Hull 2706 (SHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/479151",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2706 (SHI)'; the row is renamed 'Al Nouf' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "222",
+   "live_row": 1057,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3491 (HDHHI)",
+   "new": "Izghawa",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3491 (HDHHI)",
+    "gate_value": "Hull 3491 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478320",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3491 (HDHHI)'; the row is renamed 'Izghawa' by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "223",
+   "live_row": 1058,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Hull 3492 (HDHHI)",
+   "new": "Al Wa'ab",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3492 (HDHHI)",
+    "gate_value": "Hull 3492 (HDHHI)",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/478321",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 3492 (HDHHI)'; the row is renamed \"Al Wa'ab\" by 2026-09-17_0421ET_fix_delivery_rollforward"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "508",
+   "live_row": 1079,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Dalian No 1 G175K-11",
+   "new": "Prime Glory",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Dalian No 1 G175K-11",
+    "gate_value": "Dalian No 1 G175K-11",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "509",
+   "live_row": 1080,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Dalian No 1 G175K-12",
+   "new": "Friendship Venture",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Dalian No 1 G175K-12",
+    "gate_value": "Dalian No 1 G175K-12",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "186",
+   "live_row": 887,
+   "source": "2026-09-17_0458ET_fix_delivery_confirmed",
+   "former": "Hull 3387 (HDHHI)",
+   "new": "Al Nigyan",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 3387 (HDHHI)",
+    "gate_value": "Hull 3387 (HDHHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_0458ET_fix_delivery_confirmed — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "721",
+   "live_row": 11,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Karmol LNGT Powership Antarctica",
+   "new": "Karadeniz LNGT Antarctica",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Karmol LNGT Powership Antarctica",
+    "gate_value": "Karmol LNGT Powership Antarctica",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "811",
+   "live_row": 20,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "LNGT Americas",
+   "new": "Karadeniz LNGT Americas",
+   "cell": {
+    "field": "Other names",
+    "new_value": "LNGT Americas",
+    "gate_value": "LNGT Americas",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "971",
+   "live_row": 21,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Puteri Intan",
+   "new": "American Energy",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Puteri Intan",
+    "gate_value": "Puteri Intan",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Puteri Intan'; the row is renamed 'American Energy' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "726",
+   "live_row": 29,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "KLNGTP Black Sea",
+   "new": "Karadeniz LNGT Powership Black Sea",
+   "cell": {
+    "field": "Other names",
+    "new_value": "KLNGTP Black Sea",
+    "gate_value": "KLNGTP Black Sea",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "727",
+   "live_row": 39,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "KLNGTP Marmara",
+   "new": "Karadeniz LNGT Powership Marmara",
+   "cell": {
+    "field": "Other names",
+    "new_value": "KLNGTP Marmara",
+    "gate_value": "KLNGTP Marmara",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "hold"
+  },
+  {
+   "row_id": "535",
+   "live_row": 57,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "East Energy",
+   "new": "Arctic Vostok",
+   "cell": {
+    "field": "Other names",
+    "new_value": "East Energy",
+    "gate_value": "East Energy",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "1004",
+   "live_row": 62,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Seapeak Hispania",
+   "new": "Seapeak Jupiter",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Seapeak Hispania",
+    "gate_value": "Seapeak Hispania",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/115017",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Seapeak Hispania'; the row is renamed 'Seapeak Jupiter' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "562",
+   "live_row": 69,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Energy Frontier",
+   "new": "Arunika Jaya",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Energy Frontier",
+    "gate_value": "Energy Frontier",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/116125",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Energy Frontier'; the row is renamed 'Arunika Jaya' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "648",
+   "live_row": 70,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Golar Arctic",
+   "new": "SC Serenity",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Golar Arctic",
+    "gate_value": "Golar Arctic",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/116640",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116640",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Golar Arctic'; the row is renamed 'SC Serenity' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "866",
+   "live_row": 73,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Metagas Everest",
+   "new": "Arctic Metagas",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Metagas Everest",
+    "gate_value": "Metagas Everest",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Metagas Everest'; the row is renamed 'Arctic Metagas' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "801",
+   "live_row": 91,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "LNG River Orashi",
+   "new": "Gas Garuda",
+   "cell": {
+    "field": "Other names",
+    "new_value": "LNG River Orashi",
+    "gate_value": "LNG River Orashi",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'LNG River Orashi'; the row is renamed 'Gas Garuda' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "958",
+   "live_row": 114,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Pioneer Spirit",
+   "new": "Arctic Pioneer",
+   "cell": {
+    "field": "Other names",
+    "new_value": "LNG Pioneer; Pioneer Spirit",
+    "gate_value": "Pioneer Spirit",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Pioneer Spirit'; the row is renamed 'Arctic Pioneer' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "459",
+   "live_row": 124,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "CCH LNG",
+   "new": "LNG Soars",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Condor LNG; CCH LNG",
+    "gate_value": "CCH LNG",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "1062",
+   "live_row": 144,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Stena Blue Sky",
+   "new": "Blue Dragon I",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Stena Blue Sky",
+    "gate_value": "Stena Blue Sky",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "869",
+   "live_row": 167,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Methane Heather Sally",
+   "new": "Shandong Redwood",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Methane Heather Sally",
+    "gate_value": "Methane Heather Sally",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Methane Heather Sally'; the row is renamed 'Shandong Redwood' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "377",
+   "live_row": 190,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Alto Acrux",
+   "new": "LNGT Karadeniz",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Alto Acrux",
+    "gate_value": "Alto Acrux",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "649",
+   "live_row": 364,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Golar Tundra",
+   "new": "Italis LNG",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Golar Tundra",
+    "gate_value": "Golar Tundra",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Golar Tundra'; the row is renamed 'Italis LNG' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "729",
+   "live_row": 365,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Kool Baltic",
+   "new": "Cool Baltic",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Kool Baltic",
+    "gate_value": "Kool Baltic",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.shipvault.com/ships/3928",
+      "soft": false
+     },
+     {
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "993",
+   "live_row": 563,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "SCF La Perouse",
+   "new": "La Perouse",
+   "cell": {
+    "field": "Other names",
+    "new_value": "SCF La Perouse",
+    "gate_value": "SCF La Perouse",
+    "append_ref": true,
+    "confidence": "G",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'SCF La Perouse'; the row is renamed 'La Perouse' by 2026-09-17_1654ET_fix_igu2026_sourced"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "924",
+   "live_row": 742,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "North Mountain",
+   "new": "Voskhod",
+   "cell": {
+    "field": "Other names",
+    "new_value": "North Mountain",
+    "gate_value": "North Mountain",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  },
+  {
+   "row_id": "263",
+   "live_row": 909,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Hull H1799A",
+   "new": "Fath Al Khair",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull H1799A",
+    "gate_value": "Hull H1799A",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [],
+    "note": "former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+   },
+   "name_decision": "accept"
+  }
+ ],
+ "skipped": [
+  {
+   "row_id": "268",
+   "live_row": 912,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Greenenergy Wind",
+   "new": "Greenergy Wind",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "270",
+   "live_row": 914,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Greenenergy River",
+   "new": "Greenergy River",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "271",
+   "live_row": 915,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Greenenergy Sea",
+   "new": "Greenergy Sea",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "272",
+   "live_row": 916,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Greenenergy Whale",
+   "new": "Greenergy Whale",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "375",
+   "live_row": 929,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Alexey Kosygin",
+   "new": "Aleksey Kosygin",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "978",
+   "live_row": 942,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Puteri Sarawak",
+   "new": "Puteri Perlis",
+   "reason": "name belongs to another row (live row 884)"
+  },
+  {
+   "row_id": "541",
+   "live_row": 1013,
+   "source": "2026-09-17_0421ET_fix_delivery_rollforward",
+   "former": "Elisa Halycon",
+   "new": "Elisa Halcyon",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "686",
+   "live_row": 88,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Hongkong",
+   "new": "Hongkong Energy",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "437",
+   "live_row": 294,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "BW ENN Crystal",
+   "new": "BW ENN Crystal Sky",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "467",
+   "live_row": 446,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Cesi",
+   "new": "Cesi Lianyungang",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "679",
+   "live_row": 461,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Hoegh",
+   "new": "Hoegh Esperanza",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "559",
+   "live_row": 584,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Energy Endeavor",
+   "new": "Energy Endeavour",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "1100",
+   "live_row": 624,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Vivirt City LNG",
+   "new": "Vivit City LNG",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "266",
+   "live_row": 780,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Greenenergy Star",
+   "new": "Greenergy Star",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "267",
+   "live_row": 781,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Greenenergy Moon",
+   "new": "Greenergy Moon",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "371",
+   "live_row": 785,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Al-Kheesha",
+   "new": "Al Kheesah",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "488",
+   "live_row": 790,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Clean Srocco",
+   "new": "Clean Sirocco",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "271",
+   "live_row": 915,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Greenenergy Sea",
+   "new": "Greenergy Sea",
+   "reason": "spelling / truncation correction"
+  },
+  {
+   "row_id": "272",
+   "live_row": 916,
+   "source": "2026-09-17_1654ET_fix_igu2026_sourced",
+   "former": "Greenenergy Whale",
+   "new": "Greenergy Whale",
+   "reason": "spelling / truncation correction"
+  }
+ ],
+ "gate": [
+  {
+   "where": "6|Other names",
+   "url": "https://www.shipvault.com/ships/431882",
+   "former": "Hull 045 (Zvezda)",
+   "verdict": "no: page does not contain value 'Hull 045 (Zvezda)'"
+  },
+  {
+   "where": "6|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/431882",
+   "former": "Hull 045 (Zvezda)",
+   "verdict": "no: page does not contain value 'Hull 045 (Zvezda)'"
+  },
+  {
+   "where": "6|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 045 (Zvezda)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "25|Other names",
+   "url": "https://www.shipvault.com/ships/432642",
+   "former": "Hull 2316 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "25|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432642",
+   "former": "Hull 2316 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "25|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2316 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "43|Other names",
+   "url": "https://www.shipvault.com/ships/455308",
+   "former": "Hull 2541 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "43|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455308",
+   "former": "Hull 2541 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "43|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2541 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "44|Other names",
+   "url": "https://www.shipvault.com/ships/455309",
+   "former": "Hull 2542 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "44|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455309",
+   "former": "Hull 2542 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "44|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2542 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "45|Other names",
+   "url": "https://www.shipvault.com/ships/455310",
+   "former": "Hull 2543 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "45|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455310",
+   "former": "Hull 2543 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "45|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2543 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "47|Other names",
+   "url": "https://www.shipvault.com/ships/457495",
+   "former": "Hull 2549 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "47|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457495",
+   "former": "Hull 2549 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "47|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2549 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "48|Other names",
+   "url": "https://www.shipvault.com/ships/464056",
+   "former": "Hull 2550 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "48|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464056",
+   "former": "Hull 2550 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "48|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2550 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "49|Other names",
+   "url": "https://www.shipvault.com/ships/459086",
+   "former": "Hull 2551 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "49|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459086",
+   "former": "Hull 2551 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "49|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2551 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "50|Other names",
+   "url": "https://www.shipvault.com/ships/457498",
+   "former": "Hull 2552 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "50|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457498",
+   "former": "Hull 2552 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "50|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2552 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "51|Other names",
+   "url": "https://www.shipvault.com/ships/457499",
+   "former": "Hull 2553 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "51|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457499",
+   "former": "Hull 2553 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "51|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2553 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "53|Other names",
+   "url": "https://www.shipvault.com/ships/465038",
+   "former": "Hull 2559 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "53|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465038",
+   "former": "Hull 2559 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "53|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2559 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "54|Other names",
+   "url": "https://www.shipvault.com/ships/465040",
+   "former": "Hull 2561 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "54|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465040",
+   "former": "Hull 2561 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "54|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2561 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "55|Other names",
+   "url": "https://www.shipvault.com/ships/465041",
+   "former": "Hull 2562 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "55|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041",
+   "former": "Hull 2562 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "55|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2562 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "56|Other names",
+   "url": "https://www.shipvault.com/ships/465042",
+   "former": "Hull 2563 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "56|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042",
+   "former": "Hull 2563 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "56|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2563 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "57|Other names",
+   "url": "https://www.shipvault.com/ships/465043",
+   "former": "Hull 2564 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "57|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
+   "former": "Hull 2564 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "57|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2564 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "58|Other names",
+   "url": "https://www.shipvault.com/ships/465044",
+   "former": "Hull 2565 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "58|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465044",
+   "former": "Hull 2565 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "58|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2565 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "60|Other names",
+   "url": "https://www.shipvault.com/ships/465046",
+   "former": "Hull 2567 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "60|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465046",
+   "former": "Hull 2567 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "60|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2567 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "61|Other names",
+   "url": "https://www.shipvault.com/ships/465047",
+   "former": "Hull 2568 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "61|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465047",
+   "former": "Hull 2568 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "61|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2568 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "62|Other names",
+   "url": "https://www.shipvault.com/ships/465048",
+   "former": "Hull 2569 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "62|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465048",
+   "former": "Hull 2569 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "62|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2569 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "63|Other names",
+   "url": "https://www.shipvault.com/ships/465049",
+   "former": "Hull 2570 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "63|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465049",
+   "former": "Hull 2570 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "63|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2570 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "64|Other names",
+   "url": "https://www.shipvault.com/ships/465050",
+   "former": "Hull 2571 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "64|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465050",
+   "former": "Hull 2571 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "64|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2571 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "65|Other names",
+   "url": "https://www.shipvault.com/ships/465051",
+   "former": "Hull 2572 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "65|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465051",
+   "former": "Hull 2572 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "65|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2572 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "66|Other names",
+   "url": "https://www.shipvault.com/ships/465052",
+   "former": "Hull 2573 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "66|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465052",
+   "former": "Hull 2573 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "66|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2573 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "67|Other names",
+   "url": "https://www.shipvault.com/ships/465053",
+   "former": "Hull 2574 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "67|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465053",
+   "former": "Hull 2574 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "67|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2574 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "109|Other names",
+   "url": "https://www.shipvault.com/ships/456923",
+   "former": "Hull 2636 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "109|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456923",
+   "former": "Hull 2636 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "109|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2636 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "113|Other names",
+   "url": "https://www.shipvault.com/ships/457608",
+   "former": "Hull 2640 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "113|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457608",
+   "former": "Hull 2640 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "113|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2640 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "119|Other names",
+   "url": "https://www.shipvault.com/ships/457614",
+   "former": "Hull 2646 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "119|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457614",
+   "former": "Hull 2646 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "119|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2646 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "120|Other names",
+   "url": "https://www.shipvault.com/ships/457615",
+   "former": "Hull 2647 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "120|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457615",
+   "former": "Hull 2647 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "120|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2647 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "122|Other names",
+   "url": "https://www.shipvault.com/ships/461095",
+   "former": "Hull 2652 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "122|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461095",
+   "former": "Hull 2652 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "122|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2652 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "123|Other names",
+   "url": "https://www.shipvault.com/ships/461096",
+   "former": "Hull 2653 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "123|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461096",
+   "former": "Hull 2653 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "123|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2653 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "129|Other names",
+   "url": "https://www.shipvault.com/ships/463994",
+   "former": "Hull 2662 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "129|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463994",
+   "former": "Hull 2662 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "129|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2662 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "131|Other names",
+   "url": "https://www.shipvault.com/ships/465878",
+   "former": "Hull 2664 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "131|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465878",
+   "former": "Hull 2664 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "131|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2664 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "132|Other names",
+   "url": "https://www.shipvault.com/ships/465879",
+   "former": "Hull 2665 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "132|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465879",
+   "former": "Hull 2665 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "132|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2665 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "144|Other names",
+   "url": "https://www.shipvault.com/ships/479142",
+   "former": "Hull 2697 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "144|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
+   "former": "Hull 2697 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "144|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2697 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "181|Other names",
+   "url": "https://www.shipvault.com/ships/467719",
+   "former": "Hull 3371 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "181|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719",
+   "former": "Hull 3371 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "181|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3371 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "184|Other names",
+   "url": "https://www.shipvault.com/ships/458163",
+   "former": "Hull 3385 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "184|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3385 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "185|Other names",
+   "url": "https://www.shipvault.com/ships/458164",
+   "former": "Hull 3386 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "185|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458164",
+   "former": "Hull 3386 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "185|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3386 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "189|Other names",
+   "url": "https://www.shipvault.com/ships/459079",
+   "former": "Hull 3395 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "189|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459079",
+   "former": "Hull 3395 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "189|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3395 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "190|Other names",
+   "url": "https://www.shipvault.com/ships/459080",
+   "former": "Hull 3396 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "190|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459080",
+   "former": "Hull 3396 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "190|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3396 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "192|Other names",
+   "url": "https://www.shipvault.com/ships/459082",
+   "former": "Hull 3398 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "192|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459082",
+   "former": "Hull 3398 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "192|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3398 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "193|Other names",
+   "url": "https://www.shipvault.com/ships/459083",
+   "former": "Hull 3399 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "193|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459083",
+   "former": "Hull 3399 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "193|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3399 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "194|Other names",
+   "url": "https://www.shipvault.com/ships/459084",
+   "former": "Hull 3400 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "194|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459084",
+   "former": "Hull 3400 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "194|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3400 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "195|Other names",
+   "url": "https://www.shipvault.com/ships/459085",
+   "former": "Hull 3401 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "195|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459085",
+   "former": "Hull 3401 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "195|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3401 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "196|Other names",
+   "url": "https://www.shipvault.com/ships/460369",
+   "former": "Hull 3407 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "196|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369",
+   "former": "Hull 3407 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "196|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3407 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "231|Other names",
+   "url": "https://www.shipvault.com/ships/428603",
+   "former": "Hull 8182 (HSHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "231|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/428603",
+   "former": "Hull 8182 (HSHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "231|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8182 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "232|Other names",
+   "url": "https://www.shipvault.com/ships/456920",
+   "former": "Hull 8188 (HSHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "232|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456920",
+   "former": "Hull 8188 (HSHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "232|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8188 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "233|Other names",
+   "url": "https://www.shipvault.com/ships/456921",
+   "former": "Hull 8189 (HSHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "233|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456921",
+   "former": "Hull 8189 (HSHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "233|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8189 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "235|Other names",
+   "url": "https://www.shipvault.com/ships/458170",
+   "former": "Hull 8200 (HSHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "235|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458170",
+   "former": "Hull 8200 (HSHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "235|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8200 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "236|Other names",
+   "url": "https://www.shipvault.com/ships/458171",
+   "former": "Hull 8201 (HSHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "236|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458171",
+   "former": "Hull 8201 (HSHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "236|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8201 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "237|Other names",
+   "url": "https://www.shipvault.com/ships/461955",
+   "former": "Hull 8204 (HSHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "237|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461955",
+   "former": "Hull 8204 (HSHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "237|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8204 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "238|Other names",
+   "url": "https://www.shipvault.com/ships/461956",
+   "former": "Hull 8205 (HSHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "238|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956",
+   "former": "Hull 8205 (HSHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "238|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8205 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "264|Other names",
+   "url": "https://www.shipvault.com/ships/462939",
+   "former": "Hull H1800A",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "264|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
+   "former": "Hull H1800A",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "264|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull H1800A",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "265|Other names",
+   "url": "https://www.shipvault.com/ships/462940",
+   "former": "Hull H1801A",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "265|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
+   "former": "Hull H1801A",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "265|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull H1801A",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "289|Other names",
+   "url": "https://www.shipvault.com/ships/467899",
+   "former": "Hull H1909A",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "289|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899",
+   "former": "Hull H1909A",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "289|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull H1909A",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "318|Other names",
+   "url": "https://www.shipvault.com/ships/475022",
+   "former": "Hull YZJ2022-1475",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "318|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/475022",
+   "former": "Hull YZJ2022-1475",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "318|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull YZJ2022-1475",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "517|Other names",
+   "url": "https://www.shipvault.com/ships/461880",
+   "former": "Dalian No 1 G175K-7",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-7'"
+  },
+  {
+   "where": "517|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461880",
+   "former": "Dalian No 1 G175K-7",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "517|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Dalian No 1 G175K-7",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "517|Other names",
+   "url": "https://www.shipvault.com/ships/461880",
+   "former": "Dalian No 1 G175K-7",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-7'"
+  },
+  {
+   "where": "517|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461880",
+   "former": "Dalian No 1 G175K-7",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "26|Other names",
+   "url": "https://www.shipvault.com/ships/432643",
+   "former": "Hull 2317 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "26|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432643",
+   "former": "Hull 2317 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "26|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2317 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "27|Other names",
+   "url": "https://www.shipvault.com/ships/432644",
+   "former": "Hull 2318 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "27|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432644",
+   "former": "Hull 2318 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "27|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2318 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "74|Other names",
+   "url": "https://www.shipvault.com/ships/470097",
+   "former": "Hull 2582 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "74|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+   "former": "Hull 2582 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "135|Other names",
+   "url": "https://www.shipvault.com/ships/471277",
+   "former": "Hull 2687 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "135|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
+   "former": "Hull 2687 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "135|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2687 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "147|Other names",
+   "url": "https://www.shipvault.com/ships/479145",
+   "former": "Hull 2700 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "147|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479145",
+   "former": "Hull 2700 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "147|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2700 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "201|Other names",
+   "url": "https://www.shipvault.com/ships/462869",
+   "former": "Hull 3452 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "201|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462869",
+   "former": "Hull 3452 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "201|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3452 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "202|Other names",
+   "url": "https://www.shipvault.com/ships/462870",
+   "former": "Hull 3453 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "202|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462870",
+   "former": "Hull 3453 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "202|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3453 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "207|Other names",
+   "url": "https://www.shipvault.com/ships/478305",
+   "former": "Hull 3476 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "207|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478305",
+   "former": "Hull 3476 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "207|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHUWAIR/1048918/538000000",
+   "former": "Hull 3476 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "207|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3476 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "208|Other names",
+   "url": "https://www.shipvault.com/ships/478306",
+   "former": "Hull 3477 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "208|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478306",
+   "former": "Hull 3477 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "208|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-SULTANA/1048920/1",
+   "former": "Hull 3477 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "208|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3477 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "209|Other names",
+   "url": "https://www.shipvault.com/ships/478307",
+   "former": "Hull 3478 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "209|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478307",
+   "former": "Hull 3478 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "209|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LESHA/1048932/1",
+   "former": "Hull 3478 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "209|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3478 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "210|Other names",
+   "url": "https://www.shipvault.com/ships/478308",
+   "former": "Hull 3479 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "210|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478308",
+   "former": "Hull 3479 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "210|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-JAZI/1048944/1",
+   "former": "Hull 3479 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "210|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3479 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "211|Other names",
+   "url": "https://www.shipvault.com/ships/478309",
+   "former": "Hull 3480 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "211|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478309",
+   "former": "Hull 3480 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "211|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MASHRAB/1048956/1",
+   "former": "Hull 3480 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "211|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3480 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "212|Other names",
+   "url": "https://www.shipvault.com/ships/478310",
+   "former": "Hull 3481 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "212|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478310",
+   "former": "Hull 3481 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "212|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MIRZAM/1048982/1",
+   "former": "Hull 3481 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "212|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3481 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "213|Other names",
+   "url": "https://www.shipvault.com/ships/478311",
+   "former": "Hull 3482 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "213|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478311",
+   "former": "Hull 3482 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "213|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/MAQDEEM/1048994/1",
+   "former": "Hull 3482 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "213|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3482 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "214|Other names",
+   "url": "https://www.shipvault.com/ships/478312",
+   "former": "Hull 3483 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "214|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478312",
+   "former": "Hull 3483 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "214|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-RUFAA/1049003/1",
+   "former": "Hull 3483 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "214|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3483 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "215|Other names",
+   "url": "https://www.shipvault.com/ships/478313",
+   "former": "Hull 3484 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "215|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478313",
+   "former": "Hull 3484 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "215|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NEKHSH/1049015/1",
+   "former": "Hull 3484 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "215|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3484 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "216|Other names",
+   "url": "https://www.shipvault.com/ships/478314",
+   "former": "Hull 3485 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "216|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478314",
+   "former": "Hull 3485 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "216|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LEH'SAIEN/1049027/1",
+   "former": "Hull 3485 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "216|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3485 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "217|Other names",
+   "url": "https://www.shipvault.com/ships/478315",
+   "former": "Hull 3486 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "217|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478315",
+   "former": "Hull 3486 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "217|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LE'SHARA/1049039/1",
+   "former": "Hull 3486 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "217|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3486 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "218|Other names",
+   "url": "https://www.shipvault.com/ships/478316",
+   "former": "Hull 3487 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "218|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478316",
+   "former": "Hull 3487 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "218|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBREGA/1049041/1",
+   "former": "Hull 3487 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "218|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3487 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "219|Other names",
+   "url": "https://www.shipvault.com/ships/478317",
+   "former": "Hull 3488 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "219|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478317",
+   "former": "Hull 3488 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "219|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ESHAIREJ/1049053/1",
+   "former": "Hull 3488 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "219|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3488 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "220|Other names",
+   "url": "https://www.shipvault.com/ships/478318",
+   "former": "Hull 3489 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "220|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318",
+   "former": "Hull 3489 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "220|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/MNEEFA/1049065/1",
+   "former": "Hull 3489 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "220|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3489 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "221|Other names",
+   "url": "https://www.shipvault.com/ships/478319",
+   "former": "Hull 3490 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "221|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319",
+   "former": "Hull 3490 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "221|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/EZHARA/1049089/1",
+   "former": "Hull 3490 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "221|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3490 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "239|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/DIAMOND-GAS-NEXUS/1023877/563334400",
+   "former": "Hull 8208 (HSHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "239|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8208 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "240|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-HIMAWARI/1023889/1",
+   "former": "Hull 8209 (HSHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "240|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8209 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "242|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-GERBERA/1023906/1",
+   "former": "Hull 8238 (HSHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "242|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8238 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "243|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/FERDY-VANGUARD/1023918/1",
+   "former": "Hull 8239 (HSHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "243|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 8239 (HSHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "258|Other names",
+   "url": "https://www.shipvault.com/ships/462933",
+   "former": "Hull H1794A",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "258|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933",
+   "former": "Hull H1794A",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "258|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SABSAB/9986570/636025823",
+   "former": "Hull H1794A",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "258|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull H1794A",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "259|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-FANAR/9986582/636025824",
+   "former": "Hull H1795A",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "259|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull H1795A",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "507|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-CREATIVITY/1058327/1",
+   "former": "Dalian No 1 G175K-10",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-10'"
+  },
+  {
+   "where": "507|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Dalian No 1 G175K-10",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "507|Other names",
+   "url": "https://www.shipvault.com/ships/481198",
+   "former": "Dalian No 1 G175K-10",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-10'"
+  },
+  {
+   "where": "507|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/481198",
+   "former": "Dalian No 1 G175K-10",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "510|Other names",
+   "url": "https://www.shipvault.com/ships/469428",
+   "former": "Dalian No 1 G175K-13",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-13'"
+  },
+  {
+   "where": "510|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469428",
+   "former": "Dalian No 1 G175K-13",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "510|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ALLIANCE-VENTURE/1030569/1",
+   "former": "Dalian No 1 G175K-13",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-13'"
+  },
+  {
+   "where": "510|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Dalian No 1 G175K-13",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "510|Other names",
+   "url": "https://www.shipvault.com/ships/469428",
+   "former": "Dalian No 1 G175K-13",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-13'"
+  },
+  {
+   "where": "510|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469428",
+   "former": "Dalian No 1 G175K-13",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "519|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-UNITY/1058315/1",
+   "former": "Dalian No 1 G175K-9",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-9'"
+  },
+  {
+   "where": "519|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Dalian No 1 G175K-9",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "519|Other names",
+   "url": "https://www.shipvault.com/ships/481200",
+   "former": "Dalian No 1 G175K-9",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-9'"
+  },
+  {
+   "where": "519|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/481200",
+   "former": "Dalian No 1 G175K-9",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "639|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/SOLIDARITY/1056410/1",
+   "former": "Gdansk FSRU",
+   "verdict": "no: page does not contain value 'Gdansk FSRU'"
+  },
+  {
+   "where": "639|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Gdansk FSRU",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "639|Other names",
+   "url": "https://www.shipvault.com/ships/478328",
+   "former": "Gdansk FSRU",
+   "verdict": "no: page does not contain value 'Gdansk FSRU'"
+  },
+  {
+   "where": "639|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478328",
+   "former": "Gdansk FSRU",
+   "verdict": "no: page does not contain value 'Gdansk FSRU'"
+  },
+  {
+   "where": "80|Other names",
+   "url": "https://www.shipvault.com/ships/476659",
+   "former": "Hull 2585 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "80|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659",
+   "former": "Hull 2585 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "80|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NASRANIYA/1069821/538011621",
+   "former": "Hull 2585 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "80|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2585 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "81|Other names",
+   "url": "https://www.shipvault.com/ships/476660",
+   "former": "Hull 2586 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "81|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660",
+   "former": "Hull 2586 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "81|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-YOUSIFIYA/1069845/1",
+   "former": "Hull 2586 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "81|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2586 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "82|Other names",
+   "url": "https://www.shipvault.com/ships/476661",
+   "former": "Hull 2587 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "82|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661",
+   "former": "Hull 2587 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "82|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ATHBA/1069869/1",
+   "former": "Hull 2587 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "82|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2587 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "83|Other names",
+   "url": "https://www.shipvault.com/ships/476662",
+   "former": "Hull 2588 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "83|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662",
+   "former": "Hull 2588 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "83|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/E-QAB/1069871/1",
+   "former": "Hull 2588 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "83|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2588 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "84|Other names",
+   "url": "https://www.shipvault.com/ships/478215",
+   "former": "Hull 2589 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "84|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215",
+   "former": "Hull 2589 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "84|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GHASH-SHAM/1069895/1",
+   "former": "Hull 2589 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "84|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2589 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "85|Other names",
+   "url": "https://www.shipvault.com/ships/478216",
+   "former": "Hull 2590 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "85|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216",
+   "former": "Hull 2590 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "85|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-EGDAH/1069924/1",
+   "former": "Hull 2590 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "85|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2590 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "86|Other names",
+   "url": "https://www.shipvault.com/ships/478217",
+   "former": "Hull 2591 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "86|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217",
+   "former": "Hull 2591 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "86|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-KHBAIB/1069936/1",
+   "former": "Hull 2591 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "86|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2591 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "88|Other names",
+   "url": "https://www.shipvault.com/ships/478218",
+   "former": "Hull 2592 (Hanwha)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "88|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218",
+   "former": "Hull 2592 (Hanwha)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "88|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/KHOWZAN/1069948/1",
+   "former": "Hull 2592 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "88|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2592 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "136|Other names",
+   "url": "https://www.shipvault.com/ships/478219",
+   "former": "Hull 2693 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2693 (Hanwha)'"
+  },
+  {
+   "where": "136|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478219",
+   "former": "Hull 2693 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2693 (Hanwha)'"
+  },
+  {
+   "where": "136|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHAFAT/1069950/1",
+   "former": "Hull 2693 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "136|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2693 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "138|Other names",
+   "url": "https://www.shipvault.com/ships/478220",
+   "former": "Hull 2694 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2694 (Hanwha)'"
+  },
+  {
+   "where": "138|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478220",
+   "former": "Hull 2694 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2694 (Hanwha)'"
+  },
+  {
+   "where": "138|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SIDRIYA/1069962/1",
+   "former": "Hull 2694 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "138|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2694 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "139|Other names",
+   "url": "https://www.shipvault.com/ships/479139",
+   "former": "Hull 2694 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "139|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
+   "former": "Hull 2694 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "139|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LEKHRAIB/1070727/477262100",
+   "former": "Hull 2694 (SHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "139|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2694 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "140|Other names",
+   "url": "https://www.shipvault.com/ships/478221",
+   "former": "Hull 2695 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2695 (Hanwha)'"
+  },
+  {
+   "where": "140|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478221",
+   "former": "Hull 2695 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2695 (Hanwha)'"
+  },
+  {
+   "where": "140|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AIN-SNAN/1069974/1",
+   "former": "Hull 2695 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "140|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2695 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "142|Other names",
+   "url": "https://www.shipvault.com/ships/478222",
+   "former": "Hull 2696 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2696 (Hanwha)'"
+  },
+  {
+   "where": "142|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478222",
+   "former": "Hull 2696 (Hanwha)",
+   "verdict": "no: page does not contain value 'Hull 2696 (Hanwha)'"
+  },
+  {
+   "where": "142|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WASMI/1069986/1",
+   "former": "Hull 2696 (Hanwha)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "142|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2696 (Hanwha)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "143|Other names",
+   "url": "https://www.shipvault.com/ships/479141",
+   "former": "Hull 2696 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "143|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141",
+   "former": "Hull 2696 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "143|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-AL-ASKAR/1070739/1",
+   "former": "Hull 2696 (SHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "143|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2696 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "146|Other names",
+   "url": "https://www.shipvault.com/ships/479144",
+   "former": "Hull 2699 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "146|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
+   "former": "Hull 2699 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "146|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SHAHEEN/1070741/1",
+   "former": "Hull 2699 (SHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "146|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2699 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "150|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBSAYER/1070806/1",
+   "former": "Hull 2702 (SHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "150|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2702 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "154|Other names",
+   "url": "https://www.shipvault.com/ships/479151",
+   "former": "Hull 2706 (SHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "154|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151",
+   "former": "Hull 2706 (SHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "154|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NOUF/1070820/1",
+   "former": "Hull 2706 (SHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "154|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 2706 (SHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "222|Other names",
+   "url": "https://www.shipvault.com/ships/478320",
+   "former": "Hull 3491 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "222|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320",
+   "former": "Hull 3491 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "222|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/IZGHAWA/1049091/1",
+   "former": "Hull 3491 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "222|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3491 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "223|Other names",
+   "url": "https://www.shipvault.com/ships/478321",
+   "former": "Hull 3492 (HDHHI)",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "223|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
+   "former": "Hull 3492 (HDHHI)",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "223|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WA'AB/1049118/1",
+   "former": "Hull 3492 (HDHHI)",
+   "verdict": "not asked: tracker pages do not print yard numbers"
+  },
+  {
+   "where": "223|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3492 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "508|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-GLORY/1069194/1",
+   "former": "Dalian No 1 G175K-11",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-11'"
+  },
+  {
+   "where": "508|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Dalian No 1 G175K-11",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "508|Other names",
+   "url": "https://www.shipvault.com/ships/481199",
+   "former": "Dalian No 1 G175K-11",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-11'"
+  },
+  {
+   "where": "508|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/481199",
+   "former": "Dalian No 1 G175K-11",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "509|Other names",
+   "url": "https://www.shipvault.com/ships/469427",
+   "former": "Dalian No 1 G175K-12",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-12'"
+  },
+  {
+   "where": "509|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469427",
+   "former": "Dalian No 1 G175K-12",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "509|Other names",
+   "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/FRIENDSHIP-VENTURE/1030557/636025371",
+   "former": "Dalian No 1 G175K-12",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-12'"
+  },
+  {
+   "where": "509|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Dalian No 1 G175K-12",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "509|Other names",
+   "url": "https://www.shipvault.com/ships/469427",
+   "former": "Dalian No 1 G175K-12",
+   "verdict": "no: page does not contain value 'Dalian No 1 G175K-12'"
+  },
+  {
+   "where": "509|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469427",
+   "former": "Dalian No 1 G175K-12",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "186|Other names",
+   "url": "https://lngprime.com/asia/knutsen-takes-delivery-of-qatarenergy-lng-tanker/195695/",
+   "former": "Hull 3387 (HDHHI)",
+   "verdict": "no: page does not contain value 'Hull 3387 (HDHHI)'"
+  },
+  {
+   "where": "186|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull 3387 (HDHHI)",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "721|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Karmol LNGT Powership Antarctica",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "721|Other names",
+   "url": "https://www.shipvault.com/ships/94117",
+   "former": "Karmol LNGT Powership Antarctica",
+   "verdict": "no: page does not contain value 'Karmol LNGT Powership Antarctica'"
+  },
+  {
+   "where": "721|Other names",
+   "url": "https://www.shipvault.com/ships/94117",
+   "former": "Karmol LNGT Powership Antarctica",
+   "verdict": "no: page does not contain value 'Karmol LNGT Powership Antarctica'"
+  },
+  {
+   "where": "721|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+   "former": "Karmol LNGT Powership Antarctica",
+   "verdict": "no: page does not contain value 'Karmol LNGT Powership Antarctica'"
+  },
+  {
+   "where": "811|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "LNGT Americas",
+   "verdict": "not asked: former name is part of the new name — a page printing the new name proves nothing"
+  },
+  {
+   "where": "811|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "LNGT Americas",
+   "verdict": "not asked: former name is part of the new name — a page printing the new name proves nothing"
+  },
+  {
+   "where": "811|Other names",
+   "url": "https://www.shipvault.com/ships/103835",
+   "former": "LNGT Americas",
+   "verdict": "not asked: former name is part of the new name — a page printing the new name proves nothing"
+  },
+  {
+   "where": "811|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103835",
+   "former": "LNGT Americas",
+   "verdict": "not asked: former name is part of the new name — a page printing the new name proves nothing"
+  },
+  {
+   "where": "971|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Puteri Intan",
+   "verdict": "PASS"
+  },
+  {
+   "where": "971|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Puteri Intan",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "726|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "KLNGTP Black Sea",
+   "verdict": "no: page does not contain value 'KLNGTP Black Sea'"
+  },
+  {
+   "where": "726|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "KLNGTP Black Sea",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "726|Other names",
+   "url": "https://www.shipvault.com/ships/104872",
+   "former": "KLNGTP Black Sea",
+   "verdict": "no: page does not contain value 'KLNGTP Black Sea'"
+  },
+  {
+   "where": "726|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/104872",
+   "former": "KLNGTP Black Sea",
+   "verdict": "no: page does not contain value 'KLNGTP Black Sea'"
+  },
+  {
+   "where": "727|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "KLNGTP Marmara",
+   "verdict": "no: page does not contain value 'KLNGTP Marmara'"
+  },
+  {
+   "where": "727|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "KLNGTP Marmara",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "727|Other names",
+   "url": "https://www.shipvault.com/ships/104873",
+   "former": "KLNGTP Marmara",
+   "verdict": "no: page does not contain value 'KLNGTP Marmara'"
+  },
+  {
+   "where": "535|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "East Energy",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "535|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "East Energy",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "535|Other names",
+   "url": "https://www.shipvault.com/ships/114060",
+   "former": "East Energy",
+   "verdict": "no: page does not contain value 'East Energy'"
+  },
+  {
+   "where": "535|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/114060",
+   "former": "East Energy",
+   "verdict": "no: page does not contain value 'East Energy'"
+  },
+  {
+   "where": "1004|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Seapeak Hispania",
+   "verdict": "no: page does not contain value 'Seapeak Hispania'"
+  },
+  {
+   "where": "1004|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Seapeak Hispania",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "1004|Other names",
+   "url": "https://www.shipvault.com/ships/115017",
+   "former": "Seapeak Hispania",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "1004|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017",
+   "former": "Seapeak Hispania",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "562|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Energy Frontier",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "562|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Energy Frontier",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "562|Other names",
+   "url": "https://www.shipvault.com/ships/116125",
+   "former": "Energy Frontier",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "648|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Golar Arctic",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "648|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Golar Arctic",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "648|Other names",
+   "url": "https://www.shipvault.com/ships/116640",
+   "former": "Golar Arctic",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "648|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116640",
+   "former": "Golar Arctic",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "866|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Metagas Everest",
+   "verdict": "PASS (OK (IGU name cell for this IMO, coordinate extraction))"
+  },
+  {
+   "where": "866|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Metagas Everest",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "801|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "LNG River Orashi",
+   "verdict": "PASS"
+  },
+  {
+   "where": "801|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "LNG River Orashi",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "958|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Pioneer Spirit",
+   "verdict": "PASS (OK (IGU name cell for this IMO, coordinate extraction))"
+  },
+  {
+   "where": "958|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Pioneer Spirit",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "459|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "CCH LNG",
+   "verdict": "no: page does not contain value 'CCH LNG'"
+  },
+  {
+   "where": "459|Other names",
+   "url": "https://www.vesselfinder.com/vessels/details/9307205",
+   "former": "CCH LNG",
+   "verdict": "not asked: vesselfinder not asked (IP ban)"
+  },
+  {
+   "where": "459|Other names",
+   "url": "https://www.shipvault.com/ships/120404",
+   "former": "CCH LNG",
+   "verdict": "no: page does not contain value 'CCH LNG'"
+  },
+  {
+   "where": "459|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/120404",
+   "former": "CCH LNG",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "1062|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Stena Blue Sky",
+   "verdict": "no: page does not contain value 'Stena Blue Sky'"
+  },
+  {
+   "where": "1062|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Stena Blue Sky",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "1062|Other names",
+   "url": "https://www.shipvault.com/ships/121039",
+   "former": "Stena Blue Sky",
+   "verdict": "no: page does not contain value 'Stena Blue Sky'"
+  },
+  {
+   "where": "869|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Methane Heather Sally",
+   "verdict": "PASS"
+  },
+  {
+   "where": "869|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Methane Heather Sally",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "377|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Alto Acrux",
+   "verdict": "no: page does not contain value 'Alto Acrux'"
+  },
+  {
+   "where": "377|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Alto Acrux",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "377|Other names",
+   "url": "https://www.shipvault.com/ships/123139",
+   "former": "Alto Acrux",
+   "verdict": "no: page does not contain value 'Alto Acrux'"
+  },
+  {
+   "where": "377|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/123139",
+   "former": "Alto Acrux",
+   "verdict": "no: page does not contain value 'Alto Acrux'"
+  },
+  {
+   "where": "649|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Golar Tundra",
+   "verdict": "PASS"
+  },
+  {
+   "where": "649|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Golar Tundra",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "729|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Kool Baltic",
+   "verdict": "no: only scattered tokens, not the name"
+  },
+  {
+   "where": "729|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Kool Baltic",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "729|Other names",
+   "url": "https://www.shipvault.com/ships/3928",
+   "former": "Kool Baltic",
+   "verdict": "PASS (OK (cf_impersonate, shipvault_api))"
+  },
+  {
+   "where": "729|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928",
+   "former": "Kool Baltic",
+   "verdict": "PASS (OK (shipvault_api))"
+  },
+  {
+   "where": "993|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "SCF La Perouse",
+   "verdict": "PASS"
+  },
+  {
+   "where": "993|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "SCF La Perouse",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "924|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "North Mountain",
+   "verdict": "no: page does not contain value 'North Mountain'"
+  },
+  {
+   "where": "924|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "North Mountain",
+   "verdict": "not asked: landing page, no per-vessel value"
+  },
+  {
+   "where": "924|Other names",
+   "url": "https://www.shipvault.com/ships/450826",
+   "former": "North Mountain",
+   "verdict": "no: page does not contain value 'North Mountain'"
+  },
+  {
+   "where": "924|Other names",
+   "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/450826",
+   "former": "North Mountain",
+   "verdict": "no: page does not contain value 'North Mountain'"
+  },
+  {
+   "where": "263|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Hull H1799A",
+   "verdict": "no: page does not contain value 'Hull H1799A'"
+  },
+  {
+   "where": "263|Other names",
+   "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+   "former": "Hull H1799A",
+   "verdict": "not asked: landing page, no per-vessel value"
+  }
+ ]
+}

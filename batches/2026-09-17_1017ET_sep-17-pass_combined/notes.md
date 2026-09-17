@@ -7,7 +7,7 @@ apply still runs per batch through the Apply SOP, in the order on the README she
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1720ET.xlsx`) — the
+- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1747ET.xlsx`) — the
   name carries the build date and US Eastern time; each rebuild writes a new name and removes
   the previous file (git keeps it). 17 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
@@ -111,3 +111,14 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   (live row 814 Sea Energy, Status: batch 8's held `on order` vs batch 6's accepted companion ref); it stays
   on `all_proposals`. The report template and the published page were **not** touched and still
   describe six batches.
+- **Batch 10 — former Names → `Other names` (folded in 17:47 ET).**
+  `2026-09-17_1737ET_fix_other_names_former` (131 lines: 95 accept / 36 hold), the new RF §4.16
+  rule applied to the Name changes of batches 1, 2 and 8: every former Name (hull placeholders
+  included) is *appended* to the row's `Other names`, its gated ref appended to `Other names
+  [ref]`. Apply order 10 — after 1, 2 and 8, by `apply_patch.csv` only — and each line is decided
+  together with its Name line. Workbook rebuilt as `…_2026-09-17_1747ET.xlsx`: **21 sheets, 2,043
+  proposals (1,418 accept / 624 hold / 1 reject; 1,245 G / 798 Y)**; backend-shape tab unchanged
+  in rows (647 edited + 12 new + 3 delete — batch 10 only touches rows 1, 2 and 8 already edit),
+  3,861 changed cells, 1,139 on hold. New tab `b10_former_names_rows`. No cell of batch 10 is
+  proposed by any other batch. 19 Name changes carry no former name (spelling / truncation
+  fixes, and live row 942's wrong-vessel name) — listed in the batch's `notes.md`.

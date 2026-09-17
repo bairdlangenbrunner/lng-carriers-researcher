@@ -821,6 +821,14 @@ def build_fix(args):
     is left byte-for-byte untouched, the gate is skipped, and a PRESERVED line is
     logged to QA_review. `refs`/`drop_refs` are ignored on such a cell.
 
+    append_ref:true on a cell is for a multi-valued column that is ADDED TO rather
+    than corrected — `Other names`, where a Name change moves the former name in
+    beside whatever is already there (RF §4.16; scripts/other_names.py). `new_value`
+    is the full cell text ("LNG Pioneer; Pioneer Spirit"), `gate_value` the element
+    being added ("Pioneer Spirit") — the §3.8c gate runs on the element, since no page
+    prints the joined cell — and the refs that pass are appended to the existing
+    [ref] (existing first, de-duplicated) instead of replacing it.
+
     Each cell sets both the value column (`field`) and its paired `field + ' [ref]'`
     column. The corrected rows are emitted full-width in backend column order, so
     they paste straight over the matching backend rows. The backend is NEVER
@@ -881,6 +889,8 @@ def build_fix(args):
                 cur = row_by_id[rid]
                 existing_ref = cur[ri] if len(cur) > ri else ""
             preserve_ref = bool(cell.get("preserve_ref"))
+            append_ref = bool(cell.get("append_ref")) and not preserve_ref
+            gate_value = str(cell.get("gate_value") or new_value)
             drop_set = set() if preserve_ref else set(cell.get("drop_refs", []))
 
             kept = []
@@ -894,7 +904,7 @@ def build_fix(args):
             for ref in (cell.get("refs", []) if not preserve_ref else []):
                 url = ref["url"] if isinstance(ref, dict) else ref
                 soft = bool(ref.get("soft")) if isinstance(ref, dict) else False
-                ok, reason = corroborates(url, new_value)
+                ok, reason = corroborates(url, gate_value)
                 grade = classify(reason)
                 if ok:
                     kept.append(url)
@@ -910,7 +920,7 @@ def build_fix(args):
                 elif grade == "dead":
                     verdict = f"DROPPED — unreachable, not §3.8a-flagged ({reason})"
                 else:
-                    verdict = f"DROPPED — does NOT corroborate {new_value!r} ({reason})"
+                    verdict = f"DROPPED — does NOT corroborate {gate_value!r} ({reason})"
                 qa_rows.append({"row_id": rid, "field": field, "value": new_value,
                                 "url": url, "verdict": verdict, "note": cell.get("note", "")})
             for u in drop_set:
@@ -930,7 +940,7 @@ def build_fix(args):
                 ri = header_index[ref_field]
                 while len(cur) <= ri:
                     cur.append("")
-                joined = ", ".join(kept)
+                joined = _join_refs(existing_ref, kept) if append_ref else ", ".join(kept)
                 cur[ri] = joined
                 changed[(rid, ref_field)] = {"kind": "ref", "had_existing": bool(existing_ref)}
             row_by_id[rid] = cur
@@ -938,7 +948,19 @@ def build_fix(args):
     if missing:
         print(f"  [warn] correction row_ids not in backend (skipped): {missing}", file=sys.stderr)
 
-    dropped = [q for q in qa_rows if q["verdict"].startswith(("DROPPED", "REMOVED"))]
+    # RF §4.16: a Name change carries the former name into `Other names`. other_names.py
+    # stamps every Name cell it has looked at (`former_name`), proposed or skipped.
+    unchecked = [str(corr["row_id"]) for corr in corrections for c in corr.get("cells", [])
+                 if c.get("field") == "Name" and not c.get("preserve_ref")
+                 and "former_name" not in c
+                 and not any(o.get("field") == "Other names" for o in corr["cells"])]
+    if unchecked:
+        print(f"  [warn] {len(unchecked)} Name change(s) with no former-name check (RF §4.16) — "
+              f"run `python scripts/other_names.py --batch <dir>` first, or --collect them into "
+              f"their own fix batch: row_ids {unchecked[:12]}{' …' if len(unchecked) > 12 else ''}",
+              file=sys.stderr)
+
+    dropped =[q for q in qa_rows if q["verdict"].startswith(("DROPPED", "REMOVED"))]
 
     wb = Workbook()
     build_readme(wb, payload.get("batch_label", "LNG Carrier Fix"), [

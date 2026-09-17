@@ -12,11 +12,11 @@ research pass. Tick items as you go. Detail behind every item is in
 - The research is done. Six batches are merged to main (PRs #11–#18), each with
   `digest.md`, `decisions.csv` and offset-proof apply artifacts.
 - Combined workbook (name = build date + ET time; newest file in the dir is current):
-  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1720ET.xlsx`
-  — 20 sheets, 1,912 proposals (1,323 accept / 588 hold / 1 reject), keyed by live sheet row; the
+  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1747ET.xlsx`
+  — 21 sheets, 2,043 proposals (1,418 accept / 624 hold / 1 reject), keyed by live sheet row; the
   `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).
-- Report shared with Rob is at version 4 and **predates batches 7–9** (no IGU section, no
-  scrapped rows; not republished): https://claude.ai/artifact/C1eEJt5CKeqauvfGGg8Ph3
+- Report shared with Rob is at version 4 and **predates batches 7–10** (no IGU section, no
+  scrapped rows, no former names; not republished): https://claude.ai/artifact/C1eEJt5CKeqauvfGGg8Ph3
 - A seventh batch was added in the afternoon: the **IGU World LNG Report 2026
   intercomparison** (`1458ET_igu_reconciliation_igu2026`). It is a comparison artifact — it
   proposes nothing and is never applied — but it opens the decisions in §1b.
@@ -24,6 +24,11 @@ research pass. Tick items as you go. Detail behind every item is in
   2026 prints, promoted to proposals citing the report PDF. **Batch 9**
   (`1702ET_fix_scrapped_status`): the new Status value `scrapped` on the 18 rows IGU dropped,
   and row 61 → Vessel type `FSU`. Rule set with it: **rows are never deleted from the backend**.
+- **Batch 10** (`1737ET_fix_other_names_former`) applies the evening's new rule (RF §4.16): **a
+  proposed Name change also proposes the former Name as an addition to `Other names`.** 131 of
+  the 150 Name changes in batches 1, 2 and 8 get one (95 accept / 36 hold); 19 do not — spelling /
+  truncation fixes and row 942's wrong-vessel name (list in the batch `notes.md`; overrule with
+  `other_names.py --include`). Future fix batches run `other_names.py --batch` before the build.
 - All row numbers below are **live sheet rows** unless marked `row_id`.
 
 ## The batches (all under `batches/2026-09-17_…`)
@@ -39,6 +44,7 @@ research pass. Tick items as you go. Detail behind every item is in
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
 | 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 25, plus 32 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
+| 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names` (131 cells / 131 rows; 19 spelling / wrong-vessel Name changes excluded); 102 carry a gated ref | 95 / 36 |
 
 Discovery candidates in batch 3: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y);
 HD Hyundai HI × Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undisclosed
@@ -178,6 +184,11 @@ order is about readability, not safety).
       batch 8 offered a `conventional` ref for — rejected 2026-09-17). If the sheet's
       Status column has a validation dropdown, add `scrapped` to it first. Row 61 → FSU changes
       the map fleet: re-export after applying.
+- [ ] Batch 10 — apply **last, via `apply_patch.csv` only** (its full rows are built from the
+      live backend and would revert the Names of 1, 2 and 8) + verify. Decide each `Other names`
+      line with its Name line: a rejected rename takes its former-name line with it; a released
+      Name hold releases rows 881 / 944 / 945 / 948 / 961 / 969 / 970 too. Re-run
+      `apply_batch.py` after editing `decisions.csv`.
 - [ ] Review any HIGH/MED group in each `dedupe_report.csv` (apply.md §5a). Known MED
       pairs: Knutsen × Hanwha 1145/1146 vs 1161/1172 are different orders (Dec-2025 vs
       May-2026) and get distinct hull numbers from batch 4; Hanwha Philly is the duplicate
@@ -222,6 +233,15 @@ State is resumable from `work/citation_qc.csv`. Would become a follow-up batch (
 - [ ] Mozambique LNG confirmation — deadline was pushed to Sep 2026; re-check next month.
 - [ ] Re-test vesselfinder with a **single** request (IP ban still in force at last probe,
       2026-09-17 15:24 UTC). Do not loop.
+
+- [ ] **Refs for former names (batch 10 holds).** 29 `Other names` lines have no ref that prints
+      the former name. Worth a search: the real renames — rows 57 East Energy, 124 CCH LNG,
+      144 Stena Blue Sky, 190 Alto Acrux, 742 North Mountain — and the Karadeniz restylings
+      (11, 20, 29, 39). The hull / `Dalian No 1 G175K-N` placeholders (827, 887, 909, 935,
+      988–991, 1000, 1007, 1008, 1012, 1014, 1031, 1032, 1034, 1035, 1039, 1079, 1080) may never
+      get one — decide whether a blank `Other names [ref]` is acceptable for a placeholder.
+- [ ] **IGU 2026 `(ex-…)` names as an `Other names` data-fill.** IGU prints 55 ex-names; several
+      are not in the backend (e.g. `Northwest Stormpetrel`, row 20). Lead only so far.
 
 ## 5. Tooling follow-ups
 
