@@ -829,6 +829,12 @@ def check_url(url: str) -> dict:
 # Value ↔ ref corroboration (§3.8c)
 # ---------------------------------------------------------------------------
 
+_MONTHS = {a.lower(): (i + 1, a, f) for i, (a, f) in enumerate([
+    ("Jan", "January"), ("Feb", "February"), ("Mar", "March"), ("Apr", "April"),
+    ("May", "May"), ("Jun", "June"), ("Jul", "July"), ("Aug", "August"),
+    ("Sep", "September"), ("Oct", "October"), ("Nov", "November"), ("Dec", "December")])}
+
+
 def value_variants(value) -> list[str]:
     """Plausible page renderings of a data value, for the corroboration gate.
 
@@ -844,6 +850,22 @@ def value_variants(value) -> list[str]:
     if not v:
         return []
     out = {v, v.lower()}
+
+    # Backend dates are DD-Mon-YYYY ("08-Jun-2026", "02-June-2026"); pages write
+    # "8 June 2026", "June 8, 2026", "2026-06-08" (also the datePublished meta),
+    # "2026.06.08" (Korean press). Year-less forms are long-month only.
+    dm = re.match(r"^(\d{1,2})-([A-Za-z]{3,9})-(\d{4})$", v)
+    if dm and dm.group(2)[:3].lower() in _MONTHS:
+        day, (mi, abbr, full), year = int(dm.group(1)), _MONTHS[dm.group(2)[:3].lower()], dm.group(3)
+        for d in {str(day), f"{day:02d}"}:
+            for mon in {abbr, full}:
+                out.update({f"{d} {mon} {year}", f"{mon} {d}, {year}", f"{mon} {d} {year}",
+                            f"{mon}. {d}, {year}", f"{d}-{mon}-{year}"})
+            out.update({f"{full} {d}", f"{d} {full}"} if len(full) > 3 else set())
+        out.update({f"{year}-{mi:02d}-{day:02d}", f"{year}.{mi:02d}.{day:02d}",
+                    f"{year}/{mi:02d}/{day:02d}", f"{day:02d}.{mi:02d}.{year}",
+                    f"{day:02d}/{mi:02d}/{year}"})
+        return [s for s in out if s]
 
     m = re.match(r"^\$?\s*([\d,]+(?:\.\d+)?)", v)
     if m:

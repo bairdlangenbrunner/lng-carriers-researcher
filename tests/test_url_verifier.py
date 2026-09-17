@@ -468,6 +468,16 @@ class TestCorroborates:
         assert classify(reason) == "uncorroborated"
         assert "does not contain value" in reason
 
+    def test_date_renderings(self):
+        for v in ("08-Jun-2026", "08-June-2026"):
+            got = value_variants(v)
+            for want in ("8 June 2026", "June 8, 2026", "Jun 8, 2026", "2026-06-08", "2026.06.08"):
+                assert want in got
+        url = "https://example.com/d"
+        seed(url, "200", _page("t", "the contract was signed on June 8, 2026 with the yard"))
+        assert corroborates(url, "08-Jun-2026")[0] is True
+        assert corroborates(url, "09-Jun-2026")[0] is False
+
     def test_price_abbreviations(self):
         assert "$250m" in value_variants("250000000")
         assert "250 million" in value_variants("$250,000,000")
