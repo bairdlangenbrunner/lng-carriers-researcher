@@ -44,6 +44,9 @@ B8 = "2026-09-17_1654ET_fix_igu2026_sourced"
 B9 = "2026-09-17_1702ET_fix_scrapped_status"
 # B10: RF 4.16 - every Name change in B1 / B2 / B8 carries the former Name into Other names
 B10 = "2026-09-17_1737ET_fix_other_names_former"
+# B11 / B12: Baird's evening rulings - `qc-max` is a Vessel type value; Price is always full USD
+B11 = "2026-09-17_1809ET_fix_qcmax_vessel_type"
+B12 = "2026-09-17_1810ET_fix_price_full_usd"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
@@ -68,6 +71,12 @@ BATCH_INFO = [
     (10, B10, "former names -> Other names", "lng_carrier_fix.xlsx", "fix",
      "every Name change proposed by batches 1, 2 and 8 also moves the row's former Name into Other names "
      "(appended, nothing removed; RF 4.16). Each line is decided with its Name line"),
+    (11, B11, "Vessel type qc-max", "lng_carrier_fix.xlsx", "fix",
+     "the 24 x 271,000 cbm QatarEnergy ships IGU 2026 types QC-max -> Vessel type qc-max (vocabulary value added "
+     "2026-09-17), the report PDF as sole ref like batch 8"),
+    (12, B12, "Price in full USD", "lng_carrier_fix.xlsx", "fix",
+     "the 29 rows with a Price in millions + currency $m -> full US dollars + USD (unit conversion only; the "
+     "existing Price [ref] is kept)"),
 ]
 
 FONT = Font(name="Calibri", size=10)
@@ -142,7 +151,7 @@ PROP_COLS = ["apply order", "batch", "kind", "live sheet row", "row_id", "cluste
 for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
     qa = qa_sections(BATCHES / bdir / wbname)
     urls, verdicts, prev = defaultdict(list), defaultdict(list), {}
-    if bdir in (B1, B2, B8, B9, B10):
+    if bdir in (B1, B2, B8, B9, B10, B11, B12):
         for q in next(iter(qa.values())):
             k = (str(q["row_id"]), q["field"])
             if q.get("url"):
@@ -335,7 +344,7 @@ row_action = {}
 for p in load_json(BATCHES / B3 / "proposed_review.json")["programmes"]:
     for a in p["row_actions"]:
         if "deletion" in a["action"]:
-            rid = next(k for k, v in BACKEND.items() if str(v["live_row"]) == str(a["live_row"]))
+            rid = a["row_id"]  # row_id, not live row: live rows shift when the sheet is edited
             row_action[rid] = a["action"].replace("mark for deletion", "DELETE ROW")
             merged.setdefault(rid, list(be_rows[rid]) + [""] * (len(be_header) - len(be_rows[rid])))
 
@@ -402,25 +411,28 @@ ws.auto_filter.ref = f"A1:{get_column_letter(len(be_header) + len(HELPERS))}{i}"
 
 # open decisions (from docs/plans/2026-09-17_sep-17-pass_summary.md)
 DECISIONS = [
-    ("Proposed bucket", "1204-1206; 1186; 1187-1203",
-     "Woodside placeholders on live rows 1204-1206 duplicate the Seapeak on-order rows 1165-1167: delete. "
-     "Other Woodside rows, Equinor 4 (1186) and the 17 Mozambique LNG slots (1187-1203) stay proposed; "
+    ("Proposed bucket", "1204-1216; 1183; 1184-1200",
+     "DONE 2026-09-17 (Baird, in the sheet): the three Woodside placeholders that duplicated the Seapeak on-order "
+     "rows (now live 1162-1164) were deleted, their names moved to Other names; never-delete covers vessels leaving "
+     "service, not duplicates. "
+     "Other Woodside rows (1204-1216), Equinor 4 (1183) and the 17 Mozambique LNG slots (1184-1200) stay proposed; "
      "Mozambique confirmation deadline was pushed to Sep 2026, so re-check next month. Also the Mozambique "
      "owner/yard split flagged in the discovery batch.", "proposed_bucket"),
-    ("Likely duplicates", "1083/1085; 1132/1086", "Hanwha Philly pairs flagged by the dedupe sweep and an agent.", ""),
+    ("Likely duplicates", "1083/1085; 1203/1086", "Hanwha Philly pairs flagged by the dedupe sweep and an agent.", ""),
     ("Vessel type / Cargo type rule", "10 Rule-F orphans",
      "'conventional' is a tracker classification, never page wording, so the hard gate cannot ref it. Decide: let a "
      "capacity-derived type stand on the Capacity ref, or leave unreffed.", "documented_blanks"),
     ("Price convention", "whole backend",
-     "Backend mixes 250 + $m with 250000000 + USD. New fills use full USD. Shipvault contract prices were not used "
-     "(single-source, unverifiable).", ""),
+     "DECIDED 2026-09-17: Price is always full US dollars + USD. Batch 12 converts the 29 rows that carry 250 + $m. "
+     "The 48 order-total Prices in batch 4 are accepted. Shipvault contract prices were not used (single-source, "
+     "unverifiable).", "b12_price_usd_rows"),
     ("'Greenenergy ...' names", "", "Look wrong against both shipvault and AIS ('Greenergy').", ""),
     ("Manual-review rows", "54 + 24",
      "Mostly ships AIS-live while shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls "
      "(status untouched).", "manual_review"),
-    ("Backend flags from discovery", "1168/1169; 1162",
-     "BW LNG capacity (177,000), row 1162 price, COSCO hulls.", "flags_conflicts"),
-    ("Possible mis-citations / value conflicts", "1182-1185 and others",
+    ("Backend flags from discovery", "1165/1166; 1159",
+     "BW LNG capacity (177,000), row 1159 price, COSCO hulls.", "flags_conflicts"),
+    ("Possible mis-citations / value conflicts", "1179-1182 and others",
      "Found by the data-fill agents; full list in the data-fill batch notes.md.", "flags_conflicts"),
     ("MISC hulls H2019A-H2023A", "", "On shipvault with no citable press: next discovery run.", "shipvault_unmatched"),
     ("IGU 2026 intercomparison", "787, 790, 752 ...; 814, 797 ...; 929; 451, 499-501, 509",
@@ -457,6 +469,10 @@ n_wide[8] = copy_wide(BATCHES / B8 / "lng_carrier_fix.xlsx", "fix", "b8_igu_sour
 n_wide[9] = copy_wide(BATCHES / B9 / "lng_carrier_fix.xlsx", "fix", "b9_scrapped_rows",
                       add_live_row_from="original order in sheet")
 n_wide[10] = copy_wide(BATCHES / B10 / "lng_carrier_fix.xlsx", "fix", "b10_former_names_rows",
+                       add_live_row_from="original order in sheet")
+n_wide[11] = copy_wide(BATCHES / B11 / "lng_carrier_fix.xlsx", "fix", "b11_qcmax_rows",
+                       add_live_row_from="original order in sheet")
+n_wide[12] = copy_wide(BATCHES / B12 / "lng_carrier_fix.xlsx", "fix", "b12_price_usd_rows",
                        add_live_row_from="original order in sheet")
 
 # flags + conflicts
@@ -524,9 +540,10 @@ prow = []
 for p in pr["programmes"]:
     ev = "\n".join(f"{e.get('date', '')}: {e.get('url', '')}" for e in p.get("evidence", []))
     for a in p["row_actions"]:
-        b = next((v for v in BACKEND.values() if str(v["live_row"]) == str(a["live_row"])), {})
+        b = BACKEND.get(a["row_id"], {})  # a row deleted from the sheet since the review has no live row
         prow.append({"programme": p["programme"], "programme verdict": p["verdict"],
-                     "live sheet row": a["live_row"], "vessel name (backend)": b.get("Name", ""),
+                     "live sheet row": b.get("live_row", "(deleted)"),
+                     "vessel name (backend)": b.get("Name", a.get("name", "")),
                      "action": a["action"], "note": a.get("note", ""), "programme evidence": ev})
 table_sheet("proposed_bucket",
             ["programme", "programme verdict", "live sheet row", "vessel name (backend)", "action", "note",
@@ -691,7 +708,7 @@ first = r + 1
 wide_name = {1: "b1_rollforward_rows", 2: "b2_confirmed_rows", 3: "b3_new_vessels",
              4: "b4_data_fill_rows", 5: "b5_ref_fill_rows", 6: "b6_shipvault_companions",
              8: "b8_igu_sourced_rows", 9: "b9_scrapped_rows",
-             10: "b10_former_names_rows"}
+             10: "b10_former_names_rows", 11: "b11_qcmax_rows", 12: "b12_price_usd_rows"}
 for order, bdir, label, _w, _s, what in BATCH_INFO:
     r += 1
     mine = [p for p in proposals if p["apply order"] == order]
@@ -729,7 +746,8 @@ for name, desc in [
      "row, row action, holds) sit to the right so A:AT pastes straight over the backend row. flags_conflicts are "
      "not laid in (never auto-applied)."),
     ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows"),
-    ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows / b10_former_names_rows",
+    ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows / b10_former_names_rows / "
+     "b11_qcmax_rows / b12_price_usd_rows",
      "fix batches: full corrected backend rows (paste-ready shape)"),
     ("b4_data_fill_rows", "data fill: the 477 backend rows that received at least one proposal (the other 743 "
                           "in-scope rows were unchanged and are left out)"),

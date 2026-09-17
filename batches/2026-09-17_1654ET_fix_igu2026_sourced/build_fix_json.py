@@ -89,7 +89,9 @@ for x in matched:
         bv = raw[H[FIELD[f]]].strip()
         ref = raw[H[FIELD[f] + " [ref]"]].strip()
         v = norm(f, iv)
-        if v is None:                                   # IGU value outside the vocabulary (QC-max)
+        if f == "vessel_type" and str(iv).lower() == "qc-max":
+            continue                                    # `qc-max` joined the vocabulary 2026-09-17: batch 11 proposes these
+        if v is None:                                   # IGU value outside the vocabulary
             if not bv or bv.lower() == "unknown":
                 manual.append({"live_row": b["sheet_row"], "row_id": b["row_id"], "name": b["name"], "field": FIELD[f],
                                "igu": iv, "why": "IGU value is not in the controlled vocabulary — vocabulary decision"})

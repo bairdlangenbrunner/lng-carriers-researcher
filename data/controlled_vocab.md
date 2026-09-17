@@ -42,6 +42,7 @@ reads `scrapped` as completed-sale wording ("sold for demolition / recycling / s
 | `q-flex` | 31 |
 | `icebreaker` | 29 |
 | `q-max` | 14 |
+| `qc-max` | 0 (added 2026-09-17 — the 271,000 cbm QatarEnergy class, IGU 2026 `QC-max`; 24 rows proposed) |
 | `FSU` | 10 |
 | `Supporting` | 5 |
 | `small-scale` | 4 |
@@ -65,9 +66,10 @@ reads `scrapped` as completed-sale wording ("sold for demolition / recycling / s
 ## Units / currency
 
 - **Capacity units** — only `cbm` is used. A proposed Capacity always pairs with `cbm`.
-- **Price currency** — `$m` (most rows) or `USD`. A proposed Price must carry a currency;
-  follow whatever the cited source states (flag if a source gives KRW/another currency that
-  would need conversion before entry).
+- **Price currency** — `USD`, with Price in **full US dollars** (`250000000`, never `250` + `$m`;
+  Baird 2026-09-17). `$m` is legacy: the rows that carry it are converted by the price-USD fix
+  batch, after which it leaves the vocabulary. A proposed Price must carry a currency (flag if a
+  source gives KRW/another currency that would need conversion before entry).
 
 The canonical machine-readable copy is `CONTROLLED_VOCAB` in `scripts/lookups.py` — imported by
 `build_workbook.py`'s data-fill validator AND by `qc_backend.py` (which uses it to detect a

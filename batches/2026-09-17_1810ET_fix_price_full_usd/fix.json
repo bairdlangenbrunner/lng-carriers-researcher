@@ -1,0 +1,615 @@
+{
+ "batch_label": "Fix — Price in full US dollars: `$m` rows converted to `USD` (2026-09-17, sep-17-pass batch 12)",
+ "reason": "Baird ruling 2026-09-17: Price is always entered in full US dollars with Price currency `USD`. The 29 rows that carry a Price in millions with currency `$m` are multiplied by 1,000,000. A unit conversion, not a new value: preserve_ref keeps each existing Price [ref] and skips the §3.8c gate (QC §4).",
+ "corrections": [
+  {
+   "row_id": "969",
+   "_live_row": 61,
+   "_name": "Puteri Delima Satu",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "165000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 165 $m -> 165000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "1044",
+   "_live_row": 487,
+   "_name": "SK Serenity",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "207000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 207 $m -> 207000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "1045",
+   "_live_row": 488,
+   "_name": "SK Spica",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "207000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 207 $m -> 207000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "72",
+   "_live_row": 946,
+   "_name": "Hull 2580",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "224000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 224 $m -> 224000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "74",
+   "_live_row": 948,
+   "_name": "Hull 2582 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "256000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 256 $m -> 256000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "78",
+   "_live_row": 950,
+   "_name": "Hull 2584 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "251000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 251 $m -> 251000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "102",
+   "_live_row": 953,
+   "_name": "Hull 2606 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "255000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "103",
+   "_live_row": 954,
+   "_name": "Hull 2607 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "255000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "163",
+   "_live_row": 964,
+   "_name": "Hull 2729 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "261500000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 261.5 $m -> 261500000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "164",
+   "_live_row": 965,
+   "_name": "Hull 2752 (SHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "255000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "250",
+   "_live_row": 994,
+   "_name": "Hull 8276 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "261800000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 261.8 $m -> 261800000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "408",
+   "_live_row": 1004,
+   "_name": "Athlos",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "250000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 250 $m -> 250000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "92",
+   "_live_row": 1025,
+   "_name": "Hull 2598 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "260000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "94",
+   "_live_row": 1026,
+   "_name": "Hull 2599 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "260000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "96",
+   "_live_row": 1027,
+   "_name": "Hull 2600 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "260000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "98",
+   "_live_row": 1028,
+   "_name": "Hull 2601 (Hanwha)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "260000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "165",
+   "_live_row": 1049,
+   "_name": "Hull 2753 (SHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "255000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "166",
+   "_live_row": 1050,
+   "_name": "Hull 2754 (SHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "259250000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "167",
+   "_live_row": 1051,
+   "_name": "Hull 2755 (SHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "259250000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "168",
+   "_live_row": 1052,
+   "_name": "Hull 2756 (SHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "259250000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "169",
+   "_live_row": 1053,
+   "_name": "Hull 2757 (SHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "259250000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "178",
+   "_live_row": 1054,
+   "_name": "Hull 3301 (HDHHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "266100000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 266.1 $m -> 266100000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "224",
+   "_live_row": 1059,
+   "_name": "Hull 3502 (HDHHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "266100000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 266.1 $m -> 266100000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "314",
+   "_live_row": 1075,
+   "_name": "Hull Unknown 01 (HSHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "257000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "315",
+   "_live_row": 1076,
+   "_name": "Hull Unknown 02 (HSHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "257000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "316",
+   "_live_row": 1077,
+   "_name": "Hull Unknown 03 (HSHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "257000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "317",
+   "_live_row": 1078,
+   "_name": "Hull Unknown 04 (HSHI)",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "257000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "666",
+   "_live_row": 1083,
+   "_name": "Hanwha Philly 1",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "250000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 250 $m -> 250000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  },
+  {
+   "row_id": "667",
+   "_live_row": 1203,
+   "_name": "Hanwha Philly 2",
+   "cells": [
+    {
+     "field": "Price",
+     "new_value": "250000000",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "unit conversion only: 250 $m -> 250000000 USD (Price is always full US dollars, Baird 2026-09-17); same figure, existing Price [ref] kept"
+    },
+    {
+     "field": "Price currency",
+     "new_value": "USD",
+     "confidence": "G",
+     "preserve_ref": true,
+     "note": "companion of the Price unit conversion ($m -> USD); no [ref] column"
+    }
+   ]
+  }
+ ]
+}

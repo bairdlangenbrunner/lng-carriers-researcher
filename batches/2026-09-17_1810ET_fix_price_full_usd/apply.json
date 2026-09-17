@@ -1,0 +1,362 @@
+{
+  "batch": "2026-09-17_1810ET_fix_price_full_usd",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "969",
+      "column": "Price",
+      "value": "165000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "969",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1044",
+      "column": "Price",
+      "value": "207000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1044",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1045",
+      "column": "Price",
+      "value": "207000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1045",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "72",
+      "column": "Price",
+      "value": "224000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "72",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "74",
+      "column": "Price",
+      "value": "256000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "74",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "78",
+      "column": "Price",
+      "value": "251000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "78",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "102",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "102",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "103",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "103",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "163",
+      "column": "Price",
+      "value": "261500000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "163",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "164",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "164",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "250",
+      "column": "Price",
+      "value": "261800000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "250",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "92",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "92",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "94",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "94",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "96",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "96",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "98",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "98",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "165",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "165",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "166",
+      "column": "Price",
+      "value": "259250000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "166",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "167",
+      "column": "Price",
+      "value": "259250000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "167",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "168",
+      "column": "Price",
+      "value": "259250000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "168",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "169",
+      "column": "Price",
+      "value": "259250000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "169",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "178",
+      "column": "Price",
+      "value": "266100000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "178",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "224",
+      "column": "Price",
+      "value": "266100000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "224",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "317",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "317",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "666",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "666",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "667",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "667",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 58,
+    "accepted": 58,
+    "hold": 0,
+    "reject": 0,
+    "conflicts": 0
+  }
+}

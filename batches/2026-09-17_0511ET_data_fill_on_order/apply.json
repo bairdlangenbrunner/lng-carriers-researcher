@@ -4414,6 +4414,54 @@
     },
     {
       "row_id": "1152",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1152",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1152",
       "column": "Operator/charterer",
       "value": "Cheniere",
       "confidence": "G"
@@ -4462,6 +4510,54 @@
     },
     {
       "row_id": "1201",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
       "column": "Operator/charterer",
       "value": "Cheniere",
       "confidence": "G"
@@ -4546,6 +4642,42 @@
     },
     {
       "row_id": "193",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "193",
+      "column": "Price [ref]",
+      "value": "https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "194",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "194",
+      "column": "Price [ref]",
+      "value": "https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "195",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "195",
+      "column": "Price [ref]",
+      "value": "https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "193",
       "column": "Operator/charterer",
       "value": "QatarEnergy",
       "confidence": "G"
@@ -4651,6 +4783,30 @@
       "column": "Operator/charterer [ref]",
       "value": "https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/",
       "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Price",
+      "value": "251500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1156",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1157",
+      "column": "Price",
+      "value": "251500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1157",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/",
+      "confidence": "Y"
     },
     {
       "row_id": "1156",
@@ -4843,6 +4999,102 @@
       "column": "Price [ref]",
       "value": "https://lngprime.com/asia/hanwha-ocean-to-build-fsru-for-413-million/127579/, https://splash247.com/mol-confirms-order-for-singapore-frsu/",
       "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "273",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "274",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "274",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1224",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1224",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1225",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1225",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1170",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1170",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1171",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1171",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/",
+      "confidence": "Y"
     },
     {
       "row_id": "324",
@@ -5307,6 +5559,84 @@
       "confidence": "G"
     },
     {
+      "row_id": "1152",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "193",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "194",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "195",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1156",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
       "row_id": "509",
       "column": "Price currency",
       "value": "USD",
@@ -5335,13 +5665,547 @@
       "column": "Price currency",
       "value": "USD",
       "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "274",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1224",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1225",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1170",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1171",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "189",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "189",
+      "column": "Price [ref]",
+      "value": "https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "189",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "190",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "190",
+      "column": "Price [ref]",
+      "value": "https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "190",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "191",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "191",
+      "column": "Price [ref]",
+      "value": "https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "191",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "192",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "192",
+      "column": "Price [ref]",
+      "value": "https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "192",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "99",
+      "column": "Price",
+      "value": "255800000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "99",
+      "column": "Price [ref]",
+      "value": "https://en.portnews.ru/news/370159/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "99",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "100",
+      "column": "Price",
+      "value": "255800000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "100",
+      "column": "Price [ref]",
+      "value": "https://en.portnews.ru/news/370159/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "100",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "124",
+      "column": "Price",
+      "value": "216000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "124",
+      "column": "Price [ref]",
+      "value": "https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "124",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "125",
+      "column": "Price",
+      "value": "216000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "125",
+      "column": "Price [ref]",
+      "value": "https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "125",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "126",
+      "column": "Price",
+      "value": "216000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "126",
+      "column": "Price [ref]",
+      "value": "https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "126",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "127",
+      "column": "Price",
+      "value": "216000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "127",
+      "column": "Price [ref]",
+      "value": "https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "127",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "128",
+      "column": "Price",
+      "value": "216000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "128",
+      "column": "Price [ref]",
+      "value": "https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "128",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "205",
+      "column": "Price",
+      "value": "265000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "205",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "205",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "206",
+      "column": "Price",
+      "value": "265000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "206",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "206",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1150",
+      "column": "Price",
+      "value": "249500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1150",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/seapeak-returns-to-samsung-for-pair-of-lng-carriers/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1150",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1151",
+      "column": "Price",
+      "value": "249500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1151",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/seapeak-returns-to-samsung-for-pair-of-lng-carriers/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1151",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1164",
+      "column": "Price",
+      "value": "251500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1164",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1164",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1165",
+      "column": "Price",
+      "value": "251500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1165",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1165",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1172",
+      "column": "Price",
+      "value": "252500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1172",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/maran-gas-doubles-down-with-fresh-lng-carrier-order/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1172",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1173",
+      "column": "Price",
+      "value": "252500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1173",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/maran-gas-doubles-down-with-fresh-lng-carrier-order/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1173",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1187",
+      "column": "Price",
+      "value": "255500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1187",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/sonangol-doubles-down-on-lng-with-fresh-hd-hyundai-order/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1187",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1188",
+      "column": "Price",
+      "value": "255500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1188",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/sonangol-doubles-down-on-lng-with-fresh-hd-hyundai-order/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1188",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1190",
+      "column": "Price",
+      "value": "248000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1190",
+      "column": "Price [ref]",
+      "value": "https://www.bairdmaritime.com/shipping/tankers/gas/nigeria-lng-taps-chinese-yard-for-three-vlgc-newbuildings",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1190",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1191",
+      "column": "Price",
+      "value": "248000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1191",
+      "column": "Price [ref]",
+      "value": "https://www.bairdmaritime.com/shipping/tankers/gas/nigeria-lng-taps-chinese-yard-for-three-vlgc-newbuildings",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1191",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1192",
+      "column": "Price",
+      "value": "248000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1192",
+      "column": "Price [ref]",
+      "value": "https://www.bairdmaritime.com/shipping/tankers/gas/nigeria-lng-taps-chinese-yard-for-three-vlgc-newbuildings",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1192",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1193",
+      "column": "Price",
+      "value": "256500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1193",
+      "column": "Price [ref]",
+      "value": "https://www.globenewswire.com/news-release/2025/12/29/3210962/20327/en/Capital-Clean-Energy-Carriers-Corp-Announces-Further-Expansion-with-an-Order-for-Three-Latest-Specification-LNG-Carriers-Delivering-in-2028-and-2029.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1193",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1194",
+      "column": "Price",
+      "value": "256500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1194",
+      "column": "Price [ref]",
+      "value": "https://www.globenewswire.com/news-release/2025/12/29/3210962/20327/en/Capital-Clean-Energy-Carriers-Corp-Announces-Further-Expansion-with-an-Order-for-Three-Latest-Specification-LNG-Carriers-Delivering-in-2028-and-2029.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1194",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1195",
+      "column": "Price",
+      "value": "256500000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1195",
+      "column": "Price [ref]",
+      "value": "https://www.globenewswire.com/news-release/2025/12/29/3210962/20327/en/Capital-Clean-Energy-Carriers-Corp-Announces-Further-Expansion-with-an-Order-for-Three-Latest-Specification-LNG-Carriers-Delivering-in-2028-and-2029.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1195",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
     "items": 1003,
-    "accepted": 493,
-    "hold": 510,
+    "accepted": 589,
+    "hold": 414,
     "reject": 0,
     "conflicts": 145
   }

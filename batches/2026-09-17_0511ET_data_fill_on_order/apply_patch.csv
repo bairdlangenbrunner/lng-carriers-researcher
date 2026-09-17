@@ -734,6 +734,14 @@ set,519,Price,233300000
 set,519,Price [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
 set,519,Operator/charterer,Sinopec
 set,519,Operator/charterer [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
+set,1152,Price,260000000
+set,1152,Price [ref],https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/
+set,1153,Price,260000000
+set,1153,Price [ref],https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/
+set,1154,Price,260000000
+set,1154,Price [ref],https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/
+set,1155,Price,260000000
+set,1155,Price [ref],https://lngprime.com/vessels/hd-hyundai-heavy-scores-order-for-lng-carrier-quartet/173462/
 set,1152,Operator/charterer,Cheniere
 set,1152,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
 set,1153,Operator/charterer,Cheniere
@@ -742,6 +750,14 @@ set,1154,Operator/charterer,Cheniere
 set,1154,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
 set,1155,Operator/charterer,Cheniere
 set,1155,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
+set,1201,Price,255000000
+set,1201,Price [ref],https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/
+set,1202,Price,255000000
+set,1202,Price [ref],https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/
+set,1203,Price,255000000
+set,1203,Price [ref],https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/
+set,1204,Price,255000000
+set,1204,Price [ref],https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/
 set,1201,Operator/charterer,Cheniere
 set,1201,Operator/charterer [ref],"https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/"
 set,1202,Operator/charterer,Cheniere
@@ -756,6 +772,12 @@ set,194,Contract date,10-Aug-2022
 set,194,Contract date [ref],https://www.nyk.com/english/news/2022/20220810_01.html
 set,195,Contract date,10-Aug-2022
 set,195,Contract date [ref],https://www.nyk.com/english/news/2022/20220810_01.html
+set,193,Price,214285714
+set,193,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
+set,194,Price,214285714
+set,194,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
+set,195,Price,214285714
+set,195,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
 set,193,Operator/charterer,QatarEnergy
 set,193,Operator/charterer [ref],"https://www.nyk.com/english/news/2022/20220810_01.html, https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar"
 set,194,Operator/charterer,QatarEnergy
@@ -774,6 +796,10 @@ set,156,Operator/charterer,Petronas
 set,156,Operator/charterer [ref],"https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/"
 set,157,Operator/charterer,Petronas
 set,157,Operator/charterer [ref],"https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/"
+set,1156,Price,251500000
+set,1156,Price [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
+set,1157,Price,251500000
+set,1157,Price [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
 set,1156,Cargo type,membrane
 set,1156,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
 set,1157,Cargo type,membrane
@@ -806,6 +832,22 @@ set,52,Operator/charterer,Chevron
 set,52,Operator/charterer [ref],"https://www.mol.co.jp/en/pr/2026/26044.html, https://cyprusshippingnews.com/2026/09/14/mol-worlds-first-lng-carrier-equipped-with-wind-challenger/"
 set,1041,Price,413000000
 set,1041,Price [ref],"https://lngprime.com/asia/hanwha-ocean-to-build-fsru-for-413-million/127579/, https://splash247.com/mol-confirms-order-for-singapore-frsu/"
+set,273,Price,210000000
+set,273,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,274,Price,210000000
+set,274,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1092,Price,210000000
+set,1092,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1224,Price,210000000
+set,1224,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1225,Price,210000000
+set,1225,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1226,Price,210000000
+set,1226,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1170,Price,257000000
+set,1170,Price [ref],https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/
+set,1171,Price,257000000
+set,1171,Price [ref],https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/
 set,324,Hull number,Hull 8199 (HSHI)
 set,324,Hull number [ref],"https://www.shipvault.com/ships/457557, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457557"
 set,372,Hull number,Hull 2560 (Hanwha)
@@ -883,8 +925,110 @@ set,222,Price currency,USD
 set,223,Price currency,USD
 set,507,Price currency,USD
 set,519,Price currency,USD
+set,1152,Price currency,USD
+set,1153,Price currency,USD
+set,1154,Price currency,USD
+set,1155,Price currency,USD
+set,1201,Price currency,USD
+set,1202,Price currency,USD
+set,1203,Price currency,USD
+set,1204,Price currency,USD
+set,193,Price currency,USD
+set,194,Price currency,USD
+set,195,Price currency,USD
+set,1156,Price currency,USD
+set,1157,Price currency,USD
 set,509,Price currency,USD
 set,510,Price currency,USD
 set,511,Price currency,USD
 set,512,Price currency,USD
 set,1041,Price currency,USD
+set,273,Price currency,USD
+set,274,Price currency,USD
+set,1092,Price currency,USD
+set,1224,Price currency,USD
+set,1225,Price currency,USD
+set,1226,Price currency,USD
+set,1170,Price currency,USD
+set,1171,Price currency,USD
+set,189,Price,214285714
+set,189,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
+set,189,Price currency,USD
+set,190,Price,214285714
+set,190,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
+set,190,Price currency,USD
+set,191,Price,214285714
+set,191,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
+set,191,Price currency,USD
+set,192,Price,214285714
+set,192,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
+set,192,Price currency,USD
+set,99,Price,255800000
+set,99,Price [ref],https://en.portnews.ru/news/370159/
+set,99,Price currency,USD
+set,100,Price,255800000
+set,100,Price [ref],https://en.portnews.ru/news/370159/
+set,100,Price currency,USD
+set,124,Price,216000000
+set,124,Price [ref],https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/
+set,124,Price currency,USD
+set,125,Price,216000000
+set,125,Price [ref],https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/
+set,125,Price currency,USD
+set,126,Price,216000000
+set,126,Price [ref],https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/
+set,126,Price currency,USD
+set,127,Price,216000000
+set,127,Price [ref],https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/
+set,127,Price currency,USD
+set,128,Price,216000000
+set,128,Price [ref],https://www.offshore-energy.biz/seapeak-behind-order-for-five-lng-carriers-at-samsung-heavy/
+set,128,Price currency,USD
+set,205,Price,265000000
+set,205,Price [ref],https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/
+set,205,Price currency,USD
+set,206,Price,265000000
+set,206,Price [ref],https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/
+set,206,Price currency,USD
+set,1150,Price,249500000
+set,1150,Price [ref],https://splash247.com/seapeak-returns-to-samsung-for-pair-of-lng-carriers/
+set,1150,Price currency,USD
+set,1151,Price,249500000
+set,1151,Price [ref],https://splash247.com/seapeak-returns-to-samsung-for-pair-of-lng-carriers/
+set,1151,Price currency,USD
+set,1164,Price,251500000
+set,1164,Price [ref],https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/
+set,1164,Price currency,USD
+set,1165,Price,251500000
+set,1165,Price [ref],https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/
+set,1165,Price currency,USD
+set,1172,Price,252500000
+set,1172,Price [ref],https://splash247.com/maran-gas-doubles-down-with-fresh-lng-carrier-order/
+set,1172,Price currency,USD
+set,1173,Price,252500000
+set,1173,Price [ref],https://splash247.com/maran-gas-doubles-down-with-fresh-lng-carrier-order/
+set,1173,Price currency,USD
+set,1187,Price,255500000
+set,1187,Price [ref],https://splash247.com/sonangol-doubles-down-on-lng-with-fresh-hd-hyundai-order/
+set,1187,Price currency,USD
+set,1188,Price,255500000
+set,1188,Price [ref],https://splash247.com/sonangol-doubles-down-on-lng-with-fresh-hd-hyundai-order/
+set,1188,Price currency,USD
+set,1190,Price,248000000
+set,1190,Price [ref],https://www.bairdmaritime.com/shipping/tankers/gas/nigeria-lng-taps-chinese-yard-for-three-vlgc-newbuildings
+set,1190,Price currency,USD
+set,1191,Price,248000000
+set,1191,Price [ref],https://www.bairdmaritime.com/shipping/tankers/gas/nigeria-lng-taps-chinese-yard-for-three-vlgc-newbuildings
+set,1191,Price currency,USD
+set,1192,Price,248000000
+set,1192,Price [ref],https://www.bairdmaritime.com/shipping/tankers/gas/nigeria-lng-taps-chinese-yard-for-three-vlgc-newbuildings
+set,1192,Price currency,USD
+set,1193,Price,256500000
+set,1193,Price [ref],https://www.globenewswire.com/news-release/2025/12/29/3210962/20327/en/Capital-Clean-Energy-Carriers-Corp-Announces-Further-Expansion-with-an-Order-for-Three-Latest-Specification-LNG-Carriers-Delivering-in-2028-and-2029.html
+set,1193,Price currency,USD
+set,1194,Price,256500000
+set,1194,Price [ref],https://www.globenewswire.com/news-release/2025/12/29/3210962/20327/en/Capital-Clean-Energy-Carriers-Corp-Announces-Further-Expansion-with-an-Order-for-Three-Latest-Specification-LNG-Carriers-Delivering-in-2028-and-2029.html
+set,1194,Price currency,USD
+set,1195,Price,256500000
+set,1195,Price [ref],https://www.globenewswire.com/news-release/2025/12/29/3210962/20327/en/Capital-Clean-Energy-Carriers-Corp-Announces-Further-Expansion-with-an-Order-for-Three-Latest-Specification-LNG-Carriers-Delivering-in-2028-and-2029.html
+set,1195,Price currency,USD
