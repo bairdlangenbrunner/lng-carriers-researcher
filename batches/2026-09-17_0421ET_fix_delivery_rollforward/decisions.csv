@@ -170,30 +170,38 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 147|Name,fill,147,,Name,Y,False,hold,hold,Al Seej,placeholder 'Hull 2700 (SHI)' -> vessel named
 201|Name,fill,201,,Name,Y,False,hold,hold,Clean Astraeus,placeholder 'Hull 3452 (HDHHI)' -> vessel named
 202|Name,fill,202,,Name,Y,False,hold,hold,Clean Azeus,placeholder 'Hull 3453 (HDHHI)' -> vessel named
-207|Name,fill,207,,Name,Y,False,hold,hold,Al Ghuwair,placeholder 'Hull 3476 (HDHHI)' -> vessel named
-208|Name,fill,208,,Name,Y,False,hold,hold,Wadi Sultana,placeholder 'Hull 3477 (HDHHI)' -> vessel named
-209|Name,fill,209,,Name,Y,False,hold,hold,Lesha,placeholder 'Hull 3478 (HDHHI)' -> vessel named
-210|Name,fill,210,,Name,Y,False,hold,hold,Al Jazi,placeholder 'Hull 3479 (HDHHI)' -> vessel named
-211|Name,fill,211,,Name,Y,False,hold,hold,Al Mashrab,placeholder 'Hull 3480 (HDHHI)' -> vessel named
-212|Name,fill,212,,Name,Y,False,hold,hold,Al Mirzam,placeholder 'Hull 3481 (HDHHI)' -> vessel named
-213|Name,fill,213,,Name,Y,False,hold,hold,Maqdeem,placeholder 'Hull 3482 (HDHHI)' -> vessel named
-214|Name,fill,214,,Name,Y,False,hold,hold,Al Rufaa,placeholder 'Hull 3483 (HDHHI)' -> vessel named
-215|Name,fill,215,,Name,Y,False,hold,hold,Al Nekhsh,placeholder 'Hull 3484 (HDHHI)' -> vessel named
-216|Name,fill,216,,Name,Y,False,hold,hold,Leh'saien,placeholder 'Hull 3485 (HDHHI)' -> vessel named
-217|Name,fill,217,,Name,Y,False,hold,hold,Le'shara,placeholder 'Hull 3486 (HDHHI)' -> vessel named
-218|Name,fill,218,,Name,Y,False,hold,hold,Librega,placeholder 'Hull 3487 (HDHHI)' -> vessel named
-219|Name,fill,219,,Name,Y,False,hold,hold,Eshairej,placeholder 'Hull 3488 (HDHHI)' -> vessel named
-220|Name,fill,220,,Name,Y,False,hold,hold,Mneefa,placeholder 'Hull 3489 (HDHHI)' -> vessel named
-221|Name,fill,221,,Name,Y,False,hold,hold,Ezhara,placeholder 'Hull 3490 (HDHHI)' -> vessel named
-258|Name,fill,258,,Name,Y,False,hold,hold,Al Sabsab,placeholder 'Hull H1794A' -> vessel named
-487|Status,fill,487,,Status,Y,False,hold,hold,active,"shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO"
-487|Delivery year,fill,487,,Delivery year,Y,False,hold,hold,2026,backend 2027 -> delivered 2026-07-06 per shipvault
-489|Status,fill,489,,Status,Y,False,hold,hold,active,"shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO"
-489|Delivery year,fill,489,,Delivery year,Y,False,hold,hold,2026,backend 2027 -> delivered 2026-04-30 per shipvault
-510|Name,fill,510,,Name,Y,False,hold,hold,Alliance Venture,backend 'Dalian No 1 G175K-13' differs from registry name
-541|Status,fill,541,,Status,Y,False,hold,hold,active,"shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTR"
-541|Delivery year,fill,541,,Delivery year,Y,False,hold,hold,2025,backend 2027 -> delivered 2025-10-31 per shipvault
-541|Name,fill,541,,Name,Y,False,hold,hold,Elisa Halcyon,backend 'Elisa Halycon' differs from registry name
+207|Name,fill,207,,Name,G,False,accept,accept,Al Ghuwair,placeholder 'Hull 3476 (HDHHI)' -> vessel named; marinetraffic.org independently
+208|Name,fill,208,,Name,G,False,accept,accept,Wadi Sultana,placeholder 'Hull 3477 (HDHHI)' -> vessel named; marinetraffic.org independently
+209|Name,fill,209,,Name,G,False,accept,accept,Lesha,placeholder 'Hull 3478 (HDHHI)' -> vessel named; marinetraffic.org independently
+210|Name,fill,210,,Name,G,False,accept,accept,Al Jazi,placeholder 'Hull 3479 (HDHHI)' -> vessel named; marinetraffic.org independently
+211|Name,fill,211,,Name,G,False,accept,accept,Al Mashrab,placeholder 'Hull 3480 (HDHHI)' -> vessel named; marinetraffic.org independently
+212|Name,fill,212,,Name,G,False,accept,accept,Al Mirzam,placeholder 'Hull 3481 (HDHHI)' -> vessel named; marinetraffic.org independently
+213|Name,fill,213,,Name,G,False,accept,accept,Maqdeem,placeholder 'Hull 3482 (HDHHI)' -> vessel named; marinetraffic.org independently
+214|Name,fill,214,,Name,G,False,accept,accept,Al Rufaa,placeholder 'Hull 3483 (HDHHI)' -> vessel named; marinetraffic.org independently
+215|Name,fill,215,,Name,G,False,accept,accept,Al Nekhsh,placeholder 'Hull 3484 (HDHHI)' -> vessel named; marinetraffic.org independently
+216|Name,fill,216,,Name,G,False,accept,accept,Leh'saien,placeholder 'Hull 3485 (HDHHI)' -> vessel named; marinetraffic.org independently
+217|Name,fill,217,,Name,G,False,accept,accept,Le'shara,placeholder 'Hull 3486 (HDHHI)' -> vessel named; marinetraffic.org independently
+218|Name,fill,218,,Name,G,False,accept,accept,Librega,placeholder 'Hull 3487 (HDHHI)' -> vessel named; marinetraffic.org independently
+219|Name,fill,219,,Name,G,False,accept,accept,Eshairej,placeholder 'Hull 3488 (HDHHI)' -> vessel named; marinetraffic.org independently
+220|Name,fill,220,,Name,G,False,accept,accept,Mneefa,placeholder 'Hull 3489 (HDHHI)' -> vessel named; marinetraffic.org independently
+221|Name,fill,221,,Name,G,False,accept,accept,Ezhara,placeholder 'Hull 3490 (HDHHI)' -> vessel named; marinetraffic.org independently
+239|Name,fill,239,,Name,Y,False,hold,hold,Diamond Gas Nexus,placeholder 'Hull 8208 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+240|Name,fill,240,,Name,Y,False,hold,hold,Grace Himawari,placeholder 'Hull 8209 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+242|Name,fill,242,,Name,Y,False,hold,hold,Grace Gerbera,placeholder 'Hull 8238 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+243|Name,fill,243,,Name,Y,False,hold,hold,Ferdy Vanguard,placeholder 'Hull 8239 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+258|Name,fill,258,,Name,G,False,accept,accept,Al Sabsab,placeholder 'Hull H1794A' -> vessel named; marinetraffic.org independently lists
+259|Name,fill,259,,Name,Y,False,hold,hold,Al Fanar,placeholder 'Hull H1795A' -> vessel named; marinetraffic.org lists IMO 9986582 a
+487|Status,fill,487,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO"
+487|Delivery year,fill,487,,Delivery year,G,False,accept,accept,2026,backend 2027 -> delivered 2026-07-06 per shipvault; marinetraffic.org shows CLEA
+489|Status,fill,489,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO"
+489|Delivery year,fill,489,,Delivery year,G,False,accept,accept,2026,backend 2027 -> delivered 2026-04-30 per shipvault; marinetraffic.org shows CLEA
+507|Name,fill,507,,Name,Y,False,hold,hold,Prime Creativity,placeholder 'Dalian No 1 G175K-10' -> vessel named; marinetraffic.org lists IMO 
+510|Name,fill,510,,Name,G,False,accept,accept,Alliance Venture,backend 'Dalian No 1 G175K-13' differs from registry name; marinetraffic.org ind
+519|Name,fill,519,,Name,Y,False,hold,hold,Prime Unity,placeholder 'Dalian No 1 G175K-9' -> vessel named; marinetraffic.org lists IMO 1
+541|Status,fill,541,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTR"
+541|Delivery year,fill,541,,Delivery year,G,False,accept,accept,2025,backend 2027 -> delivered 2025-10-31 per shipvault; marinetraffic.org shows ELIS
+541|Name,fill,541,,Name,G,False,accept,accept,Elisa Halcyon,backend 'Elisa Halycon' differs from registry name; marinetraffic.org independen
+639|Name,fill,639,,Name,Y,False,hold,hold,Solidarity,placeholder 'Gdansk FSRU' -> vessel named; marinetraffic.org lists IMO 1056410 a
 80|Name,fill,80,,Name,Y,False,hold,hold,Al Nasraniya,placeholder 'Hull 2585 (Hanwha)' -> vessel named
 81|Name,fill,81,,Name,Y,False,hold,hold,Al Yousifiya,placeholder 'Hull 2586 (Hanwha)' -> vessel named
 82|Name,fill,82,,Name,Y,False,hold,hold,Athba,placeholder 'Hull 2587 (Hanwha)' -> vessel named
@@ -212,4 +220,5 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 154|Name,fill,154,,Name,Y,False,hold,hold,Al Nouf,placeholder 'Hull 2706 (SHI)' -> vessel named
 222|Name,fill,222,,Name,Y,False,hold,hold,Izghawa,placeholder 'Hull 3491 (HDHHI)' -> vessel named
 223|Name,fill,223,,Name,Y,False,hold,hold,Al Wa'ab,placeholder 'Hull 3492 (HDHHI)' -> vessel named
-509|Name,fill,509,,Name,Y,False,hold,hold,Friendship Venture,backend 'Dalian No 1 G175K-12' differs from registry name
+508|Name,fill,508,,Name,Y,False,hold,hold,Prime Glory,placeholder 'Dalian No 1 G175K-11' -> vessel named; marinetraffic.org lists IMO 
+509|Name,fill,509,,Name,G,False,accept,accept,Friendship Venture,backend 'Dalian No 1 G175K-12' differs from registry name; marinetraffic.org ind

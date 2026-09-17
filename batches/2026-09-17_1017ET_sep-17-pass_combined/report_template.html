@@ -103,14 +103,14 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 <header>
   <div class="eyebrow">LNG carrier tracker · research update · 17 Sep 2026</div>
   <h1>Sep-17 pass: what the run found, and what needs a decision</h1>
-  <p class="lede prose">An automated research pass, the sep-17-pass, checked the tracker backend (1,220 rows: 822 active, 364 on order, 34 proposed) against yard orderbooks, Korean disclosures, trade press and ship registries. It produced <strong>1,186 proposed changes in five batches</strong>. <strong>Nothing has been written to the backend sheet.</strong> Every line is a candidate waiting for human review, and every cited URL was checked to confirm the live page actually states the value it supports.</p>
+  <p class="lede prose">An automated research pass, the sep-17-pass, checked the tracker backend (1,220 rows: 822 active, 364 on order, 34 proposed) against yard orderbooks, Korean disclosures, trade press and ship registries. It produced <strong>1,424 proposed changes in six batches</strong>. <strong>Nothing has been written to the backend sheet.</strong> Every line is a candidate waiting for human review, and every cited URL was checked to confirm the live page actually states the value it supports.</p>
 </header>
 
 <section>
   <div class="stats">
-    <div class="stat"><b>1,186</b><span>proposed changes</span></div>
-    <div class="stat"><b>685</b><span>ready to accept as-is</span></div>
-    <div class="stat"><b>501</b><span>held for a closer look</span></div>
+    <div class="stat"><b>1,424</b><span>proposed changes</span></div>
+    <div class="stat"><b>843</b><span>ready to accept as-is</span></div>
+    <div class="stat"><b>581</b><span>held for a closer look</span></div>
     <div class="stat"><b>63</b><span>vessels delivered: on order → active</span></div>
     <div class="stat"><b>12</b><span>new orders not yet in the tracker</span></div>
   </div>
@@ -118,16 +118,17 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 </section>
 
 <section>
-  <h2>The five batches</h2>
+  <h2>The six batches</h2>
   <p class="sub prose">Listed in the order they should be applied. The first two rename rows that the fourth also touches, so applying in order keeps things readable.</p>
   <div class="scroll"><table>
     <thead><tr><th>#</th><th>Batch</th><th>What it does</th><th class="n">Changes</th><th class="n">Accept</th><th class="n">Hold</th></tr></thead>
     <tbody>
-      <tr><td class="mono">1</td><td><b>Delivery roll-forward</b></td><td>Every on-order row with an IMO checked against shipvault and AIS. 63 ships moved to active, 26 delivery years corrected, 19 slipped deliveries rolled forward, 106 names updated.</td><td class="n">214</td><td class="n">143</td><td class="n">71</td></tr>
+      <tr><td class="mono">1</td><td><b>Delivery roll-forward</b></td><td>Every on-order row with an IMO checked against shipvault and AIS (vesselfinder, then marinetraffic.org). 63 ships moved to active, 26 delivery years corrected, 19 slipped deliveries rolled forward, 115 names updated.</td><td class="n">223</td><td class="n">168</td><td class="n">55</td></tr>
       <tr><td class="mono">2</td><td><b>Delivery confirmed by press</b></td><td>Two deliveries the registry lags on, confirmed by LNG Prime: live row 887 (now <i>Al Nigyan</i>, Knutsen) and live row 924.</td><td class="n">3</td><td class="n">0</td><td class="n">3</td></tr>
       <tr><td class="mono">3</td><td><b>Discovery since June 2026</b></td><td>30 yards swept for orders placed since the backend's latest contract date. 12 new vessels in 5 orders, plus 10 flags on existing rows.</td><td class="n">12</td><td class="n">7</td><td class="n">5</td></tr>
-      <tr><td class="mono">4</td><td><b>Data fill</b></td><td>Blank and "unknown" cells on on-order rows researched; owner country, price currency and similar derivable values filled across the whole backend. 477 rows touched.</td><td class="n">949</td><td class="n">535</td><td class="n">414</td></tr>
+      <tr><td class="mono">4</td><td><b>Data fill</b></td><td>Blank and "unknown" cells on on-order rows researched; owner country, price currency and similar derivable values filled across the whole backend. 483 rows touched. Includes 48 per-vessel prices divided out of a reported order total, all held.</td><td class="n">1,003</td><td class="n">493</td><td class="n">510</td></tr>
       <tr><td class="mono">5</td><td><b>Missing references</b></td><td>Values that had no source cited. 8 references found; 11 searched and documented as not found.</td><td class="n">8</td><td class="n">0</td><td class="n">8</td></tr>
+      <tr><td class="mono">6</td><td><b>Shipvault companion references</b></td><td>Most shipvault pages render blank in a browser, so a reviewer cannot see the value. Where the backend already cites one, the underlying record URL is added as a second reference. Values are untouched. 27 rows.</td><td class="n">175</td><td class="n">175</td><td class="n">0</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -152,15 +153,15 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
   <h2>Deliveries and slipped schedules</h2>
   <div class="two">
     <div><h3>63 ships delivered</h3><p class="sub">Hanwha Ocean 20, HD Hyundai Heavy 11, HD Hyundai Samho 11, Samsung Heavy 8, Hudong-Zhonghua 8, Jiangnan 3, Zvezda 1, China Merchants 1. The backend had not moved since June.</p></div>
-    <div><h3>96 hull placeholders named</h3><p class="sub">For example <span class="mono">Hull 2541 (Hanwha)</span> becomes <i>Venture Pelican</i>; <span class="mono">Hull 045 (Zvezda)</span> becomes <i>Konstantin Posiet</i>. Ten more are spelling corrections against the registry name.</p></div>
+    <div><h3>105 hull placeholders named</h3><p class="sub">For example <span class="mono">Hull 2541 (Hanwha)</span> becomes <i>Venture Pelican</i>; <span class="mono">Hull 045 (Zvezda)</span> becomes <i>Konstantin Posiet</i>. Ten more are spelling corrections against the registry name. Nine of the 105 come from marinetraffic.org alone, where the registry still shows a hull number; those are held.</p></div>
     <div><h3>45 delivery years changed</h3><p class="sub">26 were delivered in a different year than recorded (23 of them in 2025, not 2026). 19 have slipped: 18 from 2026 to 2027, one to 2028.</p></div>
-    <div><h3>45 rows not settled</h3><p class="sub">Mostly ships broadcasting on AIS under a real name while the registry still says on order. A press follow-up confirmed two, found three on sea trials and two not delivered; the rest are unresolved. The sanctioned Zvezda / Arctic LNG 2 hulls were deliberately left untouched.</p></div>
+    <div><h3>52 rows not settled</h3><p class="sub">Mostly ships registered on AIS under a real name while the registry still says on order. A press follow-up confirmed two, found three on sea trials and two not delivered; the rest are unresolved. The sanctioned Zvezda / Arctic LNG 2 hulls were deliberately left untouched.</p></div>
   </div>
 </section>
 
 <section>
   <h2>Data fill, by column</h2>
-  <p class="sub prose">949 cells that were blank or "unknown". Owner country is derived from a lookup table and is safe across the board. Prices, contract dates and charterers lean on a single trade-press source more often, so more of them are held.</p>
+  <p class="sub prose">1,003 cells that were blank or "unknown". Owner country is derived from a lookup table and is safe across the board. Prices, contract dates and charterers lean on a single trade-press source more often, so more of them are held.</p>
   <div class="chart" id="chart">
     <div class="legend"><span><i style="background:var(--s1)"></i>Ready to accept</span><span><i style="background:var(--s2)"></i>Held for review</span></div>
     <div class="bars" id="bars" role="img" aria-label="Stacked bars: proposed data fills per column, split into ready to accept and held for review. Counts are printed beside each bar."></div>
@@ -177,15 +178,16 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
     <li><b>"Greenenergy" ship names</b> look wrong against both the registry and AIS, which say "Greenergy".</li>
     <li><b>BW LNG capacity.</b> Rows <span class="mono">1168/1169</span> are recorded as 174,000 cbm; PortNews, citing BW's fleet list, says 177,000 cbm on a new three-tank design.</li>
     <li><b>MISC FSRU price.</b> Row <span class="mono">1162</span> says USD 330M; Businesskorea reports 484.8bn won (about USD 354M) for the same order.</li>
-    <li><b>Possible mis-citations.</b> The data-fill research flagged about 200 places where a source disagrees with an existing backend value. These are never applied automatically; they are listed for review in the workbook.</li>
-    <li><b>The 45 unsettled delivery rows</b> above.</li>
+    <li><b>Possible mis-citations.</b> The data-fill research flagged about 150 places where a source disagrees with an existing backend value. These are never applied automatically; they are listed for review in the workbook.</li>
+    <li><b>The 52 unsettled delivery rows</b> above.</li>
   </ol>
 </section>
 
 <section>
   <h2>Limits of this run</h2>
   <ul class="decisions">
-    <li>Coverage is thinner than a normal run. The web-search budget ran out part-way, one AIS site throttled requests for the whole run (it is cited nowhere), and TradeWinds and Upstream paywalls hide many contract dates and prices.</li>
+    <li>Coverage is thinner than a normal run. The web-search budget ran out part-way, and TradeWinds and Upstream paywalls hide many contract dates and prices.</li>
+    <li>One AIS site (vesselfinder) blocked our address part-way and is cited nowhere. Of the 176 on-order ships it never answered for, the 95 that are named or due in 2027 were re-checked on marinetraffic.org. The other 81 are unnamed hulls not due before 2028 and were not re-checked.</li>
     <li>Registry data (shipvault) is treated as a single source, medium confidence, and is never used for owners: it had IMO typos and wrong owner tags.</li>
     <li>Only on-order rows were researched for blanks. Blanks on active rows are untouched.</li>
     <li>The sweep for dead or decayed references on existing rows is paused and is not part of this update.</li>
@@ -194,10 +196,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 
 <section>
   <h2>Every proposed change</h2>
-  <p class="sub prose">All 1,186 lines. Row numbers are live rows on the backend sheet as of 17 Sep, 10:15 ET. The workbook has the same table, plus one sheet (<span class="mono">all_changes_backend_shape</span>) that lays every change from all five batches into the backend's own column structure, the per-batch paste-ready rows, the conflict list, documented blanks and the URL verification log.</p>
-  <div class="dl" id="dlwrap" hidden><button id="dl" type="button">Download the workbook (.xlsx)</button><span id="dlmsg">15 sheets, 0.7 MB</span></div>
+  <p class="sub prose">All 1,424 lines. Row numbers are live rows on the backend sheet as of 17 Sep, 10:15 ET. The workbook has the same table, plus one sheet (<span class="mono">all_changes_backend_shape</span>) that lays every change from all six batches into the backend's own column structure, the per-batch paste-ready rows, the conflict list, documented blanks and the URL verification log.</p>
+  <div class="dl" id="dlwrap" hidden><button id="dl" type="button">Download the workbook (.xlsx)</button><span id="dlmsg">16 sheets, 0.8 MB</span></div>
   <div class="controls">
-    <label for="fb">Batch<select id="fb"><option value="">All batches</option><option value="1">1 Delivery roll-forward</option><option value="2">2 Delivery confirmed</option><option value="3">3 Discovery</option><option value="4">4 Data fill</option><option value="5">5 Missing references</option></select></label>
+    <label for="fb">Batch<select id="fb"><option value="">All batches</option><option value="1">1 Delivery roll-forward</option><option value="2">2 Delivery confirmed</option><option value="3">3 Discovery</option><option value="4">4 Data fill</option><option value="5">5 Missing references</option><option value="6">6 Shipvault companions</option></select></label>
     <label for="fd">Decision<select id="fd"><option value="">Accept and hold</option><option value="accept">Ready to accept</option><option value="hold">Held for review</option></select></label>
     <label for="fc">Column<select id="fc"><option value="">All columns</option></select></label>
     <label for="fq">Search<input id="fq" type="search" placeholder="vessel, owner, yard, value"></label>
@@ -209,7 +211,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
   </table></div>
 </section>
 
-<footer>Built from the five batch folders under <span class="mono">batches/2026-09-17_*</span> in the lng-carriers-researcher repo. Confidence colors match the review workbooks: green is high, yellow is medium.</footer>
+<footer>Built from the six batch folders under <span class="mono">batches/2026-09-17_*</span> in the lng-carriers-researcher repo. Confidence colors match the review workbooks: green is high, yellow is medium.</footer>
 </div>
 
 <script>

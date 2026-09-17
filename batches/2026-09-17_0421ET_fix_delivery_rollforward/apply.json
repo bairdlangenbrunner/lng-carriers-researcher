@@ -1717,13 +1717,313 @@
       "column": "Name [ref]",
       "value": "https://www.shipvault.com/ships/471277, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
       "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Name",
+      "value": "Al Ghuwair",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478305, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478305, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHUWAIR/1048918/538000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Name",
+      "value": "Wadi Sultana",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478306, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478306, https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-SULTANA/1048920/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Name",
+      "value": "Lesha",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478307, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478307, https://www.marinetraffic.org/ship-owner-manager-ism-data/LESHA/1048932/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Name",
+      "value": "Al Jazi",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478308, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478308, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-JAZI/1048944/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Name",
+      "value": "Al Mashrab",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478309, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478309, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MASHRAB/1048956/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Name",
+      "value": "Al Mirzam",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478310, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478310, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-MIRZAM/1048982/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Name",
+      "value": "Maqdeem",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478311, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478311, https://www.marinetraffic.org/ship-owner-manager-ism-data/MAQDEEM/1048994/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Name",
+      "value": "Al Rufaa",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478312, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478312, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-RUFAA/1049003/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Name",
+      "value": "Al Nekhsh",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478313, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478313, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NEKHSH/1049015/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Name",
+      "value": "Leh'saien",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478314, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478314, https://www.marinetraffic.org/ship-owner-manager-ism-data/LEH'SAIEN/1049027/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Name",
+      "value": "Le'shara",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478315, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478315, https://www.marinetraffic.org/ship-owner-manager-ism-data/LE'SHARA/1049039/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Name",
+      "value": "Librega",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478316, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478316, https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBREGA/1049041/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Name",
+      "value": "Eshairej",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478317, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478317, https://www.marinetraffic.org/ship-owner-manager-ism-data/ESHAIREJ/1049053/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Name",
+      "value": "Mneefa",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478318, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318, https://www.marinetraffic.org/ship-owner-manager-ism-data/MNEEFA/1049065/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Name",
+      "value": "Ezhara",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478319, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319, https://www.marinetraffic.org/ship-owner-manager-ism-data/EZHARA/1049089/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Name",
+      "value": "Al Sabsab",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/462933, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SABSAB/9986570/636025823",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/466740, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466740",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/466740, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466740",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/466739, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466739",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/466739, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466739",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Name",
+      "value": "Alliance Venture",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/469428, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469428, https://www.marinetraffic.org/ship-owner-manager-ism-data/ALLIANCE-VENTURE/1030569/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/461185, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/461185, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Name",
+      "value": "Elisa Halcyon",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/461185, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185, https://www.marinetraffic.org/ship-owner-manager-ism-data/ELISA-HALCYON/9980552/228488900",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Name",
+      "value": "Friendship Venture",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/469427, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469427, https://www.marinetraffic.org/ship-owner-manager-ism-data/FRIENDSHIP-VENTURE/1030557/636025371",
+      "confidence": "G"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 214,
-    "accepted": 143,
-    "hold": 71,
+    "items": 223,
+    "accepted": 168,
+    "hold": 55,
     "reject": 0,
     "conflicts": 0
   }
