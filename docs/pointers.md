@@ -8,6 +8,7 @@ The SOPs live in `docs/sops/`:
 - `data_fill.md` — abbreviated below as **DF**
 - `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
 - `fsru_reconciliation.md` — abbreviated below as **FR** (the name-keyed GIIGNL-FSRU comparison)
+- `igu_reconciliation.md` — abbreviated below as **IG** (the IMO-keyed IGU World LNG Report intercomparison)
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
@@ -46,6 +47,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); D
 | QA flag conflicts | RF §3.7 | Flag any conflicts vs backend |
 | **URL verification gate** | RF §3.8 | MANDATORY before committing the batch |
 | Rot sweep of pre-existing refs | RF §3.8a | `citation_qc.py` → graded ok / banned / dead / blocked; **bot-block ≠ dead** — keep blocked URLs, replace dead/banned |
+| Archiving refs to Wayback | RF §7 | `wayback_save.py` (authenticated, resumable) is the only archiver; a snapshot goes in a `[ref]` only as a last resort when the live URL is dead |
 | Verifier grades / banned URL shapes | RF §3.8 (rev 19 table), RF §7 Forbidden | `classify(reason)`; shorteners, navigation URLs, `web.archive.org/save/` are banned in code; PDFs verified on extracted text; Wayback fallback for blocked pages |
 
 ## Confidence labels (RF §5, current rev 12)
@@ -77,6 +79,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); D
 | 6a.6 | RF | Owner / charterer press releases |
 | 6a.7 | RF | Vessel database newbuild entries |
 | 6a.8 | RF | **IMO → marine-vessel-tracker** (run this LAST before negative result) |
+| 6a.8 (shipvault companion ref) | RF (rev 21) | A `shipvault.com/ships/{id}` page that renders blank is cited with its unit-record URL as a second ref in the same cell (§4.15 join), gated on the same record — `shipvault_api_refs.py` before `build_workbook.py`. Shipvault is Y / single-source, never for owners |
 | 6a.8 (delivered yet?) | RF | `ais_static.py` — aisstream static-data cross-check for on-order IMOs; a lead only, never a `[ref]`; "not seen" is not evidence |
 | 6a.8 (bulk) | RF | Bulk per-IMO lookups on one host go through `sweep.py` (paced, circuit-broken); status `000` on every request = IP ban, not a bot wall — the fetch ladder can't clear it |
 | 6a.9 | RF | Document negative result in QA log |
@@ -158,6 +161,23 @@ Name-keyed comparison of the backend's FSRUs against the GIIGNL Annual Report's 
 | Five buckets | FR §4 | matched / reclassify (typed non-FSRU) / manual pairing / candidates-to-add / backend-only (expected) + FSU exclusions + orderbook passthrough |
 | Workflow | FR §5 | pull → terminals-repo extractor → `fsru_reconcile.py` → `build_workbook.py --mode fsru` → recalc → dedupe sweep → commit |
 | Promotion | FR §6 | vetted candidates run through the Apply SOP unchanged; backend never auto-edited; GIIGNL never the `[ref]` |
+
+## IGU reconciliation workflow (IG — 2026-09-17)
+
+IMO-keyed intercomparison of the whole backend against the IGU World LNG Report's fleet (Appendix 3) and orderbook (Appendix 4) tables, with the previous edition layered on top. Full SOP: `docs/sops/igu_reconciliation.md`.
+
+| Phase | Section | What |
+|---|---|---|
+| Scope / positioning | IG §1 | whole fleet; IGU **is** citable (the backend's seed source) but its landing page cannot pass §3.8c for a new proposal; inclusion criteria apply |
+| Parameters | IG §2 | current + previous edition, pending batches to cross-reference, capacity tolerance (max 6000 m³ / 3%), tracker leads, output name |
+| Extraction | IG §3 | `igu_fleet.py` — word coordinates, no assumed column set; extract every edition fresh (layout changes); read the warnings; acceptance check `prev − dropped + delivered + added = current` |
+| Join + comparison | IG §4.1–4.2 | IMO as a string, no fuzzy pairing; builder labels through a learned co-occurrence map (≥ 3 vessels) |
+| Diff `kind` | IG §4.3 | `igu_changed` / `new_to_igu` (review) vs `backend_differs` (low — never revert blindly) |
+| Buckets | IG §4.4 | matched (+ status findings) / dropped / backend_not_in_igu / igu_only / igu_no_imo (cluster hints only) / igu_duplicates / edition_diff |
+| Leads | IG §4.5 | `--fetch-leads` paced shipvault lookup of the review buckets — leads, never refs |
+| Dropped vessels | IG §5.2 | decommissioned before Dec 2025 → out of scope, remove; Dec 2025 or later → stays; no `scrapped` Status value without a user decision |
+| Workbook | IG §6 | `build_workbook.py --mode igu` — 11 sheets, live sheet row first, no `[ref]` cells |
+| Close-out | IG §7 | batch contents, dedupe sweep, follow-up `fix` / discovery batch; the IGU batch itself is never applied |
 
 ## Pause-and-ask triggers
 

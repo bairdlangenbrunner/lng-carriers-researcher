@@ -1,5 +1,11 @@
 # sep-17-pass — full update, 2026-09-17 (autonomous run, state file)
 
+> **Closed.** Every step below is done; this file is the run's record, not a to-do list.
+> The later same-day additions (shipvault companion batch, order-total prices,
+> marinetraffic.org cross-check) are in `2026-09-17_sep-17-pass_summary.md`; what is still
+> open is in `2026-09-17_sep-17-pass_worklist.md`. Counts in the log below (e.g. 949
+> data-fill proposals) are as of that step, not current.
+
 **Deadline:** 07:30 ET 2026-09-17. **Mode:** autonomous; Baird is asleep; make every
 decision, record it here. **Resume rule:** a new session reads this file top to
 bottom, then continues from the first unchecked step. Update this file after every

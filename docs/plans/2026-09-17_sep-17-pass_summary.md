@@ -7,6 +7,10 @@ them with the Apply SOP (`docs/sops/apply.md`): edit the `hold` rows in `decisio
 re-run `python scripts/apply_batch.py --batch <dir>`, apply, then
 `python scripts/verify_apply.py --batch <dir> --pull`.
 
+Tick-off version of everything still open (decisions, apply, stream 0, remaining research):
+`docs/plans/2026-09-17_sep-17-pass_worklist.md`. Re-pull 2026-09-17 evening: still 1,220 rows,
+nothing applied.
+
 ## Batches, in the order to apply them
 
 | # | batch | what | proposals |
@@ -17,6 +21,7 @@ re-run `python scripts/apply_batch.py --batch <dir>`, apply, then
 | 4 | `2026-09-17_0511ET_data_fill_on_order` | blanks on on-order rows + whole-backend derivables | 1,003 cells / 483 rows — 493 accept, 510 hold (incl. 48 order-total Prices, DF §5a, all hold) |
 | 5 | `2026-09-17_0505ET_ref_fill_rule_f` | Rule-F orphan `[ref]`s | 8 refs (hold), 11 negatives |
 | 6 | `2026-09-17_1114ET_shipvault_companion_refs` | existing shipvault `[ref]`s that render blank: unit-record URL appended as a second ref (values untouched) | 175 cells / 27 rows — all accept |
+| 7 | `2026-09-17_1458ET_igu_reconciliation_igu2026` | whole backend vs the IGU World LNG Report 2026 (fleet at end-2025; 2025 edition as the baseline the backend was loaded from) — IMO-keyed, IG rev 1 | comparison only, never applied: 1,054 matched, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate |
 
 Apply 1–2 before 4 (they rename rows 4 also touches; all artifacts are keyed by row_id, so
 order is about readability, not safety). After applying 3, re-export the map fleet if any
@@ -50,6 +55,26 @@ press says delivery 2029, shipvault 2030).
    `…data_fill_on_order/notes.md` (live rows 1182–1185, row_ids 1162/1163, 1212/1213, 1218,
    1207/1208, 197, 375, 255/256, 318/319, 515/516; Samsung × CMES and Jiangnan × Taiping capacity).
 9. **MISC hulls H2019A–H2023A** on shipvault have no citable press — next discovery run.
+10. **IGU 2026 intercomparison (batch 7)** — full list in the worklist §1b and the batch
+    `notes.md`. The ones that need you:
+    - **A `scrapped` Status value.** IGU dropped 18 backend `active` rows; all are scrapped steam
+      tonnage per shipvault. 11 were scrapped Mar–Oct 2025 → out of scope by the inclusion
+      rule (live rows 64, 84, 44, 46, 47, 48, 49, 16, 23, 63, 54). 7 were scrapped in 2026 or
+      only sold for scrap → they stay (77, 98, 26, 25, 94, 95, 115), and the vocabulary has no
+      honest Status for them. Row 25 is IMO 9030814 Puteri Delima, renamed `Lima` for the
+      scrap voyage (scrapped 2026-03-08) — the vessel that prompted this pass.
+    - **13 `active` rows with Delivery year 2025 that delivered in 2026** (787, 790, 752, 768,
+      774, 753, 754, 771, 786, 769, 770, 815, 813); **7 `active` rows still on order**
+      (814 + Arctic LNG 2 hulls 797, 799, 805, 812, 823, 806); row 929 Alexey Kosygin
+      delivered 2025-12-24 (sanctioned) but on order in the backend.
+    - **Load corruption** on rows 451, 499, 500, 501, 509 (Vessel type `Supporting`) — and the
+      same bogus strings sit in the controlled vocab, which is why QC never flagged them.
+    - Vessel type row 81 → FSU (out of scope), row 270 → FSRU; ~20 renames; `Greenergy`
+      confirmed by a third source; batch 1 spellings on rows 910 / 873 to check before
+      applying; candidate `Maran Gas Efessos` (IMO 9627497).
+    None of it is a proposal yet: IGU's landing page cannot pass the §3.8c gate and the
+    shipvault dates are single-source leads, so accepted items need verified refs and a
+    follow-up `fix` batch.
 
 ## Paused / not done
 
@@ -67,14 +92,23 @@ press says delivery 2029, shipvault 2030).
   QatarEnergy series already named: live rows 1017–1024, 1031–1037, 1043, 1057, 1058 (Y → G), 1039
   `Libsayer` (new, hold), and 1017 / 1033 showing an MMSI early (manual review, low priority).
 
-## Tooling changes (all with tests; 194 pass)
+## Tooling changes (all with tests; 194 pass that morning, 291 by evening, 324 with the IGU tooling)
 
 - `scripts/apply_batch.py` / `batch_digest.py`: **fix-mode** batches now get digests and apply
   artifacts (fix refs *replace* the paired `[ref]`; `preserve_ref` cells touch the value only).
 - `scripts/url_verifier.py` `value_variants`: `DD-Mon-YYYY` dates; Status `active` ↔ past-tense
   delivery wording; Status `on order` ↔ order wording; hull yard tag optional, untagged
   Chinese-yard hulls (`Hull H2706`); `_title_hit` no longer reads "$500 million" as HTTP 500.
-- Follow-ups not done: Status `active` still passes on a bare boilerplate "active";
+- Added later the same day: `scripts/sweep.py` (paced, circuit-broken bulk fetch — after the
+  vesselfinder IP ban), `scripts/ais_static.py` (aisstream cross-check, lead only),
+  `scripts/shipvault_api_refs.py` (companion refs, RF rev 21), order-total Prices in
+  `merge_fills.py` (DF rev 3 §5a, RF rev 22).
+- IGU reconciliation (IG rev 1): `scripts/igu_fleet.py` (word-coordinate extractor — the 2026
+  edition prints two tables per landscape spread and adds Age / Vessel Type columns, so the
+  2025 column positions do not carry over), `scripts/igu_reconcile.py` (IMO join, edition
+  diff, paced shipvault leads) and `build_workbook.py --mode igu`.
+- Follow-ups not done: controlled vocab carries three strings seeded from corrupted rows, and
+  `qc_backend.py` has no vocab-membership check; Status `active` still passes on a bare boilerplate "active";
   shipvault data quality (IMO typos failing the check digit, wrong owner tags) — treat
   shipvault as Y/single-source, never for owners.
 

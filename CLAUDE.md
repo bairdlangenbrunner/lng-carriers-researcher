@@ -9,9 +9,11 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/data_fill.md` — the data-fill workflow (research blank/`unknown` data cells → candidate value+[ref] pairs; the blank-vs-`unknown` preserve-ref contract, derivable autofills, controlled vocab). **Authoritative.**
 - `docs/sops/sfoc_reconciliation.md` — the SFOC reconciliation workflow (less frequent).
 - `docs/sops/fsru_reconciliation.md` — the **FSRU reconciliation** workflow: name-keyed comparison of the backend's FSRUs against the GIIGNL Annual Report fleet table (GIIGNL has no IMO → join by name; comparison artifact, not a citable `[ref]`). **Authoritative.**
+- `docs/sops/igu_reconciliation.md` — the **IGU reconciliation** workflow: IMO-keyed intercomparison of the whole backend against the IGU World LNG Report fleet + orderbook tables (Appendix 3 / 4), with an edition-to-edition diff; extract every edition fresh (layout changes). IGU is citable, but its landing page cannot pass the §3.8c gate for a new proposal. **Authoritative.**
 - `docs/sops/qc_release.md` — the **pre-release QC** workflow: whole-backend consistency/corruption sweep before a data release, the authoritative Name-column placeholder conventions, and the `fix`-mode correction batch (incl. the `preserve_ref` escape hatch). **Authoritative.**
 - `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
+- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`.
 - `docs/inclusion_criteria.md` — what's in scope vs out.
 - `data/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
 - `data/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
@@ -234,6 +236,51 @@ python scripts/recalc.py batches/<dir>/lng_carrier_fsru_reconciliation.xlsx
 python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §5a)
 ```
 
+### IGU reconciliation batch
+
+Trigger phrases: "IGU reconciliation", "compare the backend to the IGU report", "intercompare with the World LNG Report", "new IGU edition", "what did IGU drop / change".
+
+Governed by `docs/sops/igu_reconciliation.md` (IG rev 1). IMO-keyed join of the **whole
+backend** against the IGU World LNG Report's Appendix 3 (fleet) and Appendix 4 (orderbook),
+with the previous edition layered on top so each diff says which side moved (`igu_changed` /
+`new_to_igu` / `backend_differs` — never revert the last blindly). The backend was seeded from
+IGU 2025, so IGU **is** citable on bulk-loaded rows — but its landing page surfaces no
+per-vessel value, so every finding needs its own verified ref before it becomes a proposal.
+The batch itself is never applied; findings promote through a `fix` / discovery batch.
+
+```bash
+# Run from the repo root.
+
+# 1. Fresh backend CSV + colmap (MANDATORY first step).
+python scripts/pull_backend.py
+
+# 2. Extract BOTH editions fresh — the table layout changes between editions
+#    (2026: two tables per landscape spread, Age + Vessel Type columns added).
+#    Read the warnings; the expected residue is IGU's own duplicate IMOs.
+python scripts/igu_fleet.py ../lng-terminals-researcher/data/IGU-World-LNG-Report-<year>.pdf
+python scripts/igu_fleet.py <path>/IGU-World-LNG-Report-<year-1>.pdf
+# -> work/igu_fleet_<year>.json, work/igu_fleet_<year-1>.json
+
+# 3. Reconcile. --pending cross-references un-applied batches (a finding one already
+#    proposes is green); --fetch-leads runs the paced shipvault lookup on the review
+#    buckets (leads, never refs; resumable work/igu_review_shipvault.json).
+python scripts/igu_reconcile.py --pending batches/<dir> [batches/<dir> ...] --fetch-leads
+# -> work/igu_reconcile.json
+
+# 4. Build the 11-sheet workbook + recalc to zero errors.
+python scripts/build_workbook.py --mode igu --reconcile work/igu_reconcile.json \
+    --out batches/<date>_<HHMMET>_igu_reconciliation_igu<year>/
+python scripts/recalc.py batches/<dir>/lng_carrier_igu_reconciliation.xlsx
+
+# 5. Advisory dedupe sweep; copy both igu_fleet JSONs, igu_reconcile.json and the leads
+#    file into the batch dir; write notes.md (decisions list); commit the batch directory.
+python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §5a)
+```
+
+Dropped vessels follow the inclusion rule (IG §5.2): decommissioned before December 2025 →
+out of scope, remove; December 2025 or later → the row stays. The Status vocabulary has no
+`scrapped` value — adding one is a user decision, never invented in a batch.
+
 ### Pre-release QC batch
 
 Trigger phrases: "qc pass", "pre-release qc", "qc the backend", "prep for data release", "check the names before release", "name consistency check".
@@ -272,7 +319,7 @@ python scripts/recalc.py batches/<date>_<HHMMET>_<label>/lng_carrier_fix.xlsx
 
 Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
 
-Governed by `docs/sops/apply.md` (AP rev 1). This is the offset-proof round-trip that
+Governed by `docs/sops/apply.md` (AP rev 3). This is the offset-proof round-trip that
 replaces manual copy/paste (which corrupted rows 1216/1217).
 
 ```bash
@@ -332,6 +379,8 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `normalize.py` | canonical builder/owner names (module, imported by others) | Adding a new yard or owner; clusters over- or under-merging |
 | `dedup_index.py` | builds the two indexes used for matching candidates against backend | New batch type that needs a different index shape |
 | `fsru_reconcile.py` | FSRU reconciliation: name-keyed join of the GIIGNL fleet JSON ({current}∪{ex_names}, `normalize_vessel_name`) against backend FSRUs, capacity-corroborated; emits the five-bucket `work/fsru_reconcile.json` (matched / reclassify / manual / candidates / backend_only + FSU exclusions + orderbook). Advisory; never edits the backend | New bucket; changing the capacity tolerance or small-scale cutoff; manual-pairing guard tuning |
+| `igu_fleet.py` | IGU World LNG Report extractor — Appendix 3 (fleet) + Appendix 4 (orderbook) from pdfplumber **word coordinates**, assuming nothing about the column set (each `IMO Number` header starts a table; column edges come from the header labels; wrapped lines attach to the row above), so it survives the edition-to-edition layout changes (two tables per spread, added columns). Built-in validation (IMO check digit, numeric capacity, plausible year, per-page IMO-token cross-count) → `warnings`; `--strict` exits 1. Writes `work/igu_fleet_<edition>.json` | A new edition's header label is unmapped (`FIELD_BY_LABEL`); the acceptance check (IG §3) does not balance; a page's count cross-check warns |
+| `igu_reconcile.py` | IGU reconciliation: IMO-keyed join of the IGU fleet + orderbook JSON against the whole backend, previous edition layered on (`kind`: igu_changed / new_to_igu / backend_differs), builder labels compared through a learned co-occurrence map, capacity within max(6000, 3%). Buckets: matched (field diffs + status findings) / dropped / backend_not_in_igu / igu_only / igu_no_imo (cluster-level hints only) / igu_duplicates / edition_diff. `--pending <batch dirs>` marks findings an un-applied batch already proposes; `--fetch-leads` = paced, resumable shipvault lookup of the review buckets (`work/igu_review_shipvault.json`; leads, never refs). Advisory; never edits the backend | New bucket or diff kind; tuning the builder-pair threshold or capacity tolerance; a new review bucket for leads |
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
 | `url_verifier.py` | the §3.8 verification gate — citable-shape check (GEM / abarrelfull / shorteners / navigation URLs banned in code), HTTP status, soft-error + bot-wall detection with Wayback fallback (bot-block ≠ dead), redirect re-check, PDF text, normalised content match, host adapters that verify SPA pages (shipvault.com — and its citable unit-record URL `shipvaultapi-…/api/units/{id}`, the companion ref for a blank-rendering page — and marinetraffic.com) against the JSON they load; `value_variants` renders what a page actually says for a cell value (number/price/date forms, Status `active` ↔ delivery wording, `on order` ↔ order wording, hull numbers with or without the yard tag); graded reasons via `classify()` (ok / banned / dead / blocked / uncorroborated); `--check`, `--value`, `--log` | Verifier flagging false positives or negatives; new soft-error / bot-wall pattern; new banned host |
 | `citation_qc.py` | §3.8a rot sweep — grades every existing backend `[ref]` URL once (`work/citation_qc.csv`, live sheet rows); `--corroborate` runs the per-cell §3.8c gate; re-fetches every fresh `dead` verdict once; `--sheet-rows`, `--hosts`, `--delay`, `--resume`, `--regrade` | Changing the triage grades or output columns |
@@ -342,7 +391,7 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `cf_clearance.py` | earns / stores bot-wall cookies (`cf_clearance`, `aws-waf-token`, Imperva `incap_ses_`/`visid_incap_`/`nlbi_`) by driving Google Chrome over DevTools (no automation flags, so Turnstile passes in ~5 s; a page is "cleared" when neither its title nor its rendered DOM looks like a challenge — a real 404 counts); store `work/cf_clearance.json` (gitignored, IP-bound; ~1 yr for Cloudflare, days for AWS WAF); `LNGCT_NO_BROWSER=1` forbids the launch; CLI `python scripts/cf_clearance.py <url>` / `--show` | Chrome path changed; challenge no longer clears; need a different CDP flow |
 | `shipvault_api_refs.py` | shipvault companion refs (RF §6a.8 rev 21): where a cited `shipvault.com/ships/{id}` page renders blank in a browser (double-encoded API answer), adds the unit-record URL as a second ref right after it, only where the record corroborates the cell (§3.8c). `--batch <dir>` patches a batch's source JSON in place (idempotent — run before `build_workbook.py`; writes `<dir>/shipvault_api_refs.json`); `--backend-batch <dir> [--skip-fix fix.json …]` writes a ref-only (`prev_state: "corroborate"`) `data_fill.json` for cells already in the backend | shipvault fixes its encoding (companions become unnecessary); a new batch source shape |
 | `imo_tracker.py` | the §6a.8 IMO->vessel-tracker fallback — shipvault open API first (`shipsearch/{IMO}` → unit record → citable `shipvault.com/ships/{id}`), marinetraffic.org IMO search second | shipvault API / tenant header changed; marinetraffic.org URL pattern changed |
-| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix / fsru). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate). `fsru` mode renders the `work/fsru_reconcile.json` buckets into a 10-sheet GIIGNL↔backend comparison workbook (no `[ref]` cells — GIIGNL not citable) | Adding a new sheet section; changing color convention; changing fix-mode gating; changing the fsru sheet set |
+| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix / fsru / igu). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate). `fsru` mode renders the `work/fsru_reconcile.json` buckets into a 10-sheet GIIGNL↔backend comparison workbook (no `[ref]` cells — GIIGNL not citable). `igu` mode renders `work/igu_reconcile.json` into the 11-sheet IGU↔backend workbook, every table led by the live sheet row (no `[ref]` cells proposed) | Adding a new sheet section; changing color convention; changing fix-mode gating; changing the fsru or igu sheet set |
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
 | `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate. Honours `derivable: true` only on the DF §5 autofill columns (`DERIVABLE_FIELDS`); gates a `derived_from: {total, n}` Price on the order **total** and caps it at Y (DF §5a); demotes any other fill left with no URL | Verifier behavior changes; new research-output key; a new derivable column |
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |

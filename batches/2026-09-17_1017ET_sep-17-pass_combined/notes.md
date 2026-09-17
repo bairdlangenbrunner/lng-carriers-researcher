@@ -7,7 +7,7 @@ apply still runs per batch through the Apply SOP, in the order on the README she
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results.xlsx` — 16 sheets. `all_proposals` is every proposed
+- `lng_carrier_sep-17-pass_results.xlsx` — 17 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
   row**, current backend value, proposed value, source URL(s), confidence, decision and
   gate verdict. `all_changes_backend_shape` is all six batches merged into the backend's own
@@ -18,7 +18,7 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   italics = hold, cell comment = batch / decision / old value / note — so it is a review
   surface, not a blind paste: the per-batch `apply_rows.csv` files stay the accept-only
   apply artifacts. Helper columns AU:AZ (live sheet row, row action, holds) sit right of
-  the backend columns. `flags_conflicts` are not laid in. `open_decisions` lists the nine decisions waiting on a person. `b1_`–`b6_`
+  the backend columns. `flags_conflicts` are not laid in. `open_decisions` lists the ten decisions waiting on a person. `b1_`–`b6_`
   are each batch's wide paste-ready sheet with a live-row column prepended (data-fill
   filtered to rows with at least one proposal). Then `flags_conflicts` (155),
   `manual_review` (54), `proposed_bucket`, `shipvault_unmatched`, `documented_blanks`
@@ -80,3 +80,13 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   737 Y), 16 sheets**; backend-shape tab 549 edited rows + 12 new / 2,687 changed cells, 1,077 on
   hold. Report template counts refreshed and the page republished; the counts in the bullet above
   are the earlier rebuild's.
+- **IGU 2026 intercomparison (14:58 ET batch, folded in afterwards).** A seventh batch,
+  `2026-09-17_1458ET_igu_reconciliation_igu2026`, compares the whole backend against the IGU World
+  LNG Report 2026 (IG rev 1). It proposes nothing, so `all_proposals`, the backend-shape tab and
+  every count above are unchanged (checked cell-for-cell against the previous build). Added: the
+  `igu_findings` tab (291 lines keyed by live sheet row — 18 rows IGU dropped, 47 Status
+  disagreements, 224 field diffs, 2 IGU-only vessels — with the pending batch that already
+  proposes each one and the shipvault lead, which is not a ref) and a tenth line on
+  `open_decisions` (the `scrapped` Status question). 17 sheets. `report_data.json` gained an
+  `igu_findings` count only; the report template and the published page were **not** touched and
+  still describe six batches.
