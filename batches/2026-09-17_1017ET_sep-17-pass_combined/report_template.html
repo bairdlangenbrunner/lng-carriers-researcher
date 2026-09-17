@@ -285,7 +285,7 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;
     const bin = atob(XLSX_B64), buf = new Uint8Array(bin.length);
     for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
     try {
-      await downloads.save({filename: "lng_carrier_sep-17-pass_results_2026-09-17.xlsx", data: new Blob([buf])});
+      await downloads.save({filename: "/*XLSX_NAME*/", data: new Blob([buf])});
       $("dlmsg").textContent = "Saved.";
     } catch (e) {
       const code = e && e.code;

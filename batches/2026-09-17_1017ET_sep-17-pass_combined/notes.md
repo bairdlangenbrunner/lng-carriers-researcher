@@ -7,7 +7,9 @@ apply still runs per batch through the Apply SOP, in the order on the README she
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results.xlsx` — 17 sheets. `all_proposals` is every proposed
+- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1518ET.xlsx`) — the
+  name carries the build date and US Eastern time; each rebuild writes a new name and removes
+  the previous file (git keeps it). 17 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
   row**, current backend value, proposed value, source URL(s), confidence, decision and
   gate verdict. `all_changes_backend_shape` is all six batches merged into the backend's own

@@ -11,7 +11,8 @@ research pass. Tick items as you go. Detail behind every item is in
   identical to the morning pull: 1,220 rows (822 active / 364 on order / 34 proposed).
 - The research is done. Six batches are merged to main (PRs #11–#18), each with
   `digest.md`, `decisions.csv` and offset-proof apply artifacts.
-- Combined workbook: `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results.xlsx`
+- Combined workbook (name = build date + ET time; newest file in the dir is current):
+  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1518ET.xlsx`
   — 17 sheets, 1,425 proposals (861 accept / 564 hold), keyed by live sheet row; the
   `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).
 - Report shared with Rob is at version 4 and **predates batch 7** (no IGU section; not

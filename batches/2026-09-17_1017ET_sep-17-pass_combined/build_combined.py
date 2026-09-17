@@ -1,15 +1,19 @@
 """Combine the six sep-17-pass (2026-09-17) batches into one review workbook.
 
 Read-only over the batch dirs and work/backend.csv; writes
-lng_carrier_sep-17-pass_results.xlsx + report_data.json next to this file.
+lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx + report_data.json next to this
+file. The workbook name carries the build date and US Eastern time, so every rebuild is a new
+name; the previous build's file is removed (git keeps it) and build_report.py embeds the newest.
 Run from the repo root: python batches/2026-09-17_1017ET_sep-17-pass_combined/build_combined.py
 """
 import csv
 import json
 import sys
 from collections import defaultdict
+from datetime import datetime
 from copy import copy
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import openpyxl
 from openpyxl.styles import Alignment, Font, PatternFill
@@ -22,7 +26,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from apply_batch import _detect, _discovery_full_row, _items_and_conflicts, _load_backend  # noqa: E402
 from build_workbook import _join_refs, _yard_location_map_table_first  # noqa: E402
 BATCHES = ROOT / "batches"
-OUT = HERE / "lng_carrier_sep-17-pass_results.xlsx"
+OUT_STEM = "lng_carrier_sep-17-pass_results"
+BUILT = datetime.now(ZoneInfo("America/New_York"))
+OUT = HERE / f"{OUT_STEM}_{BUILT:%Y-%m-%d_%H%M}ET.xlsx"
 
 B1 = "2026-09-17_0421ET_fix_delivery_rollforward"
 B2 = "2026-09-17_0458ET_fix_delivery_confirmed"
@@ -708,6 +714,9 @@ for L, w in zip("ABCDEFGHIJK", [12, 28, 60, 11, 11, 12, 11, 11, 11, 22, 48]):
     ws.column_dimensions[L].width = w
 
 wb.save(OUT)
+for old in HERE.glob(f"{OUT_STEM}*.xlsx"):  # one current workbook per dir; git keeps the rest
+    if old != OUT:
+        old.unlink()
 print("wrote", OUT, "| proposals:", len(proposals), "| sheets:", wb.sheetnames)
 
 # ---- data for the report page ----------------------------------------------

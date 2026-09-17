@@ -33,8 +33,10 @@ def js(obj):
 
 
 html = (HERE / "report_template.html").read_text(encoding="utf-8")
+xlsx = sorted(HERE.glob("lng_carrier_sep-17-pass_results_*ET.xlsx"))[-1]  # newest build (name = date + ET time)
 html = (html.replace("/*ROWS*/[]", js(rows)).replace("/*CHART*/[]", js(chart))
-        .replace("/*XLSX*/", base64.b64encode((HERE / "lng_carrier_sep-17-pass_results.xlsx").read_bytes()).decode()))
+        .replace("/*XLSX_NAME*/", xlsx.name)
+        .replace("/*XLSX*/", base64.b64encode(xlsx.read_bytes()).decode()))
 out = Path(sys.argv[1])
 out.write_text(html, encoding="utf-8")
 print("wrote", out, f"{out.stat().st_size / 1e6:.2f} MB", "| rows:", len(rows), "| chart:", chart)
