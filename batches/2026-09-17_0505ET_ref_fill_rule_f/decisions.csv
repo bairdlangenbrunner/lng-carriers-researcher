@@ -1,9 +1,9 @@
 id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
-415|Capacity [ref],ref,415,,Capacity [ref],Y,False,hold,hold,https://www.shipvault.com/ships/73086,live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
-663|Capacity [ref],ref,663,,Capacity [ref],Y,False,hold,hold,https://www.shipvault.com/ships/73085,live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
-969|Capacity [ref],ref,969,,Capacity [ref],Y,False,hold,hold,https://www.shipvault.com/ships/113754,live row 61: Rule F fill - Capacity = '135000' corroborated by the shipvault uni
-1044|Capacity [ref],ref,1044,,Capacity [ref],Y,False,hold,hold,https://www.shipvault.com/ships/373877,live row 487: Rule F fill - Capacity = '174000' corroborated by the shipvault un
-1045|Capacity [ref],ref,1045,,Capacity [ref],Y,False,hold,hold,https://www.shipvault.com/ships/373876,live row 488: Rule F fill - Capacity = '174000' corroborated by the shipvault un
-121|Hull number [ref],ref,121,,Hull number [ref],Y,False,hold,hold,https://www.shipvault.com/ships/450944,live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the 
+415|Capacity [ref],ref,415,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean",live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
+663|Capacity [ref],ref,663,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean",live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
+969|Capacity [ref],ref,969,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocea",live row 61: Rule F fill - Capacity = '135000' corroborated by the shipvault uni
+1044|Capacity [ref],ref,1044,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocea",live row 487: Rule F fill - Capacity = '174000' corroborated by the shipvault un
+1045|Capacity [ref],ref,1045,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocea",live row 488: Rule F fill - Capacity = '174000' corroborated by the shipvault un
+121|Hull number [ref],ref,121,,Hull number [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/450944, https://shipvaultapi-gjb8c.ondigitalocea",live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the 
 226|Hull number [ref],ref,226,,Hull number [ref],Y,False,hold,hold,https://www.shipvault.com/ships/448545,live row 775: Rule F fill - Hull number = 'Hull 8102 (HDHHI)' corroborated by th
-230|Hull number [ref],ref,230,,Hull number [ref],Y,False,hold,hold,https://www.shipvault.com/ships/461187,live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by th
+230|Hull number [ref],ref,230,,Hull number [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/461187, https://shipvaultapi-gjb8c.ondigitalocea",live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by th

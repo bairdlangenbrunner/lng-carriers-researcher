@@ -1,6 +1,6 @@
 # 2026-09-17 10:17 ET — sep-17-pass, combined results
 
-Not a research batch. A read-only roll-up of the five sep-17-pass batches
+Not a research batch. A read-only roll-up of the six sep-17-pass batches
 (`batches/2026-09-17_04*ET_*`, `_05*ET_*`; see `docs/plans/2026-09-17_sep-17-pass_summary.md`)
 into one workbook and one shareable report page. Nothing here is applied to the backend;
 apply still runs per batch through the Apply SOP, in the order on the README sheet.
@@ -10,7 +10,7 @@ apply still runs per batch through the Apply SOP, in the order on the README she
 - `lng_carrier_sep-17-pass_results.xlsx` — 15 sheets. `all_proposals` is every proposed
   change (1,186 lines: 685 accept / 501 hold by default; 647 G / 539 Y) with **live sheet
   row**, current backend value, proposed value, source URL(s), confidence, decision and
-  gate verdict. `all_changes_backend_shape` is all five batches merged into the backend's own
+  gate verdict. `all_changes_backend_shape` is all six batches merged into the backend's own
   structure: columns A:AT are the backend columns in backend order, one full row per vessel,
   sorted by live sheet row (532 edited rows, 12 new rows at the bottom, the 3 Woodside
   duplicates struck through as DELETE ROW; 2,390 changed cells, 999 on hold). Accepts *and*
@@ -49,3 +49,9 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   discovery workbook: that workbook's QA_review "Backend status flags" section renders ten
   blank rows, because `build_workbook.py` discovery mode expects `row_id` / `issue_type` /
   `details` / `suggested_action` while the flags carry `flag` / `rows` / `note`. Not fixed here.
+- **Shipvault companion refs (11:14 ET rebuild).** Most shipvault pages render blank in a browser
+  (RF rev 21 §6a.8), so every shipvault ref now carries the unit-record API URL as a second ref:
+  350 companions across batches 1, 3, 4, 5, plus a sixth batch, `2026-09-17_1114ET_shipvault_companion_refs` (tab
+  `b6_shipvault_companions`), that appends it to the 175 corroborated cells already citing
+  shipvault in the backend (27 rows). Workbook rebuilt: 1,361 proposals, backend-shape tab
+  543 rows / 2,565 cells. The published report page was **not** republished; its counts predate this.

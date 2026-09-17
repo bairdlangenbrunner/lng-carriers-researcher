@@ -1,4 +1,4 @@
-"""Combine the five sep-17-pass (2026-09-17) batches into one review workbook.
+"""Combine the six sep-17-pass (2026-09-17) batches into one review workbook.
 
 Read-only over the batch dirs and work/backend.csv; writes
 lng_carrier_sep-17-pass_results.xlsx + report_data.json next to this file.
@@ -29,6 +29,7 @@ B2 = "2026-09-17_0458ET_fix_delivery_confirmed"
 B3 = "2026-09-17_0431ET_discovery_since_jun_2026"
 B4 = "2026-09-17_0511ET_data_fill_on_order"
 B5 = "2026-09-17_0505ET_ref_fill_rule_f"
+B6 = "2026-09-17_1114ET_shipvault_companion_refs"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
@@ -41,6 +42,9 @@ BATCH_INFO = [
      "blank / unknown cells on on-order rows, plus whole-backend derivable fills"),
     (5, B5, "Rule-F ref fill", "lng_carrier_backend_ref_fill.xlsx", "backend_ref_fill",
      "data values that had no [ref] (orphans)"),
+    (6, B6, "shipvault companion refs", "lng_carrier_data_fill.xlsx", "backend_data_fill",
+     "existing [ref] cells citing a shipvault page that renders blank: the unit-record URL "
+     "appended as a second ref (value untouched)"),
 ]
 
 FONT = Font(name="Calibri", size=10)
@@ -122,7 +126,7 @@ for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
                 urls[k].append(q["url"])
             if q.get("verdict"):
                 verdicts[k].append(str(q["verdict"]))
-    elif bdir == B4:
+    elif bdir in (B4, B6):
         for q in qa["Candidate data-value fills"]:
             k = (str(q["row_id"]), q["field"])
             if q.get("new_urls"):
@@ -250,7 +254,7 @@ table_sheet("all_proposals", PROP_COLS, proposals, W, wrap_cols=("note",),
             conf_col="confidence", fill_col="proposed value", link_col="source URL(s)")
 NP = len(proposals) + 1
 
-# all changes, backend-shaped: every proposal from all five batches (accept AND hold) laid
+# all changes, backend-shaped: every proposal from all six batches (accept AND hold) laid
 # over the backend row it edits, in apply order, using apply_batch's own item model. Columns
 # A:AT are the backend's columns in the backend's order; helper columns sit to the right so
 # a row's A:AT can be pasted straight over the matching backend row.
@@ -409,6 +413,8 @@ n_wide[4] = copy_wide(BATCHES / B4 / "lng_carrier_data_fill.xlsx", "backend_data
                       add_live_row_from="row_id")
 n_wide[5] = copy_wide(BATCHES / B5 / "lng_carrier_backend_ref_fill.xlsx", "backend_ref_fill",
                       "b5_ref_fill_rows", add_live_row_from="original order in sheet")
+n_wide[6] = copy_wide(BATCHES / B6 / "lng_carrier_data_fill.xlsx", "backend_data_fill",
+                      "b6_shipvault_companions", add_live_row_from="row_id")
 
 # flags + conflicts
 flags = []
@@ -543,7 +549,7 @@ for j, h in enumerate(heads, 1):
     c.font, c.fill, c.alignment = FONT_H, FILL_HEADER, WRAP
 first = r + 1
 wide_name = {1: "b1_rollforward_rows", 2: "b2_confirmed_rows", 3: "b3_new_vessels",
-             4: "b4_data_fill_rows", 5: "b5_ref_fill_rows"}
+             4: "b4_data_fill_rows", 5: "b5_ref_fill_rows", 6: "b6_shipvault_companions"}
 for order, bdir, label, _w, _s, what in BATCH_INFO:
     r += 1
     mine = [p for p in proposals if p["apply order"] == order]
@@ -566,7 +572,7 @@ r += 2
 ws.cell(r, 1, "Sheets").font = FONT_B
 for name, desc in [
     ("open_decisions", "the nine judgment calls waiting on a human"),
-    ("all_proposals", "EVERY proposed change from all five batches, one line per cell (or per new vessel): current "
+    ("all_proposals", "EVERY proposed change from all six batches, one line per cell (or per new vessel): current "
                       "backend value, proposed value, source URL, confidence, default decision, note. Filter here first."),
     ("all_changes_backend_shape",
      f"ALL of the above merged into the backend's own structure: columns A:AT are the backend columns in backend "
