@@ -1412,20 +1412,17 @@ def build_igu(args):
                      "shipvault_owner": leads.get(b["imo"], {}).get("owner", ""),
                      "fate_vs_inclusion": x.get("fate_vs_inclusion", ""),
                      "suggested_action": (
-                         "remove from the tracker (decommissioned before Dec 2025) once the fate is "
-                         "confirmed with a verified ref" if x.get("fate_vs_inclusion", "").startswith("before")
-                         else "stays in scope — record the fate (Status has no scrapped value yet) "
-                              "with a verified ref" if x.get("fate_vs_inclusion")
+                         "Status -> `scrapped` once the fate is confirmed with a verified ref "
+                         "(the row stays — rows are never deleted)" if x.get("fate_vs_inclusion")
                          else "confirm fate (scrapped / converted / sold + renamed) with a verified ref")})
     _table_sheet(wb, "Dropped_from_IGU", cols, rows,
-                 fills=[FILL_RED if r["fate_vs_inclusion"].startswith("before") else FILL_YELLOW
-                        for r in rows],
+                 fills=[FILL_YELLOW for r in rows],
                  widths={"C": 24, "D": 26, "E": 28, "I": 24, "J": 22, "N": 40, "O": 34, "P": 34, "Q": 70},
                  header_note=(f"Backend `active` rows that were in the IGU {prev} fleet table and are absent "
-                              f"from the {rec['edition']} fleet AND orderbook. Red = the shipvault fate date is "
-                              "before Dec 2025, i.e. out of scope per inclusion_criteria.md; yellow = fate in "
-                              "Dec 2025 or later (stays in scope) or not dated. The fate date is a lead — "
-                              "confirm before acting."))
+                              f"from the {rec['edition']} fleet AND orderbook. A scrapped vessel keeps its row "
+                              "and moves to Status `scrapped` (rows are never deleted); fate_vs_inclusion "
+                              "only says which side of the Dec 2025 first release the fate falls. The fate "
+                              "date is a lead — confirm before acting."))
 
     # --- Status_findings --------------------------------------------------------
     cols = ["live_sheet_row", "imo", "backend_name", "finding", "backend_status",

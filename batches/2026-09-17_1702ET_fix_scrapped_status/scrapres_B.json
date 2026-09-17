@@ -1,0 +1,169 @@
+[
+  {
+    "live": 47,
+    "imo": 9176010,
+    "name": "HL Sur",
+    "refs": [
+      {
+        "url": "https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "HL Sur",
+        "quote": "Another two LNG carriers, HL Ras Laffan and HL Sur, also built in 2000, were sold by Hyundai LNG Shipping under similar terms. All four ships are now being sent to South Asia for dismantling.",
+        "published": "2025-05-27"
+      },
+      {
+        "url": "https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "HL Sur",
+        "quote": "26-05-2025 HL Sur LARGE LNG 12-01-2000 H Line Shipping",
+        "published": "2025 week 21 report (sale date shown in table: 26-05-2025)"
+      }
+    ],
+    "demolition_date_or_month": "2025-05-26",
+    "scrap_voyage_name": "",
+    "failed_urls": [],
+    "notes": "The marineinsight.com article attributes both HL Ras Laffan and HL Sur to 'Hyundai LNG Shipping' in its scrapping-terms sentence, which conflicts with the tracker's owner field (H-Line Shipping) and with the shipandbunker table (seller: H Line Shipping) — likely an error/imprecision in the marineinsight article, not a correction to the tracker. Quoted verbatim as published; shipandbunker is the more reliable source for owner/date. Sale date per shipandbunker: 26-05-2025, i.e. about 7 weeks earlier than the tracker's fate field (2025-07-15), which appears to be a later disposal-tracking date (e.g. arrival/beaching) rather than the sale date."
+  },
+  {
+    "live": 48,
+    "imo": 9179581,
+    "name": "Hyundai Aquapia",
+    "refs": [
+      {
+        "url": "https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Hyundai Aquapia",
+        "quote": "The ships include Hyundai Aquapia and Hyundai Technopia, both built around the year 2000 with a capacity of 135,000 cubic meters. These were sold together for about $565 per light displacement ton, bringing in roughly $19.2 million each.",
+        "published": "2025-05-27"
+      },
+      {
+        "url": "https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Hyundai Aquapia",
+        "quote": "24-05-2025 Hyundai Aquapia LARGE LNG 01-03-2000 KAMCO",
+        "published": "2025 week 21 report (sale date shown in table: 24-05-2025)"
+      }
+    ],
+    "demolition_date_or_month": "2025-05-24",
+    "scrap_voyage_name": "",
+    "failed_urls": [],
+    "notes": "shipandbunker table lists the seller/cash buyer as 'KAMCO' rather than Hyundai LNG Shipping directly (typical of a cash-buyer intermediary on these sales). Sale date 24-05-2025 is well before the tracker's fate field (2025-07-20), consistent with fate representing a later beaching/arrival date."
+  },
+  {
+    "live": 49,
+    "imo": 9155157,
+    "name": "Hyundai Cosmopia",
+    "refs": [
+      {
+        "url": "https://lloydslist.com/LL1154206",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Hyundai Cosmopia",
+        "quote": "The 138,000 cu m Hyundai Cosmopia has been sold to cash buyers for $580 per light displacement tonne.",
+        "published": "2025-07-14"
+      },
+      {
+        "url": "https://lngprime.com/asia/hyundai-lng-shipping-sells-another-carrier-for-scrap/156806/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Hyundai Cosmopia",
+        "quote": "South Korea's Hyundai LNG Shipping has sold another steam liquefied natural gas (LNG) carrier for scrap, according to brokers. [image caption: Hyundai Cosmopia (Image: Hyundai LNG Shipping)]",
+        "published": "2025-07-14"
+      }
+    ],
+    "demolition_date_or_month": "2025-07-14",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {
+        "url": "https://lngprime.com/asia/hyundai-lng-shipping-sells-another-carrier-for-scrap/156806/ (as a ref for Hyundai Aquapia)",
+        "why": "url_verifier PASSed a string match on 'Hyundai Aquapia' but manual inspection of the raw HTML (JSON-LD ImageObject caption, og:description, datePublished matching the same-day Lloyd's List Cosmopia article) showed the actual article subject is Hyundai Cosmopia, not Aquapia — the matched text was from an unrelated related-articles teaser block. Reassigned to Cosmopia; not used for Aquapia."
+      }
+    ],
+    "notes": "lngprime.com article body is paywalled (short visible word count); ref 2 is corroborated via JSON-LD image caption + og:description + matching datePublished with the Lloyd's List article, both naming Hyundai Cosmopia specifically as the vessel sold same week alongside Hyundai Aquapia/Technopia. Kept as a secondary/caption-level corroboration rather than a full-body quote."
+  },
+  {
+    "live": 54,
+    "imo": 9200316,
+    "name": "LNG Jamal",
+    "refs": [
+      {
+        "url": "https://lloydslist.com/LL1154822",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "LNG Jamal",
+        "quote": "The 2000-built LNG Jamal has been purchased by Indian ship recyclers for $650 per ldt.",
+        "published": "2025-09-15"
+      },
+      {
+        "url": "https://shipandbunker.com/news/features/risk-management/weekly-vessel-scrapping-report-2025-week-36",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "LNG Jamal",
+        "quote": "09-09-2025 LNG Jamal LARGE LNG Oct 2000 J3 Consortium",
+        "published": "2025 week 36 report, Demolition Sales September 4 - September 10, 2025 (sale date shown in table: 09-09-2025)"
+      }
+    ],
+    "demolition_date_or_month": "2025-09-09",
+    "scrap_voyage_name": "",
+    "failed_urls": [],
+    "notes": "Seller shown in shipandbunker table as 'J3 Consortium' (NYK/Osaka Gas/JERA-linked joint venture name), consistent with tracker owner NYK Line/Osaka Gas. Sale date 09-09-2025 precedes the tracker's fate field (2025-10-17), consistent with fate representing a later beaching/arrival date."
+  },
+  {
+    "live": 63,
+    "imo": 9238038,
+    "name": "Trader II",
+    "refs": [
+      {
+        "url": "https://www.shippingherald.com/capital-gas-scraps-lng-carrier/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Trader II",
+        "quote": "According to broker reports, Capital Gas Carrier Corp has sold LNG carrier Trader II (138,208-cbm / built 2002) for recycling. The vessel has reportedly been sold for approximately USD 480 per ldt on an 'as is' basis in Singapore.",
+        "published": "2025-09-01"
+      },
+      {
+        "url": "https://www.tradewindsnews.com/gas/2-1-1864945",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Trader II",
+        "quote": "Greece's Capital Gas Carrier Corp has sold the last of its secondhand steam turbine ships for demolition, boosting the record total of LNG carriers scrapped this year. Brokers said the 138,208-cbm Trader II (built 2002) has been sold for recycling for about $480 per ldt on an \"as is\" basis in Singapore.",
+        "published": "2025-09-01"
+      }
+    ],
+    "demolition_date_or_month": "2025-09-01",
+    "scrap_voyage_name": "",
+    "failed_urls": [],
+    "notes": "Both sources place the sale on/around 2025-09-01, several weeks before the tracker's fate field (2025-09-21), consistent with fate representing a later beaching/arrival date. tradewindsnews.com article was read via a Wayback Machine archived snapshot (200-status) since WebFetch redirected the live URL to a zephr SSO login wall; url_verifier.py's own fetch passed both gates directly on the live URL."
+  },
+  {
+    "live": 64,
+    "imo": 9213416,
+    "name": "Trader III",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/2-1-1791058",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Trader III",
+        "quote": "Pictured in its earlier years, the 137,489-cbm, membrane-type LNG carrier Trader III (ex-Puteri Intan Satu, built 2002) has become the second LNG carrier sent for recycling in 2025.",
+        "published": "2025-03-12"
+      },
+      {
+        "url": "https://shipbreakingplatform.org/marinakis-beaching-vessel/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "TRADER III",
+        "quote": "A recent Reporters United's investigation into the illegal end-of-life sale of TRADER III — a tanker linked to companies of Greek shipowner and media magnate Vangelis Marinakis — lays bare how Europe's most powerful shipping interests still funnel toxic end-of-life ships to Bangladesh's tidal beaches. ... On 29 January 2025 the TRADER III called port at Nemrut, Turkey. The next day it tracked toward Chios, cut south across Greek territorial waters, drifted off Egypt until 14 February, then headed east towards the shipbreaking beach of Chattogram, Bangladesh. On 15 March the tanker was beached at KR Ship Recycling Industries' King Steel yard.",
+        "published": "2025-10-21"
+      }
+    ],
+    "demolition_date_or_month": "2025-03-15 (beaching date per shipbreakingplatform.org); tradewindsnews.com reported the sale itself around 2025-03-12",
+    "scrap_voyage_name": "",
+    "failed_urls": [],
+    "notes": "shipbreakingplatform.org refers to Trader III generically as a 'tanker' rather than 'LNG carrier' throughout, but names the vessel explicitly (TRADER III) and gives a detailed, specific voyage/beaching timeline (Nemrut, Turkey on 29 Jan 2025 -> beached at KR Ship Recycling Industries' King Steel yard, Chattogram, Bangladesh on 15 March 2025), which corroborates the tradewindsnews.com sale report. Note the shipbreakingplatform.org press release itself is dated 2025-10-21 (published well after the March beaching, as an investigative follow-up), so it should not be read as a contemporaneous March report. The tracker's fate field (2025-03-13) is consistent with the March 2025 sale/beaching timeline found here."
+  }
+]

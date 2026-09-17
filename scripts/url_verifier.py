@@ -863,6 +863,15 @@ _ORDERED_PHRASES = (
     "contract to build", "contract for the construction", "orderbook", "order book",
     "carrier order", "fsru order", "order at", "order of a", "order with", "under construction")
 
+# A demolition sale is reported as the sale or the arrival at the breakers, never as the
+# tracker's status word. "to be scrapped" / "could be scrapped" is an intention, so the
+# bare verb is not enough on its own: only completed-sale wording passes.
+_SCRAPPED_PHRASES = (
+    "scrapped", "sold for scrap", "sold for demolition", "sold for recycling", "sold to breakers",
+    "sold to cash buyer", "sold to cash buyers", "demolition sale", "for demolition", "for recycling",
+    "for scrap", "demolished", "broken up", "beached", "recycling yard", "scrapyard", "shipbreaking",
+    "ship breaking", "breakers")
+
 _MONTHS = {a.lower(): (i + 1, a, f) for i, (a, f) in enumerate([
     ("Jan", "January"), ("Feb", "February"), ("Mar", "March"), ("Apr", "April"),
     ("May", "May"), ("Jun", "June"), ("Jul", "July"), ("Aug", "August"),
@@ -901,6 +910,11 @@ def value_variants(value) -> list[str]:
     # it writes a past-tense delivery. Future-tense ("will be delivered") must not pass.
     if v.lower() == "active":
         out.update(_DELIVERED_PHRASES)
+        return [s for s in out if s]
+
+    # Status "scrapped" = sold for demolition / broken up.
+    if v.lower() == "scrapped":
+        out.update(_SCRAPPED_PHRASES)
         return [s for s in out if s]
 
     # Status "on order" = a firm newbuilding contract exists. Press reports the order

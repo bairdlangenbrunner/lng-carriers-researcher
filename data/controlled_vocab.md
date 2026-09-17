@@ -10,6 +10,20 @@ The lists are derived from the live backend's existing values; counts are indica
 (2026-06-03). When a genuinely new value class appears, add it here in the same change set
 and note it in the batch `notes.md`.
 
+## Status
+
+| Value | ~count |
+|---|---|
+| `active` | 822 |
+| `on order` | 364 |
+| `proposed` | 34 |
+| `scrapped` | 0 (added 2026-09-17) |
+
+Definitions are in `docs/inclusion_criteria.md`. `scrapped` = sold for demolition / broken up; the
+row stays (rows are never deleted) and needs a verified ref for the demolition sale. The §3.8c gate
+reads `scrapped` as completed-sale wording ("sold for demolition / recycling / scrap", "beached",
+"broken up", a tracker's `SCRAPPED`) — never as the bare status word alone.
+
 ## Cargo type
 
 | Value | ~count |

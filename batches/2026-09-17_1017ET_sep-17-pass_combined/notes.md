@@ -7,7 +7,7 @@ apply still runs per batch through the Apply SOP, in the order on the README she
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1518ET.xlsx`) — the
+- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1715ET.xlsx`) — the
   name carries the build date and US Eastern time; each rebuild writes a new name and removes
   the previous file (git keeps it). 17 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
@@ -92,3 +92,22 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   `open_decisions` (the `scrapped` Status question). 17 sheets. `report_data.json` gained an
   `igu_findings` count only; the report template and the published page were **not** touched and
   still describe six batches.
+- **The two IGU follow-up fix batches (folded in 17:15 ET).** Batch 8,
+  `2026-09-17_1654ET_fix_igu2026_sourced` (468 lines: 443 accept / 25 hold — what IGU 2026
+  prints, the report PDF as sole ref, IG §5.4), and batch 9,
+  `2026-09-17_1702ET_fix_scrapped_status` (19 lines, all G / accept — the 18 dropped rows →
+  Status `scrapped`, live row 61 → `FSU`). Apply orders 8 and 9; there is no apply order 7 —
+  batch 7 is the comparison. Workbook rebuilt as `…_2026-09-17_1715ET.xlsx`: **20 sheets, 1,912
+  proposals (1,323 accept / 589 hold; 1,150 G / 762 Y)**; backend-shape tab 662 edited rows,
+  3,628 changed cells, 1,096 on hold (the counts in the Contents bullet are an earlier build's).
+  New tabs `b8_igu_sourced_rows`, `b9_scrapped_rows` and `b8_igu_manual_review` (the 32 IGU
+  values batch 8 left to a human). On `igu_findings` the 18 dropped rows show batch 9 and the
+  field diffs show batch 8 as the pending batch that proposes them; `open_decisions` line 10
+  records the `scrapped` decision (rows are never deleted) and what is still open.
+  **Shared cells:** batch 8 re-proposes cells batches 1 and 4 hold (same value, IGU PDF as the
+  ref) — the later apply order shows on the backend-shape tab; live row 61 Vessel type is in
+  both 8 (held `conventional`) and 9 (accepted `FSU`) — 9 wins. One builder rule added: a
+  *held* proposal never displaces a cell an earlier batch *accepted* on the backend-shape tab
+  (live row 814 Sea Energy, Status: batch 8's held `on order` vs batch 6's accepted companion ref); it stays
+  on `all_proposals`. The report template and the published page were **not** touched and still
+  describe six batches.

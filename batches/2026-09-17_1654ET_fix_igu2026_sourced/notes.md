@@ -73,4 +73,4 @@ which this batch's (held) Status change would replace. **Apply from `apply_patch
 `build_fix_json.py` (regenerates `fix.json` + `manual_review.json` from batch 7's
 `igu_reconcile.json`), `fix.json`, `lng_carrier_fix.xlsx` (zero formula errors), `digest.md`,
 `decisions.csv`, `apply.json`, `apply_rows.csv`, `apply_patch.csv`, `conflicts.csv` (empty).
-Not yet folded into the combined workbook / report (the other session may be rebuilding them).
+Folded into the combined workbook as apply order 8 (17:15 ET build; the scrapped-status batch is 9). Not in the report page.

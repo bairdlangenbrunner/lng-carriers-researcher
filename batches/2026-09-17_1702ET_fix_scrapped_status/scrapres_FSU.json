@@ -1,0 +1,43 @@
+{
+  "imo": "9211872",
+  "vessel_name": "Puteri Delima Satu",
+  "verdict": "fsu_confirmed",
+  "refs": [
+    {
+      "url": "https://www.miscgroup.com/media/media-releases/misc-partners-with-pengerang-lng-two-sdn-bhd-for-lng-floating-storage-unit-project-d7503fdd178dc071ee535d98beb9e62e",
+      "gate_FSU": "PASS",
+      "gate_name": "PASS",
+      "quote": "This project entails the conversion of MISC's LNG Carrier, Puteri Delima Satu, into an FSU dedicated to this project.",
+      "published": "2023-10-31 (per contemporaneous LNG Prime coverage; MISC's own page does not expose a visible dateline, but the deal is reported industry-wide as announced 31 Oct 2023)",
+      "note": "MISC Group official media release announcing the binding heads of agreement with Pengerang LNG (Two) Sdn Bhd (a PETRONAS Gas Berhad subsidiary) to convert Puteri Delima Satu into an FSU for deployment at the PETRONAS LNG Regasification Terminal Pengerang (RGTP), Johor; 20-year term; targeted Q2 2025 commercial operation."
+    },
+    {
+      "url": "https://www.insage.com.my/BursaNews/Attachment/202604/20260414/MISC-AN20260414A1-2.pdf",
+      "gate_FSU": "PASS",
+      "gate_name": "PASS",
+      "quote": "FSU Puteri Delima Satu delivered to PETRONAS LNG Regasification Terminal Pengerang ... Successfully delivered FSU Puteri Delima Satu to the PETRONAS LNG Regasification Terminal Pengerang ... Safely commissioned FSU Puteri Delima Satu, recording over 500,000 man hours without a Lost Time Injury (LTI)",
+      "published": "2026-04-14 (Bursa Malaysia filing date embedded in the document's own URL path)",
+      "note": "MISC Berhad Integrated Annual Report 2025 (Bursa Malaysia company disclosure, hosted on insage.com.my, Bursa's announcement-attachment host), covering FY2025 — confirms the vessel was actually delivered and commissioned as FSU at Pengerang RGTP, not merely planned. The same document separately lists the OLDER, unrelated ships 'Puteri Delima' and 'Puteri Nilam' (two legacy steam-turbine LNGCs) as disposed of, confirming these are distinct vessels from 'Puteri Delima Satu' and matching the user's caution not to conflate them."
+    }
+  ],
+  "shipvault": {
+    "url_checked": "https://www.shipvault.com/ships/113754",
+    "source": "scripts/imo_tracker.py 9211872 (lead only, not a citable ref)",
+    "result": "name='TT PUTERI DELIMA SATU' owner='MISC' status='ACTIVE' built=2002 builder='MITSUI ENGI & SHIPBUILDING CO LTD - CHIBA' site='CHIBA ICHIHARA' yardno='1506' ordered=1999-04-01 delivery=2002-10 capacity=135000 CBM",
+    "caveat": "shipvault's open-record fields returned by imo_tracker.py do not include a vessel-type/role field, so this record neither confirms nor contradicts FSU status on its own — it only confirms the vessel is still listed ACTIVE under MISC. The shipvault.com ship page itself renders blank in a browser (known SPA-blank-render issue per repo memory); no companion API record was pulled since it added nothing beyond what imo_tracker.py already extracted.",
+    "marinetraffic_org_note": "imo_tracker.py's internal marinetraffic.org search step (NOT independently re-fetched by me, per the repo's marinetraffic ban) returned a page titled 'PUTERI DELIMA SATU - FSO, Gas, IMO 9211872' -- i.e. it labels the vessel 'FSO' (Floating Storage and Offloading), not 'FSU'. This is a secondary/unverifiable AIS-aggregator label, not run through url_verifier (marinetraffic.org is a banned host in this repo), and is inconsistent in terminology with MISC's own FSU designation. Flagged only as a minor terminology discrepancy from an uncitable source; the two verified primary/press refs above both say 'FSU' explicitly and are given more weight."
+  },
+  "current_state_summary": "Puteri Delima Satu (IMO 9211872) is confirmed converted to and operating as an LNG Floating Storage Unit (FSU), not trading as a conventional LNG carrier. MISC and Pengerang LNG (Two) Sdn Bhd (a PETRONAS Gas Berhad subsidiary) signed a binding heads of agreement in Oct 2023 to convert the vessel (which had completed its long-term carrier charter and gone into lay-up) into a dedicated FSU for the PETRONAS LNG Regasification Terminal Pengerang (RGTP), Johor, under a 20-year contract, targeting Q2 2025 commercial start. MISC's own FY2025 Integrated Annual Report confirms the conversion was completed and the FSU was delivered and safely commissioned at Pengerang RGTP (>500,000 man-hours, zero Lost Time Injury). The backend's current Vessel type = 'conventional' for row 61 is therefore stale and should be reviewed/updated (as a data-fill proposal, not edited directly per repo rules) to reflect FSU status and Pengerang RGTP deployment. This is a separate, younger vessel from the older 'Puteri Delima' (IMO 9030814, built 1995), which the same MISC annual report lists as disposed of alongside 'Puteri Nilam' -- confirming no conflation between the two ships.",
+  "failed_urls": [],
+  "searches_tried": [
+    "\"Puteri Delima Satu\" FSU floating storage",
+    "\"Puteri Delima Satu\" MISC",
+    "MISC Berhad FSU conversion LNG carrier 2026",
+    "\"Puteri Delima Satu\" 2025 FSU commissioning Pengerang",
+    "Pengerang LNG regasification terminal FSU commercial operation 2025 MISC",
+    "\"Puteri Delima Satu\" delivered OR redelivered OR \"commenced operations\" 2025",
+    "MISC annual report 2025 Puteri Delima Satu FSU fleet",
+    "Pengerang RGTP FSU operational 2026",
+    "scripts/imo_tracker.py 9211872 (shipvault + marinetraffic.org lead lookup)"
+  ]
+}

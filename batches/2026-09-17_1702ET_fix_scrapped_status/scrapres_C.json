@@ -1,0 +1,142 @@
+[
+  {
+    "live": 77,
+    "imo": "9236420",
+    "name": "Seapeak Catalunya",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/seapeak-ups-2025-lng-demolition-tally-to-15-as-another-steamship-is-sold/2-1-1908979",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Seapeak Catalunya",
+        "quote": "Brokers said the 138,423-cbm Seapeak Asia (ex-Seapeak Catalunya, built 2003) has been sold for recycling in Bangladesh. They quoted a price of $420 per ldt on the 29,686-ldt vessel, which would indicate a sales level of $12.5m.",
+        "published": "2025-12-01"
+      }
+    ],
+    "demolition_date_or_month": "2025-12",
+    "scrap_voyage_name": "Seapeak Asia",
+    "failed_urls": [],
+    "notes": "Article gives both the ex-name (Seapeak Catalunya) and built year (2003), which match the tracker row exactly. Rename for the recycling voyage was Seapeak Asia (per TradeWinds) -- the tracker's own sv_name lead 'K ASIA' looks like a later/partial AIS capture of this same rename. Published 2025-12-01, ~5 weeks before the tracker's 2026-01-04 fate date, consistent with the usual sale-to-delivery lag. Only one independent passing URL found after searching (Splash247, LNG Prime, Lloyd's List all either didn't cover this specific vessel or failed a gate); no LNG Prime/other article found that also names this vessel with usable body text."
+  },
+  {
+    "live": 84,
+    "imo": "9265500",
+    "name": "Dukhan",
+    "refs": [
+      {
+        "url": "https://www.lloydslist.com/LL1153032/Turbine-powered-LNG-tanker-and-panamax-bulker-sold-for-scrap",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Dukhan",
+        "quote": "The 2004-built steam-powered LNG carrier Dukhan and a 30-year-old panamax bulker engaged in the coal trades have both been sold for recycling in the past week ... MOL's 135,000 cu m gas carrier Dukhan has realised a recycling price of circa $20m.",
+        "published": "2025-03-31"
+      },
+      {
+        "url": "https://splash247.com/mol-sends-ageing-lng-carrier-for-demo/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Dukhan",
+        "quote": "Brokers report that Japanese shipping giant Mitsui OSK Lines (MOL) has disposed of its 2004-built Dukhan for around $20m. The final destination of the 137,457 cu m ship, which has been idle in Malaysia since last September, has not been revealed. One shipbroking outfit has placed cash buyers from Bangladesh behind the deal.",
+        "published": "2025-04-01"
+      }
+    ],
+    "demolition_date_or_month": "2025-03/04 (sale reported); tracker fate date 2025-06-17 likely reflects the later physical delivery/beaching, not covered by a citable source",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {"url": "https://shippinginbox.com/turbine-powered-lng-tanker-and-panamax-bulker-sold-for-scrap-amid-steady-shipping-markets/", "why": "connection failure (status 000) via fetch.py; not retried per the no-loop-on-000 rule, so never confirmed"},
+      {"url": "https://lngprime.com/asia/mol-sells-steam-lng-carrier-for-scrap/146613/", "why": "not fetched -- deprioritized once the Lloyd's List and Splash247 refs both passed and the established LNG Prime paywall pattern (teaser never names the vessel) made it very unlikely to pass gate_name"}
+    ],
+    "notes": "EXTRA CARE VESSEL. Both passing refs (Lloyd's List 2025-03-31, Splash247 2025-04-01) independently confirm MOL sold the 2004-built Dukhan 'as is' for recycling, delivery in Malaysia, ~$20m, cash buyers from Bangladesh, idle since Sept 2024 -- this is a real, completed sale, not a rumor. However neither source gives a date matching the tracker's fate date of 2025-06-17 (they're ~2.5 months earlier, at the sale-agreement stage), and I could not find a citable trade-press source for the actual delivery/beaching event. This plausibly explains why the tracker still shows Status=ACTIVE despite Owner=BREAKERS: the sale is confirmed and sourced, but the vessel's physical arrival/deletion may postdate these articles, and the tracker's Status field may simply not have been flipped yet. A Facebook shipbreaking-group post (not citable -- social media, unverified) suggested the vessel was later beached at Alang, India under a rename resembling 'Ukhan' -- which lines up suspiciously well with the tracker's own sv_name lead 'UKHAN' -- but I found no trade-press or class-society confirmation of that rename or an Alang beaching, so I am flagging it as an unverified lead only, not a citation. Recommend the user treat the sale itself as solidly confirmed (2 passing refs) but treat the exact fate date/final destination as still open."
+  },
+  {
+    "live": 94,
+    "imo": "9248502",
+    "name": "Puteri Firus Satu",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Puteri Firus Satu",
+        "quote": "Malaysian shipowner MISC has chosen to scrap three steam turbine LNG carriers, which it circulated for sale in late 2025. TradeWinds has learned that cash buyers have bought the 137,100-cbm Puteri Firus Satu and Puteri Zamrud Satu (both built 2004) and the 137,595-cbm Puteri Mutiara Satu (built 2005).",
+        "published": "2026-03-17"
+      }
+    ],
+    "demolition_date_or_month": "2026-03",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {"url": "https://lngprime.com/asia/misc-sells-lng-carrier-trio-for-scrap/180471/", "why": "paywalled -- teaser text names only MISC generically, not this vessel; gate_name FAIL"}
+    ],
+    "notes": "Same shared TradeWinds article covers all three MISC steamers (live rows 94, 95, 115) in one sale. Only one independent passing URL found despite searching (no Splash247/gcaptain/hellenicshippingnews coverage of this specific trio located). Tracker's own fate date (2026-06-30) postdates this March 2026 sale-agreement report by ~3.5 months, consistent with the usual agreement-to-delivery gap seen on the other vessels in this batch."
+  },
+  {
+    "live": 95,
+    "imo": "9245031",
+    "name": "Puteri Zamrud Satu",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Puteri Zamrud Satu",
+        "quote": "TradeWinds has learned that cash buyers have bought the 137,100-cbm Puteri Firus Satu and Puteri Zamrud Satu (both built 2004) and the 137,595-cbm Puteri Mutiara Satu (built 2005).",
+        "published": "2026-03-17"
+      }
+    ],
+    "demolition_date_or_month": "2026-03",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {"url": "https://lngprime.com/asia/misc-sells-lng-carrier-trio-for-scrap/180471/", "why": "paywalled -- teaser text names only MISC generically, not this vessel; gate_name FAIL"}
+    ],
+    "notes": "Same shared TradeWinds ref as Puteri Firus Satu and Puteri Mutiara Satu (all three sold together to cash buyers). Only one independent passing URL found."
+  },
+  {
+    "live": 98,
+    "imo": "9259276",
+    "name": "Seapeak Madrid",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/first-lng-carrier-of-2026-sold-for-demolition/2-1-1933696",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Seapeak Madrid",
+        "quote": "Brokers and those following the vessel said the 138,000-cbm Seapeak Mars (ex-Seapeak Madrid, built 2004) has been sold on an “as is” basis in Malaysia for scrapping in India. They give a price of $412 per ldt on the 29,685-ldt, 22-year-old ship... This would indicate a price in the region of more than $12.2m.",
+        "published": "2026-01-26"
+      },
+      {
+        "url": "https://splash247.com/seaspeak-mars-becomes-first-lng-vessel-to-be-scrapped-this-year/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Seapeak Mars",
+        "quote": "Brokers say the steam-turbine LNG carrier Seapeak Mars has been sold for scrap, becoming the first LNG carrier demolished in 2026... The 138,000 cu m vessel, operated by Seapeak, a Stonepeak Infrastructure Partners company, was sold as-is in Linggi, Malaysia, at a reported $421 per ldt, according to Best Oasis. Built in 2004, Seapeak Mars is part of Seapeak's ageing steam fleet.",
+        "published": "2026-01-26"
+      }
+    ],
+    "demolition_date_or_month": "2026-01",
+    "scrap_voyage_name": "Seapeak Mars",
+    "failed_urls": [],
+    "notes": "The Splash247 piece never states the ex-name 'Madrid' -- name_string_used for that ref is 'Seapeak Mars' (the only name the page uses); identity as the tracker's Seapeak Madrid is cross-referenced via IMO/built year (2004), capacity (~138,000 cbm vs Splash's 138,000 cu m / TradeWinds' 138,000-cbm), and owner (Seapeak/Stonepeak) -- the TradeWinds companion ref independently confirms the ex-name link. Both articles published 2026-01-26, ~3 weeks before the tracker's 2026-02-17 fate date."
+  },
+  {
+    "live": 115,
+    "imo": "9261205",
+    "name": "Puteri Mutiara Satu",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Puteri Mutiara Satu",
+        "quote": "TradeWinds has learned that cash buyers have bought the 137,100-cbm Puteri Firus Satu and Puteri Zamrud Satu (both built 2004) and the 137,595-cbm Puteri Mutiara Satu (built 2005).",
+        "published": "2026-03-17"
+      }
+    ],
+    "demolition_date_or_month": "2026-03",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {"url": "https://lngprime.com/asia/misc-sells-lng-carrier-trio-for-scrap/180471/", "why": "paywalled -- teaser text names only MISC generically, not this vessel; gate_name FAIL"},
+      {"url": "https://lngprime.com/asia/indonesias-soechi-lines-buys-misc-lng-carrier/187853/", "why": "wrong vessel -- this article is about a different, 2009-built MISC ship (Seri Balqis) bought by Soechi Lines for continued trading, not Puteri Mutiara Satu"}
+    ],
+    "notes": "EXTRA CARE VESSEL -- tracker previously had 'sold for scrap' with no date/ref. This TradeWinds article (published 2026-03-17) both sources and approximately dates the sale: cash buyers bought all three MISC steamers (Puteri Firus Satu, Puteri Zamrud Satu, Puteri Mutiara Satu) together, confirming this is a genuine completed sale rather than a rumor. Recommend demolition_date_or_month '2026-03' as the best available anchor for the previously undated note."
+  }
+]

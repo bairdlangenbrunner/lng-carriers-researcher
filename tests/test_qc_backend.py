@@ -10,7 +10,7 @@ import qc_backend as qc
 
 # A compact but realistic header covering every column the checks touch.
 HEADER = [
-    "id", "IMO number", "IMO number [ref]", "Shipowner", "Shipbuilder",
+    "id", "IMO number", "IMO number [ref]", "Status", "Shipowner", "Shipbuilder",
     "Capacity", "Capacity units",
     "Cargo type", "Cargo type [ref]", "Vessel type", "Vessel type [ref]",
     "Propulsion type", "Propulsion type [ref]",
@@ -85,6 +85,16 @@ def _scan(rows):
 class TestCleanRow:
     def test_clean_row_has_no_findings(self):
         assert _scan([_clean_row()]) == []
+
+
+class TestStatusVocab:
+    def test_scrapped_is_a_status(self):
+        r = _clean_row(); r[I["Status"]] = "scrapped"
+        assert _scan([r]) == []
+
+    def test_unknown_status_is_flagged(self):
+        r = _clean_row(); r[I["Status"]] = "decommissioned"
+        assert [(x["check"], x["column"]) for x in _scan([r])] == [("bad-shape", "Status")]
 
 
 class TestOffsetRow:

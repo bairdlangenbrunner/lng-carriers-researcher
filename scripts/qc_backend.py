@@ -147,6 +147,7 @@ SHAPE_CHECKS = {
     "IMO number": (_intish("IMO number"), MED),
     "Delivery year": (_year, MED),
     "Contract date": (_date, MED),
+    "Status": (_in("Status", CONTROLLED_VOCAB["Status"]), MED),
     "Capacity units": (_in("Capacity units", CONTROLLED_VOCAB["Capacity units"]), MED),
     "Price currency": (_in("Price currency", CONTROLLED_VOCAB["Price currency"]), MED),
 }
