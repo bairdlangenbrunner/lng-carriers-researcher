@@ -244,17 +244,25 @@ class TestResume:
         assert h.fetched == urls[2:]
         assert sorted(load_records(h.out)) == sorted(urls)
 
-    def test_skipped_urls_are_retried_and_the_latest_record_wins(self, tmp_path):
+    def test_skipped_and_failed_urls_are_retried_and_the_latest_record_wins(self, tmp_path):
         urls = [EX.format(i) for i in range(5)]
         h = Harness(tmp_path, script=lambda u: "000")
-        h.sweeper().run(urls)
+        h.sweeper().run(urls)                            # 3 x 000, then 2 skipped
         h.fetched.clear()
         h.script = {}                                    # the host is back
         h.sweeper().run(urls)
-        # the three recorded 000s are done; only the two skipped URLs go again
-        assert h.fetched == urls[3:]
+        # a 000 is not an answer: the failures go again, and so do the skipped
+        assert h.fetched == urls
         latest = load_records(h.out)
-        assert latest[urls[4]]["status"] == "200" and "skipped" not in latest[urls[4]]
+        assert all(r["status"] == "200" and "skipped" not in r for r in latest.values())
+
+    def test_answered_urls_including_404s_are_done(self, tmp_path):
+        urls = [EX.format(i) for i in range(3)]
+        h = Harness(tmp_path, script={urls[1]: "404"})
+        h.sweeper().run(urls)
+        h.fetched.clear()
+        h.sweeper().run(urls)
+        assert h.fetched == []
 
     def test_a_host_that_tripped_last_run_retrips_on_its_first_failure(self, tmp_path):
         urls = [VF.format(i) for i in range(8)]
@@ -262,7 +270,7 @@ class TestResume:
         h.sweeper().run(urls)                            # 3 requests, 5 skipped
         h.fetched.clear()
         stats = h.sweeper().run(urls)                    # still banned: one probe only
-        assert h.fetched == [urls[3]]
+        assert h.fetched == [urls[0]]
         assert "earlier run" in stats["vesselfinder.com"]["tripped"]
 
     def test_duplicate_input_urls_are_fetched_once(self, tmp_path):

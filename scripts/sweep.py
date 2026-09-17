@@ -28,9 +28,10 @@ What it does, per host (the key is the host minus a leading "www."):
 
 Output is resumable JSONL under work/ — one record per URL: url, host, status,
 title, description (the meta description), notes, ts, plus `imo` for template
-runs, or skipped/reason when the breaker tripped. A re-run skips URLs that
-already have a fetched record and retries the skipped ones; the file is
-append-only, so the LATEST record for a URL wins (load_records()).
+runs, or skipped/reason when the breaker tripped. A re-run skips URLs the
+server already answered (200, 404, ...) and retries the skipped ones and the
+failures (000/429/403); the file is append-only, so the LATEST record for a
+URL wins (load_records()).
 
 URLs are fetched in the order given — put the rows that matter most first.
 
@@ -206,7 +207,8 @@ class Sweeper:
         for rec in prior.values():
             if rec.get("skipped") and str(rec.get("reason", "")).startswith("breaker"):
                 self._host(rec.get("host") or host_key(rec["url"])).prior_trip = True
-        done = {u for u, rec in prior.items() if not rec.get("skipped")}
+        done = {u for u, rec in prior.items()
+                if not rec.get("skipped") and str(rec.get("status")) not in FAIL_STATUSES}
         seen = set()
         todo = []
         for url, extra in items:
