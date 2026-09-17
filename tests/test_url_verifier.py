@@ -468,6 +468,29 @@ class TestCorroborates:
         assert classify(reason) == "uncorroborated"
         assert "does not contain value" in reason
 
+    def test_date_renderings(self):
+        for v in ("08-Jun-2026", "08-June-2026"):
+            got = value_variants(v)
+            for want in ("8 June 2026", "June 8, 2026", "Jun 8, 2026", "2026-06-08", "2026.06.08"):
+                assert want in got
+        url = "https://example.com/d"
+        seed(url, "200", _page("t", "the contract was signed on June 8, 2026 with the yard"))
+        assert corroborates(url, "08-Jun-2026")[0] is True
+        assert corroborates(url, "09-Jun-2026")[0] is False
+
+    def test_status_active_needs_past_tense_delivery(self):
+        url = "https://example.com/s1"
+        seed(url, "200", _page("t", "The owner took delivery of the 174,000-cbm carrier on Monday"))
+        assert corroborates(url, "active")[0] is True
+        url2 = "https://example.com/s2"
+        seed(url2, "200", _page("t", "The carrier will be delivered in 2027"))
+        assert corroborates(url2, "active")[0] is False
+
+    def test_hull_number_yard_tag_is_not_required(self):
+        got = value_variants("Hull 2598 (Hanwha)")
+        assert "Hull 2598" in got and "H2598" in got and "2598" in got
+        assert "042" not in value_variants("Hull 042 (Zvezda)")
+
     def test_price_abbreviations(self):
         assert "$250m" in value_variants("250000000")
         assert "250 million" in value_variants("$250,000,000")
@@ -732,3 +755,20 @@ class TestHostAdapters:
         seed_no_wayback(wall)
         ok, reason = verify_url(wall, ["x"])
         assert not ok and classify(reason) == "blocked"
+
+
+def test_status_on_order_corroborated_by_order_wording():
+    vs = [x.lower() for x in url_verifier.value_variants("on order")]
+    assert "has ordered" in vs and "shipbuilding contract" in vs
+    assert "delivered" not in vs
+
+
+def test_untagged_hull_number():
+    vs = url_verifier.value_variants("Hull H2706")
+    assert "H2706" in vs and "Hull H2706" in vs
+
+
+def test_dollar_figure_in_title_is_not_a_status_code():
+    assert url_verifier._title_hit("DSME wins $500 million LNG carrier order", url_verifier._SOFT_ERROR_TITLES) is None
+    assert url_verifier._title_hit("500 Internal Server Error", url_verifier._SOFT_ERROR_TITLES)
+    assert url_verifier._title_hit("404 Not Found", url_verifier._SOFT_ERROR_TITLES)

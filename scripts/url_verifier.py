@@ -450,7 +450,9 @@ def _title_hit(title: str, fragments, wb=()) -> str | None:
         elif bad.strip().isdigit():
             # A status code must stand alone: "IMO 1162403" is not a 403 and
             # "IMO 1040447" is not a 404 (marinetraffic.org titles, 2026-09-16).
-            if re.search(r"(?<!\d)" + re.escape(bad) + r"(?!\d)", tl):
+            # ...nor is a quantity: "$500 million order" / "404 MW" is a headline, not an error.
+            if re.search(r"(?<![\d$€£.,])" + re.escape(bad.strip())
+                         + r"(?![\d,.]|\s*(?:million|billion|mln|bn|m\b|cbm|mw|teu|ships|vessels))", tl):
                 return bad
         elif bad in tl:
             return bad
@@ -829,6 +831,24 @@ def check_url(url: str) -> dict:
 # Value ↔ ref corroboration (§3.8c)
 # ---------------------------------------------------------------------------
 
+_DELIVERED_PHRASES = (
+    "took delivery", "taken delivery", "takes delivery", "taking delivery", "was delivered",
+    "were delivered", "has been delivered", "have been delivered", "handed over", "delivery ceremony",
+    "naming and delivery", "joined the fleet", "joins the fleet", "entered service",
+    "maiden voyage", "first cargo")
+
+_ORDERED_PHRASES = (
+    "on order", "has ordered", "have ordered", "ordered", "order for", "orders for", "wins order",
+    "won an order", "won orders", "secured an order", "shipbuilding contract", "newbuilding contract",
+    "contract to build", "contract for the construction", "orderbook", "order book",
+    "carrier order", "fsru order", "order at", "order of a", "order with", "under construction")
+
+_MONTHS = {a.lower(): (i + 1, a, f) for i, (a, f) in enumerate([
+    ("Jan", "January"), ("Feb", "February"), ("Mar", "March"), ("Apr", "April"),
+    ("May", "May"), ("Jun", "June"), ("Jul", "July"), ("Aug", "August"),
+    ("Sep", "September"), ("Oct", "October"), ("Nov", "November"), ("Dec", "December")])}
+
+
 def value_variants(value) -> list[str]:
     """Plausible page renderings of a data value, for the corroboration gate.
 
@@ -844,6 +864,46 @@ def value_variants(value) -> list[str]:
     if not v:
         return []
     out = {v, v.lower()}
+
+    # Backend hull numbers carry a yard tag the source never prints:
+    # "Hull 2598 (Hanwha)" -> the page says "Hull 2598", "H2598", "hull no. 2598".
+    # Chinese-yard hulls carry no tag at all ("Hull H2706"); same treatment.
+    hm = re.match(r"^Hull\s+(\S+)(?:\s+\(.+\))?$", v, re.I)
+    if hm:
+        no = hm.group(1)
+        out.update({f"Hull {no}", f"hull no. {no}", f"hull number {no}", f"H{no}", f"HN{no}",
+                    f"H-{no}", f"No. {no}"})
+        if len(re.sub(r"\D", "", no)) >= 4:
+            out.add(no)
+        return [s for s in out if s]
+
+    # Status "active" = the ship has been delivered. Press never writes "active";
+    # it writes a past-tense delivery. Future-tense ("will be delivered") must not pass.
+    if v.lower() == "active":
+        out.update(_DELIVERED_PHRASES)
+        return [s for s in out if s]
+
+    # Status "on order" = a firm newbuilding contract exists. Press reports the order
+    # ("has ordered", "shipbuilding contract"), never the tracker's status word.
+    if v.lower() == "on order":
+        out.update(_ORDERED_PHRASES)
+        return [s for s in out if s]
+
+    # Backend dates are DD-Mon-YYYY ("08-Jun-2026", "02-June-2026"); pages write
+    # "8 June 2026", "June 8, 2026", "2026-06-08" (also the datePublished meta),
+    # "2026.06.08" (Korean press). Year-less forms are long-month only.
+    dm = re.match(r"^(\d{1,2})-([A-Za-z]{3,9})-(\d{4})$", v)
+    if dm and dm.group(2)[:3].lower() in _MONTHS:
+        day, (mi, abbr, full), year = int(dm.group(1)), _MONTHS[dm.group(2)[:3].lower()], dm.group(3)
+        for d in {str(day), f"{day:02d}"}:
+            for mon in {abbr, full}:
+                out.update({f"{d} {mon} {year}", f"{mon} {d}, {year}", f"{mon} {d} {year}",
+                            f"{mon}. {d}, {year}", f"{d}-{mon}-{year}"})
+            out.update({f"{full} {d}", f"{d} {full}"} if len(full) > 3 else set())
+        out.update({f"{year}-{mi:02d}-{day:02d}", f"{year}.{mi:02d}.{day:02d}",
+                    f"{year}/{mi:02d}/{day:02d}", f"{day:02d}.{mi:02d}.{year}",
+                    f"{day:02d}/{mi:02d}/{year}"})
+        return [s for s in out if s]
 
     m = re.match(r"^\$?\s*([\d,]+(?:\.\d+)?)", v)
     if m:

@@ -1,0 +1,5600 @@
+{
+  "batch": "2026-09-17_0511ET_data_fill_on_order",
+  "mode": "data_fill",
+  "accepted_cells": [
+    {
+      "row_id": "1077",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1077",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1078",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1078",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "789",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "789",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1081",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1081",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "697",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "697",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "971",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "971",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "968",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "968",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "974",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "974",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "726",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "726",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "979",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "979",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "727",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "727",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "696",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "696",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "688",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "688",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "689",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "689",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "693",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "693",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "780",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "780",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1082",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1083",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "946",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "946",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "975",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "975",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1046",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "416",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "416",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "453",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "453",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "970",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "970",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "980",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "980",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "332",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "332",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "973",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "973",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1014",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1014",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "698",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "698",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "768",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "768",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "870",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "870",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1015",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1015",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1016",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1016",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1017",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1017",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "652",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "652",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "653",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "653",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "659",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "659",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "765",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "765",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "793",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "793",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "867",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "867",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1018",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1018",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1019",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1019",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1022",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1022",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1031",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1031",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "658",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "658",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "690",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "690",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "761",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "761",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1023",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1023",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1069",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1069",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1075",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1075",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "411",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "411",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "506",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "506",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "558",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "558",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "783",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "783",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "944",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "944",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1020",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1020",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1021",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1021",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1065",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1065",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1066",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1066",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "374",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "374",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "627",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "627",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "630",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "630",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "868",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "868",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "987",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "987",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1032",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1032",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1067",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1067",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1068",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1068",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1093",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1093",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "564",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "564",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "625",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "625",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "628",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "628",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "655",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "655",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "504",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "504",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "725",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "725",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "942",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "942",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "947",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "947",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1013",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1013",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1055",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1055",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1138",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1138",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "615",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "615",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "618",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "618",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "620",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "620",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "621",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "621",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "742",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "742",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "988",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "988",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "694",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "694",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "695",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "695",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "526",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "526",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "527",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "527",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "616",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "616",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "622",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "622",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "623",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "623",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "803",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "803",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "945",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "945",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "323",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "323",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "430",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "430",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "528",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "528",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "563",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "563",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "619",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "619",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "634",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "634",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "852",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "852",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "964",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "965",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "986",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "986",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "381",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "381",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "395",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "418",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "418",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "463",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "525",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "525",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "532",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "532",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "617",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "617",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "633",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "633",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "636",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "636",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "638",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "638",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "743",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "743",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "955",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "955",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "982",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "982",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1084",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1084",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1102",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1102",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "322",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "393",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "394",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "406",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "409",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "460",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "461",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "462",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "492",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "492",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "524",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "524",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "529",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "529",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "614",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "614",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "635",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "635",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "637",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "637",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "656",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "656",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "771",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "771",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "772",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "772",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "773",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "773",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "808",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "808",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "809",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "809",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "810",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "810",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "966",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "985",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "985",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "376",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "376",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "539",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "539",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "657",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "657",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "687",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "687",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "816",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "816",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "967",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "992",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "992",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1036",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1036",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "382",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "407",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "464",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "465",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "543",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "543",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "592",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "592",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "594",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "594",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "651",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "651",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "661",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "661",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "741",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "741",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "750",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "750",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "953",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "953",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "990",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "990",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1029",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1029",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1030",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1030",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "70",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "77",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "79",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "101",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "101",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "108",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "108",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "149",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "149",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "174",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "174",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "175",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "175",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "176",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "176",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "177",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "177",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "179",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "225",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "225",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "229",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "325",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "385",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "410",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "466",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "540",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "540",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "678",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "678",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "702",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "702",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "859",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "859",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "977",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "977",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "93",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "95",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "105",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "180",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "182",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "182",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "226",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "226",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "230",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "230",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "261",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "261",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "262",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "262",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "277",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "277",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "288",
+      "column": "Shipowner country/area",
+      "value": "Hong Kong",
+      "confidence": "G"
+    },
+    {
+      "row_id": "288",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www1.hkexnews.hk/listedco/listconews/sehk/2020/0630/2020063001526.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "701",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "701",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "30",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "30",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "137",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "137",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "186",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "186",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "187",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "187",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "188",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "188",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "191",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "191",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "251",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "252",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Shipowner country/area",
+      "value": "Hong Kong",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www1.hkexnews.hk/listedco/listconews/sehk/2020/0630/2020063001526.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "324",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "373",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Shipowner country/area",
+      "value": "Russia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://2021-2025.state.gov/imposing-measures-in-response-to-navalnys-death-and-two-years-of-russias-full-scale-war-against-ukraine/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "384",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "709",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "709",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "710",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "710",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1092",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1092",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "147",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "147",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "203",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "204",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "239",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "239",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "240",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "240",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "242",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "242",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "243",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "243",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "253",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "254",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "255",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "256",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "387",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "513",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "513",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "514",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "514",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Shipowner country/area",
+      "value": "United Arab Emirates",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+      "confidence": "G"
+    },
+    {
+      "row_id": "205",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "206",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "244",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "246",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "508",
+      "column": "Shipowner country/area",
+      "value": "China",
+      "confidence": "G"
+    },
+    {
+      "row_id": "508",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/COSCO_Shipping",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1144",
+      "column": "Shipowner country/area",
+      "value": "United States",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1144",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1145",
+      "column": "Shipowner country/area",
+      "value": "United States",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1145",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1146",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1147",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Shipowner country/area",
+      "value": "United Kingdom",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.purus.com/our-services/gas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1166",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1170",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1171",
+      "column": "Shipowner country/area",
+      "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1175",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1175",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1176",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1176",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1177",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1177",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1178",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1178",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1182",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1182",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1183",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1183",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1184",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1184",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1185",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1185",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1193",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Yard location latitude",
+      "value": "22.33849",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Yard location longitude",
+      "value": "114.092895",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Yard location plus code",
+      "value": "83QV+H7 Sai Tso Wan, Hong Kong",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Yard location accuracy",
+      "value": "exact",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "Yard location lat/lon [ref]",
+      "value": "https://www.google.com/maps/place/China+Merchants+Industry+Co+Ltd/@22.338976,114.0905771,814m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3403fed4344ce4b1:0x32fadf093b2cb212!8m2!3d22.338976!4d114.093152!16s%2Fg%2F12hmyy568?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Yard location latitude",
+      "value": "22.33849",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Yard location longitude",
+      "value": "114.092895",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Yard location plus code",
+      "value": "83QV+H7 Sai Tso Wan, Hong Kong",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Yard location accuracy",
+      "value": "exact",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "Yard location lat/lon [ref]",
+      "value": "https://www.google.com/maps/place/China+Merchants+Industry+Co+Ltd/@22.338976,114.0905771,814m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3403fed4344ce4b1:0x32fadf093b2cb212!8m2!3d22.338976!4d114.093152!16s%2Fg%2F12hmyy568?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Shipowner country/area",
+      "value": "United Kingdom",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.purus.com/our-services/gas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1174",
+      "column": "Shipowner country/area",
+      "value": "United Kingdom",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1174",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.purus.com/our-services/gas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1179",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1179",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1180",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1180",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1181",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1181",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1194",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1195",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1196",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1196",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1197",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1197",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1199",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1199",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1205",
+      "column": "Shipowner country/area",
+      "value": "Norway",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1205",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.imarinenews.com/35664.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1207",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1207",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1208",
+      "column": "Shipowner country/area",
+      "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1208",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "Shipowner country/area",
+      "value": "Bermuda",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1198",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1198",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1200",
+      "column": "Shipowner country/area",
+      "value": "Malaysia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1200",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1224",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1224",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1225",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1225",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1226",
+      "column": "Shipowner country/area",
+      "value": "Japan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1226",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1219",
+      "column": "Hull number",
+      "value": "Hull 2628 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1219",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/500549",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1219",
+      "column": "IMO number",
+      "value": "1185144",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1219",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/500549",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1190",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1190",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1190",
+      "column": "Operator/charterer",
+      "value": "Nigeria LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1190",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1191",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1191",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1191",
+      "column": "Operator/charterer",
+      "value": "Nigeria LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1191",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1192",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1192",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1192",
+      "column": "Operator/charterer",
+      "value": "Nigeria LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1192",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Contract date",
+      "value": "27-Sep-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Price",
+      "value": "229000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Contract date",
+      "value": "31-Aug-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Price",
+      "value": "233300000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Operator/charterer",
+      "value": "Sinopec",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Contract date",
+      "value": "31-Aug-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Price",
+      "value": "233300000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Operator/charterer",
+      "value": "Sinopec",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1152",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1153",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1154",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1155",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "Operator/charterer",
+      "value": "Cheniere",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Contract date",
+      "value": "10-Aug-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220810_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Contract date",
+      "value": "10-Aug-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220810_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Contract date",
+      "value": "10-Aug-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220810_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "194",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "195",
+      "column": "Price",
+      "value": "214285714",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "193",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220810_01.html, https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220810_01.html, https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220810_01.html, https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Operator/charterer",
+      "value": "EnBW",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Operator/charterer",
+      "value": "EnBW",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Operator/charterer",
+      "value": "EnBW",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Operator/charterer",
+      "value": "EnBW",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Operator/charterer",
+      "value": "Petronas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Operator/charterer",
+      "value": "Petronas",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Price",
+      "value": "251500000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Price",
+      "value": "251500000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1156",
+      "column": "Cargo type [ref]",
+      "value": "https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Cargo type [ref]",
+      "value": "https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Operator/charterer",
+      "value": "China Gas Hongda Energy Trading",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Operator/charterer",
+      "value": "China Gas Hongda Energy Trading",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Operator/charterer",
+      "value": "China Gas Hongda Energy Trading",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Operator/charterer",
+      "value": "China Gas Hongda Energy Trading",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Price",
+      "value": "235000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Price",
+      "value": "235000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Price",
+      "value": "235000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Price",
+      "value": "235000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Cargo type [ref]",
+      "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "52",
+      "column": "Operator/charterer",
+      "value": "Chevron",
+      "confidence": "G"
+    },
+    {
+      "row_id": "52",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.mol.co.jp/en/pr/2026/26044.html, https://cyprusshippingnews.com/2026/09/14/mol-worlds-first-lng-carrier-equipped-with-wind-challenger/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1041",
+      "column": "Price",
+      "value": "413000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1041",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hanwha-ocean-to-build-fsru-for-413-million/127579/, https://splash247.com/mol-confirms-order-for-singapore-frsu/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "274",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1224",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1225",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Price",
+      "value": "210000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1170",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1171",
+      "column": "Price",
+      "value": "257000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "324",
+      "column": "Hull number",
+      "value": "Hull 8199 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "324",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/457557",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Hull number",
+      "value": "Hull 2560 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/465039",
+      "confidence": "G"
+    },
+    {
+      "row_id": "373",
+      "column": "Hull number",
+      "value": "Hull 8202 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "373",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/462871",
+      "confidence": "G"
+    },
+    {
+      "row_id": "384",
+      "column": "Hull number",
+      "value": "Hull 8203 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "384",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/462872",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Hull number",
+      "value": "Hull 8198 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/457556",
+      "confidence": "G"
+    },
+    {
+      "row_id": "476",
+      "column": "Hull number",
+      "value": "Hull 3435 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "476",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/467732",
+      "confidence": "G"
+    },
+    {
+      "row_id": "515",
+      "column": "Hull number",
+      "value": "Hull G175K-04",
+      "confidence": "G"
+    },
+    {
+      "row_id": "515",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/459925",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Hull number",
+      "value": "Hull G175K-06",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/459927",
+      "confidence": "G"
+    },
+    {
+      "row_id": "517",
+      "column": "Hull number",
+      "value": "Hull G175K-07",
+      "confidence": "G"
+    },
+    {
+      "row_id": "517",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/461880",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Hull number",
+      "value": "Hull 2610 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/454342",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Hull number",
+      "value": "Hull 8179 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/455819",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Hull number",
+      "value": "Hull 2632 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/456918",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Hull number",
+      "value": "Hull 2633 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/456919",
+      "confidence": "G"
+    },
+    {
+      "row_id": "387",
+      "column": "Hull number",
+      "value": "Hull 8207 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "387",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/465071",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Hull number",
+      "value": "Hull 8206 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/465070",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Hull number",
+      "value": "Hull 3434 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "487",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/466740",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Hull number",
+      "value": "Hull 3433 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "489",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/466739",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Hull number",
+      "value": "Hull G175K-10",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/481198",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Hull number",
+      "value": "Hull G175K-13",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/469428",
+      "confidence": "G"
+    },
+    {
+      "row_id": "513",
+      "column": "Hull number",
+      "value": "Hull G175K-16",
+      "confidence": "G"
+    },
+    {
+      "row_id": "513",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/470360",
+      "confidence": "G"
+    },
+    {
+      "row_id": "514",
+      "column": "Hull number",
+      "value": "Hull G175K-17",
+      "confidence": "G"
+    },
+    {
+      "row_id": "514",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/470361",
+      "confidence": "G"
+    },
+    {
+      "row_id": "518",
+      "column": "Hull number",
+      "value": "Hull G175K-08",
+      "confidence": "G"
+    },
+    {
+      "row_id": "518",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/461881",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Hull number",
+      "value": "Hull G175K-09",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/481200",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Hull number",
+      "value": "Hull 8174 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "541",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/461185",
+      "confidence": "G"
+    },
+    {
+      "row_id": "639",
+      "column": "Hull number",
+      "value": "Hull 3515 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "639",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/478328",
+      "confidence": "G"
+    },
+    {
+      "row_id": "508",
+      "column": "Hull number",
+      "value": "Hull G175K-11",
+      "confidence": "G"
+    },
+    {
+      "row_id": "508",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/481199",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Hull number",
+      "value": "Hull G175K-12",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/469427",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Hull number",
+      "value": "Hull G175K-14",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/485162",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Hull number",
+      "value": "Hull G175K-15",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/485163",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1152",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "193",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "194",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "195",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1156",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1157",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "511",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "512",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1041",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "274",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1224",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1225",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1170",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1171",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 949,
+    "accepted": 535,
+    "hold": 414,
+    "reject": 0,
+    "conflicts": 196
+  }
+}

@@ -1,0 +1,3420 @@
+{
+ "batch_label": "Delivery roll-forward - on-order rows checked against shipvault + vesselfinder (2026-09-17)",
+ "reason": "Backend had not moved since June 2026. Every on-order row with an IMO was looked up in shipvault (status / delivered date / yard no.) and vesselfinder (AIS-registered name, MMSI, year built). Delivered vessels move to active with their real name; delivery years are corrected to the actual year; undelivered 2026 rows that shipvault now schedules for 2027+ are rolled forward.",
+ "corrections": [
+  {
+   "row_id": "6",
+   "_live_row": 827,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/431882",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-26, yard ZVEZDA no. 45; vesselfinder shows KONSTANTIN POSIET with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Konstantin Posiet",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/431882",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 045 (Zvezda)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "7",
+   "_live_row": 828,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438615",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
+    }
+   ]
+  },
+  {
+   "row_id": "8",
+   "_live_row": 829,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438616",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
+    }
+   ]
+  },
+  {
+   "row_id": "9",
+   "_live_row": 830,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438617",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
+    }
+   ]
+  },
+  {
+   "row_id": "10",
+   "_live_row": 831,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438618",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+    }
+   ]
+  },
+  {
+   "row_id": "11",
+   "_live_row": 832,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438619",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+    }
+   ]
+  },
+  {
+   "row_id": "12",
+   "_live_row": 833,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438620",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+    }
+   ]
+  },
+  {
+   "row_id": "14",
+   "_live_row": 835,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438622",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+    }
+   ]
+  },
+  {
+   "row_id": "15",
+   "_live_row": 836,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2028",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/438623",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03"
+    }
+   ]
+  },
+  {
+   "row_id": "25",
+   "_live_row": 838,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Atlantic Success",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/432642",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2316 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "43",
+   "_live_row": 843,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455308",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-08-28, yard HANWHA OCEAN no. 2541; vesselfinder shows VENTURE PELICAN with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455308",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-08-28 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Venture Pelican",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455308",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2541 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "44",
+   "_live_row": 844,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455309",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-11-26, yard HANWHA OCEAN no. 2542; vesselfinder shows VENTURE IBERIA with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455309",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-11-26 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Venture Iberia",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455309",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2542 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "45",
+   "_live_row": 845,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455310",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-02-19, yard HANWHA OCEAN no. 2543; vesselfinder shows VENTURE CAMERON with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Venture Cameron",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455310",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2543 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "47",
+   "_live_row": 846,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457495",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-03-17, yard HANWHA OCEAN no. 2549; vesselfinder shows AL KHARRARAH with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457495",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-03-17 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Kharrarah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457495",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2549 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "48",
+   "_live_row": 847,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/464056",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-09-30, yard HANWHA OCEAN no. 2550; vesselfinder shows ARCHY VANGUARD with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/464056",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-09-30 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Archy Vanguard",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/464056",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2550 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "49",
+   "_live_row": 848,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459086",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-04-22, yard HANWHA OCEAN no. 2551; vesselfinder shows HARMONIC BREEZE with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Harmonic Breeze",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459086",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2551 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "50",
+   "_live_row": 849,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457498",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-08, yard HANWHA OCEAN no. 2552; vesselfinder shows LAKE MODRO with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Lake Modro",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457498",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2552 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "51",
+   "_live_row": 850,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457499",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard HANWHA OCEAN no. 2553; vesselfinder shows LAKE MORSKIE OKO with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Lake Morskie Oko",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457499",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2553 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "53",
+   "_live_row": 852,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465038",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-04-04, yard HANWHA OCEAN no. 2559; vesselfinder shows AL SAKHAMAH with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465038",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-04-04 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Sakhamah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465038",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2559 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "54",
+   "_live_row": 853,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465040",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-06-27, yard HANWHA OCEAN no. 2561; vesselfinder shows AL GALAYEL with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465040",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-06-27 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Galayel",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465040",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2561 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "55",
+   "_live_row": 854,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465041",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-07-29, yard HANWHA OCEAN no. 2562; vesselfinder shows BU NAKHLAH with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465041",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-07-29 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Bu Nakhlah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465041",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2562 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "56",
+   "_live_row": 855,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465042",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-11-28, yard HANWHA OCEAN no. 2563; vesselfinder shows AL SENE with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465042",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-11-28 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Sene",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465042",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2563 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "57",
+   "_live_row": 856,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465043",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-12-18, yard HANWHA OCEAN no. 2564; vesselfinder shows SHAFALLAH with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465043",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-12-18 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Shafallah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465043",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2564 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "58",
+   "_live_row": 857,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465044",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-03-17, yard HANWHA OCEAN no. 2565; vesselfinder shows HASBAH with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Hasbah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465044",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2565 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "60",
+   "_live_row": 858,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465046",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-02-27, yard HANWHA OCEAN no. 2567; vesselfinder shows ESTEEM CORMORANT with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Esteem Cormorant",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465046",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2567 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "61",
+   "_live_row": 859,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Esteem Denali",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465047",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2568 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "62",
+   "_live_row": 860,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Esteem Penguin",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465048",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2569 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "63",
+   "_live_row": 861,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465049",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-05-13, yard HANWHA OCEAN no. 2570; vesselfinder shows SERI DIAN with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Seri Dian",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465049",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2570 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "64",
+   "_live_row": 862,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465050",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-15, yard HANWHA OCEAN no. 2571; vesselfinder shows SERI DAYANG with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Seri Dayang",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465050",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2571 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "65",
+   "_live_row": 863,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465051",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-05-28, yard HANWHA OCEAN no. 2572; vesselfinder shows AL THURAYYA with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Thurayya",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465051",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2572 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "66",
+   "_live_row": 864,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465052",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-24, yard HANWHA OCEAN no. 2573; vesselfinder shows AL MAJHOULAH with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Majhoulah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465052",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2573 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "67",
+   "_live_row": 865,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Venture Manatee",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465053",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2574 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "109",
+   "_live_row": 869,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456923",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-03-31, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2636; vesselfinder shows SPIRIT LNG with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Spirit LNG",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456923",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2636 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "113",
+   "_live_row": 870,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457608",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-09-15, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2640; vesselfinder shows QTAIFAN with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457608",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-09-15 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Qtaifan",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457608",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2640 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "119",
+   "_live_row": 871,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457614",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-16, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2646; vesselfinder shows UMM HEESH with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Umm Heesh",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457614",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2646 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "120",
+   "_live_row": 872,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457615",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2647; vesselfinder shows UMM AL SHUBRUM with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Umm Al Shubrum",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457615",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2647 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "122",
+   "_live_row": 873,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461095",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-02-27, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2652; vesselfinder shows MINERVA ELEONORA with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Minerva Eleonora",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461095",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2652 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "123",
+   "_live_row": 874,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461096",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-03-31, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2653; vesselfinder shows MINERVA ROXANNE with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Minerva Roxanne",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461096",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2653 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "129",
+   "_live_row": 875,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Gamy Vanguard",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/463994",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2662 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "130",
+   "_live_row": 876,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/463995",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+    }
+   ]
+  },
+  {
+   "row_id": "131",
+   "_live_row": 877,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Diamond Gas Jade",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465878",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2664 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "132",
+   "_live_row": 878,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Toho Emerald",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465879",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2665 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "144",
+   "_live_row": 881,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479142",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04"
+    },
+    {
+     "field": "Name",
+     "new_value": "E'saila",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479142",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2697 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "145",
+   "_live_row": 882,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479143",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+    }
+   ]
+  },
+  {
+   "row_id": "162",
+   "_live_row": 883,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/483994",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+    }
+   ]
+  },
+  {
+   "row_id": "181",
+   "_live_row": 884,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467719",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-03-31, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3371; vesselfinder shows PUTERI SARAWAK with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467719",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-03-31 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Puteri Sarawak",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467719",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3371 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "184",
+   "_live_row": 885,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458163",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-04-16, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3385; vesselfinder shows BARZAN with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Barzan",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458163",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3385 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "185",
+   "_live_row": 886,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458164",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-05-19, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3386; vesselfinder shows UMM WISHAH with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Umm Wishah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458164",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3386 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "189",
+   "_live_row": 890,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459079",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-08-18, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3395; vesselfinder shows AL ZUWAIR with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459079",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-08-18 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Zuwair",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459079",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3395 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "190",
+   "_live_row": 891,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459080",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-12-16, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3396; vesselfinder shows SHARQ with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459080",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-12-16 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Sharq",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459080",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3396 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "191",
+   "_live_row": 892,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459081",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-01-16, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3397; vesselfinder shows SHRAOUH with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "192",
+   "_live_row": 893,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459082",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3398; vesselfinder shows HALWAN with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Halwan",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459082",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3398 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "193",
+   "_live_row": 894,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Thumaid",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459083",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3399 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "194",
+   "_live_row": 895,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Mazrooah",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459084",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3400 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "195",
+   "_live_row": 896,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Qaffal",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459085",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3401 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "196",
+   "_live_row": 897,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/460369",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-04-07, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3407; vesselfinder shows EXCELERATE ACADIA with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Excelerate Acadia",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/460369",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3407 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "197",
+   "_live_row": 898,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/464884",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03"
+    }
+   ]
+  },
+  {
+   "row_id": "231",
+   "_live_row": 899,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/428603",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-01-05, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8182; vesselfinder shows PARTHENON LNG with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Parthenon LNG",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/428603",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8182 (HSHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "232",
+   "_live_row": 900,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456920",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-07-25, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8188; vesselfinder shows PUTERI SELANGOR with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456920",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-07-25 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Puteri Selangor",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456920",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8188 (HSHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "233",
+   "_live_row": 901,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456921",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-08-31, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8189; vesselfinder shows PUTERI TERENGGANU with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456921",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-08-31 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Puteri Terengganu",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456921",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8189 (HSHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "235",
+   "_live_row": 902,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458170",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-03-10, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8200; vesselfinder shows OLYMPUS LNG with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Olympus LNG",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458170",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8200 (HSHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "236",
+   "_live_row": 903,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458171",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8201; vesselfinder shows FRONTIER LNG with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Frontier LNG",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/458171",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8201 (HSHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "237",
+   "_live_row": 904,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461955",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-05-29, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8204; vesselfinder shows MUSCAT LNG with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Muscat LNG",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461955",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8204 (HSHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "238",
+   "_live_row": 905,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461956",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-30, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8205; vesselfinder shows MUSANDAM LNG with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Musandam LNG",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461956",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 8205 (HSHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "241",
+   "_live_row": 906,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/468295",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12"
+    }
+   ]
+  },
+  {
+   "row_id": "252",
+   "_live_row": 908,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467052",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-24, yard CM JIANGSU no. CMHI-282-02; vesselfinder shows CELSIUS GOA with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "263",
+   "_live_row": 909,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462938",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-08-25, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1799A; vesselfinder shows FATH AL KHAIR with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462938",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-08-25 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "264",
+   "_live_row": 910,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462939",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-10-30, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1800A; vesselfinder shows MIHZEM with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462939",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-10-30 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Mihzem",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462939",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull H1800A' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "265",
+   "_live_row": 911,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462940",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-12-10, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1801A; vesselfinder shows IDD AL SHARGI with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462940",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-12-10 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Idd Al Shargi",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462940",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull H1801A' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "268",
+   "_live_row": 912,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456803",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-04-01, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1884A; vesselfinder shows GREENERGY WIND with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Greenergy Wind",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456803",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Greenenergy Wind' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "269",
+   "_live_row": 913,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456804",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-01, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1885A; vesselfinder shows GREENERGY CLOUD with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "270",
+   "_live_row": 914,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Greenergy River",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467890",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Greenenergy River' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "271",
+   "_live_row": 915,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Greenergy Sea",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467891",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Greenenergy Sea' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "272",
+   "_live_row": 916,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Greenergy Whale",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467892",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Greenenergy Whale' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "273",
+   "_live_row": 917,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/468859",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03"
+    }
+   ]
+  },
+  {
+   "row_id": "274",
+   "_live_row": 918,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/468860",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-05"
+    }
+   ]
+  },
+  {
+   "row_id": "275",
+   "_live_row": 919,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467893",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10"
+    }
+   ]
+  },
+  {
+   "row_id": "278",
+   "_live_row": 920,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465806",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-05-29, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1894A; vesselfinder shows PUTERI JOHOR with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "279",
+   "_live_row": 921,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465807",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-30, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1895A; vesselfinder shows PUTERI KEDAH with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "281",
+   "_live_row": 922,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465809",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+    }
+   ]
+  },
+  {
+   "row_id": "289",
+   "_live_row": 923,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467899",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-01-30, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1909A; vesselfinder shows TIANSHAN with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Tianshan",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/467899",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull H1909A' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "318",
+   "_live_row": 924,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Yangze LNG 01",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/475022",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull YZJ2022-1475' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "324",
+   "_live_row": 926,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457557",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-17, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8199; vesselfinder shows AGAMEMNON with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "372",
+   "_live_row": 927,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465039",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-05-21, yard HANWHA OCEAN no. 2560; vesselfinder shows AL SLAIMI with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/465039",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-05-21 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "375",
+   "_live_row": 929,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Aleksey Kosygin",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/431878",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Alexey Kosygin' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "386",
+   "_live_row": 931,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/457556",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-06-02, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8198; vesselfinder shows ARCHIMIDIS with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "515",
+   "_live_row": 933,
+   "cells": [
+    {
+     "field": "Delivery year",
+     "new_value": "2027",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/459925",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+    }
+   ]
+  },
+  {
+   "row_id": "517",
+   "_live_row": 935,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Sea Charity",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461880",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Dalian No 1 G175K-7' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "674",
+   "_live_row": 936,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/454342",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-09-30, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2610; vesselfinder shows HL PUFFIN with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/454342",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-09-30 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "708",
+   "_live_row": 937,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455147",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-12-10, yard JIANGNAN SHIPYARD no. H2703; vesselfinder shows AL SADAF with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455147",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-12-10 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "709",
+   "_live_row": 938,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462911",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-03-23, yard JIANGNAN SHIPYARD no. H2704; vesselfinder shows ARADA with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "710",
+   "_live_row": 939,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462912",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-04-23, yard JIANGNAN SHIPYARD no. H2705; vesselfinder shows AL TAWEELAH with an MMSI (AIS-live), built 2026"
+    }
+   ]
+  },
+  {
+   "row_id": "714",
+   "_live_row": 940,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455819",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-03-24, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8179; vesselfinder shows JOZEF PILSUDSKI with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/455819",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-03-24 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "976",
+   "_live_row": 941,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456918",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-12-09, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2632; vesselfinder shows PUTERI PERAK with an MMSI (AIS-live), built 2025"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456918",
+       "soft": false
+      }
+     ],
+     "note": "backend 2026 -> delivered 2025-12-09 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "978",
+   "_live_row": 942,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456919",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-01-09, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2633; vesselfinder shows PUTERI PERLIS with an MMSI (AIS-live), built 2026"
+    },
+    {
+     "field": "Name",
+     "new_value": "Puteri Perlis",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/456919",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Puteri Sarawak' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "26",
+   "_live_row": 944,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Mediterranean Success",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/432643",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2317 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "27",
+   "_live_row": 945,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Caribbean Success",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/432644",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2318 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "74",
+   "_live_row": 948,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Maran Gas Poliegos",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/470097",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2582 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "135",
+   "_live_row": 960,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Barthy Vanguard",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/471277",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2687 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "147",
+   "_live_row": 961,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Seej",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479145",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2700 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "201",
+   "_live_row": 969,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Clean Astraeus",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462869",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3452 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "202",
+   "_live_row": 970,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Clean Azeus",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462870",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3453 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "207",
+   "_live_row": 973,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Ghuwair",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478305",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3476 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "208",
+   "_live_row": 974,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Wadi Sultana",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478306",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3477 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "209",
+   "_live_row": 975,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Lesha",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478307",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3478 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "210",
+   "_live_row": 976,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Jazi",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478308",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3479 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "211",
+   "_live_row": 977,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Mashrab",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478309",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3480 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "212",
+   "_live_row": 978,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Mirzam",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478310",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3481 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "213",
+   "_live_row": 979,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Maqdeem",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478311",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3482 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "214",
+   "_live_row": 980,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Rufaa",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478312",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3483 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "215",
+   "_live_row": 981,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Nekhsh",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478313",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3484 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "216",
+   "_live_row": 982,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Leh'saien",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478314",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3485 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "217",
+   "_live_row": 983,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Le'shara",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478315",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3486 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "218",
+   "_live_row": 984,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Librega",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478316",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3487 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "219",
+   "_live_row": 985,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Eshairej",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478317",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3488 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "220",
+   "_live_row": 986,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Mneefa",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478318",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3489 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "221",
+   "_live_row": 987,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Ezhara",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478319",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3490 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "258",
+   "_live_row": 999,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Sabsab",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/462933",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull H1794A' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "487",
+   "_live_row": 1005,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/466740",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3434; single-source (no vesselfinder name/MMSI)"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2026",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/466740",
+       "soft": false
+      }
+     ],
+     "note": "backend 2027 -> delivered 2026-07-06 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "489",
+   "_live_row": 1006,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/466739",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3433; single-source (no vesselfinder name/MMSI)"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2026",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/466739",
+       "soft": false
+      }
+     ],
+     "note": "backend 2027 -> delivered 2026-04-30 per shipvault"
+    }
+   ]
+  },
+  {
+   "row_id": "510",
+   "_live_row": 1008,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Alliance Venture",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/469428",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Dalian No 1 G175K-13' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "541",
+   "_live_row": 1013,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461185",
+       "soft": false
+      }
+     ],
+     "note": "shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8174; single-source (no vesselfinder name/MMSI)"
+    },
+    {
+     "field": "Delivery year",
+     "new_value": "2025",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461185",
+       "soft": false
+      }
+     ],
+     "note": "backend 2027 -> delivered 2025-10-31 per shipvault"
+    },
+    {
+     "field": "Name",
+     "new_value": "Elisa Halcyon",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/461185",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Elisa Halycon' differs from registry name"
+    }
+   ]
+  },
+  {
+   "row_id": "80",
+   "_live_row": 1017,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Nasraniya",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476659",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2585 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "81",
+   "_live_row": 1018,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Yousifiya",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476660",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2586 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "82",
+   "_live_row": 1019,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Athba",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476661",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2587 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "83",
+   "_live_row": 1020,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "E Qab",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/476662",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2588 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "84",
+   "_live_row": 1021,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Ghash Sham",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478215",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2589 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "85",
+   "_live_row": 1022,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Egdah",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478216",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2590 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "86",
+   "_live_row": 1023,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Khbaib",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478217",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2591 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "88",
+   "_live_row": 1024,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Khowzan",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478218",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2592 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "136",
+   "_live_row": 1031,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Ghafat",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478219",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2693 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "138",
+   "_live_row": 1032,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Sidriya",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478220",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2694 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "139",
+   "_live_row": 1033,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Lekhraib",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479139",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2694 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "140",
+   "_live_row": 1034,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Ain Snan",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478221",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2695 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "142",
+   "_live_row": 1035,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Wasmi",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478222",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2696 (Hanwha)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "143",
+   "_live_row": 1036,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Wadi Al Askar",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479141",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2696 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "146",
+   "_live_row": 1037,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Shaheen",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479144",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2699 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "154",
+   "_live_row": 1043,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Nouf",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/479151",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2706 (SHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "222",
+   "_live_row": 1057,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Izghawa",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478320",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3491 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "223",
+   "_live_row": 1058,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Al Wa'ab",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/478321",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 3492 (HDHHI)' -> vessel named"
+    }
+   ]
+  },
+  {
+   "row_id": "509",
+   "_live_row": 1080,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Friendship Venture",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/469427",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Dalian No 1 G175K-12' differs from registry name"
+    }
+   ]
+  }
+ ]
+}

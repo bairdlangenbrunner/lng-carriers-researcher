@@ -1,0 +1,215 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+6|Status,fill,6,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-26, yard ZVEZDA no. 45; vesselfinder"
+6|Name,fill,6,,Name,G,False,accept,accept,Konstantin Posiet,placeholder 'Hull 045 (Zvezda)' -> vessel named
+7|Delivery year,fill,7,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
+8|Delivery year,fill,8,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
+9|Delivery year,fill,9,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
+10|Delivery year,fill,10,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+11|Delivery year,fill,11,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+12|Delivery year,fill,12,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+14|Delivery year,fill,14,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
+15|Delivery year,fill,15,,Delivery year,Y,False,hold,hold,2028,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03
+25|Name,fill,25,,Name,G,False,accept,accept,Atlantic Success,placeholder 'Hull 2316 (SHI)' -> vessel named
+43|Status,fill,43,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-08-28, yard HANWHA OCEAN no. 2541; vess"
+43|Delivery year,fill,43,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-08-28 per shipvault
+43|Name,fill,43,,Name,G,False,accept,accept,Venture Pelican,placeholder 'Hull 2541 (Hanwha)' -> vessel named
+44|Status,fill,44,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-11-26, yard HANWHA OCEAN no. 2542; vess"
+44|Delivery year,fill,44,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-11-26 per shipvault
+44|Name,fill,44,,Name,G,False,accept,accept,Venture Iberia,placeholder 'Hull 2542 (Hanwha)' -> vessel named
+45|Status,fill,45,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-02-19, yard HANWHA OCEAN no. 2543; vess"
+45|Name,fill,45,,Name,G,False,accept,accept,Venture Cameron,placeholder 'Hull 2543 (Hanwha)' -> vessel named
+47|Status,fill,47,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-03-17, yard HANWHA OCEAN no. 2549; vess"
+47|Delivery year,fill,47,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-03-17 per shipvault
+47|Name,fill,47,,Name,G,False,accept,accept,Al Kharrarah,placeholder 'Hull 2549 (Hanwha)' -> vessel named
+48|Status,fill,48,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-09-30, yard HANWHA OCEAN no. 2550; vess"
+48|Delivery year,fill,48,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-09-30 per shipvault
+48|Name,fill,48,,Name,G,False,accept,accept,Archy Vanguard,placeholder 'Hull 2550 (Hanwha)' -> vessel named
+49|Status,fill,49,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-22, yard HANWHA OCEAN no. 2551; vess"
+49|Name,fill,49,,Name,G,False,accept,accept,Harmonic Breeze,placeholder 'Hull 2551 (Hanwha)' -> vessel named
+50|Status,fill,50,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-08, yard HANWHA OCEAN no. 2552; vess"
+50|Name,fill,50,,Name,G,False,accept,accept,Lake Modro,placeholder 'Hull 2552 (Hanwha)' -> vessel named
+51|Status,fill,51,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-16, yard HANWHA OCEAN no. 2553; vess"
+51|Name,fill,51,,Name,G,False,accept,accept,Lake Morskie Oko,placeholder 'Hull 2553 (Hanwha)' -> vessel named
+53|Status,fill,53,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-04-04, yard HANWHA OCEAN no. 2559; vess"
+53|Delivery year,fill,53,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-04-04 per shipvault
+53|Name,fill,53,,Name,G,False,accept,accept,Al Sakhamah,placeholder 'Hull 2559 (Hanwha)' -> vessel named
+54|Status,fill,54,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-06-27, yard HANWHA OCEAN no. 2561; vess"
+54|Delivery year,fill,54,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-06-27 per shipvault
+54|Name,fill,54,,Name,G,False,accept,accept,Al Galayel,placeholder 'Hull 2561 (Hanwha)' -> vessel named
+55|Status,fill,55,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-07-29, yard HANWHA OCEAN no. 2562; vess"
+55|Delivery year,fill,55,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-07-29 per shipvault
+55|Name,fill,55,,Name,G,False,accept,accept,Bu Nakhlah,placeholder 'Hull 2562 (Hanwha)' -> vessel named
+56|Status,fill,56,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-11-28, yard HANWHA OCEAN no. 2563; vess"
+56|Delivery year,fill,56,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-11-28 per shipvault
+56|Name,fill,56,,Name,G,False,accept,accept,Al Sene,placeholder 'Hull 2563 (Hanwha)' -> vessel named
+57|Status,fill,57,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-12-18, yard HANWHA OCEAN no. 2564; vess"
+57|Delivery year,fill,57,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-12-18 per shipvault
+57|Name,fill,57,,Name,G,False,accept,accept,Shafallah,placeholder 'Hull 2564 (Hanwha)' -> vessel named
+58|Status,fill,58,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-03-17, yard HANWHA OCEAN no. 2565; vess"
+58|Name,fill,58,,Name,G,False,accept,accept,Hasbah,placeholder 'Hull 2565 (Hanwha)' -> vessel named
+60|Status,fill,60,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-02-27, yard HANWHA OCEAN no. 2567; vess"
+60|Name,fill,60,,Name,G,False,accept,accept,Esteem Cormorant,placeholder 'Hull 2567 (Hanwha)' -> vessel named
+61|Name,fill,61,,Name,G,False,accept,accept,Esteem Denali,placeholder 'Hull 2568 (Hanwha)' -> vessel named
+62|Name,fill,62,,Name,G,False,accept,accept,Esteem Penguin,placeholder 'Hull 2569 (Hanwha)' -> vessel named
+63|Status,fill,63,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-05-13, yard HANWHA OCEAN no. 2570; vess"
+63|Name,fill,63,,Name,G,False,accept,accept,Seri Dian,placeholder 'Hull 2570 (Hanwha)' -> vessel named
+64|Status,fill,64,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-15, yard HANWHA OCEAN no. 2571; vess"
+64|Name,fill,64,,Name,G,False,accept,accept,Seri Dayang,placeholder 'Hull 2571 (Hanwha)' -> vessel named
+65|Status,fill,65,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-05-28, yard HANWHA OCEAN no. 2572; vess"
+65|Name,fill,65,,Name,G,False,accept,accept,Al Thurayya,placeholder 'Hull 2572 (Hanwha)' -> vessel named
+66|Status,fill,66,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-24, yard HANWHA OCEAN no. 2573; vess"
+66|Name,fill,66,,Name,G,False,accept,accept,Al Majhoulah,placeholder 'Hull 2573 (Hanwha)' -> vessel named
+67|Name,fill,67,,Name,G,False,accept,accept,Venture Manatee,placeholder 'Hull 2574 (Hanwha)' -> vessel named
+109|Status,fill,109,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-03-31, yard SAMSUNG SHIPBUILDING & HEAV"
+109|Name,fill,109,,Name,G,False,accept,accept,Spirit LNG,placeholder 'Hull 2636 (SHI)' -> vessel named
+113|Status,fill,113,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-09-15, yard SAMSUNG SHIPBUILDING & HEAV"
+113|Delivery year,fill,113,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-09-15 per shipvault
+113|Name,fill,113,,Name,G,False,accept,accept,Qtaifan,placeholder 'Hull 2640 (SHI)' -> vessel named
+119|Status,fill,119,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-16, yard SAMSUNG SHIPBUILDING & HEAV"
+119|Name,fill,119,,Name,G,False,accept,accept,Umm Heesh,placeholder 'Hull 2646 (SHI)' -> vessel named
+120|Status,fill,120,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-16, yard SAMSUNG SHIPBUILDING & HEAV"
+120|Name,fill,120,,Name,G,False,accept,accept,Umm Al Shubrum,placeholder 'Hull 2647 (SHI)' -> vessel named
+122|Status,fill,122,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-02-27, yard SAMSUNG SHIPBUILDING & HEAV"
+122|Name,fill,122,,Name,G,False,accept,accept,Minerva Eleonora,placeholder 'Hull 2652 (SHI)' -> vessel named
+123|Status,fill,123,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-03-31, yard SAMSUNG SHIPBUILDING & HEAV"
+123|Name,fill,123,,Name,G,False,accept,accept,Minerva Roxanne,placeholder 'Hull 2653 (SHI)' -> vessel named
+129|Name,fill,129,,Name,G,False,accept,accept,Gamy Vanguard,placeholder 'Hull 2662 (SHI)' -> vessel named
+130|Delivery year,fill,130,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+131|Name,fill,131,,Name,G,False,accept,accept,Diamond Gas Jade,placeholder 'Hull 2664 (SHI)' -> vessel named
+132|Name,fill,132,,Name,G,False,accept,accept,Toho Emerald,placeholder 'Hull 2665 (SHI)' -> vessel named
+144|Delivery year,fill,144,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04
+144|Name,fill,144,,Name,Y,False,hold,hold,E'saila,placeholder 'Hull 2697 (SHI)' -> vessel named
+145|Delivery year,fill,145,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
+162|Delivery year,fill,162,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
+181|Status,fill,181,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-03-31, yard HYUNDAI HEAVY INDUSTRIES CO"
+181|Delivery year,fill,181,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-03-31 per shipvault
+181|Name,fill,181,,Name,G,False,accept,accept,Puteri Sarawak,placeholder 'Hull 3371 (HDHHI)' -> vessel named
+184|Status,fill,184,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-16, yard HYUNDAI HEAVY INDUSTRIES CO"
+184|Name,fill,184,,Name,G,False,accept,accept,Barzan,placeholder 'Hull 3385 (HDHHI)' -> vessel named
+185|Status,fill,185,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-05-19, yard HYUNDAI HEAVY INDUSTRIES CO"
+185|Name,fill,185,,Name,G,False,accept,accept,Umm Wishah,placeholder 'Hull 3386 (HDHHI)' -> vessel named
+189|Status,fill,189,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-08-18, yard HYUNDAI HEAVY INDUSTRIES CO"
+189|Delivery year,fill,189,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-08-18 per shipvault
+189|Name,fill,189,,Name,G,False,accept,accept,Al Zuwair,placeholder 'Hull 3395 (HDHHI)' -> vessel named
+190|Status,fill,190,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-12-16, yard HYUNDAI HEAVY INDUSTRIES CO"
+190|Delivery year,fill,190,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-12-16 per shipvault
+190|Name,fill,190,,Name,G,False,accept,accept,Sharq,placeholder 'Hull 3396 (HDHHI)' -> vessel named
+191|Status,fill,191,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-01-16, yard HYUNDAI HEAVY INDUSTRIES CO"
+192|Status,fill,192,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-16, yard HYUNDAI HEAVY INDUSTRIES CO"
+192|Name,fill,192,,Name,G,False,accept,accept,Halwan,placeholder 'Hull 3398 (HDHHI)' -> vessel named
+193|Name,fill,193,,Name,G,False,accept,accept,Al Thumaid,placeholder 'Hull 3399 (HDHHI)' -> vessel named
+194|Name,fill,194,,Name,G,False,accept,accept,Al Mazrooah,placeholder 'Hull 3400 (HDHHI)' -> vessel named
+195|Name,fill,195,,Name,G,False,accept,accept,Qaffal,placeholder 'Hull 3401 (HDHHI)' -> vessel named
+196|Status,fill,196,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-07, yard HYUNDAI HEAVY INDUSTRIES CO"
+196|Name,fill,196,,Name,G,False,accept,accept,Excelerate Acadia,placeholder 'Hull 3407 (HDHHI)' -> vessel named
+197|Delivery year,fill,197,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03
+231|Status,fill,231,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-01-05, yard HYUNDAI SAMHO HEAVY INDUSTR"
+231|Name,fill,231,,Name,G,False,accept,accept,Parthenon LNG,placeholder 'Hull 8182 (HSHI)' -> vessel named
+232|Status,fill,232,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-07-25, yard HYUNDAI SAMHO HEAVY INDUSTR"
+232|Delivery year,fill,232,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-07-25 per shipvault
+232|Name,fill,232,,Name,G,False,accept,accept,Puteri Selangor,placeholder 'Hull 8188 (HSHI)' -> vessel named
+233|Status,fill,233,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-08-31, yard HYUNDAI SAMHO HEAVY INDUSTR"
+233|Delivery year,fill,233,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-08-31 per shipvault
+233|Name,fill,233,,Name,G,False,accept,accept,Puteri Terengganu,placeholder 'Hull 8189 (HSHI)' -> vessel named
+235|Status,fill,235,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-03-10, yard HYUNDAI SAMHO HEAVY INDUSTR"
+235|Name,fill,235,,Name,G,False,accept,accept,Olympus LNG,placeholder 'Hull 8200 (HSHI)' -> vessel named
+236|Status,fill,236,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-16, yard HYUNDAI SAMHO HEAVY INDUSTR"
+236|Name,fill,236,,Name,G,False,accept,accept,Frontier LNG,placeholder 'Hull 8201 (HSHI)' -> vessel named
+237|Status,fill,237,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-05-29, yard HYUNDAI SAMHO HEAVY INDUSTR"
+237|Name,fill,237,,Name,G,False,accept,accept,Muscat LNG,placeholder 'Hull 8204 (HSHI)' -> vessel named
+238|Status,fill,238,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-30, yard HYUNDAI SAMHO HEAVY INDUSTR"
+238|Name,fill,238,,Name,G,False,accept,accept,Musandam LNG,placeholder 'Hull 8205 (HSHI)' -> vessel named
+241|Delivery year,fill,241,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12
+252|Status,fill,252,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-24, yard CM JIANGSU no. CMHI-282-02;"
+263|Status,fill,263,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-08-25, yard HUDONG-ZHONGHUA SHIPYARD GR"
+263|Delivery year,fill,263,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-08-25 per shipvault
+264|Status,fill,264,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-10-30, yard HUDONG-ZHONGHUA SHIPYARD GR"
+264|Delivery year,fill,264,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-10-30 per shipvault
+264|Name,fill,264,,Name,G,False,accept,accept,Mihzem,placeholder 'Hull H1800A' -> vessel named
+265|Status,fill,265,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-12-10, yard HUDONG-ZHONGHUA SHIPYARD GR"
+265|Delivery year,fill,265,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-12-10 per shipvault
+265|Name,fill,265,,Name,G,False,accept,accept,Idd Al Shargi,placeholder 'Hull H1801A' -> vessel named
+268|Status,fill,268,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-01, yard HUDONG-ZHONGHUA SHIPYARD GR"
+268|Name,fill,268,,Name,G,False,accept,accept,Greenergy Wind,backend 'Greenenergy Wind' differs from registry name
+269|Status,fill,269,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-01, yard HUDONG-ZHONGHUA SHIPYARD GR"
+270|Name,fill,270,,Name,G,False,accept,accept,Greenergy River,backend 'Greenenergy River' differs from registry name
+271|Name,fill,271,,Name,Y,False,hold,hold,Greenergy Sea,backend 'Greenenergy Sea' differs from registry name
+272|Name,fill,272,,Name,Y,False,hold,hold,Greenergy Whale,backend 'Greenenergy Whale' differs from registry name
+273|Delivery year,fill,273,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03
+274|Delivery year,fill,274,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-05
+275|Delivery year,fill,275,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10
+278|Status,fill,278,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-05-29, yard HUDONG-ZHONGHUA SHIPYARD GR"
+279|Status,fill,279,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-30, yard HUDONG-ZHONGHUA SHIPYARD GR"
+281|Delivery year,fill,281,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
+289|Status,fill,289,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-01-30, yard HUDONG-ZHONGHUA SHIPYARD GR"
+289|Name,fill,289,,Name,G,False,accept,accept,Tianshan,placeholder 'Hull H1909A' -> vessel named
+318|Name,fill,318,,Name,G,False,accept,accept,Yangze LNG 01,placeholder 'Hull YZJ2022-1475' -> vessel named
+324|Status,fill,324,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-17, yard HYUNDAI SAMHO HEAVY INDUSTR"
+372|Status,fill,372,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-05-21, yard HANWHA OCEAN no. 2560; vess"
+372|Delivery year,fill,372,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-05-21 per shipvault
+375|Name,fill,375,,Name,G,False,accept,accept,Aleksey Kosygin,backend 'Alexey Kosygin' differs from registry name
+386|Status,fill,386,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-02, yard HYUNDAI SAMHO HEAVY INDUSTR"
+515|Delivery year,fill,515,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+517|Name,fill,517,,Name,G,False,accept,accept,Sea Charity,backend 'Dalian No 1 G175K-7' differs from registry name
+674|Status,fill,674,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-09-30, yard SAMSUNG SHIPBUILDING & HEAV"
+674|Delivery year,fill,674,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-09-30 per shipvault
+708|Status,fill,708,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-12-10, yard JIANGNAN SHIPYARD no. H2703"
+708|Delivery year,fill,708,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-12-10 per shipvault
+709|Status,fill,709,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-03-23, yard JIANGNAN SHIPYARD no. H2704"
+710|Status,fill,710,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-23, yard JIANGNAN SHIPYARD no. H2705"
+714|Status,fill,714,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-03-24, yard HYUNDAI SAMHO HEAVY INDUSTR"
+714|Delivery year,fill,714,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-03-24 per shipvault
+976|Status,fill,976,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-12-09, yard SAMSUNG SHIPBUILDING & HEAV"
+976|Delivery year,fill,976,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-12-09 per shipvault
+978|Status,fill,978,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-01-09, yard SAMSUNG SHIPBUILDING & HEAV"
+978|Name,fill,978,,Name,G,False,accept,accept,Puteri Perlis,backend 'Puteri Sarawak' differs from registry name
+26|Name,fill,26,,Name,Y,False,hold,hold,Mediterranean Success,placeholder 'Hull 2317 (SHI)' -> vessel named
+27|Name,fill,27,,Name,Y,False,hold,hold,Caribbean Success,placeholder 'Hull 2318 (SHI)' -> vessel named
+74|Name,fill,74,,Name,Y,False,hold,hold,Maran Gas Poliegos,placeholder 'Hull 2582 (Hanwha)' -> vessel named
+135|Name,fill,135,,Name,G,False,accept,accept,Barthy Vanguard,placeholder 'Hull 2687 (SHI)' -> vessel named
+147|Name,fill,147,,Name,Y,False,hold,hold,Al Seej,placeholder 'Hull 2700 (SHI)' -> vessel named
+201|Name,fill,201,,Name,Y,False,hold,hold,Clean Astraeus,placeholder 'Hull 3452 (HDHHI)' -> vessel named
+202|Name,fill,202,,Name,Y,False,hold,hold,Clean Azeus,placeholder 'Hull 3453 (HDHHI)' -> vessel named
+207|Name,fill,207,,Name,Y,False,hold,hold,Al Ghuwair,placeholder 'Hull 3476 (HDHHI)' -> vessel named
+208|Name,fill,208,,Name,Y,False,hold,hold,Wadi Sultana,placeholder 'Hull 3477 (HDHHI)' -> vessel named
+209|Name,fill,209,,Name,Y,False,hold,hold,Lesha,placeholder 'Hull 3478 (HDHHI)' -> vessel named
+210|Name,fill,210,,Name,Y,False,hold,hold,Al Jazi,placeholder 'Hull 3479 (HDHHI)' -> vessel named
+211|Name,fill,211,,Name,Y,False,hold,hold,Al Mashrab,placeholder 'Hull 3480 (HDHHI)' -> vessel named
+212|Name,fill,212,,Name,Y,False,hold,hold,Al Mirzam,placeholder 'Hull 3481 (HDHHI)' -> vessel named
+213|Name,fill,213,,Name,Y,False,hold,hold,Maqdeem,placeholder 'Hull 3482 (HDHHI)' -> vessel named
+214|Name,fill,214,,Name,Y,False,hold,hold,Al Rufaa,placeholder 'Hull 3483 (HDHHI)' -> vessel named
+215|Name,fill,215,,Name,Y,False,hold,hold,Al Nekhsh,placeholder 'Hull 3484 (HDHHI)' -> vessel named
+216|Name,fill,216,,Name,Y,False,hold,hold,Leh'saien,placeholder 'Hull 3485 (HDHHI)' -> vessel named
+217|Name,fill,217,,Name,Y,False,hold,hold,Le'shara,placeholder 'Hull 3486 (HDHHI)' -> vessel named
+218|Name,fill,218,,Name,Y,False,hold,hold,Librega,placeholder 'Hull 3487 (HDHHI)' -> vessel named
+219|Name,fill,219,,Name,Y,False,hold,hold,Eshairej,placeholder 'Hull 3488 (HDHHI)' -> vessel named
+220|Name,fill,220,,Name,Y,False,hold,hold,Mneefa,placeholder 'Hull 3489 (HDHHI)' -> vessel named
+221|Name,fill,221,,Name,Y,False,hold,hold,Ezhara,placeholder 'Hull 3490 (HDHHI)' -> vessel named
+258|Name,fill,258,,Name,Y,False,hold,hold,Al Sabsab,placeholder 'Hull H1794A' -> vessel named
+487|Status,fill,487,,Status,Y,False,hold,hold,active,"shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO"
+487|Delivery year,fill,487,,Delivery year,Y,False,hold,hold,2026,backend 2027 -> delivered 2026-07-06 per shipvault
+489|Status,fill,489,,Status,Y,False,hold,hold,active,"shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO"
+489|Delivery year,fill,489,,Delivery year,Y,False,hold,hold,2026,backend 2027 -> delivered 2026-04-30 per shipvault
+510|Name,fill,510,,Name,Y,False,hold,hold,Alliance Venture,backend 'Dalian No 1 G175K-13' differs from registry name
+541|Status,fill,541,,Status,Y,False,hold,hold,active,"shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTR"
+541|Delivery year,fill,541,,Delivery year,Y,False,hold,hold,2025,backend 2027 -> delivered 2025-10-31 per shipvault
+541|Name,fill,541,,Name,Y,False,hold,hold,Elisa Halcyon,backend 'Elisa Halycon' differs from registry name
+80|Name,fill,80,,Name,Y,False,hold,hold,Al Nasraniya,placeholder 'Hull 2585 (Hanwha)' -> vessel named
+81|Name,fill,81,,Name,Y,False,hold,hold,Al Yousifiya,placeholder 'Hull 2586 (Hanwha)' -> vessel named
+82|Name,fill,82,,Name,Y,False,hold,hold,Athba,placeholder 'Hull 2587 (Hanwha)' -> vessel named
+83|Name,fill,83,,Name,Y,False,hold,hold,E Qab,placeholder 'Hull 2588 (Hanwha)' -> vessel named
+84|Name,fill,84,,Name,Y,False,hold,hold,Ghash Sham,placeholder 'Hull 2589 (Hanwha)' -> vessel named
+85|Name,fill,85,,Name,Y,False,hold,hold,Al Egdah,placeholder 'Hull 2590 (Hanwha)' -> vessel named
+86|Name,fill,86,,Name,Y,False,hold,hold,Al Khbaib,placeholder 'Hull 2591 (Hanwha)' -> vessel named
+88|Name,fill,88,,Name,Y,False,hold,hold,Khowzan,placeholder 'Hull 2592 (Hanwha)' -> vessel named
+136|Name,fill,136,,Name,Y,False,hold,hold,Al Ghafat,placeholder 'Hull 2693 (Hanwha)' -> vessel named
+138|Name,fill,138,,Name,Y,False,hold,hold,Al Sidriya,placeholder 'Hull 2694 (Hanwha)' -> vessel named
+139|Name,fill,139,,Name,Y,False,hold,hold,Lekhraib,placeholder 'Hull 2694 (SHI)' -> vessel named
+140|Name,fill,140,,Name,Y,False,hold,hold,Ain Snan,placeholder 'Hull 2695 (Hanwha)' -> vessel named
+142|Name,fill,142,,Name,Y,False,hold,hold,Al Wasmi,placeholder 'Hull 2696 (Hanwha)' -> vessel named
+143|Name,fill,143,,Name,Y,False,hold,hold,Wadi Al Askar,placeholder 'Hull 2696 (SHI)' -> vessel named
+146|Name,fill,146,,Name,Y,False,hold,hold,Al Shaheen,placeholder 'Hull 2699 (SHI)' -> vessel named
+154|Name,fill,154,,Name,Y,False,hold,hold,Al Nouf,placeholder 'Hull 2706 (SHI)' -> vessel named
+222|Name,fill,222,,Name,Y,False,hold,hold,Izghawa,placeholder 'Hull 3491 (HDHHI)' -> vessel named
+223|Name,fill,223,,Name,Y,False,hold,hold,Al Wa'ab,placeholder 'Hull 3492 (HDHHI)' -> vessel named
+509|Name,fill,509,,Name,Y,False,hold,hold,Friendship Venture,backend 'Dalian No 1 G175K-12' differs from registry name

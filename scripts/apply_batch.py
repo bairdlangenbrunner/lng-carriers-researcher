@@ -64,12 +64,13 @@ def sheet_row_map(backend_path, colmap=None):
 def _detect(batch_dir):
     for fname, mode in (("data_fill.json", "data_fill"),
                         ("candidates.json", "discovery"),
-                        ("citations.json", "ref_fill")):
+                        ("citations.json", "ref_fill"),
+                        ("fix.json", "fix")):
         p = batch_dir / fname
         if p.exists():
             return mode, json.loads(p.read_text())
     raise SystemExit(f"No batch input JSON found in {batch_dir} "
-                     "(expected data_fill.json / candidates.json / citations.json)")
+                     "(expected data_fill.json / candidates.json / citations.json / fix.json)")
 
 
 def _items_and_conflicts(mode, payload, header, colmap):
@@ -134,6 +135,26 @@ def _items_and_conflicts(mode, payload, header, colmap):
             })
         for c in payload.get("data_conflicts", []):
             conflicts.append(_conflict_row(c))
+
+    elif mode == "fix":
+        # A fix batch CORRECTS a non-blank value, so its gated refs REPLACE the paired
+        # [ref] (replace_ref) instead of being appended; preserve_ref cells rewrite the
+        # value only and leave the [ref] alone.
+        for corr in payload.get("corrections", []):
+            rid = str(corr["row_id"])
+            for c in corr.get("cells", []):
+                col = c.get("field", "")
+                urls = [] if c.get("preserve_ref") else \
+                    [r["url"] if isinstance(r, dict) else r for r in c.get("refs", [])]
+                items.append({
+                    "id": f"{rid}|{col}", "kind": "fill", "row_id": rid, "cluster_id": "",
+                    "column": col, "value": c.get("new_value", ""),
+                    "ref_column": f"{col} [ref]" if urls else "",
+                    "ref_value": ", ".join(urls),
+                    "confidence": c.get("confidence", "Y"), "derivable": False,
+                    "note": c.get("note", ""), "prev_state": "fix", "replace_ref": True,
+                    "row_data": None,
+                })
 
     return items, conflicts
 
@@ -243,7 +264,8 @@ def main():
         if it["ref_column"] and it["ref_value"] and it["ref_column"] in H:
             existing_ref = row_by_id.get(rid, [""] * len(header))[H[it["ref_column"]]] \
                 if rid in row_by_id and len(row_by_id[rid]) > H[it["ref_column"]] else ""
-            joined = _join_refs(existing_ref, it["ref_value"].split(", "))
+            joined = it["ref_value"] if it.get("replace_ref") else \
+                _join_refs(existing_ref, it["ref_value"].split(", "))
             base[H[it["ref_column"]]] = joined
             patch.append(["set", rid, it["ref_column"], joined])
             cells.append({"row_id": rid, "column": it["ref_column"], "value": joined,

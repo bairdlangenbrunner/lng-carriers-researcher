@@ -1,0 +1,545 @@
+# Batch digest — 2026-09-17_0511ET_data_fill_on_order
+
+**Mode:** data_fill  ·  **Proposals:** 949 (auto-safe 627, needs-decision 322)  ·  **Conflicts:** 196  ·  **Documented blanks:** 830
+
+## ✅ Auto-safe — accept in bulk (Green / derivable)
+
+By field: Shipowner country/area ×329, Price currency ×121, Price ×45, Operator/charterer ×44, Hull number ×30, Contract date ×22, Capacity units ×16, Cargo type ×6, Propulsion type ×3, Yard location latitude ×2, Yard location longitude ×2, Yard location plus code ×2, Yard location accuracy ×2, Yard location lat/lon [ref] ×2, IMO number ×1
+
+These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
+
+## ⚠️ Needs a decision (Yellow / Red / unknown)
+
+- **row 1218** · Hull number: `Hull 2803 (SHI)` (Y) — shipvault yardno 2803, IMO 1185077, ordered 2026-06, delivery 2028-11 -- matches row 1218's Samsung HI / 27-May-2026 contract / 2028 delivery. [orderbook-lead match: shipvault hull matched to this row by yard + order month + delivery date]
+- **row 1218** · IMO number: `1185077` (Y) — Paired with Hull number fill above; same shipvault record. [orderbook-lead match: shipvault hull matched to this row by yard + order month + delivery date]
+- **row 1227** · Shipowner: `Purus Marine` (Y) — LNG Prime article 188654 (already cited on this row for status/shipbuilder) is tagged 'Purus Marine'; shipvault.com/ships/501596 independently lists owner 'PURUS MARINE' for hull 2808 (IMO 1187609), matching row 1227's Samsung HI / 08-Jun-2026 contract / 2029 delivery. [orderbook-lead match: shipvault hull matched to this row by yard + order month + delivery date]
+- **row 1227** · Hull number: `Hull 2808 (SHI)` (Y) — shipvault yardno 2808, IMO 1187609, ordered 2026-06, delivery 2029-02 -- matches row 1227. [orderbook-lead match: shipvault hull matched to this row by yard + order month + delivery date]
+- **row 1227** · IMO number: `1187609` (Y) — Paired with Hull number fill above; same shipvault record. [orderbook-lead match: shipvault hull matched to this row by yard + order month + delivery date]
+- **row 1205** · Hull number: `Hull 2627 (Hanwha)` (Y) — By elimination: the only other un-hulled Knutsen/Hanwha Ocean on-order row is 1219, which is matched to hull 2628 on delivery month. Hull 2627 (delivery 2029-06) is delivery-year-compatible with row 1205 (2029) but no press confirms this specific pairing, and shipvault's ordered-date for this hull (2025-12) does not match row 1205's contract date (08-May-2026); treat as inference, not confirmed. [orderbook-lead match: shipvault hull matched to this row by yard + order month + delivery date]
+- **row 67** · Price: `250000000` (Y) — LNG Prime: DSME duo for Venture Global worth about $500 million (2 ships -> $250m each). Agent found it but the verifier mis-graded the title ("$500 million" read as HTTP 500) - fixed tonight.
+- **row 68** · Price: `250000000` (Y) — LNG Prime: DSME duo for Venture Global worth about $500 million (2 ships -> $250m each). Agent found it but the verifier mis-graded the title ("$500 million" read as HTTP 500) - fixed tonight.
+- **row 1190** · Cargo type: `membrane` (Y) — Portnews: ships equipped with GTT NO96 Super+ membrane containment system.
+- **row 1191** · Cargo type: `membrane` (Y) — Portnews: ships equipped with GTT NO96 Super+ membrane containment system.
+- **row 1192** · Cargo type: `membrane` (Y) — Portnews: ships equipped with GTT NO96 Super+ membrane containment system.
+- **row 203** · Price: `260000000` (Y) — Splash247 (28-Jul-2023): Evalend penned a letter of intent for two 174,000cbm carriers at HD Hyundai Ulsan, "costing around $260m each." LOI-stage figure; final shipvault lead price is $265m.
+- **row 204** · Price: `260000000` (Y) — Same source as row 203 (sister hull from same 2-ship LOI).
+- **row 205** · Contract date: `20-Nov-2023` (Y) — Splash247: "Evalend Shipping has doubled its orderbook ... with two more units at HD Hyundai", published 20-Nov-2023 (announcement of completed order, not an LOI).
+- **row 206** · Contract date: `20-Nov-2023` (Y) — Same source as row 205 (sister hull from same 2-ship order).
+- **row 158** · Contract date: `01-Jul-2024` (Y) — Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a contract for 4 firm + 1 option 174,000cbm LNG carriers; matches shipvault_lead ordered date 2024-07-01.
+- **row 158** · Operator/charterer: `ADNOC` (Y) — Vessels "will be time chartered to ADNOC subsidiaries for 20 years." [charterer = owner (self-operated); held for review]
+- **row 159** · Contract date: `01-Jul-2024` (Y) — Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a contract for 4 firm + 1 option 174,000cbm LNG carriers; matches shipvault_lead ordered date 2024-07-01.
+- **row 159** · Operator/charterer: `ADNOC` (Y) — Vessels "will be time chartered to ADNOC subsidiaries for 20 years." [charterer = owner (self-operated); held for review]
+- **row 160** · Contract date: `01-Jul-2024` (Y) — Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a contract for 4 firm + 1 option 174,000cbm LNG carriers; matches shipvault_lead ordered date 2024-07-01.
+- **row 160** · Operator/charterer: `ADNOC` (Y) — Vessels "will be time chartered to ADNOC subsidiaries for 20 years." [charterer = owner (self-operated); held for review]
+- **row 161** · Contract date: `01-Jul-2024` (Y) — Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a contract for 4 firm + 1 option 174,000cbm LNG carriers; matches shipvault_lead ordered date 2024-07-01.
+- **row 161** · Operator/charterer: `ADNOC` (Y) — Vessels "will be time chartered to ADNOC subsidiaries for 20 years." [charterer = owner (self-operated); held for review]
+- **row 1152** · Propulsion type: `X-DF` (Y) — NYK press release on this quartet states X-DF engines literally.
+- **row 1153** · Propulsion type: `X-DF` (Y) — Same as row 1152.
+- **row 1154** · Propulsion type: `X-DF` (Y) — Same as row 1152.
+- **row 1155** · Propulsion type: `X-DF` (Y) — Same as row 1152.
+- **row 1152** · Cargo type: `membrane` (Y) — Same NYK release states membrane containment.
+- **row 1153** · Cargo type: `membrane` (Y) — Same as row 1152.
+- **row 1154** · Cargo type: `membrane` (Y) — Same as row 1152.
+- **row 1155** · Cargo type: `membrane` (Y) — Same as row 1152.
+- **row 1201** · Propulsion type: `X-DF` (Y) — Offshore Energy article on this option order states X-DF literally.
+- **row 1202** · Propulsion type: `X-DF` (Y) — Same as row 1201.
+- **row 1203** · Propulsion type: `X-DF` (Y) — Same as row 1201.
+- **row 1204** · Propulsion type: `X-DF` (Y) — Same as row 1201.
+- **row 1201** · Cargo type: `membrane` (Y) — Same article states membrane containment.
+- **row 1202** · Cargo type: `membrane` (Y) — Same as row 1201.
+- **row 1203** · Cargo type: `membrane` (Y) — Same as row 1201.
+- **row 1204** · Cargo type: `membrane` (Y) — Same as row 1201.
+- **row 197** · Contract date: `16-May-2023` (Y) — NYK press release dated 16-May-2023.
+- **row 198** · Contract date: `16-May-2023` (Y) — Same as row 197.
+- **row 199** · Contract date: `16-May-2023` (Y) — Same as row 197.
+- **row 200** · Contract date: `16-May-2023` (Y) — Same as row 197.
+- **row 197** · Price: `262000000` (Y) — Article states $262m literally per vessel for this NYK/EnBW batch (not a derived total split).
+- **row 198** · Price: `262000000` (Y) — Same as row 197.
+- **row 199** · Price: `262000000` (Y) — Same as row 197.
+- **row 200** · Price: `262000000` (Y) — Same as row 197.
+- **row 197** · Cargo type: `membrane` (Y) — NYK release states membrane containment.
+- **row 198** · Cargo type: `membrane` (Y) — Same as row 197.
+- **row 199** · Cargo type: `membrane` (Y) — Same as row 197.
+- **row 200** · Cargo type: `membrane` (Y) — Same as row 197.
+- **row 137** · Operator/charterer: `SeaRiver Maritime` (Y) — Single source names SeaRiver Maritime (ExxonMobil unit) as charterer for this MISC 174,000 cbm duo. Article refers to the shipbuilder only generically as 'a reputable South Korean shipbuilder', not explicitly Samsung, so treat shipbuilder link as inferred from row's existing Samsung Heavy Industries field, not from this source.
+- **row 144** · Operator/charterer: `SeaRiver Maritime` (Y) — Same duo order; see row 137 note.
+- **row 137** · Contract date: `30-Sep-2022` (Y) — Article publication date treated as same-day disclosure per rule; no separate signing date stated.
+- **row 144** · Contract date: `30-Sep-2022` (Y) — Same as row 137.
+- **row 156** · Contract date: `01-Oct-2024` (Y) — Article (published Oct 1 2024) references a stock-exchange filing 'on Tuesday' (Oct 1 2024 was a Tuesday); publication-date metadata passes the date gate. splash247's companion article does not literally state this date so was not attached here.
+- **row 157** · Contract date: `01-Oct-2024` (Y) — Same as row 156.
+- **row 1206** · Cargo type: `membrane` (Y) — GTT order article states the FSRU's tanks use GTT's Mark III membrane containment system; also confirms 170,000 cbm capacity and MISC ownership, consistent with the row.
+- **row 1174** · Price: `252000000` (Y) — Article states the single vessel is 'valued at just over US$252M' literally (not a total split - single-ship order).
+- **row 1186** · Price: `245000000` (Y) — Splash247 (03-Feb-2026): HD Hyundai Samho contract for a 174,000 cu m unit for Sonangol, 'valued at KRW357.5bn ($245m)'. Single-vessel order; delivery scheduled by June 2028, consistent with row's 2028 delivery year.
+- **row 201** · Contract date: `17-Jan-2023` (Y) — LNG Prime (published 17-Jan-2023): 'Parent KSOE said on Tuesday HHI would build the 200,000-cbm LNG carriers for an unidentified owner in Oceania and deliver them by November 2026... first LNG carrier order for KSOE and its units for 2023.' 17-Jan-2023 was a Tuesday, matching the article's dateline exactly (publish timestamp 2023-01-17T11:35:49+00:00).
+- **row 201** · Price: `261000000` (Y) — Same article: 'contract has a price tag of 971.4 billion won ($783 million) or $261 million per vessel, which is a record price' for a trio of 200,000-cbm HHI LNG carriers deliverable by Nov-2026. Row's shipvault_lead newprice (261300000) and yardno 3452 corroborate. Owner attribution is hedged in the source itself (see note below) but is left as-is since backend already lists Dynagas as shipowner.
+- **row 202** · Contract date: `17-Jan-2023` (Y) — Same trio order as row 201 (yardno 3453, sister hull). See row 201 note for full sourcing.
+- **row 202** · Price: `261000000` (Y) — Same trio order as row 201 ($261m/vessel, shipvault newprice 261300000 corroborates). See row 201 note.
+- **row 476** · Contract date: `02-May-2023` (Y) — TradeWinds (2-May-2023): 'Korea Shipbuilding & Offshore Engineering said on Tuesday that it had inked orders for a pair of 200,000-cbm LNG ships without naming the owner concerned... Newbuilding sources said Dynagas has booked contracts with the shipbuilder for two of the super-size vessels.' 2-May-2023 was a Tuesday, matches shipvault_lead ordered date (2023-05-01) almost exactly. CAUTION: article states delivery for this pair is 'due for delivery between mid and end-2027', which conflicts with this row's backend delivery_year of 2026 - flagged separately in candidate_findings. Because of that mismatch I am NOT confident this is definitely the same hull as Clean Brownsville rather than a sister ship from the same 2-vessel order, but the date/capacity/shipbuilder/owner all line up well enough to propose Contract date only (not Price - see below).
+- **row 258** · Contract date: `07-Jan-2022` (Y) — LNG Prime: 'The companies signed the shipbuilding deal worth about 7.5 billion yuan ($1.17 billion) on Friday' - 07-Jan-2022 was a Friday, matching. MOL ordered six 174,000-cbm carriers at Hudong-Zhonghua (COSCO Shipping Energy Transportation/CSLNG a JV partner), chartered to CNOOC Gas & Power to carry Venture Global US LNG. Row 258/259/260 (H1794A-96A, owner MITSUI OSK LINES LTD = MOL, no shipvault ordered-date populated, built 2027) are the best fit among this cluster's un-dated hulls for this 6-vessel order (delivery per article 2024-2026, vs backend built=2027 - a ~1yr slip, not disqualifying, same pattern as row 476 in this file). Applying identically to 258/259/260.
+- **row 258** · Price: `196000000` (Y) — Article states total ~$1.17bn for 6 ships and explicitly derives 'about $196 million' per vessel (not my derivation - stated directly in text).
+- **row 258** · Operator/charterer: `CNOOC Gas & Power` (Y) — Article: 'CNOOC's gas and power unit would charter the six new vessels and use them to transport LNG from Venture Global's liquefaction plants in the US.'
+- **row 259** · Contract date: `07-Jan-2022` (Y) — Same 6-vessel sextet order as row 258. See row 258 note.
+- **row 259** · Price: `196000000` (Y) — Same sextet order as row 258.
+- **row 259** · Operator/charterer: `CNOOC Gas & Power` (Y) — Same sextet order as row 258.
+- **row 260** · Contract date: `07-Jan-2022` (Y) — Same 6-vessel sextet order as row 258. See row 258 note.
+- **row 260** · Price: `196000000` (Y) — Same sextet order as row 258.
+- **row 260** · Operator/charterer: `CNOOC Gas & Power` (Y) — Same sextet order as row 258.
+- **row 270** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime (17-Jan-2023, on a different hull H1791A in the same MOL/Hudong-Zhonghua QatarEnergy program): 'In April last year, state-run QatarEnergy signed charter deals for these four LNG carriers with MOL, completing the first batch of charter contracts awarded under its massive shipbuilding program.' Rows 270/271/272/275 (H1886A/87A/88A/91A, owner MOL LNG TRANSPORT CO LTD, shipvault ordered 2022-07-01, 174,000 cbm) are this cluster's only un-chartered MOL/Hudong batch of 4 that fits this description - applying the charterer only, not price/date (see documented_blanks: no article found giving an exact contract-signing date or price specific to this batch of four; April-2022 is the CHARTER date, not necessarily the shipbuilding contract date, and shipvault's own 2022-07-01 'ordered' field is not independently corroborated by a news article read in this session).
+- **row 271** · Operator/charterer: `QatarEnergy` (Y) — Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
+- **row 272** · Operator/charterer: `QatarEnergy` (Y) — Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
+- **row 275** · Operator/charterer: `QatarEnergy` (Y) — Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
+- **row 308** · Price: `333000000` (Y) — LNG Prime (9-Jun-2026): 'All of the QC-Max vessels, each worth approximately $333 million, will be built by Hudong-Zhonghua.' This is a class-wide per-vessel price for all 24 QC-Max carriers, not a hull-specific figure for H1955A-60A, but it directly covers this row's 271,000-cbm QC-Max class (cluster's ordered 2024-04-01, shipvault newprice lead 310000000 is in the same ballpark, corroborating). Applying to all six rows 308/309/310/311/312/313.
+- **row 308** · Operator/charterer: `QatarEnergy` (Y) — Article: QC-Max vessels 'will serve state-owned LNG giant QatarEnergy under charter deals.' Applying to all six rows.
+- **row 309** · Price: `333000000` (Y) — Same QC-Max class price as row 308.
+- **row 309** · Operator/charterer: `QatarEnergy` (Y) — Same QC-Max charterer as row 308.
+- **row 310** · Price: `333000000` (Y) — Same QC-Max class price as row 308. NOTE: this row's shipvault owner is 'NAKILAT SHIPPING QATAR LTD' (not MOL) - see candidate_findings; still applying the class-wide price/charterer since the article states Nakilat also holds QC-Max charter agreements with QatarEnergy directly.
+- **row 310** · Operator/charterer: `QatarEnergy` (Y) — Article: 'Qatar's Nakilat previously signed charter agreements with QatarEnergy for nine QC-Max LNG vessels' - consistent with this row's Nakilat ownership; QatarEnergy is still the ultimate charterer/offtaker per the article.
+- **row 311** · Price: `333000000` (Y) — Same QC-Max class price as row 308.
+- **row 311** · Operator/charterer: `QatarEnergy` (Y) — Same QC-Max charterer as row 308.
+- **row 312** · Price: `333000000` (Y) — Same QC-Max class price as row 308.
+- **row 312** · Operator/charterer: `QatarEnergy` (Y) — Same QC-Max charterer as row 308.
+- **row 313** · Price: `333000000` (Y) — Same QC-Max class price as row 308.
+- **row 313** · Operator/charterer: `QatarEnergy` (Y) — Same QC-Max charterer as row 308.
+- **row 139** · Price: `230000000` (Y) — LNG Prime (28-Mar-2024): 'QatarEnergy has also selected shipowners for the 15 ... vessels it booked at South Korea's Samsung Heavy Industries in February this year. For the SHI vessels, QatarEnergy selected Shandong Marine and CMES each to own six ships... The 15 vessels are worth about $3.45 billion or some $230 million per ship.' CMES's 6-ship allotment out of these 15 matches this cluster's exact 6 rows; shipvault newprice lead (230000000) matches exactly. Applying to all six rows (139/143/146/150/152/154).
+- **row 139** · Operator/charterer: `QatarEnergy` (Y) — QatarEnergy is the party 'booking' the vessels and selecting shipowners (CMES = owner, already in backend); these vessels serve QatarEnergy's shipbuilding/charter program, by direct analogy with the article's explicit charter statement for the companion Q-Max batch.
+- **row 143** · Price: `230000000` (Y) — Same CMES/Samsung batch as row 139.
+- **row 143** · Operator/charterer: `QatarEnergy` (Y) — Same as row 139.
+- **row 146** · Price: `230000000` (Y) — Same CMES/Samsung batch as row 139.
+- **row 146** · Operator/charterer: `QatarEnergy` (Y) — Same as row 139.
+- **row 150** · Price: `230000000` (Y) — Same CMES/Samsung batch as row 139.
+- **row 150** · Operator/charterer: `QatarEnergy` (Y) — Same as row 139.
+- **row 152** · Price: `230000000` (Y) — Same CMES/Samsung batch as row 139.
+- **row 152** · Operator/charterer: `QatarEnergy` (Y) — Same as row 139.
+- **row 154** · Price: `230000000` (Y) — Same CMES/Samsung batch as row 139.
+- **row 154** · Operator/charterer: `QatarEnergy` (Y) — Same as row 139.
+- **row 711** · Price: `235000000` (Y) — LNG Prime (28-Mar-2023): 'China Taiping Insurance Holdings revealed this deal on Monday in a filing with the Hong Kong Exchange... Taiping & Sinopec Financial Leasing (TSFL)...and two SPVs, Taiping 26 and Taiping 27, ordered these two 175,000-cbm LNG carriers at Jiangnan...each of the LNG carriers has a price tag of $235 million.' Matches cluster owner exactly (China Taiping Insurance Holdings). Applying to both rows 711 (Prime Purity, delivery ~Mar-2027 per shipvault) and 712 (Prime Beauty, delivery ~2027).
+- **row 711** · Operator/charterer: `Shandong Marine Energy` (Y) — Article: 'Taiping 26 and Taiping 27 entered into bareboat charter deals with Shandong Marine Energy (Singapore) or SDME' for a 15-year term.
+- **row 712** · Price: `235000000` (Y) — Same Taiping/Jiangnan duo order as row 711. See row 711 note.
+- **row 712** · Operator/charterer: `Shandong Marine Energy` (Y) — Same as row 711.
+- **row 639** · Operator/charterer: `Gaz-System` (Y) — LNG Prime article metadata/description (article body itself is paywalled beyond this): 'South Korean shipbuilder HD Hyundai Heavy Industries has held a keel-laying ceremony for MOL's floating storage and regasification unit (FSRU), which will serve Gaz-System's Gdansk LNG project in Poland.' Matches cluster owner MOL exactly; Gaz-System (Poland's gas system operator/TSO) is the end-user/charterer.
+- **row 639** · Vessel type: `FSRU` (Y) — Literally stated: '...MOL's floating storage and regasification unit (FSRU)...'.
+- **row 408** · Capacity: `174000` (Y) — shipvault record for MT Athlos (IMO 9999981, HD Hyundai Samho yard no. 8206) states 174,000 CBM; matches capacity already recorded for every other vessel in this cluster.
+- **row 244** · Contract date: `26-Feb-2024` (Y) — LNG Prime, 26-Feb-2024: HD KSOE disclosed a 4-vessel, 174,000cbm order at Hyundai Samho for delivery by Jan 2028, en-bloc ~$1.08bn ($270m/vessel). Owner reported as 'unidentified' by the yard but LNG Prime's shipbuilding sources say it is 'likely' Capital (Capital Gas already has LNG/Cs on order at Hyundai Samho/Heavy). Delivery-year (2028), capacity (174,000) and count (4) match this row's Hull 8254-8257 cluster exactly; treating as same-day contract disclosure. Flagging the owner-attribution hedge for human review.
+- **row 244** · Price: `270000000` (Y) — Same article: en-bloc $1.08bn/4 vessels = $270m per vessel, stated literally in the article as 'about $270 million per vessel'. Same owner-attribution caveat as Contract date.
+- **row 245** · Contract date: `26-Feb-2024` (Y) — Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
+- **row 245** · Price: `270000000` (Y) — Same quartet order as Hull 8254.
+- **row 246** · Contract date: `26-Feb-2024` (Y) — Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
+- **row 246** · Price: `270000000` (Y) — Same quartet order as Hull 8254.
+- **row 247** · Contract date: `26-Feb-2024` (Y) — Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
+- **row 247** · Price: `270000000` (Y) — Same quartet order as Hull 8254.
+- **row 292** · Contract date: `29-Apr-2024` (Y) — QatarEnergy's 18-vessel, 271,000cbm QC-Max order at Hudong-Zhonghua, contract signed Monday 29-Apr-2024 in Beijing (LNG Prime, dated 29-Apr-2024). QatarEnergy allocated ownership of the 18 ships: Nakilat 9, China Merchants Energy Shipping (CMES) 4, Shandong Marine 3, CLNG (Cosco/China Merchants JV) 2. Row's shipowner (China Merchants Energy Shipping) and capacity (271,000) match this program; H1914A/H1918A/H1922A/H1925A are 4 of CMES's 4 allocated hulls.
+- **row 292** · Price: `333000000` (Y) — Article states literally: 'the entire order is worth almost $6 billion. This puts the price tag for each vessel at about $333 million.'
+- **row 292** · Operator/charterer: `QatarEnergy` (Y) — QatarEnergy signed long-term time charter party (TCP) agreements with the shipowners (CMES/Shandong Marine/CLNG affiliates) for these vessels; QatarEnergy is the charterer/offtaker, CMES operates/owns the hull.
+- **row 296** · Contract date: `29-Apr-2024` (Y) — Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1914A).
+- **row 296** · Price: `333000000` (Y) — Same order as row 292; $333m/vessel stated literally.
+- **row 296** · Operator/charterer: `QatarEnergy` (Y) — Same as row 292.
+- **row 300** · Contract date: `29-Apr-2024` (Y) — Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1922A).
+- **row 300** · Price: `333000000` (Y) — Same order as row 292; $333m/vessel stated literally.
+- **row 300** · Operator/charterer: `QatarEnergy` (Y) — Same as row 292.
+- **row 303** · Contract date: `29-Apr-2024` (Y) — Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1925A).
+- **row 303** · Price: `333000000` (Y) — Same order as row 292; $333m/vessel stated literally.
+- **row 303** · Operator/charterer: `QatarEnergy` (Y) — Same as row 292.
+- **row 291** · Contract date: `29-Apr-2024` (Y) — Same QatarEnergy 18-vessel order; Shandong Marine's 3 allocated hulls (rows 291/294/297 = H1913A/H1916A/H1919A) match the article's 'Shandong Marine will own three' + 271,000cbm capacity.
+- **row 291** · Price: `333000000` (Y) — $333m/vessel stated literally in the article.
+- **row 291** · Operator/charterer: `QatarEnergy` (Y) — QatarEnergy signed the TCP charter with Shandong Marine Group for its allocated hulls; QatarEnergy is charterer/offtaker.
+- **row 294** · Contract date: `29-Apr-2024` (Y) — Same order as row 291 (H1916A).
+- **row 294** · Price: `333000000` (Y) — Same as row 291.
+- **row 294** · Operator/charterer: `QatarEnergy` (Y) — Same as row 291.
+- **row 297** · Contract date: `29-Apr-2024` (Y) — Same order as row 291 (H1919A).
+- **row 297** · Price: `333000000` (Y) — Same as row 291.
+- **row 297** · Operator/charterer: `QatarEnergy` (Y) — Same as row 291.
+- **row 314** · Capacity: `174000` (Y) — shipvault record for HULL 8327 (Capital Maritime & Trading Corp, HD Hyundai Samho, ordered 2025-07-01) gives cap=174,000 cbm. url_verifier --value 174000 PASS.
+- **row 315** · Capacity: `174000` (Y) — shipvault record for HULL 8328, same order group as row 314. url_verifier --value 174000 PASS.
+- **row 316** · Capacity: `174000` (Y) — shipvault record for HULL 8329, same order group as row 314. url_verifier --value 174000 PASS.
+- **row 317** · Capacity: `174000` (Y) — shipvault record for HULL 4 (yardno NA), same order group as row 314. url_verifier --value 174000 PASS.
+- **row 124** · Contract date: `22-Nov-2022` (Y) — Seapeak press release: 'November 22, 2022 - Seapeak LLC entered into shipbuilding contracts for the construction of five, 174,000-cubic meter MEGA propulsion LNG carrier newbuildings' at Samsung Heavy. Covers all 5 hulls 2656-2660 (row_ids 124-128).
+- **row 125** · Contract date: `22-Nov-2022` (Y) — Same cluster order as row 124; see note there.
+- **row 126** · Contract date: `22-Nov-2022` (Y) — Same cluster order as row 124; see note there.
+- **row 127** · Contract date: `22-Nov-2022` (Y) — Same cluster order as row 124; see note there.
+- **row 128** · Contract date: `22-Nov-2022` (Y) — Same cluster order as row 124; see note there.
+- **row 1150** · Propulsion type: `X-DF` (Y) — Seapeak 6-K (SEC filing, hosted on StockTitan): 'During December 2025, the Company entered into contracts with Samsung Heavy Industries ... for the construction of two 174,000-cubic meter low-pressure dual-fueled (X-DF) LNG carrier newbuildings ... scheduled for deliveries in the second half of 2028.' Matches rows 1150/1151 (Samsung HI 2775/2776, contract date already 31-Dec-2025, delivery 2028).
+- **row 1151** · Propulsion type: `X-DF` (Y) — Same order as row 1150; see note there.
+- **row 375** · Operator/charterer: `Arctic LNG 2 LLC` (Y) — gCaptain: Alexey Kosygin (pilot Arc7 vessel, Zvezda hull 041) was 'handed over ... to operate under a long-term time-charter contract with Arctic LNG-2'; matches the 'Arctic LNG 2 LLC' value already used on sibling rows 3/4/5/7-16 in this cluster. Source text says 'Arctic LNG 2' / 'Arctic LNG-2' (project/operator name); does not spell out the 'LLC' suffix as one string.
+- **row 375** · Cargo type: `membrane` (Y) — Riviera: 'All 15 of ships being built by Zvezda will have GTT's Mark III membrane containment technology' (Hulls 041-055, i.e. all of rows 3,4,5,7-16,375 in this cluster - only row 375 had this field blank).
+- **row 166** · Capacity: `174000` (Y) — Splash247 (20-Aug-2025): Samsung Heavy order described as 'six 174,000 cu m vessels worth around $1.5bn', with 'TMS Cardiff, led by George Economou, understood to have signed for four vessels' (matches rows 166-169). Applies to rows 166,167,168,169.
+- **row 167** · Capacity: `174000` (Y) — Same source/reasoning as row 166.
+- **row 168** · Capacity: `174000` (Y) — Same source/reasoning as row 166.
+- **row 169** · Capacity: `174000` (Y) — Same source/reasoning as row 166.
+- **row 295** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 295** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 295** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 298** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 298** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 298** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 299** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 299** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 299** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 301** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 301** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 301** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 302** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 302** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 302** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 304** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 304** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 304** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 305** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 305** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 305** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 306** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 306** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 306** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 307** · Contract date: `29-Apr-2024` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 307** · Price: `333000000` (Y) — Per-vessel price from total: page states entire 18-vessel order worth almost $6bn, 'puts the price tag for each vessel at about $333 million'; per-vessel figure is stated literally on the page.
+- **row 307** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm QC-Max LNG carriers at Hudong-Zhonghua ('contract was signed on Monday in Beijing'; 'entire order is worth almost $6 billion... puts the price tag for each vessel at about $333 million'). Nakilat selected to own/operate 9 of the 18; the remaining long-term TCP charter deal (of the three announced) is with Nakilat, chartered to QatarEnergy affiliates per the paired charter-deal statement (matches existing backend convention of Operator/charterer=QatarEnergy on other QatarEnergy-program rows e.g. row_id 17-19 MOL/QatarEnergy).
+- **row 72** · Capacity: `174000` (Y) — shipvault.com ship record (via imo_tracker.py) lists 174,000 cbm capacity for this hull.
+- **row 78** · Capacity: `174000` (Y) — shipvault.com ship record (via imo_tracker.py) lists 174,000 cbm capacity for this hull.
+- **row 1041** · Operator/charterer: `MOL` (Y) — Splash247: 'Japan's Mitsui OSK Lines (MOL) has confirmed a newbuilding deal for a...FSRU bound for Singapore'; 'MOL will own, manage, and operate the FSRU', chartered long-term to Singapore LNG. LNG Prime's original piece only names an 'unidentified Asian owner' (paywalled beyond teaser), so only Splash247 literally names MOL - single domain, confidence Y. [charterer = owner (self-operated); held for review]
+- **row 1148** · Price: `254000000` (Y) — Riviera (27-Nov-2025): 'BRL's Week 48 newbuilding report logged two liquid natural gas carriers for BW LNG at Hyundai Samho, flagged to Liberia and priced at about US$254M per ship' - matches the headline total of $508M for the pair. LNG Prime's own piece on this order is paywalled beyond a one-sentence teaser with no price given, so only Riviera corroborates - single domain, confidence Y.
+- **row 1149** · Price: `254000000` (Y) — Riviera (27-Nov-2025): 'BRL's Week 48 newbuilding report logged two liquid natural gas carriers for BW LNG at Hyundai Samho, flagged to Liberia and priced at about US$254M per ship' - matches the headline total of $508M for the pair. LNG Prime's own piece on this order is paywalled beyond a one-sentence teaser with no price given, so only Riviera corroborates - single domain, confidence Y.
+- **row 1167** · Operator/charterer: `Tsakos Group` (Y) — Riviera (26-Feb-2026): 'shipbroking sources have identified the buyer as Tsakos Group'; LNG Prime (paywalled beyond teaser) independently states 'Greek shipowner Tsakos Group has reportedly ordered two liquefied natural gas (LNG) carriers from South Korean shipbuilder HD Hyundai Heavy Industries.' Both are hedged ('identified'/'reportedly' - HD Hyundai itself named only an 'undisclosed Oceania-based shipping company'), but two independent domains name Tsakos Group, so G confidence. Matches the task's own pre-filled shipowner field ('Tsakos'). [charterer = owner (self-operated); held for review]
+- **row 1167** · Price: `254000000` (Y) — Riviera: 'HD Hyundai Heavy Industries announced an order for a single LNG carrier valued at approximately US$254M, with delivery scheduled for Q3 2028.' LNG Prime's piece is paywalled beyond a teaser with no price stated - single domain, confidence Y.
+- **row 1175** · Price: `250000000` (Y) — iMarine: 'each vessel valued at approximately $250 million' for the 7-vessel Knutsen order announced 19-Dec-2025 at Hanwha Ocean.
+- **row 1176** · Price: `250000000` (Y) — Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+- **row 1177** · Price: `250000000` (Y) — Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+- **row 1178** · Price: `250000000` (Y) — Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+- **row 1179** · Price: `250000000` (Y) — Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+- **row 1180** · Price: `250000000` (Y) — Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+- **row 1181** · Price: `250000000` (Y) — Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+- **row 1175** · Cargo type: `membrane` (Y) — GTT tank-design article: vessels fitted with 'NO96 Super+ membrane containment system'.
+- **row 1176** · Cargo type: `membrane` (Y) — Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
+- **row 1177** · Cargo type: `membrane` (Y) — Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
+- **row 1178** · Cargo type: `membrane` (Y) — Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
+- **row 1179** · Cargo type: `membrane` (Y) — Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
+- **row 1180** · Cargo type: `membrane` (Y) — Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
+- **row 1181** · Cargo type: `membrane` (Y) — Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
+- **row 1205** · Price: `250300000` (Y) — Splash247 (12-May-2026): Hanwha Ocean secured 'a contract worth KRW363.2bn ($250.3m) for one LNG carrier from a shipping company in Europe'; market sources identified Knutsen. Matches this row's 08-May-2026 single-vessel order (iMarine 35017 gives same KRW363.2bn figure without USD conversion).
+- **row 99** · Contract date: `11-Nov-2024` (Y) — PortNews: Hanwha Ocean 'said Monday' (dateline 2024 November 11) it secured a 713.5bn-won ($511.6m) deal for two 174,000-ton LNG carriers for Maran Gas Maritime, delivery by Dec 2027 - matches hull 2602/2603.
+- **row 100** · Contract date: `11-Nov-2024` (Y) — Same order as row 99 (hull 2602/2603 pair) - PortNews, 713.5bn won ($511.6m) for two vessels, announced Monday 11-Nov-2024.
+- **row 74** · Capacity: `174000` (Y) — shipvault record for IMO 1022043 / MT MARAN GAS POLIEGOS (hull 2582, Hanwha Ocean/Okpo, owner Maran Gas): cap=174000 CBM. Live page (not the task-file lead) verified via imo_tracker.py + url_verifier.py.
+- **row 1168** · Cargo type: `membrane` (Y) — MarineLink (5-Feb-2026): GTT received the tank-design order from Jiangnan for these two 175,000cbm EPS vessels, 'fitted with the Mark III Flex membrane containment system' - matches hull H2971/H2972.
+- **row 1169** · Cargo type: `membrane` (Y) — Same GTT Mark III Flex membrane order covering both EPS vessels at Jiangnan.
+- **row 141** · Operator/charterer: `QatarEnergy` (Y) — Splash247 (1-Apr-2024): QatarEnergy 'inked long-term contracts to charter six 174,000 cu m ships from China Merchants Energy Shipping...another six from Shandong Marine Energy...all to be constructed by Samsung Heavy Industries' - matches this 6-vessel Shandong Marine/Samsung cluster exactly (hulls 2695/2698/2701/2703/2705/2707).
+- **row 145** · Operator/charterer: `QatarEnergy` (Y) — Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+- **row 148** · Operator/charterer: `QatarEnergy` (Y) — Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+- **row 151** · Operator/charterer: `QatarEnergy` (Y) — Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+- **row 153** · Operator/charterer: `QatarEnergy` (Y) — Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+- **row 155** · Operator/charterer: `QatarEnergy` (Y) — Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+- **row 80** · Operator/charterer: `QatarEnergy` (Y) — LNG Prime (24-Mar-2024): '...vessels will have a capacity of 174,000 cubic meters and will be chartered out by Nakilat to affiliates of QatarEnergy pursuant to the 15-year TCP agreements'. Applies to whole Hanwha Ocean 8-ship Nakilat tranche.
+- **row 80** · Contract date: `24-Mar-2024` (Y) — Article published 24-Mar-2024 ('QatarEnergy said on Sunday'; 24-Mar-2024 was a Sunday); announces the TCP/newbuild agreements for the 25 vessels incl. this 8-ship Hanwha Ocean tranche.
+- **row 80** · Price: `230000000` (Y) — Article states directly: 'The vessels are each worth around $230 million.' Matches shipvault_lead newprice 230000000 independently.
+- **row 80** · Vessel type: `conventional` (Y) — Article: 'time charter agreements with ... Nakilat for 25 conventional-size LNG carriers'.
+- **row 81** · Operator/charterer: `QatarEnergy` (Y) — Same 8-ship Hanwha Ocean/Nakilat tranche, see row 80.
+- **row 81** · Contract date: `24-Mar-2024` (Y) — Same cluster announcement as row 80.
+- **row 81** · Price: `230000000` (Y) — Same cluster announcement as row 80.
+- **row 81** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
+- **row 82** · Operator/charterer: `QatarEnergy` (Y) — Same cluster announcement as row 80.
+- **row 82** · Contract date: `24-Mar-2024` (Y) — Same cluster announcement as row 80.
+- **row 82** · Price: `230000000` (Y) — Same cluster announcement as row 80.
+- **row 82** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
+- **row 83** · Operator/charterer: `QatarEnergy` (Y) — Same cluster announcement as row 80.
+- **row 83** · Contract date: `24-Mar-2024` (Y) — Same cluster announcement as row 80.
+- **row 83** · Price: `230000000` (Y) — Same cluster announcement as row 80.
+- **row 83** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
+- **row 84** · Operator/charterer: `QatarEnergy` (Y) — Same cluster announcement as row 80.
+- **row 84** · Contract date: `24-Mar-2024` (Y) — Same cluster announcement as row 80.
+- **row 84** · Price: `230000000` (Y) — Same cluster announcement as row 80.
+- **row 84** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
+- **row 85** · Operator/charterer: `QatarEnergy` (Y) — Same cluster announcement as row 80.
+- **row 85** · Contract date: `24-Mar-2024` (Y) — Same cluster announcement as row 80.
+- **row 85** · Price: `230000000` (Y) — Same cluster announcement as row 80.
+- **row 85** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
+- **row 86** · Operator/charterer: `QatarEnergy` (Y) — Same cluster announcement as row 80.
+- **row 86** · Contract date: `24-Mar-2024` (Y) — Same cluster announcement as row 80.
+- **row 86** · Price: `230000000` (Y) — Same cluster announcement as row 80.
+- **row 86** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
+- **row 88** · Operator/charterer: `QatarEnergy` (Y) — Same cluster announcement as row 80.
+- **row 88** · Contract date: `24-Mar-2024` (Y) — Same cluster announcement as row 80.
+- **row 88** · Price: `230000000` (Y) — Same cluster announcement as row 80.
+- **row 88** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
+- **row 273** · Operator/charterer: `CNOOC` (Y) — NYK release: 'concluded a long-term time-charter contract with CNOOC Gas and Power Singapore Trading & Marketing Pte. Ltd. ... for six liquefied natural gas (LNG) carriers'.
+- **row 273** · Contract date: `28-Apr-2022` (Y) — NYK release: 'On April 28 ... NYK concluded a long-term time-charter contract ... in addition to a shipbuilding contract for the vessels with Hudong-Zhonghua Shipbuilding'.
+- **row 273** · Cargo type: `membrane` (Y) — NYK release: 'a membrane-type tank that will make use of advanced insulating materials'.
+- **row 274** · Operator/charterer: `CNOOC` (Y) — Same six-ship order as row 273.
+- **row 274** · Contract date: `28-Apr-2022` (Y) — Same six-ship order as row 273.
+- **row 274** · Cargo type: `membrane` (Y) — Same six-ship order as row 273.
+- **row 1092** · Operator/charterer: `CNOOC` (Y) — 3rd hull of the same six-ship NYK/CNOOC/CMES JV order as rows 273/274, 1224-1226 (same owner tag, shipbuilder, capacity, delivery window).
+- **row 1092** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1092** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
+- **row 1224** · Operator/charterer: `CNOOC` (Y) — 4th hull of the same six-ship order; row already carried nyk.com/gcaptain as existing_refs.
+- **row 1224** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1224** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
+- **row 1225** · Operator/charterer: `CNOOC` (Y) — 5th hull of the same six-ship order.
+- **row 1225** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1225** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
+- **row 1226** · Operator/charterer: `CNOOC` (Y) — 6th hull of the same six-ship order.
+- **row 1226** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1226** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
+- **row 164** · Capacity: `174000` (Y) — shipvault record for Hull 2752 (IMO 1137238) via imo_tracker.py: cap=174000 CBM.
+- **row 1166** · Price: `255000000` (Y) — Splash247: 'Samsung Heavy Industries confirmed the contract in a regulatory filing earlier, noting the value at around KRW 368bn ($255m)' for the single 180,000 cu m Celsius Tankers unit (Hull 2777), delivery end-May 2028 -- matches row's delivery_year 2028 and shipvault_lead newprice 255000000.
+- **row 515** · Contract date: `24-Sep-2022` (Y) — LNG Prime: 'The two firms signed the deal on September 24, CMES said in a statement' -- CMES exercising its option for two more 175,000-cbm LNG carriers at DSIC. Matches shipvault_lead ordered=2022-09-01 for Hull G175K-04.
+- **row 515** · Price: `200000000` (Y) — 'This contract for two LNG carriers had an option for two additional vessels with a price tag of $400 million, or $200 million each, and CMES has now exercised that option.' Matches shipvault_lead newprice 200000000 exactly.
+- **row 516** · Contract date: `24-Sep-2022` (Y) — Same option-exercise duo as row 515 (Hull G175K-06).
+- **row 516** · Price: `200000000` (Y) — Same as row 515.
+- **row 129** · Operator/charterer: `MOL` (Y) — 'Shipbuilding sources told LNG Prime that Japan's shipping giant MOL is likely behind this order' -- sourced attribution (same evidentiary strength as the Chevron cluster below); backend shipowner is already MOL. [charterer = owner (self-operated); held for review]
+- **row 129** · Contract date: `01-Feb-2023` (Y) — 'SHI said on Wednesday' -- article published 2023-02-01T07:02:02Z, a Wednesday; same-day announcement. Matches shipvault_lead ordered=2023-02-01.
+- **row 129** · Price: `248000000` (Y) — '609.7 billion won ($496 million) or about $248 million per vessel' -- literal per-vessel figure stated directly (not a total/N derivation); close to but not identical to shipvault_lead's rounded 247500000.
+- **row 130** · Operator/charterer: `MOL` (Y) — Same duo as row 129 (Hull 2663). [charterer = owner (self-operated); held for review]
+- **row 130** · Contract date: `01-Feb-2023` (Y) — Same as row 129.
+- **row 130** · Price: `248000000` (Y) — Same as row 129.
+- **row 135** · Contract date: `10-Oct-2023` (Y) — 'Samsung Heavy said on Tuesday' -- published 2023-10-10T13:57:33Z, a Tuesday. Matches shipvault_lead ordered=2023-10-01 for Hull 2687.
+- **row 135** · Price: `260000000` (Y) — '350.8 billion won ($260 million)' for one LNG carrier, delivery by September 2026 -- matches shipvault_lead newprice 260000000 and built=2026 exactly. Owner given only as 'unidentified owner in Asia' -- NOT used for Operator/charterer (see documented_blanks).
+- **row 133** · Operator/charterer: `Chevron` (Y) — 'Shipbuilding sources told LNG Prime that US energy giant Chevron is behind this order.' [charterer = owner (self-operated); held for review]
+- **row 133** · Contract date: `13-Jun-2023` (Y) — 'Samsung Heavy said on Tuesday' -- published 2023-06-13T06:57:33Z, a Tuesday. Matches shipvault_lead ordered=2023-06-01.
+- **row 133** · Price: `254500000` (Y) — '659.2 billion won ($509 million) or about $254.5 million per vessel' -- literal per-vessel figure. Matches shipvault_lead newprice 254500000 exactly. Delivery by February 2028 matches row's delivery_year 2028.
+- **row 134** · Operator/charterer: `Chevron` (Y) — Same duo as row 133 (Hull 2669). [charterer = owner (self-operated); held for review]
+- **row 134** · Contract date: `13-Jun-2023` (Y) — Same as row 133.
+- **row 134** · Price: `254500000` (Y) — Same as row 133.
+- **row 1209** · IMO number: `1182348` (Y) — shipvault unit 500595: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2798, scheduled 2029-1. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1209** · Hull number: `Hull 2798 (SHI)` (Y) — shipvault unit 500595: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2798, scheduled 2029-1. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1210** · IMO number: `1182350` (Y) — shipvault unit 500596: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2799, scheduled 2029-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1210** · Hull number: `Hull 2799 (SHI)` (Y) — shipvault unit 500596: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2799, scheduled 2029-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1211** · IMO number: `1182362` (Y) — shipvault unit 500597: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2800, scheduled 2029-5. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1211** · Hull number: `Hull 2800 (SHI)` (Y) — shipvault unit 500597: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2800, scheduled 2029-5. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1220** · IMO number: `1185027` (Y) — shipvault unit 501592: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2954, scheduled 2029-8. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1220** · Hull number: `Hull H2954` (Y) — shipvault unit 501592: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2954, scheduled 2029-8. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1221** · IMO number: `1185039` (Y) — shipvault unit 501593: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2955, scheduled 2029-11. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1221** · Hull number: `Hull H2955` (Y) — shipvault unit 501593: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2955, scheduled 2029-11. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1222** · IMO number: `1185041` (Y) — shipvault unit 501594: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2956, scheduled 2030-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1222** · Hull number: `Hull H2956` (Y) — shipvault unit 501594: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2956, scheduled 2030-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1223** · IMO number: `1185053` (Y) — shipvault unit 501595: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2957, scheduled 2030-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1223** · Hull number: `Hull H2957` (Y) — shipvault unit 501595: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H2957, scheduled 2030-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1201** · IMO number: `1180778` (Y) — shipvault unit 502026: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3639, scheduled 2029-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1201** · Hull number: `Hull 3639 (HDHHI)` (Y) — shipvault unit 502026: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3639, scheduled 2029-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1202** · IMO number: `1180780` (Y) — shipvault unit 502027: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3640, scheduled 2029-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1202** · Hull number: `Hull 3640 (HDHHI)` (Y) — shipvault unit 502027: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3640, scheduled 2029-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1203** · IMO number: `1180792` (Y) — shipvault unit 502028: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3641, scheduled 2029-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1203** · Hull number: `Hull 3641 (HDHHI)` (Y) — shipvault unit 502028: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3641, scheduled 2029-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1204** · IMO number: `1180807` (Y) — shipvault unit 502029: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3642, scheduled 2029-11. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1204** · Hull number: `Hull 3642 (HDHHI)` (Y) — shipvault unit 502029: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3642, scheduled 2029-11. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1214** · IMO number: `1190125` (Y) — shipvault unit 501818: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3659, scheduled 2028-12. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1214** · Hull number: `Hull 3659 (HDHHI)` (Y) — shipvault unit 501818: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3659, scheduled 2028-12. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1215** · IMO number: `1190137` (Y) — shipvault unit 501819: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3660, scheduled 2029-3. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1215** · Hull number: `Hull 3660 (HDHHI)` (Y) — shipvault unit 501819: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3660, scheduled 2029-3. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1212** · IMO number: `1182013` (Y) — shipvault unit 500598: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8358, scheduled 2029-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1212** · Hull number: `Hull 8358 (HSHI)` (Y) — shipvault unit 500598: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8358, scheduled 2029-4. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1213** · IMO number: `1182025` (Y) — shipvault unit 500599: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8359, scheduled 2029-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1213** · Hull number: `Hull 8359 (HSHI)` (Y) — shipvault unit 500599: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8359, scheduled 2029-7. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1189** · IMO number: `1186837` (Y) — shipvault unit 502043: owner HMM GLOVIS, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8360, scheduled 2029-1. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1189** · Hull number: `Hull 8360 (HSHI)` (Y) — shipvault unit 502043: owner HMM GLOVIS, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8360, scheduled 2029-1. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1216** · IMO number: `1066245` (Y) — shipvault unit 462722: owner CELSIUS SHIPPING APS, yard CM JIANGSU no. CMHI-282-07, scheduled 2028-5. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 1217** · IMO number: `1066257` (Y) — shipvault unit 462723: owner CELSIUS SHIPPING APS, yard CM JIANGSU no. CMHI-282-08, scheduled 2028-9. Hulls of this order were matched to the backend's ordinal placeholders in ascending hull / delivery order; which placeholder gets which hull is arbitrary within the cluster.
+- **row 102** · Capacity: `174000` (Y) — shipvault record for IMO 1115072: cargo capacity 174000 cbm
+- **row 103** · Capacity: `174000` (Y) — shipvault record for IMO 1115084: cargo capacity 174000 cbm
+- **row 250** · Capacity: `180000` (Y) — shipvault record for IMO 1119078: cargo capacity 180000 cbm
+
+These are default-`hold`. Flip to `accept`/`reject` in `decisions.csv`, then re-run `apply_batch.py`.
+
+## ⛔ Conflicts — research disagrees with a filled backend value
+
+Not auto-applied (data-fill is additive to blanks only). Decide each in `conflicts.csv`.
+
+- **row 1196/1197/1198/1199/1200** (cluster count check): backend `` vs research `` — Backend's 5 rows fully account for the announced Petronas-charter program (3 on ~30-Jan-2026 + 2 more by ~27-Feb-2026 = 5). No indication these 5 rows are missing sister ships.
+- **row (none - not in backend)** n/a: backend `` vs research `` — Small-scale (18,700 cbm) -- out of inclusion-criteria scope, not one of the shipvault large-scale hulls. Flagging only so it is not confused with the 10-hull lead.
+- **—** lead 1: backend `` vs research `` — Confirmed via LNG Prime (art. 179020, publ. 2026-03-02, 'MISC orders two more LNG carriers backed by Petronas charters'): MISC's Hudong-Zhonghua order tied to the PETRONAS 20-year charter totals exactly FIVE 174,000-cbm carriers (three ordered ~30-Jan-2026, two more by ~27-Feb-2026) -- this matches the backend's existing rows 1196-1200 one-for-one; no 'missing 5' on that program. The other 5 shipvault hulls (H2019A-H2023A, delivery Apr-2030 through Dec-2030) are real IMO-registered on-order hulls (owner MISC, Hudong-Zhonghua, 120000 GT) but no trade press, Bursa Malaysia filing, or Korean/Chinese source found in the time budget confirms a second MISC-Hudong newbuild tranche beyond the Petronas-linked five. Notably H2016A-H2023A (8 hulls) carry a contiguous IMO block (1180261-1180338) distinct from H2014A/H2015A (1168902/1168914), suggesting the shipvault entry may reflect IMO pre-registration for a slot/option block rather than five separately-announced firm orders -- but this is inference, not sourced fact. Also found: a SEPARATE, unrelated, small-scale MISC-Hudong order (LNG Prime art. 194247, 31-Jul-2026): one 18,700-cbm carrier for Bintulu LNG/Malaysia LNG -- out of scope (small-scale) and not one of the shipvault hulls (which are all ~120,000 GT / large-scale). Not filling hull/IMO on rows 1196-1200 because which of the 10 shipvault hulls maps to which of the 5 undifferentiated 'MISC 1..5' backend rows cannot be established from any source found -- assigning would be a guess. Recommend a targeted discovery/data-fill pass on Hudong-Zhonghua CSB orderbook + DART/Bursa filings to resolve hull-row pairing and the status of H2019A-H2023A.
+- **row 1218** Shipowner: backend `` vs research `` — shipvault alone lists hull 2803 owner as J P MORGAN; press says only "Bermuda-based". Shipvault owner tags were wrong for several clusters tonight, so not proposed.
+- **—** lead 2: backend `` vs research `` — Trade press (cyprusshippingnews.com, already in backend refs for row 1218) describes the 27-May-2026 Samsung Heavy order as being with 'a Bermuda-based shipping company' for a 5-vessel package (1 LNG carrier + 2 VLGC + 2 crude tankers, ~$726m total) -- consistent with a JPMorgan-affiliated SPV (JPM shipping vehicles are commonly Bermuda/Marshall-Islands incorporated) but the press does not name JPMorgan explicitly. Could not find any trade-press article (LNG Prime, Riviera, Splash, Korean press) that names J.P. Morgan directly in the time budget. The only direct source naming the owner is shipvault.com itself, which lists owner 'J P MORGAN' for hull 2803 (IMO 1185077) -- literal text verified on the page. Proposing Shipowner = J.P. Morgan at Y confidence (single source: shipvault), corroborated circumstantially (not sourced) by the Bermuda-entity detail in press.
+- **—** lead 3: backend `` vs research `` — LNG Prime article 188654 ('South Korea's Samsung Heavy clinches another LNG carrier order', already an existing ref on row 1227) is editorially tagged 'Purus Marine' + 'Samsung Heavy Industries' (WordPress article tags, visible even though the body is paywalled) -- this is LNG Prime's own attribution of the order to Purus, going beyond the earlier 'linked to' hedge. Corroborated directly by shipvault.com, which lists owner 'PURUS MARINE' for hull 2808 (IMO 1187609, ordered 2026-06, delivery 2029-02), matching row 1227 (Samsung HI, contract 08-Jun-2026, delivery 2029). Two independent sources (LNG Prime tag + shipvault) -> G confidence.
+- **row 1205** IMO number: backend `` vs research `` — shipvault IMO fails the IMO check digit - not proposed
+- **—** lead 4: backend `` vs research `` — Hull 2628 (IMO 1185144, shipvault ordered 2026-05, delivery 2029-09) maps to row 1219 ('Hanwha Ocean (Knutsen)', contract 29-May-2026): imarinenews.com/35664.html (already row 1219's ref) states the $250m, 174,000-cbm follow-on order for Knutsen OAS delivers 'by September 2029' -- exact month match with shipvault's 2029-9, plus the LNG Prime article dated 2026-05-29 ('Knutsen orders another LNG carrier at Hanwha Ocean') matches row 1219's contract date to the day. G confidence. Hull 2627 (IMO 1184679, shipvault ordered 2025-12, delivery 2029-06) is assigned to row 1205 ('Hanwha Ocean (Knutsen OAS 1)', contract 08-May-2026) by elimination/process of dates -- it is the only other Knutsen-Hanwha Ocean row without a hull number and its 2029 delivery year is compatible with hull 2627's 2029-06 -- but no press source states this pairing explicitly, and shipvault's 'ordered 2025-12' does not match row 1205's 08-May-2026 contract date (shipvault's order-month field appears unreliable/stale for this hull, possibly reflecting yard-slot reservation timing rather than the disclosed contract date). Y confidence only for the 2627/1205 pairing. No press found giving Equinor or another charterer, or price, for either hull specifically.
+- **row 67** tooling: backend `` vs research `` — url_verifier.py bug (worth a scripts/ fix, flagging for the user since I cannot edit scripts): _SOFT_ERROR_TITLES includes the bare substring "500 " intended to catch "500 Internal Server Error" titles, but it also matches ordinary article titles that happen to state a dollar figure like " million" (this one: "DSME scores order for LNG carrier duo worth about $500 million - LNG Prime"). The page is verified live and fully readable via scripts/fetch.py. This likely affects other $400/$500/etc-million-titled articles across the repo, silently grading good URLs blocked/dead. Suggest anchoring the check to a true HTTP-error phrase (e.g. "500 internal server error", "500 error") rather than the bare token "500 ".
+- **row 1162** Price [ref] / existing citation: backend `` vs research `` — Likely miscitation: this LNG Prime article (paywalled, but teaser text visible via scripts/fetch.py) reports a single-vessel Samsung order tagged "Purus Marine", not the 2-vessel Oceonix Services Ltd order this row is about. Confirms the earlier WebFetch-tool summary that tied this URL and a $252m/duo/27-Jan-2026 narrative to Oceonix was a hallucination -- raw fetch shows a different owner, vessel count, and date entirely. Worth a human check of whether this ref belongs on rows 1162/1163 at all.
+- **row 1162** shipowner (context, not a blank): backend `` vs research `` — Not proposing a change (shipowner isn't a blank field and this isn't a Price/Contract-date/etc. cell), but flagging: CSN's own body text says the order came "from a shipping company in the Oceania region" and its headline appears to have turned that geographic phrase into a pseudo company name "Oceania Shipping Company." chinashipbuild.com independently corroborates the backend's existing "Oceonix Services Ltd" for both hulls (2781 & 2782) with matching 174,000 cbm capacity and Jan-2026 order month, so Oceonix looks correct and CSN's headline looks like an auto-summary artifact -- flagging only so a human isn't confused by the mismatch if they read CSN directly.
+- **row 197** Delivery year: backend `` vs research `` — Backend lists Hull 3441 (row 197 / live row 898) delivery_year as 2026, but both the NYK press release (20230516_03, which frames Hull 3441 alongside sister Hulls 3442-3444 all delivering 2027) and its shipvault_lead (built: 2027) indicate 2027. Possible backend value discrepancy - flagging for human review, not auto-corrected.
+- **row 25|26|27** shipvault_lead data quality: backend `` vs research `` — shipvault_lead for rows 25/26/27 (samsung|sinokor cluster) points to TMS Cardiff Gas Ltd-owned vessels ATLANTIC/MEDITERRANEAN/CARIBBEAN SUCCESS, capacity 180,000 cbm, ordered 2019-02-01 - inconsistent with these rows' actual Sinokor Maritime ownership and 174,000 cbm capacity. Treated as an unreliable lead, not used.
+- **row 136|138|140|142** shipvault_lead data quality: backend `` vs research `` — shipvault_lead for the hanwha-ocean|glovis cluster rows points to ORYX LNG-owned vessels (AL GHAFAT etc.), yard numbers 2593-2596 (vs these rows' Hull 2693-2696) and null capacity - inconsistent with the rows' actual K Line/Hyundai Glovis ownership and 174,000 cbm capacity. Treated as unreliable, not used.
+- **row 137|144|147** shipvault_lead data quality: backend `` vs research `` — shipvault_lead for rows 137/144/147 (samsung|misc cluster) points to Nakilat Shipping Qatar Ltd-owned vessel TH'AILIB, capacity 180,000 cbm - inconsistent with these rows' actual MISC ownership and 174,000 cbm capacity. Treated as unreliable, not used.
+- **row 201** Operator/charterer (owner attribution): backend `` vs research `` — Flagging for awareness only, not proposing a change: the press source treats the Dynagas attribution as unconfirmed at time of writing (Jan-2023), even though shipvault (and the backend) already assign these hulls to Dynagas Ltd with names 'Clean Astraeus'/'Clean Azeus' consistent with Dynagas's 'Clean' naming convention - the naming convention itself is fairly strong corroboration, so this is a low-concern note rather than a suspected error.
+- **row 666 / 1144** whole row (likely duplicate): backend `` vs research `` — ALARMING - these two row_ids appear to be the SAME physical vessel entered twice under different names/row_ids (identical IMO 1132941, identical contract date). Recommend a human dedupe pass: likely 'Hanwha Philly 1' (666) and 'Hanwha Philly SY Philadelphia 2608' (1144) should be merged into one row before more data-fill effort is spent on either. I did not merge or drop either row myself (out of scope for a data-fill worker) - only proposing fills that are safe regardless of which row_id survives.
+- **row 667 / 1145** whole row (possible duplicate with IMO mismatch): backend `` vs research `` — Same contract date and same owner/yard/programme as the confirmed duplicate pair above (666/1144), which strongly suggests 667 and 1145 are also the same vessel (the second Hanwha Philly option hull, per gcaptain.com: Hanwha Shipping exercised its option for a second LNG carrier). But the IMO numbers differ (1142788 vs 1140792), so this could instead be a data-entry typo in one of the two row_ids rather than two genuinely different ships (a web search found only ONE additional/option LNG carrier reported, not two, which favors 'typo' over 'two real ships'). Flagging for human review rather than guessing which IMO is correct.
+- **row 476** Delivery year vs contract-date source: backend `` vs research `` — Minor inconsistency, not necessarily an error - shipbuilding delivery estimates from the order announcement often slip or are later firmed up differently by the yard/shipvault; 2026 vs 2027 is a one-year gap worth a human sanity check but not itself grounds to reject the contract-date fill I proposed (the contract date match on 'Tuesday'/2-May-2023 plus capacity/shipbuilder/owner is solid).
+- **row 666** shipvault_lead sanity check: backend `` vs research `` — This shipvault_lead appears to be a bad IMO match for row 666 (possibly the wrong ship was linked centrally by the IMO-fill script). Not used for anything in this cluster; flagging so the centralized shipvault/IMO fill can be checked separately.
+- **row 258/259/260 vs 270/271/272/275** Program/charterer attribution (two DIFFERENT MOL/Hudong-Zhonghua programs in one cluster): backend `` vs research `` — Not alarming, just worth flagging for whoever reviews this batch: do not assume all 16 rows share one contract date/price/charterer just because they're clustered together by yard+owner. The fills above are scoped precisely to each sub-batch's matching source.
+- **row 282/283/284** Owner attribution (CNOOC direct vs MOL/CSLNG joint venture): backend `` vs research `` — Possible explanation (unconfirmed): the Jan-2022 sextet article states 'the deal also includes three options' - these three hulls, ordered ~8 months later, may be those options exercised directly by CNOOC rather than through the MOL/CSLNG vehicle used for the firm six. Flagging as worth a human look rather than proposing an unsourced Operator/charterer fill.
+- **row 308-313 (esp. 310)** Owner mix within one QC-Max sub-batch: backend `` vs research `` — Consistent with (not contradicting) the source article, which explains QatarEnergy's QC-Max program spreads ownership across MOL/CSET (6 vessels), Nakilat (9 vessels charter), and a China Merchants/Shandong Marine/CLNG consortium (9 vessels) - so a Nakilat-flagged hull inside an otherwise-MOL cluster is plausible, not necessarily a data error. Noting for awareness since it looks like a mismatch at a glance.
+- **row 308-313** Contract-date source paywalled: backend `` vs research `` — Could not extract contract date or price from this specific article (used the class-wide $333m/vessel figure from a different, non-paywalled LNG Prime article instead - see fills). A human with an LNG Prime subscription could likely pull an exact contract date for this sub-batch from this URL.
+- **row 139/143/146/150/152/154** Capacity (pre-existing value vs source article): backend `` vs research `` — Capacity is not in this cluster's blank_fields so I am not proposing a change, but flagging the discrepancy (180,000 in backend/shipvault vs 174,000 stated by the source article for the exact same CMES/Samsung 6-ship allotment) for human review - one of the two figures is likely wrong, or these are a distinct larger-capacity variant within the same commercial deal.
+- **row 711/712** Capacity (pre-existing value vs source article): backend `` vs research `` — Same pattern as the Samsung/CMES finding above - not proposing a change since Capacity isn't blank on these rows, but the 170,000 vs 175,000 gap is worth a human check.
+- **row 258** Propulsion type: backend `` vs research `` — pre-merge sanity drop: cell not blank (backend 'X-DF')
+- **row 259** Propulsion type: backend `` vs research `` — pre-merge sanity drop: cell not blank (backend 'X-DF')
+- **row 260** Propulsion type: backend `` vs research `` — pre-merge sanity drop: cell not blank (backend 'X-DF')
+- **row 280** Operator/charterer: backend `` vs research `` — Possible shipowner/charterer mismatch or an under-documented multi-party arrangement (K Line/CMES/CMC as consortium builders/owners with Petronas as the eventual charterer/offtaker, similar in shape to the QatarEnergy TCP pattern seen elsewhere in this batch) - could not confirm either way without the underlying order article (WebSearch budget exhausted). Same shipvault/backend owner tension applies to sister hull row 281.
+- **row 281** Operator/charterer: backend `` vs research `` — Same mismatch as row 280 (sister hull H1897A).
+- **row 375** Shipowner: backend `` vs research `` — Multiple sources (bairdmaritime 'Owner: SCF Group, Russia'; safety4sea/highnorthnews: 'the contracts ... were signed by SCF Group' for the pilot vessel, vs. 'SMART LNG' for the other 14 sister ships) indicate the pilot ship (hull 041, Alexey Kosygin, row_id 375) was contracted directly by Sovcomflot/SCF, not by the Smart LNG joint venture that owns the other 14 vessels in the series (rows 3,4,5,7-16). Backend currently lists Shipowner as 'Smart LNG' for row 375 - may be worth a human review, though the vessel is still time-chartered to Arctic LNG 2 either way. Not changed (backend edits are out of scope for data-fill).
+- **row 1207** existing_refs_sample: backend `` vs research `` — One of row 1207/1208's existing refs is a Riviera article titled 'TMS Cardiff Gas linked to pair of VLGC newbuildings at HD Hyundai' - VLGC (gas carrier), not LNG carrier, and a different yard (HD Hyundai, not Samsung Heavy). Article body could not be extracted (nav boilerplate only) so this could not be confirmed as a genuine mismatch vs. a title-only quirk; flagging for human review rather than treating rows 1207/1208 as miscategorized. Not changed.
+- **row 318** Status/contract: backend `` vs research `` — Flagging because rows 318/319 (both blank on Operator/charterer, Contract date, Price) may need a Status re-check by a human - a terminated-then-speculatively-built LNG carrier duo is an unusual lifecycle worth verifying isn't mismarked elsewhere in the backend (e.g. as still 'on order' to the original defaulted customer). Not changed - Status is out of scope for this data-fill task.
+- **row 255** Contract date: backend `` vs research `` — Two different order-timing sources disagree by roughly 16 months for the same hull; worth a human check before any date is entered.
+- **row 256** Contract date: backend `` vs research `` — Two different order-timing sources disagree by roughly 16 months for the same hull; worth a human check before any date is entered.
+- **row 1212** existing_refs_sample: backend `` vs research `` — Recommend removing the sedaily and Hayfin/Splash247 URLs from rows 1212/1213's ref set - they document a different owner/yard pairing from the same news week and should not be cited as corroboration for these BW LNG rows.
+- **row 1213** existing_refs_sample: backend `` vs research `` — Same recommendation as row 1212.
+- **row 1212** Price: backend `` vs research `` — Backend Price cell appears to have been corrupted into scientific/float notation (2.54E+08) rather than the plain-integer convention (254000000) used elsewhere. Not in this row's blank_fields so not proposed as a fill, but flagged for a QC/fix-mode pass - looks like a spreadsheet auto-formatting artifact, not a sourced value change.
+- **row 1213** Price: backend `` vs research `` — Backend Price cell appears to have been corrupted into scientific/float notation (2.54E+08) rather than the plain-integer convention (254000000) used elsewhere. Not in this row's blank_fields so not proposed as a fill, but flagged for a QC/fix-mode pass - looks like a spreadsheet auto-formatting artifact, not a sourced value change.
+- **row 1218** Price: backend `` vs research `` — The existing Price value 252000000 does not appear to be derivable from the only cited source for this row. It may have been carried over by mistake from the OTHER Samsung cluster row (1227), whose separate, single-vessel LNG Prime article ('south-koreas-samsung-heavy-clinches-another-lng-carrier-order') does state ~$252 million for a DIFFERENT, unrelated single-LNG-carrier order (contract date 08-Jun-2026, not 27-May-2026). Recommend a human check of the Price cell for row 1218 (live row 1118).
+- **row 290** shipowner: backend `` vs research `` — Possible wrong-owner assignment in the backend, or shipvault's lead data may itself be wrong/stale (shipvault_lead is a lead only, not citable) - either way this is a real conflict between two sources and should be checked by a human before any Operator/charterer fill is made for this row. Not resolved from the sources checked this session.
+- **row 293** shipowner: backend `` vs research `` — Possible wrong-owner assignment in the backend, or shipvault's lead data may itself be wrong/stale (shipvault_lead is a lead only, not citable) - either way this is a real conflict between two sources and should be checked by a human before any Operator/charterer fill is made for this row. Not resolved from the sources checked this session.
+- **row 1041** Capacity: backend `` vs research `` — pre-merge sanity drop: cell not blank (backend '204000')
+- **row 1182** Price [ref] (existing): backend `` vs research `` — Possible miscitation: TMS Cardiff Gas placed two distinct 2025/2026 orders at two different yards (Samsung and Hudong-Zhonghua) for a similar vessel count; the Samsung-order article may have been attached to the Hudong-Zhonghua rows in error. Did not use this URL for any fill on rows 1182-1185. Worth a human check of which yard/rows this ref is actually paired with in the live sheet.
+- **row 1183** Price [ref] (existing): backend `` vs research `` — See row 1182 note.
+- **row 1184** Price [ref] (existing): backend `` vs research `` — See row 1182 note.
+- **row 1185** Price [ref] (existing): backend `` vs research `` — See row 1182 note.
+- **row 273** shipvault_lead mismatch: backend `` vs research `` — shipvault_lead for Hull H1889A (IMO 9994319) lists owner as MOL LNG Transport, not matching backend's CNOOC/CMES/NYK JV owner tag. Same anomaly on row 274 / IMO 9994321 (shipvault owner MOL). Possible shipvault data-entry issue or the shipvault record is for a different/wrongly-matched hull. Not used for any proposed value; flagging for a human check against the IMO.
+- **row 1158** source naming inconsistency (informational only): backend `` vs research `` — Riviera calls the charterer/commercial-manager 'Shandong Ocean Energy' throughout; Seatrade Maritime uses 'Shandong Ocean Energy' for the commercial-management role in one paragraph but 'Shandong Marine Energy' (subsidiary of Shandong Marine Group) in another, describing it as a long-standing Jiangnan partner. The backend's existing value 'Shandong Marine Energy' is directly supported by the Seatrade text, so not changed -- flagging only because the two publishers (and even one publisher internally) are inconsistent, in case this is actually two related-but-distinct entities.
+- **row 697** Shipowner country/area: backend `` vs research `` — 
+- **row 696** Shipowner country/area: backend `` vs research `` — 
+- **row 688** Shipowner country/area: backend `` vs research `` — 
+- **row 689** Shipowner country/area: backend `` vs research `` — 
+- **row 693** Shipowner country/area: backend `` vs research `` — 
+- **row 1082** Shipowner country/area: backend `` vs research `` — 
+- **row 1083** Shipowner country/area: backend `` vs research `` — 
+- **row 1046** Shipowner country/area: backend `` vs research `` — 
+- **row 690** Shipowner country/area: backend `` vs research `` — 
+- **row 694** Shipowner country/area: backend `` vs research `` — 
+- **row 695** Shipowner country/area: backend `` vs research `` — 
+- **row 964** Shipowner country/area: backend `` vs research `` — 
+- **row 965** Shipowner country/area: backend `` vs research `` — 
+- **row 395** Shipowner country/area: backend `` vs research `` — 
+- **row 463** Shipowner country/area: backend `` vs research `` — 
+- **row 322** Shipowner country/area: backend `` vs research `` — 
+- **row 393** Shipowner country/area: backend `` vs research `` — 
+- **row 394** Shipowner country/area: backend `` vs research `` — 
+- **row 406** Shipowner country/area: backend `` vs research `` — 
+- **row 409** Shipowner country/area: backend `` vs research `` — 
+- **row 460** Shipowner country/area: backend `` vs research `` — 
+- **row 461** Shipowner country/area: backend `` vs research `` — 
+- **row 462** Shipowner country/area: backend `` vs research `` — 
+- **row 966** Shipowner country/area: backend `` vs research `` — 
+- **row 967** Shipowner country/area: backend `` vs research `` — 
+- **row 382** Shipowner country/area: backend `` vs research `` — 
+- **row 407** Shipowner country/area: backend `` vs research `` — 
+- **row 464** Shipowner country/area: backend `` vs research `` — 
+- **row 465** Shipowner country/area: backend `` vs research `` — 
+- **row 70** Shipowner country/area: backend `` vs research `` — 
+- **row 77** Shipowner country/area: backend `` vs research `` — 
+- **row 79** Shipowner country/area: backend `` vs research `` — 
+- **row 149** Shipowner country/area: backend `` vs research `` — 
+- **row 174** Shipowner country/area: backend `` vs research `` — 
+- **row 175** Shipowner country/area: backend `` vs research `` — 
+- **row 176** Shipowner country/area: backend `` vs research `` — 
+- **row 177** Shipowner country/area: backend `` vs research `` — 
+- **row 179** Shipowner country/area: backend `` vs research `` — 
+- **row 229** Shipowner country/area: backend `` vs research `` — 
+- **row 325** Shipowner country/area: backend `` vs research `` — 
+- **row 385** Shipowner country/area: backend `` vs research `` — 
+- **row 410** Shipowner country/area: backend `` vs research `` — 
+- **row 466** Shipowner country/area: backend `` vs research `` — 
+- **row 678** Shipowner country/area: backend `` vs research `` — 
+- **row 977** Shipowner country/area: backend `` vs research `` — 
+- **row 93** Shipowner country/area: backend `` vs research `` — 
+- **row 95** Shipowner country/area: backend `` vs research `` — 
+- **row 105** Shipowner country/area: backend `` vs research `` — 
+- **row 121** Shipowner country/area: backend `` vs research `` — 
+- **row 180** Shipowner country/area: backend `` vs research `` — 
+- **row 288** Shipowner country/area: backend `` vs research `` — 
+- **row 972** Shipowner country/area: backend `` vs research `` — 
+- **row 181** Shipowner country/area: backend `` vs research `` — 
+- **row 232** Shipowner country/area: backend `` vs research `` — 
+- **row 233** Shipowner country/area: backend `` vs research `` — 
+- **row 251** Shipowner country/area: backend `` vs research `` — 
+- **row 252** Shipowner country/area: backend `` vs research `` — 
+- **row 289** Shipowner country/area: backend `` vs research `` — 
+- **row 324** Shipowner country/area: backend `` vs research `` — 
+- **row 373** Shipowner country/area: backend `` vs research `` — 
+- **row 384** Shipowner country/area: backend `` vs research `` — 
+- **row 386** Shipowner country/area: backend `` vs research `` — 
+- **row 708** Shipowner country/area: backend `` vs research `` — 
+- **row 709** Shipowner country/area: backend `` vs research `` — 
+- **row 710** Shipowner country/area: backend `` vs research `` — 
+- **row 203** Shipowner country/area: backend `` vs research `` — 
+- **row 204** Shipowner country/area: backend `` vs research `` — 
+- **row 253** Shipowner country/area: backend `` vs research `` — 
+- **row 254** Shipowner country/area: backend `` vs research `` — 
+- **row 255** Shipowner country/area: backend `` vs research `` — 
+- **row 256** Shipowner country/area: backend `` vs research `` — 
+- **row 387** Shipowner country/area: backend `` vs research `` — 
+- **row 158** Shipowner country/area: backend `` vs research `` — 
+- **row 159** Shipowner country/area: backend `` vs research `` — 
+- **row 160** Shipowner country/area: backend `` vs research `` — 
+- **row 161** Shipowner country/area: backend `` vs research `` — 
+- **row 205** Shipowner country/area: backend `` vs research `` — 
+- **row 206** Shipowner country/area: backend `` vs research `` — 
+- **row 244** Shipowner country/area: backend `` vs research `` — 
+- **row 245** Shipowner country/area: backend `` vs research `` — 
+- **row 246** Shipowner country/area: backend `` vs research `` — 
+- **row 247** Shipowner country/area: backend `` vs research `` — 
+- **row 1166** Shipowner country/area: backend `` vs research `` — 
+- **row 1170** Shipowner country/area: backend `` vs research `` — 
+- **row 1171** Shipowner country/area: backend `` vs research `` — 
+- **row 1193** Shipowner country/area: backend `` vs research `` — 
+- **row 1194** Shipowner country/area: backend `` vs research `` — 
+- **row 1195** Shipowner country/area: backend `` vs research `` — 
+- **row 1190** Price: backend `` vs research `` — 
+- **row 1191** Price: backend `` vs research `` — 
+- **row 1192** Price: backend `` vs research `` — 
+- **row 205** Price: backend `` vs research `` — 
+- **row 206** Price: backend `` vs research `` — 
+- **row 1152** Price: backend `` vs research `` — 
+- **row 1153** Price: backend `` vs research `` — 
+- **row 1154** Price: backend `` vs research `` — 
+- **row 1155** Price: backend `` vs research `` — 
+- **row 1201** Price: backend `` vs research `` — 
+- **row 1202** Price: backend `` vs research `` — 
+- **row 1203** Price: backend `` vs research `` — 
+- **row 1204** Price: backend `` vs research `` — 
+- **row 193** Price: backend `` vs research `` — 
+- **row 194** Price: backend `` vs research `` — 
+- **row 195** Price: backend `` vs research `` — 
+- **row 1156** Price: backend `` vs research `` — 
+- **row 1156** Price: backend `` vs research `` — 
+- **row 1156** Price: backend `` vs research `` — 
+- **row 1157** Price: backend `` vs research `` — 
+- **row 1157** Price: backend `` vs research `` — 
+- **row 1157** Price: backend `` vs research `` — 
+- **row 1187** Price: backend `` vs research `` — 
+- **row 1188** Price: backend `` vs research `` — 
+- **row 1164** Price: backend `` vs research `` — 
+- **row 1165** Price: backend `` vs research `` — 
+- **row 373** Price: backend `` vs research `` — 
+- **row 384** Price: backend `` vs research `` — 
+- **row 387** Price: backend `` vs research `` — 
+- **row 1193** Price: backend `` vs research `` — 
+- **row 1194** Price: backend `` vs research `` — 
+- **row 1195** Price: backend `` vs research `` — 
+- **row 124** Price: backend `` vs research `` — 
+- **row 124** Price: backend `` vs research `` — 
+- **row 125** Price: backend `` vs research `` — 
+- **row 125** Price: backend `` vs research `` — 
+- **row 126** Price: backend `` vs research `` — 
+- **row 126** Price: backend `` vs research `` — 
+- **row 127** Price: backend `` vs research `` — 
+- **row 127** Price: backend `` vs research `` — 
+- **row 128** Price: backend `` vs research `` — 
+- **row 128** Price: backend `` vs research `` — 
+- **row 1150** Price: backend `` vs research `` — 
+- **row 1151** Price: backend `` vs research `` — 
+- **row 99** Price: backend `` vs research `` — 
+- **row 100** Price: backend `` vs research `` — 
+- **row 1172** Price: backend `` vs research `` — 
+- **row 1173** Price: backend `` vs research `` — 
+- **row 273** Price: backend `` vs research `` — 
+- **row 274** Price: backend `` vs research `` — 
+- **row 1092** Price: backend `` vs research `` — 
+- **row 1224** Price: backend `` vs research `` — 
+- **row 1225** Price: backend `` vs research `` — 
+- **row 1226** Price: backend `` vs research `` — 
+- **row 1170** Price: backend `` vs research `` — 
+- **row 1171** Price: backend `` vs research `` — 
+- **row 375** Hull number: backend `` vs research `` — 
+- **row 666** Hull number: backend `` vs research `` — 
+
+## 📭 Documented blanks (830)
+
+Researched, no sourceable value — honest negatives, **no action needed**. See QA_review for the search recipes.
+
+## Next steps
+
+1. Edit `decisions.csv` (flip any holds).  2. `python scripts/apply_batch.py --batch batches/2026-09-17_0511ET_data_fill_on_order`.  3. Apply: paste `apply_rows.csv` rows over the matching backend rows, **or** run the `apply_patch.gs` by-name applier on `apply_patch.csv`.  4. `python scripts/verify_apply.py --batch batches/2026-09-17_0511ET_data_fill_on_order` to confirm everything landed.

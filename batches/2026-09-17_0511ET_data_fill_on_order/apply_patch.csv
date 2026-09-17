@@ -1,0 +1,932 @@
+op,key,column,value
+set,1077,Shipowner country/area,Malaysia
+set,1077,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1078,Shipowner country/area,Malaysia
+set,1078,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,789,Shipowner country/area,Japan
+set,789,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1081,Shipowner country/area,Japan
+set,1081,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,697,Shipowner country/area,South Korea
+set,697,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,971,Shipowner country/area,Malaysia
+set,971,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,968,Shipowner country/area,Malaysia
+set,968,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,974,Shipowner country/area,Malaysia
+set,974,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,726,Shipowner country/area,Malaysia
+set,726,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,979,Shipowner country/area,Malaysia
+set,979,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,727,Shipowner country/area,Malaysia
+set,727,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,696,Shipowner country/area,South Korea
+set,696,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,688,Shipowner country/area,South Korea
+set,688,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,689,Shipowner country/area,South Korea
+set,689,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,693,Shipowner country/area,South Korea
+set,693,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,780,Shipowner country/area,Japan
+set,780,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1082,Shipowner country/area,Greece
+set,1083,Shipowner country/area,Greece
+set,946,Shipowner country/area,Japan
+set,946,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,975,Shipowner country/area,Malaysia
+set,975,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1046,Shipowner country/area,South Korea
+set,416,Shipowner country/area,Norway
+set,416,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,453,Shipowner country/area,Norway
+set,453,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,970,Shipowner country/area,Malaysia
+set,970,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,980,Shipowner country/area,Malaysia
+set,980,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,332,Shipowner country/area,Japan
+set,332,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,973,Shipowner country/area,Malaysia
+set,973,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1014,Shipowner country/area,Malaysia
+set,1014,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,698,Shipowner country/area,Norway
+set,698,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,768,Shipowner country/area,Japan
+set,768,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,870,Shipowner country/area,Greece
+set,870,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,1015,Shipowner country/area,Malaysia
+set,1015,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1016,Shipowner country/area,Malaysia
+set,1016,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1017,Shipowner country/area,Malaysia
+set,1017,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,652,Shipowner country/area,Japan
+set,652,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,653,Shipowner country/area,Japan
+set,653,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,659,Shipowner country/area,Japan
+set,659,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,765,Shipowner country/area,Japan
+set,765,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,793,Shipowner country/area,Japan
+set,793,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,867,Shipowner country/area,Greece
+set,867,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,1018,Shipowner country/area,Malaysia
+set,1018,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1019,Shipowner country/area,Malaysia
+set,1019,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1022,Shipowner country/area,Malaysia
+set,1022,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1031,Shipowner country/area,Norway
+set,1031,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,658,Shipowner country/area,Japan
+set,658,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,690,Shipowner country/area,South Korea
+set,690,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,761,Shipowner country/area,Japan
+set,761,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1023,Shipowner country/area,Malaysia
+set,1023,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1069,Shipowner country/area,Japan
+set,1069,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1075,Shipowner country/area,Japan
+set,1075,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,411,Shipowner country/area,Norway
+set,411,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,506,Shipowner country/area,Japan
+set,506,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,558,Shipowner country/area,Japan
+set,558,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,783,Shipowner country/area,Japan
+set,783,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,944,Shipowner country/area,Japan
+set,944,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1020,Shipowner country/area,Malaysia
+set,1020,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1021,Shipowner country/area,Malaysia
+set,1021,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1065,Shipowner country/area,Japan
+set,1065,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1066,Shipowner country/area,Japan
+set,1066,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,374,Shipowner country/area,Greece
+set,374,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,627,Shipowner country/area,Greece
+set,627,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,630,Shipowner country/area,Greece
+set,630,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,868,Shipowner country/area,Greece
+set,868,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,987,Shipowner country/area,Norway
+set,987,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1032,Shipowner country/area,Norway
+set,1032,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1067,Shipowner country/area,Japan
+set,1067,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1068,Shipowner country/area,Japan
+set,1068,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1093,Shipowner country/area,Norway
+set,1093,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,564,Shipowner country/area,Japan
+set,564,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,625,Shipowner country/area,Greece
+set,625,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,628,Shipowner country/area,Greece
+set,628,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,655,Shipowner country/area,Japan
+set,655,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,504,Shipowner country/area,Greece
+set,504,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,725,Shipowner country/area,Greece
+set,725,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,942,Shipowner country/area,Japan
+set,942,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,947,Shipowner country/area,Greece
+set,947,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1013,Shipowner country/area,Japan
+set,1013,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1055,Shipowner country/area,Greece
+set,1055,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,1138,Shipowner country/area,Greece
+set,1138,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,615,Shipowner country/area,Greece
+set,615,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,618,Shipowner country/area,Greece
+set,618,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,620,Shipowner country/area,Greece
+set,620,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,621,Shipowner country/area,Greece
+set,621,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,742,Shipowner country/area,Norway
+set,742,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,988,Shipowner country/area,Norway
+set,988,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,694,Shipowner country/area,South Korea
+set,694,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,695,Shipowner country/area,South Korea
+set,695,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,526,Shipowner country/area,Japan
+set,526,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,527,Shipowner country/area,Japan
+set,527,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,616,Shipowner country/area,Greece
+set,616,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,622,Shipowner country/area,Greece
+set,622,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,623,Shipowner country/area,Greece
+set,623,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,803,Shipowner country/area,Japan
+set,803,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,945,Shipowner country/area,Japan
+set,945,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,323,Shipowner country/area,Norway
+set,323,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,430,Shipowner country/area,Japan
+set,430,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,528,Shipowner country/area,Japan
+set,528,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,563,Shipowner country/area,Japan
+set,563,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,619,Shipowner country/area,Greece
+set,619,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,634,Shipowner country/area,Greece
+set,634,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,852,Shipowner country/area,Japan
+set,852,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,964,Shipowner country/area,South Korea
+set,965,Shipowner country/area,South Korea
+set,986,Shipowner country/area,Norway
+set,986,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,381,Shipowner country/area,Greece
+set,381,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,395,Shipowner country/area,Greece
+set,418,Shipowner country/area,Greece
+set,418,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,463,Shipowner country/area,Denmark
+set,525,Shipowner country/area,Japan
+set,525,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,532,Shipowner country/area,Greece
+set,532,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,617,Shipowner country/area,Greece
+set,617,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,633,Shipowner country/area,Greece
+set,633,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,636,Shipowner country/area,Greece
+set,636,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,638,Shipowner country/area,Greece
+set,638,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,743,Shipowner country/area,Greece
+set,743,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,955,Shipowner country/area,Greece
+set,955,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,982,Shipowner country/area,Greece
+set,982,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1084,Shipowner country/area,Norway
+set,1084,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1102,Shipowner country/area,Greece
+set,1102,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,322,Shipowner country/area,Greece
+set,393,Shipowner country/area,Greece
+set,394,Shipowner country/area,Greece
+set,406,Shipowner country/area,Greece
+set,409,Shipowner country/area,Greece
+set,460,Shipowner country/area,Denmark
+set,461,Shipowner country/area,Denmark
+set,462,Shipowner country/area,Denmark
+set,492,Shipowner country/area,Greece
+set,492,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,524,Shipowner country/area,Japan
+set,524,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,529,Shipowner country/area,Japan
+set,529,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,614,Shipowner country/area,Greece
+set,614,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,635,Shipowner country/area,Greece
+set,635,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,637,Shipowner country/area,Greece
+set,637,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,656,Shipowner country/area,Japan
+set,656,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,771,Shipowner country/area,Japan
+set,771,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,772,Shipowner country/area,Japan
+set,772,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,773,Shipowner country/area,Japan
+set,773,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,808,Shipowner country/area,Greece
+set,808,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,809,Shipowner country/area,Greece
+set,809,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,810,Shipowner country/area,Greece
+set,810,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,966,Shipowner country/area,South Korea
+set,985,Shipowner country/area,Norway
+set,985,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,376,Shipowner country/area,Norway
+set,376,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,539,Shipowner country/area,Japan
+set,539,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,657,Shipowner country/area,Japan
+set,657,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,687,Shipowner country/area,Norway
+set,687,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,816,Shipowner country/area,Norway
+set,816,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,967,Shipowner country/area,South Korea
+set,992,Shipowner country/area,Norway
+set,992,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1036,Shipowner country/area,China
+set,1036,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,382,Shipowner country/area,Greece
+set,407,Shipowner country/area,Greece
+set,464,Shipowner country/area,Denmark
+set,465,Shipowner country/area,Denmark
+set,543,Shipowner country/area,China
+set,543,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,592,Shipowner country/area,Norway
+set,592,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,594,Shipowner country/area,Norway
+set,594,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,651,Shipowner country/area,Norway
+set,651,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,661,Shipowner country/area,Norway
+set,661,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,741,Shipowner country/area,China
+set,741,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,750,Shipowner country/area,Norway
+set,750,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,953,Shipowner country/area,Norway
+set,953,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,990,Shipowner country/area,Norway
+set,990,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1029,Shipowner country/area,Malaysia
+set,1029,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1030,Shipowner country/area,Malaysia
+set,1030,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,70,Shipowner country/area,Denmark
+set,77,Shipowner country/area,Denmark
+set,79,Shipowner country/area,Denmark
+set,101,Shipowner country/area,Japan
+set,101,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,108,Shipowner country/area,Greece
+set,108,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,149,Shipowner country/area,United Arab Emirates
+set,149,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,174,Shipowner country/area,South Korea
+set,174,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,175,Shipowner country/area,South Korea
+set,175,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,176,Shipowner country/area,South Korea
+set,176,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,177,Shipowner country/area,South Korea
+set,177,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,179,Shipowner country/area,Greece
+set,225,Shipowner country/area,Norway
+set,225,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,229,Shipowner country/area,South Korea
+set,325,Shipowner country/area,Greece
+set,385,Shipowner country/area,Greece
+set,410,Shipowner country/area,Greece
+set,466,Shipowner country/area,Denmark
+set,540,Shipowner country/area,Japan
+set,540,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,678,Shipowner country/area,South Korea
+set,678,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,702,Shipowner country/area,Norway
+set,702,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,859,Shipowner country/area,Greece
+set,859,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,977,Shipowner country/area,South Korea
+set,977,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,93,Shipowner country/area,Denmark
+set,95,Shipowner country/area,Denmark
+set,105,Shipowner country/area,Denmark
+set,121,Shipowner country/area,Denmark
+set,180,Shipowner country/area,South Korea
+set,182,Shipowner country/area,Norway
+set,182,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,183,Shipowner country/area,Norway
+set,183,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,226,Shipowner country/area,Norway
+set,226,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,230,Shipowner country/area,Norway
+set,230,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,261,Shipowner country/area,Japan
+set,261,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,262,Shipowner country/area,Japan
+set,262,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,276,Shipowner country/area,China
+set,276,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,277,Shipowner country/area,China
+set,277,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,288,Shipowner country/area,Hong Kong
+set,288,Shipowner country/area [ref],https://www1.hkexnews.hk/listedco/listconews/sehk/2020/0630/2020063001526.pdf
+set,701,Shipowner country/area,Norway
+set,701,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,849,Shipowner country/area,Norway
+set,849,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,864,Shipowner country/area,Norway
+set,864,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,972,Shipowner country/area,South Korea
+set,972,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
+set,1107,Shipowner country/area,Norway
+set,1107,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1111,Shipowner country/area,Greece
+set,1111,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,1132,Shipowner country/area,Greece
+set,1132,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,30,Shipowner country/area,Japan
+set,30,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,63,Shipowner country/area,Malaysia
+set,63,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,64,Shipowner country/area,Malaysia
+set,64,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,65,Shipowner country/area,Greece
+set,65,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,66,Shipowner country/area,Greece
+set,66,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,109,Shipowner country/area,Greece
+set,109,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,137,Shipowner country/area,Malaysia
+set,137,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,144,Shipowner country/area,Malaysia
+set,144,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,181,Shipowner country/area,South Korea
+set,184,Shipowner country/area,Norway
+set,184,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,185,Shipowner country/area,Norway
+set,185,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,186,Shipowner country/area,Norway
+set,186,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,187,Shipowner country/area,Norway
+set,187,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,188,Shipowner country/area,Norway
+set,188,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,189,Shipowner country/area,Japan
+set,189,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,190,Shipowner country/area,Japan
+set,190,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,191,Shipowner country/area,Japan
+set,191,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,192,Shipowner country/area,Japan
+set,192,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,193,Shipowner country/area,Japan
+set,193,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,194,Shipowner country/area,Japan
+set,194,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,195,Shipowner country/area,Japan
+set,195,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,197,Shipowner country/area,Japan
+set,197,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,231,Shipowner country/area,Greece
+set,231,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,232,Shipowner country/area,South Korea
+set,233,Shipowner country/area,South Korea
+set,235,Shipowner country/area,Greece
+set,235,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,236,Shipowner country/area,Greece
+set,236,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,241,Shipowner country/area,Japan
+set,241,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,251,Shipowner country/area,Denmark
+set,252,Shipowner country/area,Denmark
+set,263,Shipowner country/area,Japan
+set,263,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,264,Shipowner country/area,Japan
+set,264,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,265,Shipowner country/area,Japan
+set,265,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,273,Shipowner country/area,Japan
+set,273,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,274,Shipowner country/area,Japan
+set,274,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,289,Shipowner country/area,Hong Kong
+set,289,Shipowner country/area [ref],https://www1.hkexnews.hk/listedco/listconews/sehk/2020/0630/2020063001526.pdf
+set,324,Shipowner country/area,Greece
+set,373,Shipowner country/area,Greece
+set,375,Shipowner country/area,Russia
+set,375,Shipowner country/area [ref],https://2021-2025.state.gov/imposing-measures-in-response-to-navalnys-death-and-two-years-of-russias-full-scale-war-against-ukraine/
+set,384,Shipowner country/area,Greece
+set,386,Shipowner country/area,Greece
+set,708,Shipowner country/area,United Arab Emirates
+set,708,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,709,Shipowner country/area,United Arab Emirates
+set,709,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,710,Shipowner country/area,United Arab Emirates
+set,710,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,714,Shipowner country/area,Norway
+set,714,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1092,Shipowner country/area,Japan
+set,1092,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,147,Shipowner country/area,Malaysia
+set,147,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,156,Shipowner country/area,Malaysia
+set,156,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,157,Shipowner country/area,Malaysia
+set,157,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,198,Shipowner country/area,Japan
+set,198,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,199,Shipowner country/area,Japan
+set,199,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,200,Shipowner country/area,Japan
+set,200,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,203,Shipowner country/area,Greece
+set,204,Shipowner country/area,Greece
+set,239,Shipowner country/area,Japan
+set,239,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,240,Shipowner country/area,Japan
+set,240,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,242,Shipowner country/area,Japan
+set,242,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,243,Shipowner country/area,Japan
+set,243,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,253,Shipowner country/area,Denmark
+set,254,Shipowner country/area,Denmark
+set,255,Shipowner country/area,Denmark
+set,256,Shipowner country/area,Denmark
+set,387,Shipowner country/area,Greece
+set,513,Shipowner country/area,China
+set,513,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,514,Shipowner country/area,China
+set,514,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,541,Shipowner country/area,Japan
+set,541,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,158,Shipowner country/area,United Arab Emirates
+set,158,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,159,Shipowner country/area,United Arab Emirates
+set,159,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,160,Shipowner country/area,United Arab Emirates
+set,160,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,161,Shipowner country/area,United Arab Emirates
+set,161,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
+set,205,Shipowner country/area,Greece
+set,206,Shipowner country/area,Greece
+set,244,Shipowner country/area,Greece
+set,245,Shipowner country/area,Greece
+set,246,Shipowner country/area,Greece
+set,247,Shipowner country/area,Greece
+set,508,Shipowner country/area,China
+set,508,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
+set,1144,Shipowner country/area,United States
+set,1144,Shipowner country/area [ref],https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html
+set,1145,Shipowner country/area,United States
+set,1145,Shipowner country/area [ref],https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html
+set,1146,Shipowner country/area,Greece
+set,1146,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,1147,Shipowner country/area,Greece
+set,1147,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,1152,Shipowner country/area,Japan
+set,1152,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1153,Shipowner country/area,Japan
+set,1153,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1156,Shipowner country/area,United Kingdom
+set,1156,Shipowner country/area [ref],https://www.purus.com/our-services/gas
+set,1166,Shipowner country/area,Denmark
+set,1170,Shipowner country/area,Denmark
+set,1171,Shipowner country/area,Denmark
+set,1175,Shipowner country/area,Norway
+set,1175,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1176,Shipowner country/area,Norway
+set,1176,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1177,Shipowner country/area,Norway
+set,1177,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1178,Shipowner country/area,Norway
+set,1178,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1182,Shipowner country/area,Greece
+set,1182,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1183,Shipowner country/area,Greece
+set,1183,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1184,Shipowner country/area,Greece
+set,1184,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1185,Shipowner country/area,Greece
+set,1185,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1193,Shipowner country/area,Greece
+set,1216,Yard location latitude,22.33849
+set,1216,Yard location longitude,114.092895
+set,1216,Yard location plus code,"83QV+H7 Sai Tso Wan, Hong Kong"
+set,1216,Yard location accuracy,exact
+set,1216,Yard location lat/lon [ref],"https://www.google.com/maps/place/China+Merchants+Industry+Co+Ltd/@22.338976,114.0905771,814m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3403fed4344ce4b1:0x32fadf093b2cb212!8m2!3d22.338976!4d114.093152!16s%2Fg%2F12hmyy568?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+set,1217,Yard location latitude,22.33849
+set,1217,Yard location longitude,114.092895
+set,1217,Yard location plus code,"83QV+H7 Sai Tso Wan, Hong Kong"
+set,1217,Yard location accuracy,exact
+set,1217,Yard location lat/lon [ref],"https://www.google.com/maps/place/China+Merchants+Industry+Co+Ltd/@22.338976,114.0905771,814m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3403fed4344ce4b1:0x32fadf093b2cb212!8m2!3d22.338976!4d114.093152!16s%2Fg%2F12hmyy568?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+set,1154,Shipowner country/area,Japan
+set,1154,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1155,Shipowner country/area,Japan
+set,1155,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1157,Shipowner country/area,United Kingdom
+set,1157,Shipowner country/area [ref],https://www.purus.com/our-services/gas
+set,1174,Shipowner country/area,United Kingdom
+set,1174,Shipowner country/area [ref],https://www.purus.com/our-services/gas
+set,1179,Shipowner country/area,Norway
+set,1179,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1180,Shipowner country/area,Norway
+set,1180,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1181,Shipowner country/area,Norway
+set,1181,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1194,Shipowner country/area,Greece
+set,1195,Shipowner country/area,Greece
+set,1196,Shipowner country/area,Malaysia
+set,1196,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1197,Shipowner country/area,Malaysia
+set,1197,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1199,Shipowner country/area,Malaysia
+set,1199,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1201,Shipowner country/area,Japan
+set,1201,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1202,Shipowner country/area,Japan
+set,1202,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1203,Shipowner country/area,Japan
+set,1203,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1204,Shipowner country/area,Japan
+set,1204,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1205,Shipowner country/area,Norway
+set,1205,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
+set,1207,Shipowner country/area,Greece
+set,1207,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1208,Shipowner country/area,Greece
+set,1208,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,1227,Shipowner country/area,Bermuda
+set,1227,Shipowner country/area [ref],https://cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/
+set,1198,Shipowner country/area,Malaysia
+set,1198,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1200,Shipowner country/area,Malaysia
+set,1200,Shipowner country/area [ref],https://www.shipvault.com/ships/113754
+set,1224,Shipowner country/area,Japan
+set,1224,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1225,Shipowner country/area,Japan
+set,1225,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1226,Shipowner country/area,Japan
+set,1226,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1219,Hull number,Hull 2628 (Hanwha)
+set,1219,Hull number [ref],https://www.shipvault.com/ships/500549
+set,1219,IMO number,1185144
+set,1219,IMO number [ref],https://www.shipvault.com/ships/500549
+set,1190,Propulsion type,X-DF
+set,1190,Propulsion type [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1190,Operator/charterer,Nigeria LNG
+set,1190,Operator/charterer [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1191,Propulsion type,X-DF
+set,1191,Propulsion type [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1191,Operator/charterer,Nigeria LNG
+set,1191,Operator/charterer [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1192,Propulsion type,X-DF
+set,1192,Propulsion type [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1192,Operator/charterer,Nigeria LNG
+set,1192,Operator/charterer [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,207,Contract date,27-Sep-2023
+set,207,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,207,Price,229000000
+set,207,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,207,Operator/charterer,QatarEnergy
+set,207,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,208,Contract date,27-Sep-2023
+set,208,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,208,Price,229000000
+set,208,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,208,Operator/charterer,QatarEnergy
+set,208,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,209,Contract date,27-Sep-2023
+set,209,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,209,Price,229000000
+set,209,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,209,Operator/charterer,QatarEnergy
+set,209,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,210,Contract date,27-Sep-2023
+set,210,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,210,Price,229000000
+set,210,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,210,Operator/charterer,QatarEnergy
+set,210,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,211,Contract date,27-Sep-2023
+set,211,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,211,Price,229000000
+set,211,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,211,Operator/charterer,QatarEnergy
+set,211,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,212,Contract date,27-Sep-2023
+set,212,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,212,Price,229000000
+set,212,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,212,Operator/charterer,QatarEnergy
+set,212,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,213,Contract date,27-Sep-2023
+set,213,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,213,Price,229000000
+set,213,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,213,Operator/charterer,QatarEnergy
+set,213,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,214,Contract date,27-Sep-2023
+set,214,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,214,Price,229000000
+set,214,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,214,Operator/charterer,QatarEnergy
+set,214,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,215,Contract date,27-Sep-2023
+set,215,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,215,Price,229000000
+set,215,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,215,Operator/charterer,QatarEnergy
+set,215,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,216,Contract date,27-Sep-2023
+set,216,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,216,Price,229000000
+set,216,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,216,Operator/charterer,QatarEnergy
+set,216,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,217,Contract date,27-Sep-2023
+set,217,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,217,Price,229000000
+set,217,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,217,Operator/charterer,QatarEnergy
+set,217,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,218,Contract date,27-Sep-2023
+set,218,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,218,Price,229000000
+set,218,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,218,Operator/charterer,QatarEnergy
+set,218,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,219,Contract date,27-Sep-2023
+set,219,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,219,Price,229000000
+set,219,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,219,Operator/charterer,QatarEnergy
+set,219,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,220,Contract date,27-Sep-2023
+set,220,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,220,Price,229000000
+set,220,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,220,Operator/charterer,QatarEnergy
+set,220,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,221,Contract date,27-Sep-2023
+set,221,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,221,Price,229000000
+set,221,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,221,Operator/charterer,QatarEnergy
+set,221,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,222,Contract date,27-Sep-2023
+set,222,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,222,Price,229000000
+set,222,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,222,Operator/charterer,QatarEnergy
+set,222,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,223,Contract date,27-Sep-2023
+set,223,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,223,Price,229000000
+set,223,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
+set,223,Operator/charterer,QatarEnergy
+set,223,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,507,Contract date,31-Aug-2023
+set,507,Contract date [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
+set,507,Price,233300000
+set,507,Price [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
+set,507,Operator/charterer,Sinopec
+set,507,Operator/charterer [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
+set,519,Contract date,31-Aug-2023
+set,519,Contract date [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
+set,519,Price,233300000
+set,519,Price [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
+set,519,Operator/charterer,Sinopec
+set,519,Operator/charterer [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
+set,1152,Price,260000000
+set,1153,Price,260000000
+set,1154,Price,260000000
+set,1155,Price,260000000
+set,1152,Operator/charterer,Cheniere
+set,1152,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
+set,1153,Operator/charterer,Cheniere
+set,1153,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
+set,1154,Operator/charterer,Cheniere
+set,1154,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
+set,1155,Operator/charterer,Cheniere
+set,1155,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
+set,1201,Price,255000000
+set,1202,Price,255000000
+set,1203,Price,255000000
+set,1204,Price,255000000
+set,1201,Operator/charterer,Cheniere
+set,1201,Operator/charterer [ref],"https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/"
+set,1202,Operator/charterer,Cheniere
+set,1202,Operator/charterer [ref],"https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/"
+set,1203,Operator/charterer,Cheniere
+set,1203,Operator/charterer [ref],"https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/"
+set,1204,Operator/charterer,Cheniere
+set,1204,Operator/charterer [ref],"https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/"
+set,193,Contract date,10-Aug-2022
+set,193,Contract date [ref],https://www.nyk.com/english/news/2022/20220810_01.html
+set,194,Contract date,10-Aug-2022
+set,194,Contract date [ref],https://www.nyk.com/english/news/2022/20220810_01.html
+set,195,Contract date,10-Aug-2022
+set,195,Contract date [ref],https://www.nyk.com/english/news/2022/20220810_01.html
+set,193,Price,214285714
+set,194,Price,214285714
+set,195,Price,214285714
+set,193,Operator/charterer,QatarEnergy
+set,193,Operator/charterer [ref],"https://www.nyk.com/english/news/2022/20220810_01.html, https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar"
+set,194,Operator/charterer,QatarEnergy
+set,194,Operator/charterer [ref],"https://www.nyk.com/english/news/2022/20220810_01.html, https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar"
+set,195,Operator/charterer,QatarEnergy
+set,195,Operator/charterer [ref],"https://www.nyk.com/english/news/2022/20220810_01.html, https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar"
+set,197,Operator/charterer,EnBW
+set,197,Operator/charterer [ref],"https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/"
+set,198,Operator/charterer,EnBW
+set,198,Operator/charterer [ref],"https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/"
+set,199,Operator/charterer,EnBW
+set,199,Operator/charterer [ref],"https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/"
+set,200,Operator/charterer,EnBW
+set,200,Operator/charterer [ref],"https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/"
+set,156,Operator/charterer,Petronas
+set,156,Operator/charterer [ref],"https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/"
+set,157,Operator/charterer,Petronas
+set,157,Operator/charterer [ref],"https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/"
+set,1156,Price,251500000
+set,1157,Price,251500000
+set,1156,Cargo type,membrane
+set,1156,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
+set,1157,Cargo type,membrane
+set,1157,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
+set,509,Operator/charterer,China Gas Hongda Energy Trading
+set,509,Operator/charterer [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,510,Operator/charterer,China Gas Hongda Energy Trading
+set,510,Operator/charterer [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,511,Operator/charterer,China Gas Hongda Energy Trading
+set,511,Operator/charterer [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,512,Operator/charterer,China Gas Hongda Energy Trading
+set,512,Operator/charterer [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,509,Price,235000000
+set,509,Price [ref],"https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/"
+set,510,Price,235000000
+set,510,Price [ref],"https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/"
+set,511,Price,235000000
+set,511,Price [ref],"https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/"
+set,512,Price,235000000
+set,512,Price [ref],"https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/, https://lngprime.com/asia/china-gas-wah-kwong-and-cssc-shipping-decide-to-order-lng-carrier-duo/107180/"
+set,509,Cargo type,membrane
+set,509,Cargo type [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,510,Cargo type,membrane
+set,510,Cargo type [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,511,Cargo type,membrane
+set,511,Cargo type [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,512,Cargo type,membrane
+set,512,Cargo type [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,52,Operator/charterer,Chevron
+set,52,Operator/charterer [ref],"https://www.mol.co.jp/en/pr/2026/26044.html, https://cyprusshippingnews.com/2026/09/14/mol-worlds-first-lng-carrier-equipped-with-wind-challenger/"
+set,1041,Price,413000000
+set,1041,Price [ref],"https://lngprime.com/asia/hanwha-ocean-to-build-fsru-for-413-million/127579/, https://splash247.com/mol-confirms-order-for-singapore-frsu/"
+set,273,Price,210000000
+set,274,Price,210000000
+set,1092,Price,210000000
+set,1224,Price,210000000
+set,1225,Price,210000000
+set,1226,Price,210000000
+set,1170,Price,257000000
+set,1171,Price,257000000
+set,324,Hull number,Hull 8199 (HSHI)
+set,324,Hull number [ref],https://www.shipvault.com/ships/457557
+set,372,Hull number,Hull 2560 (Hanwha)
+set,372,Hull number [ref],https://www.shipvault.com/ships/465039
+set,373,Hull number,Hull 8202 (HSHI)
+set,373,Hull number [ref],https://www.shipvault.com/ships/462871
+set,384,Hull number,Hull 8203 (HSHI)
+set,384,Hull number [ref],https://www.shipvault.com/ships/462872
+set,386,Hull number,Hull 8198 (HSHI)
+set,386,Hull number [ref],https://www.shipvault.com/ships/457556
+set,476,Hull number,Hull 3435 (HDHHI)
+set,476,Hull number [ref],https://www.shipvault.com/ships/467732
+set,515,Hull number,Hull G175K-04
+set,515,Hull number [ref],https://www.shipvault.com/ships/459925
+set,516,Hull number,Hull G175K-06
+set,516,Hull number [ref],https://www.shipvault.com/ships/459927
+set,517,Hull number,Hull G175K-07
+set,517,Hull number [ref],https://www.shipvault.com/ships/461880
+set,674,Hull number,Hull 2610 (SHI)
+set,674,Hull number [ref],https://www.shipvault.com/ships/454342
+set,714,Hull number,Hull 8179 (HDHHI)
+set,714,Hull number [ref],https://www.shipvault.com/ships/455819
+set,976,Hull number,Hull 2632 (HSHI)
+set,976,Hull number [ref],https://www.shipvault.com/ships/456918
+set,978,Hull number,Hull 2633 (SHI)
+set,978,Hull number [ref],https://www.shipvault.com/ships/456919
+set,387,Hull number,Hull 8207 (HSHI)
+set,387,Hull number [ref],https://www.shipvault.com/ships/465071
+set,408,Hull number,Hull 8206 (HSHI)
+set,408,Hull number [ref],https://www.shipvault.com/ships/465070
+set,487,Hull number,Hull 3434 (HDHHI)
+set,487,Hull number [ref],https://www.shipvault.com/ships/466740
+set,489,Hull number,Hull 3433 (HDHHI)
+set,489,Hull number [ref],https://www.shipvault.com/ships/466739
+set,507,Hull number,Hull G175K-10
+set,507,Hull number [ref],https://www.shipvault.com/ships/481198
+set,510,Hull number,Hull G175K-13
+set,510,Hull number [ref],https://www.shipvault.com/ships/469428
+set,513,Hull number,Hull G175K-16
+set,513,Hull number [ref],https://www.shipvault.com/ships/470360
+set,514,Hull number,Hull G175K-17
+set,514,Hull number [ref],https://www.shipvault.com/ships/470361
+set,518,Hull number,Hull G175K-08
+set,518,Hull number [ref],https://www.shipvault.com/ships/461881
+set,519,Hull number,Hull G175K-09
+set,519,Hull number [ref],https://www.shipvault.com/ships/481200
+set,541,Hull number,Hull 8174 (HSHI)
+set,541,Hull number [ref],https://www.shipvault.com/ships/461185
+set,639,Hull number,Hull 3515 (HDHHI)
+set,639,Hull number [ref],https://www.shipvault.com/ships/478328
+set,508,Hull number,Hull G175K-11
+set,508,Hull number [ref],https://www.shipvault.com/ships/481199
+set,509,Hull number,Hull G175K-12
+set,509,Hull number [ref],https://www.shipvault.com/ships/469427
+set,511,Hull number,Hull G175K-14
+set,511,Hull number [ref],https://www.shipvault.com/ships/485162
+set,512,Hull number,Hull G175K-15
+set,512,Hull number [ref],https://www.shipvault.com/ships/485163
+set,207,Price currency,USD
+set,208,Price currency,USD
+set,209,Price currency,USD
+set,210,Price currency,USD
+set,211,Price currency,USD
+set,212,Price currency,USD
+set,213,Price currency,USD
+set,214,Price currency,USD
+set,215,Price currency,USD
+set,216,Price currency,USD
+set,217,Price currency,USD
+set,218,Price currency,USD
+set,219,Price currency,USD
+set,220,Price currency,USD
+set,221,Price currency,USD
+set,222,Price currency,USD
+set,223,Price currency,USD
+set,507,Price currency,USD
+set,519,Price currency,USD
+set,1152,Price currency,USD
+set,1153,Price currency,USD
+set,1154,Price currency,USD
+set,1155,Price currency,USD
+set,1201,Price currency,USD
+set,1202,Price currency,USD
+set,1203,Price currency,USD
+set,1204,Price currency,USD
+set,193,Price currency,USD
+set,194,Price currency,USD
+set,195,Price currency,USD
+set,1156,Price currency,USD
+set,1157,Price currency,USD
+set,509,Price currency,USD
+set,510,Price currency,USD
+set,511,Price currency,USD
+set,512,Price currency,USD
+set,1041,Price currency,USD
+set,273,Price currency,USD
+set,274,Price currency,USD
+set,1092,Price currency,USD
+set,1224,Price currency,USD
+set,1225,Price currency,USD
+set,1226,Price currency,USD
+set,1170,Price currency,USD
+set,1171,Price currency,USD

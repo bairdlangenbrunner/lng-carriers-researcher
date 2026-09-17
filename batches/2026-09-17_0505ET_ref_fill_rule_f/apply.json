@@ -1,0 +1,13 @@
+{
+  "batch": "2026-09-17_0505ET_ref_fill_rule_f",
+  "mode": "ref_fill",
+  "accepted_cells": [],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 8,
+    "accepted": 0,
+    "hold": 8,
+    "reject": 0,
+    "conflicts": 0
+  }
+}
