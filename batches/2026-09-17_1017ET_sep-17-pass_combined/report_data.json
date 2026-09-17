@@ -31589,7 +31589,7 @@
    "source URL(s)": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
    "confidence": "Y",
    "derivable": "False",
-   "decision": "hold",
+   "decision": "reject",
    "gate verdict": "PASS (corroborates)",
    "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this"
   },

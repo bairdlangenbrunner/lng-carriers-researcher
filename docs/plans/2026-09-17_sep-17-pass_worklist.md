@@ -12,8 +12,8 @@ research pass. Tick items as you go. Detail behind every item is in
 - The research is done. Six batches are merged to main (PRs #11–#18), each with
   `digest.md`, `decisions.csv` and offset-proof apply artifacts.
 - Combined workbook (name = build date + ET time; newest file in the dir is current):
-  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1715ET.xlsx`
-  — 20 sheets, 1,912 proposals (1,323 accept / 589 hold), keyed by live sheet row; the
+  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1720ET.xlsx`
+  — 20 sheets, 1,912 proposals (1,323 accept / 588 hold / 1 reject), keyed by live sheet row; the
   `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).
 - Report shared with Rob is at version 4 and **predates batches 7–9** (no IGU section, no
   scrapped rows; not republished): https://claude.ai/artifact/C1eEJt5CKeqauvfGGg8Ph3
@@ -111,7 +111,7 @@ leads, so each accepted item needs a verified ref and goes into a follow-up `fix
 - [ ] **Vessel type**: row 81 → IGU **FSU** this edition (FSUs are out of scope); row 270
       `conventional` vs IGU FSRU in both editions. Row 61 Puteri Delima Satu (in neither
       IGU edition): **done — batch 9 proposes `FSU`** on MISC's release + Annual Report 2025
-      (so reject batch 8's held `conventional` ref on row 61).
+      (batch 8's held `conventional` ref on row 61 is **rejected**, Baird 2026-09-17).
 - [ ] **~20 renames / sales IGU picked up** (rows 190, 124, 57, 69, 70, 364, 365, 91, 73, 167,
       742, 114, 21, 563, 62, 144; Karadeniz restylings 29 / 39 / 20 / 11; owner BW → Venture
       Global on 818 / 819) — each needs a ref. **Backend name defects**: rows 461 `Hoegh`,
@@ -149,10 +149,11 @@ silence is not a statement — batch 9, with demolition refs), rows 873 / 910 sp
 - [ ] **REMINDER — open decision (Baird asked to be reminded):** should IGU-2026-only cells get a
       second reference at the ref-validation step? They are identifiable by the PDF URL being their
       only ref. Raise at apply / next citation-QC pass / pre-release QC, whichever is first.
-- [ ] **25 holds** in `decisions.csv`: Status → `on order` + delivery year on row 814 and the six
+- [ ] **24 holds** in `decisions.csv`: Status → `on order` + delivery year on row 814 and the six
       Arctic LNG 2 hulls (797, 799, 805, 806, 812, 823); Vessel type row 81 → FSU and row 270 →
-      FSRU; Karadeniz restylings (11, 20, 29, 39); row 785 `Al Kheesah`; row 929 `TFDE`; rows 61 /
-      994 / 1118 Vessel type refs (row 61: reject — batch 9 proposes `FSU` there).
+      FSRU; Karadeniz restylings (11, 20, 29, 39); row 785 `Al Kheesah`; row 929 `TFDE`; rows
+      994 / 1118 Vessel type refs. (Row 61 Vessel type ref: rejected 2026-09-17 — batch 9 proposes
+      `FSU` there.)
 - [ ] **`QC-max` vocabulary decision**: IGU types the 24 × 271,000 cbm QatarEnergy ships (rows
       1070–1074, 1119–1131, 1174–1176, 1179–1181) `QC-max`; the vocabulary has no such value, so
       their blank Vessel type is unproposed (`manual_review.json`).
@@ -174,7 +175,7 @@ order is about readability, not safety).
 - [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
       agree in value) + verify. After batch 6: both touch row 814's Status `[ref]`.
 - [ ] Batch 9 — apply + verify (any order; its only shared cell is row 61 Vessel type, which
-      batch 8 holds as `conventional` — reject that hold). If the sheet's
+      batch 8 offered a `conventional` ref for — rejected 2026-09-17). If the sheet's
       Status column has a validation dropdown, add `scrapped` to it first. Row 61 → FSU changes
       the map fleet: re-export after applying.
 - [ ] Review any HIGH/MED group in each `dedupe_report.csv` (apply.md §5a). Known MED
