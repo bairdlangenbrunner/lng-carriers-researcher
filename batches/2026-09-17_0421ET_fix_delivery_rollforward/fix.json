@@ -1,6 +1,6 @@
 {
  "batch_label": "Delivery roll-forward - on-order rows checked against shipvault + vesselfinder + marinetraffic.org (2026-09-17)",
- "reason": "Backend had not moved since June 2026. Every on-order row with an IMO was looked up in shipvault (status / delivered date / yard no.) and vesselfinder (AIS-registered name, MMSI, year built). Delivered vessels move to active with their real name; delivery years are corrected to the actual year; undelivered 2026 rows that shipvault now schedules for 2027+ are rolled forward. The rows vesselfinder never answered (IP ban at ~150/323) were cross-checked on marinetraffic.org the same afternoon (95 IMOs, paced).",
+ "reason": "Backend had not moved since June 2026. Every on-order row with an IMO was looked up in shipvault (status / delivered date / yard no.) and vesselfinder (AIS-registered name, MMSI, year built). Delivered vessels move to active with their real name; delivery years are corrected to the actual year; undelivered 2026 rows that shipvault now schedules for 2027+ are rolled forward. The rows vesselfinder never answered (IP ban at ~150/323) were cross-checked on marinetraffic.org the same afternoon (all 176 IMOs, paced, in two runs).",
  "corrections": [
   {
    "row_id": "6",
@@ -4069,7 +4069,7 @@
     {
      "field": "Name",
      "new_value": "Al Nasraniya",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/476659",
@@ -4078,9 +4078,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NASRANIYA/1069821/538011621",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2585 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2585 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069821 as AL NASRANIYA (MMSI 538011621)"
     }
    ]
   },
@@ -4091,7 +4095,7 @@
     {
      "field": "Name",
      "new_value": "Al Yousifiya",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/476660",
@@ -4100,9 +4104,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-YOUSIFIYA/1069845/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2586 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2586 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069845 as AL YOUSIFIYA"
     }
    ]
   },
@@ -4113,7 +4121,7 @@
     {
      "field": "Name",
      "new_value": "Athba",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/476661",
@@ -4122,9 +4130,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ATHBA/1069869/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2587 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2587 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069869 as ATHBA"
     }
    ]
   },
@@ -4135,7 +4147,7 @@
     {
      "field": "Name",
      "new_value": "E Qab",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/476662",
@@ -4144,9 +4156,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/E-QAB/1069871/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2588 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2588 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069871 as E QAB"
     }
    ]
   },
@@ -4157,7 +4173,7 @@
     {
      "field": "Name",
      "new_value": "Ghash Sham",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478215",
@@ -4166,9 +4182,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GHASH-SHAM/1069895/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2589 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2589 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069895 as GHASH SHAM"
     }
    ]
   },
@@ -4179,7 +4199,7 @@
     {
      "field": "Name",
      "new_value": "Al Egdah",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478216",
@@ -4188,9 +4208,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-EGDAH/1069924/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2590 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2590 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069924 as AL EGDAH"
     }
    ]
   },
@@ -4201,7 +4225,7 @@
     {
      "field": "Name",
      "new_value": "Al Khbaib",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478217",
@@ -4210,9 +4234,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-KHBAIB/1069936/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2591 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2591 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069936 as AL KHBAIB"
     }
    ]
   },
@@ -4223,7 +4251,7 @@
     {
      "field": "Name",
      "new_value": "Khowzan",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478218",
@@ -4232,9 +4260,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/KHOWZAN/1069948/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2592 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2592 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069948 as KHOWZAN"
     }
    ]
   },
@@ -4245,7 +4277,7 @@
     {
      "field": "Name",
      "new_value": "Al Ghafat",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478219",
@@ -4254,9 +4286,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478219",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHAFAT/1069950/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2693 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2693 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069950 as AL GHAFAT"
     }
    ]
   },
@@ -4267,7 +4303,7 @@
     {
      "field": "Name",
      "new_value": "Al Sidriya",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478220",
@@ -4276,9 +4312,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478220",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SIDRIYA/1069962/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2694 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2694 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069962 as AL SIDRIYA"
     }
    ]
   },
@@ -4289,7 +4329,7 @@
     {
      "field": "Name",
      "new_value": "Lekhraib",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479139",
@@ -4298,9 +4338,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LEKHRAIB/1070727/477262100",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2694 (SHI)' -> vessel named"
+     "note": "placeholder 'Hull 2694 (SHI)' -> vessel named; marinetraffic.org independently lists IMO 1070727 as LEKHRAIB (MMSI 477262100)"
     }
    ]
   },
@@ -4311,7 +4355,7 @@
     {
      "field": "Name",
      "new_value": "Ain Snan",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478221",
@@ -4320,9 +4364,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478221",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AIN-SNAN/1069974/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2695 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2695 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069974 as AIN SNAN"
     }
    ]
   },
@@ -4333,7 +4381,7 @@
     {
      "field": "Name",
      "new_value": "Al Wasmi",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478222",
@@ -4342,9 +4390,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478222",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WASMI/1069986/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2696 (Hanwha)' -> vessel named"
+     "note": "placeholder 'Hull 2696 (Hanwha)' -> vessel named; marinetraffic.org independently lists IMO 1069986 as AL WASMI"
     }
    ]
   },
@@ -4355,7 +4407,7 @@
     {
      "field": "Name",
      "new_value": "Wadi Al Askar",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479141",
@@ -4364,9 +4416,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-AL-ASKAR/1070739/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2696 (SHI)' -> vessel named"
+     "note": "placeholder 'Hull 2696 (SHI)' -> vessel named; marinetraffic.org independently lists IMO 1070739 as WADI AL ASKAR"
     }
    ]
   },
@@ -4377,7 +4433,7 @@
     {
      "field": "Name",
      "new_value": "Al Shaheen",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479144",
@@ -4386,9 +4442,31 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SHAHEEN/1070741/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2699 (SHI)' -> vessel named"
+     "note": "placeholder 'Hull 2699 (SHI)' -> vessel named; marinetraffic.org independently lists IMO 1070741 as AL SHAHEEN"
+    }
+   ]
+  },
+  {
+   "row_id": "150",
+   "_live_row": 1039,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Libsayer",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBSAYER/1070806/1",
+       "soft": false
+      }
+     ],
+     "note": "placeholder 'Hull 2702 (SHI)' -> vessel named; marinetraffic.org lists IMO 1070806 as LIBSAYER; shipvault still carries a hull placeholder - single source"
     }
    ]
   },
@@ -4399,7 +4477,7 @@
     {
      "field": "Name",
      "new_value": "Al Nouf",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479151",
@@ -4408,9 +4486,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NOUF/1070820/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 2706 (SHI)' -> vessel named"
+     "note": "placeholder 'Hull 2706 (SHI)' -> vessel named; marinetraffic.org independently lists IMO 1070820 as AL NOUF"
     }
    ]
   },
@@ -4421,7 +4503,7 @@
     {
      "field": "Name",
      "new_value": "Izghawa",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478320",
@@ -4430,9 +4512,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/IZGHAWA/1049091/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3491 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3491 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049091 as IZGHAWA"
     }
    ]
   },
@@ -4443,7 +4529,7 @@
     {
      "field": "Name",
      "new_value": "Al Wa'ab",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478321",
@@ -4452,9 +4538,13 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
        "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WA'AB/1049118/1",
+       "soft": false
       }
      ],
-     "note": "placeholder 'Hull 3492 (HDHHI)' -> vessel named"
+     "note": "placeholder 'Hull 3492 (HDHHI)' -> vessel named; marinetraffic.org independently lists IMO 1049118 as AL WA'AB"
     }
    ]
   },

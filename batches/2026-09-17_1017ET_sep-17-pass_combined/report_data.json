@@ -4481,12 +4481,12 @@
    "column": "Name",
    "current backend value": "Hull 2585 (Hanwha)",
    "proposed value": "Al Nasraniya",
-   "source URL(s)": "https://www.shipvault.com/ships/476659\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/476659\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NASRANIYA/1069821/538011621",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2585 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2585 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4503,12 +4503,12 @@
    "column": "Name",
    "current backend value": "Hull 2586 (Hanwha)",
    "proposed value": "Al Yousifiya",
-   "source URL(s)": "https://www.shipvault.com/ships/476660\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/476660\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-YOUSIFIYA/1069845/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2586 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2586 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4525,12 +4525,12 @@
    "column": "Name",
    "current backend value": "Hull 2587 (Hanwha)",
    "proposed value": "Athba",
-   "source URL(s)": "https://www.shipvault.com/ships/476661\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/476661\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/ATHBA/1069869/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2587 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2587 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4547,12 +4547,12 @@
    "column": "Name",
    "current backend value": "Hull 2588 (Hanwha)",
    "proposed value": "E Qab",
-   "source URL(s)": "https://www.shipvault.com/ships/476662\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/476662\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/E-QAB/1069871/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2588 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2588 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4569,12 +4569,12 @@
    "column": "Name",
    "current backend value": "Hull 2589 (Hanwha)",
    "proposed value": "Ghash Sham",
-   "source URL(s)": "https://www.shipvault.com/ships/478215\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478215\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/GHASH-SHAM/1069895/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2589 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2589 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4591,12 +4591,12 @@
    "column": "Name",
    "current backend value": "Hull 2590 (Hanwha)",
    "proposed value": "Al Egdah",
-   "source URL(s)": "https://www.shipvault.com/ships/478216\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478216\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-EGDAH/1069924/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2590 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2590 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4613,12 +4613,12 @@
    "column": "Name",
    "current backend value": "Hull 2591 (Hanwha)",
    "proposed value": "Al Khbaib",
-   "source URL(s)": "https://www.shipvault.com/ships/478217\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478217\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-KHBAIB/1069936/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2591 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2591 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4635,12 +4635,12 @@
    "column": "Name",
    "current backend value": "Hull 2592 (Hanwha)",
    "proposed value": "Khowzan",
-   "source URL(s)": "https://www.shipvault.com/ships/478218\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478218\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/KHOWZAN/1069948/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2592 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2592 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4657,12 +4657,12 @@
    "column": "Name",
    "current backend value": "Hull 2693 (Hanwha)",
    "proposed value": "Al Ghafat",
-   "source URL(s)": "https://www.shipvault.com/ships/478219\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478219",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478219\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478219\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHAFAT/1069950/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2693 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2693 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4679,12 +4679,12 @@
    "column": "Name",
    "current backend value": "Hull 2694 (Hanwha)",
    "proposed value": "Al Sidriya",
-   "source URL(s)": "https://www.shipvault.com/ships/478220\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478220",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478220\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478220\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SIDRIYA/1069962/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2694 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2694 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4701,12 +4701,12 @@
    "column": "Name",
    "current backend value": "Hull 2694 (SHI)",
    "proposed value": "Lekhraib",
-   "source URL(s)": "https://www.shipvault.com/ships/479139\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/479139\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/LEKHRAIB/1070727/477262100",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2694 (SHI)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2694 (SHI)' -> vessel named; marinetraffic.org independently l"
   },
   {
    "apply order": 1,
@@ -4723,12 +4723,12 @@
    "column": "Name",
    "current backend value": "Hull 2695 (Hanwha)",
    "proposed value": "Ain Snan",
-   "source URL(s)": "https://www.shipvault.com/ships/478221\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478221",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478221\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478221\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AIN-SNAN/1069974/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2695 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2695 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4745,12 +4745,12 @@
    "column": "Name",
    "current backend value": "Hull 2696 (Hanwha)",
    "proposed value": "Al Wasmi",
-   "source URL(s)": "https://www.shipvault.com/ships/478222\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478222",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478222\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478222\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WASMI/1069986/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2696 (Hanwha)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2696 (Hanwha)' -> vessel named; marinetraffic.org independentl"
   },
   {
    "apply order": 1,
@@ -4767,12 +4767,12 @@
    "column": "Name",
    "current backend value": "Hull 2696 (SHI)",
    "proposed value": "Wadi Al Askar",
-   "source URL(s)": "https://www.shipvault.com/ships/479141\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/479141\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-AL-ASKAR/1070739/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2696 (SHI)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2696 (SHI)' -> vessel named; marinetraffic.org independently l"
   },
   {
    "apply order": 1,
@@ -4789,12 +4789,34 @@
    "column": "Name",
    "current backend value": "Hull 2699 (SHI)",
    "proposed value": "Al Shaheen",
-   "source URL(s)": "https://www.shipvault.com/ships/479144\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
+   "source URL(s)": "https://www.shipvault.com/ships/479144\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SHAHEEN/1070741/1",
+   "confidence": "G",
+   "derivable": "False",
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2699 (SHI)' -> vessel named; marinetraffic.org independently l"
+  },
+  {
+   "apply order": 1,
+   "batch": "delivery roll-forward",
+   "kind": "fill",
+   "live sheet row": 1039,
+   "row_id": "150",
+   "cluster": "",
+   "vessel name (backend)": "Hull 2702 (SHI)",
+   "IMO": "1070806",
+   "status (backend)": "on order",
+   "shipbuilder": "Samsung Heavy Industries",
+   "shipowner": "CMES",
+   "column": "Name",
+   "current backend value": "Hull 2702 (SHI)",
+   "proposed value": "Libsayer",
+   "source URL(s)": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBSAYER/1070806/1",
    "confidence": "Y",
    "derivable": "False",
    "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2699 (SHI)' -> vessel named"
+   "gate verdict": "PASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2702 (SHI)' -> vessel named; marinetraffic.org lists IMO 10708"
   },
   {
    "apply order": 1,
@@ -4811,12 +4833,12 @@
    "column": "Name",
    "current backend value": "Hull 2706 (SHI)",
    "proposed value": "Al Nouf",
-   "source URL(s)": "https://www.shipvault.com/ships/479151\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/479151\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NOUF/1070820/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 2706 (SHI)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 2706 (SHI)' -> vessel named; marinetraffic.org independently l"
   },
   {
    "apply order": 1,
@@ -4833,12 +4855,12 @@
    "column": "Name",
    "current backend value": "Hull 3491 (HDHHI)",
    "proposed value": "Izghawa",
-   "source URL(s)": "https://www.shipvault.com/ships/478320\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478320\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/IZGHAWA/1049091/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 3491 (HDHHI)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 3491 (HDHHI)' -> vessel named; marinetraffic.org independently"
   },
   {
    "apply order": 1,
@@ -4855,12 +4877,12 @@
    "column": "Name",
    "current backend value": "Hull 3492 (HDHHI)",
    "proposed value": "Al Wa'ab",
-   "source URL(s)": "https://www.shipvault.com/ships/478321\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
-   "confidence": "Y",
+   "source URL(s)": "https://www.shipvault.com/ships/478321\nhttps://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321\nhttps://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WA'AB/1049118/1",
+   "confidence": "G",
    "derivable": "False",
-   "decision": "hold",
-   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))",
-   "note": "placeholder 'Hull 3492 (HDHHI)' -> vessel named"
+   "decision": "accept",
+   "gate verdict": "PASS (OK (cf_impersonate, shipvault_api))\nPASS (OK (shipvault_api))\nPASS (OK (cf_clearance))",
+   "note": "placeholder 'Hull 3492 (HDHHI)' -> vessel named; marinetraffic.org independently"
   },
   {
    "apply order": 1,
@@ -33599,6 +33621,28 @@
    "follow-up note": ""
   },
   {
+   "live sheet row": 1017,
+   "row_id": "80",
+   "IMO": "1069821",
+   "vessel name (backend)": "Hull 2585 (Hanwha)",
+   "shipbuilder": "Hanwha Ocean",
+   "why flagged (roll-forward)": "marinetraffic.org shows AL NASRANIYA with MMSI 538011621 although delivery is scheduled 2028 and shipvault says ON ORDER - probably an MMSI assigned early; low priority, re-check next pass",
+   "press follow-up verdict": "(not followed up)",
+   "name found": "",
+   "follow-up note": ""
+  },
+  {
+   "live sheet row": 1033,
+   "row_id": "139",
+   "IMO": "1070727",
+   "vessel name (backend)": "Hull 2694 (SHI)",
+   "shipbuilder": "Samsung Heavy Industries",
+   "why flagged (roll-forward)": "marinetraffic.org shows LEKHRAIB with MMSI 477262100 although delivery is scheduled 2028 and shipvault says ON ORDER - probably an MMSI assigned early; low priority, re-check next pass",
+   "press follow-up verdict": "(not followed up)",
+   "name found": "",
+   "follow-up note": ""
+  },
+  {
    "live sheet row": 1080,
    "row_id": "509",
    "IMO": "1030557",
@@ -33920,7 +33964,7 @@
  ],
  "n_wide": {
   "3": 12,
-  "1": 150,
+  "1": 151,
   "2": 2,
   "4": 483,
   "5": 8,
@@ -33931,8 +33975,8 @@
  "backend_shape": {
   "rows": 549,
   "new": 12,
-  "cells": 2685,
-  "hold": 1111,
+  "cells": 2687,
+  "hold": 1077,
   "delete": 3
  }
 }

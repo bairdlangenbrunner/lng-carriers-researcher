@@ -202,23 +202,24 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 541|Delivery year,fill,541,,Delivery year,G,False,accept,accept,2025,backend 2027 -> delivered 2025-10-31 per shipvault; marinetraffic.org shows ELIS
 541|Name,fill,541,,Name,G,False,accept,accept,Elisa Halcyon,backend 'Elisa Halycon' differs from registry name; marinetraffic.org independen
 639|Name,fill,639,,Name,Y,False,hold,hold,Solidarity,placeholder 'Gdansk FSRU' -> vessel named; marinetraffic.org lists IMO 1056410 a
-80|Name,fill,80,,Name,Y,False,hold,hold,Al Nasraniya,placeholder 'Hull 2585 (Hanwha)' -> vessel named
-81|Name,fill,81,,Name,Y,False,hold,hold,Al Yousifiya,placeholder 'Hull 2586 (Hanwha)' -> vessel named
-82|Name,fill,82,,Name,Y,False,hold,hold,Athba,placeholder 'Hull 2587 (Hanwha)' -> vessel named
-83|Name,fill,83,,Name,Y,False,hold,hold,E Qab,placeholder 'Hull 2588 (Hanwha)' -> vessel named
-84|Name,fill,84,,Name,Y,False,hold,hold,Ghash Sham,placeholder 'Hull 2589 (Hanwha)' -> vessel named
-85|Name,fill,85,,Name,Y,False,hold,hold,Al Egdah,placeholder 'Hull 2590 (Hanwha)' -> vessel named
-86|Name,fill,86,,Name,Y,False,hold,hold,Al Khbaib,placeholder 'Hull 2591 (Hanwha)' -> vessel named
-88|Name,fill,88,,Name,Y,False,hold,hold,Khowzan,placeholder 'Hull 2592 (Hanwha)' -> vessel named
-136|Name,fill,136,,Name,Y,False,hold,hold,Al Ghafat,placeholder 'Hull 2693 (Hanwha)' -> vessel named
-138|Name,fill,138,,Name,Y,False,hold,hold,Al Sidriya,placeholder 'Hull 2694 (Hanwha)' -> vessel named
-139|Name,fill,139,,Name,Y,False,hold,hold,Lekhraib,placeholder 'Hull 2694 (SHI)' -> vessel named
-140|Name,fill,140,,Name,Y,False,hold,hold,Ain Snan,placeholder 'Hull 2695 (Hanwha)' -> vessel named
-142|Name,fill,142,,Name,Y,False,hold,hold,Al Wasmi,placeholder 'Hull 2696 (Hanwha)' -> vessel named
-143|Name,fill,143,,Name,Y,False,hold,hold,Wadi Al Askar,placeholder 'Hull 2696 (SHI)' -> vessel named
-146|Name,fill,146,,Name,Y,False,hold,hold,Al Shaheen,placeholder 'Hull 2699 (SHI)' -> vessel named
-154|Name,fill,154,,Name,Y,False,hold,hold,Al Nouf,placeholder 'Hull 2706 (SHI)' -> vessel named
-222|Name,fill,222,,Name,Y,False,hold,hold,Izghawa,placeholder 'Hull 3491 (HDHHI)' -> vessel named
-223|Name,fill,223,,Name,Y,False,hold,hold,Al Wa'ab,placeholder 'Hull 3492 (HDHHI)' -> vessel named
+80|Name,fill,80,,Name,G,False,accept,accept,Al Nasraniya,placeholder 'Hull 2585 (Hanwha)' -> vessel named; marinetraffic.org independentl
+81|Name,fill,81,,Name,G,False,accept,accept,Al Yousifiya,placeholder 'Hull 2586 (Hanwha)' -> vessel named; marinetraffic.org independentl
+82|Name,fill,82,,Name,G,False,accept,accept,Athba,placeholder 'Hull 2587 (Hanwha)' -> vessel named; marinetraffic.org independentl
+83|Name,fill,83,,Name,G,False,accept,accept,E Qab,placeholder 'Hull 2588 (Hanwha)' -> vessel named; marinetraffic.org independentl
+84|Name,fill,84,,Name,G,False,accept,accept,Ghash Sham,placeholder 'Hull 2589 (Hanwha)' -> vessel named; marinetraffic.org independentl
+85|Name,fill,85,,Name,G,False,accept,accept,Al Egdah,placeholder 'Hull 2590 (Hanwha)' -> vessel named; marinetraffic.org independentl
+86|Name,fill,86,,Name,G,False,accept,accept,Al Khbaib,placeholder 'Hull 2591 (Hanwha)' -> vessel named; marinetraffic.org independentl
+88|Name,fill,88,,Name,G,False,accept,accept,Khowzan,placeholder 'Hull 2592 (Hanwha)' -> vessel named; marinetraffic.org independentl
+136|Name,fill,136,,Name,G,False,accept,accept,Al Ghafat,placeholder 'Hull 2693 (Hanwha)' -> vessel named; marinetraffic.org independentl
+138|Name,fill,138,,Name,G,False,accept,accept,Al Sidriya,placeholder 'Hull 2694 (Hanwha)' -> vessel named; marinetraffic.org independentl
+139|Name,fill,139,,Name,G,False,accept,accept,Lekhraib,placeholder 'Hull 2694 (SHI)' -> vessel named; marinetraffic.org independently l
+140|Name,fill,140,,Name,G,False,accept,accept,Ain Snan,placeholder 'Hull 2695 (Hanwha)' -> vessel named; marinetraffic.org independentl
+142|Name,fill,142,,Name,G,False,accept,accept,Al Wasmi,placeholder 'Hull 2696 (Hanwha)' -> vessel named; marinetraffic.org independentl
+143|Name,fill,143,,Name,G,False,accept,accept,Wadi Al Askar,placeholder 'Hull 2696 (SHI)' -> vessel named; marinetraffic.org independently l
+146|Name,fill,146,,Name,G,False,accept,accept,Al Shaheen,placeholder 'Hull 2699 (SHI)' -> vessel named; marinetraffic.org independently l
+150|Name,fill,150,,Name,Y,False,hold,hold,Libsayer,placeholder 'Hull 2702 (SHI)' -> vessel named; marinetraffic.org lists IMO 10708
+154|Name,fill,154,,Name,G,False,accept,accept,Al Nouf,placeholder 'Hull 2706 (SHI)' -> vessel named; marinetraffic.org independently l
+222|Name,fill,222,,Name,G,False,accept,accept,Izghawa,placeholder 'Hull 3491 (HDHHI)' -> vessel named; marinetraffic.org independently
+223|Name,fill,223,,Name,G,False,accept,accept,Al Wa'ab,placeholder 'Hull 3492 (HDHHI)' -> vessel named; marinetraffic.org independently
 508|Name,fill,508,,Name,Y,False,hold,hold,Prime Glory,placeholder 'Dalian No 1 G175K-11' -> vessel named; marinetraffic.org lists IMO 
 509|Name,fill,509,,Name,G,False,accept,accept,Friendship Venture,backend 'Dalian No 1 G175K-12' differs from registry name; marinetraffic.org ind
