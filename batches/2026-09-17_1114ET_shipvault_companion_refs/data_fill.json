@@ -1,0 +1,2490 @@
+{
+  "batch_label": "Shipvault companion refs - existing backend cells citing a blank-rendering shipvault page",
+  "scope": {
+    "filter": "backend [ref] cells citing shipvault.com/ships/{id}",
+    "row_ids": [
+      "29",
+      "72",
+      "74",
+      "78",
+      "92",
+      "94",
+      "96",
+      "98",
+      "102",
+      "103",
+      "117",
+      "163",
+      "178",
+      "224",
+      "250",
+      "314",
+      "315",
+      "316",
+      "317",
+      "408",
+      "415",
+      "663",
+      "721",
+      "969",
+      "995",
+      "1044",
+      "1045"
+    ]
+  },
+  "fills": [
+    {
+      "row_id": "29",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456060"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/456060",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 840: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2026'"
+    },
+    {
+      "row_id": "29",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456060"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/456060",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 840: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "72",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Sep-2022'"
+    },
+    {
+      "row_id": "72",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "72",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2580'"
+    },
+    {
+      "row_id": "72",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '9995480'"
+    },
+    {
+      "row_id": "72",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2580'"
+    },
+    {
+      "row_id": "72",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "72",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Mitsui OSK Lines'"
+    },
+    {
+      "row_id": "72",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465056",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 946: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "74",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Mar-2023'"
+    },
+    {
+      "row_id": "74",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "74",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2582 (Hanwha)'"
+    },
+    {
+      "row_id": "74",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1022043'"
+    },
+    {
+      "row_id": "74",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows Price = '256'"
+    },
+    {
+      "row_id": "74",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "74",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Maran Gas Maritime'"
+    },
+    {
+      "row_id": "74",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/470097",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 948: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "78",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Aug-2023'"
+    },
+    {
+      "row_id": "78",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "78",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2584 (Hanwha)'"
+    },
+    {
+      "row_id": "78",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1030363'"
+    },
+    {
+      "row_id": "78",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2584 (Hanwha)'"
+    },
+    {
+      "row_id": "78",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Price = '251'"
+    },
+    {
+      "row_id": "78",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "78",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Mitsui OSK Lines'"
+    },
+    {
+      "row_id": "78",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/469431",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 950: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "92",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Jul-2024'"
+    },
+    {
+      "row_id": "92",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "92",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2598 (Hanwha)'"
+    },
+    {
+      "row_id": "92",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1094412'"
+    },
+    {
+      "row_id": "92",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2598 (Hanwha)'"
+    },
+    {
+      "row_id": "92",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows Price = '260'"
+    },
+    {
+      "row_id": "92",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "92",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478881",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1025: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "94",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Jul-2024'"
+    },
+    {
+      "row_id": "94",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "94",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2599 (Hanwha)'"
+    },
+    {
+      "row_id": "94",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1094321'"
+    },
+    {
+      "row_id": "94",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2599 (Hanwha)'"
+    },
+    {
+      "row_id": "94",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows Price = '260'"
+    },
+    {
+      "row_id": "94",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "94",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478882",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1026: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "96",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478883",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1027: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "96",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478883",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1027: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2600 (Hanwha)'"
+    },
+    {
+      "row_id": "96",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478883",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1027: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1094333'"
+    },
+    {
+      "row_id": "96",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478883",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1027: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2600 (Hanwha)'"
+    },
+    {
+      "row_id": "96",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478883",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1027: the cited shipvault page renders blank (site bug); companion unit record shows Price = '260'"
+    },
+    {
+      "row_id": "96",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478883",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1027: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "96",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478883",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1027: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "98",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478884",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1028: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "98",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478884",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1028: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2601 (Hanwha)'"
+    },
+    {
+      "row_id": "98",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478884",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1028: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1094345'"
+    },
+    {
+      "row_id": "98",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478884",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1028: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2601 (Hanwha)'"
+    },
+    {
+      "row_id": "98",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478884",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1028: the cited shipvault page renders blank (site bug); companion unit record shows Price = '260'"
+    },
+    {
+      "row_id": "98",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478884",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1028: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "98",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/478884",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1028: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "102",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '01-Nov-2024'"
+    },
+    {
+      "row_id": "102",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "102",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2606 (Hanwha)'"
+    },
+    {
+      "row_id": "102",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1115072'"
+    },
+    {
+      "row_id": "102",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2606 (Hanwha)'"
+    },
+    {
+      "row_id": "102",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Price = '255'"
+    },
+    {
+      "row_id": "102",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "102",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Hanwha Ocean Co Ltd'"
+    },
+    {
+      "row_id": "102",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487115",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 953: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "103",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '01-Nov-2024'"
+    },
+    {
+      "row_id": "103",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "103",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2607 (Hanwha)'"
+    },
+    {
+      "row_id": "103",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1115084'"
+    },
+    {
+      "row_id": "103",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2607 (Hanwha)'"
+    },
+    {
+      "row_id": "103",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Price = '255'"
+    },
+    {
+      "row_id": "103",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Hanwha Ocean'"
+    },
+    {
+      "row_id": "103",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Hanwha Ocean Co Ltd'"
+    },
+    {
+      "row_id": "103",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487116",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 954: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "117",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457612"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/457612",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 769: the cited shipvault page renders blank (site bug); companion unit record shows Name = \"Al Na'amah\""
+    },
+    {
+      "row_id": "117",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457612"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/457612",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 769: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    },
+    {
+      "row_id": "163",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/483838",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 964: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "163",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/483838",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 964: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 2729 (Hanwha)'"
+    },
+    {
+      "row_id": "163",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/483838",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 964: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1109047'"
+    },
+    {
+      "row_id": "163",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/483838",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 964: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 2729 (Hanwha)'"
+    },
+    {
+      "row_id": "163",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/483838",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 964: the cited shipvault page renders blank (site bug); companion unit record shows Price = '261.5'"
+    },
+    {
+      "row_id": "163",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/483838",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 964: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "178",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477422",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1054: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '01-May-2024'"
+    },
+    {
+      "row_id": "178",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477422",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1054: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "178",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477422",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1054: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1066568'"
+    },
+    {
+      "row_id": "178",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477422",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1054: the cited shipvault page renders blank (site bug); companion unit record shows Price = '266.1'"
+    },
+    {
+      "row_id": "178",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477422",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1054: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Heavy Industries'"
+    },
+    {
+      "row_id": "178",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477422",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1054: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Evalend Shipping'"
+    },
+    {
+      "row_id": "178",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477422",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1054: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "224",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '01-May-2024'"
+    },
+    {
+      "row_id": "224",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "224",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 3502 (HDHHI)'"
+    },
+    {
+      "row_id": "224",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1066570'"
+    },
+    {
+      "row_id": "224",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 3502 (HDHHI)'"
+    },
+    {
+      "row_id": "224",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Price = '266.1'"
+    },
+    {
+      "row_id": "224",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Heavy Industries'"
+    },
+    {
+      "row_id": "224",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Evalend Shipping'"
+    },
+    {
+      "row_id": "224",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/477423",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1059: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "250",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '01-Apr-2025'"
+    },
+    {
+      "row_id": "250",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "250",
+      "field": "Hull number",
+      "ref_field": "Hull number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Hull number = 'Hull 8276 (Hanwha)'"
+    },
+    {
+      "row_id": "250",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1119078'"
+    },
+    {
+      "row_id": "250",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Hull 8276 (Hanwha)'"
+    },
+    {
+      "row_id": "250",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Price = '261.8'"
+    },
+    {
+      "row_id": "250",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Samho'"
+    },
+    {
+      "row_id": "250",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Purus Marine'"
+    },
+    {
+      "row_id": "250",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/487159",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 994: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "314",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490164",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1075: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Jul-2025'"
+    },
+    {
+      "row_id": "314",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490164",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1075: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "314",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490164",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1075: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1130773'"
+    },
+    {
+      "row_id": "314",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490164",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1075: the cited shipvault page renders blank (site bug); companion unit record shows Price = '257'"
+    },
+    {
+      "row_id": "314",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490164",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1075: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Samho'"
+    },
+    {
+      "row_id": "314",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490164",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1075: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Capital Maritime & Trading Corp'"
+    },
+    {
+      "row_id": "314",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490164",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1075: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "315",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490165",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1076: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Jul-2025'"
+    },
+    {
+      "row_id": "315",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490165",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1076: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1130785'"
+    },
+    {
+      "row_id": "315",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490165",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1076: the cited shipvault page renders blank (site bug); companion unit record shows Price = '257'"
+    },
+    {
+      "row_id": "315",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490165",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1076: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Samho'"
+    },
+    {
+      "row_id": "315",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490165",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1076: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Capital Maritime & Trading Corp'"
+    },
+    {
+      "row_id": "315",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490165",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1076: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "316",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490166",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1077: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Jul-2025'"
+    },
+    {
+      "row_id": "316",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490166",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1077: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1130797'"
+    },
+    {
+      "row_id": "316",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490166",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1077: the cited shipvault page renders blank (site bug); companion unit record shows Price = '257'"
+    },
+    {
+      "row_id": "316",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490166",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1077: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Samho'"
+    },
+    {
+      "row_id": "316",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490166",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1077: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Capital Maritime & Trading Corp'"
+    },
+    {
+      "row_id": "316",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490166",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1077: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "317",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490167",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1078: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Jul-2025'"
+    },
+    {
+      "row_id": "317",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490167",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1078: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2028'"
+    },
+    {
+      "row_id": "317",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490167",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1078: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '1130802'"
+    },
+    {
+      "row_id": "317",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490167",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1078: the cited shipvault page renders blank (site bug); companion unit record shows Price = '257'"
+    },
+    {
+      "row_id": "317",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490167",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1078: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Samho'"
+    },
+    {
+      "row_id": "317",
+      "field": "Shipowner",
+      "ref_field": "Shipowner [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490167",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1078: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner = 'Capital Maritime & Trading Corp'"
+    },
+    {
+      "row_id": "317",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/490167",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1078: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "408",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465070",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1004: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Jan-2023'"
+    },
+    {
+      "row_id": "408",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465070",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1004: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2027'"
+    },
+    {
+      "row_id": "408",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465070",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1004: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '9999981'"
+    },
+    {
+      "row_id": "408",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465070",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1004: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Athlos'"
+    },
+    {
+      "row_id": "408",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465070",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1004: the cited shipvault page renders blank (site bug); companion unit record shows Price = '250'"
+    },
+    {
+      "row_id": "408",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465070",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1004: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'HD Hyundai Samho'"
+    },
+    {
+      "row_id": "408",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/465070",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 1004: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'on order'"
+    },
+    {
+      "row_id": "415",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73086",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 6: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '1978'"
+    },
+    {
+      "row_id": "415",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73086",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 6: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '7390155'"
+    },
+    {
+      "row_id": "415",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73086",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 6: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Bering Energy'"
+    },
+    {
+      "row_id": "415",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73086",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 6: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'General Dynamics'"
+    },
+    {
+      "row_id": "415",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73086",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 6: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    },
+    {
+      "row_id": "663",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73085",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 7: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Sep-1976'"
+    },
+    {
+      "row_id": "663",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73085",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 7: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '1978'"
+    },
+    {
+      "row_id": "663",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73085",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 7: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '7390143'"
+    },
+    {
+      "row_id": "663",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73085",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 7: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Gulf Energy'"
+    },
+    {
+      "row_id": "663",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73085",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 7: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'General Dynamics'"
+    },
+    {
+      "row_id": "663",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/73085",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 7: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    },
+    {
+      "row_id": "721",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/94117",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 11: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '1989'"
+    },
+    {
+      "row_id": "721",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/94117",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 11: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '8608872'"
+    },
+    {
+      "row_id": "721",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/94117",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 11: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    },
+    {
+      "row_id": "969",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Apr-1999'"
+    },
+    {
+      "row_id": "969",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2002'"
+    },
+    {
+      "row_id": "969",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '9211872'"
+    },
+    {
+      "row_id": "969",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'Puteri Delima Satu'"
+    },
+    {
+      "row_id": "969",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows Price = '165'"
+    },
+    {
+      "row_id": "969",
+      "field": "Shipbuilder",
+      "ref_field": "Shipbuilder [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows Shipbuilder = 'Mitsui E&S Shipbuilding'"
+    },
+    {
+      "row_id": "969",
+      "field": "Shipowner country/area",
+      "ref_field": "Shipowner country/area [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows Shipowner country/area = 'Malaysia'"
+    },
+    {
+      "row_id": "969",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/113754",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 61: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    },
+    {
+      "row_id": "995",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/459926",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 814: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    },
+    {
+      "row_id": "1044",
+      "field": "Contract date",
+      "ref_field": "Contract date [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373877",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 487: the cited shipvault page renders blank (site bug); companion unit record shows Contract date = '1-Nov-2014'"
+    },
+    {
+      "row_id": "1044",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373877",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 487: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2018'"
+    },
+    {
+      "row_id": "1044",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373877",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 487: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '9761803'"
+    },
+    {
+      "row_id": "1044",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373877",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 487: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'SK Serenity'"
+    },
+    {
+      "row_id": "1044",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373877",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 487: the cited shipvault page renders blank (site bug); companion unit record shows Price = '207'"
+    },
+    {
+      "row_id": "1044",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373877",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 487: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    },
+    {
+      "row_id": "1045",
+      "field": "Delivery year",
+      "ref_field": "Delivery year [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373876",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 488: the cited shipvault page renders blank (site bug); companion unit record shows Delivery year = '2018'"
+    },
+    {
+      "row_id": "1045",
+      "field": "IMO number",
+      "ref_field": "IMO number [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373876",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 488: the cited shipvault page renders blank (site bug); companion unit record shows IMO number = '9761815'"
+    },
+    {
+      "row_id": "1045",
+      "field": "Name",
+      "ref_field": "Name [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373876",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 488: the cited shipvault page renders blank (site bug); companion unit record shows Name = 'SK Spica'"
+    },
+    {
+      "row_id": "1045",
+      "field": "Price",
+      "ref_field": "Price [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373876",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 488: the cited shipvault page renders blank (site bug); companion unit record shows Price = '207'"
+    },
+    {
+      "row_id": "1045",
+      "field": "Status",
+      "ref_field": "Status [ref]",
+      "proposed_value": "",
+      "new_urls": [
+        "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876"
+      ],
+      "prev_state": "corroborate",
+      "existing_ref_preserved": "https://www.shipvault.com/ships/373876",
+      "confidence": "Y",
+      "derivable": false,
+      "note": "live row 488: the cited shipvault page renders blank (site bug); companion unit record shows Status = 'active'"
+    }
+  ],
+  "documented_blanks": [],
+  "verification_log": [],
+  "candidate_findings": []
+}

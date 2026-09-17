@@ -1,0 +1,286 @@
+{
+  "added": 175,
+  "skipped": [
+    {
+      "where": "live row 6 (row_id 415) | Shipbuilder yard country/area [ref]",
+      "value": "United States",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "result": "SKIPPED (page does not contain value 'United States')"
+    },
+    {
+      "where": "live row 7 (row_id 663) | Shipbuilder yard country/area [ref]",
+      "value": "United States",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "SKIPPED (page does not contain value 'United States')"
+    },
+    {
+      "where": "live row 11 (row_id 721) | Name [ref]",
+      "value": "Karmol LNGT Powership Antarctica",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "result": "SKIPPED (page does not contain value 'Karmol LNGT Powership Antarctica')"
+    },
+    {
+      "where": "live row 11 (row_id 721) | Shipowner [ref]",
+      "value": "Karpowership, MOL",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "result": "SKIPPED (page does not contain value 'Karpowership, MOL')"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | Shipowner country/area [ref]",
+      "value": "South Korea",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "SKIPPED (page does not contain value 'South Korea')"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | Shipbuilder [ref]",
+      "value": "Samsung Heavy Industries",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "SKIPPED (page does not contain value 'Samsung Heavy Industries')"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | Shipowner country/area [ref]",
+      "value": "South Korea",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "SKIPPED (page does not contain value 'South Korea')"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | Shipbuilder [ref]",
+      "value": "Samsung Heavy Industries",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "SKIPPED (page does not contain value 'Samsung Heavy Industries')"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | Contract date [ref]",
+      "value": "9-Mar-2014",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "SKIPPED (page does not contain value '9-Mar-2014')"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Shipowner country/area [ref]",
+      "value": "Japan",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "SKIPPED (page does not contain value 'Japan')"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Price [ref]",
+      "value": "224",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "SKIPPED (page does not contain value '224')"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Name [ref]",
+      "value": "Hull 2582 (Hanwha)",
+      "result": "SKIPPED (a pending fix batch rewrites this [ref])"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Shipowner country/area [ref]",
+      "value": "Japan",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "SKIPPED (page does not contain value 'Japan')"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Shipowner country/area [ref]",
+      "value": "United States",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "SKIPPED (page does not contain value 'United States')"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Shipowner country/area [ref]",
+      "value": "United States",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "SKIPPED (page does not contain value 'United States')"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Shipowner [ref]",
+      "value": "Celsius Tankers",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "SKIPPED (page does not contain value 'Celsius Tankers')"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Shipowner country/area [ref]",
+      "value": "Denmark",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "SKIPPED (page does not contain value 'Denmark')"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Shipbuilder [ref]",
+      "value": "Samsung Heavy Industries",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "SKIPPED (page does not contain value 'Samsung Heavy Industries')"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Contract date [ref]",
+      "value": "17-Jan-2025",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "SKIPPED (page does not contain value '17-Jan-2025')"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Shipowner [ref]",
+      "value": "Capital Clean ECC",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "SKIPPED (page does not contain value 'Capital Clean ECC')"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Shipbuilder yard country/area [ref]",
+      "value": "South Korea",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "SKIPPED (page does not contain value 'South Korea')"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Shipowner country/area [ref]",
+      "value": "United Arab Emirates",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "SKIPPED (page does not contain value 'United Arab Emirates')"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Shipowner country/area [ref]",
+      "value": "United Arab Emirates",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "SKIPPED (page does not contain value 'United Arab Emirates')"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Shipowner country/area [ref]",
+      "value": "United Arab Emirates",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "SKIPPED (page does not contain value 'United Arab Emirates')"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Contract date [ref]",
+      "value": "1-Jun-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "SKIPPED (page does not contain value '1-Jun-2024')"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Shipowner [ref]",
+      "value": "ADNOC L&S",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "SKIPPED (page does not contain value 'ADNOC L&S')"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Contract date [ref]",
+      "value": "1-Jun-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "SKIPPED (page does not contain value '1-Jun-2024')"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Name [ref]",
+      "value": "Hull 3301 (HDHHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "SKIPPED (page does not contain value 'Hull 3301 (HDHHI)')"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Hull number [ref]",
+      "value": "Hull 3301 (HDHHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "SKIPPED (page does not contain value 'Hull 3301 (HDHHI)')"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Name [ref]",
+      "value": "Hull Unknown 01 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 01 (HSHI)')"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Hull number [ref]",
+      "value": "Hull Unknown 01 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 01 (HSHI)')"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Name [ref]",
+      "value": "Hull Unknown 02 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 02 (HSHI)')"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Hull number [ref]",
+      "value": "Hull Unknown 02 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 02 (HSHI)')"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "SKIPPED (page does not contain value '2028')"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Name [ref]",
+      "value": "Hull Unknown 03 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 03 (HSHI)')"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Hull number [ref]",
+      "value": "Hull Unknown 03 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 03 (HSHI)')"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "SKIPPED (page does not contain value '2028')"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Name [ref]",
+      "value": "Hull Unknown 04 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 04 (HSHI)')"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Hull number [ref]",
+      "value": "Hull Unknown 04 (HSHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "SKIPPED (page does not contain value 'Hull Unknown 04 (HSHI)')"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Shipowner country/area [ref]",
+      "value": "Greece",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "SKIPPED (page does not contain value 'Greece')"
+    }
+  ]
+}

@@ -38,8 +38,8 @@ append,C4.1,Contract date [ref],https://www.worldoil.com/news/2026/7/10/adnoc-l-
 append,C4.1,Name,Hull H2706
 append,C4.1,Hull number,Hull H2706
 append,C4.1,IMO number,1193579
-append,C4.1,Hull number [ref],https://www.shipvault.com/ships/502918
-append,C4.1,IMO number [ref],https://www.shipvault.com/ships/502918
+append,C4.1,Hull number [ref],"https://www.shipvault.com/ships/502918, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502918"
+append,C4.1,IMO number [ref],"https://www.shipvault.com/ships/502918, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502918"
 append,C4.1,Capacity units,cbm
 append,C4.1,Shipbuilder yard country/area,China
 append,C4.1,Shipbuilder yard country/area [ref],https://www.jnshipyard.com.cn/
@@ -63,8 +63,8 @@ append,C4.2,Contract date [ref],https://www.worldoil.com/news/2026/7/10/adnoc-l-
 append,C4.2,Name,Hull H2707
 append,C4.2,Hull number,Hull H2707
 append,C4.2,IMO number,1193608
-append,C4.2,Hull number [ref],https://www.shipvault.com/ships/502919
-append,C4.2,IMO number [ref],https://www.shipvault.com/ships/502919
+append,C4.2,Hull number [ref],"https://www.shipvault.com/ships/502919, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502919"
+append,C4.2,IMO number [ref],"https://www.shipvault.com/ships/502919, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502919"
 append,C4.2,Capacity units,cbm
 append,C4.2,Shipbuilder yard country/area,China
 append,C4.2,Shipbuilder yard country/area [ref],https://www.jnshipyard.com.cn/
@@ -88,8 +88,8 @@ append,C4.3,Contract date [ref],https://www.worldoil.com/news/2026/7/10/adnoc-l-
 append,C4.3,Name,Hull H2708
 append,C4.3,Hull number,Hull H2708
 append,C4.3,IMO number,1193581
-append,C4.3,Hull number [ref],https://www.shipvault.com/ships/502920
-append,C4.3,IMO number [ref],https://www.shipvault.com/ships/502920
+append,C4.3,Hull number [ref],"https://www.shipvault.com/ships/502920, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502920"
+append,C4.3,IMO number [ref],"https://www.shipvault.com/ships/502920, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502920"
 append,C4.3,Capacity units,cbm
 append,C4.3,Shipbuilder yard country/area,China
 append,C4.3,Shipbuilder yard country/area [ref],https://www.jnshipyard.com.cn/
@@ -113,8 +113,8 @@ append,C4.4,Contract date [ref],https://www.worldoil.com/news/2026/7/10/adnoc-l-
 append,C4.4,Name,Hull H2709
 append,C4.4,Hull number,Hull H2709
 append,C4.4,IMO number,1193593
-append,C4.4,Hull number [ref],https://www.shipvault.com/ships/502921
-append,C4.4,IMO number [ref],https://www.shipvault.com/ships/502921
+append,C4.4,Hull number [ref],"https://www.shipvault.com/ships/502921, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502921"
+append,C4.4,IMO number [ref],"https://www.shipvault.com/ships/502921, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502921"
 append,C4.4,Capacity units,cbm
 append,C4.4,Shipbuilder yard country/area,China
 append,C4.4,Shipbuilder yard country/area [ref],https://www.jnshipyard.com.cn/
@@ -138,8 +138,8 @@ append,C5.1,Contract date [ref],https://en.aletihad.ae/news/business/4687316/adn
 append,C5.1,Name,Hull H2858
 append,C5.1,Hull number,Hull H2858
 append,C5.1,IMO number,1195022
-append,C5.1,Hull number [ref],https://www.shipvault.com/ships/503416
-append,C5.1,IMO number [ref],https://www.shipvault.com/ships/503416
+append,C5.1,Hull number [ref],"https://www.shipvault.com/ships/503416, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/503416"
+append,C5.1,IMO number [ref],"https://www.shipvault.com/ships/503416, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/503416"
 append,C5.1,Capacity units,cbm
 append,C5.1,Shipbuilder yard country/area,China
 append,C5.1,Shipbuilder yard country/area [ref],https://www.jnshipyard.com.cn/
@@ -163,8 +163,8 @@ append,C5.2,Contract date [ref],https://en.aletihad.ae/news/business/4687316/adn
 append,C5.2,Name,Hull H2859
 append,C5.2,Hull number,Hull H2859
 append,C5.2,IMO number,1195034
-append,C5.2,Hull number [ref],https://www.shipvault.com/ships/503417
-append,C5.2,IMO number [ref],https://www.shipvault.com/ships/503417
+append,C5.2,Hull number [ref],"https://www.shipvault.com/ships/503417, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/503417"
+append,C5.2,IMO number [ref],"https://www.shipvault.com/ships/503417, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/503417"
 append,C5.2,Capacity units,cbm
 append,C5.2,Shipbuilder yard country/area,China
 append,C5.2,Shipbuilder yard country/area [ref],https://www.jnshipyard.com.cn/

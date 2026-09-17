@@ -1,4 +1,4 @@
-# Data-fill — on-order core facts + whole-backend derivables (2026-09-17 overnight update)
+# Data-fill — on-order core facts + whole-backend derivables (2026-09-17, sep-17-pass)
 
 Fresh pull 2026-09-17 (1,220 rows). Scope: `derive_fills.py --since 2000-01-01` (whole backend)
 for the derivable autofills; research fan-out limited to **on-order rows** and the core facts
@@ -106,3 +106,14 @@ Known gap, not fixed: Status = `active` passes the gate on any page containing t
 "active" (boilerplate). Needs URL-/context-aware matching in `value_variants`.
 
 Recalc: zero formula errors.
+
+## Shipvault companion refs (added 2026-09-17, RF rev 21 §6a.8)
+
+Most `shipvault.com/ships/{id}` pages render blank in a browser (the site cannot parse its own
+double-encoded API answer), so a reviewer cannot see the value the gate verified. Every ref citing
+such a page now carries the unit-record URL
+`https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/{id}` as a second ref right after it:
+**119 companions added, 0 skipped** (`shipvault_api_refs.json`). Source JSON patched with
+`scripts/shipvault_api_refs.py`, workbook rebuilt + recalced (zero errors), apply artifacts
+regenerated; decisions unchanged, and the only diff in `apply.json` / `apply_rows.csv` /
+`apply_patch.csv` is the added URLs.

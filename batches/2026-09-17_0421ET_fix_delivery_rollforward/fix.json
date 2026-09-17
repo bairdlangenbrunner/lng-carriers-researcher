@@ -14,6 +14,10 @@
       {
        "url": "https://www.shipvault.com/ships/431882",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/431882",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-06-26, yard ZVEZDA no. 45; vesselfinder shows KONSTANTIN POSIET with an MMSI (AIS-live), built 2026"
@@ -25,6 +29,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/431882",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/431882",
        "soft": false
       }
      ],
@@ -44,6 +52,10 @@
       {
        "url": "https://www.shipvault.com/ships/438615",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438615",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
@@ -61,6 +73,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/438616",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438616",
        "soft": false
       }
      ],
@@ -80,6 +96,10 @@
       {
        "url": "https://www.shipvault.com/ships/438617",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438617",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
@@ -97,6 +117,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/438618",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438618",
        "soft": false
       }
      ],
@@ -116,6 +140,10 @@
       {
        "url": "https://www.shipvault.com/ships/438619",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438619",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
@@ -133,6 +161,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/438620",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438620",
        "soft": false
       }
      ],
@@ -152,6 +184,10 @@
       {
        "url": "https://www.shipvault.com/ships/438622",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438622",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
@@ -169,6 +205,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/438623",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438623",
        "soft": false
       }
      ],
@@ -188,6 +228,10 @@
       {
        "url": "https://www.shipvault.com/ships/432642",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432642",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2316 (SHI)' -> vessel named"
@@ -206,6 +250,10 @@
       {
        "url": "https://www.shipvault.com/ships/455308",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455308",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-08-28, yard HANWHA OCEAN no. 2541; vesselfinder shows VENTURE PELICAN with an MMSI (AIS-live), built 2025"
@@ -218,6 +266,10 @@
       {
        "url": "https://www.shipvault.com/ships/455308",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455308",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-08-28 per shipvault"
@@ -229,6 +281,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/455308",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455308",
        "soft": false
       }
      ],
@@ -248,6 +304,10 @@
       {
        "url": "https://www.shipvault.com/ships/455309",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455309",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-11-26, yard HANWHA OCEAN no. 2542; vesselfinder shows VENTURE IBERIA with an MMSI (AIS-live), built 2025"
@@ -260,6 +320,10 @@
       {
        "url": "https://www.shipvault.com/ships/455309",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455309",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-11-26 per shipvault"
@@ -271,6 +335,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/455309",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455309",
        "soft": false
       }
      ],
@@ -290,6 +358,10 @@
       {
        "url": "https://www.shipvault.com/ships/455310",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455310",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-02-19, yard HANWHA OCEAN no. 2543; vesselfinder shows VENTURE CAMERON with an MMSI (AIS-live), built 2026"
@@ -301,6 +373,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/455310",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455310",
        "soft": false
       }
      ],
@@ -320,6 +396,10 @@
       {
        "url": "https://www.shipvault.com/ships/457495",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457495",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-03-17, yard HANWHA OCEAN no. 2549; vesselfinder shows AL KHARRARAH with an MMSI (AIS-live), built 2025"
@@ -332,6 +412,10 @@
       {
        "url": "https://www.shipvault.com/ships/457495",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457495",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-03-17 per shipvault"
@@ -343,6 +427,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457495",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457495",
        "soft": false
       }
      ],
@@ -362,6 +450,10 @@
       {
        "url": "https://www.shipvault.com/ships/464056",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464056",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-09-30, yard HANWHA OCEAN no. 2550; vesselfinder shows ARCHY VANGUARD with an MMSI (AIS-live), built 2025"
@@ -374,6 +466,10 @@
       {
        "url": "https://www.shipvault.com/ships/464056",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464056",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-09-30 per shipvault"
@@ -385,6 +481,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/464056",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464056",
        "soft": false
       }
      ],
@@ -404,6 +504,10 @@
       {
        "url": "https://www.shipvault.com/ships/459086",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459086",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-04-22, yard HANWHA OCEAN no. 2551; vesselfinder shows HARMONIC BREEZE with an MMSI (AIS-live), built 2026"
@@ -415,6 +519,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/459086",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459086",
        "soft": false
       }
      ],
@@ -434,6 +542,10 @@
       {
        "url": "https://www.shipvault.com/ships/457498",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457498",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-06-08, yard HANWHA OCEAN no. 2552; vesselfinder shows LAKE MODRO with an MMSI (AIS-live), built 2026"
@@ -445,6 +557,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457498",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457498",
        "soft": false
       }
      ],
@@ -464,6 +580,10 @@
       {
        "url": "https://www.shipvault.com/ships/457499",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457499",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard HANWHA OCEAN no. 2553; vesselfinder shows LAKE MORSKIE OKO with an MMSI (AIS-live), built 2026"
@@ -475,6 +595,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457499",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457499",
        "soft": false
       }
      ],
@@ -494,6 +618,10 @@
       {
        "url": "https://www.shipvault.com/ships/465038",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465038",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-04-04, yard HANWHA OCEAN no. 2559; vesselfinder shows AL SAKHAMAH with an MMSI (AIS-live), built 2025"
@@ -506,6 +634,10 @@
       {
        "url": "https://www.shipvault.com/ships/465038",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465038",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-04-04 per shipvault"
@@ -517,6 +649,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465038",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465038",
        "soft": false
       }
      ],
@@ -536,6 +672,10 @@
       {
        "url": "https://www.shipvault.com/ships/465040",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465040",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-06-27, yard HANWHA OCEAN no. 2561; vesselfinder shows AL GALAYEL with an MMSI (AIS-live), built 2025"
@@ -548,6 +688,10 @@
       {
        "url": "https://www.shipvault.com/ships/465040",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465040",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-06-27 per shipvault"
@@ -559,6 +703,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465040",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465040",
        "soft": false
       }
      ],
@@ -578,6 +726,10 @@
       {
        "url": "https://www.shipvault.com/ships/465041",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-07-29, yard HANWHA OCEAN no. 2562; vesselfinder shows BU NAKHLAH with an MMSI (AIS-live), built 2025"
@@ -590,6 +742,10 @@
       {
        "url": "https://www.shipvault.com/ships/465041",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-07-29 per shipvault"
@@ -601,6 +757,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465041",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041",
        "soft": false
       }
      ],
@@ -620,6 +780,10 @@
       {
        "url": "https://www.shipvault.com/ships/465042",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-11-28, yard HANWHA OCEAN no. 2563; vesselfinder shows AL SENE with an MMSI (AIS-live), built 2025"
@@ -632,6 +796,10 @@
       {
        "url": "https://www.shipvault.com/ships/465042",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-11-28 per shipvault"
@@ -643,6 +811,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465042",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042",
        "soft": false
       }
      ],
@@ -662,6 +834,10 @@
       {
        "url": "https://www.shipvault.com/ships/465043",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-12-18, yard HANWHA OCEAN no. 2564; vesselfinder shows SHAFALLAH with an MMSI (AIS-live), built 2025"
@@ -674,6 +850,10 @@
       {
        "url": "https://www.shipvault.com/ships/465043",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-12-18 per shipvault"
@@ -685,6 +865,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465043",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
        "soft": false
       }
      ],
@@ -704,6 +888,10 @@
       {
        "url": "https://www.shipvault.com/ships/465044",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465044",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-03-17, yard HANWHA OCEAN no. 2565; vesselfinder shows HASBAH with an MMSI (AIS-live), built 2026"
@@ -715,6 +903,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465044",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465044",
        "soft": false
       }
      ],
@@ -734,6 +926,10 @@
       {
        "url": "https://www.shipvault.com/ships/465046",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465046",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-02-27, yard HANWHA OCEAN no. 2567; vesselfinder shows ESTEEM CORMORANT with an MMSI (AIS-live), built 2026"
@@ -745,6 +941,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465046",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465046",
        "soft": false
       }
      ],
@@ -764,6 +964,10 @@
       {
        "url": "https://www.shipvault.com/ships/465047",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465047",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2568 (Hanwha)' -> vessel named"
@@ -781,6 +985,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465048",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465048",
        "soft": false
       }
      ],
@@ -800,6 +1008,10 @@
       {
        "url": "https://www.shipvault.com/ships/465049",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465049",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-05-13, yard HANWHA OCEAN no. 2570; vesselfinder shows SERI DIAN with an MMSI (AIS-live), built 2026"
@@ -811,6 +1023,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465049",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465049",
        "soft": false
       }
      ],
@@ -830,6 +1046,10 @@
       {
        "url": "https://www.shipvault.com/ships/465050",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465050",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-06-15, yard HANWHA OCEAN no. 2571; vesselfinder shows SERI DAYANG with an MMSI (AIS-live), built 2026"
@@ -841,6 +1061,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465050",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465050",
        "soft": false
       }
      ],
@@ -860,6 +1084,10 @@
       {
        "url": "https://www.shipvault.com/ships/465051",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465051",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-05-28, yard HANWHA OCEAN no. 2572; vesselfinder shows AL THURAYYA with an MMSI (AIS-live), built 2026"
@@ -871,6 +1099,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465051",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465051",
        "soft": false
       }
      ],
@@ -890,6 +1122,10 @@
       {
        "url": "https://www.shipvault.com/ships/465052",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465052",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-07-24, yard HANWHA OCEAN no. 2573; vesselfinder shows AL MAJHOULAH with an MMSI (AIS-live), built 2026"
@@ -901,6 +1137,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465052",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465052",
        "soft": false
       }
      ],
@@ -920,6 +1160,10 @@
       {
        "url": "https://www.shipvault.com/ships/465053",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465053",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2574 (Hanwha)' -> vessel named"
@@ -938,6 +1182,10 @@
       {
        "url": "https://www.shipvault.com/ships/456923",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456923",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-03-31, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2636; vesselfinder shows SPIRIT LNG with an MMSI (AIS-live), built 2026"
@@ -949,6 +1197,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/456923",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456923",
        "soft": false
       }
      ],
@@ -968,6 +1220,10 @@
       {
        "url": "https://www.shipvault.com/ships/457608",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457608",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-09-15, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2640; vesselfinder shows QTAIFAN with an MMSI (AIS-live), built 2025"
@@ -980,6 +1236,10 @@
       {
        "url": "https://www.shipvault.com/ships/457608",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457608",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-09-15 per shipvault"
@@ -991,6 +1251,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457608",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457608",
        "soft": false
       }
      ],
@@ -1010,6 +1274,10 @@
       {
        "url": "https://www.shipvault.com/ships/457614",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457614",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-06-16, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2646; vesselfinder shows UMM HEESH with an MMSI (AIS-live), built 2026"
@@ -1021,6 +1289,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457614",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457614",
        "soft": false
       }
      ],
@@ -1040,6 +1312,10 @@
       {
        "url": "https://www.shipvault.com/ships/457615",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457615",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2647; vesselfinder shows UMM AL SHUBRUM with an MMSI (AIS-live), built 2026"
@@ -1051,6 +1327,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457615",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457615",
        "soft": false
       }
      ],
@@ -1070,6 +1350,10 @@
       {
        "url": "https://www.shipvault.com/ships/461095",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461095",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-02-27, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2652; vesselfinder shows MINERVA ELEONORA with an MMSI (AIS-live), built 2026"
@@ -1081,6 +1365,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461095",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461095",
        "soft": false
       }
      ],
@@ -1100,6 +1388,10 @@
       {
        "url": "https://www.shipvault.com/ships/461096",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461096",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-03-31, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2653; vesselfinder shows MINERVA ROXANNE with an MMSI (AIS-live), built 2026"
@@ -1111,6 +1403,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461096",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461096",
        "soft": false
       }
      ],
@@ -1130,6 +1426,10 @@
       {
        "url": "https://www.shipvault.com/ships/463994",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463994",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2662 (SHI)' -> vessel named"
@@ -1147,6 +1447,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/463995",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463995",
        "soft": false
       }
      ],
@@ -1166,6 +1470,10 @@
       {
        "url": "https://www.shipvault.com/ships/465878",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465878",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2664 (SHI)' -> vessel named"
@@ -1183,6 +1491,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465879",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465879",
        "soft": false
       }
      ],
@@ -1202,6 +1514,10 @@
       {
        "url": "https://www.shipvault.com/ships/479142",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04"
@@ -1213,6 +1529,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479142",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
        "soft": false
       }
      ],
@@ -1232,6 +1552,10 @@
       {
        "url": "https://www.shipvault.com/ships/479143",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479143",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
@@ -1249,6 +1573,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/483994",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483994",
        "soft": false
       }
      ],
@@ -1268,6 +1596,10 @@
       {
        "url": "https://www.shipvault.com/ships/467719",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-03-31, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3371; vesselfinder shows PUTERI SARAWAK with an MMSI (AIS-live), built 2025"
@@ -1280,6 +1612,10 @@
       {
        "url": "https://www.shipvault.com/ships/467719",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-03-31 per shipvault"
@@ -1291,6 +1627,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/467719",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719",
        "soft": false
       }
      ],
@@ -1340,6 +1680,10 @@
       {
        "url": "https://www.shipvault.com/ships/458164",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458164",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-05-19, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3386; vesselfinder shows UMM WISHAH with an MMSI (AIS-live), built 2026"
@@ -1351,6 +1695,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/458164",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458164",
        "soft": false
       }
      ],
@@ -1370,6 +1718,10 @@
       {
        "url": "https://www.shipvault.com/ships/459079",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459079",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-08-18, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3395; vesselfinder shows AL ZUWAIR with an MMSI (AIS-live), built 2025"
@@ -1382,6 +1734,10 @@
       {
        "url": "https://www.shipvault.com/ships/459079",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459079",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-08-18 per shipvault"
@@ -1393,6 +1749,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/459079",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459079",
        "soft": false
       }
      ],
@@ -1412,6 +1772,10 @@
       {
        "url": "https://www.shipvault.com/ships/459080",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459080",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-12-16, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3396; vesselfinder shows SHARQ with an MMSI (AIS-live), built 2025"
@@ -1424,6 +1788,10 @@
       {
        "url": "https://www.shipvault.com/ships/459080",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459080",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-12-16 per shipvault"
@@ -1435,6 +1803,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/459080",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459080",
        "soft": false
       }
      ],
@@ -1454,6 +1826,10 @@
       {
        "url": "https://www.shipvault.com/ships/459081",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459081",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-01-16, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3397; vesselfinder shows SHRAOUH with an MMSI (AIS-live), built 2026"
@@ -1472,6 +1848,10 @@
       {
        "url": "https://www.shipvault.com/ships/459082",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459082",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3398; vesselfinder shows HALWAN with an MMSI (AIS-live), built 2026"
@@ -1483,6 +1863,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/459082",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459082",
        "soft": false
       }
      ],
@@ -1502,6 +1886,10 @@
       {
        "url": "https://www.shipvault.com/ships/459083",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459083",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3399 (HDHHI)' -> vessel named"
@@ -1519,6 +1907,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/459084",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459084",
        "soft": false
       }
      ],
@@ -1538,6 +1930,10 @@
       {
        "url": "https://www.shipvault.com/ships/459085",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459085",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3401 (HDHHI)' -> vessel named"
@@ -1556,6 +1952,10 @@
       {
        "url": "https://www.shipvault.com/ships/460369",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-04-07, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3407; vesselfinder shows EXCELERATE ACADIA with an MMSI (AIS-live), built 2026"
@@ -1567,6 +1967,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/460369",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369",
        "soft": false
       }
      ],
@@ -1586,6 +1990,10 @@
       {
        "url": "https://www.shipvault.com/ships/464884",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464884",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03"
@@ -1604,6 +2012,10 @@
       {
        "url": "https://www.shipvault.com/ships/428603",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/428603",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-01-05, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8182; vesselfinder shows PARTHENON LNG with an MMSI (AIS-live), built 2026"
@@ -1615,6 +2027,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/428603",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/428603",
        "soft": false
       }
      ],
@@ -1634,6 +2050,10 @@
       {
        "url": "https://www.shipvault.com/ships/456920",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456920",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-07-25, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8188; vesselfinder shows PUTERI SELANGOR with an MMSI (AIS-live), built 2025"
@@ -1646,6 +2066,10 @@
       {
        "url": "https://www.shipvault.com/ships/456920",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456920",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-07-25 per shipvault"
@@ -1657,6 +2081,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/456920",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456920",
        "soft": false
       }
      ],
@@ -1676,6 +2104,10 @@
       {
        "url": "https://www.shipvault.com/ships/456921",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456921",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-08-31, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8189; vesselfinder shows PUTERI TERENGGANU with an MMSI (AIS-live), built 2025"
@@ -1688,6 +2120,10 @@
       {
        "url": "https://www.shipvault.com/ships/456921",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456921",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-08-31 per shipvault"
@@ -1699,6 +2135,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/456921",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456921",
        "soft": false
       }
      ],
@@ -1718,6 +2158,10 @@
       {
        "url": "https://www.shipvault.com/ships/458170",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458170",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-03-10, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8200; vesselfinder shows OLYMPUS LNG with an MMSI (AIS-live), built 2026"
@@ -1729,6 +2173,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/458170",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458170",
        "soft": false
       }
      ],
@@ -1748,6 +2196,10 @@
       {
        "url": "https://www.shipvault.com/ships/458171",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458171",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-07-16, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8201; vesselfinder shows FRONTIER LNG with an MMSI (AIS-live), built 2026"
@@ -1759,6 +2211,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/458171",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458171",
        "soft": false
       }
      ],
@@ -1778,6 +2234,10 @@
       {
        "url": "https://www.shipvault.com/ships/461955",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461955",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-05-29, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8204; vesselfinder shows MUSCAT LNG with an MMSI (AIS-live), built 2026"
@@ -1789,6 +2249,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461955",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461955",
        "soft": false
       }
      ],
@@ -1808,6 +2272,10 @@
       {
        "url": "https://www.shipvault.com/ships/461956",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-06-30, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8205; vesselfinder shows MUSANDAM LNG with an MMSI (AIS-live), built 2026"
@@ -1819,6 +2287,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461956",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956",
        "soft": false
       }
      ],
@@ -1838,6 +2310,10 @@
       {
        "url": "https://www.shipvault.com/ships/468295",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468295",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12"
@@ -1855,6 +2331,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/467052",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467052",
        "soft": false
       }
      ],
@@ -1874,6 +2354,10 @@
       {
        "url": "https://www.shipvault.com/ships/462938",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462938",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-08-25, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1799A; vesselfinder shows FATH AL KHAIR with an MMSI (AIS-live), built 2025"
@@ -1885,6 +2369,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462938",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462938",
        "soft": false
       }
      ],
@@ -1904,6 +2392,10 @@
       {
        "url": "https://www.shipvault.com/ships/462939",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-10-30, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1800A; vesselfinder shows MIHZEM with an MMSI (AIS-live), built 2025"
@@ -1916,6 +2408,10 @@
       {
        "url": "https://www.shipvault.com/ships/462939",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-10-30 per shipvault"
@@ -1927,6 +2423,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462939",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
        "soft": false
       }
      ],
@@ -1946,6 +2446,10 @@
       {
        "url": "https://www.shipvault.com/ships/462940",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-12-10, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1801A; vesselfinder shows IDD AL SHARGI with an MMSI (AIS-live), built 2025"
@@ -1958,6 +2462,10 @@
       {
        "url": "https://www.shipvault.com/ships/462940",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
+       "soft": false
       }
      ],
      "note": "backend 2026 -> delivered 2025-12-10 per shipvault"
@@ -1969,6 +2477,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462940",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
        "soft": false
       }
      ],
@@ -1988,6 +2500,10 @@
       {
        "url": "https://www.shipvault.com/ships/456803",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456803",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-04-01, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1884A; vesselfinder shows GREENERGY WIND with an MMSI (AIS-live), built 2026"
@@ -1999,6 +2515,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/456803",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456803",
        "soft": false
       }
      ],
@@ -2018,6 +2538,10 @@
       {
        "url": "https://www.shipvault.com/ships/456804",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456804",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-07-01, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1885A; vesselfinder shows GREENERGY CLOUD with an MMSI (AIS-live), built 2026"
@@ -2035,6 +2559,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/467890",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467890",
        "soft": false
       }
      ],
@@ -2054,6 +2582,10 @@
       {
        "url": "https://www.shipvault.com/ships/467891",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467891",
+       "soft": false
       }
      ],
      "note": "backend 'Greenenergy Sea' differs from registry name"
@@ -2071,6 +2603,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/467892",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467892",
        "soft": false
       }
      ],
@@ -2090,6 +2626,10 @@
       {
        "url": "https://www.shipvault.com/ships/468859",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468859",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03"
@@ -2107,6 +2647,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/468860",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468860",
        "soft": false
       }
      ],
@@ -2126,6 +2670,10 @@
       {
        "url": "https://www.shipvault.com/ships/467893",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467893",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10"
@@ -2143,6 +2691,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465806",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465806",
        "soft": false
       }
      ],
@@ -2162,6 +2714,10 @@
       {
        "url": "https://www.shipvault.com/ships/465807",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465807",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-06-30, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1895A; vesselfinder shows PUTERI KEDAH with an MMSI (AIS-live), built 2026"
@@ -2179,6 +2735,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465809",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465809",
        "soft": false
       }
      ],
@@ -2198,6 +2758,10 @@
       {
        "url": "https://www.shipvault.com/ships/467899",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-01-30, yard HUDONG-ZHONGHUA SHIPYARD GROUP no. H1909A; vesselfinder shows TIANSHAN with an MMSI (AIS-live), built 2026"
@@ -2209,6 +2773,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/467899",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899",
        "soft": false
       }
      ],
@@ -2228,6 +2796,10 @@
       {
        "url": "https://www.shipvault.com/ships/475022",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/475022",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull YZJ2022-1475' -> vessel named"
@@ -2245,6 +2817,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457557",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457557",
        "soft": false
       }
      ],
@@ -2264,6 +2840,10 @@
       {
        "url": "https://www.shipvault.com/ships/465039",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465039",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-05-21, yard HANWHA OCEAN no. 2560; vesselfinder shows AL SLAIMI with an MMSI (AIS-live), built 2025"
@@ -2275,6 +2855,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465039",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465039",
        "soft": false
       }
      ],
@@ -2294,6 +2878,10 @@
       {
        "url": "https://www.shipvault.com/ships/431878",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/431878",
+       "soft": false
       }
      ],
      "note": "backend 'Alexey Kosygin' differs from registry name"
@@ -2311,6 +2899,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/457556",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457556",
        "soft": false
       }
      ],
@@ -2330,6 +2922,10 @@
       {
        "url": "https://www.shipvault.com/ships/459925",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459925",
+       "soft": false
       }
      ],
      "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
@@ -2347,6 +2943,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461880",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461880",
        "soft": false
       }
      ],
@@ -2366,6 +2966,10 @@
       {
        "url": "https://www.shipvault.com/ships/454342",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/454342",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-09-30, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2610; vesselfinder shows HL PUFFIN with an MMSI (AIS-live), built 2025"
@@ -2377,6 +2981,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/454342",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/454342",
        "soft": false
       }
      ],
@@ -2396,6 +3004,10 @@
       {
        "url": "https://www.shipvault.com/ships/455147",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455147",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-12-10, yard JIANGNAN SHIPYARD no. H2703; vesselfinder shows AL SADAF with an MMSI (AIS-live), built 2025"
@@ -2407,6 +3019,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/455147",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455147",
        "soft": false
       }
      ],
@@ -2426,6 +3042,10 @@
       {
        "url": "https://www.shipvault.com/ships/462911",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462911",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-03-23, yard JIANGNAN SHIPYARD no. H2704; vesselfinder shows ARADA with an MMSI (AIS-live), built 2026"
@@ -2443,6 +3063,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462912",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462912",
        "soft": false
       }
      ],
@@ -2462,6 +3086,10 @@
       {
        "url": "https://www.shipvault.com/ships/455819",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455819",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-03-24, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8179; vesselfinder shows JOZEF PILSUDSKI with an MMSI (AIS-live), built 2025"
@@ -2473,6 +3101,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/455819",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455819",
        "soft": false
       }
      ],
@@ -2492,6 +3124,10 @@
       {
        "url": "https://www.shipvault.com/ships/456918",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456918",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-12-09, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2632; vesselfinder shows PUTERI PERAK with an MMSI (AIS-live), built 2025"
@@ -2503,6 +3139,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/456918",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456918",
        "soft": false
       }
      ],
@@ -2522,6 +3162,10 @@
       {
        "url": "https://www.shipvault.com/ships/456919",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456919",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-01-09, yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD no. 2633; vesselfinder shows PUTERI PERLIS with an MMSI (AIS-live), built 2026"
@@ -2533,6 +3177,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/456919",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456919",
        "soft": false
       }
      ],
@@ -2552,6 +3200,10 @@
       {
        "url": "https://www.shipvault.com/ships/432643",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432643",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2317 (SHI)' -> vessel named"
@@ -2569,6 +3221,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/432644",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432644",
        "soft": false
       }
      ],
@@ -2588,6 +3244,10 @@
       {
        "url": "https://www.shipvault.com/ships/470097",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2582 (Hanwha)' -> vessel named"
@@ -2605,6 +3265,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/471277",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
        "soft": false
       }
      ],
@@ -2624,6 +3288,10 @@
       {
        "url": "https://www.shipvault.com/ships/479145",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479145",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2700 (SHI)' -> vessel named"
@@ -2641,6 +3309,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462869",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462869",
        "soft": false
       }
      ],
@@ -2660,6 +3332,10 @@
       {
        "url": "https://www.shipvault.com/ships/462870",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462870",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3453 (HDHHI)' -> vessel named"
@@ -2677,6 +3353,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478305",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478305",
        "soft": false
       }
      ],
@@ -2696,6 +3376,10 @@
       {
        "url": "https://www.shipvault.com/ships/478306",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478306",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3477 (HDHHI)' -> vessel named"
@@ -2713,6 +3397,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478307",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478307",
        "soft": false
       }
      ],
@@ -2732,6 +3420,10 @@
       {
        "url": "https://www.shipvault.com/ships/478308",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478308",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3479 (HDHHI)' -> vessel named"
@@ -2749,6 +3441,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478309",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478309",
        "soft": false
       }
      ],
@@ -2768,6 +3464,10 @@
       {
        "url": "https://www.shipvault.com/ships/478310",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478310",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3481 (HDHHI)' -> vessel named"
@@ -2785,6 +3485,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478311",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478311",
        "soft": false
       }
      ],
@@ -2804,6 +3508,10 @@
       {
        "url": "https://www.shipvault.com/ships/478312",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478312",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3483 (HDHHI)' -> vessel named"
@@ -2821,6 +3529,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478313",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478313",
        "soft": false
       }
      ],
@@ -2840,6 +3552,10 @@
       {
        "url": "https://www.shipvault.com/ships/478314",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478314",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3485 (HDHHI)' -> vessel named"
@@ -2857,6 +3573,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478315",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478315",
        "soft": false
       }
      ],
@@ -2876,6 +3596,10 @@
       {
        "url": "https://www.shipvault.com/ships/478316",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478316",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3487 (HDHHI)' -> vessel named"
@@ -2893,6 +3617,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478317",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478317",
        "soft": false
       }
      ],
@@ -2912,6 +3640,10 @@
       {
        "url": "https://www.shipvault.com/ships/478318",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3489 (HDHHI)' -> vessel named"
@@ -2929,6 +3661,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478319",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319",
        "soft": false
       }
      ],
@@ -2948,6 +3684,10 @@
       {
        "url": "https://www.shipvault.com/ships/462933",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull H1794A' -> vessel named"
@@ -2966,6 +3706,10 @@
       {
        "url": "https://www.shipvault.com/ships/466740",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466740",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3434; single-source (no vesselfinder name/MMSI)"
@@ -2977,6 +3721,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/466740",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466740",
        "soft": false
       }
      ],
@@ -2996,6 +3744,10 @@
       {
        "url": "https://www.shipvault.com/ships/466739",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466739",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3433; single-source (no vesselfinder name/MMSI)"
@@ -3007,6 +3759,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/466739",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466739",
        "soft": false
       }
      ],
@@ -3026,6 +3782,10 @@
       {
        "url": "https://www.shipvault.com/ships/469428",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469428",
+       "soft": false
       }
      ],
      "note": "backend 'Dalian No 1 G175K-13' differs from registry name"
@@ -3044,6 +3804,10 @@
       {
        "url": "https://www.shipvault.com/ships/461185",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185",
+       "soft": false
       }
      ],
      "note": "shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8174; single-source (no vesselfinder name/MMSI)"
@@ -3056,6 +3820,10 @@
       {
        "url": "https://www.shipvault.com/ships/461185",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185",
+       "soft": false
       }
      ],
      "note": "backend 2027 -> delivered 2025-10-31 per shipvault"
@@ -3067,6 +3835,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/461185",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185",
        "soft": false
       }
      ],
@@ -3086,6 +3858,10 @@
       {
        "url": "https://www.shipvault.com/ships/476659",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2585 (Hanwha)' -> vessel named"
@@ -3103,6 +3879,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/476660",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660",
        "soft": false
       }
      ],
@@ -3122,6 +3902,10 @@
       {
        "url": "https://www.shipvault.com/ships/476661",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2587 (Hanwha)' -> vessel named"
@@ -3139,6 +3923,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/476662",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662",
        "soft": false
       }
      ],
@@ -3158,6 +3946,10 @@
       {
        "url": "https://www.shipvault.com/ships/478215",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2589 (Hanwha)' -> vessel named"
@@ -3175,6 +3967,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478216",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216",
        "soft": false
       }
      ],
@@ -3194,6 +3990,10 @@
       {
        "url": "https://www.shipvault.com/ships/478217",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2591 (Hanwha)' -> vessel named"
@@ -3211,6 +4011,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478218",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218",
        "soft": false
       }
      ],
@@ -3230,6 +4034,10 @@
       {
        "url": "https://www.shipvault.com/ships/478219",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478219",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2693 (Hanwha)' -> vessel named"
@@ -3247,6 +4055,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478220",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478220",
        "soft": false
       }
      ],
@@ -3266,6 +4078,10 @@
       {
        "url": "https://www.shipvault.com/ships/479139",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2694 (SHI)' -> vessel named"
@@ -3283,6 +4099,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/478221",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478221",
        "soft": false
       }
      ],
@@ -3302,6 +4122,10 @@
       {
        "url": "https://www.shipvault.com/ships/478222",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478222",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2696 (Hanwha)' -> vessel named"
@@ -3319,6 +4143,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479141",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141",
        "soft": false
       }
      ],
@@ -3338,6 +4166,10 @@
       {
        "url": "https://www.shipvault.com/ships/479144",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 2699 (SHI)' -> vessel named"
@@ -3355,6 +4187,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479151",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151",
        "soft": false
       }
      ],
@@ -3374,6 +4210,10 @@
       {
        "url": "https://www.shipvault.com/ships/478320",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3491 (HDHHI)' -> vessel named"
@@ -3392,6 +4232,10 @@
       {
        "url": "https://www.shipvault.com/ships/478321",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
+       "soft": false
       }
      ],
      "note": "placeholder 'Hull 3492 (HDHHI)' -> vessel named"
@@ -3409,6 +4253,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/469427",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469427",
        "soft": false
       }
      ],

@@ -4,42 +4,42 @@
   {
    "row_id": "415",
    "field": "capacity_ref",
-   "url": "https://www.shipvault.com/ships/73086",
+   "url": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
    "confidence": "Y",
    "note": "live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record"
   },
   {
    "row_id": "663",
    "field": "capacity_ref",
-   "url": "https://www.shipvault.com/ships/73085",
+   "url": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
    "confidence": "Y",
    "note": "live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record"
   },
   {
    "row_id": "969",
    "field": "capacity_ref",
-   "url": "https://www.shipvault.com/ships/113754",
+   "url": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
    "confidence": "Y",
    "note": "live row 61: Rule F fill - Capacity = '135000' corroborated by the shipvault unit record"
   },
   {
    "row_id": "1044",
    "field": "capacity_ref",
-   "url": "https://www.shipvault.com/ships/373877",
+   "url": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
    "confidence": "Y",
    "note": "live row 487: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record"
   },
   {
    "row_id": "1045",
    "field": "capacity_ref",
-   "url": "https://www.shipvault.com/ships/373876",
+   "url": "https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
    "confidence": "Y",
    "note": "live row 488: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record"
   },
   {
    "row_id": "121",
    "field": "hull_ref",
-   "url": "https://www.shipvault.com/ships/450944",
+   "url": "https://www.shipvault.com/ships/450944, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/450944",
    "confidence": "Y",
    "note": "live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the shipvault unit record"
   },
@@ -53,7 +53,7 @@
   {
    "row_id": "230",
    "field": "hull_ref",
-   "url": "https://www.shipvault.com/ships/461187",
+   "url": "https://www.shipvault.com/ships/461187, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461187",
    "confidence": "Y",
    "note": "live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by the shipvault unit record"
   }

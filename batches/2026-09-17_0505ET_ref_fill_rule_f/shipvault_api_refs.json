@@ -1,0 +1,47 @@
+{
+  "added": [
+    {
+      "where": "415|Capacity [ref]",
+      "value": "126750",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "result": "ADDED"
+    },
+    {
+      "where": "663|Capacity [ref]",
+      "value": "126750",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "ADDED"
+    },
+    {
+      "where": "969|Capacity [ref]",
+      "value": "135000",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "1044|Capacity [ref]",
+      "value": "174000",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "ADDED"
+    },
+    {
+      "where": "1045|Capacity [ref]",
+      "value": "174000",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "ADDED"
+    },
+    {
+      "where": "121|Hull number [ref]",
+      "value": "Hull 2651 (SHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/450944",
+      "result": "ADDED"
+    },
+    {
+      "where": "230|Hull number [ref]",
+      "value": "Hull 8181 (HDHHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461187",
+      "result": "ADDED"
+    }
+  ],
+  "skipped": []
+}
