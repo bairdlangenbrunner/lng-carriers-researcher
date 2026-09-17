@@ -240,7 +240,7 @@ python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §
 
 Trigger phrases: "IGU reconciliation", "compare the backend to the IGU report", "intercompare with the World LNG Report", "new IGU edition", "what did IGU drop / change".
 
-Governed by `docs/sops/igu_reconciliation.md` (IG rev 1). IMO-keyed join of the **whole
+Governed by `docs/sops/igu_reconciliation.md` (IG rev 2). IMO-keyed join of the **whole
 backend** against the IGU World LNG Report's Appendix 3 (fleet) and Appendix 4 (orderbook),
 with the previous edition layered on top so each diff says which side moved (`igu_changed` /
 `new_to_igu` / `backend_differs` — never revert the last blindly). The backend was seeded from
@@ -277,9 +277,9 @@ python scripts/recalc.py batches/<dir>/lng_carrier_igu_reconciliation.xlsx
 python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §5a)
 ```
 
-Dropped vessels follow the inclusion rule (IG §5.2): decommissioned before December 2025 →
-out of scope, remove; December 2025 or later → the row stays. The Status vocabulary has no
-`scrapped` value — adding one is a user decision, never invented in a batch.
+Dropped vessels (IG §5.2): **rows are never deleted from the backend.** A scrapped vessel keeps
+its row and moves to Status `scrapped` (vocabulary value added 2026-09-17) via a `fix` batch, with
+a verified ref for the demolition sale — whichever side of December 2025 the scrapping falls.
 
 ### Pre-release QC batch
 
@@ -347,6 +347,7 @@ existing vessel (apply.md §5a). Run standalone any time: `python scripts/dedupe
 ## Hard requirements (these override anything below)
 
 - **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited.
+- **Never propose deleting a backend row.** A vessel that leaves the fleet keeps its row and changes Status — a scrapped vessel moves to `scrapped` (Baird directive 2026-09-17; `docs/inclusion_criteria.md`, IG §5.2). The inclusion criteria govern what gets *added*. (A true duplicate — the same vessel entered twice — is not a vessel leaving the fleet: it is flagged by the dedupe sweep and decided by hand, apply.md §5a.)
 - **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in prior batches — URLs decay.
 - **Never cite GEM as a data source** — this includes `gem.wiki` and any other GEM-published page or dataset, as a `[ref]` URL or as corroboration ([ref]-Fill SOP §4.2; Forbidden lists in `docs/sops/ref_fill.md` and `data/source_roster.md`). GEM is downstream of this tracker, so citing it would be circular.
 - **Banned source: abarrelfull** (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — never use it as a reference, ever, even corroborated; it must not appear in any output or lane (Baird directive 2026-07-17, all GEM researcher projects). Chase the primary source it footnotes and cite that.

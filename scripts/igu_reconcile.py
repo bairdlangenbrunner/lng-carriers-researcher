@@ -542,12 +542,13 @@ def main(argv=None):
     if args.fetch_leads:
         fetch_leads(review_imos(rec), leads_path)
     rec["leads"] = load_leads(leads_path)
-    # The inclusion cut-off (docs/inclusion_criteria.md): decommissioned before Dec 2025 -> out
+    # Rows are never deleted: a scrapped vessel moves to Status `scrapped` (IG §5.2). The
+    # Dec 2025 first-release line is kept as context only (scrapped before / after release).
     for x in rec["dropped"]:
         fate = rec["leads"].get(x["backend"]["imo"], {}).get("fate_date", "")
         x["fate_vs_inclusion"] = ("" if not fate else
-                                  "before Dec 2025 — out of scope" if fate < "2025-12-01" else
-                                  "Dec 2025 or later — stays in scope")
+                                  "before Dec 2025 — scrapped before the first release" if fate < "2025-12-01" else
+                                  "Dec 2025 or later — scrapped since the first release")
 
     out = Path(args.output) if args.output else work_dir() / "igu_reconcile.json"
     out.write_text(json.dumps(rec, indent=1, ensure_ascii=False))

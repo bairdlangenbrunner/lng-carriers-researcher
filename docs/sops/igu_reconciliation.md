@@ -2,7 +2,7 @@
 
 **Document purpose:** This SOP describes the workflow for intercomparing the backend Google Sheet against the fleet tables of the IGU World LNG Report — Appendix 3 (active fleet) and Appendix 4 (orderbook). The backend was seeded from the IGU 2025 edition (~1,070 of its rows still carry `Original source = IGU`), so each new edition is the natural annual check on the bulk-loaded fleet: what IGU delivered, renamed, re-typed, dropped or added since the load. It is distinct from the companion reconciliations: SFOC is an IMO-keyed join against the Clarkson orderbook, the FSRU SOP is a name-keyed join against GIIGNL, and *this* SOP is an IMO-keyed join of the **whole fleet** against IGU, with an edition-to-edition comparison layered on top.
 
-**Last revised:** 2026-09-17 rev 1 (initial issue — codifies the word-coordinate extractor, the IMO join, the `kind` model for field diffs, the dropped / status buckets, and the `--mode igu` workbook, from the IGU-2026 intercomparison folded into the sep-17-pass).
+**Last revised:** 2026-09-17 rev 2 (dropped vessels are never removed — a scrapped vessel moves to the new Status value `scrapped`, §5.2; rev 1 was the initial issue — codifies the word-coordinate extractor, the IMO join, the `kind` model for field diffs, the dropped / status buckets, and the `--mode igu` workbook, from the IGU-2026 intercomparison folded into the sep-17-pass).
 
 ---
 
@@ -16,7 +16,7 @@
 - The landing page does not surface per-vessel values, so an IGU URL cannot pass the §3.8c value↔ref gate for a *new* proposal. A Status change, rename, scrapping or type change found here needs its own verified ref (press / class society / tracker).
 - IGU is a secondary compilation with its own defects (duplicate IMOs, mis-spelt names, stale owners). It tells you *where to look*, not what to write. In particular IGU Appendix 3 "Type" is the one published source for the tracker's `conventional` classification.
 
-**Inclusion criteria apply throughout** (`docs/inclusion_criteria.md`): FSUs, small-/mid-scale carriers, bunkering vessels and domestic-only ships are out of scope, as are vessels cancelled or **decommissioned before December 2025**. The last rule decides what happens to a dropped vessel (§5.2).
+**Inclusion criteria apply throughout** (`docs/inclusion_criteria.md`): FSUs, small-/mid-scale carriers, bunkering vessels and domestic-only ships are out of scope, as are vessels cancelled or decommissioned before December 2025 — but that governs what is *added*: a row already in the backend is never deleted (§5.2).
 
 **Inputs.**
 - **Backend CSV** — pulled fresh (mandatory first step, [ref]-Fill SOP §3.0). Keep the same `work/backend.csv` for the reconcile and the build so live sheet rows stay consistent.
@@ -101,7 +101,7 @@ Because the backend was loaded from the previous edition, the previous edition's
 `delivered_per_igu` rows are usually already covered by a delivery roll-forward batch (green). For `on_order_at_igu_cutoff` with a delivery-year conflict, the usual answer is that the vessel delivered *after* the cut-off and the backend Delivery year is a year early — the shipvault delivery date says which. Rows shipvault still shows on order (e.g. the sanctioned Arctic LNG 2 hulls) are a Status question, not a year question.
 
 ### 5.2 Dropped vessels
-IGU silently removes scrapped tonnage. For each dropped row get the fate and its date, then apply the inclusion rule: **decommissioned before December 2025 → out of scope, remove the row; December 2025 or later → the row stays**, and the fate is recorded. The Status vocabulary currently has no `scrapped` value — adding one is a user decision (escalate; do not invent a value). Converted vessels (FSU / FSRU) are a Vessel-type change, not a removal, unless the new type is itself out of scope.
+IGU silently removes scrapped tonnage. For each dropped row confirm the fate with a verified ref, then propose **Status `active` → `scrapped`** in a `fix` batch. **Rows are never deleted from the backend**, whichever side of the December 2025 first release the scrapping falls (Baird, 2026-09-17, rev 2 — this replaces the rev 1 "before December 2025 → remove the row" rule; `fate_vs_inclusion` is now context only). The ref must state a completed demolition sale or the arrival at the breakers, and name the vessel; a tracker record alone is single-source (Y). Converted vessels (FSU / FSRU) are a Vessel-type change, not a removal, unless the new type is itself out of scope.
 
 ### 5.3 Field diffs
 Work `igu_changed` by field: delivery-year slips on on-order rows (check against a tracker before accepting — IGU's schedule is nine months old), renames and owner changes (sale / rebrand — need a ref), propulsion flips (ME-GA ↔ X-DF — IGU is often the one correcting itself), vessel-type changes (conversion). `backend_differs` is a reading list for backend *name defects* and load corruption, not a to-do list.

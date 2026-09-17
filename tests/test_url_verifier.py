@@ -783,6 +783,12 @@ def test_status_on_order_corroborated_by_order_wording():
     assert "delivered" not in vs
 
 
+def test_status_scrapped_corroborated_by_demolition_wording():
+    vs = [x.lower() for x in url_verifier.value_variants("scrapped")]
+    assert "sold for demolition" in vs and "sold for recycling" in vs and "scrapped" in vs
+    assert "took delivery" not in vs and "on order" not in vs
+
+
 def test_untagged_hull_number():
     vs = url_verifier.value_variants("Hull H2706")
     assert "H2706" in vs and "Hull H2706" in vs

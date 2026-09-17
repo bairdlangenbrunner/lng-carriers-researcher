@@ -1,0 +1,158 @@
+[
+  {
+    "live": 16,
+    "imo": "9038440",
+    "name": "Al Khaznah",
+    "refs": [
+      {
+        "url": "https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Al Khaznah",
+        "quote": "Multiple broking sources report Abu Dhabi’s Adnoc Logistics & Services has just sold its two oldest gas carriers, Ghasha (built 1995) and Al Khaznah (built 1994), for recycling, fetching over $20m each.",
+        "published": "2025-07-28"
+      },
+      {
+        "url": "https://nauticalvoice.com/2025-becomes-record-year-for-lng-carrier-scrapping/53319/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Al Khaznah",
+        "quote": "Adnoc Logistics & Services has recently sold its two oldest LNG carriers, Ghasha (built in 1995) and Al Khaznah (built in 1994), for recycling at impressive prices exceeding $20 million each.",
+        "published": "2025-07-28"
+      }
+    ],
+    "demolition_date_or_month": "2025-07",
+    "scrap_voyage_name": "",
+    "failed_urls": [],
+    "notes": "nauticalvoice.com appears to be a syndicated re-write of the splash247 article (same facts/wording); kept as a second, independently-hosted passing URL since it names the vessel and states the recycling sale in its own right."
+  },
+  {
+    "live": 23,
+    "imo": "9038452",
+    "name": "Ghasha",
+    "refs": [
+      {
+        "url": "https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Ghasha",
+        "quote": "Multiple broking sources report Abu Dhabi’s Adnoc Logistics & Services has just sold its two oldest gas carriers, Ghasha (built 1995) and Al Khaznah (built 1994), for recycling, fetching over $20m each.",
+        "published": "2025-07-28"
+      },
+      {
+        "url": "https://nauticalvoice.com/2025-becomes-record-year-for-lng-carrier-scrapping/53319/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Ghasha",
+        "quote": "Adnoc Logistics & Services has recently sold its two oldest LNG carriers, Ghasha (built in 1995) and Al Khaznah (built in 1994), for recycling at impressive prices exceeding $20 million each.",
+        "published": "2025-07-28"
+      }
+    ],
+    "demolition_date_or_month": "2025-07",
+    "scrap_voyage_name": "",
+    "failed_urls": [],
+    "notes": "Same pair of refs as Al Khaznah (sold as a pair by Adnoc L&S); nauticalvoice is a syndicated re-write of the splash247 piece."
+  },
+  {
+    "live": 25,
+    "imo": "9030814",
+    "name": "Puteri Delima",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Puteri Delima",
+        "quote": "Malaysian shipowner MISC has agreed to sell two of its elderly steam turbine-driven LNG carriers for demolition, inching up 2025’s record scrapping total for this ship sector. Brokers said MISC’s 130,405-cbm Puteri Delima and Puteri Nilam (both built 1995) have been sold to cash buyers on the basis of delivery to breakers in Bangladesh.",
+        "published": "2025-10-16"
+      }
+    ],
+    "demolition_date_or_month": "2025-10",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {"url": "https://lngprime.com/asia/misc-sells-lng-carrier-trio-for-scrap/180471/", "why": "paywalled - visible text before the subscription gate names only MISC, not the individual vessels; fails gate_name"},
+      {"url": "https://www.dagangnews.com/article/terkini/misc-bubarkan-secara-sukarela-puteri-firus-puteri-delima-puteri-intan-dan-puteri-nilam-63177", "why": "off-topic - this is about MISC voluntarily dissolving the shell companies named after the vessels (corporate housekeeping), not about scrapping the ships themselves"}
+    ],
+    "notes": "Only one independent passing URL found after the search budget; the article text (served in the page's own SSR JSON payload, ahead of the paywall overlay) explicitly names both Puteri Delima and Puteri Nilam and states they were sold to cash buyers for delivery to Bangladeshi breakers. Same ref used for both sister ships (live rows 25 and 26)."
+  },
+  {
+    "live": 26,
+    "imo": "9030826",
+    "name": "Puteri Nilam",
+    "refs": [
+      {
+        "url": "https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Puteri Nilam",
+        "quote": "Malaysian shipowner MISC has agreed to sell two of its elderly steam turbine-driven LNG carriers for demolition, inching up 2025’s record scrapping total for this ship sector. Brokers said MISC’s 130,405-cbm Puteri Delima and Puteri Nilam (both built 1995) have been sold to cash buyers on the basis of delivery to breakers in Bangladesh.",
+        "published": "2025-10-16"
+      }
+    ],
+    "demolition_date_or_month": "2025-10",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {"url": "https://lngprime.com/asia/misc-sells-lng-carrier-trio-for-scrap/180471/", "why": "paywalled - visible text before the subscription gate names only MISC, not the individual vessels; fails gate_name"}
+    ],
+    "notes": "Only one independent passing URL found. Same ref as Puteri Delima (sold as a pair, both to breakers in Bangladesh)."
+  },
+  {
+    "live": 44,
+    "imo": "9155145",
+    "name": "Hyundai Technopia",
+    "refs": [
+      {
+        "url": "https://lngprime.com/asia/south-korean-owners-sell-four-lng-carriers-for-scrap/152488/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Hyundai Technopia",
+        "quote": "Several brokers reported that Hyundai LNG Shipping sold the 2000-built 137,141-cbm, Hyundai Aquapia, and the 1999-built 137,219-cbm, Hyundai Technopia. The steam LNG carriers were sold on “as is” basis for delivery in South Korea and Indonesia.",
+        "published": "2025-05-26"
+      },
+      {
+        "url": "https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "Hyundai Technopia",
+        "quote": "In the past week alone, four steam-powered LNG carriers were sold for demolition by two South Korean owners. The ships include Hyundai Aquapia and Hyundai Technopia, both built around the year 2000 with a capacity of 135,000 cubic meters.",
+        "published": "2025-05-27"
+      }
+    ],
+    "demolition_date_or_month": "2025-05",
+    "scrap_voyage_name": "",
+    "failed_urls": [
+      {"url": "https://lngprime.com/asia/hyundai-lng-shipping-sells-another-carrier-for-scrap/156806/", "why": "wrong vessel - this article (July 2025) is about a different Hyundai LNG Shipping steamship, Hyundai Cosmopia, not Hyundai Technopia"}
+    ],
+    "notes": ""
+  },
+  {
+    "live": 46,
+    "imo": "9176008",
+    "name": "HL Ras Laffan",
+    "refs": [
+      {
+        "url": "https://gcaptain.com/nine-workers-killed-at-hong-kong-convention-certified-shipbreaking-yard-in-bangladesh/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "HL Ras Laffan",
+        "quote": "The vessel involved, Rasi (IMO 9176008), is the former HL Ras Laffan, previously owned by South Korea’s H-Line Shipping. The NGO Shipbreaking Platform said shipping databases link the vessel’s sale for recycling to cash buyer GMS. ... Ferdous Steel reported the ship as beached at Chattogram in July 2025.",
+        "published": ""
+      },
+      {
+        "url": "https://www.hellenicshippingnews.com/nine-shipbreaking-workers-killed-in-bangladesh/",
+        "gate_scrapped": "PASS",
+        "gate_name": "PASS",
+        "name_string_used": "HL Ras Laffan",
+        "quote": "The RASI is the former HL RAS LAFFAN, owned by South Korean H-Line Shipping and linked by shipping databases to cash buyer GMS. In March 2025, the Platform specifically warned that H-Line was preparing to retire the vessel.",
+        "published": ""
+      }
+    ],
+    "demolition_date_or_month": "2025-07",
+    "scrap_voyage_name": "Rasi",
+    "failed_urls": [
+      {"url": "https://lngprime.com/asia/h-line-shipping-sells-steam-lng-carrier-for-scrap/136976/", "why": "wrong vessel - this January 2025 article is about a different H-Line steamship, HL Pyeongtaek (ex-Hanjin Pyeongtaek), not HL Ras Laffan"},
+      {"url": "https://maritime-executive.com/article/nine-killed-in-toxic-gas-accident-at-hkc-certified-shipbreaking-yard", "why": "gate_name FAIL - covers the same accident but refers to the vessel only as Rasi, never spells out the former name HL Ras Laffan"}
+    ],
+    "notes": "Both passing refs are 2026 reports on the fatal gas-leak accident during the vessel's demolition at Ferdous Steel, Chattogram, and both state in passing that the beached/being-broken vessel Rasi is the former HL Ras Laffan, sold for recycling to cash buyer GMS (H-Line Shipping). Publish dates not shown on either page (article context places both circa mid/late August 2026, reporting on an August 14 accident); demolition_date_or_month instead reflects gcaptain's stated July 2025 beaching/arrival date, which lines up with the tracker's 2025-07-13 fate date."
+  }
+]

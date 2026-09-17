@@ -30,6 +30,9 @@ from normalize import normalize_builder, normalize_owner
 # A proposal for these columns must use one of these exact canonical values, and
 # a value appearing in a DIFFERENT column is the signal qc_backend.py keys on.
 CONTROLLED_VOCAB = {
+    # `scrapped` added 2026-09-17: a vessel sold for demolition keeps its row (rows are
+    # never deleted from the backend) and moves to this Status.
+    "Status": {"proposed", "on order", "active", "scrapped"},
     "Cargo type": {"membrane", "spherical", "self-supporting prismatic", "type C"},
     "Vessel type": {"conventional", "FSRU", "q-flex", "q-max", "icebreaker",
                     "FSU", "Supporting", "small-scale", "mid-scale"},

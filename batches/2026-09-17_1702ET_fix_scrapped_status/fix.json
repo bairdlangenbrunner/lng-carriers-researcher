@@ -1,0 +1,558 @@
+{
+ "batch_label": "Scrapped status for the 18 rows IGU 2026 dropped + Puteri Delima Satu -> FSU (2026-09-17)",
+ "reason": "IGU World LNG Report 2026 dropped 18 backend `active` rows (IGU reconciliation batch 2026-09-17_1458ET). All 18 were sold for demolition. Baird 2026-09-17: add Status `scrapped`; never delete a row - every scrapped vessel moves to `scrapped`, whichever side of Dec 2025 the scrapping falls. Each Status cell carries press refs stating the completed demolition sale plus the shipvault record; refs replace the IGU-2025 landing page that supported `active`. Live row 61 Puteri Delima Satu: Vessel type conventional -> FSU on two MISC primary documents.",
+ "corrections": [
+  {
+   "row_id": "347",
+   "_live_row": 16,
+   "_imo": "9038440",
+   "_name": "Al Khaznah",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/103443",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103443",
+       "soft": false
+      }
+     ],
+     "note": "splash247.com (2025-07-28): \"Multiple broking sources report Abu Dhabi’s Adnoc Logistics & Services has just sold its two oldest gas carriers, Ghasha (built 1995) and Al Khaznah (built 1994), for recycling, fetching over $20m each.\" | shipvault record (IMO 9038440): status scrapped/sold for scrap, fate date 2025-09-09, last name KHAZA"
+    }
+   ]
+  },
+  {
+   "row_id": "642",
+   "_live_row": 23,
+   "_imo": "9038452",
+   "_name": "Ghasha",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/103444",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103444",
+       "soft": false
+      }
+     ],
+     "note": "splash247.com (2025-07-28): \"Multiple broking sources report Abu Dhabi’s Adnoc Logistics & Services has just sold its two oldest gas carriers, Ghasha (built 1995) and Al Khaznah (built 1994), for recycling, fetching over $20m each.\" | shipvault record (IMO 9038452): status scrapped/sold for scrap, fate date 2025-09-10, last name SHAAN"
+    }
+   ]
+  },
+  {
+   "row_id": "968",
+   "_live_row": 25,
+   "_imo": "9030814",
+   "_name": "Puteri Delima",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/103038",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103038",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2025-10-16): \"Malaysian shipowner MISC has agreed to sell two of its elderly steam turbine-driven LNG carriers for demolition, inching up 2025’s record scrapping total for this ship sector. Brokers said MISC’s 130,405-cbm Puteri Delima and Puteri Nilam (both built 1995) hav\" | shipvault record (IMO 9030814): status scrapped/sold for scrap, fate date 2026-03-08, last name LIMA"
+    }
+   ]
+  },
+  {
+   "row_id": "974",
+   "_live_row": 26,
+   "_imo": "9030826",
+   "_name": "Puteri Nilam",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/103039",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103039",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2025-10-16): \"Malaysian shipowner MISC has agreed to sell two of its elderly steam turbine-driven LNG carriers for demolition, inching up 2025’s record scrapping total for this ship sector. Brokers said MISC’s 130,405-cbm Puteri Delima and Puteri Nilam (both built 1995) hav\" | shipvault record (IMO 9030826): status scrapped/sold for scrap, fate date 2026-02-21, last name NILA"
+    }
+   ]
+  },
+  {
+   "row_id": "696",
+   "_live_row": 44,
+   "_imo": "9155145",
+   "_name": "Hyundai Technopia",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://lngprime.com/asia/south-korean-owners-sell-four-lng-carriers-for-scrap/152488/",
+       "soft": false
+      },
+      {
+       "url": "https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/110052",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/110052",
+       "soft": false
+      }
+     ],
+     "note": "lngprime.com (2025-05-26): \"Several brokers reported that Hyundai LNG Shipping sold the 2000-built 137,141-cbm, Hyundai Aquapia, and the 1999-built 137,219-cbm, Hyundai Technopia. The steam LNG carriers were sold on “as is” basis for delivery in South Korea and Indonesia.\" | marineinsight.com (2025-05-27): \"In the past week alone, four steam-powered LNG carriers were sold for demolition by two South Korean owners. The ships include Hyundai Aquapia and Hyundai Technopia, both built around the year 2000 with a capacity of 135,000 cubic meters.\" | shipvault record (IMO 9155145): status scrapped/sold for scrap, fate date 2025-07-10, last name TECHNO"
+    }
+   ]
+  },
+  {
+   "row_id": "675",
+   "_live_row": 46,
+   "_imo": "9176008",
+   "_name": "HL Ras Laffan",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://gcaptain.com/nine-workers-killed-at-hong-kong-convention-certified-shipbreaking-yard-in-bangladesh/",
+       "soft": false
+      },
+      {
+       "url": "https://www.hellenicshippingnews.com/nine-shipbreaking-workers-killed-in-bangladesh/",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/111478",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111478",
+       "soft": false
+      }
+     ],
+     "note": "gcaptain.com (n.d.): \"The vessel involved, Rasi (IMO 9176008), is the former HL Ras Laffan, previously owned by South Korea’s H-Line Shipping. The NGO Shipbreaking Platform said shipping databases link the vessel’s sale for recycling to cash buyer GMS. ... Ferdous Steel reported th\" | hellenicshippingnews.com (n.d.): \"The RASI is the former HL RAS LAFFAN, owned by South Korean H-Line Shipping and linked by shipping databases to cash buyer GMS. In March 2025, the Platform specifically warned that H-Line was preparing to retire the vessel.\" | shipvault record (IMO 9176008): status scrapped/sold for scrap, fate date 2025-07-13, last name RASI | renamed Rasi for the demolition voyage (press)"
+    }
+   ]
+  },
+  {
+   "row_id": "677",
+   "_live_row": 47,
+   "_imo": "9176010",
+   "_name": "HL Sur",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/",
+       "soft": false
+      },
+      {
+       "url": "https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/111479",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111479",
+       "soft": false
+      }
+     ],
+     "note": "marineinsight.com (2025-05-27): \"Another two LNG carriers, HL Ras Laffan and HL Sur, also built in 2000, were sold by Hyundai LNG Shipping under similar terms. All four ships are now being sent to South Asia for dismantling.\" | shipandbunker.com (2025 week 21 report (sale date shown in table: 26-05-2025)): \"26-05-2025 HL Sur LARGE LNG 12-01-2000 H Line Shipping\" | shipvault record (IMO 9176010): status scrapped/sold for scrap, fate date 2025-07-15, last name SUR"
+    }
+   ]
+  },
+  {
+   "row_id": "688",
+   "_live_row": 48,
+   "_imo": "9179581",
+   "_name": "Hyundai Aquapia",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/",
+       "soft": false
+      },
+      {
+       "url": "https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/111681",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111681",
+       "soft": false
+      }
+     ],
+     "note": "marineinsight.com (2025-05-27): \"The ships include Hyundai Aquapia and Hyundai Technopia, both built around the year 2000 with a capacity of 135,000 cubic meters. These were sold together for about $565 per light displacement ton, bringing in roughly $19.2 million each.\" | shipandbunker.com (2025 week 21 report (sale date shown in table: 24-05-2025)): \"24-05-2025 Hyundai Aquapia LARGE LNG 01-03-2000 KAMCO\" | shipvault record (IMO 9179581): status scrapped/sold for scrap, fate date 2025-07-20, last name APIA"
+    }
+   ]
+  },
+  {
+   "row_id": "689",
+   "_live_row": 49,
+   "_imo": "9155157",
+   "_name": "Hyundai Cosmopia",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://lloydslist.com/LL1154206",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/110053",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/110053",
+       "soft": false
+      }
+     ],
+     "note": "lloydslist.com (2025-07-14): \"The 138,000 cu m Hyundai Cosmopia has been sold to cash buyers for $580 per light displacement tonne.\" | shipvault record (IMO 9155157): status scrapped/sold for scrap, fate date 2025-08-22, last name COSMO"
+    }
+   ]
+  },
+  {
+   "row_id": "780",
+   "_live_row": 54,
+   "_imo": "9200316",
+   "_name": "LNG Jamal",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://lloydslist.com/LL1154822",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/113071",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113071",
+       "soft": false
+      }
+     ],
+     "note": "lloydslist.com (2025-09-15): \"The 2000-built LNG Jamal has been purchased by Indian ship recyclers for $650 per ldt.\" | shipvault record (IMO 9200316): status scrapped/sold for scrap, fate date 2025-10-17"
+    }
+   ]
+  },
+  {
+   "row_id": "1082",
+   "_live_row": 63,
+   "_imo": "9238038",
+   "_name": "Trader II",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.shippingherald.com/capital-gas-scraps-lng-carrier/",
+       "soft": false
+      },
+      {
+       "url": "https://www.tradewindsnews.com/gas/2-1-1864945",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/115653",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115653",
+       "soft": false
+      }
+     ],
+     "note": "shippingherald.com (2025-09-01): \"According to broker reports, Capital Gas Carrier Corp has sold LNG carrier Trader II (138,208-cbm / built 2002) for recycling. The vessel has reportedly been sold for approximately USD 480 per ldt on an 'as is' basis in Singapore.\" | tradewindsnews.com (2025-09-01): \"Greece's Capital Gas Carrier Corp has sold the last of its secondhand steam turbine ships for demolition, boosting the record total of LNG carriers scrapped this year. Brokers said the 138,208-cbm Trader II (built 2002) has been sold for recycling for about $4\" | shipvault record (IMO 9238038): status scrapped/sold for scrap, fate date 2025-09-21, last name RADE"
+    }
+   ]
+  },
+  {
+   "row_id": "1083",
+   "_live_row": 64,
+   "_imo": "9213416",
+   "_name": "Trader III",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/2-1-1791058",
+       "soft": false
+      },
+      {
+       "url": "https://shipbreakingplatform.org/marinakis-beaching-vessel/",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/113852",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113852",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2025-03-12): \"Pictured in its earlier years, the 137,489-cbm, membrane-type LNG carrier Trader III (ex-Puteri Intan Satu, built 2002) has become the second LNG carrier sent for recycling in 2025.\" | shipbreakingplatform.org (2025-10-21): \"A recent Reporters United's investigation into the illegal end-of-life sale of TRADER III — a tanker linked to companies of Greek shipowner and media magnate Vangelis Marinakis — lays bare how Europe's most powerful shipping interests still funnel toxic end-of\" | shipvault record (IMO 9213416): status scrapped/sold for scrap, fate date 2025-03-13"
+    }
+   ]
+  },
+  {
+   "row_id": "1000",
+   "_live_row": 77,
+   "_imo": "9236420",
+   "_name": "Seapeak Catalunya",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/seapeak-ups-2025-lng-demolition-tally-to-15-as-another-steamship-is-sold/2-1-1908979",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/115518",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115518",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2025-12-01): \"Brokers said the 138,423-cbm Seapeak Asia (ex-Seapeak Catalunya, built 2003) has been sold for recycling in Bangladesh. They quoted a price of $420 per ldt on the 29,686-ldt vessel, which would indicate a sales level of $12.5m.\" | shipvault record (IMO 9236420): status scrapped/sold for scrap, fate date 2026-01-04, last name K ASIA | renamed Seapeak Asia for the demolition voyage (press)"
+    }
+   ]
+  },
+  {
+   "row_id": "534",
+   "_live_row": 84,
+   "_imo": "9265500",
+   "_name": "Dukhan",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.lloydslist.com/LL1153032/Turbine-powered-LNG-tanker-and-panamax-bulker-sold-for-scrap",
+       "soft": false
+      },
+      {
+       "url": "https://splash247.com/mol-sends-ageing-lng-carrier-for-demo/",
+       "soft": false
+      }
+     ],
+     "note": "lloydslist.com (2025-03-31): \"The 2004-built steam-powered LNG carrier Dukhan and a 30-year-old panamax bulker engaged in the coal trades have both been sold for recycling in the past week ... MOL's 135,000 cu m gas carrier Dukhan has realised a recycling price of circa $20m.\" | splash247.com (2025-04-01): \"Brokers report that Japanese shipping giant Mitsui OSK Lines (MOL) has disposed of its 2004-built Dukhan for around $20m. The final destination of the 137,457 cu m ship, which has been idle in Malaysia since last September, has not been revealed. One shipbroki\" | shipvault still lists the unit ACTIVE under owner BREAKERS (lagging record) - not cited"
+    }
+   ]
+  },
+  {
+   "row_id": "970",
+   "_live_row": 94,
+   "_imo": "9248502",
+   "_name": "Puteri Firus Satu",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/116306",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116306",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2026-03-17): \"Malaysian shipowner MISC has chosen to scrap three steam turbine LNG carriers, which it circulated for sale in late 2025. TradeWinds has learned that cash buyers have bought the 137,100-cbm Puteri Firus Satu and Puteri Zamrud Satu (both built 2004) and the 137\" | shipvault record (IMO 9248502): status scrapped/sold for scrap, fate date 2026-06-30"
+    }
+   ]
+  },
+  {
+   "row_id": "980",
+   "_live_row": 95,
+   "_imo": "9245031",
+   "_name": "Puteri Zamrud Satu",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/116092",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116092",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2026-03-17): \"TradeWinds has learned that cash buyers have bought the 137,100-cbm Puteri Firus Satu and Puteri Zamrud Satu (both built 2004) and the 137,595-cbm Puteri Mutiara Satu (built 2005).\" | shipvault record (IMO 9245031): status scrapped/sold for scrap, fate date 2026-06-30, last name ZAMRUD"
+    }
+   ]
+  },
+  {
+   "row_id": "1005",
+   "_live_row": 98,
+   "_imo": "9259276",
+   "_name": "Seapeak Madrid",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/first-lng-carrier-of-2026-sold-for-demolition/2-1-1933696",
+       "soft": false
+      },
+      {
+       "url": "https://splash247.com/seaspeak-mars-becomes-first-lng-vessel-to-be-scrapped-this-year/",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/117073",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/117073",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2026-01-26): \"Brokers and those following the vessel said the 138,000-cbm Seapeak Mars (ex-Seapeak Madrid, built 2004) has been sold on an “as is” basis in Malaysia for scrapping in India. They give a price of $412 per ldt on the 29,685-ldt, 22-year-old ship... This would i\" | splash247.com (2026-01-26): \"Brokers say the steam-turbine LNG carrier Seapeak Mars has been sold for scrap, becoming the first LNG carrier demolished in 2026... The 138,000 cu m vessel, operated by Seapeak, a Stonepeak Infrastructure Partners company, was sold as-is in Linggi, Malaysia, \" | shipvault record (IMO 9259276): status scrapped/sold for scrap, fate date 2026-02-17, last name TEAK | renamed Seapeak Mars for the demolition voyage (press)"
+    }
+   ]
+  },
+  {
+   "row_id": "973",
+   "_live_row": 115,
+   "_imo": "9261205",
+   "_name": "Puteri Mutiara Satu",
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/117205",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/117205",
+       "soft": false
+      }
+     ],
+     "note": "tradewindsnews.com (2026-03-17): \"TradeWinds has learned that cash buyers have bought the 137,100-cbm Puteri Firus Satu and Puteri Zamrud Satu (both built 2004) and the 137,595-cbm Puteri Mutiara Satu (built 2005).\" | shipvault record (IMO 9261205): status scrapped/sold for scrap"
+    }
+   ]
+  },
+  {
+   "row_id": "969",
+   "_live_row": 61,
+   "_imo": "9211872",
+   "_name": "Puteri Delima Satu",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "FSU",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.miscgroup.com/media/media-releases/misc-partners-with-pengerang-lng-two-sdn-bhd-for-lng-floating-storage-unit-project-d7503fdd178dc071ee535d98beb9e62e",
+       "soft": false
+      },
+      {
+       "url": "https://www.insage.com.my/BursaNews/Attachment/202604/20260414/MISC-AN20260414A1-2.pdf",
+       "soft": false
+      }
+     ],
+     "note": "miscgroup.com (2023-10-31 (per contemporaneous LNG Prime coverage; MISC's own page does not expose a visible dateline, but the deal is reported industry-wide as announced 31 Oct 2023)): \"This project entails the conversion of MISC's LNG Carrier, Puteri Delima Satu, into an FSU dedicated to this project.\" | insage.com.my (2026-04-14 (Bursa Malaysia filing date embedded in the document's own URL path)): \"FSU Puteri Delima Satu delivered to PETRONAS LNG Regasification Terminal Pengerang ... Successfully delivered FSU Puteri Delima Satu to the PETRONAS LNG Regasification Terminal Pengerang ... Safely commissioned FSU Puteri Delima Satu, recording over 500,000 ma\" | converted LNG carrier, FSU at the PETRONAS Pengerang regas terminal (Johor). Not the 1995-built Puteri Delima (IMO 9030814, live row 25, scrapped). FSUs are out of scope for additions, but rows are never deleted - the row stays with the corrected type."
+    }
+   ]
+  }
+ ]
+}

@@ -22,6 +22,7 @@ nothing applied.
 | 5 | `2026-09-17_0505ET_ref_fill_rule_f` | Rule-F orphan `[ref]`s | 8 refs (hold), 11 negatives |
 | 6 | `2026-09-17_1114ET_shipvault_companion_refs` | existing shipvault `[ref]`s that render blank: unit-record URL appended as a second ref (values untouched) | 175 cells / 27 rows — all accept |
 | 7 | `2026-09-17_1458ET_igu_reconciliation_igu2026` | whole backend vs the IGU World LNG Report 2026 (fleet at end-2025; 2025 edition as the baseline the backend was loaded from) — IMO-keyed, IG rev 1 | comparison only, never applied: 1,054 matched, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate |
+| 8 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G) |
 
 Apply 1–2 before 4 (they rename rows 4 also touches; all artifacts are keyed by row_id, so
 order is about readability, not safety). After applying 3, re-export the map fleet if any
@@ -57,12 +58,11 @@ press says delivery 2029, shipvault 2030).
 9. **MISC hulls H2019A–H2023A** on shipvault have no citable press — next discovery run.
 10. **IGU 2026 intercomparison (batch 7)** — full list in the worklist §1b and the batch
     `notes.md`. The ones that need you:
-    - **A `scrapped` Status value.** IGU dropped 18 backend `active` rows; all are scrapped steam
-      tonnage per shipvault. 11 were scrapped Mar–Oct 2025 → out of scope by the inclusion
-      rule (live rows 64, 84, 44, 46, 47, 48, 49, 16, 23, 63, 54). 7 were scrapped in 2026 or
-      only sold for scrap → they stay (77, 98, 26, 25, 94, 95, 115), and the vocabulary has no
-      honest Status for them. Row 25 is IMO 9030814 Puteri Delima, renamed `Lima` for the
-      scrap voyage (scrapped 2026-03-08) — the vessel that prompted this pass.
+    - **A `scrapped` Status value — decided 2026-09-17, batch 8.** `scrapped` is now a Status
+      value and **rows are never deleted**: all 18 rows IGU dropped (scrapped steam tonnage)
+      move to `scrapped`, including the 11 scrapped before Dec 2025 that the inclusion rule
+      would have removed. Row 25 is IMO 9030814 Puteri Delima, renamed `Lima` for the scrap
+      voyage — the vessel that prompted this pass. Row 61 Puteri Delima Satu → `FSU`, same batch.
     - **13 `active` rows with Delivery year 2025 that delivered in 2026** (787, 790, 752, 768,
       774, 753, 754, 771, 786, 769, 770, 815, 813); **7 `active` rows still on order**
       (814 + Arctic LNG 2 hulls 797, 799, 805, 812, 823, 806); row 929 Alexey Kosygin
@@ -92,7 +92,7 @@ press says delivery 2029, shipvault 2030).
   QatarEnergy series already named: live rows 1017–1024, 1031–1037, 1043, 1057, 1058 (Y → G), 1039
   `Libsayer` (new, hold), and 1017 / 1033 showing an MMSI early (manual review, low priority).
 
-## Tooling changes (all with tests; 194 pass that morning, 291 by evening, 324 with the IGU tooling)
+## Tooling changes (all with tests; 194 pass that morning, 291 by evening, 324 with the IGU tooling, 327 with `scrapped`)
 
 - `scripts/apply_batch.py` / `batch_digest.py`: **fix-mode** batches now get digests and apply
   artifacts (fix refs *replace* the paired `[ref]`; `preserve_ref` cells touch the value only).
@@ -107,8 +107,12 @@ press says delivery 2029, shipvault 2030).
   edition prints two tables per landscape spread and adds Age / Vessel Type columns, so the
   2025 column positions do not carry over), `scripts/igu_reconcile.py` (IMO join, edition
   diff, paced shipvault leads) and `build_workbook.py --mode igu`.
+- `scrapped` Status (batch 8): `CONTROLLED_VOCAB["Status"]` in `lookups.py`, a Status shape
+  check in `qc_backend.py`, and `value_variants("scrapped")` ↔ demolition wording ("sold for
+  recycling", "cash buyers", "beached" …) in `url_verifier.py`; the IGU dropped bucket now
+  suggests Status → `scrapped`, never removal (IG rev 2).
 - Follow-ups not done: controlled vocab carries three strings seeded from corrupted rows, and
-  `qc_backend.py` has no vocab-membership check; Status `active` still passes on a bare boilerplate "active";
+  `qc_backend.py` has no vocab-membership check on Cargo / Vessel / Propulsion type; Status `active` still passes on a bare boilerplate "active";
   shipvault data quality (IMO typos failing the check digit, wrong owner tags) — treat
   shipvault as Y/single-source, never for owners.
 

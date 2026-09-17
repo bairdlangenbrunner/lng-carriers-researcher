@@ -283,7 +283,7 @@ class TestWorkbook:
         rec = TestReconcileBuckets()._run()
         rec["leads"] = {"9030814": {"name": "TT LIMA", "status": "SCRAPPED", "owner": "BREAKERS",
                                     "fate_date": "2026-03-08", "delivered": "", "url": "u"}}
-        rec["dropped"][0]["fate_vs_inclusion"] = "Dec 2025 or later — stays in scope"
+        rec["dropped"][0]["fate_vs_inclusion"] = "Dec 2025 or later — scrapped since the first release"
         src = tmp_path / "igu_reconcile.json"
         src.write_text(json.dumps(rec))
         out = bw.build_igu(SimpleNamespace(reconcile=str(src), out=str(tmp_path) + "/"))

@@ -1,0 +1,22 @@
+[
+ {
+  "live": 16,
+  "url": "https://nauticalvoice.com/2025-becomes-record-year-for-lng-carrier-scrapping/53319/",
+  "why": "syndicated rewrite of the splash247 piece - not an independent source"
+ },
+ {
+  "live": 23,
+  "url": "https://nauticalvoice.com/2025-becomes-record-year-for-lng-carrier-scrapping/53319/",
+  "why": "syndicated rewrite of the splash247 piece - not an independent source"
+ },
+ {
+  "live": 49,
+  "url": "https://lngprime.com/asia/hyundai-lng-shipping-sells-another-carrier-for-scrap/156806/",
+  "why": "body paywalled; vessel named only in an image caption"
+ },
+ {
+  "live": 54,
+  "url": "https://shipandbunker.com/news/features/risk-management/weekly-vessel-scrapping-report-2025-week-36",
+  "why": "HTTP 404 at build time - the research agent's PASS did not reproduce"
+ }
+]

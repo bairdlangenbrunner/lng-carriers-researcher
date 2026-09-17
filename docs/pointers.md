@@ -175,7 +175,7 @@ IMO-keyed intercomparison of the whole backend against the IGU World LNG Report'
 | Diff `kind` | IG §4.3 | `igu_changed` / `new_to_igu` (review) vs `backend_differs` (low — never revert blindly) |
 | Buckets | IG §4.4 | matched (+ status findings) / dropped / backend_not_in_igu / igu_only / igu_no_imo (cluster hints only) / igu_duplicates / edition_diff |
 | Leads | IG §4.5 | `--fetch-leads` paced shipvault lookup of the review buckets — leads, never refs |
-| Dropped vessels | IG §5.2 | decommissioned before Dec 2025 → out of scope, remove; Dec 2025 or later → stays; no `scrapped` Status value without a user decision |
+| Dropped vessels | IG §5.2 | rows are never deleted; a scrapped vessel → Status `scrapped` via a `fix` batch with a verified demolition ref (rev 2) |
 | Workbook | IG §6 | `build_workbook.py --mode igu` — 11 sheets, live sheet row first, no `[ref]` cells |
 | Close-out | IG §7 | batch contents, dedupe sweep, follow-up `fix` / discovery batch; the IGU batch itself is never applied |
 
