@@ -1,0 +1,59 @@
+op,key,column,value
+set,969,Price,165000000
+set,969,Price currency,USD
+set,1044,Price,207000000
+set,1044,Price currency,USD
+set,1045,Price,207000000
+set,1045,Price currency,USD
+set,72,Price,224000000
+set,72,Price currency,USD
+set,74,Price,256000000
+set,74,Price currency,USD
+set,78,Price,251000000
+set,78,Price currency,USD
+set,102,Price,255000000
+set,102,Price currency,USD
+set,103,Price,255000000
+set,103,Price currency,USD
+set,163,Price,261500000
+set,163,Price currency,USD
+set,164,Price,255000000
+set,164,Price currency,USD
+set,250,Price,261800000
+set,250,Price currency,USD
+set,408,Price,250000000
+set,408,Price currency,USD
+set,92,Price,260000000
+set,92,Price currency,USD
+set,94,Price,260000000
+set,94,Price currency,USD
+set,96,Price,260000000
+set,96,Price currency,USD
+set,98,Price,260000000
+set,98,Price currency,USD
+set,165,Price,255000000
+set,165,Price currency,USD
+set,166,Price,259250000
+set,166,Price currency,USD
+set,167,Price,259250000
+set,167,Price currency,USD
+set,168,Price,259250000
+set,168,Price currency,USD
+set,169,Price,259250000
+set,169,Price currency,USD
+set,178,Price,266100000
+set,178,Price currency,USD
+set,224,Price,266100000
+set,224,Price currency,USD
+set,314,Price,257000000
+set,314,Price currency,USD
+set,315,Price,257000000
+set,315,Price currency,USD
+set,316,Price,257000000
+set,316,Price currency,USD
+set,317,Price,257000000
+set,317,Price currency,USD
+set,666,Price,250000000
+set,666,Price currency,USD
+set,667,Price,250000000
+set,667,Price currency,USD

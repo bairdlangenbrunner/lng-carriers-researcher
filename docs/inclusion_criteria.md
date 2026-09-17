@@ -12,7 +12,9 @@ The LNG Carrier Tracker focuses on **conventional LNG carriers** specifically in
 - **Domestic-only ships** — vessels that never operate in international trade
 - **Vessels cancelled or decommissioned prior to December 2025** — these are not *added*. A row
   already in the tracker is never deleted: a vessel that is scrapped keeps its row and moves to
-  Status `scrapped`, whenever the scrapping happened (decision 2026-09-17).
+  Status `scrapped`, whenever the scrapping happened (decision 2026-09-17). This is about vessels
+  that go out of service, not duplicates — a row that duplicates another row for the same vessel
+  is removed (by hand, in the sheet).
 
 ## Status categories
 

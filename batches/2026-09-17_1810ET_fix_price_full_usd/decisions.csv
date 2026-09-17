@@ -1,0 +1,59 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+969|Price,fill,969,,Price,G,False,accept,accept,165000000,"unit conversion only: 165 $m -> 165000000 USD (Price is always full US dollars, "
+969|Price currency,fill,969,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+1044|Price,fill,1044,,Price,G,False,accept,accept,207000000,"unit conversion only: 207 $m -> 207000000 USD (Price is always full US dollars, "
+1044|Price currency,fill,1044,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+1045|Price,fill,1045,,Price,G,False,accept,accept,207000000,"unit conversion only: 207 $m -> 207000000 USD (Price is always full US dollars, "
+1045|Price currency,fill,1045,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+72|Price,fill,72,,Price,G,False,accept,accept,224000000,"unit conversion only: 224 $m -> 224000000 USD (Price is always full US dollars, "
+72|Price currency,fill,72,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+74|Price,fill,74,,Price,G,False,accept,accept,256000000,"unit conversion only: 256 $m -> 256000000 USD (Price is always full US dollars, "
+74|Price currency,fill,74,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+78|Price,fill,78,,Price,G,False,accept,accept,251000000,"unit conversion only: 251 $m -> 251000000 USD (Price is always full US dollars, "
+78|Price currency,fill,78,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+102|Price,fill,102,,Price,G,False,accept,accept,255000000,"unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, "
+102|Price currency,fill,102,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+103|Price,fill,103,,Price,G,False,accept,accept,255000000,"unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, "
+103|Price currency,fill,103,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+163|Price,fill,163,,Price,G,False,accept,accept,261500000,unit conversion only: 261.5 $m -> 261500000 USD (Price is always full US dollars
+163|Price currency,fill,163,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+164|Price,fill,164,,Price,G,False,accept,accept,255000000,"unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, "
+164|Price currency,fill,164,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+250|Price,fill,250,,Price,G,False,accept,accept,261800000,unit conversion only: 261.8 $m -> 261800000 USD (Price is always full US dollars
+250|Price currency,fill,250,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+408|Price,fill,408,,Price,G,False,accept,accept,250000000,"unit conversion only: 250 $m -> 250000000 USD (Price is always full US dollars, "
+408|Price currency,fill,408,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+92|Price,fill,92,,Price,G,False,accept,accept,260000000,"unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, "
+92|Price currency,fill,92,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+94|Price,fill,94,,Price,G,False,accept,accept,260000000,"unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, "
+94|Price currency,fill,94,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+96|Price,fill,96,,Price,G,False,accept,accept,260000000,"unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, "
+96|Price currency,fill,96,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+98|Price,fill,98,,Price,G,False,accept,accept,260000000,"unit conversion only: 260 $m -> 260000000 USD (Price is always full US dollars, "
+98|Price currency,fill,98,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+165|Price,fill,165,,Price,G,False,accept,accept,255000000,"unit conversion only: 255 $m -> 255000000 USD (Price is always full US dollars, "
+165|Price currency,fill,165,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+166|Price,fill,166,,Price,G,False,accept,accept,259250000,unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollar
+166|Price currency,fill,166,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+167|Price,fill,167,,Price,G,False,accept,accept,259250000,unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollar
+167|Price currency,fill,167,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+168|Price,fill,168,,Price,G,False,accept,accept,259250000,unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollar
+168|Price currency,fill,168,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+169|Price,fill,169,,Price,G,False,accept,accept,259250000,unit conversion only: 259.25 $m -> 259250000 USD (Price is always full US dollar
+169|Price currency,fill,169,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+178|Price,fill,178,,Price,G,False,accept,accept,266100000,unit conversion only: 266.1 $m -> 266100000 USD (Price is always full US dollars
+178|Price currency,fill,178,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+224|Price,fill,224,,Price,G,False,accept,accept,266100000,unit conversion only: 266.1 $m -> 266100000 USD (Price is always full US dollars
+224|Price currency,fill,224,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+314|Price,fill,314,,Price,G,False,accept,accept,257000000,"unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, "
+314|Price currency,fill,314,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+315|Price,fill,315,,Price,G,False,accept,accept,257000000,"unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, "
+315|Price currency,fill,315,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+316|Price,fill,316,,Price,G,False,accept,accept,257000000,"unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, "
+316|Price currency,fill,316,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+317|Price,fill,317,,Price,G,False,accept,accept,257000000,"unit conversion only: 257 $m -> 257000000 USD (Price is always full US dollars, "
+317|Price currency,fill,317,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+666|Price,fill,666,,Price,G,False,accept,accept,250000000,"unit conversion only: 250 $m -> 250000000 USD (Price is always full US dollars, "
+666|Price currency,fill,666,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column
+667|Price,fill,667,,Price,G,False,accept,accept,250000000,"unit conversion only: 250 $m -> 250000000 USD (Price is always full US dollars, "
+667|Price currency,fill,667,,Price currency,G,False,accept,accept,USD,companion of the Price unit conversion ($m -> USD); no [ref] column

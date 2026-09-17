@@ -165,9 +165,9 @@ Row-oriented, **mirrors the backend column order exactly** after five prefix col
 
 The type columns are a fixed value set (`build_workbook.py` writes verbatim — no normalizer). A proposal for these **must** use an exact canonical value; the build validator (`_DATA_FILL_VOCAB`) warns on anything off-vocab, and off-vocab values are flagged to `documented_blanks` ("vocab decision needed") rather than written. The lists live in `data/controlled_vocab.md`:
 - **Cargo type**: `membrane`, `spherical`, `self-supporting prismatic`, `type C`
-- **Vessel type**: `conventional`, `FSRU`, `q-flex`, `q-max`, `icebreaker`, `FSU`, `Supporting`, `small-scale`, `mid-scale`
+- **Vessel type**: `conventional`, `FSRU`, `q-flex`, `q-max`, `qc-max`, `icebreaker`, `FSU`, `Supporting`, `small-scale`, `mid-scale`
 - **Propulsion type**: `X-DF`, `DFDE`, `steam`, `ME-GA`, `ME-GI`, `SSD`, `steam reheat`, `STaGE`, `prismatic conventional DFDE`, `prismatic small-scale DFDE`
-- **Capacity units** `cbm`; **Price currency** `$m` / `USD`.
+- **Capacity units** `cbm`; **Price currency** `USD` — Price is always full US dollars (`250000000`); `$m` is legacy and being converted (2026-09-17).
 
 Note (from the first batch): trade press almost never prints the literal token `conventional` for Vessel type — CSB says "LNG Tanker", press says "LNG carrier". A class call of `conventional` is defensible but unsourced, so it is left blank rather than written without a value-present source.
 

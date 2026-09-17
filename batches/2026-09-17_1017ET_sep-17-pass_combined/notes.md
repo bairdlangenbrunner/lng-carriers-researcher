@@ -7,7 +7,7 @@ apply still runs per batch through the Apply SOP, in the order on the README she
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1747ET.xlsx`) — the
+- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1810ET.xlsx`) — the
   name carries the build date and US Eastern time; each rebuild writes a new name and removes
   the previous file (git keeps it). 17 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
@@ -15,7 +15,8 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   gate verdict. `all_changes_backend_shape` is all six batches merged into the backend's own
   structure: columns A:AT are the backend columns in backend order, one full row per vessel,
   sorted by live sheet row (549 edited rows, 12 new rows at the bottom, the 3 Woodside
-  duplicates struck through as DELETE ROW; 2,687 changed cells, 1,077 on hold). Accepts *and*
+  duplicates struck through as DELETE ROW — since deleted from the sheet by Baird, see the
+  18:10 ET bullet below; 2,687 changed cells, 1,077 on hold). Accepts *and*
   holds are laid in — fill = confidence (peach = an existing `[ref]` rewritten/appended),
   italics = hold, cell comment = batch / decision / old value / note — so it is a review
   surface, not a blind paste: the per-batch `apply_rows.csv` files stay the accept-only
@@ -122,3 +123,16 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   3,861 changed cells, 1,139 on hold. New tab `b10_former_names_rows`. No cell of batch 10 is
   proposed by any other batch. 19 Name changes carry no former name (spelling / truncation
   fixes, and live row 942's wrong-vessel name) — listed in the batch's `notes.md`.
+- **Evening rulings folded in (18:10 ET): sheet edit, batches 11 + 12, order-total Prices.** Baird
+  edited the sheet by hand (~18:00 ET): the three Woodside duplicates (row_ids 1115–1117) are
+  deleted, their names moved to `Other names` on the Seapeak rows (now live 1162–1164), and three
+  rows moved to live 1201–1203 — so **live rows ≥ 1130 differ from every earlier build**. The
+  builder now resolves `proposed_review.json` by `row_id` (its row actions carry one; the live row
+  is refreshed from the pull), so a shifted sheet can no longer mark the wrong row; no row is
+  marked DELETE ROW any more. New: **batch 11** `1809ET_fix_qcmax_vessel_type` (24 × Vessel type
+  `qc-max`, IGU 2026 PDF) and **batch 12** `1810ET_fix_price_full_usd` (29 rows `$m` → full USD,
+  `preserve_ref`), tabs `b11_qcmax_rows` / `b12_price_usd_rows`; batch 4's 48 order-total Prices
+  and their currency cells flipped to accept (batch 4: 589 / 414); batch 8's manual list drops the
+  24 `QC-max` rows (8 left). Workbook `…_2026-09-17_1810ET.xlsx`: **23 sheets, 2,125 proposals
+  (1,596 accept / 528 hold / 1 reject; 1,327 G / 798 Y)**; backend-shape tab 652 edited + 12 new
+  rows, 3,967 changed cells, 995 on hold. The report page is still version 4 (six batches).

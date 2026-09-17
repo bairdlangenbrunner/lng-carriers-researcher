@@ -7,15 +7,20 @@ research pass. Tick items as you go. Detail behind every item is in
 
 ## Where things stand
 
-- **Nothing has been written to the backend sheet.** Re-pull on 2026-09-17 evening is
-  identical to the morning pull: 1,220 rows (822 active / 364 on order / 34 proposed).
+- **No batch has been applied to the backend sheet.** Baird edited it by hand on 2026-09-17
+  evening (~18:00 ET): the three Woodside duplicates were deleted (their names moved to
+  `Other names` on the Seapeak rows) and `Hull H1955A` / `Hull H1957A` / `Hanwha Philly 2` moved
+  from rows 1130–1132 to 1201–1203. Now 1,217 rows (822 active / 364 on order / 31 proposed).
+  **Live rows ≥ 1130 shifted** (old 1133–1203 and old 1207+ are each −3); this file is
+  renumbered to the new pull, the per-batch `digest.md` / `notes.md` are not — apply artifacts
+  are keyed by row_id, so nothing about the apply changes.
 - The research is done. Six batches are merged to main (PRs #11–#18), each with
   `digest.md`, `decisions.csv` and offset-proof apply artifacts.
 - Combined workbook (name = build date + ET time; newest file in the dir is current):
-  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1747ET.xlsx`
-  — 21 sheets, 2,043 proposals (1,418 accept / 624 hold / 1 reject), keyed by live sheet row; the
+  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1810ET.xlsx`
+  — 23 sheets, 2,125 proposals (1,596 accept / 528 hold / 1 reject), keyed by live sheet row; the
   `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).
-- Report shared with Rob is at version 4 and **predates batches 7–10** (no IGU section, no
+- Report shared with Rob is at version 4 and **predates batches 7–12** (no IGU section, no
   scrapped rows, no former names; not republished): https://claude.ai/artifact/C1eEJt5CKeqauvfGGg8Ph3
 - A seventh batch was added in the afternoon: the **IGU World LNG Report 2026
   intercomparison** (`1458ET_igu_reconciliation_igu2026`). It is a comparison artifact — it
@@ -23,12 +28,16 @@ research pass. Tick items as you go. Detail behind every item is in
 - Two fix batches followed from it. **Batch 8** (`1654ET_fix_igu2026_sourced`, §1c): what IGU
   2026 prints, promoted to proposals citing the report PDF. **Batch 9**
   (`1702ET_fix_scrapped_status`): the new Status value `scrapped` on the 18 rows IGU dropped,
-  and row 61 → Vessel type `FSU`. Rule set with it: **rows are never deleted from the backend**.
+  and row 61 → Vessel type `FSU`. Rule set with it: **a vessel that leaves service is never
+  deleted from the backend** (duplicates are a different matter — see §1).
 - **Batch 10** (`1737ET_fix_other_names_former`) applies the evening's new rule (RF §4.16): **a
   proposed Name change also proposes the former Name as an addition to `Other names`.** 131 of
   the 150 Name changes in batches 1, 2 and 8 get one (95 accept / 36 hold); 19 do not — spelling /
   truncation fixes and row 942's wrong-vessel name (list in the batch `notes.md`; overrule with
   `other_names.py --include`). Future fix batches run `other_names.py --batch` before the build.
+- **Batches 11 and 12** come from Baird's evening rulings: `qc-max` is a Vessel type value
+  (batch 11, the 24 QatarEnergy 271,000 cbm ships) and **Price is always full US dollars + `USD`**
+  (batch 12 converts the 29 `$m` rows). The 48 order-total Prices in batch 4 are accepted.
 - All row numbers below are **live sheet rows** unless marked `row_id`.
 
 ## The batches (all under `batches/2026-09-17_…`)
@@ -38,13 +47,15 @@ research pass. Tick items as you go. Detail behind every item is in
 | 1 | `0421ET_fix_delivery_rollforward` | 63 rows → `active`, 26 delivery years corrected, 19 rolled forward, 116 names (224 cells / 151 rows) | 186 / 38 |
 | 2 | `0458ET_fix_delivery_confirmed` | rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 0 / 3 |
 | 3 | `0431ET_discovery_since_jun_2026` | 12 new vessels in 5 clusters | 7 / 5, plus 10 backend flags |
-| 4 | `0511ET_data_fill_on_order` | 1,003 cells / 483 rows, incl. 48 order-total Prices (all hold) | 493 / 510 |
+| 4 | `0511ET_data_fill_on_order` | 1,003 cells / 483 rows, incl. 48 order-total Prices (accepted 2026-09-17) | 589 / 414 |
 | 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives | 0 / 8 |
 | 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | all accept |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
-| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 25, plus 32 manual-review |
+| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 24 / 1 reject, plus 8 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
 | 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names` (131 cells / 131 rows; 19 spelling / wrong-vessel Name changes excluded); 102 carry a gated ref | 95 / 36 |
+| 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |
+| 12 | `1810ET_fix_price_full_usd` | Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref` — unit conversion, refs kept) | 58 / 0 |
 
 Discovery candidates in batch 3: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y);
 HD Hyundai HI × Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undisclosed
@@ -56,34 +67,39 @@ HD Hyundai HI × Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undis
 Edit the `hold` rows in each batch's `decisions.csv`, then re-run
 `python scripts/apply_batch.py --batch batches/<dir>`.
 
-- [ ] **Proposed bucket** (`…discovery…/proposed_review.json`): delete Woodside placeholders
-      rows 1204–1206 (they duplicate Seapeak on-order rows 1165–1167). Other Woodside rows,
-      Equinor (1186) and Mozambique LNG slots (1187–1203) stay `proposed`. Also the
+- [x] **Woodside duplicates — done by Baird in the sheet, 2026-09-17**: `Woodside Energy 01`–`03`
+      (row_ids 1115–1117) deleted as duplicates of the Seapeak on-order rows 1162–1164, each name
+      moved to that row's `Other names` with the TradeWinds ref. Ruling with it: the never-delete
+      rule covers vessels that leave service (→ `scrapped`), **not duplicates** — a true duplicate
+      row is removed, by hand.
+- [ ] **Proposed bucket** (`…discovery…/proposed_review.json`): the other Woodside rows
+      (1204–1216), Equinor (1183) and Mozambique LNG slots (1184–1200) stay `proposed`. Also the
       Mozambique owner/yard split flagged in the discovery batch.
-- [ ] **Likely duplicates**: Hanwha Philly 1083 ↔ 1085 and 1132 ↔ 1086.
+- [ ] **Likely duplicates**: Hanwha Philly 1083 ↔ 1085 and 1203 ↔ 1086.
 - [x] **Vessel type / Cargo type rule — decided 2026-09-17: cite the IGU 2026 report** (IG §5.4).
       Batch 8 does it: IGU's Vessel Type column for listed vessels, the report's size-class scheme
       for the 10 Rule-F orphans IGU does not list (rows 61, 994, 1118 on hold — open FSU question /
       no Capacity). Batch 4's Y type fills on IGU-listed rows are re-proposed there as G.
-- [ ] **Price convention**: backend mixes `250` + `$m` with `250000000` + `USD`. New fills
-      use full USD. (Shipvault contract prices were left unused — single-source.)
+- [x] **Price convention — decided 2026-09-17: always full US dollars + `USD`.** Batch 12 converts
+      the 29 `$m` rows. (Shipvault contract prices were left unused — single-source.)
 - [ ] **`Greenenergy …` names** look wrong — shipvault and AIS both say `Greenergy`.
 - [ ] **Manual-review rows**: `…rollforward/manual_review.json` (54) and
       `…delivery_confirmed/manual_review.json` (24 unconfirmed). Mostly ships AIS-live while
       shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls (status
       untouched); rows 1017 / 1033 show an MMSI early (low priority).
 - [ ] **Marinetraffic.org-only names on hold** in batch 1 (10, incl. row 1039 `Libsayer`).
-- [ ] **Backend flags from discovery**: BW LNG rows 1168/1169 capacity (177,000), row 1162
+- [ ] **Backend flags from discovery**: BW LNG rows 1165/1166 capacity (177,000), row 1159
       price, COSCO hulls.
 - [ ] **Possible mis-citations / value conflicts** from the data-fill agents — full list in
-      `…data_fill_on_order/notes.md` (rows 1182–1185; row_ids 1162/1163, 1212/1213, 1218,
+      `…data_fill_on_order/notes.md` (rows 1179–1182; row_ids 1162/1163, 1212/1213, 1218,
       1207/1208, 197, 375, 255/256, 318/319, 515/516; Samsung × CMES and Jiangnan × Taiping
       capacity).
-- [ ] **Batch 4 companion cells**: 140 `Price currency` / `Capacity units` cells are
+- [ ] **Batch 4 companion cells**: 92 `Price currency` / `Capacity units` cells are
       derivable but sit on `hold` because they follow their parent Price / Capacity fill —
-      flip each with its parent. (This is why `digest.md` says 633 auto-safe while
-      `decisions.csv` carries 493 accept / 510 hold.)
-- [ ] **48 order-total Prices** in batch 4 (total ÷ N, Y max, all hold) — accept or not.
+      flip each with its parent. (`digest.md` still shows the first-run triage, 633 auto-safe;
+      `decisions.csv` carries 589 accept / 414 hold.)
+- [x] **48 order-total Prices** in batch 4 (total ÷ N, Y max) — **accepted 2026-09-17**, with their
+      48 `Price currency` cells; `apply_batch.py` re-run.
 - [ ] **Batch 5**: 8 Rule-F refs on hold.
 
 ## 1b. IGU 2026 intercomparison — decisions it opens
@@ -160,9 +176,9 @@ silence is not a statement — batch 9, with demolition refs), rows 873 / 910 sp
       FSRU; Karadeniz restylings (11, 20, 29, 39); row 785 `Al Kheesah`; row 929 `TFDE`; rows
       994 / 1118 Vessel type refs. (Row 61 Vessel type ref: rejected 2026-09-17 — batch 9 proposes
       `FSU` there.)
-- [ ] **`QC-max` vocabulary decision**: IGU types the 24 × 271,000 cbm QatarEnergy ships (rows
-      1070–1074, 1119–1131, 1174–1176, 1179–1181) `QC-max`; the vocabulary has no such value, so
-      their blank Vessel type is unproposed (`manual_review.json`).
+- [x] **`QC-max` — decided 2026-09-17: `qc-max` is a Vessel type value** (in the sheet dropdown and
+      the vocabulary). **Batch 11** proposes it on the 24 × 271,000 cbm QatarEnergy ships (rows
+      1070–1074, 1119–1129, 1171–1173, 1176–1178, 1201–1202), IGU 2026 PDF as ref.
 - [ ] **8 owner / builder changes** in `manual_review.json` (rows 70, 818, 819 owner; 11, 268, 567,
       929, 941 builder) — IGU prints short labels; pick the canonical name (a builder change
       cascades into the yard-location columns).
@@ -181,16 +197,21 @@ order is about readability, not safety).
 - [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
       agree in value) + verify. After batch 6: both touch row 814's Status `[ref]`.
 - [ ] Batch 9 — apply + verify (any order; its only shared cell is row 61 Vessel type, which
-      batch 8 offered a `conventional` ref for — rejected 2026-09-17). If the sheet's
-      Status column has a validation dropdown, add `scrapped` to it first. Row 61 → FSU changes
+      batch 8 offered a `conventional` ref for — rejected 2026-09-17). The sheet's Status dropdown is
+      `proposed` / `on order` / `active` (checked 2026-09-17) — **add `scrapped` to it first**. Row 61 → FSU changes
       the map fleet: re-export after applying.
+- [ ] Batch 11 — apply via `apply_patch.csv` + verify (any order; no shared cells).
+- [ ] Batch 12 — apply via `apply_patch.csv` + verify (any order; no shared cells). Then drop `$m`
+      from the Price currency vocabulary (`scripts/lookups.py`, `data/controlled_vocab.md`). Set
+      the sheet's Price column to a plain number format first: it shows `2.53E+08` today and the
+      formatted pull loses digits (see the batch `notes.md`).
 - [ ] Batch 10 — apply **last, via `apply_patch.csv` only** (its full rows are built from the
       live backend and would revert the Names of 1, 2 and 8) + verify. Decide each `Other names`
       line with its Name line: a rejected rename takes its former-name line with it; a released
       Name hold releases rows 881 / 944 / 945 / 948 / 961 / 969 / 970 too. Re-run
       `apply_batch.py` after editing `decisions.csv`.
 - [ ] Review any HIGH/MED group in each `dedupe_report.csv` (apply.md §5a). Known MED
-      pairs: Knutsen × Hanwha 1145/1146 vs 1161/1172 are different orders (Dec-2025 vs
+      pairs: Knutsen × Hanwha 1142/1143 vs 1158/1169 are different orders (Dec-2025 vs
       May-2026) and get distinct hull numbers from batch 4; Hanwha Philly is the duplicate
       decision above.
 - [ ] Batch 3 adds an FSRU → re-export the map fleet

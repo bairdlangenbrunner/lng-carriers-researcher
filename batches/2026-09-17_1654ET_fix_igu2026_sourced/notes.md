@@ -74,3 +74,10 @@ which this batch's (held) Status change would replace. **Apply from `apply_patch
 `igu_reconcile.json`), `fix.json`, `lng_carrier_fix.xlsx` (zero formula errors), `digest.md`,
 `decisions.csv`, `apply.json`, `apply_rows.csv`, `apply_patch.csv`, `conflicts.csv` (empty).
 Folded into the combined workbook as apply order 8 (17:15 ET build; the scrapped-status batch is 9). Not in the report page.
+
+## Update 2026-09-17 18:09 ET — `QC-max` resolved
+
+Baird added `qc-max` to the Vessel type vocabulary. The 24 `QC-max` rows that sat in
+`manual_review.json` are proposed by batch 11 (`2026-09-17_1809ET_fix_qcmax_vessel_type`);
+`manual_review.json` now holds the 8 owner / builder changes only, and `build_fix_json.py` skips
+`QC-max` so a re-run does not duplicate batch 11.

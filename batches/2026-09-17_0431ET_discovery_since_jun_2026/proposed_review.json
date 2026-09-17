@@ -2,7 +2,7 @@
   "programmes": [
     {
       "programme": "Mozambique LNG",
-      "live_rows": "1187-1203",
+      "live_rows": "1184-1200",
       "verdict": "unchanged",
       "summary": "All 17 Mozambique LNG carrier slots (HD Hyundai Samho x9, Samsung Heavy Industries x8; MOL/NYK and Maran Gas/NYK as owners) remain at Letter-of-Intent/reservation stage, first signed in 2020. TotalEnergies restarted the onshore/offshore project in Jan 2026 after lifting force majeure (Nov 2025), but as of the most recent reporting found (17-Jul-2026 iMarine; 1-Jul-2026 Korean press) the shipbuilding order confirmation deadline had been pushed back again, to Q3/September 2026 -- i.e., to right around the present date -- with no report yet confirming either a binding contract signature or a lapse/cancellation. Per-vessel prices are reported to have risen from ~$180m (2020 LOI) to over $260m in current market terms, which would apply if/when the LOI converts. No evidence found of any part of this programme already appearing in the backend as an on-order row (checked Shipowner=MOL/NYK/Maran Gas x Shipbuilder=HD Hyundai Samho/Samsung Heavy on-order entries with Mozambique/TotalEnergies context -- none found), so all 17 rows are kept as proposed placeholders, unchanged.",
       "evidence": [
@@ -24,103 +24,120 @@
       ],
       "row_actions": [
         {
+          "row_id": "888",
+          "live_row": "1184",
+          "action": "keep as proposed",
+          "cells": [],
+          "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
+        },
+        {
+          "row_id": "889",
+          "live_row": "1185",
+          "action": "keep as proposed",
+          "cells": [],
+          "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
+        },
+        {
+          "row_id": "890",
+          "live_row": "1186",
+          "action": "keep as proposed",
+          "cells": [],
+          "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
+        },
+        {
+          "row_id": "891",
           "live_row": "1187",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "892",
           "live_row": "1188",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "893",
           "live_row": "1189",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "894",
           "live_row": "1190",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "895",
           "live_row": "1191",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "896",
           "live_row": "1192",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "897",
           "live_row": "1193",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "898",
           "live_row": "1194",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "899",
           "live_row": "1195",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "900",
           "live_row": "1196",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "901",
           "live_row": "1197",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "902",
           "live_row": "1198",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "903",
           "live_row": "1199",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
         },
         {
+          "row_id": "904",
           "live_row": "1200",
-          "action": "keep as proposed",
-          "cells": [],
-          "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
-        },
-        {
-          "live_row": "1201",
-          "action": "keep as proposed",
-          "cells": [],
-          "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
-        },
-        {
-          "live_row": "1202",
-          "action": "keep as proposed",
-          "cells": [],
-          "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
-        },
-        {
-          "live_row": "1203",
           "action": "keep as proposed",
           "cells": [],
           "note": "Still under Letter of Intent (signed 2020, HD Hyundai Samho 9 / Samsung Heavy 8 vessels); TotalEnergies has repeatedly deferred the slot-confirmation deadline (most recently to Q3/September 2026 per 17-Jul-2026 and 1-Jul-2026 reporting). No binding shipbuilding contract, no cancellation, as of latest available reporting (Jul 2026)."
@@ -129,7 +146,7 @@
     },
     {
       "programme": "Woodside Energy",
-      "live_rows": "1204-1219",
+      "live_rows": "1204-1216",
       "verdict": "partly converted",
       "summary": "Woodside's Louisiana LNG carrier tender (TradeWinds reported 16-20 vessels needed) has partly converted. TradeWinds (31-Mar-2026) reported Maran Gas Maritime and Seapeak as preferred bidders, each expected to take at least a pair. Maran Gas firmed 2 x 174,000-cbm newbuildings at Hanwha Ocean on 24-Mar-2026 (~$501-505m) -- already in the backend as on-order rows 1141-1142 -- but the Woodside charter link for that pair is only TradeWinds' hedged 'it is understood', never company-confirmed, so the backend correctly does not attribute those two rows' Operator/charterer to Woodside. Seapeak's conversion is fully confirmed: its Q1 2026 earnings release states it signed contracts (May 2026) for 3 x 174,000-cbm X-DF LNG carriers at Samsung Heavy Industries, $756m total, delivery 1H 2029, against long-term charters explicitly named as Woodside Energy -- already captured in the backend as on-order rows 1165-1167. Because those 3 converted vessels are already on-order elsewhere in the backend, 3 of the 16 generic 'Woodside Energy NN' proposed placeholder rows are now duplicates and should be deleted; the remaining 13 placeholders stay proposed pending confirmation of the rest of the 16-20-vessel programme.",
       "evidence": [
@@ -161,97 +178,116 @@
       ],
       "row_actions": [
         {
+          "row_id": "1115",
+          "name": "Woodside Energy 01",
+          "live_row": "",
+          "action": "done 2026-09-17 - row deleted from the backend by Baird (duplicate of row_id 1209, live row 1162); placeholder name moved to that row's Other names",
+          "cells": [],
+          "note": "Duplicate: Seapeak (Stonepeak-controlled) disclosed in its Q1 2026 earnings statement that it signed contracts in May 2026 with Samsung Heavy Industries for three 174,000-cbm X-DF LNG carriers, $756m total ($252m/vessel), delivery 1H 2029, against long-term (10yr+5yr option) charters with Woodside Energy. This conversion is ALREADY captured in the backend as on-order rows 1165-1167 ('Samsung HI (Seapeak 1/2/3)'). This generic 'Woodside Energy NN' placeholder row is therefore a duplicate of one of those three converted slots and should be removed once the on-order rows are confirmed correct (no data changes needed on 1165-1167 themselves -- they are already fully sourced)."
+        },
+        {
+          "row_id": "1116",
+          "name": "Woodside Energy 02",
+          "live_row": "",
+          "action": "done 2026-09-17 - row deleted from the backend by Baird (duplicate of row_id 1210, live row 1163); placeholder name moved to that row's Other names",
+          "cells": [],
+          "note": "Duplicate: Seapeak (Stonepeak-controlled) disclosed in its Q1 2026 earnings statement that it signed contracts in May 2026 with Samsung Heavy Industries for three 174,000-cbm X-DF LNG carriers, $756m total ($252m/vessel), delivery 1H 2029, against long-term (10yr+5yr option) charters with Woodside Energy. This conversion is ALREADY captured in the backend as on-order rows 1165-1167 ('Samsung HI (Seapeak 1/2/3)'). This generic 'Woodside Energy NN' placeholder row is therefore a duplicate of one of those three converted slots and should be removed once the on-order rows are confirmed correct (no data changes needed on 1165-1167 themselves -- they are already fully sourced)."
+        },
+        {
+          "row_id": "1117",
+          "name": "Woodside Energy 03",
+          "live_row": "",
+          "action": "done 2026-09-17 - row deleted from the backend by Baird (duplicate of row_id 1211, live row 1164); placeholder name moved to that row's Other names",
+          "cells": [],
+          "note": "Duplicate: Seapeak (Stonepeak-controlled) disclosed in its Q1 2026 earnings statement that it signed contracts in May 2026 with Samsung Heavy Industries for three 174,000-cbm X-DF LNG carriers, $756m total ($252m/vessel), delivery 1H 2029, against long-term (10yr+5yr option) charters with Woodside Energy. This conversion is ALREADY captured in the backend as on-order rows 1165-1167 ('Samsung HI (Seapeak 1/2/3)'). This generic 'Woodside Energy NN' placeholder row is therefore a duplicate of one of those three converted slots and should be removed once the on-order rows are confirmed correct (no data changes needed on 1165-1167 themselves -- they are already fully sourced)."
+        },
+        {
+          "row_id": "1118",
           "live_row": "1204",
-          "action": "mark for deletion (duplicate of live row 1165)",
+          "action": "keep as proposed",
           "cells": [],
-          "note": "Duplicate: Seapeak (Stonepeak-controlled) disclosed in its Q1 2026 earnings statement that it signed contracts in May 2026 with Samsung Heavy Industries for three 174,000-cbm X-DF LNG carriers, $756m total ($252m/vessel), delivery 1H 2029, against long-term (10yr+5yr option) charters with Woodside Energy. This conversion is ALREADY captured in the backend as on-order rows 1165-1167 ('Samsung HI (Seapeak 1/2/3)'). This generic 'Woodside Energy NN' placeholder row is therefore a duplicate of one of those three converted slots and should be removed once the on-order rows are confirmed correct (no data changes needed on 1165-1167 themselves -- they are already fully sourced)."
+          "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1119",
           "live_row": "1205",
-          "action": "mark for deletion (duplicate of live row 1166)",
+          "action": "keep as proposed",
           "cells": [],
-          "note": "Duplicate: Seapeak (Stonepeak-controlled) disclosed in its Q1 2026 earnings statement that it signed contracts in May 2026 with Samsung Heavy Industries for three 174,000-cbm X-DF LNG carriers, $756m total ($252m/vessel), delivery 1H 2029, against long-term (10yr+5yr option) charters with Woodside Energy. This conversion is ALREADY captured in the backend as on-order rows 1165-1167 ('Samsung HI (Seapeak 1/2/3)'). This generic 'Woodside Energy NN' placeholder row is therefore a duplicate of one of those three converted slots and should be removed once the on-order rows are confirmed correct (no data changes needed on 1165-1167 themselves -- they are already fully sourced)."
+          "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1120",
           "live_row": "1206",
-          "action": "mark for deletion (duplicate of live row 1167)",
+          "action": "keep as proposed",
           "cells": [],
-          "note": "Duplicate: Seapeak (Stonepeak-controlled) disclosed in its Q1 2026 earnings statement that it signed contracts in May 2026 with Samsung Heavy Industries for three 174,000-cbm X-DF LNG carriers, $756m total ($252m/vessel), delivery 1H 2029, against long-term (10yr+5yr option) charters with Woodside Energy. This conversion is ALREADY captured in the backend as on-order rows 1165-1167 ('Samsung HI (Seapeak 1/2/3)'). This generic 'Woodside Energy NN' placeholder row is therefore a duplicate of one of those three converted slots and should be removed once the on-order rows are confirmed correct (no data changes needed on 1165-1167 themselves -- they are already fully sourced)."
+          "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1121",
           "live_row": "1207",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1122",
           "live_row": "1208",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1123",
           "live_row": "1209",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1124",
           "live_row": "1210",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1125",
           "live_row": "1211",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1126",
           "live_row": "1212",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1127",
           "live_row": "1213",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1128",
           "live_row": "1214",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1129",
           "live_row": "1215",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
         },
         {
+          "row_id": "1130",
           "live_row": "1216",
-          "action": "keep as proposed",
-          "cells": [],
-          "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
-        },
-        {
-          "live_row": "1217",
-          "action": "keep as proposed",
-          "cells": [],
-          "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
-        },
-        {
-          "live_row": "1218",
-          "action": "keep as proposed",
-          "cells": [],
-          "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
-        },
-        {
-          "live_row": "1219",
           "action": "keep as proposed",
           "cells": [],
           "note": "No evidence this specific slot has converted. Of the 16-20 vessels Woodside is reported to need for Louisiana LNG (2029-30 start), only 3 (the Seapeak/Samsung Heavy trio, see rows 1165-1167) have a company-confirmed binding order tied explicitly to Woodside as of the latest reporting (18-May-2026). A second pair (2 x 174,000-cbm, ~$501-505m, Hanwha Ocean, contract 24-Mar-2026) was ordered by Maran Gas Maritime and is already in the backend as on-order rows 1141-1142, but TradeWinds only reports the Woodside charter link as 'understood' (unconfirmed, hedged sourcing, 31-Mar-2026) rather than company-confirmed, and the backend correctly leaves Operator/charterer blank on those rows -- so it is NOT treated here as a second Woodside conversion, and no further placeholder is marked as its duplicate. No news found (searched through mid-Sep-2026) of additional Woodside-linked orders beyond the Seapeak trio. Keep as proposed."
@@ -260,7 +296,7 @@
     },
     {
       "programme": "Equinor",
-      "live_rows": "1186",
+      "live_rows": "1183",
       "verdict": "unchanged",
       "summary": "The 'Equinor 4' placeholder represents the unclaimed remainder of a Dec-2025 TradeWinds-reported tender in which Equinor shortlisted five owners (BW LNG, Knutsen, Maran Gas Maritime, Seapeak, NYK) for 'up to four' new LNG carriers to be built at Hanwha Ocean. Three of those four slots already converted: Knutsen signed for 3 vessels on 18-Dec-2025 (174,000 cbm, Hanwha Ocean, delivery 2028), already captured in the backend as on-order rows 1105-1107 ('Equinor 1/2/3', Shipowner Knutsen OAS). No evidence was found (searched through mid-Sep-2026, including Korean-press and TradeWinds/LNG Prime coverage of Hanwha Ocean's 2026 order intake) that the remaining 4th slot has been awarded to any of the other shortlisted owners (BW LNG, Maran Gas Maritime, Seapeak, NYK), nor that the tender has been cancelled. BW LNG's 2026 Equinor-chartered deliveries (BW Nivalis, Feb-2026; BW Borealis, Mar-2026) are pre-existing newbuildings from an earlier order, unrelated to this tender's remaining slot. Row 1186 is not a duplicate of the already-converted rows 1105-1107 (those are separate rows), so no deletion action applies -- it is simply the genuinely still-open portion of the tender. Keep as proposed.",
       "evidence": [
@@ -277,7 +313,8 @@
       ],
       "row_actions": [
         {
-          "live_row": "1186",
+          "row_id": "578",
+          "live_row": "1183",
           "action": "keep as proposed",
           "cells": [],
           "note": "Remaining unclaimed slot of the up-to-4-vessel Equinor/Hanwha Ocean tender; the other 3 slots already converted and are captured separately as on-order rows 1105-1107 (Knutsen OAS). No news found of this 4th slot being awarded or the tender being cancelled as of mid-Sep-2026."

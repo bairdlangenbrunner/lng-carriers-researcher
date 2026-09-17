@@ -34,12 +34,16 @@ CONTROLLED_VOCAB = {
     # never deleted from the backend) and moves to this Status.
     "Status": {"proposed", "on order", "active", "scrapped"},
     "Cargo type": {"membrane", "spherical", "self-supporting prismatic", "type C"},
-    "Vessel type": {"conventional", "FSRU", "q-flex", "q-max", "icebreaker",
+    # "qc-max" (Baird, 2026-09-17): the 271,000 cbm QatarEnergy class IGU 2026 types `QC-max`;
+    # lowercase like q-flex / q-max, as in the sheet's Vessel type dropdown.
+    "Vessel type": {"conventional", "FSRU", "q-flex", "q-max", "qc-max", "icebreaker",
                     "FSU", "Supporting", "small-scale", "mid-scale"},
     "Propulsion type": {"X-DF", "DFDE", "steam", "ME-GA", "ME-GI", "SSD",
                         "steam reheat", "STaGE", "prismatic conventional DFDE",
                         "prismatic small-scale DFDE"},
     "Capacity units": {"cbm"},
+    # Price is always full US dollars with currency "USD" (Baird, 2026-09-17). "$m" is legacy —
+    # the price-USD fix batch converts the rows that carry it; drop it here once that is applied.
     "Price currency": {"$m", "USD"},
 }
 

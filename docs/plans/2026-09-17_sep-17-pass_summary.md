@@ -38,17 +38,19 @@ press says delivery 2029, shipvault 2030).
 
 ## Decisions waiting for you
 
-1. **Proposed bucket** (`…discovery…/proposed_review.json`): Woodside placeholders live rows
-   **1204–1206 duplicate** the Seapeak on-order rows 1165–1167 → delete; the other Woodside
-   rows, Equinor 4 (1186) and all 17 Mozambique LNG slots (1187–1203) stay `proposed`
+1. **Proposed bucket** (`…discovery…/proposed_review.json`): the three Woodside placeholders
+   that duplicated the Seapeak on-order rows are **done** — Baird deleted them 2026-09-17 and moved
+   the names to `Other names` on the Seapeak rows (now live 1162–1164); the other Woodside
+   rows (1204–1216), Equinor 4 (1183) and all 17 Mozambique LNG slots (1184–1200) stay `proposed`
    (Mozambique confirmation deadline was pushed to Sep 2026 — re-check next month). Also the
    Mozambique owner/yard split flagged in the discovery batch.
-2. **Likely duplicates** (dedupe + agent): Hanwha Philly live rows 1083 ↔ 1085 and 1132 ↔ 1086.
+2. **Likely duplicates** (dedupe + agent): Hanwha Philly live rows 1083 ↔ 1085 and 1203 ↔ 1086
+   (1203 was 1132 before the 2026-09-17 evening sheet edit).
 3. **Vessel type / Cargo type rule.** "conventional" is a tracker classification, never page
    wording, so the hard gate can't ref it (10 Rule-F orphans; most Cargo/Vessel-type fills are
    Y). Decide: let a capacity-derived type stand on the Capacity ref, or leave unreffed.
-4. **Price convention**: backend mixes `250` + `$m` with `250000000` + `USD`. New fills use full
-   USD. Shipvault carries contract prices too — unused tonight (single-source, unverifiable).
+4. **Price convention — decided 2026-09-17: always full US dollars + `USD`**; batch 12
+   (`1810ET_fix_price_full_usd`) converts the 29 `$m` rows. Shipvault carries contract prices too — unused tonight (single-source, unverifiable).
 5. **`Greenenergy …` names** look wrong against both shipvault and AIS (`Greenergy`).
 6. **Manual-review rows**: `…rollforward/manual_review.json` (54) and
    `…delivery_confirmed/manual_review.json` (24 still unconfirmed) — mostly ships AIS-live while

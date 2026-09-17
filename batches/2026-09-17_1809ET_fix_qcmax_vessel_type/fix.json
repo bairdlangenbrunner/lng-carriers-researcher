@@ -1,0 +1,463 @@
+{
+ "batch_label": "Fix — Vessel type `qc-max` on the 271,000 cbm QatarEnergy ships (2026-09-17, sep-17-pass batch 11)",
+ "reason": "Baird added `qc-max` as a Vessel type value on 2026-09-17. IGU 2026 types these 24 ships `QC-max`; batch 8 left their blank Vessel type unproposed (manual_review.json) because the vocabulary had no such value. Same sourcing rule as batch 8: the IGU 2026 report PDF as sole ref (IG §5.4).",
+ "igu_ref": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+ "corrections": [
+  {
+   "row_id": "295",
+   "_live_row": 1070,
+   "_name": "Hull H1917A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085265; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "298",
+   "_live_row": 1071,
+   "_name": "Hull H1920A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085370; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "299",
+   "_live_row": 1072,
+   "_name": "Hull H1921A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085306; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "301",
+   "_live_row": 1073,
+   "_name": "Hull H1923A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085318; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "309",
+   "_live_row": 1074,
+   "_name": "Hull H1956A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085409; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "291",
+   "_live_row": 1119,
+   "_name": "Hull H1913A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1095870; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "292",
+   "_live_row": 1120,
+   "_name": "Hull H1914A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085368; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "294",
+   "_live_row": 1121,
+   "_name": "Hull H1916A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085253; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "296",
+   "_live_row": 1122,
+   "_name": "Hull H1918A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085277; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "297",
+   "_live_row": 1123,
+   "_name": "Hull H1919A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1095882; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "300",
+   "_live_row": 1124,
+   "_name": "Hull H1922A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085382; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "302",
+   "_live_row": 1125,
+   "_name": "Hull H1924A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085289; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "304",
+   "_live_row": 1126,
+   "_name": "Hull H1926A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085320; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "305",
+   "_live_row": 1127,
+   "_name": "Hull H1927A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085332; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "306",
+   "_live_row": 1128,
+   "_name": "Hull H1928A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085344; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "307",
+   "_live_row": 1129,
+   "_name": "Hull H1929A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085356; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "303",
+   "_live_row": 1171,
+   "_name": "Hull H1925A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1085291; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "311",
+   "_live_row": 1172,
+   "_name": "Hull H1958A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1085423; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "312",
+   "_live_row": 1173,
+   "_name": "Hull H1959A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1085435; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "290",
+   "_live_row": 1176,
+   "_name": "Hull H1912A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1085239; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "293",
+   "_live_row": 1177,
+   "_name": "Hull H1915A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1085241; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "313",
+   "_live_row": 1178,
+   "_name": "Hull H1960A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1085447; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "308",
+   "_live_row": 1201,
+   "_name": "Hull H1955A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.81; IMO 1085394; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  },
+  {
+   "row_id": "310",
+   "_live_row": 1202,
+   "_name": "Hull H1957A",
+   "cells": [
+    {
+     "field": "Vessel type",
+     "new_value": "qc-max",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU prints 'QC-max' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1085411; capacity 271000 cbm; sole source per Baird ruling 2026-09-17; vocabulary value `qc-max` added by Baird 2026-09-17]"
+    }
+   ]
+  }
+ ]
+}
