@@ -137,61 +137,10 @@ row_id,column,backend_value,proposed_value,sources,recommendation,decision
 1193,Shipowner country/area,,,,,hold
 1194,Shipowner country/area,,,,,hold
 1195,Shipowner country/area,,,,,hold
-1190,Price,,,,,hold
-1191,Price,,,,,hold
-1192,Price,,,,,hold
-205,Price,,,,,hold
-206,Price,,,,,hold
-1152,Price,,,,,hold
-1153,Price,,,,,hold
-1154,Price,,,,,hold
-1155,Price,,,,,hold
-1201,Price,,,,,hold
-1202,Price,,,,,hold
-1203,Price,,,,,hold
-1204,Price,,,,,hold
-193,Price,,,,,hold
-194,Price,,,,,hold
-195,Price,,,,,hold
-1156,Price,,,,,hold
-1156,Price,,,,,hold
-1156,Price,,,,,hold
-1157,Price,,,,,hold
-1157,Price,,,,,hold
-1157,Price,,,,,hold
-1187,Price,,,,,hold
-1188,Price,,,,,hold
-1164,Price,,,,,hold
-1165,Price,,,,,hold
 373,Price,,,,,hold
 384,Price,,,,,hold
 387,Price,,,,,hold
-1193,Price,,,,,hold
-1194,Price,,,,,hold
-1195,Price,,,,,hold
-124,Price,,,,,hold
-124,Price,,,,,hold
-125,Price,,,,,hold
-125,Price,,,,,hold
-126,Price,,,,,hold
-126,Price,,,,,hold
-127,Price,,,,,hold
-127,Price,,,,,hold
-128,Price,,,,,hold
-128,Price,,,,,hold
-1150,Price,,,,,hold
-1151,Price,,,,,hold
-99,Price,,,,,hold
-100,Price,,,,,hold
-1172,Price,,,,,hold
-1173,Price,,,,,hold
-273,Price,,,,,hold
-274,Price,,,,,hold
-1092,Price,,,,,hold
-1224,Price,,,,,hold
-1225,Price,,,,,hold
-1226,Price,,,,,hold
-1170,Price,,,,,hold
-1171,Price,,,,,hold
 375,Hull number,,,,,hold
 666,Hull number,,,,,hold
+1156,Price,,,,,hold
+1157,Price,,,,,hold

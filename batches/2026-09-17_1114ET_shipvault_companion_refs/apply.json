@@ -1,0 +1,1064 @@
+{
+  "batch": "2026-09-17_1114ET_shipvault_companion_refs",
+  "mode": "data_fill",
+  "accepted_cells": [
+    {
+      "row_id": "29",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/456060, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456060",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "29",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456060, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456060",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "92",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/478881, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "94",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/478882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "96",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/478883, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "96",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/478883, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "96",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/478883, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "96",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478883, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "96",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/478883, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "96",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/478883, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "96",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/478883, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "98",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/478884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "98",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/478884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "98",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/478884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "98",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "98",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/478884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "98",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/478884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "98",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/478884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "117",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/457612, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457612",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "117",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457612, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457612",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "163",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/483838, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "163",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/483838, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "163",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/483838, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "163",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/483838, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "163",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/483838, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "163",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/483838, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "178",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "178",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "178",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "178",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "178",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "178",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "178",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "224",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/477423, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "315",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "315",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "315",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "315",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "315",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "315",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "316",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "316",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "316",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "316",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "316",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "316",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "Shipowner [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "415",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "415",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "415",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "415",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "415",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "663",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "663",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "663",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "663",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "663",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "663",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "721",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/94117, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "721",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/94117, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "721",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/94117, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "995",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/459926, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1044",
+      "column": "Contract date [ref]",
+      "value": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1044",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1044",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1044",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1044",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1044",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1045",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1045",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1045",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1045",
+      "column": "Price [ref]",
+      "value": "https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1045",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "confidence": "Y"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 175,
+    "accepted": 175,
+    "hold": 0,
+    "reject": 0,
+    "conflicts": 0
+  }
+}

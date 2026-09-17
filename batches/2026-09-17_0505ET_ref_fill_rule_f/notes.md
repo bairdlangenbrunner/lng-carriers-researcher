@@ -1,4 +1,4 @@
-# Rule-F [ref]-fill — whole backend (2026-09-17 overnight update)
+# Rule-F [ref]-fill — whole backend (2026-09-17, sep-17-pass)
 
 Scope: every cell in the fresh 2026-09-17 pull where a data value is filled but the paired
 `[ref]` is blank (RF §4.13 Rule F). 19 such cells: Vessel type 10, Capacity 5, Hull number 3,
@@ -35,3 +35,14 @@ filtered copy of the pull so the sheet is reviewable); `citations.json` is keyed
 ## Gate
 
 67 URL checks logged in `citations.json` → `qa_log`. Recalc: zero formula errors.
+
+## Shipvault companion refs (added 2026-09-17, RF rev 21 §6a.8)
+
+Most `shipvault.com/ships/{id}` pages render blank in a browser (the site cannot parse its own
+double-encoded API answer), so a reviewer cannot see the value the gate verified. Every ref citing
+such a page now carries the unit-record URL
+`https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/{id}` as a second ref right after it:
+**7 companions added, 0 skipped** (`shipvault_api_refs.json`). Source JSON patched with
+`scripts/shipvault_api_refs.py`, workbook rebuilt + recalced (zero errors), apply artifacts
+regenerated; decisions unchanged, and the only diff in `apply.json` / `apply_rows.csv` /
+`apply_patch.csv` is the added URLs.

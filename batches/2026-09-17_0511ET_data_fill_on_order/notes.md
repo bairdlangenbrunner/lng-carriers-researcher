@@ -1,4 +1,4 @@
-# Data-fill — on-order core facts + whole-backend derivables (2026-09-17 overnight update)
+# Data-fill — on-order core facts + whole-backend derivables (2026-09-17, sep-17-pass)
 
 Fresh pull 2026-09-17 (1,220 rows). Scope: `derive_fills.py --since 2000-01-01` (whole backend)
 for the derivable autofills; research fan-out limited to **on-order rows** and the core facts
@@ -6,12 +6,12 @@ for the derivable autofills; research fan-out limited to **on-order rows** and t
 Cargo / Vessel type). Additive to blank / `unknown` cells only — a pre-merge filter dropped
 4 research fills whose target cell was already filled (logged as findings).
 
-## What is in the workbook — 949 proposals on 477 rows
+## What is in the workbook — 1,003 proposals on 483 rows
 
 | field | accept (G / derivable) | hold (Y) |
 |---|---|---|
 | Shipowner country/area | 329 | 0 |
-| Price (+ companion Price currency = USD) | 45 | 76 |
+| Price (+ companion Price currency = USD) | 24 | 124 |
 | Operator/charterer | 44 | 71 |
 | Contract date | 22 | 68 |
 | Hull number | 30 | 19 |
@@ -43,10 +43,52 @@ Sources of the research fills:
 cell value (56 Price, 73 Shipowner country/area sibling-copied refs, 2 Hull number), 15
 blocked; **28 research fills demoted** to documented blanks for losing every ref (26 Price,
 2 Hull number). Most demoted Prices were "package total ÷ N" derivations — the page states
-the total, not the per-ship figure, so the gate (correctly) refuses them. They are listed in
-`conflicts.csv` with the source URL if you want to enter them by hand. IMOs were additionally
+the total, not the per-ship figure. **Superseded the same day — see "Order-total prices"
+below: those are now proposed, with refs.** IMOs were additionally
 validated by check digit (one shipvault IMO, 1184679 for row_id 1205, fails it and was not
 proposed). 26 companion currency/units fills whose parent was demoted were removed.
+
+## Order-total prices (DF rev 3 §5a, added 2026-09-17 afternoon)
+
+The research prompt told agents to divide a reported order total by the ship count; the gate
+then dropped the total-stating URL (the per-ship figure is not on the page). 26 such Prices
+were demoted to blanks, and 21 more kept their value with **no ref and a default `accept`**
+because the agents had set `derivable: true` on them (live row 918 was the one Baird caught).
+Rule agreed with Baird and written into the SOP as DF §5a: total ÷ N is a real data point —
+Yellow at most, `derived_from: {total, n}`, the note states the division, and the gate
+corroborates the **total**, so the URL stays in `Price [ref]`.
+
+All of them re-gated under §5a: **48 Price cells across 15 orders, every one with a passing
+ref, all Y / `hold`** (with their `Price currency` companions):
+
+| live rows | order | total ÷ N | per vessel | ref |
+|---|---|---|---|---|
+| 917, 918, 943, 1220–1222 | Hudong-Zhonghua × CNOOC/CMES/NYK | $1.26bn ÷ 6 | 210,000,000 | Splash247 |
+| 890–896 | HD Hyundai Heavy × MISC / NYK / K Line / China LNG septet | $1.5bn ÷ 7 | 214,285,714 | Seatrade |
+| 955–959 | Samsung × Seapeak | $1.08bn ÷ 5 | 216,000,000 | Offshore Energy |
+| 1149–1151 | Hudong-Zhonghua × Bonny Gas | $744m ÷ 3 | 248,000,000 | Baird Maritime |
+| 1091, 1092 | Samsung × Seapeak | $499m ÷ 2 | 249,500,000 | Splash247 |
+| 1095, 1135 | Samsung × Purus | $503m ÷ 2 | 251,500,000 | Splash247, Global Flow Control |
+| 1139, 1140 | Hanwha × Alpha Gas | $503m ÷ 2 | 251,500,000 | Splash247 |
+| 1141, 1142 | Hanwha × Maran Gas | $505m ÷ 2 | 252,500,000 | Splash247 |
+| 1157–1160 | HD Hyundai Heavy × NYK / Ocean Yield (second four) | $1.02bn ÷ 4 | 255,000,000 | LNG Prime |
+| 1147, 1148 | HD Hyundai Samho × Sonangol | $511m ÷ 2 | 255,500,000 | Splash247 |
+| 951, 952 | Hanwha × Maran Gas | $511.6m ÷ 2 | 255,800,000 | PortNews |
+| 1115, 1152, 1153 | HD Hyundai Samho × Capital Clean Energy | $769.5m ÷ 3 | 256,500,000 | CCEC release |
+| 1103, 1104 | Samsung × Celsius Tankers | $514m ÷ 2 | 257,000,000 | Splash247 |
+| 1093, 1094, 1133, 1134 | HD Hyundai Heavy × NYK / Ocean Yield (first four) | $1.04bn ÷ 4 | 260,000,000 | LNG Prime |
+| 1055, 1056 | HD Hyundai Heavy × Evalend | $530m ÷ 2 | 265,000,000 | Splash247 |
+
+- Live rows 890–893 are **new to the batch**: the agent priced three of the septet's seven
+  rows; the article covers all seven (hulls 3395–3401), so the other four got the same fill.
+- The total has to be the yard contract value. Seapeak's releases give a "total fully
+  built-up cost" ($1.1bn for the five, $511.6m for the pair) — not used; the yard-side
+  figures above are. Where two outlets convert the same won figure differently (Alpha Gas
+  $503m / $501m; Purus $503m / Riviera's $502.8m) one is cited and the other named in the note.
+- **Still blank: live rows 928, 930, 1003 (Capital Gas).** The only figure found is the
+  $3.13bn CPLP paid Capital Maritime for an 11-ship fleet — an acquisition price between
+  affiliates, not a newbuilding price. Documented blank with that note.
+- Documented blanks 830 → 807; stale "dropped by §3.8" Price findings removed for these rows.
 
 ## Findings that need a human eye (also in `conflicts.csv` / `candidate_findings`)
 
@@ -102,7 +144,24 @@ soft-error when it is a quantity — "$500 million order" was being graded dead 
 That bug had cost row_ids 67/68 their Price ref; re-gated and restored here. Test:
 `test_dollar_figure_in_title_is_not_a_status_code` (194 pass).
 
+`scripts/merge_fills.py` (DF rev 3): `derivable: true` is honoured only on the DF §5 autofill
+columns (`DERIVABLE_FIELDS`) and cleared with a warning anywhere else; a `derived_from` Price
+is arithmetic-checked, gated on its total and capped at Y; a research fill left with no URL
+is always demoted. `scripts/citation_qc.py --corroborate` recognises an order-total Price
+cell instead of grading it `uncorroborated`. Tests: `tests/test_merge_fills.py`.
+
 Known gap, not fixed: Status = `active` passes the gate on any page containing the bare word
 "active" (boilerplate). Needs URL-/context-aware matching in `value_variants`.
 
 Recalc: zero formula errors.
+
+## Shipvault companion refs (added 2026-09-17, RF rev 21 §6a.8)
+
+Most `shipvault.com/ships/{id}` pages render blank in a browser (the site cannot parse its own
+double-encoded API answer), so a reviewer cannot see the value the gate verified. Every ref citing
+such a page now carries the unit-record URL
+`https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/{id}` as a second ref right after it:
+**119 companions added, 0 skipped** (`shipvault_api_refs.json`). Source JSON patched with
+`scripts/shipvault_api_refs.py`, workbook rebuilt + recalced (zero errors), apply artifacts
+regenerated; decisions unchanged, and the only diff in `apply.json` / `apply_rows.csv` /
+`apply_patch.csv` is the added URLs.

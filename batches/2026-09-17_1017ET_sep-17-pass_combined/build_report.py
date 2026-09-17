@@ -1,9 +1,9 @@
-"""Render the shareable report page for the 2026-09-17 overnight update.
+"""Render the shareable report page for the sep-17-pass (2026-09-17).
 
 Reads report_data.json + the combined workbook (both written by build_combined.py) and
 writes one self-contained HTML file (the workbook rides along base64-encoded so the page
 can offer it as a download).
-Usage: python batches/2026-09-17_1017ET_overnight_combined/build_report.py <out.html>
+Usage: python batches/2026-09-17_1017ET_sep-17-pass_combined/build_report.py <out.html>
 """
 import base64
 import json
@@ -34,7 +34,7 @@ def js(obj):
 
 html = (HERE / "report_template.html").read_text(encoding="utf-8")
 html = (html.replace("/*ROWS*/[]", js(rows)).replace("/*CHART*/[]", js(chart))
-        .replace("/*XLSX*/", base64.b64encode((HERE / "lng_carrier_overnight_results.xlsx").read_bytes()).decode()))
+        .replace("/*XLSX*/", base64.b64encode((HERE / "lng_carrier_sep-17-pass_results.xlsx").read_bytes()).decode()))
 out = Path(sys.argv[1])
 out.write_text(html, encoding="utf-8")
 print("wrote", out, f"{out.stat().st_size / 1e6:.2f} MB", "| rows:", len(rows), "| chart:", chart)

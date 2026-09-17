@@ -1,4 +1,4 @@
-# Fix batch — deliveries confirmed by trade press (2026-09-17, overnight run)
+# Fix batch — deliveries confirmed by trade press (2026-09-17, sep-17-pass)
 
 Follow-up to `2026-09-17_0421ET_fix_delivery_rollforward`. That batch left 26 on-order rows in
 `manual_review.json` because AIS shows them sailing under a real name while shipvault still lists
@@ -21,4 +21,4 @@ row 934 (AIS `Hai Xie` vs shipvault `Sea Harmony`), row 933 (AIS `Dachuan Haisha
 Gate: every ref passed §3.8c at pre-gate and again at build (0 dropped). Recalc: zero formula
 errors. One agent caught a gate false positive — the bare word "active" in page boilerplate can
 pass the Status gate; the agents overrode it by reading the page, and it is listed in the
-overnight summary as a verifier follow-up.
+sep-17-pass summary as a verifier follow-up.

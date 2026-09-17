@@ -1,12 +1,12 @@
 # Batch digest — 2026-09-17_0511ET_data_fill_on_order
 
-**Mode:** data_fill  ·  **Proposals:** 949 (auto-safe 627, needs-decision 322)  ·  **Conflicts:** 196  ·  **Documented blanks:** 830
+**Mode:** data_fill  ·  **Proposals:** 1003 (auto-safe 633, needs-decision 370)  ·  **Conflicts:** 145  ·  **Documented blanks:** 807
 
 ## ✅ Auto-safe — accept in bulk (Green / derivable)
 
-By field: Shipowner country/area ×329, Price currency ×121, Price ×45, Operator/charterer ×44, Hull number ×30, Contract date ×22, Capacity units ×16, Cargo type ×6, Propulsion type ×3, Yard location latitude ×2, Yard location longitude ×2, Yard location plus code ×2, Yard location accuracy ×2, Yard location lat/lon [ref] ×2, IMO number ×1
+By field: Shipowner country/area ×329, Price currency ×148, Operator/charterer ×44, Hull number ×30, Price ×24, Contract date ×22, Capacity units ×16, Cargo type ×6, Propulsion type ×3, Yard location latitude ×2, Yard location longitude ×2, Yard location plus code ×2, Yard location accuracy ×2, Yard location lat/lon [ref] ×2, IMO number ×1
 
-These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
+These 633 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
 
 ## ⚠️ Needs a decision (Yellow / Red / unknown)
 
@@ -33,6 +33,10 @@ These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 160** · Operator/charterer: `ADNOC` (Y) — Vessels "will be time chartered to ADNOC subsidiaries for 20 years." [charterer = owner (self-operated); held for review]
 - **row 161** · Contract date: `01-Jul-2024` (Y) — Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a contract for 4 firm + 1 option 174,000cbm LNG carriers; matches shipvault_lead ordered date 2024-07-01.
 - **row 161** · Operator/charterer: `ADNOC` (Y) — Vessels "will be time chartered to ADNOC subsidiaries for 20 years." [charterer = owner (self-operated); held for review]
+- **row 1152** · Price: `260000000` (Y) — LNG Prime: $1.04 billion for the quartet (Hulls 3635-3638); per-vessel = 1,040,000,000 / 4 = 260,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1153** · Price: `260000000` (Y) — LNG Prime: $1.04 billion for the quartet (Hulls 3635-3638); per-vessel = 1,040,000,000 / 4 = 260,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1154** · Price: `260000000` (Y) — LNG Prime: $1.04 billion for the quartet (Hulls 3635-3638); per-vessel = 1,040,000,000 / 4 = 260,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1155** · Price: `260000000` (Y) — LNG Prime: $1.04 billion for the quartet (Hulls 3635-3638); per-vessel = 1,040,000,000 / 4 = 260,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 1152** · Propulsion type: `X-DF` (Y) — NYK press release on this quartet states X-DF engines literally.
 - **row 1153** · Propulsion type: `X-DF` (Y) — Same as row 1152.
 - **row 1154** · Propulsion type: `X-DF` (Y) — Same as row 1152.
@@ -41,6 +45,10 @@ These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 1153** · Cargo type: `membrane` (Y) — Same as row 1152.
 - **row 1154** · Cargo type: `membrane` (Y) — Same as row 1152.
 - **row 1155** · Cargo type: `membrane` (Y) — Same as row 1152.
+- **row 1201** · Price: `255000000` (Y) — LNG Prime: $1.02 billion for the option quartet; per-vessel = 1,020,000,000 / 4 = 255,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1202** · Price: `255000000` (Y) — LNG Prime: $1.02 billion for the option quartet; per-vessel = 1,020,000,000 / 4 = 255,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1203** · Price: `255000000` (Y) — LNG Prime: $1.02 billion for the option quartet; per-vessel = 1,020,000,000 / 4 = 255,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1204** · Price: `255000000` (Y) — LNG Prime: $1.02 billion for the option quartet; per-vessel = 1,020,000,000 / 4 = 255,000,000 (DF §5a — derived from the reported order total, equal split across 4 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 1201** · Propulsion type: `X-DF` (Y) — Offshore Energy article on this option order states X-DF literally.
 - **row 1202** · Propulsion type: `X-DF` (Y) — Same as row 1201.
 - **row 1203** · Propulsion type: `X-DF` (Y) — Same as row 1201.
@@ -49,6 +57,9 @@ These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 1202** · Cargo type: `membrane` (Y) — Same as row 1201.
 - **row 1203** · Cargo type: `membrane` (Y) — Same as row 1201.
 - **row 1204** · Cargo type: `membrane` (Y) — Same as row 1201.
+- **row 193** · Price: `214285714` (Y) — Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401); per-vessel = 1,500,000,000 / 7 = 214,285,714 (DF §5a — derived from the reported order total, equal split across 7 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 194** · Price: `214285714` (Y) — Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401); per-vessel = 1,500,000,000 / 7 = 214,285,714 (DF §5a — derived from the reported order total, equal split across 7 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 195** · Price: `214285714` (Y) — Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401); per-vessel = 1,500,000,000 / 7 = 214,285,714 (DF §5a — derived from the reported order total, equal split across 7 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 197** · Contract date: `16-May-2023` (Y) — NYK press release dated 16-May-2023.
 - **row 198** · Contract date: `16-May-2023` (Y) — Same as row 197.
 - **row 199** · Contract date: `16-May-2023` (Y) — Same as row 197.
@@ -68,6 +79,8 @@ These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 156** · Contract date: `01-Oct-2024` (Y) — Article (published Oct 1 2024) references a stock-exchange filing 'on Tuesday' (Oct 1 2024 was a Tuesday); publication-date metadata passes the date gate. splash247's companion article does not literally state this date so was not attached here.
 - **row 157** · Contract date: `01-Oct-2024` (Y) — Same as row 156.
 - **row 1206** · Cargo type: `membrane` (Y) — GTT order article states the FSRU's tanks use GTT's Mark III membrane containment system; also confirms 170,000 cbm capacity and MISC ownership, consistent with the row.
+- **row 1156** · Price: `251500000` (Y) — Splash247 / Global Flow Control: $503m for the two-vessel order; per-vessel = 503,000,000 / 2 = 251,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure). Riviera gives the total as US$502.8M (251,400,000 each) — states a different figure, so not cited on this cell (§3.8c).
+- **row 1157** · Price: `251500000` (Y) — Splash247 / Global Flow Control: $503m for the two-vessel order; per-vessel = 503,000,000 / 2 = 251,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure). Riviera gives the total as US$502.8M (251,400,000 each) — states a different figure, so not cited on this cell (§3.8c).
 - **row 1174** · Price: `252000000` (Y) — Article states the single vessel is 'valued at just over US$252M' literally (not a total split - single-ship order).
 - **row 1186** · Price: `245000000` (Y) — Splash247 (03-Feb-2026): HD Hyundai Samho contract for a 174,000 cu m unit for Sonangol, 'valued at KRW357.5bn ($245m)'. Single-vessel order; delivery scheduled by June 2028, consistent with row's 2028 delivery year.
 - **row 201** · Contract date: `17-Jan-2023` (Y) — LNG Prime (published 17-Jan-2023): 'Parent KSOE said on Tuesday HHI would build the 200,000-cbm LNG carriers for an unidentified owner in Oceania and deliver them by November 2026... first LNG carrier order for KSOE and its units for 2023.' 17-Jan-2023 was a Tuesday, matching the article's dateline exactly (publish timestamp 2023-01-17T11:35:49+00:00).
@@ -259,24 +272,32 @@ These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 88** · Vessel type: `conventional` (Y) — Same cluster announcement as row 80.
 - **row 273** · Operator/charterer: `CNOOC` (Y) — NYK release: 'concluded a long-term time-charter contract with CNOOC Gas and Power Singapore Trading & Marketing Pte. Ltd. ... for six liquefied natural gas (LNG) carriers'.
 - **row 273** · Contract date: `28-Apr-2022` (Y) — NYK release: 'On April 28 ... NYK concluded a long-term time-charter contract ... in addition to a shipbuilding contract for the vessels with Hudong-Zhonghua Shipbuilding'.
+- **row 273** · Price: `210000000` (Y) — Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260,000,000 / 6 = 210,000,000 (DF §5a — derived from the reported order total, equal split across 6 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 273** · Cargo type: `membrane` (Y) — NYK release: 'a membrane-type tank that will make use of advanced insulating materials'.
 - **row 274** · Operator/charterer: `CNOOC` (Y) — Same six-ship order as row 273.
 - **row 274** · Contract date: `28-Apr-2022` (Y) — Same six-ship order as row 273.
+- **row 274** · Price: `210000000` (Y) — Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260,000,000 / 6 = 210,000,000 (DF §5a — derived from the reported order total, equal split across 6 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 274** · Cargo type: `membrane` (Y) — Same six-ship order as row 273.
 - **row 1092** · Operator/charterer: `CNOOC` (Y) — 3rd hull of the same six-ship NYK/CNOOC/CMES JV order as rows 273/274, 1224-1226 (same owner tag, shipbuilder, capacity, delivery window).
 - **row 1092** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1092** · Price: `210000000` (Y) — Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260,000,000 / 6 = 210,000,000 (DF §5a — derived from the reported order total, equal split across 6 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 1092** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
 - **row 1224** · Operator/charterer: `CNOOC` (Y) — 4th hull of the same six-ship order; row already carried nyk.com/gcaptain as existing_refs.
 - **row 1224** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1224** · Price: `210000000` (Y) — Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260,000,000 / 6 = 210,000,000 (DF §5a — derived from the reported order total, equal split across 6 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 1224** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
 - **row 1225** · Operator/charterer: `CNOOC` (Y) — 5th hull of the same six-ship order.
 - **row 1225** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1225** · Price: `210000000` (Y) — Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260,000,000 / 6 = 210,000,000 (DF §5a — derived from the reported order total, equal split across 6 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 1225** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
 - **row 1226** · Operator/charterer: `CNOOC` (Y) — 6th hull of the same six-ship order.
 - **row 1226** · Contract date: `28-Apr-2022` (Y) — Same six-ship order, see row 273.
+- **row 1226** · Price: `210000000` (Y) — Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260,000,000 / 6 = 210,000,000 (DF §5a — derived from the reported order total, equal split across 6 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 1226** · Cargo type: `membrane` (Y) — Same six-ship order, see row 273.
 - **row 164** · Capacity: `174000` (Y) — shipvault record for Hull 2752 (IMO 1137238) via imo_tracker.py: cap=174000 CBM.
 - **row 1166** · Price: `255000000` (Y) — Splash247: 'Samsung Heavy Industries confirmed the contract in a regulatory filing earlier, noting the value at around KRW 368bn ($255m)' for the single 180,000 cu m Celsius Tankers unit (Hull 2777), delivery end-May 2028 -- matches row's delivery_year 2028 and shipvault_lead newprice 255000000.
+- **row 1170** · Price: `257000000` (Y) — Splash247: KRW 770bn ($514m) for two 180,000 cu m newbuilds; per-vessel = 514,000,000 / 2 = 257,000,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1171** · Price: `257000000` (Y) — Splash247: KRW 770bn ($514m) for two 180,000 cu m newbuilds; per-vessel = 514,000,000 / 2 = 257,000,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
 - **row 515** · Contract date: `24-Sep-2022` (Y) — LNG Prime: 'The two firms signed the deal on September 24, CMES said in a statement' -- CMES exercising its option for two more 175,000-cbm LNG carriers at DSIC. Matches shipvault_lead ordered=2022-09-01 for Hull G175K-04.
 - **row 515** · Price: `200000000` (Y) — 'This contract for two LNG carriers had an option for two additional vessels with a price tag of $400 million, or $200 million each, and CMES has now exercised that option.' Matches shipvault_lead newprice 200000000 exactly.
 - **row 516** · Contract date: `24-Sep-2022` (Y) — Same option-exercise duo as row 515 (Hull G175K-06).
@@ -332,6 +353,33 @@ These 627 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 102** · Capacity: `174000` (Y) — shipvault record for IMO 1115072: cargo capacity 174000 cbm
 - **row 103** · Capacity: `174000` (Y) — shipvault record for IMO 1115084: cargo capacity 174000 cbm
 - **row 250** · Capacity: `180000` (Y) — shipvault record for IMO 1119078: cargo capacity 180000 cbm
+- **row 189** · Price: `214285714` (Y) — Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401); per-vessel = 1,500,000,000 / 7 = 214,285,714 (DF §5a — derived from the reported order total, equal split across 7 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 190** · Price: `214285714` (Y) — Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401); per-vessel = 1,500,000,000 / 7 = 214,285,714 (DF §5a — derived from the reported order total, equal split across 7 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 191** · Price: `214285714` (Y) — Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401); per-vessel = 1,500,000,000 / 7 = 214,285,714 (DF §5a — derived from the reported order total, equal split across 7 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 192** · Price: `214285714` (Y) — Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401); per-vessel = 1,500,000,000 / 7 = 214,285,714 (DF §5a — derived from the reported order total, equal split across 7 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 99** · Price: `255800000` (Y) — PortNews: $511.6m deal for two vessels (Hulls 2602/2603); per-vessel = 511,600,000 / 2 = 255,800,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 100** · Price: `255800000` (Y) — PortNews: $511.6m deal for two vessels (Hulls 2602/2603); per-vessel = 511,600,000 / 2 = 255,800,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 124** · Price: `216000000` (Y) — Offshore Energy: Samsung Heavy's disclosed contract value of KRW 1.46 trillion ($1.08 billion) for five carriers; per-vessel = 1,080,000,000 / 5 = 216,000,000 (DF §5a — derived from the reported order total, equal split across 5 same-size vessels; the page states the total, not the per-vessel figure). Seapeak's own release gives a 'total fully built-up cost' of ~$1.1bn — an owner's all-in cost, not the contract value, so not used.
+- **row 125** · Price: `216000000` (Y) — Offshore Energy: Samsung Heavy's disclosed contract value of KRW 1.46 trillion ($1.08 billion) for five carriers; per-vessel = 1,080,000,000 / 5 = 216,000,000 (DF §5a — derived from the reported order total, equal split across 5 same-size vessels; the page states the total, not the per-vessel figure). Seapeak's own release gives a 'total fully built-up cost' of ~$1.1bn — an owner's all-in cost, not the contract value, so not used.
+- **row 126** · Price: `216000000` (Y) — Offshore Energy: Samsung Heavy's disclosed contract value of KRW 1.46 trillion ($1.08 billion) for five carriers; per-vessel = 1,080,000,000 / 5 = 216,000,000 (DF §5a — derived from the reported order total, equal split across 5 same-size vessels; the page states the total, not the per-vessel figure). Seapeak's own release gives a 'total fully built-up cost' of ~$1.1bn — an owner's all-in cost, not the contract value, so not used.
+- **row 127** · Price: `216000000` (Y) — Offshore Energy: Samsung Heavy's disclosed contract value of KRW 1.46 trillion ($1.08 billion) for five carriers; per-vessel = 1,080,000,000 / 5 = 216,000,000 (DF §5a — derived from the reported order total, equal split across 5 same-size vessels; the page states the total, not the per-vessel figure). Seapeak's own release gives a 'total fully built-up cost' of ~$1.1bn — an owner's all-in cost, not the contract value, so not used.
+- **row 128** · Price: `216000000` (Y) — Offshore Energy: Samsung Heavy's disclosed contract value of KRW 1.46 trillion ($1.08 billion) for five carriers; per-vessel = 1,080,000,000 / 5 = 216,000,000 (DF §5a — derived from the reported order total, equal split across 5 same-size vessels; the page states the total, not the per-vessel figure). Seapeak's own release gives a 'total fully built-up cost' of ~$1.1bn — an owner's all-in cost, not the contract value, so not used.
+- **row 205** · Price: `265000000` (Y) — Splash247: $530m deal for the two ships; per-vessel = 530,000,000 / 2 = 265,000,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 206** · Price: `265000000` (Y) — Splash247: $530m deal for the two ships; per-vessel = 530,000,000 / 2 = 265,000,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1150** · Price: `249500000` (Y) — Splash247: combined contract value of about $499m for the pair; per-vessel = 499,000,000 / 2 = 249,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure). Seapeak's 6-K gives an 'estimated total fully built-up cost' of $511.6m — an owner's all-in cost, not the contract value, so not used.
+- **row 1151** · Price: `249500000` (Y) — Splash247: combined contract value of about $499m for the pair; per-vessel = 499,000,000 / 2 = 249,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure). Seapeak's 6-K gives an 'estimated total fully built-up cost' of $511.6m — an owner's all-in cost, not the contract value, so not used.
+- **row 1164** · Price: `251500000` (Y) — Splash247: two carriers valued at KRW738.3bn ($503m); per-vessel = 503,000,000 / 2 = 251,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure). LNG Prime converts the same KRW738.3bn to $501m ($250.5m per vessel); FX difference only.
+- **row 1165** · Price: `251500000` (Y) — Splash247: two carriers valued at KRW738.3bn ($503m); per-vessel = 503,000,000 / 2 = 251,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure). LNG Prime converts the same KRW738.3bn to $501m ($250.5m per vessel); FX difference only.
+- **row 1172** · Price: `252500000` (Y) — Splash247: a pair of 174,000 cu m vessels with a combined price tag of about $505m; per-vessel = 505,000,000 / 2 = 252,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1173** · Price: `252500000` (Y) — Splash247: a pair of 174,000 cu m vessels with a combined price tag of about $505m; per-vessel = 505,000,000 / 2 = 252,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1187** · Price: `255500000` (Y) — Splash247: two 174,000-cbm vessels worth KRW770.2bn ($511m); per-vessel = 511,000,000 / 2 = 255,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1188** · Price: `255500000` (Y) — Splash247: two 174,000-cbm vessels worth KRW770.2bn ($511m); per-vessel = 511,000,000 / 2 = 255,500,000 (DF §5a — derived from the reported order total, equal split across 2 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1190** · Price: `248000000` (Y) — Baird Maritime: three firm vessels under a contract valued at approximately US$744 million (the article calls them VLGCs but describes 174,000 cbm membrane LNG tanks); per-vessel = 744,000,000 / 3 = 248,000,000 (DF §5a — derived from the reported order total, equal split across 3 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1191** · Price: `248000000` (Y) — Baird Maritime: three firm vessels under a contract valued at approximately US$744 million (the article calls them VLGCs but describes 174,000 cbm membrane LNG tanks); per-vessel = 744,000,000 / 3 = 248,000,000 (DF §5a — derived from the reported order total, equal split across 3 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1192** · Price: `248000000` (Y) — Baird Maritime: three firm vessels under a contract valued at approximately US$744 million (the article calls them VLGCs but describes 174,000 cbm membrane LNG tanks); per-vessel = 744,000,000 / 3 = 248,000,000 (DF §5a — derived from the reported order total, equal split across 3 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1193** · Price: `256500000` (Y) — Capital Clean Energy Carriers release: en-bloc shipbuilding price of $769.5 million for the three vessels; per-vessel = 769,500,000 / 3 = 256,500,000 (DF §5a — derived from the reported order total, equal split across 3 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1194** · Price: `256500000` (Y) — Capital Clean Energy Carriers release: en-bloc shipbuilding price of $769.5 million for the three vessels; per-vessel = 769,500,000 / 3 = 256,500,000 (DF §5a — derived from the reported order total, equal split across 3 same-size vessels; the page states the total, not the per-vessel figure).
+- **row 1195** · Price: `256500000` (Y) — Capital Clean Energy Carriers release: en-bloc shipbuilding price of $769.5 million for the three vessels; per-vessel = 769,500,000 / 3 = 256,500,000 (DF §5a — derived from the reported order total, equal split across 3 same-size vessels; the page states the total, not the per-vessel figure).
 
 These are default-`hold`. Flip to `accept`/`reject` in `decisions.csv`, then re-run `apply_batch.py`.
 
@@ -477,66 +525,15 @@ Not auto-applied (data-fill is additive to blanks only). Decide each in `conflic
 - **row 1193** Shipowner country/area: backend `` vs research `` — 
 - **row 1194** Shipowner country/area: backend `` vs research `` — 
 - **row 1195** Shipowner country/area: backend `` vs research `` — 
-- **row 1190** Price: backend `` vs research `` — 
-- **row 1191** Price: backend `` vs research `` — 
-- **row 1192** Price: backend `` vs research `` — 
-- **row 205** Price: backend `` vs research `` — 
-- **row 206** Price: backend `` vs research `` — 
-- **row 1152** Price: backend `` vs research `` — 
-- **row 1153** Price: backend `` vs research `` — 
-- **row 1154** Price: backend `` vs research `` — 
-- **row 1155** Price: backend `` vs research `` — 
-- **row 1201** Price: backend `` vs research `` — 
-- **row 1202** Price: backend `` vs research `` — 
-- **row 1203** Price: backend `` vs research `` — 
-- **row 1204** Price: backend `` vs research `` — 
-- **row 193** Price: backend `` vs research `` — 
-- **row 194** Price: backend `` vs research `` — 
-- **row 195** Price: backend `` vs research `` — 
-- **row 1156** Price: backend `` vs research `` — 
-- **row 1156** Price: backend `` vs research `` — 
-- **row 1156** Price: backend `` vs research `` — 
-- **row 1157** Price: backend `` vs research `` — 
-- **row 1157** Price: backend `` vs research `` — 
-- **row 1157** Price: backend `` vs research `` — 
-- **row 1187** Price: backend `` vs research `` — 
-- **row 1188** Price: backend `` vs research `` — 
-- **row 1164** Price: backend `` vs research `` — 
-- **row 1165** Price: backend `` vs research `` — 
 - **row 373** Price: backend `` vs research `` — 
 - **row 384** Price: backend `` vs research `` — 
 - **row 387** Price: backend `` vs research `` — 
-- **row 1193** Price: backend `` vs research `` — 
-- **row 1194** Price: backend `` vs research `` — 
-- **row 1195** Price: backend `` vs research `` — 
-- **row 124** Price: backend `` vs research `` — 
-- **row 124** Price: backend `` vs research `` — 
-- **row 125** Price: backend `` vs research `` — 
-- **row 125** Price: backend `` vs research `` — 
-- **row 126** Price: backend `` vs research `` — 
-- **row 126** Price: backend `` vs research `` — 
-- **row 127** Price: backend `` vs research `` — 
-- **row 127** Price: backend `` vs research `` — 
-- **row 128** Price: backend `` vs research `` — 
-- **row 128** Price: backend `` vs research `` — 
-- **row 1150** Price: backend `` vs research `` — 
-- **row 1151** Price: backend `` vs research `` — 
-- **row 99** Price: backend `` vs research `` — 
-- **row 100** Price: backend `` vs research `` — 
-- **row 1172** Price: backend `` vs research `` — 
-- **row 1173** Price: backend `` vs research `` — 
-- **row 273** Price: backend `` vs research `` — 
-- **row 274** Price: backend `` vs research `` — 
-- **row 1092** Price: backend `` vs research `` — 
-- **row 1224** Price: backend `` vs research `` — 
-- **row 1225** Price: backend `` vs research `` — 
-- **row 1226** Price: backend `` vs research `` — 
-- **row 1170** Price: backend `` vs research `` — 
-- **row 1171** Price: backend `` vs research `` — 
 - **row 375** Hull number: backend `` vs research `` — 
 - **row 666** Hull number: backend `` vs research `` — 
+- **row 1156** Price: backend `` vs research `` — 
+- **row 1157** Price: backend `` vs research `` — 
 
-## 📭 Documented blanks (830)
+## 📭 Documented blanks (807)
 
 Researched, no sourceable value — honest negatives, **no action needed**. See QA_review for the search recipes.
 

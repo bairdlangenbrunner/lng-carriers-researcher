@@ -1,4 +1,4 @@
-# Overnight full update — 2026-09-17 (autonomous run, state file)
+# sep-17-pass — full update, 2026-09-17 (autonomous run, state file)
 
 **Deadline:** 07:30 ET 2026-09-17. **Mode:** autonomous; Baird is asleep; make every
 decision, record it here. **Resume rule:** a new session reads this file top to
@@ -28,7 +28,7 @@ step and commit batch dirs as they finish (branch -> PR -> merge is pre-authoriz
 - [x] 5. Proposed-bucket review (Mozambique LNG 01-17, Woodside 01-16, Equinor).
 - [x] 6. On-order data-fill batch -> `batches/2026-09-17_0511ET_data_fill_on_order/` (949 proposals, 477 rows).
 - [x] 7. Rule-F ref-fill -> `batches/2026-09-17_0505ET_ref_fill_rule_f/` (8 refs proposed, 11 documented negatives).
-- [x] 8. Final: qc_backend, dedupe_check, digests + apply artifacts for every batch, morning summary at `docs/plans/2026-09-17_overnight_summary.md`, merge to main, write `work/overnight/DONE`.
+- [x] 8. Final: qc_backend, dedupe_check, digests + apply artifacts for every batch, morning summary at `docs/plans/2026-09-17_sep-17-pass_summary.md`, merge to main, write `work/overnight/DONE`.
 
 ## Log (append newest last)
 
@@ -47,4 +47,4 @@ step and commit batch dirs as they finish (branch -> PR -> merge is pre-authoriz
 - shipvault on-order enumeration done -> `work/overnight/sv_orderbook.jsonl`; `work/research_sv.json` holds 81 central hull/IMO/capacity fills for the data-fill merge. discovery agent outputs in `work/overnight/discovery_*.json`, proposed review in `proposed_review.json`.
 - delivery-check agent 2 finished (`delivery_check_2.out.json`: 1 delivered, 2 sea trials, 10 unresolved); agent 1 + 8 data-fill agents (`work/research_of1..8.json`) still running. on restart relaunch only the missing N.
 - 02:10 local: all 8 data-fill agents done (`work/research_of1..8.json`, `research_sv.json`, `research_leads.json`, `research_zz_companions.json`); pre-merge sanity filter run; `merge_fills.py` running in background -> `work/overnight/merge.log` (base copy `work/overnight/data_fill.base.json`). If restarting: check merge.log ends with "final fills:"; if not, `cp work/overnight/data_fill.base.json work/data_fill.json` and re-run merge, then build step 6.
-- 02:25 local: all steps done; summary at `docs/plans/2026-09-17_overnight_summary.md`; merged to main; `work/overnight/DONE` written.
+- 02:25 local: all steps done; summary at `docs/plans/2026-09-17_sep-17-pass_summary.md`; merged to main; `work/overnight/DONE` written.

@@ -37,3 +37,14 @@ The backend had not moved since June 2026. Every `on order` row carrying an IMO 
 `[ref]` instead of being appended (`preserve_ref` cells rewrite the value only). `decisions.csv`
 is pre-filled by confidence: 143 G cells accept, 71 Y cells hold — flip the holds you agree with
 and re-run `python scripts/apply_batch.py --batch <dir>` before applying.
+
+## Shipvault companion refs (added 2026-09-17, RF rev 21 §6a.8)
+
+Most `shipvault.com/ships/{id}` pages render blank in a browser (the site cannot parse its own
+double-encoded API answer), so a reviewer cannot see the value the gate verified. Every ref citing
+such a page now carries the unit-record URL
+`https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/{id}` as a second ref right after it:
+**212 companions added, 0 skipped** (`shipvault_api_refs.json`). Source JSON patched with
+`scripts/shipvault_api_refs.py`, workbook rebuilt + recalced (zero errors), apply artifacts
+regenerated; decisions unchanged, and the only diff in `apply.json` / `apply_rows.csv` /
+`apply_patch.csv` is the added URLs.

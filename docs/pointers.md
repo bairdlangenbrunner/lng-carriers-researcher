@@ -11,7 +11,7 @@ The SOPs live in `docs/sops/`:
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 added 2026-09-17. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -103,6 +103,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | Scope | DF §1-§2 | Row filter (e.g. `Last updated >= DATE`) + in-scope columns; blank OR literal `unknown` |
 | Blank-vs-`unknown` contract | DF §4 | `unknown` = research the value BUT preserve & append-to the existing `[ref]`, never delete |
 | Derivable autofill | DF §5 | owner country/area (unambiguous sibling-copy), capacity units, price currency, yard-location |
+| Per-vessel Price from an order total | DF §5a | `round(total / N)`, uniform orders only; Yellow max; `derived_from: {total, n}`; note states the division; gate corroborates the total so the URL stays in `Price [ref]`; `derivable: true` is §5-columns-only |
 | Per-batch workflow | DF §6 | pull → dedup → `derive_fills.py` → per-cluster research fan-out → `merge_fills.py` → build → recalc |
 | Output | DF §7 | `backend_data_fill` sheet (gray=existing, color=proposed, peach=appended ref) + QA_review |
 | Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`data/controlled_vocab.md`) |

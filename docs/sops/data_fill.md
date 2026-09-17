@@ -2,7 +2,7 @@
 
 **Document purpose:** Operating manual for the **data-fill** workflow — researching **blank** (and literal-`unknown`) backend data cells and proposing a value plus a corroborating `[ref]` URL for each, packaged as a candidate workbook for human review. It complements the [ref]-Fill SOP (which cites *existing* values) and the Discovery SOP (which finds *new vessels*). **Authoritative** for this workflow.
 
-**Last revised:** 2026-06-05 rev 2 (added §3 pointer to [ref]-Fill SOP §3.8c — the value↔ref corroboration gate (hard-block) now enforced centrally in `merge_fills.py`: a `[ref]` is dropped from any cell whose proposed value its live page does not contain, and the conflict is logged to `candidate_findings` rather than kept; includes the dual-figure capacity rule. No workflow-structure changes.). Prior: 2026-06-04 rev 1 (initial SOP, written alongside the first data-fill batch — rows with `Last updated >= 2026-05-18`. Inherits the [ref]-Fill SOP §4 rules wholesale; adds the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5), and the `data_fill` build mode + output structure (§7). Abbreviated **DF**.).
+**Last revised:** 2026-09-17 rev 3 (added §5a — a per-vessel Price may be divided out of a reported order total: Yellow at most, `derived_from: {total, n}` on the fill, the note states the division, and the §3.8c gate corroborates the **total** so the total-stating URL stays in `Price [ref]`; `derivable: true` is now honoured by `merge_fills.py` only on the §5 autofill columns, and any research fill left with no URL is demoted. Surfaced by 21 sep-17-pass Price cells that reached the workbook with a value, no ref, and a default `accept`.). Prior: 2026-06-05 rev 2 (added §3 pointer to [ref]-Fill SOP §3.8c — the value↔ref corroboration gate (hard-block) now enforced centrally in `merge_fills.py`: a `[ref]` is dropped from any cell whose proposed value its live page does not contain, and the conflict is logged to `candidate_findings` rather than kept; includes the dual-figure capacity rule. No workflow-structure changes.). Prior: 2026-06-04 rev 1 (initial SOP, written alongside the first data-fill batch — rows with `Last updated >= 2026-05-18`. Inherits the [ref]-Fill SOP §4 rules wholesale; adds the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5), and the `data_fill` build mode + output structure (§7). Abbreviated **DF**.).
 
 ---
 
@@ -72,6 +72,20 @@ Some cells are determined by data already in the backend; they are filled by cop
 - **Yard-location block** (`Shipbuilder yard country/area` + its `[ref]`, and the five `Yard location …` columns) ← `data/shipbuilder_facts.csv` first, then the Discovery SOP §6.7 sibling-scan fallback (`_yard_location_map_table_first` → `_build_yard_location_map`, keyed on `normalize_builder`).
 
 Derivable fills are labeled Green (backend-internal consistency) and carry `derivable: true`. A derivable fill whose copied sibling ref is dead/blocked keeps the **value** (it stands on backend consistency) and drops only the URL.
+
+**`derivable: true` is reserved for the columns above** (plus the `Capacity units` / `Price currency` companion cells, which ride their parent's citation). It means "copied from data already in the backend", never "computed from a source". `merge_fills.py` clears the flag on any other column (`DERIVABLE_FIELDS`), because the flag both keeps a value whose URL the gate dropped and defaults the decision to `accept` — a research fill must never get either.
+
+### 5a. Per-vessel Price from a reported order total
+
+Trade press usually reports a multi-ship order as one figure ("six 174,000-cbm carriers worth a combined $1.26bn"). That is a real, citable data point for every vessel in the order — record it, don't leave the cells blank:
+
+- **Value** = `round(total / N)` in whole USD, where N is the number of vessels the source says the total covers. Prefer a per-vessel figure whenever any source states one (then this section does not apply).
+- **Only for a uniform order** — same yard, same contract, same size class. A mixed order (different capacities or vessel types, or firm ships + options priced together) has no meaningful equal split: documented blank, with the total in the note.
+- **The total must be the newbuilding contract value** — what the yard is paid (a yard's exchange disclosure, "contract worth…", "en-bloc shipbuilding price"). Not an owner's "total fully built-up cost" (adds supervision, financing and spares), and not a fleet acquisition price between affiliates. If that is all a source gives, log it as a finding and look for the contract value; where two outlets convert the same won figure differently, cite one and name the other in the note.
+- **Confidence: Yellow at most**, however primary the source — the figure is inferred, not stated (§10). Yellow defaults to `hold` in `decisions.csv`, like any other Yellow fill.
+- **`derived_from: {"total": "<whole USD>", "n": <N>}`** on the fill, and **`derivable` stays false**. `merge_fills.py` checks `proposed_value == total / n` and runs the §3.8c gate on the **total** — the figure the page actually states — so the total-stating URL passes and **stays in `Price [ref]`**. A URL that states a different total (e.g. $502.8M against a $503m cell) is still dropped for that cell.
+- **The note states the division** — source, total, N and the quotient ("Splash247: six vessels for a combined $1.26bn; 1,260,000,000 / 6 = 210,000,000") — on every row of the order, not just the first.
+- After apply the backend keeps no divisor, so `citation_qc.py --corroborate` re-derives it: total = value × N rounded to the $m, trying N = the Price cells sharing that URL and value first, then 2–12. Such a cell grades `ok (order total …)`, not `uncorroborated`.
 
 ---
 
@@ -143,7 +157,7 @@ Row-oriented, **mirrors the backend column order exactly** after five prefix col
 - **Documented blanks (researched, not found)** — `row_id, field, searched, as_of, note` (§11).
 - **URL verification log** — `url, status, soft_error, content_match, result` (§3.8).
 
-**Input `fills` JSON schema** (one entry per cell): `row_id`, `field` + `ref_field` (EXACT backend header strings), `proposed_value`, `new_urls[]`, `prev_state` (`blank`|`unknown`), `existing_ref_preserved`, `confidence` (G/Y/R), `note`, `derivable`(bool). Plus top-level `scope.row_ids`, `documented_blanks[]`, `verification_log[]`, and optional `candidate_findings[]` (conflicts/cross-checks surfaced during research — recorded for the reviewer, never written as fills).
+**Input `fills` JSON schema** (one entry per cell): `row_id`, `field` + `ref_field` (EXACT backend header strings), `proposed_value`, `new_urls[]`, `prev_state` (`blank`|`unknown`), `existing_ref_preserved`, `confidence` (G/Y/R), `note`, `derivable`(bool — §5 columns only), optional `derived_from` (`{total, n}` — §5a Price only). Plus top-level `scope.row_ids`, `documented_blanks[]`, `verification_log[]`, and optional `candidate_findings[]` (conflicts/cross-checks surfaced during research — recorded for the reviewer, never written as fills).
 
 ---
 
@@ -173,7 +187,7 @@ Data-fill is **fully consistent** with [ref]-Fill SOP §4.9 and Rule F, and is *
 
 Defer to [ref]-Fill SOP §5 (Green / Yellow / Red). In practice for data-fill:
 - **Green** — value verbatim in a primary/regulatory source (DART, Bursa, yard PR, owner PR, class society) or 2 cross-checked sources; OR a derivable autofill (backend-internal consistency).
-- **Yellow** — entity-level confirmation, single non-primary source, an implied/inferred value (e.g. country inferred from "London"), or a paywalled body where only the public surface attests.
+- **Yellow** — entity-level confirmation, single non-primary source, an implied/inferred value (e.g. country inferred from "London"; a per-vessel Price divided out of an order total, §5a), or a paywalled body where only the public surface attests.
 - **Red** — avoid; prefer a documented blank.
 
 ---
@@ -195,5 +209,6 @@ Every cell researched without a sourceable value gets a `documented_blanks` entr
 
 ## 13. Changelog
 
+- **rev 3** (2026-09-17): Added §5a — per-vessel Price from a reported order total (Yellow max, `derived_from: {total, n}`, note states the division, §3.8c gate corroborates the total so the URL stays in `Price [ref]`; uniform orders only). `derivable: true` is now restricted in code to the §5 autofill columns, and a research fill with no surviving URL is always demoted. `citation_qc.py --corroborate` recognises an order-total Price cell. Surfaced by the sep-17-pass data-fill batch: research agents divided six order totals into 21 per-vessel prices, the gate rightly dropped the total-stating URLs, and a mis-set `derivable: true` kept the values (ref-less, default `accept`). Those 21 cells were re-gated under §5a (Yellow, with refs).
 - **rev 2** (2026-06-05): Added a §3 pointer to the new [ref]-Fill SOP §3.8c value↔ref corroboration gate (hard-block) — `merge_fills.py` now drops any `[ref]` whose live page does not contain the cell's proposed value and logs the conflict to `candidate_findings` instead of keeping it; includes the dual-figure capacity rule (carry the nominal). Surfaced by the 2026-06-05 rows 1216/1217 capacity defect. No data-fill workflow-structure changes.
 - **rev 1** (2026-06-04): Initial SOP, written with the first data-fill batch (rows `Last updated >= 2026-05-18`: 42 rows, 88 fills, 140 documented blanks, 1 `unknown` preserved at O1213). Establishes the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5; `scripts/derive_fills.py`, `normalize.owner_country`), the per-cluster research fan-out + central §3.8 merge (`scripts/merge_fills.py`), the `data_fill` build mode + `backend_data_fill` output sheet (§7), and the controlled-vocab guard (§8; `data/controlled_vocab.md`). Inherits [ref]-Fill SOP §4 rules wholesale.

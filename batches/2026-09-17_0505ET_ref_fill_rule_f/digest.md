@@ -8,14 +8,14 @@ _(none)_
 
 ## ⚠️ Needs a decision (Yellow / Red / unknown)
 
-- **row 415** · Capacity [ref]: `https://www.shipvault.com/ships/73086` (Y) — live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record
-- **row 663** · Capacity [ref]: `https://www.shipvault.com/ships/73085` (Y) — live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record
-- **row 969** · Capacity [ref]: `https://www.shipvault.com/ships/113754` (Y) — live row 61: Rule F fill - Capacity = '135000' corroborated by the shipvault unit record
-- **row 1044** · Capacity [ref]: `https://www.shipvault.com/ships/373877` (Y) — live row 487: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record
-- **row 1045** · Capacity [ref]: `https://www.shipvault.com/ships/373876` (Y) — live row 488: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record
-- **row 121** · Hull number [ref]: `https://www.shipvault.com/ships/450944` (Y) — live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the shipvault unit record
+- **row 415** · Capacity [ref]: `https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086` (Y) — live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record
+- **row 663** · Capacity [ref]: `https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085` (Y) — live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit record
+- **row 969** · Capacity [ref]: `https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754` (Y) — live row 61: Rule F fill - Capacity = '135000' corroborated by the shipvault unit record
+- **row 1044** · Capacity [ref]: `https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877` (Y) — live row 487: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record
+- **row 1045** · Capacity [ref]: `https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876` (Y) — live row 488: Rule F fill - Capacity = '174000' corroborated by the shipvault unit record
+- **row 121** · Hull number [ref]: `https://www.shipvault.com/ships/450944, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/450944` (Y) — live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the shipvault unit record
 - **row 226** · Hull number [ref]: `https://www.shipvault.com/ships/448545` (Y) — live row 775: Rule F fill - Hull number = 'Hull 8102 (HDHHI)' corroborated by the shipvault unit record
-- **row 230** · Hull number [ref]: `https://www.shipvault.com/ships/461187` (Y) — live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by the shipvault unit record
+- **row 230** · Hull number [ref]: `https://www.shipvault.com/ships/461187, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461187` (Y) — live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by the shipvault unit record
 
 These are default-`hold`. Flip to `accept`/`reject` in `decisions.csv`, then re-run `apply_batch.py`.
 
