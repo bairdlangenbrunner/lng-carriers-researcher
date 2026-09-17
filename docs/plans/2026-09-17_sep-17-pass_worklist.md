@@ -1,9 +1,46 @@
-# sep-17-pass — worklist (written 2026-09-17 evening)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 18:30 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
 `docs/plans/2026-09-17_sep-17-pass_summary.md` (apply order + decisions) and
 `docs/plans/2026-09-16_full_research_pass.md` (plan of record, stream 0 results).
+
+## Do next — in order
+
+The short version; every step points at the section with the detail. Steps 1–3 are yours, in the
+sheet or in a `decisions.csv`; nothing here needs new research before the apply.
+
+1. **Prep the sheet** (three settings, before any apply):
+   - [ ] Status dropdown: add `scrapped` (it offers `proposed` / `on order` / `active`) — batch 9
+         writes it on 18 rows.
+   - [ ] Price column: set a plain number format, no decimals. It displays `2.53E+08`, and a
+         pull of that display loses digits — batch 12 writes full-dollar values into it.
+   - [ ] Vessel type dropdown: it offers `supporting` (load corruption, §5) and lacks
+         `small-scale` / `mid-scale`, which the vocabulary and the backend use. Remove the first
+         once batch 8 has fixed rows 451 / 499–501 / 509; add the other two.
+2. **Decide the 528 holds** (§1, §1c) — edit `decisions.csv`, re-run
+   `python scripts/apply_batch.py --batch batches/<dir>`. Review surface: the combined workbook,
+   tab `all_proposals` filtered to `hold` (italics on `all_changes_backend_shape`). By batch:
+   1 → 38, 2 → 3, 3 → 5, **4 → 414**, 5 → 8, 8 → 24, 10 → 36; batches 6, 9, 11, 12 have none.
+   Batch 4's 414 are all Y (single-source): 76 Price + 76 Price currency, 71 Operator/charterer,
+   68 Contract date, 32 Cargo type, 20 IMO, 19 Hull number, 16 Capacity + 16 units, 10 Propulsion,
+   9 Vessel type, 1 Shipowner. A blanket call ("accept Y contract dates", "leave Y prices") is
+   fine — say it and the flips get scripted. Leaving a hold as a hold is also a decision: it just
+   does not get applied.
+3. **Decisions that are not a hold line** (§1, §1b, §1c): Hanwha Philly duplicates 1083 ↔ 1085 and
+   1203 ↔ 1086 (delete by hand if you agree — duplicates are yours to remove); the proposed
+   bucket; batch 8's 8 owner / builder names; the manual-review lists of batches 1 and 2; and the
+   reminder you asked for — **should IGU-2026-only cells get a second ref?**
+4. **Apply + verify, in this order** (§2): 1, 2, 3, 4, 5, 6, 8, 9, 11, 12, then **10 last**. **Every
+   batch goes in by `apply_patch.csv`** (`tools/apply_patch.gs`, DRY_RUN first) — the batches
+   share hundreds of rows and a full-row paste would revert the batch before it (AP §2a). Set
+   `OVERWRITE_NONBLANK` per batch (table in §2) or a fix batch lands nothing. After each:
+   `python scripts/verify_apply.py --batch batches/<dir> --pull`.
+5. **Close out** (§2 end): review HIGH / MED in each `dedupe_report.csv`; final re-pull +
+   `qc_backend.py` + `dedupe_check.py`; re-export the map fleet (batch 3 adds an FSRU, batch 9
+   makes row 61 an FSU); drop `$m` and the seeded-corruption strings from the vocabulary (§5);
+   republish Rob's report (version 4 predates batches 7–12) — ask for it.
+6. **Then, not before**: stream 0 rot sweep (§3, paused) and the open research (§4).
 
 ## Where things stand
 
@@ -14,8 +51,8 @@ research pass. Tick items as you go. Detail behind every item is in
   **Live rows ≥ 1130 shifted** (old 1133–1203 and old 1207+ are each −3); this file is
   renumbered to the new pull, the per-batch `digest.md` / `notes.md` are not — apply artifacts
   are keyed by row_id, so nothing about the apply changes.
-- The research is done. Six batches are merged to main (PRs #11–#18), each with
-  `digest.md`, `decisions.csv` and offset-proof apply artifacts.
+- The research is done. Twelve batches are merged to main (PRs #11–#25); every one that gets
+  applied (all but 7) has `digest.md`, `decisions.csv` and offset-proof apply artifacts.
 - Combined workbook (name = build date + ET time; newest file in the dir is current):
   `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1810ET.xlsx`
   — 23 sheets, 2,125 proposals (1,596 accept / 528 hold / 1 reject), keyed by live sheet row; the
@@ -185,8 +222,31 @@ silence is not a statement — batch 9, with demolition refs), rows 873 / 910 sp
 
 ## 2. Apply and verify (Apply SOP, `docs/sops/apply.md`)
 
-Apply 1–2 before 4 (they rename rows 4 also touches; artifacts are keyed by row_id, so the
-order is about readability, not safety).
+Apply 1–2 before 4 (they rename rows 4 also touches). Artifacts are keyed by row_id, so a
+shifted sheet is safe — but **`apply_rows.csv` full rows are a snapshot of the backend at build
+time**: with twelve batches sharing rows (8 shares 138 with batch 1 and 193 with batch 4), pasting
+one batch's full rows reverts the batch applied before it. **Use `apply_patch.csv` for every
+batch** (AP §2a). If you do want a full-row paste, re-pull and re-run `apply_batch.py --batch
+<dir>` immediately before it.
+
+`tools/apply_patch.gs` settings: `BACKEND_SHEET_NAME = "data - backend"`; `OVERWRITE_NONBLANK` as
+below (counts against the 18:00 ET pull, current accepts only — they grow as holds are released):
+
+| Batch | `set` cells | onto a non-blank cell | `OVERWRITE_NONBLANK` |
+|---|---|---|---|
+| 1 | 372 | 372 | `true` |
+| 2, 5 | 0 — all on hold | | 2 `true`, 5 `false` |
+| 3 | 174 `append` cells (7 new rows) | n/a | either |
+| 4 | 1,033 | 0 | `false` (additive to blanks) |
+| 6 | 175 | 175 (ref appended to the existing ref) | `true` |
+| 8 | 884 | 132 (+7 already equal) | `true` |
+| 9 | 38 | 37 | `true` |
+| 11 | 48 | 0 | `false` |
+| 12 | 58 | 58 | `true` |
+| 10 | 190 | 2 | `true` |
+
+In the DRY_RUN log, `would set` must equal the `set` count and there should be no
+`SKIP set (non-blank)` line on a `true` batch.
 
 - [ ] Batch 1 — apply, then `python scripts/verify_apply.py --batch batches/<dir> --pull`
 - [ ] Batch 2 — apply + verify
@@ -197,9 +257,9 @@ order is about readability, not safety).
 - [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
       agree in value) + verify. After batch 6: both touch row 814's Status `[ref]`.
 - [ ] Batch 9 — apply + verify (any order; its only shared cell is row 61 Vessel type, which
-      batch 8 offered a `conventional` ref for — rejected 2026-09-17). The sheet's Status dropdown is
-      `proposed` / `on order` / `active` (checked 2026-09-17) — **add `scrapped` to it first**. Row 61 → FSU changes
-      the map fleet: re-export after applying.
+      batch 8 offered a `conventional` ref for — rejected 2026-09-17). The sheet's Status dropdown
+      is `proposed` / `on order` / `active` (checked 2026-09-17) — **add `scrapped` to it first**.
+      Row 61 → FSU changes the map fleet: re-export after applying.
 - [ ] Batch 11 — apply via `apply_patch.csv` + verify (any order; no shared cells).
 - [ ] Batch 12 — apply via `apply_patch.csv` + verify (any order; no shared cells). Then drop `$m`
       from the Price currency vocabulary (`scripts/lookups.py`, `data/controlled_vocab.md`). Set
@@ -291,6 +351,6 @@ State is resumable from `work/citation_qc.csv`. Would become a follow-up batch (
   the companion-ref rule (RF §6a.8 rev 21).
 - **Thinner coverage than a normal run.** WebSearch budget ran out mid-run (later clusters
   used site searches via `scripts/fetch.py`); TradeWinds / Upstream paywalls blocked many
-  contract dates and prices; the 48 per-vessel prices come from order totals (all hold).
+  contract dates and prices; the 48 per-vessel prices come from order totals (accepted 2026-09-17).
 - **Verifier false reads fixed along the way**: "IMO 1162403" read as a 403, "$500 million"
   as HTTP 500, CSS `font-size:16px` matching a bare "16", Wayback 429s read as "no snapshot".

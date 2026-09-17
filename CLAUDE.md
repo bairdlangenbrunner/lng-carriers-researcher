@@ -323,7 +323,7 @@ python scripts/recalc.py batches/<date>_<HHMMET>_<label>/lng_carrier_fix.xlsx
 
 Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
 
-Governed by `docs/sops/apply.md` (AP rev 3). This is the offset-proof round-trip that
+Governed by `docs/sops/apply.md` (AP rev 4). This is the offset-proof round-trip that
 replaces manual copy/paste (which corrupted rows 1216/1217).
 
 ```bash
@@ -337,6 +337,8 @@ python scripts/apply_batch.py --batch batches/<dir>
 
 # 3. Apply (offset-proof, pick one): paste apply_rows.csv full rows over matching
 #    backend rows, OR run tools/apply_patch.gs on apply_patch.csv (by-name, DRY_RUN first).
+#    Several un-applied batches sharing rows -> patch path only: full rows are a snapshot and
+#    revert each other; OVERWRITE_NONBLANK=true for fix / ref-append batches (AP §2a).
 
 # 4. Verify — re-pull and confirm everything landed. Also runs the dedupe sweep
 #    (apply.md §5a) over touched/added rows -> <dir>/dedupe_report.csv (advisory).

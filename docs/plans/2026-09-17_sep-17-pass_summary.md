@@ -7,9 +7,12 @@ them with the Apply SOP (`docs/sops/apply.md`): edit the `hold` rows in `decisio
 re-run `python scripts/apply_batch.py --batch <dir>`, apply, then
 `python scripts/verify_apply.py --batch <dir> --pull`.
 
-Tick-off version of everything still open (decisions, apply, stream 0, remaining research):
-`docs/plans/2026-09-17_sep-17-pass_worklist.md`. Re-pull 2026-09-17 evening: still 1,220 rows,
-nothing applied.
+**What to do next, in order: the "Do next" section at the top of
+`docs/plans/2026-09-17_sep-17-pass_worklist.md`** — that file is the tick-off version of
+everything still open (sheet prep, decisions, apply, stream 0, remaining research) and is kept
+current; this one is the narrative. Re-pull 2026-09-17 18:00 ET: 1,217 rows (822 active / 364 on
+order / 31 proposed) — no batch applied; Baird deleted the three Woodside duplicate rows by hand
+and three rows moved, so live rows ≥ 1130 shifted (row numbers below are the new ones).
 
 ## Batches, in the order to apply them
 
@@ -18,18 +21,23 @@ nothing applied.
 | 1 | `2026-09-17_0421ET_fix_delivery_rollforward` | on-order rows vs shipvault (AIS cross-check: vesselfinder, then marinetraffic.org): 63 → `active`, 26 delivery years corrected, 19 rolled forward, 116 names | 224 cells / 151 rows — 186 accept, 38 hold |
 | 2 | `2026-09-17_0458ET_fix_delivery_confirmed` | press-confirmed deliveries shipvault lags on: live rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 3 cells, all hold (Y) |
 | 3 | `2026-09-17_0431ET_discovery_since_jun_2026` | new orders since Jun 2026: 12 vessels / 5 clusters | 7 accept, 5 hold, 10 backend flags |
-| 4 | `2026-09-17_0511ET_data_fill_on_order` | blanks on on-order rows + whole-backend derivables | 1,003 cells / 483 rows — 493 accept, 510 hold (incl. 48 order-total Prices, DF §5a, all hold) |
+| 4 | `2026-09-17_0511ET_data_fill_on_order` | blanks on on-order rows + whole-backend derivables | 1,003 cells / 483 rows — 589 accept, 414 hold (the 48 order-total Prices, DF §5a, accepted 2026-09-17) |
 | 5 | `2026-09-17_0505ET_ref_fill_rule_f` | Rule-F orphan `[ref]`s | 8 refs (hold), 11 negatives |
 | 6 | `2026-09-17_1114ET_shipvault_companion_refs` | existing shipvault `[ref]`s that render blank: unit-record URL appended as a second ref (values untouched) | 175 cells / 27 rows — all accept |
 | 7 | `2026-09-17_1458ET_igu_reconciliation_igu2026` | whole backend vs the IGU World LNG Report 2026 (fleet at end-2025; 2025 edition as the baseline the backend was loaded from) — IMO-keyed, IG rev 1 | comparison only, never applied: 1,054 matched, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate |
-| 8 | `2026-09-17_1654ET_fix_igu2026_sourced` | follow-up to 7: what IGU 2026 prints, as proposals citing the report PDF as sole ref (interim rule, IG §5.4) — blank Vessel / Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499–501 / 509 | 468 cells / 328 rows — 443 accept, 24 hold, 1 reject (row 61 Vessel type ref — batch 9 proposes `FSU`); 32 manual-review values |
+| 8 | `2026-09-17_1654ET_fix_igu2026_sourced` | follow-up to 7: what IGU 2026 prints, as proposals citing the report PDF as sole ref (interim rule, IG §5.4) — blank Vessel / Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499–501 / 509 | 468 cells / 328 rows — 443 accept, 24 hold, 1 reject (row 61 Vessel type ref — batch 9 proposes `FSU`); 8 manual-review values (the 24 `QC-max` ones became batch 11) |
 | 9 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G) |
 | 10 | `2026-09-17_1737ET_fix_other_names_former` | new rule (RF §4.16): the former Name of every proposed rename in 1, 2 and 8 appended to `Other names` (hull placeholders included; spelling / truncation fixes and row 942's wrong-vessel name excluded) | 131 cells / 131 rows — 95 accept, 36 hold (29 with no ref for the former name, 7 whose Name line is itself held) |
+| 11 | `2026-09-17_1809ET_fix_qcmax_vessel_type` | `qc-max` joined the Vessel type vocabulary (Baird 2026-09-17): the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as ref | 24 cells / 24 rows — all accept (G) |
+| 12 | `2026-09-17_1810ET_fix_price_full_usd` | Price is always full US dollars (Baird 2026-09-17): the 29 legacy `$m` rows × 1,000,000, currency → `USD`, refs kept (`preserve_ref`) | 58 cells / 29 rows — all accept |
 
-Apply 1–2 before 4 (they rename rows 4 also touches; all artifacts are keyed by row_id, so
-order is about readability, not safety). Apply 10 last and by `apply_patch.csv` only — it rides
-on the Name lines of 1, 2 and 8, and each of its lines is decided with its Name line. After applying 3, re-export the map fleet if any
-FSRU was added (`../lng-carriers-map/tools/export_fleet.py`) — C3 is an FSRU.
+Order: 1, 2, 3, 4, 5, 6, 8, 9, 11, 12, then 10 last (it rides on the Name lines of 1, 2 and 8, and
+each of its lines is decided with its Name line). **Apply every batch by `apply_patch.csv`**: the
+batches share hundreds of rows, and `apply_rows.csv` full rows are a snapshot that would revert
+the batch applied before (AP §2a; applier settings per batch in the worklist §2). Before batch 9,
+add `scrapped` to the sheet's Status dropdown; before batch 12, give the Price column a plain
+number format. After 3 and 9, re-export the map fleet
+(`../lng-carriers-map/tools/export_fleet.py`) — C3 is an FSRU, row 61 becomes an FSU.
 
 Discovery candidates: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y); HD Hyundai HI ×
 Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undisclosed (30-Jun-2026, Y);
@@ -46,19 +54,19 @@ press says delivery 2029, shipvault 2030).
    Mozambique owner/yard split flagged in the discovery batch.
 2. **Likely duplicates** (dedupe + agent): Hanwha Philly live rows 1083 ↔ 1085 and 1203 ↔ 1086
    (1203 was 1132 before the 2026-09-17 evening sheet edit).
-3. **Vessel type / Cargo type rule.** "conventional" is a tracker classification, never page
-   wording, so the hard gate can't ref it (10 Rule-F orphans; most Cargo/Vessel-type fills are
-   Y). Decide: let a capacity-derived type stand on the Capacity ref, or leave unreffed.
+3. **Vessel type / Cargo type rule — decided 2026-09-17: cite the IGU 2026 report** (IG §5.4;
+   batch 8). Still open, and you asked to be reminded: should IGU-2026-only cells get a second
+   ref at the ref-validation step?
 4. **Price convention — decided 2026-09-17: always full US dollars + `USD`**; batch 12
    (`1810ET_fix_price_full_usd`) converts the 29 `$m` rows. Shipvault carries contract prices too — unused tonight (single-source, unverifiable).
 5. **`Greenenergy …` names** look wrong against both shipvault and AIS (`Greenergy`).
 6. **Manual-review rows**: `…rollforward/manual_review.json` (54) and
    `…delivery_confirmed/manual_review.json` (24 still unconfirmed) — mostly ships AIS-live while
    shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls (status untouched).
-7. **Backend flags from discovery**: BW LNG live rows 1168/1169 capacity (177,000), row 1162
+7. **Backend flags from discovery**: BW LNG live rows 1165/1166 capacity (177,000), row 1159
    price, COSCO hulls.
 8. **Possible mis-citations / value conflicts** found by the data-fill agents — full list in
-   `…data_fill_on_order/notes.md` (live rows 1182–1185, row_ids 1162/1163, 1212/1213, 1218,
+   `…data_fill_on_order/notes.md` (live rows 1179–1182, row_ids 1162/1163, 1212/1213, 1218,
    1207/1208, 197, 375, 255/256, 318/319, 515/516; Samsung × CMES and Jiangnan × Taiping capacity).
 9. **MISC hulls H2019A–H2023A** on shipvault have no citable press — next discovery run.
 10. **IGU 2026 intercomparison (batch 7)** — full list in the worklist §1b and the batch
@@ -77,9 +85,9 @@ press says delivery 2029, shipvault 2030).
     - Vessel type row 81 → FSU (out of scope), row 270 → FSRU; ~20 renames; `Greenergy`
       confirmed by a third source; batch 1 spellings on rows 910 / 873 to check before
       applying; candidate `Maran Gas Efessos` (IMO 9627497).
-    None of it is a proposal yet: IGU's landing page cannot pass the §3.8c gate and the
-    shipvault dates are single-source leads, so accepted items need verified refs and a
-    follow-up `fix` batch.
+    Most of it is now proposed: batch 8 carries what IGU 2026 prints (report PDF as sole ref),
+    batch 9 the scrapped rows, batch 11 `qc-max`. Left: batch 8's 24 holds and 8 owner / builder
+    names, rows 873 / 910 spellings, and `Maran Gas Efessos` (next discovery batch).
 
 ## Paused / not done
 
@@ -125,5 +133,5 @@ press says delivery 2029, shipvault 2030).
 
 `qc_backend.py`: 7 LOW only (6 name-builder-drift, 1 name-ordinal-gap), no HIGH/MED.
 `dedupe_check.py`: no HIGH; MED groups are placeholder↔identified pairs — the Knutsen × Hanwha
-ones (live 1145/1146 vs 1161/1172) are different orders (Dec-2025 vs May-2026) and get
+ones (live 1142/1143 vs 1158/1169) are different orders (Dec-2025 vs May-2026) and get
 distinct hull numbers from batch 4; the Hanwha Philly ones are item 2 above.

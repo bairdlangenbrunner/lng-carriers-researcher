@@ -6,7 +6,8 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-06-05 rev 3 (dedupe Tier-2 matching corrected: a row with a real hull
+**Last revised:** 2026-09-17 rev 4 (§2a: applying several batches that share rows — full rows
+are a snapshot, so go by patch; applier settings per batch mode). Prior: 2026-06-05 rev 3 (dedupe Tier-2 matching corrected: a row with a real hull
 or IMO is *identified*, never a placeholder — so identified hulls like `Hull 8254 (HSHI)` no
 longer shadow-match genuinely blank slots; delivery-year dropped from the blocking key and
 demoted to a >1-year disqualifier; trailing ordinal markers (`… ECC 1)`, `(Seapeak 2)`) now
@@ -59,6 +60,26 @@ python scripts/verify_apply.py --batch batches/<dir> --pull
 #      <dir>/dedupe_report.csv  (advisory: did a touched/added row duplicate an existing
 #                                vessel? — §5a; also runnable standalone via dedupe_check.py)
 ```
+
+## 2a. Several batches that share rows — go by patch
+
+`apply_rows.csv` is a **snapshot**: each full row is the backend row as it stood when
+`apply_batch.py` last ran, plus that batch's accepted cells. Paste it after another batch has
+changed the same row and the paste **reverts that batch's cells**. So when more than one
+un-applied batch touches a row:
+
+- apply by `apply_patch.csv` (path b) — it writes only the batch's own cells; **or**
+- before each full-row paste, re-pull and re-run `apply_batch.py --batch <dir>` so the rows are
+  rebuilt on the current backend (decisions are preserved).
+
+Applier settings (`tools/apply_patch.gs`): `BACKEND_SHEET_NAME` must be the backend tab's real
+name (`data - backend`), and `OVERWRITE_NONBLANK` follows the batch mode. A **fix** batch, or a
+ref-append batch, replaces non-blank cells by design — set it `true`, or every such cell is
+logged `SKIP set (non-blank)` and nothing lands. A **data-fill** or **[ref]-fill** batch is
+additive to blanks — leave it `false`, so a cell someone filled since the pull is skipped and
+shows up in the verify report instead of being overwritten. Discovery rows are `append` ops and
+ignore the flag. Always read the DRY_RUN log first: the `would set` count should equal the
+batch's `set` lines.
 
 ## 3. Decisions & acceptance tracking (`decisions.csv`)
 
@@ -164,6 +185,11 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   the apply), but a HIGH/MED group means a row may duplicate an existing vessel — resolve it.
 
 ## 8. Changelog
+
+- **rev 4** (2026-09-17): Added §2a. The sep-17-pass queued twelve batches with heavy row
+  overlap (batch 8 shares 138 rows with batch 1 and 193 with batch 4); full-row pastes in
+  sequence would have reverted one another. Also records the applier's `OVERWRITE_NONBLANK`
+  setting per batch mode — a fix batch applied with the default `false` silently lands nothing.
 
 - **rev 3** (2026-06-05): Dedupe Tier-2 matching corrected after a false-negative (the
   scan flagged Capital Clean ECC 1 as a possible dup of the Capital Hull 8254-8257 order but
