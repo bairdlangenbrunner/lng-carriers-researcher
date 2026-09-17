@@ -4414,30 +4414,6 @@
     },
     {
       "row_id": "1152",
-      "column": "Price",
-      "value": "260000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1153",
-      "column": "Price",
-      "value": "260000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1154",
-      "column": "Price",
-      "value": "260000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1155",
-      "column": "Price",
-      "value": "260000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1152",
       "column": "Operator/charterer",
       "value": "Cheniere",
       "confidence": "G"
@@ -4486,30 +4462,6 @@
     },
     {
       "row_id": "1201",
-      "column": "Price",
-      "value": "255000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1202",
-      "column": "Price",
-      "value": "255000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1203",
-      "column": "Price",
-      "value": "255000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1204",
-      "column": "Price",
-      "value": "255000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1201",
       "column": "Operator/charterer",
       "value": "Cheniere",
       "confidence": "G"
@@ -4591,24 +4543,6 @@
       "column": "Contract date [ref]",
       "value": "https://www.nyk.com/english/news/2022/20220810_01.html",
       "confidence": "G"
-    },
-    {
-      "row_id": "193",
-      "column": "Price",
-      "value": "214285714",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "194",
-      "column": "Price",
-      "value": "214285714",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "195",
-      "column": "Price",
-      "value": "214285714",
-      "confidence": "Y"
     },
     {
       "row_id": "193",
@@ -4716,18 +4650,6 @@
       "row_id": "157",
       "column": "Operator/charterer [ref]",
       "value": "https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1156",
-      "column": "Price",
-      "value": "251500000",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1157",
-      "column": "Price",
-      "value": "251500000",
       "confidence": "G"
     },
     {
@@ -4921,54 +4843,6 @@
       "column": "Price [ref]",
       "value": "https://lngprime.com/asia/hanwha-ocean-to-build-fsru-for-413-million/127579/, https://splash247.com/mol-confirms-order-for-singapore-frsu/",
       "confidence": "G"
-    },
-    {
-      "row_id": "273",
-      "column": "Price",
-      "value": "210000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "274",
-      "column": "Price",
-      "value": "210000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1092",
-      "column": "Price",
-      "value": "210000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1224",
-      "column": "Price",
-      "value": "210000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1225",
-      "column": "Price",
-      "value": "210000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1226",
-      "column": "Price",
-      "value": "210000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1170",
-      "column": "Price",
-      "value": "257000000",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1171",
-      "column": "Price",
-      "value": "257000000",
-      "confidence": "Y"
     },
     {
       "row_id": "324",
@@ -5433,84 +5307,6 @@
       "confidence": "G"
     },
     {
-      "row_id": "1152",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1153",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1154",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1155",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1201",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1202",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1203",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1204",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "193",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "194",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "195",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1156",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1157",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "G"
-    },
-    {
       "row_id": "509",
       "column": "Price currency",
       "value": "USD",
@@ -5539,62 +5335,14 @@
       "column": "Price currency",
       "value": "USD",
       "confidence": "G"
-    },
-    {
-      "row_id": "273",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "274",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1092",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1224",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1225",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1226",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1170",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "1171",
-      "column": "Price currency",
-      "value": "USD",
-      "confidence": "Y"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 949,
-    "accepted": 535,
-    "hold": 414,
+    "items": 1003,
+    "accepted": 493,
+    "hold": 510,
     "reject": 0,
-    "conflicts": 196
+    "conflicts": 145
   }
 }

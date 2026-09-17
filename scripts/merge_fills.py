@@ -20,14 +20,54 @@ candidate_finding so the conflicting number gets a human eye — never silently 
 Soft-blocked URLs (HTTP 000/403, e.g. Cloudflare) can't be machine-corroborated
 here; they are dropped from the auto-gate but may be re-added by hand under §3.8a
 ONLY after out-of-band content confirmation that they carry the value.
+
+Two guards on what may skip or bend the gate (Data-fill SOP §5 / §5a):
+  - `derivable: true` is honoured only on the §5 autofill columns (DERIVABLE_FIELDS).
+    On any other column the flag is cleared, so a research fill can never ride it
+    past the gate or into a default `accept`.
+  - A per-vessel Price divided out of a reported order total carries
+    `derived_from: {"total": ..., "n": ...}`. Its refs are gated on the TOTAL (the
+    figure the page states) and kept in `Price [ref]`; confidence is capped at Y.
 """
 import glob
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 from paths import work_dir
 from url_verifier import classify, corroborates
+
+# Data-fill SOP §5 — the only columns a backend-internal autofill may fill.
+DERIVABLE_FIELDS = {"Shipowner country/area", "Capacity units", "Price currency",
+                    "Shipbuilder yard country/area", "Shipbuilder yard country/area [ref]"}
+
+
+def is_derivable_field(field: str) -> bool:
+    return field in DERIVABLE_FIELDS or field.startswith("Yard location")
+
+
+def order_total(f: dict) -> tuple[str | None, str | None]:
+    """(total, problem) for a per-vessel Price derived from an order total (DF §5a).
+
+    (None, None) when the fill declares no `derived_from`. The total is what the
+    source states, so it — not the per-vessel quotient — is what the gate checks.
+    """
+    d = f.get("derived_from")
+    if not d:
+        return None, None
+    if f.get("field") != "Price":
+        return None, "derived_from is only valid on Price"
+    try:
+        total, n = int(float(d["total"])), int(d["n"])
+        val = int(float(str(f.get("proposed_value", "")).replace(",", "")))
+    except (KeyError, TypeError, ValueError):
+        return None, "derived_from needs a numeric total and n"
+    if n < 2:
+        return None, "derived_from n must be >= 2 (a single-vessel price is not derived)"
+    if abs(total / n - val) > 1:
+        return None, f"proposed_value {val} != {total} / {n}"
+    return str(total), None
 
 
 def main():
@@ -101,6 +141,23 @@ def main():
     survivors, demoted, conflicts_logged = [], 0, 0
     for f in fills:
         val = f.get("proposed_value", "")
+        if f.get("derivable") and not is_derivable_field(f.get("field", "")):
+            print(f"  [warn] {f['row_id']}/{f.get('field','')}: derivable=true is reserved for "
+                  "the DF §5 autofill columns — cleared; gated as a research fill", file=sys.stderr)
+            f["derivable"] = False
+
+        # DF §5a: a per-vessel Price divided out of an order total is gated on the
+        # total (what the page says); the quotient never appears on the page.
+        total, problem = order_total(f)
+        if problem:
+            print(f"  [warn] {f['row_id']}/{f.get('field','')}: {problem} — derived_from ignored",
+                  file=sys.stderr)
+            f.pop("derived_from", None)
+        if total:
+            val = total
+            if f.get("confidence") == "G":
+                f["confidence"] = "Y"
+
         kept, dropped_conflict, dropped_blocked = [], [], []
         for u in f.get("new_urls", []):
             ok, reason = corroborates(u, val)
@@ -164,18 +221,20 @@ def main():
             continue
 
         # Derivable fills stand on backend-internal consistency, so a dropped
-        # copied sibling ref loses the URL but never the value. Research fills that
-        # lose ALL their URLs are demoted to documented_blanks (no value without a
-        # corroborating citation, §3.8).
-        if kept or not f.get("new_urls") or f.get("derivable"):
+        # copied sibling ref loses the URL but never the value (companion cells —
+        # Price currency, Capacity units — ride their parent's citation the same
+        # way). Any other fill left with no URL is demoted to documented_blanks
+        # (no value without a corroborating citation, §3.8).
+        if kept or f.get("derivable"):
             f["new_urls"] = kept
             survivors.append(f)
         else:
             demoted += 1
             blanks.append({
                 "row_id": f["row_id"], "field": f.get("field", ""),
-                "searched": "central §3.8 re-verify (value↔ref gate)", "as_of": "2026-06-04",
-                "note": "all proposed URLs failed re-verification (dead/blocked/non-corroborating); value dropped",
+                "searched": "central §3.8 re-verify (value↔ref gate)",
+                "as_of": date.today().isoformat(),
+                "note": "no proposed URL survived re-verification (none given, or dead/blocked/non-corroborating); value dropped",
             })
 
     base["fills"] = survivors

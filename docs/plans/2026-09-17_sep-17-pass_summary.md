@@ -14,7 +14,7 @@ re-run `python scripts/apply_batch.py --batch <dir>`, apply, then
 | 1 | `2026-09-17_0421ET_fix_delivery_rollforward` | on-order rows vs shipvault: 63 → `active`, 26 delivery years corrected, 19 rolled forward, 106 names | 214 cells / 141 rows — 143 accept, 71 hold |
 | 2 | `2026-09-17_0458ET_fix_delivery_confirmed` | press-confirmed deliveries shipvault lags on: live rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 3 cells, all hold (Y) |
 | 3 | `2026-09-17_0431ET_discovery_since_jun_2026` | new orders since Jun 2026: 12 vessels / 5 clusters | 7 accept, 5 hold, 10 backend flags |
-| 4 | `2026-09-17_0511ET_data_fill_on_order` | blanks on on-order rows + whole-backend derivables | 949 cells / 477 rows — 535 accept, 414 hold |
+| 4 | `2026-09-17_0511ET_data_fill_on_order` | blanks on on-order rows + whole-backend derivables | 1,003 cells / 483 rows — 493 accept, 510 hold (incl. 48 order-total Prices, DF §5a, all hold) |
 | 5 | `2026-09-17_0505ET_ref_fill_rule_f` | Rule-F orphan `[ref]`s | 8 refs (hold), 11 negatives |
 
 Apply 1–2 before 4 (they rename rows 4 also touches; all artifacts are keyed by row_id, so

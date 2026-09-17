@@ -168,7 +168,9 @@ python scripts/derive_fills.py --since <YYYY-MM-DD>
 
 # 4. Research fan-out: one subagent per cluster (Discovery §3 four-ring model,
 #    controlled vocab in data/controlled_vocab.md, owner stylization §4.14,
-#    PRESERVE existing refs on `unknown` cells per Data-fill SOP §4). Reuse prior
+#    PRESERVE existing refs on `unknown` cells per Data-fill SOP §4). A price reported
+#    only as an order total -> per-vessel Price with `derived_from` (DF §5a: Y max,
+#    never `derivable`). Reuse prior
 #    batches + backend siblings first. Each writes work/research_<label>.json.
 
 # 5. Merge + central §3.8 verification gate.
@@ -341,7 +343,7 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `imo_tracker.py` | the §6a.8 IMO->vessel-tracker fallback — shipvault open API first (`shipsearch/{IMO}` → unit record → citable `shipvault.com/ships/{id}`), marinetraffic.org IMO search second | shipvault API / tenant header changed; marinetraffic.org URL pattern changed |
 | `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix / fsru). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate). `fsru` mode renders the `work/fsru_reconcile.json` buckets into a 10-sheet GIIGNL↔backend comparison workbook (no `[ref]` cells — GIIGNL not citable) | Adding a new sheet section; changing color convention; changing fix-mode gating; changing the fsru sheet set |
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
-| `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate | Verifier behavior changes; new research-output key |
+| `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate. Honours `derivable: true` only on the DF §5 autofill columns (`DERIVABLE_FIELDS`); gates a `derived_from: {total, n}` Price on the order **total** and caps it at Y (DF §5a); demotes any other fill left with no URL | Verifier behavior changes; new research-output key; a new derivable column |
 | `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |
 | `batch_digest.py` | triage a batch into auto-safe vs needs-a-decision (`digest.md`) | Changing the triage split or digest format |
 | `apply_batch.py` | reviewed batch → `decisions.csv` + offset-proof apply artifacts (`apply_rows.csv`, `apply_patch.csv`, `apply.json`, `conflicts.csv`); modes ref_fill / discovery / data_fill / fix (a fix cell's gated refs *replace* the paired `[ref]`; `preserve_ref` cells rewrite the value only) | New batch mode; changing the patch/decision schema |

@@ -227,6 +227,21 @@ def main():
                         w.writerow([sr, rid, field, value, u, "orphan", "ref with blank value (Rule F)"])
                         continue
                     ok, reason = corroborates(u, value)
+                    if not ok and field == "Price" and classify(reason) == "uncorroborated":
+                        # DF §5a: a per-vessel Price divided out of an order total cites
+                        # the page stating the TOTAL. The backend keeps no divisor, so
+                        # try value x N (to the $m) — the Price cells sharing this URL and
+                        # value first, then any plausible order size.
+                        sibs = sum(1 for _r, _s, fl, v in by_url[u] if fl == "Price" and v == value)
+                        try:
+                            per = float(value.replace(",", ""))
+                        except ValueError:
+                            per = 0
+                        for n in dict.fromkeys([sibs, *range(2, 13)]) if per >= 1_000_000 else ():
+                            total = int(round(per * n, -6))
+                            if n >= 2 and corroborates(u, str(total))[0]:
+                                ok, reason = True, f"OK (order total {total} / {n} vessels, DF §5a)"
+                                break
                     w.writerow([sr, rid, field, value, u, "ok" if ok else classify(reason), reason])
         print(f"cell-level gate -> {cell_out}", file=sys.stderr)
 
