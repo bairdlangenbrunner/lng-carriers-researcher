@@ -30,7 +30,14 @@ the terminals/pipelines verifiers' fetch layers):
     `pdftotext -layout` (pypdf fallback, tesseract OCR for scanned PDFs) so a
     DART/Bursa filing or a class-society PDF is verified on its TEXT, not on
     binary soup. A `.pdf` URL that returns HTML is an interstitial and is
-    handed downstream as HTML.
+    handed downstream as HTML. A PDF that extracts to nothing on a 200 is
+    fetched once more (large PDFs on slow hosts truncate; note `pdf_retry`).
+    ZIP bundles (some regulator portals serve a filing as one zip of PDFs)
+    are unpacked and every PDF/text member concatenated (note `zip`,
+    `is_pdf=True` downstream since there is no HTML title to check).
+    OCR languages: module constant `OCR_LANG`; a repo's verifier overrides it
+    at import if its sources need other packs (this module is shared verbatim
+    by the carriers, terminals and pipelines repos — keep it identical).
   - Charset: honour the Content-Type charset, then the page's own <meta
     charset>, widening gb2312/gbk -> gb18030 and euc-kr -> cp949 (Chinese/
     Korean yard and press pages routinely declare the narrow one). Only then
@@ -39,9 +46,10 @@ the terminals/pipelines verifiers' fetch layers):
     `insecure_tls` — the bytes are real, the host identity was not verified);
     a 000/empty-body response retries once WITHOUT the browser UA (a few hosts
     abort on a Chrome UA and serve curl's default fine).
-  - Cloudflare walls (2026-09-16): a firewall page retries through `curl_cffi`
-    (Chrome TLS fingerprint); a JS challenge earns a `cf_clearance` cookie via
-    a real Chrome (`cf_clearance.py`) and retries with it. Notes
+  - Bot walls (2026-09-16): a Cloudflare firewall page retries through
+    `curl_cffi` (Chrome TLS fingerprint); a JS challenge (Cloudflare managed
+    challenge, Imperva/Incapsula) earns the wall's cookies via a real Chrome
+    (`cf_clearance.py`) and retries with them. Notes
     `cf_impersonate` / `cf_clearance` record the route. See the block above
     `_curl`.
 """
@@ -76,6 +84,9 @@ _CURL_INSTALL_HINT = (
 # from stamps or form fields). OCR is slow (~1-2 s/page) so it is capped.
 _PDF_TEXT_MIN = 200
 _OCR_MAX_PAGES = 25
+# tesseract language packs for scanned PDFs; missing packs are dropped at run
+# time. Override per repo (`fetch.OCR_LANG = ...`) rather than editing here.
+OCR_LANG = "eng+kor+chi_sim"
 
 # curl exit codes that mean the TLS handshake failed (not that the page is gone).
 _CURL_SSL_EXITS = {35, 51, 58, 59, 60, 77, 83, 90, 91}
@@ -177,7 +188,7 @@ def _pypdf_text(path: str, max_pages: int = 400) -> str:
         return ""
 
 
-def _pdf_ocr(path: str, lang: str = "eng+kor+chi_sim") -> str:
+def _pdf_ocr(path: str, lang: str | None = None) -> str:
     """OCR a scanned PDF via pdftoppm + tesseract, capped at _OCR_MAX_PAGES.
     '' when either binary is missing or nothing comes out. Only called when
     the text layer is (nearly) empty, since OCR is slow. OCR output mangles
@@ -185,6 +196,7 @@ def _pdf_ocr(path: str, lang: str = "eng+kor+chi_sim") -> str:
     against an OCR'd document."""
     if not (shutil.which("pdftoppm") and shutil.which("tesseract")):
         return ""
+    lang = lang or OCR_LANG
     # Fall back to plain English if the extra language packs aren't installed.
     try:
         langs = subprocess.run(["tesseract", "--list-langs"], capture_output=True,
@@ -230,6 +242,44 @@ def pdf_text(path: str) -> tuple[str, list[str]]:
     return text, notes
 
 
+def _unzip_text(path: str) -> str:
+    """Some regulator portals (e.g. Italy's va.mite.gov.it AIA/VIA dossiers)
+    serve a whole filing as a single ZIP bundle of PDFs at what looks like a
+    single-document URL. Extract every member, pdftotext any PDFs (and decode
+    any plain-text members), and concatenate — so a value buried in one PDF
+    inside the bundle is still verifiable against the bundle's own URL.
+    '' on any failure (not a real zip, unzip missing, nothing extractable)."""
+    try:
+        with tempfile.TemporaryDirectory(prefix="lngct_zip_") as tmpdir:
+            r = subprocess.run(["unzip", "-o", "-qq", path, "-d", tmpdir],
+                               capture_output=True, text=True, timeout=60)
+            if r.returncode not in (0, 1):  # 1 = some warnings, often still fine
+                return ""
+            chunks = []
+            for root, _dirs, files in os.walk(tmpdir):
+                for name in files:
+                    fpath = os.path.join(root, name)
+                    try:
+                        with open(fpath, "rb") as f:
+                            head = f.read(5)
+                    except OSError:
+                        continue
+                    if head == b"%PDF-":
+                        text = _pdftotext(fpath)
+                    elif name.lower().endswith((".txt", ".csv", ".xml", ".html", ".htm")):
+                        try:
+                            text = Path(fpath).read_bytes().decode("utf-8", errors="replace")
+                        except OSError:
+                            text = ""
+                    else:
+                        continue
+                    if text.strip():
+                        chunks.append(text)
+            return "\n".join(chunks)
+    except (FileNotFoundError, subprocess.SubprocessError, OSError):
+        return ""
+
+
 def _decode_html(raw: bytes, content_type: str) -> str:
     """Decode an HTML body honouring the declared charset (header, then meta),
     widening narrow CJK declarations; utf-8-with-replacement as the last resort."""
@@ -257,6 +307,32 @@ def _looks_like_pdf(url: str, content_type: str, raw: bytes) -> bool:
             or raw[:5] == b"%PDF-")
 
 
+def _looks_like_zip(url: str, content_type: str, raw: bytes) -> bool:
+    return ("zip" in (content_type or "").lower()
+            or url.split("?")[0].lower().endswith(".zip")
+            or raw[:4] == b"PK\x03\x04")
+
+
+def _extract(url: str, tmp: str, content_type: str, raw: bytes,
+             notes: list[str]) -> tuple[str, bool]:
+    """(text, is_pdf) for a fetched body: zip -> members' text; PDF -> text
+    layer / OCR; a .pdf URL that returned HTML is an interstitial (bot
+    challenge, login wall) and is handed downstream as HTML; else decode."""
+    if _looks_like_zip(url, content_type, raw):
+        Path(tmp).write_bytes(raw)
+        notes.append("zip")
+        return _unzip_text(tmp), True
+    is_pdf = _looks_like_pdf(url, content_type, raw)
+    if is_pdf and raw[:5] != b"%PDF-" and raw.lstrip()[:1] == b"<":
+        is_pdf = False
+    if is_pdf:
+        Path(tmp).write_bytes(raw)
+        text, pdf_notes = pdf_text(tmp)
+        notes.extend(pdf_notes)
+        return text, True
+    return _decode_html(raw, content_type), False
+
+
 # ---------------------------------------------------------------------------
 # The fetch
 # ---------------------------------------------------------------------------
@@ -279,10 +355,10 @@ def _curl(url: str, tmp: str, timeout: int, ua: str | None, insecure: bool,
 
 
 # ---------------------------------------------------------------------------
-# Cloudflare walls (2026-09-16)
+# Bot walls (2026-09-16)
 # ---------------------------------------------------------------------------
 #
-# Two kinds, two answers:
+# Three kinds, two answers:
 #   - the "Attention Required! | Cloudflare" firewall page (shipvault.com,
 #     marinetraffic.com) keys on the TLS fingerprint. `curl_cffi` impersonating
 #     Chrome's handshake gets HTTP 200 — no cookie, no browser.
@@ -291,6 +367,12 @@ def _curl(url: str, tmp: str, timeout: int, ua: str | None, insecure: bool,
 #     cf_clearance.refresh() drives Google Chrome over DevTools, and the
 #     cf_clearance cookie it earns then works from plain curl for a year, as
 #     long as the User-Agent matches that Chrome.
+#   - other JS challenges that hide behind a "successful" status: AWS WAF
+#     (investors.seatrium.com — empty HTTP 202 to curl, a 202 challenge.js
+#     page to curl_cffi) and Imperva/Incapsula (script-only 200/202 shell).
+#     Same answer as the managed challenge: the cookies a real Chrome earns
+#     (aws-waf-token, incap_ses_/visid_incap_/nlbi_) replay through curl — and
+#     for seatrium the page behind the wall is a genuine 404, which grades dead.
 # fetch_page tries them in that order (impersonation first — no window pops),
 # once per host per process, and labels the Page notes so the verifier's OK
 # reason shows which route was used ("cf_impersonate" / "cf_clearance").
@@ -299,6 +381,11 @@ _CF_WALL_STATUSES = {"403", "503", "429"}
 _CF_WALL_MARKERS = (b"just a moment", b"attention required", b"cf-mitigated",
                     b"challenge-platform", b"cf_chl_", b"cf-chl", b"cloudflare",
                     b"enable javascript and cookies to continue")
+# Walls that hide behind a "successful" status: AWS WAF's challenge.js page
+# (202), Imperva's script-only shell (200/202), PerimeterX's captcha page.
+_WALL_MARKERS_ANY_STATUS = (b"awswaf", b"aws-waf-token",
+                            b"_incapsula_resource", b"incapsula incident",
+                            b"px-captcha", b"perimeterx")
 # hosts where impersonation already cleared a wall this process: skip curl.
 _IMPERSONATE_HOSTS: set[str] = set()
 # hosts we already tried to earn a cookie for this process (one launch each).
@@ -307,9 +394,13 @@ _CFFI_HINTED = False
 
 
 def _is_cf_wall(status: str, raw: bytes) -> bool:
+    head = raw[:20000].lower()
+    if any(m in head for m in _WALL_MARKERS_ANY_STATUS):
+        return True
+    if status == "202" and not head.strip():        # Imperva's empty 202 to curl
+        return True
     if status not in _CF_WALL_STATUSES:
         return False
-    head = raw[:20000].lower()
     return any(m in head for m in _CF_WALL_MARKERS)
 
 
@@ -337,9 +428,10 @@ def _cffi_get(url: str, timeout: int, ua: str | None, headers: dict | None,
     if ua:
         hdrs["User-Agent"] = ua
     cookies = {}
-    if cookie and "=" in cookie:
-        k, v = cookie.split("=", 1)
-        cookies[k] = v
+    for part in (cookie or "").split(";"):
+        if "=" in part:
+            k, v = part.strip().split("=", 1)
+            cookies[k] = v
     try:
         r = cffi_requests.get(url, impersonate="chrome", headers=hdrs, cookies=cookies,
                               timeout=timeout, allow_redirects=True)
@@ -351,7 +443,7 @@ def _cffi_get(url: str, timeout: int, ua: str | None, headers: dict | None,
 
 
 def _clearance_cookie(url: str) -> tuple[str | None, str | None]:
-    """(cookie header value, UA it was earned with) from the cf_clearance store."""
+    """(Cookie header value, UA it was earned with) from the cf_clearance store."""
     try:
         from cf_clearance import cookie_for
     except ImportError:
@@ -359,12 +451,12 @@ def _clearance_cookie(url: str) -> tuple[str | None, str | None]:
     hit = cookie_for(url)
     if not hit:
         return None, None
-    value, ua = hit
-    return f"cf_clearance={value}", (ua or None)
+    header, ua = hit
+    return header, (ua or None)
 
 
 def _earn_clearance(url: str) -> tuple[str | None, str | None]:
-    """Launch Chrome once for this host to earn a cf_clearance cookie."""
+    """Launch Chrome once for this host to earn the wall's cookies."""
     host = _host(url)
     if host in _CLEARANCE_TRIED:
         return None, None
@@ -374,11 +466,11 @@ def _earn_clearance(url: str) -> tuple[str | None, str | None]:
     except ImportError:
         return None, None
     if not browser_allowed():
-        print(f"  [fetch] {host}: Cloudflare challenge; browser refresh disabled "
+        print(f"  [fetch] {host}: bot challenge; browser refresh disabled "
               f"(LNGCT_NO_BROWSER)", file=sys.stderr)
         return None, None
     forget(url)
-    print(f"  [fetch] {host}: Cloudflare challenge — opening Chrome to clear it",
+    print(f"  [fetch] {host}: bot challenge — opening Chrome to clear it",
           file=sys.stderr)
     try:
         refresh([url])
@@ -430,26 +522,22 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
                     notes.append("cf_impersonate")
                     _IMPERSONATE_HOSTS.add(host)
                 else:
-                    # 2. JS challenge: earn a cf_clearance cookie with real Chrome.
+                    # 2. JS challenge (Cloudflare or Imperva): earn its cookies with real Chrome.
                     cookie, cookie_ua = _earn_clearance(url)
                     if cookie:
                         status, content_type, final_url, raw = _curl_attempts(
                             url, tmp, timeout, cookie_ua or ua, headers, cookie, notes)
-            if cookie and status == "200":
-                notes.append("cf_clearance")
+            if cookie and status != "000" and not _is_cf_wall(status, raw):
+                notes.append("cf_clearance")     # the page behind the wall, whatever its status
 
-        is_pdf = _looks_like_pdf(url, content_type, raw)
-        if is_pdf and raw[:5] != b"%PDF-" and raw.lstrip()[:1] == b"<":
-            # A .pdf URL that returned HTML is an interstitial (bot challenge,
-            # login wall), not a PDF. Hand the HTML downstream so the soft-error
-            # / bot-wall checks can see it.
-            is_pdf = False
-        if is_pdf:
-            Path(tmp).write_bytes(raw)
-            text, pdf_notes = pdf_text(tmp)
-            notes.extend(pdf_notes)
-        else:
-            text = _decode_html(raw, content_type)
+        text, is_pdf = _extract(url, tmp, content_type, raw, notes)
+        if is_pdf and not text.strip() and status == "200":
+            # Large PDFs on slow hosts truncate often enough that one empty
+            # extraction is not evidence of a missing text layer.
+            notes.append("pdf_retry")
+            status, content_type, final_url, raw = _curl_attempts(
+                url, tmp, timeout, ua, headers, cookie, notes)
+            text, is_pdf = _extract(url, tmp, content_type, raw, notes)
         return Page(status=status, text=text, content_type=content_type,
                     final_url=final_url, is_pdf=is_pdf, raw_len=len(raw), notes=notes)
     finally:

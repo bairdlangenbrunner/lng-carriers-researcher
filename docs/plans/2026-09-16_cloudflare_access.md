@@ -7,7 +7,12 @@ shell loads, and `url_verifier.py` host adapters read that instead
 (shipvault `/api/units/{id}`, marinetraffic.com `vesselInfo/shipid:{id}`),
 which is cheaper and gives the verifier structured fields to match.
 `imo_tracker.py` now resolves IMOs through shipvault's open search API first.
-Steps 1, 2, 5 and 6 below are done; 3 is superseded; 4 and 7 remain.
+**Status (night):** all steps done — 3 superseded, 4 landed (the cookie tier
+now covers AWS WAF and Imperva, so seatrium clears to its real 404 and grades
+`dead`), 7 landed (`fetch.py` + `cf_clearance.py` + `tests/test_fetch.py`
+copied verbatim into lng-terminals-researcher, whose `url_verifier._fetch` and
+`imo_tracker._fetch` are now thin wrappers, and into pipelines-researcher,
+whose requests-based verifier falls back to the ladder on a wall).
 
 ## What the probes established today
 
@@ -25,9 +30,12 @@ Every blocked host from the Stream 0 rot sweep (`work/citation_qc.csv`,
 
 Two blocked verdicts are not walls at all:
 
-- **investors.seatrium.com** (row 11): Imperva returns an empty HTTP 202 to
-  curl, but a real browser lands on a genuine `404 Not Found`. This is
-  **dead**, not blocked — it belongs in the Stream 5 fix batch.
+- **investors.seatrium.com** (row 11): the wall is **AWS WAF** (not Imperva
+  as first read — the empty HTTP 202 to curl becomes a `challenge.js` page to
+  curl_cffi). A real Chrome earns its `aws-waf-token` in under a second with
+  no interaction; replayed through curl the newsroom URL is a genuine
+  `404 Not Found` (the IR homepage is 200). **Dead**, not blocked — the
+  cookie tier now handles this itself (see step 4).
 - **hls.co.kr**: TLS name mismatch, then HTTP 200 whose body is a "403
   Forbidden" page. Geo/WAF block; keep as blocked.
 
@@ -89,9 +97,13 @@ there is no unattended route; refresh from the laptop.
    with a `<script>`-only head). Note `cf_rendered`. Same `LNGCT_NO_BROWSER`
    gate. Verify marinetraffic.com and chantiers-atlantique through the §3.8
    gate afterwards.
-4. **Verifier grading**: a browser-rendered 404 behind a wall grades `dead`
-   (seatrium case); a wall that never clears stays `blocked`. Add the
-   seatrium row to the Stream 5 fix batch.
+4. ~~**Verifier grading**~~ — done: `cf_clearance.py` harvests every bot-wall
+   cookie family (`WALL_COOKIE_PREFIXES`), `cookie_for` returns a full Cookie
+   header, `fetch._is_cf_wall` recognises the AWS WAF / Imperva shells (and the
+   empty 202), and a page is "cleared" when neither its title nor its rendered
+   DOM looks like a challenge — so a real 404 behind a wall comes back as 404
+   and grades `dead`; a wall that never clears stays `blocked`. Seatrium row
+   → Stream 5 fix batch.
 5. ~~**A CLI for ad-hoc fetches**~~ — done: `python scripts/fetch.py <url> [--text]`
    printing status, notes and the (text) body, so a Claude session reaches
    any page through the full ladder instead of WebFetch or hand-rolled curl.
@@ -106,9 +118,10 @@ there is no unattended route; refresh from the laptop.
    - Consider the same line in the user-global CLAUDE.md escalation ladder
      ("in the researcher repos, use the repo fetch ladder first") — user's
      call, it lives in the `machine` repo.
-7. **Port** `fetch.py` + `cf_clearance.py` to lng-terminals-researcher and
-   pipelines-researcher once stable (the verifier parity pass went the other
-   way on 2026-09-16; keep the three fetch layers identical).
+7. ~~**Port**~~ — done (see status). The three `fetch.py` / `cf_clearance.py`
+   copies are byte-identical; ZIP bundles, the empty-PDF re-fetch and the
+   `OCR_LANG` override came back from the terminals verifier so nothing was
+   lost in the port. Change the layer in one repo → copy to the other two.
 
 ## Conduct
 

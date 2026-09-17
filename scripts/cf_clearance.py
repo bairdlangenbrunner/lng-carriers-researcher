@@ -1,7 +1,8 @@
 """
-Cloudflare clearance cookies for the vessel-tracker hosts (marinetraffic.org,
-marinevesseltraffic.com and any other host that serves the JS "Just a
-moment..." managed challenge).
+Bot-wall clearance cookies: Cloudflare's JS "Just a moment..." managed
+challenge (marinetraffic.org, marinevesseltraffic.com, ...), AWS WAF
+(investors.seatrium.com — answers curl with an empty HTTP 202 and only serves
+the page to a browser holding its `aws-waf-token`) and Imperva/Incapsula.
 
 Why this exists (2026-09-16): the challenge cannot be passed by curl, by
 TLS-fingerprint impersonation, or by any browser Playwright launches (headless
@@ -17,8 +18,8 @@ so it silently stops working when the laptop changes networks — refresh again)
 Library usage (fetch.py calls these; nothing else should need to):
     from cf_clearance import cookie_for, refresh, ClearanceError
 
-    hit = cookie_for("https://www.marinetraffic.org/...")   # (value, ua) | None
-    refresh([url])          # opens Chrome, waits for the challenge, stores the cookie
+    hit = cookie_for("https://www.marinetraffic.org/...")   # (cookie header, ua) | None
+    refresh([url])          # opens Chrome, waits for the challenge, stores the cookies
 
 CLI:
     python scripts/cf_clearance.py https://www.marinetraffic.org/ https://www.marinevesseltraffic.com/
@@ -47,8 +48,20 @@ CHROME_CANDIDATES = (
 )
 CDP_PORT = int(os.environ.get("LNGCT_CDP_PORT", "9333"))
 CHALLENGE_TITLES = ("just a moment", "verify you are human", "attention required",
-                    "checking your browser", "please wait")
-COOKIE_NAME = "cf_clearance"
+                    "checking your browser", "please wait", "are you a robot",
+                    "access denied", "human verification")
+# A challenge page can have an empty title (AWS WAF, Imperva) — Chrome then
+# reports the URL as the title — so the rendered DOM is checked as well.
+CHALLENGE_BODY_MARKERS = ("challenge-platform", "cf-chl", "cf_chl_",           # Cloudflare
+                          "awswaf", "challenge-container",                    # AWS WAF
+                          "_incapsula_resource", "incapsula incident",        # Imperva
+                          "px-captcha")                                       # PerimeterX
+# Cookie families that carry a bot-wall clearance. Everything else the browser
+# holds (analytics, consent) stays out of the store.
+WALL_COOKIE_PREFIXES = ("cf_clearance",                      # Cloudflare
+                        "aws-waf-token",                     # AWS WAF
+                        "incap_ses_", "visid_incap_", "nlbi_", "reese84",   # Imperva
+                        "_px", "px")                          # PerimeterX
 
 
 class ClearanceError(RuntimeError):
@@ -67,8 +80,16 @@ def browser_allowed() -> bool:
     return os.environ.get("LNGCT_NO_BROWSER", "") not in ("1", "true", "yes")
 
 
+def is_wall_cookie(name: str) -> bool:
+    return any(name.startswith(p) for p in WALL_COOKIE_PREFIXES)
+
+
 def load_store() -> dict:
-    """{"ua": str, "cookies": {domain: {"value": str, "expires": float, "saved": float}}}"""
+    """{"ua": str, "cookies": {domain: {"cookies": {name: value}, "expires": float, "saved": float}}}
+
+    Entries written before 2026-09-16 (evening) hold a single "value" (the
+    cf_clearance cookie) instead of "cookies"; both shapes are read.
+    """
     try:
         d = json.loads(store_path().read_text())
         d.setdefault("cookies", {})
@@ -88,17 +109,33 @@ def _domain_matches(host: str, domain: str) -> bool:
     return host == d or host.endswith("." + d)
 
 
+def _entry_cookies(entry: dict) -> dict[str, str]:
+    if entry.get("cookies"):
+        return {k: v for k, v in entry["cookies"].items() if v}
+    if entry.get("value"):                       # pre-generalisation shape
+        return {"cf_clearance": entry["value"]}
+    return {}
+
+
 def cookie_for(url: str, store: dict | None = None) -> tuple[str, str] | None:
-    """(cf_clearance value, User-Agent it was earned with) for url's host, or None."""
+    """
+    (Cookie header value, User-Agent it was earned with) for url's host, or
+    None. Cookies from every matching domain (host, then each parent) are
+    joined, so an Imperva site whose cookies sit on both `www.x.com` and
+    `.x.com` replays as one header.
+    """
     host = (urlsplit(url).hostname or "").lower()
     if not host:
         return None
     store = store if store is not None else load_store()
     now = time.time()
+    jar: dict[str, str] = {}
     for domain, c in store.get("cookies", {}).items():
-        if _domain_matches(host, domain) and c.get("value") and c.get("expires", 0) > now:
-            return c["value"], store.get("ua", "")
-    return None
+        if _domain_matches(host, domain) and c.get("expires", 0) > now:
+            jar.update(_entry_cookies(c))
+    if not jar:
+        return None
+    return "; ".join(f"{k}={v}" for k, v in jar.items()), store.get("ua", "")
 
 
 def forget(url: str) -> None:
@@ -185,11 +222,51 @@ def _is_challenge_title(title: str) -> bool:
     return not t or any(f in t for f in CHALLENGE_TITLES)
 
 
+def _is_challenge_body(html: str) -> bool:
+    h = (html or "")[:20000].lower()
+    return not h.strip() or any(m in h for m in CHALLENGE_BODY_MARKERS)
+
+
+def _page_html(cdp: "_CDP", session: str) -> str:
+    """Rendered document via the DOM domain (no Runtime.enable)."""
+    try:
+        root = cdp.send("DOM.getDocument", {"depth": 0}, session=session)["root"]
+        return cdp.send("DOM.getOuterHTML", {"nodeId": root["nodeId"]}, session=session)["outerHTML"]
+    except ClearanceError:
+        return ""
+
+
+def merge_cookies(store: dict, cookies: list[dict], ua: str, now: float | None = None) -> int:
+    """
+    Merge the browser's cookie list (DevTools Storage.getCookies shape) into the
+    store, keeping only bot-wall cookies, grouped by domain. Session cookies
+    (no expiry) get 30 minutes. Returns the number of cookies kept.
+    """
+    now = time.time() if now is None else now
+    store["ua"] = ua or store.get("ua", "")
+    by_domain: dict[str, dict] = {}
+    for c in cookies:
+        name, value = c.get("name", ""), c.get("value", "")
+        if not (value and is_wall_cookie(name)):
+            continue
+        exp = float(c.get("expires") or 0)
+        exp = exp if exp > now else now + 1800
+        e = by_domain.setdefault(c["domain"], {"cookies": {}, "expires": 0.0, "saved": now})
+        e["cookies"][name] = value
+        e["expires"] = max(e["expires"], exp)
+    kept = 0
+    for domain, e in by_domain.items():
+        store.setdefault("cookies", {})[domain] = e
+        kept += len(e["cookies"])
+    return kept
+
+
 def refresh(urls: list[str], wait: int = 60, port: int = CDP_PORT) -> dict:
     """
-    Open each URL in a real Chrome, wait for its Cloudflare challenge to clear,
-    harvest every cf_clearance cookie the browser now holds and merge them into
-    the store. Returns the store. Raises ClearanceError when Chrome is missing,
+    Open each URL in a real Chrome, wait for its bot challenge to clear (title
+    no longer a challenge title — a real 404 counts as cleared), harvest every
+    bot-wall cookie the browser now holds and merge them into the store.
+    Returns the store. Raises ClearanceError when Chrome is missing,
     the browser is forbidden (LNGCT_NO_BROWSER), or no URL cleared.
     """
     if not browser_allowed():
@@ -200,6 +277,7 @@ def refresh(urls: list[str], wait: int = 60, port: int = CDP_PORT) -> dict:
     try:
         for url in urls:
             tid = cdp.send("Target.createTarget", {"url": url})["targetId"]
+            session = cdp.send("Target.attachToTarget", {"targetId": tid, "flatten": True})["sessionId"]
             title = ""
             deadline = time.time() + wait
             while time.time() < deadline:
@@ -207,9 +285,13 @@ def refresh(urls: list[str], wait: int = 60, port: int = CDP_PORT) -> dict:
                 info = [t for t in cdp.send("Target.getTargets")["targetInfos"]
                         if t["targetId"] == tid]
                 title = info[0]["title"] if info else ""
-                if not _is_challenge_title(title):
-                    cleared.append(url)
-                    break
+                page_url = info[0].get("url", "") if info else ""
+                if title and title in (page_url, page_url.split("://", 1)[-1]):
+                    title = ""                       # untitled page: Chrome shows the URL
+                if _is_challenge_title(title) and _is_challenge_body(_page_html(cdp, session)):
+                    continue
+                cleared.append(url)
+                break
             print(f"  [cf_clearance] {url} -> {title!r}", file=sys.stderr)
             cdp.send("Target.closeTarget", {"targetId": tid})
         cookies = cdp.send("Storage.getCookies").get("cookies", [])
@@ -221,13 +303,7 @@ def refresh(urls: list[str], wait: int = 60, port: int = CDP_PORT) -> dict:
         except subprocess.TimeoutExpired:
             proc.kill()
     store = load_store()
-    store["ua"] = version.get("User-Agent", store.get("ua", ""))
-    now = time.time()
-    for c in cookies:
-        if c.get("name") == COOKIE_NAME and c.get("value"):
-            store["cookies"][c["domain"]] = {"value": c["value"],
-                                             "expires": float(c.get("expires") or now + 1800),
-                                             "saved": now}
+    merge_cookies(store, cookies, version.get("User-Agent", ""))
     save_store(store)
     if not cleared:
         raise ClearanceError("no URL cleared the challenge within the wait "
@@ -238,7 +314,7 @@ def refresh(urls: list[str], wait: int = 60, port: int = CDP_PORT) -> dict:
 def main():
     import argparse
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    p.add_argument("urls", nargs="*", help="URLs whose Cloudflare challenge to clear")
+    p.add_argument("urls", nargs="*", help="URLs whose bot challenge to clear")
     p.add_argument("--show", action="store_true", help="print the stored cookies and exit")
     p.add_argument("--wait", type=int, default=60, help="seconds to wait per URL")
     args = p.parse_args()
@@ -248,7 +324,8 @@ def main():
         print(f"ua: {store.get('ua') or '(none)'}")
         for d, c in sorted(store.get("cookies", {}).items()):
             left = c.get("expires", 0) - time.time()
-            print(f"  {d:36s} expires in {left/86400:6.1f} d  {c['value'][:12]}…")
+            names = ", ".join(sorted(_entry_cookies(c)))
+            print(f"  {d:36s} expires in {left/86400:6.1f} d  {names}")
         if not args.urls:
             return
     try:

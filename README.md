@@ -15,11 +15,12 @@ not the dataset.
 
 Requirements: **Python ≥ 3.11** and the **`curl` binary** on PATH. All network
 fetching shells out to system curl (a deliberate anti-bot choice — pip can't
-declare it; macOS ships it, on Linux `apt install curl`). The vessel-tracker
-hosts sit behind Cloudflare: `curl_cffi` (pip, declared) passes their TLS
-firewall, and **Google Chrome** (installed separately) is driven once per host
-by `scripts/cf_clearance.py` to clear the JS challenge — the cookie it earns is
-kept in `work/cf_clearance.json` and reused for a year.
+declare it; macOS ships it, on Linux `apt install curl`). Bot-walled hosts
+(the vessel trackers behind Cloudflare, seatrium behind AWS WAF): `curl_cffi`
+(pip, declared) passes TLS-fingerprint firewalls, and **Google Chrome**
+(installed separately) is driven once per host by `scripts/cf_clearance.py` to
+clear JS challenges — the cookies it earns are kept in `work/cf_clearance.json`
+and replayed through curl (about a year for Cloudflare, days for AWS WAF).
 
 ```bash
 git clone <this repo> && cd lng-carriers-researcher
