@@ -23,7 +23,7 @@ step and commit batch dirs as they finish (branch -> PR -> merge is pre-authoriz
 - [x] 0. Ship last session's fetch-ladder work (PR #10 merged). Fresh pull 2026-09-17 ~01:15 ET: 1,220 rows (822 active / 364 on order / 34 proposed); QC 7 LOW only.
 - [x] 1. Watchdog running (`work/overnight/watchdog.sh`, log `work/overnight/watchdog.log`).
 - [x] 2. Shipvault sweep of all on-order/proposed rows -> `work/overnight/shipvault_sweep.json`.
-- [ ] 3. Delivery roll-forward fix batch(es) from the sweep (+ agent research for rows shipvault cannot resolve).
+- [x] 3. Delivery roll-forward fix batch(es) from the sweep (+ agent research for rows shipvault cannot resolve).
 - [ ] 4. Discovery batch (window above).
 - [x] 5. Proposed-bucket review (Mozambique LNG 01-17, Woodside 01-16, Equinor).
 - [ ] 6. On-order data-fill batch (core facts; rows not covered by step 3).
@@ -43,3 +43,6 @@ step and commit batch dirs as they finish (branch -> PR -> merge is pre-authoriz
 - 01:12 proposed review finished (`work/overnight/proposed_review.json`): no cell edits; recommend deleting Woodside placeholders live rows 1204-1206 (converted: Seapeak rows 1165-1167). Goes in the morning summary.
 - 01:15 vesselfinder sweep ~150/323 (`work/overnight/vesselfinder_sweep.jsonl`, resumable: `python work/overnight/vf_sweep.py`). Then: `python work/overnight/make_rollforward.py` -> `python work/overnight/gate_fix.py work/overnight/rollforward_fix.raw.json work/overnight/rollforward_fix.json` -> build fix batch.
 - 01:15 shipvault on-order LNG hull enumeration started (`python work/overnight/sv_orderbook.py`, resumable -> `work/overnight/sv_orderbook.jsonl`): finds IMOs/hulls for the 41 no-IMO rows and cross-checks discovery completeness.
+- 01:35 local (clock note: this machine runs ~3 h behind ET; deadline 07:30 is LOCAL; batch dir stamps stay ET). roll-forward batch `batches/2026-09-17_0421ET_fix_delivery_rollforward/` built, gated, recalc clean, apply artifacts written (apply_batch.py now has a `fix` mode). step 3 done.
+- shipvault on-order enumeration done -> `work/overnight/sv_orderbook.jsonl`; `work/research_sv.json` holds 81 central hull/IMO/capacity fills for the data-fill merge. discovery agent outputs in `work/overnight/discovery_*.json`, proposed review in `proposed_review.json`.
+- delivery-check agent 2 finished (`delivery_check_2.out.json`: 1 delivered, 2 sea trials, 10 unresolved); agent 1 + 8 data-fill agents (`work/research_of1..8.json`) still running. on restart relaunch only the missing N.

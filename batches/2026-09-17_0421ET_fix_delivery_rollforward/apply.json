@@ -1,0 +1,1730 @@
+{
+  "batch": "2026-09-17_0421ET_fix_delivery_rollforward",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "6",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "6",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/431882",
+      "confidence": "G"
+    },
+    {
+      "row_id": "6",
+      "column": "Name",
+      "value": "Konstantin Posiet",
+      "confidence": "G"
+    },
+    {
+      "row_id": "6",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/431882",
+      "confidence": "G"
+    },
+    {
+      "row_id": "25",
+      "column": "Name",
+      "value": "Atlantic Success",
+      "confidence": "G"
+    },
+    {
+      "row_id": "25",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/432642",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/455308",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/455308",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Name",
+      "value": "Venture Pelican",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/455308",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/455309",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/455309",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Name",
+      "value": "Venture Iberia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/455309",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/455310",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Name",
+      "value": "Venture Cameron",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/455310",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457495",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/457495",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Name",
+      "value": "Al Kharrarah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/457495",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/464056",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/464056",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Name",
+      "value": "Archy Vanguard",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/464056",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/459086",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Name",
+      "value": "Harmonic Breeze",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/459086",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457498",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Name",
+      "value": "Lake Modro",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/457498",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457499",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Name",
+      "value": "Lake Morskie Oko",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/457499",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465038",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465038",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Name",
+      "value": "Al Sakhamah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465038",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465040",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465040",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Name",
+      "value": "Al Galayel",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465040",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465041",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465041",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Name",
+      "value": "Bu Nakhlah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465041",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465042",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465042",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Name",
+      "value": "Al Sene",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465042",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465043",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465043",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Name",
+      "value": "Shafallah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465043",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465044",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Name",
+      "value": "Hasbah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465044",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465046",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Name",
+      "value": "Esteem Cormorant",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465046",
+      "confidence": "G"
+    },
+    {
+      "row_id": "61",
+      "column": "Name",
+      "value": "Esteem Denali",
+      "confidence": "G"
+    },
+    {
+      "row_id": "61",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465047",
+      "confidence": "G"
+    },
+    {
+      "row_id": "62",
+      "column": "Name",
+      "value": "Esteem Penguin",
+      "confidence": "G"
+    },
+    {
+      "row_id": "62",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465048",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465049",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Name",
+      "value": "Seri Dian",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465049",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465050",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Name",
+      "value": "Seri Dayang",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465050",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465051",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Name",
+      "value": "Al Thurayya",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465051",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465052",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Name",
+      "value": "Al Majhoulah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465052",
+      "confidence": "G"
+    },
+    {
+      "row_id": "67",
+      "column": "Name",
+      "value": "Venture Manatee",
+      "confidence": "G"
+    },
+    {
+      "row_id": "67",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465053",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456923",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Name",
+      "value": "Spirit LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/456923",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457608",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/457608",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Name",
+      "value": "Qtaifan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/457608",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457614",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Name",
+      "value": "Umm Heesh",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/457614",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457615",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Name",
+      "value": "Umm Al Shubrum",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/457615",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/461095",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Name",
+      "value": "Minerva Eleonora",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/461095",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/461096",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Name",
+      "value": "Minerva Roxanne",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/461096",
+      "confidence": "G"
+    },
+    {
+      "row_id": "129",
+      "column": "Name",
+      "value": "Gamy Vanguard",
+      "confidence": "G"
+    },
+    {
+      "row_id": "129",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/463994",
+      "confidence": "G"
+    },
+    {
+      "row_id": "131",
+      "column": "Name",
+      "value": "Diamond Gas Jade",
+      "confidence": "G"
+    },
+    {
+      "row_id": "131",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465878",
+      "confidence": "G"
+    },
+    {
+      "row_id": "132",
+      "column": "Name",
+      "value": "Toho Emerald",
+      "confidence": "G"
+    },
+    {
+      "row_id": "132",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/465879",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/467719",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/467719",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Name",
+      "value": "Puteri Sarawak",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/467719",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/458163",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Name",
+      "value": "Barzan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/458163",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/458164",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Name",
+      "value": "Umm Wishah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/458164",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/459079",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/459079",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Name",
+      "value": "Al Zuwair",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/459079",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/459080",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/459080",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Name",
+      "value": "Sharq",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/459080",
+      "confidence": "G"
+    },
+    {
+      "row_id": "191",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "191",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/459081",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/459082",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Name",
+      "value": "Halwan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/459082",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Name",
+      "value": "Al Thumaid",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/459083",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Name",
+      "value": "Al Mazrooah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/459084",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Name",
+      "value": "Qaffal",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/459085",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/460369",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Name",
+      "value": "Excelerate Acadia",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/460369",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/428603",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Name",
+      "value": "Parthenon LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/428603",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456920",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/456920",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Name",
+      "value": "Puteri Selangor",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/456920",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/456921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Name",
+      "value": "Puteri Terengganu",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/456921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/458170",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Name",
+      "value": "Olympus LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/458170",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/458171",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Name",
+      "value": "Frontier LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/458171",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/461955",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Name",
+      "value": "Muscat LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/461955",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/461956",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Name",
+      "value": "Musandam LNG",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/461956",
+      "confidence": "G"
+    },
+    {
+      "row_id": "252",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "252",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/467052",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/462938",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/462938",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/462939",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/462939",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Name",
+      "value": "Mihzem",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/462939",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/462940",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/462940",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Name",
+      "value": "Idd Al Shargi",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/462940",
+      "confidence": "G"
+    },
+    {
+      "row_id": "268",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "268",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456803",
+      "confidence": "G"
+    },
+    {
+      "row_id": "268",
+      "column": "Name",
+      "value": "Greenergy Wind",
+      "confidence": "G"
+    },
+    {
+      "row_id": "268",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/456803",
+      "confidence": "G"
+    },
+    {
+      "row_id": "269",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "269",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456804",
+      "confidence": "G"
+    },
+    {
+      "row_id": "270",
+      "column": "Name",
+      "value": "Greenergy River",
+      "confidence": "G"
+    },
+    {
+      "row_id": "270",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/467890",
+      "confidence": "G"
+    },
+    {
+      "row_id": "278",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "278",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465806",
+      "confidence": "G"
+    },
+    {
+      "row_id": "279",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "279",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465807",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/467899",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Name",
+      "value": "Tianshan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/467899",
+      "confidence": "G"
+    },
+    {
+      "row_id": "318",
+      "column": "Name",
+      "value": "Yangze LNG 01",
+      "confidence": "G"
+    },
+    {
+      "row_id": "318",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/475022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "324",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "324",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457557",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/465039",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "372",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465039",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Name",
+      "value": "Aleksey Kosygin",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/431878",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/457556",
+      "confidence": "G"
+    },
+    {
+      "row_id": "517",
+      "column": "Name",
+      "value": "Sea Charity",
+      "confidence": "G"
+    },
+    {
+      "row_id": "517",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/461880",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/454342",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "674",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/454342",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/455147",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "708",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/455147",
+      "confidence": "G"
+    },
+    {
+      "row_id": "709",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "709",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/462911",
+      "confidence": "G"
+    },
+    {
+      "row_id": "710",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "710",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/462912",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/455819",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "714",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/455819",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456918",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Delivery year",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "976",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/456918",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Status",
+      "value": "active",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Status [ref]",
+      "value": "https://www.shipvault.com/ships/456919",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Name",
+      "value": "Puteri Perlis",
+      "confidence": "G"
+    },
+    {
+      "row_id": "978",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/456919",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Name",
+      "value": "Barthy Vanguard",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/471277",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 214,
+    "accepted": 143,
+    "hold": 71,
+    "reject": 0,
+    "conflicts": 0
+  }
+}

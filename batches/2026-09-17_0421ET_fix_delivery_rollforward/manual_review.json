@@ -1,0 +1,272 @@
+[
+ {
+  "live_row": 824,
+  "row_id": "3",
+  "imo": "9904675",
+  "why": "shipvault ON ORDER but vesselfinder shows PETR STOLYPIN AIS-live, built 2022"
+ },
+ {
+  "live_row": 824,
+  "row_id": "3",
+  "imo": "9904675",
+  "why": "name spelling: backend 'Pyotr Stolypin', vesselfinder 'PETR STOLYPIN', shipvault 'PYOTR STOLYPIN' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 851,
+  "row_id": "52",
+  "imo": "9983176",
+  "why": "shipvault ON ORDER but vesselfinder shows FUJIN SAILOR AIS-live, built 2026"
+ },
+ {
+  "live_row": 851,
+  "row_id": "52",
+  "imo": "9983176",
+  "why": "vesselfinder names it 'FUJIN SAILOR' (backend 'Hull 2558 (Hanwha)'); shipvault still has a hull placeholder - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 859,
+  "row_id": "61",
+  "imo": "9991874",
+  "why": "shipvault ON ORDER but vesselfinder shows ESTEEM DENALI AIS-live, built 2026"
+ },
+ {
+  "live_row": 860,
+  "row_id": "62",
+  "imo": "9991903",
+  "why": "shipvault ON ORDER but vesselfinder shows ESTEEM PENGUIN AIS-live, built 2026"
+ },
+ {
+  "live_row": 865,
+  "row_id": "67",
+  "imo": "9997634",
+  "why": "shipvault ON ORDER but vesselfinder shows VENTURE MANATEE AIS-live, built 2026"
+ },
+ {
+  "live_row": 866,
+  "row_id": "68",
+  "imo": "9997658",
+  "why": "shipvault ON ORDER but vesselfinder shows VENTURE VENICE AIS-live, built 2026"
+ },
+ {
+  "live_row": 866,
+  "row_id": "68",
+  "imo": "9997658",
+  "why": "name spelling: backend 'Hull 2575 (Hanwha)', vesselfinder 'VENTURE VENICE', shipvault 'VENTUNE VENICE' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 867,
+  "row_id": "69",
+  "imo": "9989429",
+  "why": "shipvault ON ORDER but vesselfinder shows ENERGY BLOOM AIS-live, built 2026"
+ },
+ {
+  "live_row": 867,
+  "row_id": "69",
+  "imo": "9989429",
+  "why": "vesselfinder names it 'ENERGY BLOOM' (backend 'Hull 2576 (Hanwha)'); shipvault still has a hull placeholder - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 868,
+  "row_id": "71",
+  "imo": "9987445",
+  "why": "vesselfinder names it 'WOODSIDE MILINYKURA' (backend 'Hull 2579 (Hanwha)'); shipvault still has a hull placeholder - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 875,
+  "row_id": "129",
+  "imo": "1019668",
+  "why": "shipvault ON ORDER but vesselfinder shows GAMY VANGUARD AIS-live, built 2025"
+ },
+ {
+  "live_row": 877,
+  "row_id": "131",
+  "imo": "1023401",
+  "why": "shipvault ON ORDER but vesselfinder shows DIAMOND GAS JADE AIS-live, built 2026"
+ },
+ {
+  "live_row": 878,
+  "row_id": "132",
+  "imo": "1023413",
+  "why": "shipvault ON ORDER but vesselfinder shows TOHO EMERALD AIS-live, built 2026"
+ },
+ {
+  "live_row": 879,
+  "row_id": "137",
+  "imo": "1063384",
+  "why": "shipvault ON ORDER but vesselfinder shows THAILIB AIS-live, built 2026"
+ },
+ {
+  "live_row": 880,
+  "row_id": "141",
+  "imo": "1063396",
+  "why": "shipvault ON ORDER but vesselfinder shows SEHAIL AIS-live, built 2026"
+ },
+ {
+  "live_row": 880,
+  "row_id": "141",
+  "imo": "1063396",
+  "why": "vesselfinder names it 'SEHAIL' (backend 'Hull 2695 (SHI)'); shipvault still has a hull placeholder - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 887,
+  "row_id": "186",
+  "imo": "9981427",
+  "why": "shipvault ON ORDER but vesselfinder shows AL NIGYAN AIS-live, built 2026"
+ },
+ {
+  "live_row": 887,
+  "row_id": "186",
+  "imo": "9981427",
+  "why": "name spelling: backend 'Hull 3387 (HDHHI)', vesselfinder 'AL NIGYAN', shipvault 'QATAR 8' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 888,
+  "row_id": "187",
+  "imo": "9981439",
+  "why": "shipvault ON ORDER but vesselfinder shows AL HRAITHI AIS-live, built 2026"
+ },
+ {
+  "live_row": 888,
+  "row_id": "187",
+  "imo": "9981439",
+  "why": "name spelling: backend 'Hull 3393 (HDHHI)', vesselfinder 'AL HRAITHI', shipvault 'QATAR 9' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 889,
+  "row_id": "188",
+  "imo": "9981441",
+  "why": "shipvault ON ORDER but vesselfinder shows HAZEM BARANYOUSH AIS-live, built 2025"
+ },
+ {
+  "live_row": 889,
+  "row_id": "188",
+  "imo": "9981441",
+  "why": "name spelling: backend 'Hull 3394 (HDHHI)', vesselfinder 'HAZEM BARANYOUSH', shipvault 'QATAR 10' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 892,
+  "row_id": "191",
+  "imo": "9981518",
+  "why": "name spelling: backend 'Hull 3397 (HDHHI)', vesselfinder 'SHRAOUH', shipvault \"SHAR'OUH\" - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 894,
+  "row_id": "193",
+  "imo": "9981532",
+  "why": "shipvault ON ORDER but vesselfinder shows AL THUMAID AIS-live, built 2026"
+ },
+ {
+  "live_row": 895,
+  "row_id": "194",
+  "imo": "9981544",
+  "why": "shipvault ON ORDER but vesselfinder shows AL MAZROOAH AIS-live, built 2025"
+ },
+ {
+  "live_row": 896,
+  "row_id": "195",
+  "imo": "9981556",
+  "why": "shipvault ON ORDER but vesselfinder shows QAFFAL AIS-live, built 2026"
+ },
+ {
+  "live_row": 908,
+  "row_id": "252",
+  "imo": "1018688",
+  "why": "name spelling: backend 'Hull CMHI-282-02', vesselfinder 'CELSIUS GOA', shipvault 'CELCIUS GOA' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 913,
+  "row_id": "269",
+  "imo": "9961520",
+  "why": "name spelling: backend 'Greenenergy Cloud', vesselfinder 'GREENERGY CLOUD', shipvault 'GREENERGY CLOAD' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 914,
+  "row_id": "270",
+  "imo": "1023633",
+  "why": "shipvault ON ORDER but vesselfinder shows GREENERGY RIVER AIS-live, built 2026"
+ },
+ {
+  "live_row": 917,
+  "row_id": "273",
+  "imo": "9994319",
+  "why": "vesselfinder names it 'GREENERGY EAGLE' (backend 'Hull H1889A'); shipvault still has a hull placeholder - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 922,
+  "row_id": "281",
+  "imo": "9997696",
+  "why": "name spelling: backend 'Hull H1897A', vesselfinder 'PUTERINEGERISEMBILAN', shipvault 'PUITERI NEGERI SEMBILAN' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 924,
+  "row_id": "318",
+  "imo": "1040693",
+  "why": "shipvault ON ORDER but vesselfinder shows YANGZE LNG 01 AIS-live, built 2026"
+ },
+ {
+  "live_row": 928,
+  "row_id": "373",
+  "imo": "9995727",
+  "why": "shipvault ON ORDER but vesselfinder shows ALCAIOS I AIS-live, built 2026"
+ },
+ {
+  "live_row": 929,
+  "row_id": "375",
+  "imo": "9904546",
+  "why": "shipvault status 'SANCTIONED' delivered '2025-12-24'"
+ },
+ {
+  "live_row": 932,
+  "row_id": "476",
+  "imo": "9994046",
+  "why": "shipvault ON ORDER but vesselfinder shows CLEAN BROWNSVILLE AIS-live, built 2025"
+ },
+ {
+  "live_row": 933,
+  "row_id": "515",
+  "imo": "9989120",
+  "why": "shipvault ON ORDER but vesselfinder shows DACHUAN HAISHANG AIS-live, built 2025"
+ },
+ {
+  "live_row": 933,
+  "row_id": "515",
+  "imo": "9989120",
+  "why": "name spelling: backend 'Dalian No 1 G175K-4', vesselfinder 'DACHUAN HAISHANG', shipvault 'SEA ARGOSY' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 934,
+  "row_id": "516",
+  "imo": "1013509",
+  "why": "shipvault ON ORDER but vesselfinder shows HAI XIE AIS-live, built 2025"
+ },
+ {
+  "live_row": 934,
+  "row_id": "516",
+  "imo": "1013509",
+  "why": "name spelling: backend 'Dalian No 1 G175K-6', vesselfinder 'HAI XIE', shipvault 'SEA HARMONY' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 935,
+  "row_id": "517",
+  "imo": "1013511",
+  "why": "shipvault ON ORDER but vesselfinder shows SEA CHARITY AIS-live, built 2025"
+ },
+ {
+  "live_row": 940,
+  "row_id": "714",
+  "imo": "9969376",
+  "why": "name spelling: backend 'Josef Pilsudski', vesselfinder 'JOZEF PILSUDSKI', shipvault 'JOSEF PILSUDSKI' - not proposed (vesselfinder not gate-able tonight)"
+ },
+ {
+  "live_row": 960,
+  "row_id": "135",
+  "imo": "1041439",
+  "why": "shipvault ON ORDER but vesselfinder shows BARTHY VANGUARD AIS-live, built 2026"
+ },
+ {
+  "live_row": 971,
+  "row_id": "203",
+  "imo": "1032713",
+  "why": "vesselfinder names it 'GAS AMPHITRITE' (backend 'Hull 3454 (HDHHI)'); shipvault still has a hull placeholder - not proposed (vesselfinder not gate-able tonight)"
+ }
+]
