@@ -77,6 +77,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04). N
 | 6a.6 | RF | Owner / charterer press releases |
 | 6a.7 | RF | Vessel database newbuild entries |
 | 6a.8 | RF | **IMO → marine-vessel-tracker** (run this LAST before negative result) |
+| 6a.8 (delivered yet?) | RF | `ais_static.py` — aisstream static-data cross-check for on-order IMOs; a lead only, never a `[ref]`; "not seen" is not evidence |
 | 6a.8 (bulk) | RF | Bulk per-IMO lookups on one host go through `sweep.py` (paced, circuit-broken); status `000` on every request = IP ban, not a bot wall — the fetch ladder can't clear it |
 | 6a.9 | RF | Document negative result in QA log |
 

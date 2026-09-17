@@ -13,6 +13,7 @@ dependencies = [
     "openpyxl>=3.1.2",      # build_workbook.py, recalc.py
     "curl_cffi>=0.10",      # fetch.py: Chrome TLS fingerprint for Cloudflare firewall pages
     "websocket-client>=1.6",  # cf_clearance.py: drives Google Chrome over DevTools
+    "websockets>=12",       # ais_static.py: aisstream.io feed (same pin as ../lng-carriers-map)
 ]
 
 [project.optional-dependencies]
