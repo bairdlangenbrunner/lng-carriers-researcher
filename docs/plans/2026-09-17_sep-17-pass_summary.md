@@ -11,7 +11,7 @@ re-run `python scripts/apply_batch.py --batch <dir>`, apply, then
 
 | # | batch | what | proposals |
 |---|---|---|---|
-| 1 | `2026-09-17_0421ET_fix_delivery_rollforward` | on-order rows vs shipvault (AIS cross-check: vesselfinder, then marinetraffic.org): 63 → `active`, 26 delivery years corrected, 19 rolled forward, 115 names | 223 cells / 150 rows — 168 accept, 55 hold |
+| 1 | `2026-09-17_0421ET_fix_delivery_rollforward` | on-order rows vs shipvault (AIS cross-check: vesselfinder, then marinetraffic.org): 63 → `active`, 26 delivery years corrected, 19 rolled forward, 116 names | 224 cells / 151 rows — 186 accept, 38 hold |
 | 2 | `2026-09-17_0458ET_fix_delivery_confirmed` | press-confirmed deliveries shipvault lags on: live rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 3 cells, all hold (Y) |
 | 3 | `2026-09-17_0431ET_discovery_since_jun_2026` | new orders since Jun 2026: 12 vessels / 5 clusters | 7 accept, 5 hold, 10 backend flags |
 | 4 | `2026-09-17_0511ET_data_fill_on_order` | blanks on on-order rows + whole-backend derivables | 1,003 cells / 483 rows — 493 accept, 510 hold (incl. 48 order-total Prices, DF §5a, all hold) |
@@ -41,7 +41,7 @@ press says delivery 2029, shipvault 2030).
 4. **Price convention**: backend mixes `250` + `$m` with `250000000` + `USD`. New fills use full
    USD. Shipvault carries contract prices too — unused tonight (single-source, unverifiable).
 5. **`Greenenergy …` names** look wrong against both shipvault and AIS (`Greenergy`).
-6. **Manual-review rows**: `…rollforward/manual_review.json` (52) and
+6. **Manual-review rows**: `…rollforward/manual_review.json` (54) and
    `…delivery_confirmed/manual_review.json` (24 still unconfirmed) — mostly ships AIS-live while
    shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls (status untouched).
 7. **Backend flags from discovery**: BW LNG live rows 1168/1169 capacity (177,000), row 1162
@@ -60,10 +60,12 @@ press says delivery 2029, shipvault 2030).
   (later clusters used site searches via `scripts/fetch.py`), vesselfinder firewalled this IP
   part-way (cited nowhere), TradeWinds/Upstream paywalls block many contract dates/prices.
 - **AIS cross-check gap.** vesselfinder never answered for 176 on-order IMOs (live rows 973–1181).
-  The 95 that are named or deliver in 2027 were re-checked on marinetraffic.org via
-  `scripts/sweep.py` (paced, 95/95 answered) and folded into batch 1: 19 names Y → G with a second
-  ref, 6 Status / Delivery-year cells Y → G (cross-check only), 9 new names (Y, marinetraffic.org
-  only), 7 more manual-review rows. The other 81 are unnamed hulls not due before 2028 — not swept.
+  All 176 were re-checked on marinetraffic.org via `scripts/sweep.py` in two paced runs (176/176
+  answered) and folded into batch 1: 37 names Y → G with a second ref, 6 Status / Delivery-year
+  cells Y → G (cross-check only), 10 new names (Y, marinetraffic.org only), 9 more manual-review
+  rows. The second run (81 placeholders due 2028+) was expected to be empty but found the
+  QatarEnergy series already named: live rows 1017–1024, 1031–1037, 1043, 1057, 1058 (Y → G), 1039
+  `Libsayer` (new, hold), and 1017 / 1033 showing an MMSI early (manual review, low priority).
 
 ## Tooling changes (all with tests; 194 pass)
 

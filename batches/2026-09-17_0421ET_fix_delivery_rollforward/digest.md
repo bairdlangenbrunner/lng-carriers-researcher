@@ -1,12 +1,12 @@
 # Batch digest — 2026-09-17_0421ET_fix_delivery_rollforward
 
-**Mode:** fix  ·  **Proposals:** 223 (auto-safe 168, needs-decision 55)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
+**Mode:** fix  ·  **Proposals:** 224 (auto-safe 186, needs-decision 38)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
 
 ## ✅ Auto-safe — accept in bulk (Green / derivable)
 
-By field: Name ×79, Status ×63, Delivery year ×26
+By field: Name ×97, Status ×63, Delivery year ×26
 
-These 168 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
+These 186 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
 
 ## ⚠️ Needs a decision (Yellow / Red / unknown)
 
@@ -46,24 +46,7 @@ These 168 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 507** · Name: `Prime Creativity` (Y) — placeholder 'Dalian No 1 G175K-10' -> vessel named; marinetraffic.org lists IMO 1058327 as PRIME CREATIVITY; shipvault still carries a hull placeholder - single source
 - **row 519** · Name: `Prime Unity` (Y) — placeholder 'Dalian No 1 G175K-9' -> vessel named; marinetraffic.org lists IMO 1058315 as PRIME UNITY; shipvault still carries a hull placeholder - single source
 - **row 639** · Name: `Solidarity` (Y) — placeholder 'Gdansk FSRU' -> vessel named; marinetraffic.org lists IMO 1056410 as SOLIDARITY; shipvault still carries a hull placeholder - single source
-- **row 80** · Name: `Al Nasraniya` (Y) — placeholder 'Hull 2585 (Hanwha)' -> vessel named
-- **row 81** · Name: `Al Yousifiya` (Y) — placeholder 'Hull 2586 (Hanwha)' -> vessel named
-- **row 82** · Name: `Athba` (Y) — placeholder 'Hull 2587 (Hanwha)' -> vessel named
-- **row 83** · Name: `E Qab` (Y) — placeholder 'Hull 2588 (Hanwha)' -> vessel named
-- **row 84** · Name: `Ghash Sham` (Y) — placeholder 'Hull 2589 (Hanwha)' -> vessel named
-- **row 85** · Name: `Al Egdah` (Y) — placeholder 'Hull 2590 (Hanwha)' -> vessel named
-- **row 86** · Name: `Al Khbaib` (Y) — placeholder 'Hull 2591 (Hanwha)' -> vessel named
-- **row 88** · Name: `Khowzan` (Y) — placeholder 'Hull 2592 (Hanwha)' -> vessel named
-- **row 136** · Name: `Al Ghafat` (Y) — placeholder 'Hull 2693 (Hanwha)' -> vessel named
-- **row 138** · Name: `Al Sidriya` (Y) — placeholder 'Hull 2694 (Hanwha)' -> vessel named
-- **row 139** · Name: `Lekhraib` (Y) — placeholder 'Hull 2694 (SHI)' -> vessel named
-- **row 140** · Name: `Ain Snan` (Y) — placeholder 'Hull 2695 (Hanwha)' -> vessel named
-- **row 142** · Name: `Al Wasmi` (Y) — placeholder 'Hull 2696 (Hanwha)' -> vessel named
-- **row 143** · Name: `Wadi Al Askar` (Y) — placeholder 'Hull 2696 (SHI)' -> vessel named
-- **row 146** · Name: `Al Shaheen` (Y) — placeholder 'Hull 2699 (SHI)' -> vessel named
-- **row 154** · Name: `Al Nouf` (Y) — placeholder 'Hull 2706 (SHI)' -> vessel named
-- **row 222** · Name: `Izghawa` (Y) — placeholder 'Hull 3491 (HDHHI)' -> vessel named
-- **row 223** · Name: `Al Wa'ab` (Y) — placeholder 'Hull 3492 (HDHHI)' -> vessel named
+- **row 150** · Name: `Libsayer` (Y) — placeholder 'Hull 2702 (SHI)' -> vessel named; marinetraffic.org lists IMO 1070806 as LIBSAYER; shipvault still carries a hull placeholder - single source
 - **row 508** · Name: `Prime Glory` (Y) — placeholder 'Dalian No 1 G175K-11' -> vessel named; marinetraffic.org lists IMO 1069194 as PRIME GLORY; shipvault still carries a hull placeholder - single source
 
 These are default-`hold`. Flip to `accept`/`reject` in `decisions.csv`, then re-run `apply_batch.py`.

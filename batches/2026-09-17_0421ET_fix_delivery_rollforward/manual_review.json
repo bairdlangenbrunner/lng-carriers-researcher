@@ -306,6 +306,18 @@
   "why": "shipvault ON ORDER but marinetraffic.org shows PRIME PURITY with MMSI 563346100 (AIS-registered) - sea trials or delivered; check press"
  },
  {
+  "live_row": 1017,
+  "row_id": "80",
+  "imo": "1069821",
+  "why": "marinetraffic.org shows AL NASRANIYA with MMSI 538011621 although delivery is scheduled 2028 and shipvault says ON ORDER - probably an MMSI assigned early; low priority, re-check next pass"
+ },
+ {
+  "live_row": 1033,
+  "row_id": "139",
+  "imo": "1070727",
+  "why": "marinetraffic.org shows LEKHRAIB with MMSI 477262100 although delivery is scheduled 2028 and shipvault says ON ORDER - probably an MMSI assigned early; low priority, re-check next pass"
+ },
+ {
   "live_row": 1080,
   "row_id": "509",
   "imo": "1030557",

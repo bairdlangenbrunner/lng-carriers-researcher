@@ -386,7 +386,7 @@ DECISIONS = [
      "Backend mixes 250 + $m with 250000000 + USD. New fills use full USD. Shipvault contract prices were not used "
      "(single-source, unverifiable).", ""),
     ("'Greenenergy ...' names", "", "Look wrong against both shipvault and AIS ('Greenergy').", ""),
-    ("Manual-review rows", "52 + 24",
+    ("Manual-review rows", "54 + 24",
      "Mostly ships AIS-live while shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls "
      "(status untouched).", "manual_review"),
     ("Backend flags from discovery", "1168/1169; 1162",
@@ -619,7 +619,7 @@ for line in [
     "Every cited URL passed the value-to-ref corroboration gate (the live page contains the cell's value). "
     "shipvault is treated as single-source (yellow) and never used for owners: it had IMO typos and wrong owner tags.",
     "Coverage is thinner than a normal run: the web-search budget ran out mid-way, vesselfinder blocked our IP "
-    "part-way (cited nowhere; 95 of the 176 IMOs it missed were re-checked on marinetraffic.org), and TradeWinds/Upstream paywalls block many contract dates and prices.",
+    "part-way (cited nowhere; all 176 IMOs it missed were re-checked on marinetraffic.org), and TradeWinds/Upstream paywalls block many contract dates and prices.",
     "Data-fill research covered on-order rows only; blanks on active rows were not researched. The citation "
     "rot-sweep (fixing existing dead refs) is paused and not part of this file.",
 ]:

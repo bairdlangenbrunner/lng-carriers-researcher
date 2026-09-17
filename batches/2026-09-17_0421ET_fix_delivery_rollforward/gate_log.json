@@ -2194,5 +2194,176 @@
   "ok": true,
   "reason": "OK (cf_clearance)",
   "grade": "ok"
+ },
+ {
+  "row_id": "80",
+  "field": "Name",
+  "value": "Al Nasraniya",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NASRANIYA/1069821/538011621",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "81",
+  "field": "Name",
+  "value": "Al Yousifiya",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-YOUSIFIYA/1069845/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "82",
+  "field": "Name",
+  "value": "Athba",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ATHBA/1069869/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "83",
+  "field": "Name",
+  "value": "E Qab",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/E-QAB/1069871/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "84",
+  "field": "Name",
+  "value": "Ghash Sham",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GHASH-SHAM/1069895/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "85",
+  "field": "Name",
+  "value": "Al Egdah",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-EGDAH/1069924/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "86",
+  "field": "Name",
+  "value": "Al Khbaib",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-KHBAIB/1069936/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "88",
+  "field": "Name",
+  "value": "Khowzan",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/KHOWZAN/1069948/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "136",
+  "field": "Name",
+  "value": "Al Ghafat",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHAFAT/1069950/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "138",
+  "field": "Name",
+  "value": "Al Sidriya",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SIDRIYA/1069962/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "139",
+  "field": "Name",
+  "value": "Lekhraib",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LEKHRAIB/1070727/477262100",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "140",
+  "field": "Name",
+  "value": "Ain Snan",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AIN-SNAN/1069974/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "142",
+  "field": "Name",
+  "value": "Al Wasmi",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WASMI/1069986/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "143",
+  "field": "Name",
+  "value": "Wadi Al Askar",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-AL-ASKAR/1070739/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "146",
+  "field": "Name",
+  "value": "Al Shaheen",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SHAHEEN/1070741/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "154",
+  "field": "Name",
+  "value": "Al Nouf",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NOUF/1070820/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "222",
+  "field": "Name",
+  "value": "Izghawa",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/IZGHAWA/1049091/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "223",
+  "field": "Name",
+  "value": "Al Wa'ab",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WA'AB/1049118/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
+ },
+ {
+  "row_id": "150",
+  "field": "Name",
+  "value": "Libsayer",
+  "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBSAYER/1070806/1",
+  "ok": true,
+  "reason": "OK (cf_clearance)",
+  "grade": "ok"
  }
 ]

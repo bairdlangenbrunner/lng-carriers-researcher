@@ -2007,6 +2007,222 @@
       "confidence": "G"
     },
     {
+      "row_id": "80",
+      "column": "Name",
+      "value": "Al Nasraniya",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/476659, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NASRANIYA/1069821/538011621",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Name",
+      "value": "Al Yousifiya",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/476660, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-YOUSIFIYA/1069845/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Name",
+      "value": "Athba",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/476661, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661, https://www.marinetraffic.org/ship-owner-manager-ism-data/ATHBA/1069869/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Name",
+      "value": "E Qab",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/476662, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662, https://www.marinetraffic.org/ship-owner-manager-ism-data/E-QAB/1069871/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Name",
+      "value": "Ghash Sham",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478215, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215, https://www.marinetraffic.org/ship-owner-manager-ism-data/GHASH-SHAM/1069895/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Name",
+      "value": "Al Egdah",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478216, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-EGDAH/1069924/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Name",
+      "value": "Al Khbaib",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478217, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-KHBAIB/1069936/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Name",
+      "value": "Khowzan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478218, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218, https://www.marinetraffic.org/ship-owner-manager-ism-data/KHOWZAN/1069948/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "136",
+      "column": "Name",
+      "value": "Al Ghafat",
+      "confidence": "G"
+    },
+    {
+      "row_id": "136",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478219, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478219, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-GHAFAT/1069950/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "138",
+      "column": "Name",
+      "value": "Al Sidriya",
+      "confidence": "G"
+    },
+    {
+      "row_id": "138",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478220, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478220, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SIDRIYA/1069962/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Name",
+      "value": "Lekhraib",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/479139, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139, https://www.marinetraffic.org/ship-owner-manager-ism-data/LEKHRAIB/1070727/477262100",
+      "confidence": "G"
+    },
+    {
+      "row_id": "140",
+      "column": "Name",
+      "value": "Ain Snan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "140",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478221, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478221, https://www.marinetraffic.org/ship-owner-manager-ism-data/AIN-SNAN/1069974/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "142",
+      "column": "Name",
+      "value": "Al Wasmi",
+      "confidence": "G"
+    },
+    {
+      "row_id": "142",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478222, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478222, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WASMI/1069986/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Name",
+      "value": "Wadi Al Askar",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/479141, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141, https://www.marinetraffic.org/ship-owner-manager-ism-data/WADI-AL-ASKAR/1070739/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Name",
+      "value": "Al Shaheen",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/479144, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-SHAHEEN/1070741/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Name",
+      "value": "Al Nouf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/479151, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-NOUF/1070820/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Name",
+      "value": "Izghawa",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478320, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320, https://www.marinetraffic.org/ship-owner-manager-ism-data/IZGHAWA/1049091/1",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Name",
+      "value": "Al Wa'ab",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/478321, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321, https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-WA'AB/1049118/1",
+      "confidence": "G"
+    },
+    {
       "row_id": "509",
       "column": "Name",
       "value": "Friendship Venture",
@@ -2021,9 +2237,9 @@
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 223,
-    "accepted": 168,
-    "hold": 55,
+    "items": 224,
+    "accepted": 186,
+    "hold": 38,
     "reject": 0,
     "conflicts": 0
   }
