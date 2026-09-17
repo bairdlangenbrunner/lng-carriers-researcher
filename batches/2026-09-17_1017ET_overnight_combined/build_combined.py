@@ -1,0 +1,495 @@
+"""Combine the five 2026-09-17 overnight batches into one review workbook.
+
+Read-only over the batch dirs and work/backend.csv; writes
+lng_carrier_overnight_results.xlsx + report_data.json next to this file.
+Run from the repo root: python batches/2026-09-17_1017ET_overnight_combined/build_combined.py
+"""
+import csv
+import json
+from collections import defaultdict
+from copy import copy
+from pathlib import Path
+
+import openpyxl
+from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.utils import get_column_letter
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent.parent
+BATCHES = ROOT / "batches"
+OUT = HERE / "lng_carrier_overnight_results.xlsx"
+
+B1 = "2026-09-17_0421ET_fix_delivery_rollforward"
+B2 = "2026-09-17_0458ET_fix_delivery_confirmed"
+B3 = "2026-09-17_0431ET_discovery_since_jun_2026"
+B4 = "2026-09-17_0511ET_data_fill_on_order"
+B5 = "2026-09-17_0505ET_ref_fill_rule_f"
+# (apply order, dir, short label, workbook, wide sheet, what)
+BATCH_INFO = [
+    (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
+     "on-order rows checked against shipvault + vesselfinder: status, delivery year, names"),
+    (2, B2, "delivery confirmed by press", "lng_carrier_fix.xlsx", "fix",
+     "deliveries confirmed by trade press where shipvault still says on order"),
+    (3, B3, "discovery since Jun 2026", "lng_carrier_candidate_vessels.xlsx", "candidate_vessels",
+     "new orders not yet in the backend (gap window 2026-05-01 to 2026-09-17)"),
+    (4, B4, "data fill (on-order rows)", "lng_carrier_data_fill.xlsx", "backend_data_fill",
+     "blank / unknown cells on on-order rows, plus whole-backend derivable fills"),
+    (5, B5, "Rule-F ref fill", "lng_carrier_backend_ref_fill.xlsx", "backend_ref_fill",
+     "data values that had no [ref] (orphans)"),
+]
+
+FONT = Font(name="Calibri", size=10)
+FONT_B = Font(name="Calibri", size=10, bold=True)
+FONT_H = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
+FONT_T = Font(name="Calibri", size=12, bold=True)
+FONT_LINK = Font(name="Calibri", size=10, color="0563C1", underline="single")
+FILL_HEADER = PatternFill("solid", fgColor="1F4E78")
+CONF_FILL = {"G": PatternFill("solid", fgColor="C6EFCE"),
+             "Y": PatternFill("solid", fgColor="FFEB9C"),
+             "R": PatternFill("solid", fgColor="FFC7CE")}
+WRAP = Alignment(wrap_text=True, vertical="top")
+TOP = Alignment(vertical="top")
+
+
+def read_csv(path):
+    with open(path, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def load_json(path):
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+# ---- backend context (live sheet row = csv line number) ---------------------
+raw = list(csv.reader(open(ROOT / "work" / "backend.csv", newline="", encoding="utf-8")))
+HDR = raw[1]
+BACKEND = {}
+for i, r in enumerate(raw[2:], start=3):
+    if r and r[0]:
+        BACKEND[r[0]] = {"live_row": i, **dict(zip(HDR, r))}
+
+
+def ctx(row_id):
+    b = BACKEND.get(str(row_id), {})
+    return [b.get("live_row", ""), b.get("Name", ""), b.get("IMO number", ""),
+            b.get("Status", ""), b.get("Shipbuilder", ""), b.get("Shipowner", "")]
+
+
+def qa_sections(wb_path):
+    """QA_review -> {section title: [row dicts]} (fix workbooks have one untitled table)."""
+    ws = openpyxl.load_workbook(wb_path)["QA_review"]
+    rows = [list(r) for r in ws.iter_rows(values_only=True)]
+    out, title, header = defaultdict(list), "", None
+    for r in rows:
+        vals = [v for v in r if v not in (None, "")]
+        if not vals:
+            continue
+        if len(vals) == 1 and r[0] not in (None, "") and not str(r[0]).isdigit():
+            title, header = str(r[0]), None
+            continue
+        if header is None:
+            header = [h for h in r if h not in (None, "")]
+            continue
+        out[title].append(dict(zip(header, r)))
+    return out
+
+
+# ---- unified long table -----------------------------------------------------
+proposals = []   # dict rows
+PROP_COLS = ["apply order", "batch", "kind", "live sheet row", "row_id", "cluster",
+             "vessel name (backend)", "IMO", "status (backend)", "shipbuilder", "shipowner",
+             "column", "current backend value", "proposed value", "source URL(s)",
+             "confidence", "derivable", "decision", "gate verdict", "note"]
+
+for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
+    qa = qa_sections(BATCHES / bdir / wbname)
+    urls, verdicts, prev = defaultdict(list), defaultdict(list), {}
+    if bdir in (B1, B2):
+        for q in next(iter(qa.values())):
+            k = (str(q["row_id"]), q["field"])
+            if q.get("url"):
+                urls[k].append(q["url"])
+            if q.get("verdict"):
+                verdicts[k].append(str(q["verdict"]))
+    elif bdir == B4:
+        for q in qa["Candidate data-value fills"]:
+            k = (str(q["row_id"]), q["field"])
+            if q.get("new_urls"):
+                urls[k].append(str(q["new_urls"]))
+            prev[k] = q.get("prev_state") or ""
+    elif bdir == B3:
+        for q in qa["Per-candidate provenance log"]:
+            if q.get("source_urls"):
+                urls[(q["cluster_id"], "")].append(str(q["source_urls"]))
+        cand = {c["cluster_id"]: c for c in load_json(BATCHES / bdir / "candidates.json")["candidates"]}
+
+    for d in read_csv(BATCHES / bdir / "decisions.csv"):
+        rid, col = d["row_id"], d["column"]
+        if d["kind"] == "new_row":
+            c = cand[d["cluster_id"]]
+            rd = c.get("row_data") or c
+            name = rd.get("Name", "")
+            context = ["(new)", "", "", "", rd.get("Shipbuilder", ""), rd.get("Shipowner", "")]
+            col_label, cur = "(new row)", ""
+            val = name or c["cluster_label"]
+            src = "\n".join(urls[(d["cluster_id"], "")])
+            verdict = ""
+        else:
+            context = ctx(rid)
+            col_label = col
+            cur = BACKEND.get(rid, {}).get(col, "")
+            if bdir == B4 and not cur:
+                cur = ""
+            val = d["proposed_value"]
+            k = (rid, col[:-6] if col.endswith(" [ref]") else col)
+            src = d["proposed_value"] if d["kind"] == "ref" else "\n".join(urls.get((rid, col), []) or urls.get(k, []))
+            verdict = "\n".join(dict.fromkeys(verdicts.get((rid, col), [])))
+        proposals.append(dict(zip(PROP_COLS, [
+            order, label, d["kind"], context[0], rid, d["cluster_id"], context[1], context[2],
+            context[3], context[4], context[5], col_label, cur, val, src, d["confidence"],
+            d["derivable"], d["decision"], verdict, d["note"]])))
+
+# ---- workbook ---------------------------------------------------------------
+wb = openpyxl.Workbook()
+
+
+def num(v):
+    if isinstance(v, str) and v.isdigit() and len(v) < 8:
+        return int(v)
+    return v
+
+
+def table_sheet(title, cols, rows, widths=None, wrap_cols=(), conf_col=None, fill_col=None,
+                link_col=None, intro=None):
+    ws = wb.create_sheet(title)
+    r0 = 1
+    if intro:
+        ws.cell(1, 1, intro).font = FONT_B
+        r0 = 3
+    for j, c in enumerate(cols, 1):
+        cell = ws.cell(r0, j, c)
+        cell.font, cell.fill, cell.alignment = FONT_H, FILL_HEADER, WRAP
+    for i, row in enumerate(rows, r0 + 1):
+        for j, c in enumerate(cols, 1):
+            v = row.get(c, "") if isinstance(row, dict) else row[j - 1]
+            if isinstance(v, (list, dict)):
+                v = "\n".join(map(str, v)) if isinstance(v, list) else json.dumps(v)
+            cell = ws.cell(i, j, num(v) if c in ("live sheet row", "row_id", "apply order") else v)
+            cell.font = FONT
+            cell.alignment = WRAP if c in wrap_cols else TOP
+        if conf_col and fill_col:
+            f = CONF_FILL.get(row.get(conf_col))
+            if f:
+                ws.cell(i, cols.index(fill_col) + 1).fill = f
+        if link_col:
+            cell = ws.cell(i, cols.index(link_col) + 1)
+            u = str(cell.value or "")
+            if u.startswith("http") and "\n" not in u and " " not in u and len(u) < 250:
+                cell.hyperlink, cell.font = u, FONT_LINK
+    for j, c in enumerate(cols, 1):
+        ws.column_dimensions[get_column_letter(j)].width = (widths or {}).get(c, 16)
+    ws.freeze_panes = ws.cell(r0 + 1, 1)
+    if rows:
+        ws.auto_filter.ref = f"A{r0}:{get_column_letter(len(cols))}{r0 + len(rows)}"
+    return ws
+
+
+def copy_wide(src_path, src_sheet, title, keep=None, add_live_row_from=None):
+    """Copy a batch's wide review sheet with its confidence fills; prepend the live sheet row."""
+    src = openpyxl.load_workbook(src_path)[src_sheet]
+    ws = wb.create_sheet(title)
+    hdr = [c.value for c in src[1]]
+    rid_idx = hdr.index(add_live_row_from) if add_live_row_from in hdr else None
+    out_r = 0
+    for row in src.iter_rows():
+        if row[0].row > 1 and keep and not keep(row):
+            continue
+        out_r += 1
+        if out_r == 1:
+            c0 = ws.cell(1, 1, "live sheet row")
+            c0.font, c0.fill, c0.alignment = FONT_H, FILL_HEADER, WRAP
+        else:
+            rid = str(row[rid_idx].value) if rid_idx is not None else ""
+            c0 = ws.cell(out_r, 1, BACKEND.get(rid, {}).get("live_row", "(new)"))
+            c0.font = FONT
+        for c in row:
+            n = ws.cell(out_r, c.column + 1, c.value)
+            n.font = FONT_H if out_r == 1 else FONT
+            if c.fill and c.fill.fill_type:
+                n.fill = copy(c.fill)
+            n.alignment = WRAP if out_r == 1 else TOP
+            if c.comment:
+                n.comment = copy(c.comment)
+    ws.column_dimensions["A"].width = 10
+    for letter, dim in src.column_dimensions.items():
+        idx = openpyxl.utils.column_index_from_string(letter) + 1
+        ws.column_dimensions[get_column_letter(idx)].width = min(dim.width or 15, 40)
+    ws.freeze_panes = "C2"
+    ws.auto_filter.ref = f"A1:{get_column_letter(src.max_column + 1)}{out_r}"
+    return out_r - 1
+
+
+# all_proposals
+W = {"apply order": 7, "batch": 24, "kind": 9, "live sheet row": 9, "row_id": 8, "cluster": 9,
+     "vessel name (backend)": 26, "IMO": 10, "status (backend)": 11, "shipbuilder": 24,
+     "shipowner": 22, "column": 22, "current backend value": 22, "proposed value": 28,
+     "source URL(s)": 45, "confidence": 10, "derivable": 9, "decision": 9, "gate verdict": 24,
+     "note": 70}
+table_sheet("all_proposals", PROP_COLS, proposals, W, wrap_cols=("note",),
+            conf_col="confidence", fill_col="proposed value", link_col="source URL(s)")
+NP = len(proposals) + 1
+
+# open decisions (from docs/plans/2026-09-17_overnight_summary.md)
+DECISIONS = [
+    ("Proposed bucket", "1204-1206; 1186; 1187-1203",
+     "Woodside placeholders on live rows 1204-1206 duplicate the Seapeak on-order rows 1165-1167: delete. "
+     "Other Woodside rows, Equinor 4 (1186) and the 17 Mozambique LNG slots (1187-1203) stay proposed; "
+     "Mozambique confirmation deadline was pushed to Sep 2026, so re-check next month. Also the Mozambique "
+     "owner/yard split flagged in the discovery batch.", "proposed_bucket"),
+    ("Likely duplicates", "1083/1085; 1132/1086", "Hanwha Philly pairs flagged by the dedupe sweep and an agent.", ""),
+    ("Vessel type / Cargo type rule", "10 Rule-F orphans",
+     "'conventional' is a tracker classification, never page wording, so the hard gate cannot ref it. Decide: let a "
+     "capacity-derived type stand on the Capacity ref, or leave unreffed.", "documented_blanks"),
+    ("Price convention", "whole backend",
+     "Backend mixes 250 + $m with 250000000 + USD. New fills use full USD. Shipvault contract prices were not used "
+     "(single-source, unverifiable).", ""),
+    ("'Greenenergy ...' names", "", "Look wrong against both shipvault and AIS ('Greenergy').", ""),
+    ("Manual-review rows", "45 + 24",
+     "Mostly ships AIS-live while shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls "
+     "(status untouched).", "manual_review"),
+    ("Backend flags from discovery", "1168/1169; 1162",
+     "BW LNG capacity (177,000), row 1162 price, COSCO hulls.", "flags_conflicts"),
+    ("Possible mis-citations / value conflicts", "1182-1185 and others",
+     "Found by the data-fill agents; full list in the data-fill batch notes.md.", "flags_conflicts"),
+    ("MISC hulls H2019A-H2023A", "", "On shipvault with no citable press: next discovery run.", "shipvault_unmatched"),
+]
+table_sheet("open_decisions", ["#", "decision", "live sheet rows", "detail", "see sheet"],
+            [[i, *d] for i, d in enumerate(DECISIONS, 1)],
+            {"#": 5, "decision": 32, "live sheet rows": 24, "detail": 100, "see sheet": 20},
+            wrap_cols=("detail",))
+
+# wide sheets, one per batch
+n_wide = {}
+n_wide[3] = copy_wide(BATCHES / B3 / "lng_carrier_candidate_vessels.xlsx", "candidate_vessels",
+                      "b3_new_vessels", add_live_row_from="original order in sheet")
+n_wide[1] = copy_wide(BATCHES / B1 / "lng_carrier_fix.xlsx", "fix", "b1_rollforward_rows",
+                      add_live_row_from="original order in sheet")
+n_wide[2] = copy_wide(BATCHES / B2 / "lng_carrier_fix.xlsx", "fix", "b2_confirmed_rows",
+                      add_live_row_from="original order in sheet")
+n_wide[4] = copy_wide(BATCHES / B4 / "lng_carrier_data_fill.xlsx", "backend_data_fill",
+                      "b4_data_fill_rows", keep=lambda row: str(row[3].value) not in ("0", "None", ""),
+                      add_live_row_from="row_id")
+n_wide[5] = copy_wide(BATCHES / B5 / "lng_carrier_backend_ref_fill.xlsx", "backend_ref_fill",
+                      "b5_ref_fill_rows", add_live_row_from="original order in sheet")
+
+# flags + conflicts
+flags = []
+for f in load_json(BATCHES / B3 / "candidates.json")["backend_status_flags"]:
+    flags.append({"batch": "discovery since Jun 2026", "live sheet rows": f.get("rows", ""),
+                  "row_id": "", "column / flag": f.get("flag", ""), "backend value": "",
+                  "proposed value": "", "sources": "", "detail": f.get("note", ""), "decision": ""})
+for c in read_csv(BATCHES / B4 / "conflicts.csv"):
+    ids = [x for x in c["row_id"].split("/") if x]
+    live = "/".join(str(BACKEND.get(x, {}).get("live_row", "?")) for x in ids)
+    flags.append({"batch": "data fill (on-order rows)", "live sheet rows": live, "row_id": c["row_id"],
+                  "column / flag": c["column"], "backend value": c["backend_value"],
+                  "proposed value": c["proposed_value"], "sources": c["sources"],
+                  "detail": c["recommendation"], "decision": c["decision"]})
+FC = ["batch", "live sheet rows", "row_id", "column / flag", "backend value", "proposed value",
+      "sources", "detail", "decision"]
+table_sheet("flags_conflicts", FC, flags,
+            {"batch": 24, "live sheet rows": 16, "row_id": 16, "column / flag": 28, "backend value": 22,
+             "proposed value": 22, "sources": 40, "detail": 100, "decision": 9}, wrap_cols=("detail",))
+
+# manual review
+manual = []
+confirmed = {m["row_id"]: m for m in load_json(BATCHES / B2 / "manual_review.json")}
+for m in load_json(BATCHES / B1 / "manual_review.json"):
+    c = confirmed.get(m["row_id"], {})
+    b = BACKEND.get(str(m["row_id"]), {})
+    manual.append({"live sheet row": b.get("live_row", m["live_row"]), "row_id": m["row_id"], "IMO": m["imo"],
+                   "vessel name (backend)": b.get("Name", ""), "shipbuilder": b.get("Shipbuilder", ""),
+                   "why flagged (roll-forward)": m["why"],
+                   "press follow-up verdict": c.get("verdict", "(not followed up)"),
+                   "name found": c.get("name", ""), "follow-up note": c.get("note", "")})
+for rid, c in confirmed.items():
+    if rid not in {m["row_id"] for m in manual}:
+        b = BACKEND.get(str(rid), {})
+        manual.append({"live sheet row": b.get("live_row", c["live_row"]), "row_id": rid, "IMO": c["imo"],
+                       "vessel name (backend)": b.get("Name", ""), "shipbuilder": b.get("Shipbuilder", ""),
+                       "why flagged (roll-forward)": "", "press follow-up verdict": c.get("verdict", ""),
+                       "name found": c.get("name", ""), "follow-up note": c.get("note", "")})
+MC = ["live sheet row", "row_id", "IMO", "vessel name (backend)", "shipbuilder",
+      "why flagged (roll-forward)", "press follow-up verdict", "name found", "follow-up note"]
+table_sheet("manual_review", MC, manual,
+            {"live sheet row": 9, "row_id": 8, "IMO": 10, "vessel name (backend)": 26, "shipbuilder": 24,
+             "why flagged (roll-forward)": 60, "press follow-up verdict": 20, "name found": 20,
+             "follow-up note": 100}, wrap_cols=("why flagged (roll-forward)", "follow-up note"))
+
+# proposed bucket
+pr = load_json(BATCHES / B3 / "proposed_review.json")
+prow = []
+for p in pr["programmes"]:
+    ev = "\n".join(f"{e.get('date', '')}: {e.get('url', '')}" for e in p.get("evidence", []))
+    for a in p["row_actions"]:
+        b = next((v for v in BACKEND.values() if str(v["live_row"]) == str(a["live_row"])), {})
+        prow.append({"programme": p["programme"], "programme verdict": p["verdict"],
+                     "live sheet row": a["live_row"], "vessel name (backend)": b.get("Name", ""),
+                     "action": a["action"], "note": a.get("note", ""), "programme evidence": ev})
+table_sheet("proposed_bucket",
+            ["programme", "programme verdict", "live sheet row", "vessel name (backend)", "action", "note",
+             "programme evidence"], prow,
+            {"programme": 18, "programme verdict": 18, "live sheet row": 9, "vessel name (backend)": 28,
+             "action": 34, "note": 90, "programme evidence": 60}, wrap_cols=("note", "programme evidence"))
+
+# shipvault orderbook entries with no backend match
+sv = load_json(BATCHES / B3 / "shipvault_orderbook_unmatched.json")
+SVC = ["name", "imo", "status", "owner", "yard", "yardno", "gt", "built", "month", "ordered", "url"]
+table_sheet("shipvault_unmatched", SVC, sv, {"name": 24, "owner": 24, "yard": 36, "url": 42},
+            link_col="url",
+            intro="shipvault on-order LNG units with no backend match and no citable press yet "
+                  "(single-source: leads for the next discovery run, not candidates)")
+
+# documented blanks + Rule-F negatives
+qa4 = qa_sections(BATCHES / B4 / "lng_carrier_data_fill.xlsx")
+blanks = []
+for n in load_json(BATCHES / B5 / "unfilled_negative_results.json"):
+    b = BACKEND.get(str(n["row_id"]), {})
+    blanks.append({"batch": "Rule-F ref fill", "live sheet row": b.get("live_row", n["live_row"]),
+                   "row_id": n["row_id"], "vessel name (backend)": b.get("Name", ""), "field": n["field"],
+                   "backend value": n.get("value", ""),
+                   "note": "value present, no citable ref found that states it (negative result)"})
+for q in qa4["Documented blanks (researched, not found)"]:
+    b = BACKEND.get(str(q["row_id"]), {})
+    blanks.append({"batch": "data fill (on-order rows)", "live sheet row": b.get("live_row", ""),
+                   "row_id": q["row_id"], "vessel name (backend)": b.get("Name", ""), "field": q["field"],
+                   "backend value": b.get(q["field"], ""), "note": q.get("note") or ""})
+table_sheet("documented_blanks",
+            ["batch", "live sheet row", "row_id", "vessel name (backend)", "field", "backend value", "note"],
+            blanks, {"batch": 24, "live sheet row": 9, "row_id": 8, "vessel name (backend)": 28, "field": 24,
+                     "backend value": 18, "note": 110}, wrap_cols=("note",))
+
+# URL verification logs
+ulog = []
+for v in load_json(BATCHES / B3 / "candidates.json")["verification_log"]:
+    ulog.append({"batch": "discovery since Jun 2026", "url": v["url"], "result": v.get("status", ""),
+                 "checked for": v.get("checked_for", ""), "note": v.get("note", "")})
+for v in pr["verification_log"]:
+    ulog.append({"batch": "discovery (proposed bucket)", "url": v["url"], "result": v.get("status", ""),
+                 "checked for": v.get("checked_for", ""), "note": v.get("note", "")})
+for v in qa4["URL verification log"]:
+    ulog.append({"batch": "data fill (on-order rows)", "url": v["url"],
+                 "result": v.get("result") or v.get("status") or "", "checked for": "",
+                 "note": " ".join(str(v.get(k)) for k in ("soft_error", "content_match") if v.get(k))})
+for q in qa_sections(BATCHES / B5 / "lng_carrier_backend_ref_fill.xlsx")["Per-cell citation log"]:
+    ulog.append({"batch": "Rule-F ref fill", "url": q["url"],
+                 "result": "PASS" if ": OK" in str(q["note"]) else "FAIL",
+                 "checked for": f"row_id {q['row_id']} {q['field']}", "note": q["note"]})
+table_sheet("url_verification", ["batch", "url", "result", "checked for", "note"], ulog,
+            {"batch": 26, "url": 70, "result": 10, "checked for": 34, "note": 80}, link_col="url")
+
+# ---- README (first sheet) ---------------------------------------------------
+ws = wb["Sheet"]
+ws.title = "README"
+wb.move_sheet("README", -(len(wb.sheetnames) - 1))
+r = 1
+ws.cell(r, 1, "LNG carrier tracker: overnight research update, 2026-09-17 (all results)").font = FONT_T
+r += 2
+for line in [
+    "Backend pulled 2026-09-17 ~01:15 ET: 1,220 rows (822 active / 364 on order / 34 proposed). Re-pulled "
+    "10:15 ET: unchanged, so none of this has been applied yet.",
+    "Nothing here has been written to the Google Sheet. Every line is a candidate for human review. Each batch "
+    "folder under batches/2026-09-17_* carries the apply artifacts (decisions.csv, apply_rows.csv, apply_patch.csv).",
+    "Row numbers are LIVE SHEET ROWS on the backend tab as of the 10:15 ET pull; row_id is column A "
+    "('original order in sheet'), which is what the apply artifacts key on.",
+]:
+    ws.cell(r, 1, line).font = FONT
+    r += 1
+r += 1
+ws.cell(r, 1, "Batches, in the order to apply them").font = FONT_B
+r += 1
+heads = ["apply order", "batch", "what", "proposals", "accept (default)", "hold (needs a look)",
+         "green (high)", "yellow (medium)", "rows in wide sheet", "wide sheet", "batch folder"]
+for j, h in enumerate(heads, 1):
+    c = ws.cell(r, j, h)
+    c.font, c.fill, c.alignment = FONT_H, FILL_HEADER, WRAP
+first = r + 1
+wide_name = {1: "b1_rollforward_rows", 2: "b2_confirmed_rows", 3: "b3_new_vessels",
+             4: "b4_data_fill_rows", 5: "b5_ref_fill_rows"}
+for order, bdir, label, _w, _s, what in BATCH_INFO:
+    r += 1
+    mine = [p for p in proposals if p["apply order"] == order]
+    vals = [order, label, what, len(mine),
+            sum(p["decision"] == "accept" for p in mine), sum(p["decision"] == "hold" for p in mine),
+            sum(p["confidence"] == "G" for p in mine), sum(p["confidence"] == "Y" for p in mine),
+            n_wide[order], wide_name[order], bdir]
+    for j, v in enumerate(vals, 1):
+        c = ws.cell(r, j, v)
+        c.font, c.alignment = FONT, WRAP
+r += 1
+ws.cell(r, 2, "total").font = FONT_B
+for j in range(4, 9):
+    L = get_column_letter(j)
+    ws.cell(r, j, sum(ws.cell(k, j).value for k in range(first, r))).font = FONT_B
+r += 1
+ws.cell(r, 1, "Counts are of the lines on all_proposals (default decisions, before any review edits). Apply 1-2 before 4 (they rename rows 4 also touches; "
+              "artifacts are keyed by row_id, so order is about readability, not safety).").font = FONT
+r += 2
+ws.cell(r, 1, "Sheets").font = FONT_B
+for name, desc in [
+    ("open_decisions", "the nine judgment calls waiting on a human"),
+    ("all_proposals", "EVERY proposed change from all five batches, one line per cell (or per new vessel): current "
+                      "backend value, proposed value, source URL, confidence, default decision, note. Filter here first."),
+    ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows"),
+    ("b1_rollforward_rows / b2_confirmed_rows", "fix batches: full corrected backend rows (paste-ready shape)"),
+    ("b4_data_fill_rows", "data fill: the 477 backend rows that received at least one proposal (the other 743 "
+                          "in-scope rows were unchanged and are left out)"),
+    ("b5_ref_fill_rows", "Rule-F: rows with a proposed [ref] for an already-filled value"),
+    ("flags_conflicts", "places research disagrees with a non-blank backend value, or flags a backend problem; "
+                        "never auto-applied"),
+    ("manual_review", "on-order rows the roll-forward could not settle, with the press follow-up verdict"),
+    ("proposed_bucket", "row-by-row review of the 34 'proposed' rows (Mozambique LNG, Woodside, Equinor)"),
+    ("shipvault_unmatched", "shipvault orderbook units with no backend match and no citable press"),
+    ("documented_blanks", "cells researched and NOT filled, with why (so nobody repeats the search)"),
+    ("url_verification", "the verification-gate log for every URL considered"),
+]:
+    r += 1
+    ws.cell(r, 1, name).font = FONT_B
+    ws.cell(r, 3, desc).font = FONT
+r += 2
+ws.cell(r, 1, "Color key (same in every workbook the tracker tooling builds)").font = FONT_B
+for fill, text in [
+    ("C6EFCE", "Green: proposed value, HIGH confidence (2+ independent sources, or one primary/regulatory source "
+               "carrying the value verbatim)"),
+    ("FFEB9C", "Yellow: proposed value, MEDIUM confidence (entity-level corroboration; some detail implied or contested)"),
+    ("FFC7CE", "Red: proposed value, LOW confidence; review before accepting"),
+    ("FFD9B3", "Peach: the cell's existing backend [ref] is involved (preserved-and-appended in data fill; "
+               "rewritten in ref fill / fix); compare before pasting"),
+    ("EEEEEE", "Gray: pre-existing backend value, untouched (context only)"),
+]:
+    r += 1
+    ws.cell(r, 1, "").fill = PatternFill("solid", fgColor=fill)
+    ws.cell(r, 3, text).font = FONT
+r += 2
+ws.cell(r, 1, "Caveats").font = FONT_B
+for line in [
+    "Every cited URL passed the value-to-ref corroboration gate (the live page contains the cell's value). "
+    "shipvault is treated as single-source (yellow) and never used for owners: it had IMO typos and wrong owner tags.",
+    "Coverage is thinner than a normal run: the web-search budget ran out mid-way, vesselfinder throttled all "
+    "night (cited nowhere), and TradeWinds/Upstream paywalls block many contract dates and prices.",
+    "Data-fill research covered on-order rows only; blanks on active rows were not researched. The citation "
+    "rot-sweep (fixing existing dead refs) is paused and not part of this file.",
+]:
+    r += 1
+    ws.cell(r, 1, line).font = FONT
+for L, w in zip("ABCDEFGHIJK", [12, 28, 60, 11, 11, 12, 11, 11, 11, 22, 48]):
+    ws.column_dimensions[L].width = w
+
+wb.save(OUT)
+print("wrote", OUT, "| proposals:", len(proposals), "| sheets:", wb.sheetnames)
+
+# ---- data for the report page ----------------------------------------------
+report = {"proposals": proposals, "flags": flags, "manual": manual, "proposed_bucket": prow,
+          "n_wide": n_wide, "blanks": len(blanks), "urls": len(ulog)}
+(HERE / "report_data.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
