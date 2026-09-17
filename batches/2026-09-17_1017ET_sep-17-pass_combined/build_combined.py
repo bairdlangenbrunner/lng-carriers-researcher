@@ -38,8 +38,10 @@ B5 = "2026-09-17_0505ET_ref_fill_rule_f"
 B6 = "2026-09-17_1114ET_shipvault_companion_refs"
 # comparison only (no proposals, never applied): feeds igu_findings + one open decision
 B7 = "2026-09-17_1458ET_igu_reconciliation_igu2026"
-# follow-up to B7's dropped bucket: Status -> scrapped (rows are never deleted) + row 61 -> FSU
-B8 = "2026-09-17_1702ET_fix_scrapped_status"
+# follow-ups to B7. B8: what IGU 2026 prints, as proposals citing the report PDF (IG 5.4).
+# B9: the dropped bucket -> Status scrapped (rows are never deleted) + row 61 -> FSU
+B8 = "2026-09-17_1654ET_fix_igu2026_sourced"
+B9 = "2026-09-17_1702ET_fix_scrapped_status"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
@@ -55,7 +57,10 @@ BATCH_INFO = [
     (6, B6, "shipvault companion refs", "lng_carrier_data_fill.xlsx", "backend_data_fill",
      "existing [ref] cells citing a shipvault page that renders blank: the unit-record URL "
      "appended as a second ref (value untouched)"),
-    (8, B8, "scrapped status + FSU", "lng_carrier_fix.xlsx", "fix",
+    (8, B8, "IGU 2026-sourced fix", "lng_carrier_fix.xlsx", "fix",
+     "values the IGU World LNG Report 2026 prints, the report PDF as sole ref (interim rule, IG 5.4): blank Vessel / "
+     "Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499-501 / 509"),
+    (9, B9, "scrapped status + FSU", "lng_carrier_fix.xlsx", "fix",
      "the 18 active rows IGU 2026 dropped -> Status scrapped (press + shipvault refs; rows are never deleted), "
      "and live row 61 Puteri Delima Satu -> Vessel type FSU (two MISC documents)"),
 ]
@@ -132,7 +137,7 @@ PROP_COLS = ["apply order", "batch", "kind", "live sheet row", "row_id", "cluste
 for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
     qa = qa_sections(BATCHES / bdir / wbname)
     urls, verdicts, prev = defaultdict(list), defaultdict(list), {}
-    if bdir in (B1, B2, B8):
+    if bdir in (B1, B2, B8, B9):
         for q in next(iter(qa.values())):
             k = (str(q["row_id"]), q["field"])
             if q.get("url"):
@@ -291,6 +296,12 @@ for order, bdir, label, *_ in BATCH_INFO:
             new_full.append((it["cluster_id"], full[:len(be_header)], meta))
             continue
         rid = it["row_id"]
+        # a held proposal never displaces a cell an earlier batch accepted (it stays on all_proposals)
+        if decision == "hold" and any(cell_meta.get((rid, c), {}).get("decision") == "accept"
+                                      for c in (it.get("column"), it.get("ref_column")) if c):
+            print("note: held proposal left off the backend shape, an accepted cell is already there:",
+                  rid, it.get("column"), f"({label})")
+            continue
         if rid not in merged:
             base = list(be_rows[rid])
             merged[rid] = base + [""] * (len(be_header) - len(base))
@@ -409,7 +420,7 @@ DECISIONS = [
     ("MISC hulls H2019A-H2023A", "", "On shipvault with no citable press: next discovery run.", "shipvault_unmatched"),
     ("IGU 2026 intercomparison", "787, 790, 752 ...; 814, 797 ...; 929; 451, 499-501, 509",
      "DECIDED 2026-09-17: 'scrapped' is now a Status value and rows are never deleted, so all 18 rows IGU dropped "
-     "(scrapped steam tonnage) move to 'scrapped' in batch 8 (on all_proposals), and row 61 Puteri Delima Satu "
+     "(scrapped steam tonnage) move to 'scrapped' in batch 9 (on all_proposals), and row 61 Puteri Delima Satu "
      "moves to Vessel type FSU. Still open from the comparison: 13 active rows whose Delivery year should be 2026, "
      "7 active rows still on order, row 929 delivered, load corruption on rows 451 / 499-501 / 509, about 20 "
      "renames and one vessel to add. None of those is a proposal yet: each accepted item needs a verified ref and "
@@ -436,7 +447,9 @@ n_wide[5] = copy_wide(BATCHES / B5 / "lng_carrier_backend_ref_fill.xlsx", "backe
                       "b5_ref_fill_rows", add_live_row_from="original order in sheet")
 n_wide[6] = copy_wide(BATCHES / B6 / "lng_carrier_data_fill.xlsx", "backend_data_fill",
                       "b6_shipvault_companions", add_live_row_from="row_id")
-n_wide[8] = copy_wide(BATCHES / B8 / "lng_carrier_fix.xlsx", "fix", "b8_scrapped_rows",
+n_wide[8] = copy_wide(BATCHES / B8 / "lng_carrier_fix.xlsx", "fix", "b8_igu_sourced_rows",
+                      add_live_row_from="original order in sheet")
+n_wide[9] = copy_wide(BATCHES / B9 / "lng_carrier_fix.xlsx", "fix", "b9_scrapped_rows",
                       add_live_row_from="original order in sheet")
 
 # flags + conflicts
@@ -482,6 +495,21 @@ table_sheet("manual_review", MC, manual,
             {"live sheet row": 9, "row_id": 8, "IMO": 10, "vessel name (backend)": 26, "shipbuilder": 24,
              "why flagged (roll-forward)": 60, "press follow-up verdict": 20, "name found": 20,
              "follow-up note": 100}, wrap_cols=("why flagged (roll-forward)", "follow-up note"))
+
+# batch 8's own manual list: IGU values it would not turn into a proposal (vocabulary / stylization picks)
+igu_manual = []
+for m in load_json(BATCHES / B8 / "manual_review.json"):
+    b = BACKEND.get(str(m["row_id"]), {})
+    igu_manual.append({"live sheet row": b.get("live_row", m["live_row"]), "row_id": m["row_id"],
+                       "vessel name (backend)": b.get("Name", m.get("name", "")), "column": m["field"],
+                       "backend value": m.get("backend", b.get(m["field"], "")), "IGU 2026": m.get("igu", ""),
+                       "IGU 2025": m.get("igu_prev", ""), "why not proposed": m["why"]})
+igu_manual.sort(key=lambda r: int(r["live sheet row"]))
+IMC = ["live sheet row", "row_id", "vessel name (backend)", "column", "backend value", "IGU 2026", "IGU 2025",
+       "why not proposed"]
+table_sheet("b8_igu_manual_review", IMC, igu_manual,
+            {"live sheet row": 9, "row_id": 8, "vessel name (backend)": 26, "column": 18, "backend value": 28,
+             "IGU 2026": 28, "IGU 2025": 28, "why not proposed": 100}, wrap_cols=("why not proposed",))
 
 # proposed bucket
 pr = load_json(BATCHES / B3 / "proposed_review.json")
@@ -540,14 +568,14 @@ def _igu_row(be, finding, field, bval, ival, prev, kind, item, note=""):
 
 
 igu_rows = []
-# batch 8 was built from this comparison, so igu_reconcile.json (written before it) cannot know it
-b8_status = {p["row_id"]: p for p in proposals if p["apply order"] == 8 and p["column"] == "Status"}
+# batch 9 was built from this comparison, so igu_reconcile.json (written before it) cannot know it
+b9_status = {p["row_id"]: p for p in proposals if p["apply order"] == 9 and p["column"] == "Status"}
 for x in igu["dropped"]:
     row = _igu_row(x["backend"], "dropped from IGU", "Status", x["backend"]["status"], "not listed",
                    "in the fleet table", "", x, "scrapped; the row stays (rows are never deleted)")
-    p8 = b8_status.get(str(x["backend"].get("row_id")))
-    if p8:
-        row["already in a pending batch"] = f"fix_scrapped_status: Status -> {p8['proposed value']} ({p8['decision']})"
+    p9 = b9_status.get(str(x["backend"].get("row_id")))
+    if p9:
+        row["already in a pending batch"] = f"fix_scrapped_status: Status -> {p9['proposed value']} ({p9['decision']})"
         row["pending agrees"] = "yes"
     igu_rows.append(row)
 for x in igu["matched"]:
@@ -556,10 +584,18 @@ for x in igu["matched"]:
         igu_rows.append(_igu_row(x["backend"], sf["finding"], "Status", sf["backend"], sf["igu"], "", "", sf,
                                  "backend Delivery year is at or before the IGU cut-off year"
                                  if sf.get("delivery_year_conflict") else ""))
+# same for batch 8 (what IGU prints, as proposals): mark the diffs it already covers
+b8_cell = {(p["row_id"], p["column"]): p for p in proposals if p["apply order"] == 8}
 for x in igu["matched"]:
     for df in x["diffs"]:
-        igu_rows.append(_igu_row(x["backend"], "field diff", IGU_LABEL.get(df["field"], df["field"]),
-                                 df["backend"], df["igu"], df.get("igu_prev", ""), df["kind"], df))
+        label = IGU_LABEL.get(df["field"], df["field"])
+        row = _igu_row(x["backend"], "field diff", label,
+                       df["backend"], df["igu"], df.get("igu_prev", ""), df["kind"], df)
+        p8 = b8_cell.get((str(x["backend"].get("row_id")), label))
+        if p8:
+            mine = f"fix_igu2026_sourced: {p8['proposed value']} ({p8['decision']})"
+            row["already in a pending batch"] = "; ".join(b for b in (row["already in a pending batch"], mine) if b)
+        igu_rows.append(row)
 for x in igu["igu_only"]:
     g = x["igu"]
     lead, url = _igu_lead(g["imo"])
@@ -647,7 +683,7 @@ for j, h in enumerate(heads, 1):
 first = r + 1
 wide_name = {1: "b1_rollforward_rows", 2: "b2_confirmed_rows", 3: "b3_new_vessels",
              4: "b4_data_fill_rows", 5: "b5_ref_fill_rows", 6: "b6_shipvault_companions",
-             8: "b8_scrapped_rows"}
+             8: "b8_igu_sourced_rows", 9: "b9_scrapped_rows"}
 for order, bdir, label, _w, _s, what in BATCH_INFO:
     r += 1
     mine = [p for p in proposals if p["apply order"] == order]
@@ -666,12 +702,13 @@ for j in range(4, 9):
 r += 1
 ws.cell(r, 1, "Counts are of the lines on all_proposals (default decisions, before any review edits). Apply 1-2 before 4 (they rename rows 4 also touches; "
               "artifacts are keyed by row_id, so order is about readability, not safety). There is no apply order 7: "
-              "batch 7 is the IGU comparison (igu_findings), which is never applied.").font = FONT
+              "batch 7 is the IGU comparison (igu_findings), which is never applied. Batches 8 and 9 both touch row 61 "
+              "Vessel type: 9 (FSU, sourced) supersedes 8's held 'conventional' ref.").font = FONT
 r += 2
 ws.cell(r, 1, "Sheets").font = FONT_B
 for name, desc in [
     ("open_decisions", f"the {len(DECISIONS)} judgment calls waiting on a human"),
-    ("all_proposals", "EVERY proposed change from all seven proposal batches, one line per cell (or per new vessel): current "
+    ("all_proposals", "EVERY proposed change from all eight proposal batches, one line per cell (or per new vessel): current "
                       "backend value, proposed value, source URL, confidence, default decision, note. Filter here first."),
     ("all_changes_backend_shape",
      f"ALL of the above merged into the backend's own structure: columns A:AT are the backend columns in backend "
@@ -683,7 +720,7 @@ for name, desc in [
      "row, row action, holds) sit to the right so A:AT pastes straight over the backend row. flags_conflicts are "
      "not laid in (never auto-applied)."),
     ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows"),
-    ("b1_rollforward_rows / b2_confirmed_rows / b8_scrapped_rows",
+    ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows",
      "fix batches: full corrected backend rows (paste-ready shape)"),
     ("b4_data_fill_rows", "data fill: the 477 backend rows that received at least one proposal (the other 743 "
                           "in-scope rows were unchanged and are left out)"),
@@ -691,10 +728,11 @@ for name, desc in [
     ("flags_conflicts", "places research disagrees with a non-blank backend value, or flags a backend problem; "
                         "never auto-applied"),
     ("manual_review", "on-order rows the roll-forward could not settle, with the press follow-up verdict"),
+    ("b8_igu_manual_review", "IGU 2026 values batch 8 left to a human: vocabulary and name-stylization picks"),
     ("proposed_bucket", "row-by-row review of the 34 'proposed' rows (Mozambique LNG, Woodside, Equinor)"),
     ("shipvault_unmatched", "shipvault orderbook units with no backend match and no citable press"),
     ("igu_findings", "seventh batch, comparison only: the backend against the IGU World LNG Report 2026 - rows IGU "
-                     "dropped (scrapped; now proposed as Status scrapped by batch 8), Status disagreements, field diffs, one "
+                     "dropped (scrapped; now proposed as Status scrapped by batch 9), Status disagreements, field diffs, one "
                      "vessel to add. Leads, not proposals"),
     ("documented_blanks", "cells researched and NOT filled, with why (so nobody repeats the search)"),
     ("url_verification", "the verification-gate log for every URL considered"),

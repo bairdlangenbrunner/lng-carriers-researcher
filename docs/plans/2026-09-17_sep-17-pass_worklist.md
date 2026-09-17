@@ -12,17 +12,18 @@ research pass. Tick items as you go. Detail behind every item is in
 - The research is done. Six batches are merged to main (PRs #11–#18), each with
   `digest.md`, `decisions.csv` and offset-proof apply artifacts.
 - Combined workbook (name = build date + ET time; newest file in the dir is current):
-  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1709ET.xlsx`
-  — 18 sheets, 1,444 proposals (880 accept / 564 hold), keyed by live sheet row; the
+  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1715ET.xlsx`
+  — 20 sheets, 1,912 proposals (1,323 accept / 589 hold), keyed by live sheet row; the
   `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).
-- Report shared with Rob is at version 4 and **predates batches 7 and 8** (no IGU section, no
+- Report shared with Rob is at version 4 and **predates batches 7–9** (no IGU section, no
   scrapped rows; not republished): https://claude.ai/artifact/C1eEJt5CKeqauvfGGg8Ph3
 - A seventh batch was added in the afternoon: the **IGU World LNG Report 2026
   intercomparison** (`1458ET_igu_reconciliation_igu2026`). It is a comparison artifact — it
   proposes nothing and is never applied — but it opens the decisions in §1b.
-- An eighth batch followed from its first two decisions (`1702ET_fix_scrapped_status`): the new
-  Status value `scrapped` on the 18 rows IGU dropped, and row 61 → Vessel type `FSU`. Rule set
-  with it: **rows are never deleted from the backend**.
+- Two fix batches followed from it. **Batch 8** (`1654ET_fix_igu2026_sourced`, §1c): what IGU
+  2026 prints, promoted to proposals citing the report PDF. **Batch 9**
+  (`1702ET_fix_scrapped_status`): the new Status value `scrapped` on the 18 rows IGU dropped,
+  and row 61 → Vessel type `FSU`. Rule set with it: **rows are never deleted from the backend**.
 - All row numbers below are **live sheet rows** unless marked `row_id`.
 
 ## The batches (all under `batches/2026-09-17_…`)
@@ -36,7 +37,8 @@ research pass. Tick items as you go. Detail behind every item is in
 | 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives | 0 / 8 |
 | 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | all accept |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
-| 8 | `1702ET_fix_scrapped_status` | 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
+| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 25, plus 32 manual-review |
+| 9 | `1702ET_fix_scrapped_status` | 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
 
 Discovery candidates in batch 3: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y);
 HD Hyundai HI × Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undisclosed
@@ -53,9 +55,10 @@ Edit the `hold` rows in each batch's `decisions.csv`, then re-run
       Equinor (1186) and Mozambique LNG slots (1187–1203) stay `proposed`. Also the
       Mozambique owner/yard split flagged in the discovery batch.
 - [ ] **Likely duplicates**: Hanwha Philly 1083 ↔ 1085 and 1132 ↔ 1086.
-- [ ] **Vessel type / Cargo type rule.** "conventional" is a tracker classification, never
-      page wording, so it can't pass the ref gate (10 Rule-F orphans; most type fills are Y).
-      Decide: let a capacity-derived type stand on the Capacity ref, or leave it unreffed.
+- [x] **Vessel type / Cargo type rule — decided 2026-09-17: cite the IGU 2026 report** (IG §5.4).
+      Batch 8 does it: IGU's Vessel Type column for listed vessels, the report's size-class scheme
+      for the 10 Rule-F orphans IGU does not list (rows 61, 994, 1118 on hold — open FSU question /
+      no Capacity). Batch 4's Y type fills on IGU-listed rows are re-proposed there as G.
 - [ ] **Price convention**: backend mixes `250` + `$m` with `250000000` + `USD`. New fills
       use full USD. (Shipvault contract prices were left unused — single-source.)
 - [ ] **`Greenenergy …` names** look wrong — shipvault and AIS both say `Greenergy`.
@@ -87,7 +90,7 @@ leads, so each accepted item needs a verified ref and goes into a follow-up `fix
 - [x] **`scrapped` Status value — decided 2026-09-17: yes, and rows are never deleted.** IGU
       dropped 18 backend `active` rows between editions; all are scrapped steam tonnage. All 18
       move to Status `scrapped`, whichever side of Dec 2025 the scrapping falls (the earlier
-      "11 leave / 7 stay" split is void) — **batch 8** (`1702ET_fix_scrapped_status`), press +
+      "11 leave / 7 stay" split is void) — **batch 9** (`1702ET_fix_scrapped_status`), press +
       shipvault refs, all G / accept: rows 16, 23, 25, 26, 44, 46, 47, 48, 49, 54, 63, 64, 77,
       84, 94, 95, 98, 115. The scrap-voyage renames (`Lima`, `Khaza`, `Seapeak Mars` …) are not
       proposed as Name / Other names — optional follow-up. IG SOP is rev 2.
@@ -107,7 +110,8 @@ leads, so each accepted item needs a verified ref and goes into a follow-up `fix
       `small-scale` (45,000 cbm) — out of scope? See the tooling item in §5.
 - [ ] **Vessel type**: row 81 → IGU **FSU** this edition (FSUs are out of scope); row 270
       `conventional` vs IGU FSRU in both editions. Row 61 Puteri Delima Satu (in neither
-      IGU edition): **done — batch 8 proposes `FSU`** on MISC's release + Annual Report 2025.
+      IGU edition): **done — batch 9 proposes `FSU`** on MISC's release + Annual Report 2025
+      (so reject batch 8's held `conventional` ref on row 61).
 - [ ] **~20 renames / sales IGU picked up** (rows 190, 124, 57, 69, 70, 364, 365, 91, 73, 167,
       742, 114, 21, 563, 62, 144; Karadeniz restylings 29 / 39 / 20 / 11; owner BW → Venture
       Global on 818 / 819) — each needs a ref. **Backend name defects**: rows 461 `Hoegh`,
@@ -132,6 +136,30 @@ leads, so each accepted item needs a verified ref and goes into a follow-up `fix
   counterparts — no gap); five `active` rows IGU never listed (6, 7, 61, 487, 488 — all
   active on shipvault).
 
+## 1c. Batch 8 — IGU-2026-sourced fix (`1654ET_fix_igu2026_sourced`)
+
+Decided 2026-09-17: **what IGU 2026 prints is a sufficient sole source for now** — no second ref is
+chased. Batch 8 turns the §1b findings IGU actually prints into proposals citing the report PDF.
+Covered there (so no separate research is owed): the 13 delivery years + rows 800 / 929, the load
+corruption rows, the renames and backend name defects, `Greenergy` (780 / 781 / 915 / 916), row 909,
+rows 843 / 844, row 503, the ME-GA ↔ X-DF flips. **Not** covered: the 18 scrapped rows (IGU's
+silence is not a statement — batch 9, with demolition refs), rows 873 / 910 spellings,
+`Maran Gas Efessos` (discovery).
+
+- [ ] **REMINDER — open decision (Baird asked to be reminded):** should IGU-2026-only cells get a
+      second reference at the ref-validation step? They are identifiable by the PDF URL being their
+      only ref. Raise at apply / next citation-QC pass / pre-release QC, whichever is first.
+- [ ] **25 holds** in `decisions.csv`: Status → `on order` + delivery year on row 814 and the six
+      Arctic LNG 2 hulls (797, 799, 805, 806, 812, 823); Vessel type row 81 → FSU and row 270 →
+      FSRU; Karadeniz restylings (11, 20, 29, 39); row 785 `Al Kheesah`; row 929 `TFDE`; rows 61 /
+      994 / 1118 Vessel type refs (row 61: reject — batch 9 proposes `FSU` there).
+- [ ] **`QC-max` vocabulary decision**: IGU types the 24 × 271,000 cbm QatarEnergy ships (rows
+      1070–1074, 1119–1131, 1174–1176, 1179–1181) `QC-max`; the vocabulary has no such value, so
+      their blank Vessel type is unproposed (`manual_review.json`).
+- [ ] **8 owner / builder changes** in `manual_review.json` (rows 70, 818, 819 owner; 11, 268, 567,
+      929, 941 builder) — IGU prints short labels; pick the canonical name (a builder change
+      cascades into the yard-location columns).
+
 ## 2. Apply and verify (Apply SOP, `docs/sops/apply.md`)
 
 Apply 1–2 before 4 (they rename rows 4 also touches; artifacts are keyed by row_id, so the
@@ -143,7 +171,10 @@ order is about readability, not safety).
 - [ ] Batch 4 — apply + verify
 - [ ] Batch 5 — apply + verify
 - [ ] Batch 6 — apply via `apply_patch.csv` (not full rows) + verify
-- [ ] Batch 8 — apply + verify (any order; no cell overlaps another batch). If the sheet's
+- [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
+      agree in value) + verify. After batch 6: both touch row 814's Status `[ref]`.
+- [ ] Batch 9 — apply + verify (any order; its only shared cell is row 61 Vessel type, which
+      batch 8 holds as `conventional` — reject that hold). If the sheet's
       Status column has a validation dropdown, add `scrapped` to it first. Row 61 → FSU changes
       the map fleet: re-export after applying.
 - [ ] Review any HIGH/MED group in each `dedupe_report.csv` (apply.md §5a). Known MED
@@ -197,7 +228,7 @@ State is resumable from `work/citation_qc.csv`. Would become a follow-up batch (
       `prismatic conventional DFDE` / `prismatic small-scale DFDE` (Propulsion) are in
       `scripts/lookups.py` / `data/controlled_vocab.md` because they were seeded from rows
       451 / 499–501 / 509. Remove them with the fix batch, and add a vocab-membership check on
-      Cargo / Vessel / Propulsion type to `qc_backend.py` (Status has one since batch 8; the
+      Cargo / Vessel / Propulsion type to `qc_backend.py` (Status has one since batch 9; the
       other three do not).
 - [ ] Verifier: Status `active` still passes on a bare boilerplate "active".
 - [ ] Shipvault data quality (IMO typos failing the check digit, wrong owner tags) — treat

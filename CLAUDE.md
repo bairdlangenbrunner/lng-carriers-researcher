@@ -244,8 +244,11 @@ Governed by `docs/sops/igu_reconciliation.md` (IG rev 2). IMO-keyed join of the 
 backend** against the IGU World LNG Report's Appendix 3 (fleet) and Appendix 4 (orderbook),
 with the previous edition layered on top so each diff says which side moved (`igu_changed` /
 `new_to_igu` / `backend_differs` — never revert the last blindly). The backend was seeded from
-IGU 2025, so IGU **is** citable on bulk-loaded rows — but its landing page surfaces no
-per-vessel value, so every finding needs its own verified ref before it becomes a proposal.
+IGU 2025, so IGU **is** citable on bulk-loaded rows. Its landing page surfaces no per-vessel
+value, so cite the **report PDF**, which passes §3.8c. Interim rule (Baird 2026-09-17, IG §5.4):
+what IGU 2026 prints is a sufficient sole source, Vessel type included — no second ref for now
+(open decision: back these cells up at the ref-validation step?). IGU's *silence* (a dropped
+vessel) is not a statement and still needs its own verified ref.
 The batch itself is never applied; findings promote through a `fix` / discovery batch.
 
 ```bash

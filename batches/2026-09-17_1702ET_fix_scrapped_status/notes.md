@@ -1,4 +1,4 @@
-# Fix batch — Status `scrapped` for the 18 rows IGU 2026 dropped + Puteri Delima Satu → FSU (2026-09-17, sep-17-pass 8)
+# Fix batch — Status `scrapped` for the 18 rows IGU 2026 dropped + Puteri Delima Satu → FSU (2026-09-17, sep-17-pass 9)
 
 Follow-up to the IGU reconciliation (`2026-09-17_1458ET_igu_reconciliation_igu2026`, decisions 1
 and 2). `fix` mode, QC §4 / Apply SOP. All row numbers are **live sheet rows** (fresh pull

@@ -22,7 +22,8 @@ nothing applied.
 | 5 | `2026-09-17_0505ET_ref_fill_rule_f` | Rule-F orphan `[ref]`s | 8 refs (hold), 11 negatives |
 | 6 | `2026-09-17_1114ET_shipvault_companion_refs` | existing shipvault `[ref]`s that render blank: unit-record URL appended as a second ref (values untouched) | 175 cells / 27 rows — all accept |
 | 7 | `2026-09-17_1458ET_igu_reconciliation_igu2026` | whole backend vs the IGU World LNG Report 2026 (fleet at end-2025; 2025 edition as the baseline the backend was loaded from) — IMO-keyed, IG rev 1 | comparison only, never applied: 1,054 matched, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate |
-| 8 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G) |
+| 8 | `2026-09-17_1654ET_fix_igu2026_sourced` | follow-up to 7: what IGU 2026 prints, as proposals citing the report PDF as sole ref (interim rule, IG §5.4) — blank Vessel / Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499–501 / 509 | 468 cells / 328 rows — 443 accept, 25 hold; 32 manual-review values |
+| 9 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G) |
 
 Apply 1–2 before 4 (they rename rows 4 also touches; all artifacts are keyed by row_id, so
 order is about readability, not safety). After applying 3, re-export the map fleet if any
@@ -58,7 +59,7 @@ press says delivery 2029, shipvault 2030).
 9. **MISC hulls H2019A–H2023A** on shipvault have no citable press — next discovery run.
 10. **IGU 2026 intercomparison (batch 7)** — full list in the worklist §1b and the batch
     `notes.md`. The ones that need you:
-    - **A `scrapped` Status value — decided 2026-09-17, batch 8.** `scrapped` is now a Status
+    - **A `scrapped` Status value — decided 2026-09-17, batch 9.** `scrapped` is now a Status
       value and **rows are never deleted**: all 18 rows IGU dropped (scrapped steam tonnage)
       move to `scrapped`, including the 11 scrapped before Dec 2025 that the inclusion rule
       would have removed. Row 25 is IMO 9030814 Puteri Delima, renamed `Lima` for the scrap
@@ -107,7 +108,7 @@ press says delivery 2029, shipvault 2030).
   edition prints two tables per landscape spread and adds Age / Vessel Type columns, so the
   2025 column positions do not carry over), `scripts/igu_reconcile.py` (IMO join, edition
   diff, paced shipvault leads) and `build_workbook.py --mode igu`.
-- `scrapped` Status (batch 8): `CONTROLLED_VOCAB["Status"]` in `lookups.py`, a Status shape
+- `scrapped` Status (batch 9): `CONTROLLED_VOCAB["Status"]` in `lookups.py`, a Status shape
   check in `qc_backend.py`, and `value_variants("scrapped")` ↔ demolition wording ("sold for
   recycling", "cash buyers", "beached" …) in `url_verifier.py`; the IGU dropped bucket now
   suggests Status → `scrapped`, never removal (IG rev 2).

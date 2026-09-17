@@ -2,7 +2,7 @@
 
 **Document purpose:** This SOP describes the workflow for intercomparing the backend Google Sheet against the fleet tables of the IGU World LNG Report — Appendix 3 (active fleet) and Appendix 4 (orderbook). The backend was seeded from the IGU 2025 edition (~1,070 of its rows still carry `Original source = IGU`), so each new edition is the natural annual check on the bulk-loaded fleet: what IGU delivered, renamed, re-typed, dropped or added since the load. It is distinct from the companion reconciliations: SFOC is an IMO-keyed join against the Clarkson orderbook, the FSRU SOP is a name-keyed join against GIIGNL, and *this* SOP is an IMO-keyed join of the **whole fleet** against IGU, with an edition-to-edition comparison layered on top.
 
-**Last revised:** 2026-09-17 rev 2 (dropped vessels are never removed — a scrapped vessel moves to the new Status value `scrapped`, §5.2; rev 1 was the initial issue — codifies the word-coordinate extractor, the IMO join, the `kind` model for field diffs, the dropped / status buckets, and the `--mode igu` workbook, from the IGU-2026 intercomparison folded into the sep-17-pass).
+**Last revised:** 2026-09-17 rev 2 (dropped vessels are never removed — a scrapped vessel moves to the new Status value `scrapped`, §5.2; interim IGU-sole-source rule for what the report prints, §5.4; rev 1 was the initial issue — codifies the word-coordinate extractor, the IMO join, the `kind` model for field diffs, the dropped / status buckets, and the `--mode igu` workbook, from the IGU-2026 intercomparison folded into the sep-17-pass).
 
 ---
 
@@ -105,6 +105,13 @@ IGU silently removes scrapped tonnage. For each dropped row confirm the fate wit
 
 ### 5.3 Field diffs
 Work `igu_changed` by field: delivery-year slips on on-order rows (check against a tracker before accepting — IGU's schedule is nine months old), renames and owner changes (sale / rebrand — need a ref), propulsion flips (ME-GA ↔ X-DF — IGU is often the one correcting itself), vessel-type changes (conversion). `backend_differs` is a reading list for backend *name defects* and load corruption, not a to-do list.
+
+### 5.4 Promoting findings — IGU 2026 as a sole source (interim rule, Baird 2026-09-17)
+Until decided otherwise, **what the IGU 2026 report prints for a named vessel is a sufficient sole source**: the finding goes into a `fix` batch citing the report PDF (`https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf` — the PDF passes the §3.8c gate; the landing page does not) and no second ref is chased. This supersedes the §1 "needs its own verified ref" limit for that one reference only — not for IGU 2025, shipvault or any other single source. **Vessel type** is covered twice over: IGU's Vessel Type column for a listed vessel, and the report's size-class scheme (conventional / Q-Flex / Q-Max / QC-max) as the citable source of the classification for a capacity-derived type on a vessel IGU does not list. Limits:
+- Only what IGU *prints*. A vessel's absence from the tables (§5.2) is not a statement — a `scrapped` Status still needs its own ref.
+- Judgment is unchanged: `backend_differs` fields are not reverted, on-order delivery-year diffs stay a reading list (IGU's schedule is nine months old), and a value outside the controlled vocabulary (`QC-max`), an owner / builder short label, or a scope-changing type goes to hold / manual review.
+- G = IGU prints the value for the named vessel with no judgment call; Y (hold) otherwise. Apply such a batch from `apply_patch.csv` (cell-level) — its rows overlap the other pending batches.
+- **Open decision:** whether IGU-2026-only cells get a second reference at the ref-validation step. They stay identifiable by carrying the PDF URL as their only ref. First batch under this rule: `batches/2026-09-17_1654ET_fix_igu2026_sourced/`.
 
 ---
 

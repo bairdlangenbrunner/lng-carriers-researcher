@@ -169,6 +169,7 @@ IMO-keyed intercomparison of the whole backend against the IGU World LNG Report'
 | Phase | Section | What |
 |---|---|---|
 | Scope / positioning | IG §1 | whole fleet; IGU **is** citable (the backend's seed source) but its landing page cannot pass §3.8c for a new proposal; inclusion criteria apply |
+| IGU 2026 as sole source (interim) | IG §5.4 | what IGU 2026 prints is enough on its own — cite the report PDF, Vessel type included; silence is not a statement; open decision on a second ref at ref-validation |
 | Parameters | IG §2 | current + previous edition, pending batches to cross-reference, capacity tolerance (max 6000 m³ / 3%), tracker leads, output name |
 | Extraction | IG §3 | `igu_fleet.py` — word coordinates, no assumed column set; extract every edition fresh (layout changes); read the warnings; acceptance check `prev − dropped + delivered + added = current` |
 | Join + comparison | IG §4.1–4.2 | IMO as a string, no fuzzy pairing; builder labels through a learned co-occurrence map (≥ 3 vessels) |
