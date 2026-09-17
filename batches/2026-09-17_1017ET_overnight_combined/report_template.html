@@ -1,0 +1,296 @@
+<title>LNG Carrier Overnight Update</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
+<style>
+:root{
+  --ground:#f2f5f4; --surface:#fcfcfb; --ink:#11212b; --ink-2:#4a5a63; --ink-3:#71808a;
+  --rule:#d4dcdb; --accent:#0e5f76; --accent-soft:#e1eef1;
+  --g-fill:#c6efce; --g-ink:#1c5a2a; --y-fill:#ffeb9c; --y-ink:#6a5100;
+  --s1:#2a78d6; --s2:#eb6834; --focus:#0e5f76;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --cond:"IBM Plex Sans Condensed","IBM Plex Sans","Arial Narrow",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0d1417; --surface:#171d20; --ink:#eef3f4; --ink-2:#b4c1c6; --ink-3:#8696a0;
+    --rule:#2c383d; --accent:#6cc0d8; --accent-soft:#16303a;
+    --g-fill:#1d4528; --g-ink:#bfe8c8; --y-fill:#4b3f10; --y-ink:#ffe28a;
+    --s1:#3987e5; --s2:#d95926; --focus:#6cc0d8;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0d1417; --surface:#171d20; --ink:#eef3f4; --ink-2:#b4c1c6; --ink-3:#8696a0;
+  --rule:#2c383d; --accent:#6cc0d8; --accent-soft:#16303a;
+  --g-fill:#1d4528; --g-ink:#bfe8c8; --y-fill:#4b3f10; --y-ink:#ffe28a;
+  --s1:#3987e5; --s2:#d95926; --focus:#6cc0d8;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;margin:0}
+.page{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:40px 72px;display:flex;flex-direction:column;gap:56px}
+.prose{max-width:68ch}
+h1,h2,h3{font-family:var(--cond);font-weight:600;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(2rem,5vw,2.9rem);letter-spacing:-.01em}
+h2{font-size:1.6rem}
+h3{font-size:1.1rem}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.mono{font-family:var(--mono);font-size:.88em;font-variant-numeric:tabular-nums}
+header{display:flex;flex-direction:column;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:28px}
+.lede{font-size:1.15rem;color:var(--ink-2)}
+.lede strong{color:var(--ink);font-weight:600}
+section{display:flex;flex-direction:column;gap:20px}
+.sub{color:var(--ink-2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.stat{padding:18px 16px 16px 0;display:flex;flex-direction:column;gap:2px}
+.stat b{font-family:var(--cond);font-weight:600;font-size:2.3rem;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat span{font-size:.9rem;color:var(--ink-2)}
+.scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+#x{min-width:1040px}
+th{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.chip{display:inline-block;font-family:var(--mono);font-size:.74rem;padding:1px 7px;border-radius:3px;white-space:nowrap}
+.chip.G{background:var(--g-fill);color:var(--g-ink)}
+.chip.Y{background:var(--y-fill);color:var(--y-ink)}
+.chip.plain{border:1px solid var(--rule);color:var(--ink-2)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.two>div{display:flex;flex-direction:column;gap:8px}
+ul,ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:10px}
+.decisions{max-width:78ch}
+.decisions li::marker{font-family:var(--mono);color:var(--ink-3);font-size:.85em}
+.decisions b{font-weight:600}
+.note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 6px 6px 0;max-width:78ch}
+/* chart */
+.chart{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:14px;position:relative}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.bars{display:grid;grid-template-columns:minmax(110px,190px) 1fr;gap:7px 12px;align-items:center}
+.bars .lab{font-size:.86rem;color:var(--ink-2);text-align:right;line-height:1.25}
+.bars .track{display:flex;align-items:center;gap:2px;height:16px;min-width:0}
+.bars .seg{height:100%;min-width:2px}
+.bars .seg.a{background:var(--s1)}
+.bars .seg.h{background:var(--s2)}
+.bars .seg:last-of-type{border-radius:0 4px 4px 0}
+.bars .val{font-family:var(--mono);font-size:.76rem;color:var(--ink-2);margin-left:6px;white-space:nowrap}
+.bars .rowhit{display:contents}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--ground);font-size:.8rem;padding:6px 9px;border-radius:4px;z-index:2;white-space:nowrap}
+/* explorer */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.controls label{display:flex;flex-direction:column;gap:4px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+select,input[type=search]{font:inherit;font-size:.92rem;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:5px;padding:7px 10px;min-width:0}
+input[type=search]{width:min(260px,100%)}
+button{font:inherit;font-weight:500;font-size:.95rem;color:var(--surface);background:var(--accent);border:0;border-radius:5px;padding:10px 16px;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+.count{font-size:.88rem;color:var(--ink-2)}
+#x td{font-size:.86rem}
+#x .chg{min-width:210px}
+#x .was{color:var(--ink-3);text-decoration:line-through;text-decoration-thickness:1px}
+#x .nt{min-width:300px;color:var(--ink-2);font-size:.8rem}
+#x .vs{min-width:170px}
+#x .vs small{display:block;color:var(--ink-3);font-size:.78rem}
+.dl{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.dl span{font-size:.88rem;color:var(--ink-2)}
+footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font-size:.85rem}
+@media (max-width:520px){.bars{grid-template-columns:96px 1fr}.stat b{font-size:1.9rem}}
+</style>
+
+<div class="page">
+<header>
+  <div class="eyebrow">LNG carrier tracker · research update · 17 Sep 2026</div>
+  <h1>Overnight update: what the run found, and what needs a decision</h1>
+  <p class="lede prose">An automated overnight pass checked the tracker backend (1,220 rows: 822 active, 364 on order, 34 proposed) against yard orderbooks, Korean disclosures, trade press and ship registries. It produced <strong>1,186 proposed changes in five batches</strong>. <strong>Nothing has been written to the backend sheet.</strong> Every line is a candidate waiting for human review, and every cited URL was checked to confirm the live page actually states the value it supports.</p>
+</header>
+
+<section>
+  <div class="stats">
+    <div class="stat"><b>1,186</b><span>proposed changes</span></div>
+    <div class="stat"><b>685</b><span>ready to accept as-is</span></div>
+    <div class="stat"><b>501</b><span>held for a closer look</span></div>
+    <div class="stat"><b>63</b><span>vessels delivered: on order → active</span></div>
+    <div class="stat"><b>12</b><span>new orders not yet in the tracker</span></div>
+  </div>
+  <p class="sub prose">"Ready to accept" means high confidence: two independent sources, or one primary source carrying the value verbatim. "Held" is mostly single-source material (medium confidence), not suspected errors.</p>
+</section>
+
+<section>
+  <h2>The five batches</h2>
+  <p class="sub prose">Listed in the order they should be applied. The first two rename rows that the fourth also touches, so applying in order keeps things readable.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Batch</th><th>What it does</th><th class="n">Changes</th><th class="n">Accept</th><th class="n">Hold</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td><b>Delivery roll-forward</b></td><td>Every on-order row with an IMO checked against shipvault and AIS. 63 ships moved to active, 26 delivery years corrected, 19 slipped deliveries rolled forward, 106 names updated.</td><td class="n">214</td><td class="n">143</td><td class="n">71</td></tr>
+      <tr><td class="mono">2</td><td><b>Delivery confirmed by press</b></td><td>Two deliveries the registry lags on, confirmed by LNG Prime: live row 887 (now <i>Al Nigyan</i>, Knutsen) and live row 924.</td><td class="n">3</td><td class="n">0</td><td class="n">3</td></tr>
+      <tr><td class="mono">3</td><td><b>Discovery since June 2026</b></td><td>30 yards swept for orders placed since the backend's latest contract date. 12 new vessels in 5 orders, plus 10 flags on existing rows.</td><td class="n">12</td><td class="n">7</td><td class="n">5</td></tr>
+      <tr><td class="mono">4</td><td><b>Data fill</b></td><td>Blank and "unknown" cells on on-order rows researched; owner country, price currency and similar derivable values filled across the whole backend. 477 rows touched.</td><td class="n">949</td><td class="n">535</td><td class="n">414</td></tr>
+      <tr><td class="mono">5</td><td><b>Missing references</b></td><td>Values that had no source cited. 8 references found; 11 searched and documented as not found.</td><td class="n">8</td><td class="n">0</td><td class="n">8</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>New orders found</h2>
+  <p class="sub prose">Five orders, twelve vessels, all for 2029 delivery. Five clusters over a three-and-a-half-month gap is normal lag at the leading edge, not a sign of a systematic hole.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Yard</th><th>Owner</th><th class="n">Vessels</th><th>Spec</th><th>Contract</th><th>Confidence</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Samsung Heavy Industries</td><td>Dynagas</td><td class="n">4</td><td>200,000 cbm</td><td class="mono">14-Sep-2026</td><td><span class="chip Y">Y medium</span></td><td>Samsung's DART filing names only an "Oceania-based" owner. Dynagas comes from broker sources via Splash247. Yard, count, date and size are solid.</td></tr>
+      <tr><td>HD Hyundai Heavy Industries</td><td>Tsakos</td><td class="n">1</td><td>USD 254M, option exercised</td><td class="mono">01-Jul-2026</td><td><span class="chip G">G high</span></td><td>TEN's own press release.</td></tr>
+      <tr><td>HD Hyundai Heavy Industries</td><td>undisclosed</td><td class="n">1</td><td>FSRU</td><td class="mono">30-Jun-2026</td><td><span class="chip Y">Y medium</span></td><td>Owner not named. If added, the FSRU map fleet needs a re-export.</td></tr>
+      <tr><td>Jiangnan Shipyard</td><td>ADNOC L&amp;S</td><td class="n">4</td><td>175,000 cbm, hulls <span class="mono">H2706–H2709</span></td><td class="mono">10-Jul-2026</td><td><span class="chip G">G high</span></td><td>Press plus registry hull and IMO numbers (all pass the IMO check digit).</td></tr>
+      <tr><td>Jiangnan Shipyard</td><td>ADNOC L&amp;S</td><td class="n">2</td><td>175,000 cbm, hulls <span class="mono">H2858/H2859</span> (option pair)</td><td class="mono">25-Aug-2026</td><td><span class="chip G">G high</span></td><td>Press says 2029 delivery; shipvault schedules early 2030. Left at the press value.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub prose">A registry cross-check also turned up ten MISC hulls at Hudong-Zhonghua (<span class="mono">H2014A–H2023A</span>) where the tracker has five rows. No citable press yet, so nothing was proposed. It is the top lead for the next discovery run.</p>
+</section>
+
+<section>
+  <h2>Deliveries and slipped schedules</h2>
+  <div class="two">
+    <div><h3>63 ships delivered</h3><p class="sub">Hanwha Ocean 20, HD Hyundai Heavy 11, HD Hyundai Samho 11, Samsung Heavy 8, Hudong-Zhonghua 8, Jiangnan 3, Zvezda 1, China Merchants 1. The backend had not moved since June.</p></div>
+    <div><h3>96 hull placeholders named</h3><p class="sub">For example <span class="mono">Hull 2541 (Hanwha)</span> becomes <i>Venture Pelican</i>; <span class="mono">Hull 045 (Zvezda)</span> becomes <i>Konstantin Posiet</i>. Ten more are spelling corrections against the registry name.</p></div>
+    <div><h3>45 delivery years changed</h3><p class="sub">26 were delivered in a different year than recorded (23 of them in 2025, not 2026). 19 have slipped: 18 from 2026 to 2027, one to 2028.</p></div>
+    <div><h3>45 rows not settled</h3><p class="sub">Mostly ships broadcasting on AIS under a real name while the registry still says on order. A press follow-up confirmed two, found three on sea trials and two not delivered; the rest are unresolved. The sanctioned Zvezda / Arctic LNG 2 hulls were deliberately left untouched.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Data fill, by column</h2>
+  <p class="sub prose">949 cells that were blank or "unknown". Owner country is derived from a lookup table and is safe across the board. Prices, contract dates and charterers lean on a single trade-press source more often, so more of them are held.</p>
+  <div class="chart" id="chart">
+    <div class="legend"><span><i style="background:var(--s1)"></i>Ready to accept</span><span><i style="background:var(--s2)"></i>Held for review</span></div>
+    <div class="bars" id="bars" role="img" aria-label="Stacked bars: proposed data fills per column, split into ready to accept and held for review. Counts are printed beside each bar."></div>
+  </div>
+</section>
+
+<section>
+  <h2>Decisions waiting on a person</h2>
+  <ol class="decisions">
+    <li><b>Three duplicate placeholders.</b> Woodside placeholder rows <span class="mono">1204–1206</span> duplicate the Seapeak × Samsung order already on rows <span class="mono">1165–1167</span>: recommend deleting. The remaining Woodside rows, Equinor 4 and all 17 Mozambique LNG slots stay "proposed". TotalEnergies pushed the Mozambique slot deadline to September 2026, so re-check next month. July press also splits those 17 slots differently from the backend (Samho 9: MOL 5, K Line 4; Samsung 8: NYK 4, Maran Gas 4).</li>
+    <li><b>Two likely duplicate pairs</b> at Hanwha Philly: rows <span class="mono">1083 ↔ 1085</span> and <span class="mono">1132 ↔ 1086</span>.</li>
+    <li><b>How to cite "conventional".</b> Vessel type is the tracker's own classification, never wording on a source page, so the citation check can never pass it. Either let a capacity-derived type stand on the capacity reference, or leave it uncited.</li>
+    <li><b>Price convention.</b> The backend mixes <span class="mono">250</span> + <span class="mono">$m</span> with <span class="mono">250000000</span> + <span class="mono">USD</span>. New fills use full USD.</li>
+    <li><b>"Greenenergy" ship names</b> look wrong against both the registry and AIS, which say "Greenergy".</li>
+    <li><b>BW LNG capacity.</b> Rows <span class="mono">1168/1169</span> are recorded as 174,000 cbm; PortNews, citing BW's fleet list, says 177,000 cbm on a new three-tank design.</li>
+    <li><b>MISC FSRU price.</b> Row <span class="mono">1162</span> says USD 330M; Businesskorea reports 484.8bn won (about USD 354M) for the same order.</li>
+    <li><b>Possible mis-citations.</b> The data-fill research flagged about 200 places where a source disagrees with an existing backend value. These are never applied automatically; they are listed for review in the workbook.</li>
+    <li><b>The 45 unsettled delivery rows</b> above.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Limits of this run</h2>
+  <ul class="decisions">
+    <li>Coverage is thinner than a normal run. The web-search budget ran out part-way, one AIS site throttled requests all night (it is cited nowhere), and TradeWinds and Upstream paywalls hide many contract dates and prices.</li>
+    <li>Registry data (shipvault) is treated as a single source, medium confidence, and is never used for owners: it had IMO typos and wrong owner tags.</li>
+    <li>Only on-order rows were researched for blanks. Blanks on active rows are untouched.</li>
+    <li>The sweep for dead or decayed references on existing rows is paused and is not part of this update.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Every proposed change</h2>
+  <p class="sub prose">All 1,186 lines. Row numbers are live rows on the backend sheet as of 17 Sep, 10:15 ET. The workbook has the same table plus full paste-ready rows, the conflict list, documented blanks and the URL verification log.</p>
+  <div class="dl" id="dlwrap" hidden><button id="dl" type="button">Download the workbook (.xlsx)</button><span id="dlmsg">14 sheets, 0.5 MB</span></div>
+  <div class="controls">
+    <label for="fb">Batch<select id="fb"><option value="">All batches</option><option value="1">1 Delivery roll-forward</option><option value="2">2 Delivery confirmed</option><option value="3">3 Discovery</option><option value="4">4 Data fill</option><option value="5">5 Missing references</option></select></label>
+    <label for="fd">Decision<select id="fd"><option value="">Accept and hold</option><option value="accept">Ready to accept</option><option value="hold">Held for review</option></select></label>
+    <label for="fc">Column<select id="fc"><option value="">All columns</option></select></label>
+    <label for="fq">Search<input id="fq" type="search" placeholder="vessel, owner, yard, value"></label>
+  </div>
+  <div class="count" id="count"></div>
+  <div class="scroll"><table id="x">
+    <thead><tr><th>Row</th><th>Vessel</th><th>Column</th><th>Change</th><th>Conf.</th><th>Decision</th><th>Source</th><th>Note</th></tr></thead>
+    <tbody id="xb"></tbody>
+  </table></div>
+</section>
+
+<footer>Built from the five batch folders under <span class="mono">batches/2026-09-17_*</span> in the lng-carriers-researcher repo. Confidence colors match the review workbooks: green is high, yellow is medium.</footer>
+</div>
+
+<script>
+const ROWS = /*ROWS*/[];
+const CHART = /*CHART*/[];
+const XLSX_B64 = "/*XLSX*/";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+// chart
+(function(){
+  const max = Math.max(...CHART.map(r => r[1] + r[2]));
+  const bars = $("bars"), chart = $("chart");
+  let tip;
+  CHART.forEach(([lab, a, h]) => {
+    const l = document.createElement("div"); l.className = "lab"; l.textContent = lab;
+    const t = document.createElement("div"); t.className = "track";
+    t.innerHTML = (a ? `<div class="seg a" style="width:${a / max * 86}%"></div>` : "") +
+                  (h ? `<div class="seg h" style="width:${h / max * 86}%"></div>` : "") +
+                  `<span class="val">${a} / ${h}</span>`;
+    t.addEventListener("pointermove", e => {
+      if (!tip) { tip = document.createElement("div"); tip.className = "tip"; chart.appendChild(tip); }
+      tip.textContent = `${lab}: ${a} ready to accept, ${h} held (${a + h} total)`;
+      const r = chart.getBoundingClientRect();
+      tip.style.left = Math.max(8, Math.min(e.clientX - r.left + 12, r.width - tip.offsetWidth - 8)) + "px";
+      tip.style.top = (e.clientY - r.top - 34) + "px";
+      tip.hidden = false;
+    });
+    t.addEventListener("pointerleave", () => { if (tip) tip.hidden = true; });
+    bars.append(l, t);
+  });
+})();
+
+// explorer
+(function(){
+  const cols = [...new Set(ROWS.map(r => r[5]))].sort();
+  $("fc").insertAdjacentHTML("beforeend", cols.map(c => `<option>${esc(c)}</option>`).join(""));
+  const LIMIT = 150;
+  function host(u){ try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } }
+  function render(){
+    const b = $("fb").value, d = $("fd").value, c = $("fc").value, q = $("fq").value.trim().toLowerCase();
+    const hit = ROWS.filter(r => (!b || String(r[0]) === b) && (!d || r[10] === d) && (!c || r[5] === c) &&
+      (!q || (r[1] + " " + r[2] + " " + r[3] + " " + r[4] + " " + r[6] + " " + r[7] + " " + r[11]).toLowerCase().includes(q)));
+    $("count").textContent = hit.length.toLocaleString() + " of " + ROWS.length.toLocaleString() + " changes" +
+      (hit.length > LIMIT ? `, showing the first ${LIMIT}. Narrow the filters to see the rest.` : "");
+    $("xb").innerHTML = hit.slice(0, LIMIT).map(r => {
+      const h = host(r[8]);
+      return `<tr><td class="mono">${esc(r[1])}</td>` +
+        `<td class="vs">${esc(r[2] || r[7])}<small>${esc([r[3], r[4]].filter(Boolean).join(" · "))}</small></td>` +
+        `<td>${esc(r[5])}</td>` +
+        `<td class="chg">${r[6] ? `<span class="was">${esc(r[6])}</span> → ` : ""}<b>${esc(r[7])}</b></td>` +
+        `<td><span class="chip ${esc(r[9])}">${esc(r[9])}</span></td>` +
+        `<td><span class="chip plain">${esc(r[10])}</span></td>` +
+        `<td>${h ? `<a href="${esc(r[8])}" target="_blank" rel="noopener">${esc(h)}</a>` : '<span class="mono">derived</span>'}</td>` +
+        `<td class="nt">${esc(r[11])}</td></tr>`;
+    }).join("");
+  }
+  ["fb", "fd", "fc"].forEach(id => $(id).addEventListener("change", render));
+  $("fq").addEventListener("input", render);
+  render();
+})();
+
+// workbook download (only where the viewer grants it)
+(async function(){
+  const use = window.claude && window.claude.use;
+  if (!use) return;
+  const downloads = await window.claude.use("downloads");
+  if (!downloads) return;
+  $("dlwrap").hidden = false;
+  $("dl").addEventListener("click", async () => {
+    const bin = atob(XLSX_B64), buf = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+    try {
+      await downloads.save({filename: "lng_carrier_overnight_results_2026-09-17.xlsx", data: new Blob([buf])});
+      $("dlmsg").textContent = "Saved.";
+    } catch (e) {
+      const code = e && e.code;
+      if (code === "declined") $("dlmsg").textContent = "Download cancelled.";
+      else if (code === "rate_limited") $("dlmsg").textContent = "A download prompt is already open. Try again in a moment.";
+      else { $("dlmsg").textContent = "Downloads are not available in this view. Ask Baird for the file."; $("dl").hidden = true; }
+    }
+  });
+})();
+</script>
