@@ -99,7 +99,7 @@ python derive_fills.py --since <YYYY-MM-DD>
 # 5. Merge + central §3.8 gate
 python merge_fills.py
 #   -> merges derivable + all research_*.json into work/data_fill.json,
-#      dedups (row_id, field), re-verifies distinct fill URLs (drops dead/blocked;
+#      dedups (row_id, field), re-verifies distinct fill URLs (drops dead/banned; logs blocked as a separate finding — bot-block ≠ dead;
 #      demotes a research fill that loses all URLs to a documented blank).
 
 # 6. Build the candidate workbook

@@ -21,10 +21,9 @@
 - **Proposed**: announced by a shipping company or charterer with public sources, but no binding shipyard contract yet
 - **Active**: built, delivered, operable — out of scope for discovery (active vessels are catalogued via the IGU annual report)
 
-**Backend file.** Public CSV export of the "backend" tab:
-`https://docs.google.com/spreadsheets/d/1FjjeQD8AlQ_kQAMrohA3jAV3yZy7Lb61djt25D-4Fh8/export?format=csv&gid=243795339`
+**Backend file.** The "data - backend" tab (gid `243795339`) of spreadsheet `1FjjeQD8AlQ_kQAMrohA3jAV3yZy7Lb61djt25D-4Fh8`.
 
-Download via `bash + curl -A "Mozilla/5.0"` (web_fetch is blocked by Google's robots.txt for this URL).
+Anonymous CSV export URLs (gviz, `/export?format=csv`, etc.) were deliberately disabled org-wide 2026-07-29 and now 401 by design. Pull via `python scripts/pull_backend.py`, which reads the tab through the authenticated `gws` CLI work profile — never via a public export URL.
 
 ---
 
@@ -160,7 +159,7 @@ These don't usually yield new vessels directly but they validate that the Ring A
 
 ### 4.2 Pull the latest backend CSV
 
-`curl -A "Mozilla/5.0" "<export URL>" -o backend.csv`
+`python scripts/pull_backend.py` — pulls the backend tab via the authenticated `gws` CLI work profile (anonymous CSV export URLs are dead as of 2026-07-29).
 
 The user is actively editing the backend, so always start with a fresh pull.
 

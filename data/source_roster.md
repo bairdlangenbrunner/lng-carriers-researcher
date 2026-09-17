@@ -41,7 +41,9 @@ Authoritative version: [ref]-Fill SOP §7. This file is for picking sources at q
 ## Tier 3 — Vessel databases (real IMOs and newbuilds pre-IMO)
 
 - VesselFinder
-- MarineTraffic / **marinetraffic.org** (the §6a.8 IMO tracker fallback uses this — see `scripts/imo_tracker.py`)
+- **shipvault.com** (`/ships/{id}` — the §6a.8 IMO tracker's first stop since 2026-09-16, see `scripts/imo_tracker.py`; open backend API, record carries hull / IMO / owner / yard / status / delivery / capacity and the verifier corroborates against it; indexes pre-delivery 1XXXXXX IMOs)
+- MarineTraffic / **marinetraffic.org** (the §6a.8 fallback for IMOs shipvault lacks; Cloudflare JS challenge cleared automatically by `scripts/fetch.py` + `cf_clearance.py`)
+- marinetraffic.com (delivered vessels with an AIS identity; verifier reads its `vesselInfo` JSON)
 - marinevesseltraffic.com
 - BalticShipping
 
@@ -50,6 +52,10 @@ Authoritative version: [ref]-Fill SOP §7. This file is for picking sources at q
 - **SFOC** (any URL) — project's data origin, not a citable URL
 - **GIIGNL Annual Report** (the FSRU fleet table and any other GIIGNL table) — a **comparison artifact, not a citable `[ref]`**, same status as SFOC. GIIGNL's source line is "Clarksons Research, GIIGNL" (downstream aggregation), so its values are starting points to verify against a primary source via `url_verifier.py`, never cited directly. See `docs/sops/fsru_reconciliation.md`.
 - **GEM** (any URL, incl. `gem.wiki`) — excluded entirely (GEM is downstream of this tracker; citing it is circular)
+- **abarrelfull** (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — banned outright, even corroborated; must never appear in any output (Baird directive 2026-07-17, all GEM researcher projects). Chase the primary source it footnotes.
+- **URL shorteners** (`bit.ly`, `t.co`, `tinyurl`, `goo.gl`, `lnkd.in`, …) — cite the destination URL. `maps.app.goo.gl` is exempt (Google Maps share link used by the yard-location refs). Enforced in code by `url_verifier.py` (`banned`)
+- **Navigation URLs** — search results, `/tag/`, `/category/`, `/author/`, `/page/N`, `?q=`/`?s=` listings — cite the article, not the index. Enforced in code
+- **`web.archive.org/save/…`** — a capture endpoint, never a citation. A `web/<ts>/` snapshot is a last resort for a `dead` live URL only; for a merely `blocked` live URL cite the live URL (the verifier checks the snapshot itself)
 - **GTT standalone** — pair with non-GTT source; GTT alone fails Rule 4.3
 
 ## English-language proxies for Korean reg filings (faster than parsing DART)

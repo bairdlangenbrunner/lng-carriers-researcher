@@ -18,6 +18,7 @@ This file is read automatically at the start of every Claude Code session in thi
 - `data/source_roster.md` — source tier list for picking corroboration URLs.
 - `scripts/` — the Python tooling.
 - `batches/` — per-batch outputs, one directory per batch.
+- `../lng-carriers-map` — sibling repo: live FSRU/FSU fleet map (aisstream.io AIS → GitHub Actions cron → GitHub Pages). Its `data/fleet.json` is exported from this repo's `work/backend.csv` via its `tools/export_fleet.py` — re-export after fleet changes.
 
 ## Before any batch
 
@@ -28,6 +29,19 @@ This file is read automatically at the start of every Claude Code session in thi
 5. Run the backend QC sanity check on the fresh pull — `python scripts/qc_backend.py`. It flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs). Advisory by default; review `work/qc_report.csv` and surface anything in the batch's scope to the user before building.
 
 ## Workflow router
+
+### A URL is blocked / 403 / "Just a moment..."
+
+Never conclude anything about a page from WebFetch or a hand-rolled curl. Run it
+through the repo's fetch ladder first — `python scripts/fetch.py <url> --head 2000`
+(curl → `curl_cffi` TLS impersonation → real-Chrome `cf_clearance` cookie; the notes
+line says which route worked). Only a wall the ladder cannot clear grades `blocked`.
+
+### Archiving URLs to the Wayback Machine
+
+Trigger phrases: "archive the refs", "archive all the URLs", "save to Wayback".
+
+Run `python scripts/wayback_save.py` (`--dry-run` first for the count and auth check), in the background. It is already authenticated with Baird's archive.org S3 key (env or keychain), so don't hand-roll `/save/` calls, don't fall back to anonymous Save Page Now, and don't ask for credentials. Budget ~N/6 minutes (≈75 min for the whole backend). Results land in `work/wayback_save.jsonl`; re-running resumes. Whether a snapshot goes into a `[ref]` cell is still ref_fill.md §7 (last resort, live URL dead).
 
 ### [ref]-fill batch
 
@@ -278,6 +292,7 @@ existing vessel (apply.md §5a). Run standalone any time: `python scripts/dedupe
 - **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited.
 - **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in prior batches — URLs decay.
 - **Never cite GEM as a data source** — this includes `gem.wiki` and any other GEM-published page or dataset, as a `[ref]` URL or as corroboration ([ref]-Fill SOP §4.2; Forbidden lists in `docs/sops/ref_fill.md` and `data/source_roster.md`). GEM is downstream of this tracker, so citing it would be circular.
+- **Banned source: abarrelfull** (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — never use it as a reference, ever, even corroborated; it must not appear in any output or lane (Baird directive 2026-07-17, all GEM researcher projects). Chase the primary source it footnotes and cite that.
 - **Rule F applies always** — no orphan `[ref]` cells with no paired data value ([ref]-Fill SOP §4.13).
 - **Data-fill is additive to blanks/`unknown`s only.** It proposes value + verified-`[ref]` pairs for human review, never a backend edit; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (Data-fill SOP §4, §9).
 - **Always pull fresh backend CSV at the start of a batch.**
@@ -308,8 +323,12 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `dedup_index.py` | builds the two indexes used for matching candidates against backend | New batch type that needs a different index shape |
 | `fsru_reconcile.py` | FSRU reconciliation: name-keyed join of the GIIGNL fleet JSON ({current}∪{ex_names}, `normalize_vessel_name`) against backend FSRUs, capacity-corroborated; emits the five-bucket `work/fsru_reconcile.json` (matched / reclassify / manual / candidates / backend_only + FSU exclusions + orderbook). Advisory; never edits the backend | New bucket; changing the capacity tolerance or small-scale cutoff; manual-pairing guard tuning |
 | `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
-| `url_verifier.py` | the §3.8 verification gate — HTTP 200 + content check + soft-error detection | Verifier flagging false positives or negatives; new soft-error pattern |
-| `imo_tracker.py` | the §6a.8 IMO->marine-vessel-tracker fallback | marinetraffic.org URL pattern changed; Cloudflare gating |
+| `url_verifier.py` | the §3.8 verification gate — citable-shape check (GEM / abarrelfull / shorteners / navigation URLs banned in code), HTTP status, soft-error + bot-wall detection with Wayback fallback (bot-block ≠ dead), redirect re-check, PDF text, normalised content match, host adapters that verify SPA pages (shipvault.com, marinetraffic.com) against the JSON they load; graded reasons via `classify()` (ok / banned / dead / blocked / uncorroborated); `--check`, `--value`, `--log` | Verifier flagging false positives or negatives; new soft-error / bot-wall pattern; new banned host |
+| `citation_qc.py` | §3.8a rot sweep — grades every existing backend `[ref]` URL once (`work/citation_qc.csv`, live sheet rows); `--corroborate` runs the per-cell §3.8c gate; re-fetches every fresh `dead` verdict once; `--sheet-rows`, `--hosts`, `--delay`, `--resume`, `--regrade` | Changing the triage grades or output columns |
+| `wayback_save.py` | archive URLs to the Wayback Machine — **the only way this repo archives**. Save Page Now 2, always authenticated (IA S3 key from `$IA_S3_AUTH` or the keychain item `archive-org-s3`; exits rather than going anonymous), 6/min under the 7/min cap with the account's concurrent sessions, polls each job, retries SPN-side errors. Default = every distinct backend `[ref]` URL minus banned shapes; `--urls FILE`, `--sheet-rows`, `--within 30d`, `--retry-errors`, `--dry-run`. Resumable `work/wayback_save.jsonl` with citable `snapshot` URLs; never edits the backend | Changing SPN2 options, retry set, or rate |
+| `fetch.py` | shared curl layer — `fetch_page()` (compressed, charset-aware, PDF/ZIP→text with OCR, TLS/UA retries, empty-PDF re-fetch, extra headers) + `fetch_text()` / `download()`. Clears bot walls itself: Cloudflare firewall page → `curl_cffi` Chrome TLS impersonation (`cf_impersonate`); JS challenge (Cloudflare, AWS WAF, Imperva) → real-Chrome clearance cookies (`cf_clearance`), once per host per process. **Byte-identical copy in the terminals and pipelines repos — change it in all three** | A host needs a new fetch quirk; PDF extraction failing; a new kind of bot wall (add its cookie prefix to `cf_clearance.WALL_COOKIE_PREFIXES` and its body marker to `_WALL_MARKERS_ANY_STATUS`) |
+| `cf_clearance.py` | earns / stores bot-wall cookies (`cf_clearance`, `aws-waf-token`, Imperva `incap_ses_`/`visid_incap_`/`nlbi_`) by driving Google Chrome over DevTools (no automation flags, so Turnstile passes in ~5 s; a page is "cleared" when neither its title nor its rendered DOM looks like a challenge — a real 404 counts); store `work/cf_clearance.json` (gitignored, IP-bound; ~1 yr for Cloudflare, days for AWS WAF); `LNGCT_NO_BROWSER=1` forbids the launch; CLI `python scripts/cf_clearance.py <url>` / `--show` | Chrome path changed; challenge no longer clears; need a different CDP flow |
+| `imo_tracker.py` | the §6a.8 IMO->vessel-tracker fallback — shipvault open API first (`shipsearch/{IMO}` → unit record → citable `shipvault.com/ships/{id}`), marinetraffic.org IMO search second | shipvault API / tenant header changed; marinetraffic.org URL pattern changed |
 | `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix / fsru). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate). `fsru` mode renders the `work/fsru_reconcile.json` buckets into a 10-sheet GIIGNL↔backend comparison workbook (no `[ref]` cells — GIIGNL not citable) | Adding a new sheet section; changing color convention; changing fix-mode gating; changing the fsru sheet set |
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
 | `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate | Verifier behavior changes; new research-output key |

@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 from paths import work_dir
-from url_verifier import corroborates
+from url_verifier import classify, corroborates
 
 
 def main():
@@ -87,21 +87,32 @@ def main():
     # THIS fill's value (the same URL can be cited for different values on
     # different cells — e.g. one source page for capacity AND cargo type).
     #
-    #   - dead / soft-error (HTTP!=200, Cloudflare title) -> URL dropped everywhere
+    #   - banned (GEM / abarrelfull / shortener / navigation URL) -> dropped everywhere
+    #   - dead (HTTP 404/410/000, soft-error title, redirect to site root) -> dropped
+    #     everywhere
+    #   - blocked (401/403/429/5xx or a bot-wall / paywall interstitial, and no
+    #     Wayback snapshot carrying the value) -> dropped from THIS fill but logged
+    #     as a *blocked* finding, not a conflict: §3.8a — an environment block is
+    #     not evidence the page is dead or that the value is wrong. Retry later
+    #     or confirm by hand.
     #   - live but value NOT corroborated -> URL dropped from THIS fill (hard-block,
-    #     §3.8 value↔ref gate) and logged as a conflict finding for human review
-    #   - corroborated -> kept
+    #     §3.8c value↔ref gate) and logged as a conflict finding for human review
+    #   - corroborated (live page or its Wayback snapshot) -> kept
     survivors, demoted, conflicts_logged = [], 0, 0
     for f in fills:
         val = f.get("proposed_value", "")
-        kept, dropped_conflict = [], []
+        kept, dropped_conflict, dropped_blocked = [], [], []
         for u in f.get("new_urls", []):
             ok, reason = corroborates(u, val)
+            grade = classify(reason)
             if ok:
                 kept.append(u)
-                tag = "PASS"
-            elif reason.startswith("HTTP") or "soft-error" in reason:
-                tag = f"DROP-dead ({reason})"
+                tag = "PASS" if reason == "OK" else f"PASS ({reason})"
+            elif grade in ("dead", "banned"):
+                tag = f"DROP-{grade} ({reason})"
+            elif grade == "blocked":
+                dropped_blocked.append((u, reason))
+                tag = f"DROP-blocked ({reason})"
             else:
                 # live page that does not carry this cell's value -> hard-block
                 dropped_conflict.append(u)
@@ -117,6 +128,14 @@ def main():
                             f"page is live but lacks the value. Possible value/source "
                             f"mismatch; do not cite this URL on this cell as-is."),
                 "url": u, "action": "dropped by §3.8 value↔ref gate; reconcile by hand",
+            })
+        for u, reason in dropped_blocked:
+            findings.append({
+                "row_id": f["row_id"], "field": f.get("field", ""),
+                "finding": (f"Ref could not be verified for {val!r}: {reason}. "
+                            f"Bot-block / paywall ≠ dead (§3.8a); the value is NOT "
+                            f"contradicted."),
+                "url": u, "action": "retry the gate later or confirm off-band and re-add",
             })
 
         # Corroborate batch: the grandfathered IGU ref is kept out of new_urls by the

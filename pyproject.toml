@@ -11,6 +11,8 @@ authors = [
 # scripts/fetch.py), which pip cannot declare — install curl separately.
 dependencies = [
     "openpyxl>=3.1.2",      # build_workbook.py, recalc.py
+    "curl_cffi>=0.10",      # fetch.py: Chrome TLS fingerprint for Cloudflare firewall pages
+    "websocket-client>=1.6",  # cf_clearance.py: drives Google Chrome over DevTools
 ]
 
 [project.optional-dependencies]
