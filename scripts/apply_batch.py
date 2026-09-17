@@ -139,7 +139,8 @@ def _items_and_conflicts(mode, payload, header, colmap):
     elif mode == "fix":
         # A fix batch CORRECTS a non-blank value, so its gated refs REPLACE the paired
         # [ref] (replace_ref) instead of being appended; preserve_ref cells rewrite the
-        # value only and leave the [ref] alone.
+        # value only and leave the [ref] alone; append_ref cells (a former name added to
+        # `Other names`) append to the existing [ref] like a data fill.
         for corr in payload.get("corrections", []):
             rid = str(corr["row_id"])
             for c in corr.get("cells", []):
@@ -152,7 +153,8 @@ def _items_and_conflicts(mode, payload, header, colmap):
                     "ref_column": f"{col} [ref]" if urls else "",
                     "ref_value": ", ".join(urls),
                     "confidence": c.get("confidence", "Y"), "derivable": False,
-                    "note": c.get("note", ""), "prev_state": "fix", "replace_ref": True,
+                    "note": c.get("note", ""), "prev_state": "fix",
+                    "replace_ref": not c.get("append_ref"),
                     "row_data": None,
                 })
 

@@ -24,9 +24,11 @@ nothing applied.
 | 7 | `2026-09-17_1458ET_igu_reconciliation_igu2026` | whole backend vs the IGU World LNG Report 2026 (fleet at end-2025; 2025 edition as the baseline the backend was loaded from) — IMO-keyed, IG rev 1 | comparison only, never applied: 1,054 matched, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate |
 | 8 | `2026-09-17_1654ET_fix_igu2026_sourced` | follow-up to 7: what IGU 2026 prints, as proposals citing the report PDF as sole ref (interim rule, IG §5.4) — blank Vessel / Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499–501 / 509 | 468 cells / 328 rows — 443 accept, 24 hold, 1 reject (row 61 Vessel type ref — batch 9 proposes `FSU`); 32 manual-review values |
 | 9 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G) |
+| 10 | `2026-09-17_1737ET_fix_other_names_former` | new rule (RF §4.16): the former Name of every proposed rename in 1, 2 and 8 appended to `Other names` (hull placeholders included; spelling / truncation fixes and row 942's wrong-vessel name excluded) | 131 cells / 131 rows — 95 accept, 36 hold (29 with no ref for the former name, 7 whose Name line is itself held) |
 
 Apply 1–2 before 4 (they rename rows 4 also touches; all artifacts are keyed by row_id, so
-order is about readability, not safety). After applying 3, re-export the map fleet if any
+order is about readability, not safety). Apply 10 last and by `apply_patch.csv` only — it rides
+on the Name lines of 1, 2 and 8, and each of its lines is decided with its Name line. After applying 3, re-export the map fleet if any
 FSRU was added (`../lng-carriers-map/tools/export_fleet.py`) — C3 is an FSRU.
 
 Discovery candidates: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y); HD Hyundai HI ×

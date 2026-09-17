@@ -1,0 +1,1154 @@
+{
+  "batch": "2026-09-17_1737ET_fix_other_names_former",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "25",
+      "column": "Other names",
+      "value": "Hull 2316 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "25",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/432642, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432642",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Other names",
+      "value": "Hull 2541 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "43",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/455308, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455308",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Other names",
+      "value": "Hull 2542 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "44",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/455309, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455309",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Other names",
+      "value": "Hull 2543 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "45",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/455310, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/455310",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Other names",
+      "value": "Hull 2549 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "47",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/457495, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457495",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Other names",
+      "value": "Hull 2550 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "48",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/464056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464056",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Other names",
+      "value": "Hull 2551 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "49",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/459086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459086",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Other names",
+      "value": "Hull 2552 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "50",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/457498, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457498",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Other names",
+      "value": "Hull 2553 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "51",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/457499, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457499",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Other names",
+      "value": "Hull 2559 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "53",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465038, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465038",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Other names",
+      "value": "Hull 2561 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "54",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465040, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465040",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Other names",
+      "value": "Hull 2562 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "55",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465041, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Other names",
+      "value": "Hull 2563 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "56",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465042, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Other names",
+      "value": "Hull 2564 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "57",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Other names",
+      "value": "Hull 2565 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "58",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465044, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465044",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Other names",
+      "value": "Hull 2567 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "60",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465046, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465046",
+      "confidence": "G"
+    },
+    {
+      "row_id": "61",
+      "column": "Other names",
+      "value": "Hull 2568 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "61",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465047, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465047",
+      "confidence": "G"
+    },
+    {
+      "row_id": "62",
+      "column": "Other names",
+      "value": "Hull 2569 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "62",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465048, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465048",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Other names",
+      "value": "Hull 2570 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "63",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465049, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465049",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Other names",
+      "value": "Hull 2571 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "64",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465050, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465050",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Other names",
+      "value": "Hull 2572 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "65",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465051, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465051",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Other names",
+      "value": "Hull 2573 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "66",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465052, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465052",
+      "confidence": "G"
+    },
+    {
+      "row_id": "67",
+      "column": "Other names",
+      "value": "Hull 2574 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "67",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465053, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465053",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Other names",
+      "value": "Hull 2636 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "109",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/456923, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456923",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Other names",
+      "value": "Hull 2640 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "113",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/457608, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457608",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Other names",
+      "value": "Hull 2646 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "119",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/457614, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457614",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Other names",
+      "value": "Hull 2647 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "120",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/457615, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457615",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Other names",
+      "value": "Hull 2652 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "122",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/461095, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461095",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Other names",
+      "value": "Hull 2653 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "123",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/461096, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461096",
+      "confidence": "G"
+    },
+    {
+      "row_id": "129",
+      "column": "Other names",
+      "value": "Hull 2662 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "129",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/463994, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463994",
+      "confidence": "G"
+    },
+    {
+      "row_id": "131",
+      "column": "Other names",
+      "value": "Hull 2664 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "131",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465878, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465878",
+      "confidence": "G"
+    },
+    {
+      "row_id": "132",
+      "column": "Other names",
+      "value": "Hull 2665 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "132",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/465879, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465879",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Other names",
+      "value": "Hull 3371 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "181",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/467719, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Other names",
+      "value": "Hull 3385 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "184",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/458163",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Other names",
+      "value": "Hull 3386 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "185",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/458164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458164",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Other names",
+      "value": "Hull 3395 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "189",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/459079, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459079",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Other names",
+      "value": "Hull 3396 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "190",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/459080, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459080",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Other names",
+      "value": "Hull 3398 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "192",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/459082, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459082",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Other names",
+      "value": "Hull 3399 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "193",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/459083, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459083",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Other names",
+      "value": "Hull 3400 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "194",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/459084, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459084",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Other names",
+      "value": "Hull 3401 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "195",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/459085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459085",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Other names",
+      "value": "Hull 3407 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "196",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/460369, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Other names",
+      "value": "Hull 8182 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "231",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/428603, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/428603",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Other names",
+      "value": "Hull 8188 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "232",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/456920, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456920",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Other names",
+      "value": "Hull 8189 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/456921, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456921",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Other names",
+      "value": "Hull 8200 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "235",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/458170, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458170",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Other names",
+      "value": "Hull 8201 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "236",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/458171, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458171",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Other names",
+      "value": "Hull 8204 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "237",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/461955, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461955",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Other names",
+      "value": "Hull 8205 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "238",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/461956, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Other names",
+      "value": "Hull H1800A",
+      "confidence": "G"
+    },
+    {
+      "row_id": "264",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/462939, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Other names",
+      "value": "Hull H1801A",
+      "confidence": "G"
+    },
+    {
+      "row_id": "265",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/462940, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Other names",
+      "value": "Hull H1909A",
+      "confidence": "G"
+    },
+    {
+      "row_id": "289",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/467899, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899",
+      "confidence": "G"
+    },
+    {
+      "row_id": "318",
+      "column": "Other names",
+      "value": "Hull YZJ2022-1475",
+      "confidence": "G"
+    },
+    {
+      "row_id": "318",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/475022, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/475022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Other names",
+      "value": "Hull 2687 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/471277, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Other names",
+      "value": "Hull 3476 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "207",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478305, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478305",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Other names",
+      "value": "Hull 3477 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "208",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478306, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478306",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Other names",
+      "value": "Hull 3478 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "209",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478307, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478307",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Other names",
+      "value": "Hull 3479 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "210",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478308, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478308",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Other names",
+      "value": "Hull 3480 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "211",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478309, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478309",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Other names",
+      "value": "Hull 3481 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "212",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478310, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478310",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Other names",
+      "value": "Hull 3482 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "213",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478311, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478311",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Other names",
+      "value": "Hull 3483 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "214",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478312, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478312",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Other names",
+      "value": "Hull 3484 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "215",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478313, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478313",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Other names",
+      "value": "Hull 3485 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "216",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478314, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478314",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Other names",
+      "value": "Hull 3486 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "217",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478315, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478315",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Other names",
+      "value": "Hull 3487 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "218",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478316, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478316",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Other names",
+      "value": "Hull 3488 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "219",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478317, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478317",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Other names",
+      "value": "Hull 3489 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "220",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478318, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Other names",
+      "value": "Hull 3490 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "221",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478319, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Other names",
+      "value": "Hull H1794A",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/462933, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Other names",
+      "value": "Hull 2585 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/476659, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Other names",
+      "value": "Hull 2586 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/476660, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476660",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Other names",
+      "value": "Hull 2587 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/476661, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476661",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Other names",
+      "value": "Hull 2588 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/476662, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476662",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Other names",
+      "value": "Hull 2589 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478215, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478215",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Other names",
+      "value": "Hull 2590 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478216, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478216",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Other names",
+      "value": "Hull 2591 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478217, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478217",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Other names",
+      "value": "Hull 2592 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478218, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478218",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Other names",
+      "value": "Hull 2694 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/479139, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Other names",
+      "value": "Hull 2696 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/479141, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479141",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Other names",
+      "value": "Hull 2699 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/479144, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Other names",
+      "value": "Hull 2706 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/479151, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479151",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Other names",
+      "value": "Hull 3491 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "222",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478320, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478320",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Other names",
+      "value": "Hull 3492 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "223",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/478321, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
+      "confidence": "G"
+    },
+    {
+      "row_id": "971",
+      "column": "Other names",
+      "value": "Puteri Intan",
+      "confidence": "G"
+    },
+    {
+      "row_id": "971",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1004",
+      "column": "Other names",
+      "value": "Seapeak Hispania",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1004",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/115017, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017",
+      "confidence": "G"
+    },
+    {
+      "row_id": "562",
+      "column": "Other names",
+      "value": "Energy Frontier",
+      "confidence": "G"
+    },
+    {
+      "row_id": "562",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/116125",
+      "confidence": "G"
+    },
+    {
+      "row_id": "648",
+      "column": "Other names",
+      "value": "Golar Arctic",
+      "confidence": "G"
+    },
+    {
+      "row_id": "648",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/116640, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116640",
+      "confidence": "G"
+    },
+    {
+      "row_id": "866",
+      "column": "Other names",
+      "value": "Metagas Everest",
+      "confidence": "G"
+    },
+    {
+      "row_id": "866",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "801",
+      "column": "Other names",
+      "value": "LNG River Orashi",
+      "confidence": "G"
+    },
+    {
+      "row_id": "801",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "958",
+      "column": "Other names",
+      "value": "LNG Pioneer; Pioneer Spirit",
+      "confidence": "G"
+    },
+    {
+      "row_id": "958",
+      "column": "Other names [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "869",
+      "column": "Other names",
+      "value": "Methane Heather Sally",
+      "confidence": "G"
+    },
+    {
+      "row_id": "869",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "649",
+      "column": "Other names",
+      "value": "Golar Tundra",
+      "confidence": "G"
+    },
+    {
+      "row_id": "649",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "729",
+      "column": "Other names",
+      "value": "Kool Baltic",
+      "confidence": "G"
+    },
+    {
+      "row_id": "729",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/3928, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928",
+      "confidence": "G"
+    },
+    {
+      "row_id": "993",
+      "column": "Other names",
+      "value": "SCF La Perouse",
+      "confidence": "G"
+    },
+    {
+      "row_id": "993",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 131,
+    "accepted": 95,
+    "hold": 36,
+    "reject": 0,
+    "conflicts": 0
+  }
+}
