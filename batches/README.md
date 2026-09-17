@@ -15,9 +15,9 @@ batches/<YYYY-MM-DD>_<HHMMET>_<mode>_<scope>/
   once a day, so the time token keeps directories unique and sortable. (The earliest
   directories predate this token; don't rename them.)
 - `<mode>` — `ref_fill`, `discovery`, `data_fill`, `corroborate`, `fix`,
-  `qc_<label>`, `sfoc_reconciliation`, `fsru_reconciliation`.
+  `qc_<label>`, `sfoc_reconciliation`, `fsru_reconciliation`, `igu_reconciliation`.
 - `<scope>` — rows / gap window / target, in a few words: `rows_1148-1167`,
-  `since_may_2026`, `giignl2026`.
+  `since_may_2026`, `giignl2026`, `igu2026`.
 
 Example: `2026-06-19_1210ET_discovery_since_may_2026/`.
 
@@ -25,7 +25,7 @@ Example: `2026-06-19_1210ET_discovery_since_may_2026/`.
 
 | File | What |
 |---|---|
-| `citations.json` / `candidates.json` / `data_fill.json` / `fix.json` / `fsru_reconcile.json` | Input to `build_workbook.py` (by mode) — copied in from `work/` so the batch is reproducible |
+| `citations.json` / `candidates.json` / `data_fill.json` / `fix.json` / `fsru_reconcile.json` / `igu_reconcile.json` | Input to `build_workbook.py` (by mode) — copied in from `work/` so the batch is reproducible |
 | `lng_carrier_*.xlsx` | The output workbook (filename fixed by mode) |
 | `notes.md` | The batch record — follow `_template_notes.md` |
 | `verification.log` | Optional — full `url_verifier.py` log if useful for audit |
@@ -58,3 +58,11 @@ One row per batch, newest last. Add a row when the batch directory is committed.
 | 2026-06-18 | fix (QC) | whole-backend pre-release QC | [folder](2026-06-18_1054ET_qc_name_normalization/) | 31 findings, zero corruption; 14 rows renamed + 2 orphan refs dropped (QC rev 1) |
 | 2026-06-19 | discovery | since May 2026 catch-up (all yards) | [folder](2026-06-19_1210ET_discovery_since_may_2026/) | 1 yellow candidate (Samsung HI, owner unidentified); rings B–D otherwise dry |
 | 2026-06-26 | fsru_reconciliation | GIIGNL 2026 Annual Report (fleet as of end-2025) | [folder](2026-06-26_1556ET_fsru_reconciliation_giignl2026/) | 47 matched, 2 reclassify, 1 manual pairing; 4 gaps, all small-scale review (FR rev 1) |
+| 2026-09-17 | fix | delivery roll-forward — on-order rows vs shipvault, AIS cross-check on marinetraffic.org (sep-17-pass 1/6) | [folder](2026-09-17_0421ET_fix_delivery_rollforward/) | 224 cells / 151 rows (186 accept, 38 hold): 63 → `active`, 26 delivery years corrected, 19 rolled forward, 116 names; 54 manual-review rows |
+| 2026-09-17 | discovery | since Jun 2026 (gap 05-01→09-17, all yards) (sep-17-pass 3/6) | [folder](2026-09-17_0431ET_discovery_since_jun_2026/) | 5 clusters / 12 vessels (7 accept, 5 hold); 10 backend flags; proposed-bucket review (Woodside live rows 1204–1206 duplicate Seapeak 1165–1167) |
+| 2026-09-17 | fix | press-confirmed deliveries shipvault lags on (sep-17-pass 2/6) | [folder](2026-09-17_0458ET_fix_delivery_confirmed/) | live rows 887 and 924 → `active` (3 cells, all hold); 24 unconfirmed manual-review rows |
+| 2026-09-17 | ref_fill | Rule-F orphan `[ref]`s, whole backend (sep-17-pass 5/6) | [folder](2026-09-17_0505ET_ref_fill_rule_f/) | 8 refs (hold), 11 documented negatives — mostly `conventional` type cells no page words |
+| 2026-09-17 | data_fill | on-order blanks + whole-backend derivables (sep-17-pass 4/6) | [folder](2026-09-17_0511ET_data_fill_on_order/) | 1,003 cells / 483 rows (493 accept, 510 hold), incl. 48 order-total Prices (DF §5a, all hold) |
+| 2026-09-17 | combined | sep-17-pass roll-up of the six proposal batches + the IGU comparison (review aid, not an apply source) | [folder](2026-09-17_1017ET_sep-17-pass_combined/) | 17 sheets, 1,425 proposals (861 accept / 564 hold) keyed by live sheet row; backend-shape tab; `igu_findings` tab; report-page generator |
+| 2026-09-17 | data_fill (ref-only) | shipvault companion refs on existing backend cells (sep-17-pass 6/6) | [folder](2026-09-17_1114ET_shipvault_companion_refs/) | unit-record URL appended to 175 `[ref]` cells / 27 rows (all accept; apply via `apply_patch.csv`); 46 shipvault refs the record does not corroborate |
+| 2026-09-17 | igu_reconciliation | IGU World LNG Report 2026 (fleet at end-2025) vs the whole backend, 2025 edition as baseline (sep-17-pass 7) | [folder](2026-09-17_1458ET_igu_reconciliation_igu2026/) | 1,054 matched by IMO, 188 with a field diff; 18 dropped (all scrapped — 11 out of scope, 7 stay); 47 Status disagreements (24 already in batch 1); 1 candidate; comparison only, never applied (IG rev 1) |

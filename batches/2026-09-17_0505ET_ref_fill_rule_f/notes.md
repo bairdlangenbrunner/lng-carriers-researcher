@@ -24,8 +24,11 @@ filtered copy of the pull so the sheet is reviewable); `citations.json` is keyed
 ## Negative results (11 cells, still Rule-F orphans) — `unfilled_negative_results.json`
 
 - **Vessel type = `conventional`, 10 cells** (live rows 61, 487, 488, 994, 1118, 1172,
-  1182–1185). No page says "conventional" — it is a tracker classification inferred from
-  capacity, not a sourced fact, so the hard corroboration gate can never pass it. Needs a
+  1182–1185). The one source that prints this value is the IGU World LNG Report fleet table
+  (Appendix 3, "Type" column), and none of these ten is listed there — checked by IMO and by
+  name against the 2025 and 2026 editions (live row 61, Puteri Delima Satu, IMO 9211872, is
+  absent; the IGU 2025 entry "Puteri Delima" is IMO 9030814, live row 25, already IGU-reffed).
+  Tracker pages and press do not use the word, so the hard corroboration gate cannot pass it. Needs a
   rule decision (same open question as the cargo/vessel-type derivation rule): either allow
   a capacity-derived Vessel type to stand on the Capacity ref, or leave these unreffed.
 - **Shipowner country/area = `China`, live row 652** — the only passing refs were the IGU

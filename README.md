@@ -36,6 +36,9 @@ python scripts/pull_backend.py   # fetch the backend CSV -> work/
   `../lng-terminals-researcher` checked out next to this one (its
   `scripts/giignl_fsru_fleet.py` parses the GIIGNL PDF fleet table — reused, not
   duplicated).
+- The **IGU reconciliation** workflow reads the IGU World LNG Report PDF from the same
+  sibling repo (`../lng-terminals-researcher/data/IGU-World-LNG-Report-<year>.pdf`) and
+  needs `pdfplumber`; the previous edition's PDF is passed by path.
 - No credentials are needed; every source is public. (The Cloudflare clearance cookie in `work/` is IP-bound and gitignored — treat it like a token, never commit it.)
 
 ### The backend
@@ -72,6 +75,7 @@ authoritative procedures.
 | **Data-fill** (`data_fill.md`) | Research blank (or `unknown`) data cells and propose a value + corroborating `[ref]` | xlsx with candidate value/`[ref]` pairs |
 | **SFOC reconciliation** (`sfoc_reconciliation.md`) | Reconcile the backend against an updated SFOC dataset | xlsx with staged reconciliations |
 | **FSRU reconciliation** (`fsru_reconciliation.md`) | Compare backend FSRUs against the GIIGNL Annual Report fleet table (name-keyed; GIIGNL is not citable) | 10-sheet comparison workbook |
+| **IGU reconciliation** (`igu_reconciliation.md`) | Intercompare the whole backend against the IGU World LNG Report fleet + orderbook tables (IMO-keyed, edition-to-edition) | 11-sheet comparison workbook + decisions list |
 | **Pre-release QC** (`qc_release.md`) | Whole-backend consistency/corruption sweep before a data release | QC report + `fix`-mode correction batch |
 | **Apply & verify** (`apply.md`) | Get a reviewed batch's accepted proposals into the backend, offset-proof | decisions.csv + apply artifacts + verify report |
 
@@ -106,10 +110,13 @@ docs/
     data_fill.md           Data-fill workflow, blank-vs-`unknown` preserve-ref contract, derivable autofill
     sfoc_reconciliation.md SFOC reconciliation workflow
     fsru_reconciliation.md FSRU reconciliation vs the GIIGNL fleet table (name-keyed join)
+    igu_reconciliation.md  IGU World LNG Report intercomparison (IMO-keyed, edition-to-edition)
     qc_release.md          Pre-release QC sweep + fix-mode correction batches
     apply.md               Apply & verify round-trip — offset-proof batch incorporation + dedupe sweep
   inclusion_criteria.md    What's in scope vs out, status categories
   pointers.md              "Which SOP section governs X" cross-reference index
+  plans/                   Dated plans and state files for multi-batch passes (e.g. the sep-17-pass
+                           summary + worklist) — working notes, not authoritative rules
 
 data/                      Reference data (committed)
   csb_yard_urls.md         Stable ChinaShipBuild yard URLs + slugs
@@ -126,7 +133,9 @@ data/                      Reference data (committed)
 
 scripts/                   Python tools called by the workflows
   paths.py                 Shared path helpers (work/ location, LNGCT_WORK_DIR)
-  fetch.py                 Shared curl wrapper — one UA, timeouts, friendly missing-curl error
+  fetch.py                 Shared curl layer — fetch_page() + the bot-wall ladder (curl → curl_cffi → Chrome clearance cookie)
+  cf_clearance.py          Earns / stores bot-wall cookies by driving real Chrome (work/cf_clearance.json)
+  sweep.py                 Polite bulk fetch — per-host pacing + circuit breaker; the only way to sweep one host
   backend_io.py            Shared backend loading — CSV + colmap + date parsing + sheet-row map
   pull_backend.py          Fetch backend CSV, derive the column-index map (--url / LNGCT_BACKEND_URL)
   qc_backend.py            Backend QC sanity check — column-offset / misplaced-value / Name checks
@@ -135,19 +144,24 @@ scripts/                   Python tools called by the workflows
   seed_lookups.py          Seed/refresh the builder/owner facts CSVs from the live backend
   dedup_index.py           Build the matching indexes for candidate dedup
   csb_fetch.py             Fetch + parse ChinaShipBuild orderbook tables
-  url_verifier.py          The §3.8 gate — HTTP 200 + content check + soft-error detection
-  imo_tracker.py           §6a.8 IMO → marine-vessel-tracker fallback
+  url_verifier.py          The §3.8 gate — graded verdicts (ok / banned / dead / blocked / uncorroborated), value↔ref corroboration
+  citation_qc.py           §3.8a rot sweep — grades every existing backend [ref] URL (work/citation_qc.csv)
+  wayback_save.py          Archive [ref] URLs to the Wayback Machine (authenticated Save Page Now; resumable)
+  imo_tracker.py           §6a.8 IMO → vessel-tracker fallback (shipvault API first, marinetraffic.org second)
+  shipvault_api_refs.py    Adds the shipvault unit-record URL as a companion ref where the page renders blank
+  ais_static.py            aisstream static-data cross-check for on-order IMOs — a lead, never a [ref]
   derive_fills.py          Data-fill: scope rows, compute derivable autofills, list research targets
   derive_corroborate.py    Corroborate batches: find IGU-only refs, queue independent corroboration
   merge_fills.py           Data-fill: merge per-cluster research + run the central §3.8 gate
   fsru_reconcile.py        FSRU reconciliation: GIIGNL fleet JSON ↔ backend, five buckets
-  build_workbook.py        xlsx scaffolding — sheets, color fills, frozen panes (5 modes)
+  igu_fleet.py             IGU World LNG Report extractor — fleet + orderbook tables from word coordinates
+  igu_reconcile.py         IGU reconciliation: IGU fleet/orderbook JSON ↔ whole backend, edition diff, shipvault leads
+  build_workbook.py        xlsx scaffolding — sheets, color fills, frozen panes (6 modes)
   recalc.py                Force recalc, return any formula errors (run before committing)
   batch_digest.py          Apply: triage a batch into auto-safe vs needs-a-decision
   apply_batch.py           Apply: reviewed batch → decisions.csv + offset-proof apply artifacts
   verify_apply.py          Apply: re-pull + diff backend vs apply.json, qc + dedupe the touched rows
   dedupe_check.py          Internal duplicate scan (tiered HIGH/MED/LOW; advisory)
-  check_docs.py            Doc-drift checker — SOP revs vs pointers/CLAUDE.md, script inventory parity
 
 tools/
   apply_patch.gs           Apps Script by-name applier (writes each cell by row_id + header)
@@ -160,6 +174,8 @@ work/                      (gitignored scratch — not in the repo)
   csb/<yard>.json                     Cached ChinaShipBuild pages
   data_fill.json / research_*.json    Data-fill pipeline state (clear research_*.json between batches)
   qc_report.csv / dedupe_report.csv   Sweep outputs
+  citation_qc.csv / wayback_save.jsonl  Rot-sweep grades and Wayback archive log (both resumable)
+  cf_clearance.json                   Bot-wall cookies (IP-bound)
 ```
 
 ## Hard rules

@@ -1,6 +1,13 @@
 # Full research pass — autumn 2026 (in-house, no SFOC / Clarksons)
 
-**Written:** 2026-09-16. **Status:** proposed — waiting on Baird's go / scope edits.
+**Written:** 2026-09-16. **Status (2026-09-17 evening):** streams 1, 2, 3, 5 and the
+on-order part of 4 were run as the **sep-17-pass** — six candidate batches, none applied to
+the sheet yet. Stream 0's sweep ran (results at the bottom) but its fix batch and
+`--corroborate` are **paused**; stream 4's active-row batch and stream 6 (apply + QC) are
+not done. What is left: `docs/plans/2026-09-17_sep-17-pass_worklist.md`; batch detail:
+`docs/plans/2026-09-17_sep-17-pass_summary.md`. The stream descriptions below are the plan
+as written on 2026-09-16 and are kept as the record — row numbers in them predate the
+2026-09-17 pull.
 **Owner:** Baird (review + apply); Claude Code runs the streams.
 
 ## Why now
@@ -169,7 +176,11 @@ yard.
   marinevesseltraffic.com and shipvault.com, including the IMO-search
   endpoint `imo_tracker.py` uses — so the §6a.8 fallback is browser-only
   this pass; vesselfinder per-IMO pages cover 9XXXXXX IMOs only (RF §6a.8
-  caveat updated).
+  caveat updated). **Superseded the same evening:** the fetch ladder
+  (`docs/plans/2026-09-16_cloudflare_access.md`, RF rev 20) clears all four
+  tracker hosts, so §6a.8 runs from scripts again. Separately, vesselfinder
+  firewalled this machine's IP on 2026-09-17 after a 1 req/s sweep — bulk
+  lookups go through `scripts/sweep.py`.
 - `scripts/citation_qc.py`: new.
 - `merge_fills.py` / `build_workbook.py --mode fix` now log `blocked` refs
   as a separate finding instead of a conflict.

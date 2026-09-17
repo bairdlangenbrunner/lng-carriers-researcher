@@ -14,6 +14,7 @@ dependencies = [
     "curl_cffi>=0.10",      # fetch.py: Chrome TLS fingerprint for Cloudflare firewall pages
     "websocket-client>=1.6",  # cf_clearance.py: drives Google Chrome over DevTools
     "websockets>=12",       # ais_static.py: aisstream.io feed (same pin as ../lng-carriers-map)
+    "pdfplumber>=0.10",     # igu_fleet.py: word coordinates for the IGU report tables
 ]
 
 [project.optional-dependencies]

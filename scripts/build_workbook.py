@@ -1321,16 +1321,301 @@ def build_fsru(args):
     return out_path
 
 
+def build_igu(args):
+    """Build the IGU reconciliation workbook from work/igu_reconcile.json
+    (docs/sops/igu_reconciliation.md). IMO-keyed IGU World LNG Report ↔ backend
+    comparison for human review. No [ref] cells are proposed and the backend is
+    never edited — findings promote through fix / discovery batches."""
+    rec = json.loads(Path(args.reconcile).read_text())
+    s = rec["summary"]
+    leads = rec.get("leads", {})
+    src = f"IGU World LNG Report {rec['edition']} (fleet as of {rec['asof']})"
+    prev = rec.get("prev_edition")
+
+    def lead(imo):
+        l = leads.get(imo or "", {})
+        return {"shipvault_name": l.get("name", ""), "shipvault_status": l.get("status", ""),
+                "shipvault_fate_date": l.get("fate_date", ""),
+                "shipvault_delivered": l.get("delivered", ""), "shipvault_url": l.get("url", "")}
+    lead_cols = ["shipvault_name", "shipvault_status", "shipvault_fate_date",
+                 "shipvault_delivered", "shipvault_url"]
+
+    def pend_txt(pend):
+        return "; ".join(f"{p['value']} ({p['batch'].split('_', 2)[-1]}, {p['decision']})"
+                         for p in pend if p.get("value"))
+
+    wb = Workbook()
+    build_readme(wb, f"IGU reconciliation — {src} vs backend", [
+        f"Source: {src}" + (f"; previous edition {prev} used for the edition comparison" if prev else ""),
+        f"IGU rows: fleet {rec['igu_counts']['fleet']}, orderbook {rec['igu_counts']['orderbook']} "
+        f"({rec['igu_counts'].get('orderbook_no_imo', 0)} printed without an IMO)",
+        f"Backend: {rec['backend_counts']}",
+        "",
+        "Sheets:",
+        f"  Dropped_from_IGU     {s['dropped']:>4}  backend `active` rows in the previous IGU fleet, gone from this one (scrapped / converted?)",
+        f"  Status_findings      {sum(s['status_findings'].values()):>4}  backend Status disagrees with the IGU table the vessel is printed in",
+        f"  Field_diffs          {s['diffs_igu_changed'] + s['diffs_new_to_igu'] + s['diffs_backend_differs']:>4}  one row per disagreeing cell on the {s['matched']} IMO-matched vessels",
+        f"  IGU_only             {s['igu_only']:>4}  in IGU, no backend IMO match",
+        f"  Backend_not_in_IGU   {s['backend_not_in_igu']:>4}  backend rows IGU does not list, by reason",
+        f"  IGU_no_IMO           {s['igu_no_imo_rows']:>4}  IGU orderbook rows printed without an IMO ({s['igu_no_imo_clusters']} clusters, hints only)",
+        f"  IGU_duplicates       {s['igu_duplicates']:>4}  IMOs IGU prints twice",
+        "  Edition_diff               what changed in IGU itself between editions",
+        "",
+        "Join: by IMO (string). No fuzzy matching — IMO-less IGU rows get a cluster-level",
+        "hint (owner + yard + contract month / hull number), never a row pairing.",
+        "",
+        "Field_diffs `kind`: the backend was seeded from the previous IGU edition, so",
+        "  igu_changed     = IGU printed a different value last edition -> new information, review",
+        "  new_to_igu      = vessel was not in the previous edition",
+        "  backend_differs = IGU unchanged between editions; the backend was edited since the",
+        "                    load, usually from a better source. Low priority — do not revert blindly.",
+        "",
+        "SOURCE RULE: IGU is the tracker's foundation and is citable, but its landing page does",
+        "not surface per-vessel values (§3.8c). Status changes, renames and scrappings proposed",
+        "from this workbook need their own verified [ref] (press / class / tracker). shipvault_*",
+        "columns are leads, not refs. The backend is never auto-edited — promote through a fix or",
+        "discovery batch and the Apply SOP.",
+    ])
+
+    _table_sheet(wb, "Summary", ["metric", "count"], [
+        {"metric": "IGU fleet rows (Appendix 3)", "count": rec["igu_counts"]["fleet"]},
+        {"metric": "IGU orderbook rows (Appendix 4)", "count": rec["igu_counts"]["orderbook"]},
+        {"metric": "     of which printed without an IMO", "count": rec["igu_counts"].get("orderbook_no_imo", 0)},
+        {"metric": "Backend rows matched by IMO", "count": s["matched"]},
+        {"metric": "     with at least one field diff", "count": s["matched_with_diffs"]},
+        {"metric": "Field diffs — igu_changed (review)", "count": s["diffs_igu_changed"]},
+        {"metric": "Field diffs — new_to_igu", "count": s["diffs_new_to_igu"]},
+        {"metric": "Field diffs — backend_differs (low priority)", "count": s["diffs_backend_differs"]},
+        {"metric": "Status: on order in backend, in the IGU fleet", "count": s["status_findings"].get("delivered_per_igu", 0)},
+        {"metric": "Status: active in backend, still in the IGU orderbook", "count": s["status_findings"].get("on_order_at_igu_cutoff", 0)},
+        {"metric": "     of which backend Delivery year <= IGU cut-off year", "count": s.get("delivery_year_conflicts", 0)},
+        {"metric": "Dropped from IGU between editions (backend active)", "count": s["dropped"]},
+        {"metric": "IGU only — candidates", "count": s["igu_only_candidates"]},
+        {"metric": "IGU only — possible IMO defect (name matches)", "count": s["igu_only_imo_defect"]},
+        {"metric": "IGU only — out of scope", "count": s["igu_only_out_of_scope"]},
+        {"metric": "Backend rows IGU does not list", "count": s["backend_not_in_igu"]},
+        {"metric": "IGU duplicate IMOs", "count": s["igu_duplicates"]},
+    ], widths={"A": 58, "B": 10})
+
+    # --- Dropped_from_IGU -------------------------------------------------------
+    cols = ["live_sheet_row", "imo", "backend_name", "shipowner", "shipbuilder", "capacity",
+            "propulsion", "delivery_year", "igu_prev_name"] + lead_cols + [
+                "shipvault_owner", "fate_vs_inclusion", "suggested_action"]
+    rows = []
+    for x in rec["dropped"]:
+        b = x["backend"]
+        rows.append({"live_sheet_row": b["sheet_row"], "imo": b["imo"], "backend_name": b["name"],
+                     "shipowner": b["shipowner"], "shipbuilder": b["shipbuilder"],
+                     "capacity": b["capacity"], "propulsion": b["propulsion"],
+                     "delivery_year": b["delivery_year"], "igu_prev_name": x["igu_prev"]["name"],
+                     **lead(b["imo"]),
+                     "shipvault_owner": leads.get(b["imo"], {}).get("owner", ""),
+                     "fate_vs_inclusion": x.get("fate_vs_inclusion", ""),
+                     "suggested_action": (
+                         "remove from the tracker (decommissioned before Dec 2025) once the fate is "
+                         "confirmed with a verified ref" if x.get("fate_vs_inclusion", "").startswith("before")
+                         else "stays in scope — record the fate (Status has no scrapped value yet) "
+                              "with a verified ref" if x.get("fate_vs_inclusion")
+                         else "confirm fate (scrapped / converted / sold + renamed) with a verified ref")})
+    _table_sheet(wb, "Dropped_from_IGU", cols, rows,
+                 fills=[FILL_RED if r["fate_vs_inclusion"].startswith("before") else FILL_YELLOW
+                        for r in rows],
+                 widths={"C": 24, "D": 26, "E": 28, "I": 24, "J": 22, "N": 40, "O": 34, "P": 34, "Q": 70},
+                 header_note=(f"Backend `active` rows that were in the IGU {prev} fleet table and are absent "
+                              f"from the {rec['edition']} fleet AND orderbook. Red = the shipvault fate date is "
+                              "before Dec 2025, i.e. out of scope per inclusion_criteria.md; yellow = fate in "
+                              "Dec 2025 or later (stays in scope) or not dated. The fate date is a lead — "
+                              "confirm before acting."))
+
+    # --- Status_findings --------------------------------------------------------
+    cols = ["live_sheet_row", "imo", "backend_name", "finding", "backend_status",
+            "backend_delivery_year", "igu_table", "igu_delivery_year", "igu_name",
+            "delivery_year_conflict", "pending_proposal"] + lead_cols
+    rows, fills = [], []
+    for m in rec["matched"]:
+        sf = m["status_finding"]
+        if not sf:
+            continue
+        b, g = m["backend"], m["igu"]
+        rows.append({"live_sheet_row": b["sheet_row"], "imo": b["imo"], "backend_name": b["name"],
+                     "finding": sf["finding"], "backend_status": b["status"],
+                     "backend_delivery_year": b["delivery_year"], "igu_table": g["table"],
+                     "igu_delivery_year": g.get("delivery_year"), "igu_name": g["name"],
+                     "delivery_year_conflict": "YES" if sf.get("delivery_year_conflict") else "",
+                     "pending_proposal": pend_txt(sf["pending"]), **lead(b["imo"])})
+        fills.append(FILL_GREEN if sf["pending_agrees"] else
+                     FILL_RED if sf.get("delivery_year_conflict") else FILL_YELLOW)
+    order = sorted(range(len(rows)), key=lambda i: (rows[i]["finding"], rows[i]["live_sheet_row"]))
+    _table_sheet(wb, "Status_findings", cols, [rows[i] for i in order],
+                 fills=[fills[i] for i in order],
+                 widths={"C": 28, "D": 24, "I": 28, "K": 44, "L": 22, "P": 40},
+                 header_note=("delivered_per_igu = backend on order, IGU lists it as delivered. "
+                              "on_order_at_igu_cutoff = backend active, IGU still had it on order at its "
+                              "cut-off. Green = a pending batch already proposes the same Status; red = "
+                              "backend Delivery year is at or before the IGU cut-off year, which cannot "
+                              "also be true; yellow = review."))
+
+    # --- Field_diffs ------------------------------------------------------------
+    cols = ["live_sheet_row", "imo", "backend_name", "backend_status", "igu_table", "field",
+            "backend_value", f"igu_{rec['edition']}", f"igu_{prev or 'prev'}", "kind",
+            "pending_proposal", "pending_agrees_with_igu"]
+    rows, fills = [], []
+    for m in rec["matched"]:
+        b = m["backend"]
+        for d in m["diffs"]:
+            rows.append({"live_sheet_row": b["sheet_row"], "imo": b["imo"], "backend_name": b["name"],
+                         "backend_status": b["status"], "igu_table": m["igu"]["table"],
+                         "field": d["field"], "backend_value": d["backend"],
+                         f"igu_{rec['edition']}": d["igu"],
+                         f"igu_{prev or 'prev'}": "" if d["igu_prev"] is None else d["igu_prev"],
+                         "kind": d["kind"], "pending_proposal": pend_txt(d["pending"]),
+                         "pending_agrees_with_igu": "yes" if d["pending_agrees"] else ""})
+            fills.append(FILL_GREEN if d["pending_agrees"] else
+                         FILL_GRAY if d["kind"] == "backend_differs" else FILL_YELLOW)
+    kind_rank = {"igu_changed": 0, "new_to_igu": 1, "no_prev_edition": 1, "backend_differs": 2}
+    order = sorted(range(len(rows)), key=lambda i: (kind_rank.get(rows[i]["kind"], 9),
+                                                    rows[i]["field"], rows[i]["live_sheet_row"]))
+    _table_sheet(wb, "Field_diffs", cols, [rows[i] for i in order], fills=[fills[i] for i in order],
+                 widths={"C": 28, "G": 34, "H": 34, "I": 34, "J": 16, "K": 44},
+                 header_note=("One row per disagreeing cell. Yellow = IGU carries new information "
+                              "(igu_changed / new_to_igu); green = a pending batch already proposes IGU's "
+                              "value; gray = backend_differs (IGU unchanged since the load — the backend "
+                              "edit is usually the better-sourced value). Builder labels are compared via "
+                              "learned IGU-label ↔ backend-yard pairings; capacity within max(6000, 3%)."))
+
+    # --- IGU_only ---------------------------------------------------------------
+    cols = ["igu_table", "imo", "igu_name", "shipowner", "shipbuilder", "capacity", "vessel_type",
+            "propulsion", "delivery_year", "in_prev_edition", "reason", "backend_name_match",
+            "pdf_page"] + lead_cols
+    rows, fills = [], []
+    for x in rec["igu_only"]:
+        g = x["igu"]
+        rows.append({"igu_table": g["table"], "imo": g["imo"], "igu_name": g["name"],
+                     "shipowner": g["shipowner"], "shipbuilder": g["shipbuilder"],
+                     "capacity": g["capacity"], "vessel_type": g.get("vessel_type", ""),
+                     "propulsion": g.get("propulsion", ""), "delivery_year": g.get("delivery_year"),
+                     "in_prev_edition": _yn(x["in_prev"]), "reason": x["reason"],
+                     "backend_name_match": "; ".join(f"row {n['sheet_row']} {n['name']} (IMO {n['imo'] or 'blank'})"
+                                                     for n in x["name_match"]),
+                     "pdf_page": g.get("pdf_page"), **lead(g["imo"])})
+        fills.append(FILL_GRAY if x["out_of_scope"] and not x["name_match"] else FILL_YELLOW)
+    _table_sheet(wb, "IGU_only", cols, rows, fills=fills,
+                 widths={"C": 28, "D": 26, "E": 26, "K": 44, "L": 44, "N": 22, "R": 40},
+                 header_note=("IGU rows whose IMO is not in the backend. Yellow = candidate or possible IMO "
+                              "defect (same name under another IMO); gray = out of scope per "
+                              "inclusion_criteria.md."))
+
+    # --- Backend_not_in_IGU -----------------------------------------------------
+    cols = ["live_sheet_row", "imo", "backend_name", "status", "shipowner", "shipbuilder",
+            "delivery_year", "contract_date", "original_source", "reason"] + lead_cols
+    rows = [{"live_sheet_row": x["backend"]["sheet_row"], "imo": x["backend"]["imo"],
+             "backend_name": x["backend"]["name"], "status": x["backend"]["status"],
+             "shipowner": x["backend"]["shipowner"], "shipbuilder": x["backend"]["shipbuilder"],
+             "delivery_year": x["backend"]["delivery_year"],
+             "contract_date": x["backend"]["contract_date"],
+             "original_source": x["backend"]["original_source"], "reason": x["reason"],
+             **lead(x["backend"]["imo"])}
+            for x in sorted(rec["backend_not_in_igu"],
+                            key=lambda x: (x["reason"], x["backend"]["sheet_row"]))]
+    _table_sheet(wb, "Backend_not_in_IGU", cols, rows,
+                 fills=[FILL_YELLOW if r["reason"].startswith("active") else FILL_GRAY for r in rows],
+                 widths={"C": 34, "E": 26, "F": 28, "I": 22, "J": 52, "K": 22, "O": 40},
+                 header_note=("Gray = expected (post-cut-off orders, rows without an IMO, proposed slots; "
+                              "many correspond to the IGU_no_IMO clusters). Yellow = active vessels IGU has "
+                              "never listed — worth a second look."))
+
+    # --- IGU_no_IMO -------------------------------------------------------------
+    cols = ["cluster", "igu_name", "shipowner", "shipbuilder", "capacity", "propulsion",
+            "delivery_year", "contract_month", "igu_count", "backend_hint_count", "hint_strength",
+            "backend_hint_rows", "pdf_page"]
+    rows, fills = [], []
+    for ci, c in enumerate(rec["igu_no_imo"], start=1):
+        hint = "; ".join(f"row {h['sheet_row']} {h['name']}"
+                         + (f" [{h['contract_date']}]" if h["contract_date"] else "")
+                         for h in c["backend_hint_rows"])
+        short = c["hint_strength"] == "strong" and c["backend_hint_count"] < c["igu_count"]
+        for r in c["igu_rows"]:
+            rows.append({"cluster": f"N{ci}", "igu_name": r["name"], "shipowner": r["shipowner"],
+                         "shipbuilder": r["shipbuilder"], "capacity": r["capacity"],
+                         "propulsion": r.get("propulsion", ""), "delivery_year": r.get("delivery_year"),
+                         "contract_month": c["contract_month"], "igu_count": c["igu_count"],
+                         "backend_hint_count": c["backend_hint_count"],
+                         "hint_strength": c["hint_strength"], "backend_hint_rows": hint,
+                         "pdf_page": r.get("pdf_page")})
+            fills.append(FILL_RED if c["hint_strength"] == "none" or short else
+                         FILL_GREEN if c["hint_strength"] == "strong" else FILL_YELLOW)
+    _table_sheet(wb, "IGU_no_IMO", cols, rows, fills=fills,
+                 widths={"B": 38, "C": 24, "D": 30, "L": 90},
+                 header_note=("IGU orderbook rows printed with an 'Unknown' IMO, clustered by owner / yard / "
+                              "contract month. Hints are cluster-level only (never a row pairing): green = "
+                              "backend rows agree on contract month (±1) or hull number and cover the count; "
+                              "yellow = owner + yard only; red = no backend rows found, or fewer than IGU "
+                              "lists -> possible gap."))
+
+    # --- IGU_duplicates ---------------------------------------------------------
+    cols = ["imo", "igu_name", "shipowner", "shipbuilder", "capacity", "delivery_year", "pdf_page",
+            "backend_rows"]
+    rows = [{"imo": x["imo"], "igu_name": r["name"], "shipowner": r["shipowner"],
+             "shipbuilder": r["shipbuilder"], "capacity": r["capacity"],
+             "delivery_year": r.get("delivery_year"), "pdf_page": r.get("pdf_page"),
+             "backend_rows": ", ".join(str(n) for n in x["backend_rows"])}
+            for x in rec["igu_duplicates"] for r in x["rows"]]
+    _table_sheet(wb, "IGU_duplicates", cols, rows, fills=[FILL_YELLOW] * len(rows),
+                 widths={"B": 26, "C": 26, "D": 26},
+                 header_note=("IMOs the IGU table prints more than once, as printed (the first print is the "
+                              "one joined). An IGU defect, but it says which backend row to double-check."))
+
+    # --- Edition_diff -----------------------------------------------------------
+    ed = rec.get("edition_diff") or {}
+    cols = ["change", "imo", "name", "shipowner", "shipbuilder", "delivery_year", "backend_rows"]
+    rows = []
+    for key, label in (("fleet_dropped", f"in the {prev} fleet, gone in {rec['edition']}"),
+                       ("orderbook_dropped", f"in the {prev} orderbook, gone in {rec['edition']}")):
+        for r in ed.get(key, []):
+            rows.append({"change": label, "imo": r["imo"], "name": r["name"],
+                         "shipowner": r["shipowner"], "shipbuilder": r["shipbuilder"],
+                         "delivery_year": r.get("delivery_year"),
+                         "backend_rows": ", ".join(str(n) for n in r.get("backend_rows", []))})
+    for key, label in (("delivered", "orderbook -> fleet (delivered)"),
+                       ("fleet_added_direct", "new in the fleet, never in the orderbook"),
+                       ("orderbook_added", "new in the orderbook (with an IMO)")):
+        rows.append({"change": label, "imo": f"{len(ed.get(key, []))} vessels",
+                     "name": ", ".join(ed.get(key, [])[:400])})
+    _table_sheet(wb, "Edition_diff", cols, rows, widths={"A": 44, "C": 60, "D": 26, "E": 26},
+                 header_note=f"What IGU itself changed between the {prev} and {rec['edition']} editions.")
+
+    # --- QA_review --------------------------------------------------------------
+    _table_sheet(wb, "QA_review", ["item", "detail"], [
+        {"item": "Extraction", "detail": "scripts/igu_fleet.py — pdfplumber word coordinates, columns from "
+         "the header labels, one row per word in the IMO column; per-page IMO-token cross-check and IMO "
+         "check digits all pass (warnings list in the fleet JSON)."},
+        {"item": "Join", "detail": "IMO, as a string. IMO-less IGU rows are never paired to a backend row."},
+        {"item": "Tolerances", "detail": "capacity within max(6000 cbm, 3%); names compared without the "
+         "'(ex-…)' tail and punctuation; owners by shared token; builders by learned label pairing."},
+        {"item": "Pending batches", "detail": "cross-referenced: " + (", ".join(rec.get("pending_batches", [])) or "none")},
+        {"item": "Leads", "detail": "shipvault_* columns come from the open shipvault API — a lead, single-"
+         "source, never a [ref] on its own."},
+        {"item": "Backend safety", "detail": "comparison workbook only; the backend is never auto-edited. "
+         "Promote through a fix / discovery batch and the Apply SOP (§3.8 on every URL)."},
+    ], widths={"A": 22, "B": 120})
+
+    out_path = _resolve_out_path(args.out, "lng_carrier_igu_reconciliation.xlsx")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(out_path)
+    print(f"  Wrote {out_path}", file=sys.stderr)
+    return out_path
+
+
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill", "fix", "fsru"], required=True)
+    p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill", "fix", "fsru", "igu"], required=True)
     p.add_argument("--rows", help="Row range for ref_fill, e.g. '1170-1190'")
     p.add_argument("--citations", help="Path to citations JSON (ref_fill mode)")
     p.add_argument("--candidates", help="Path to candidates JSON (discovery mode)")
     p.add_argument("--fills", help="Path to fills JSON (data_fill mode)")
     p.add_argument("--fix", help="Path to corrections JSON (fix mode)")
-    p.add_argument("--reconcile", help="Path to FSRU reconciliation JSON (fsru mode; "
-                                       "default work/fsru_reconcile.json)")
+    p.add_argument("--reconcile", help="Path to the reconciliation JSON (fsru mode: default "
+                                       "work/fsru_reconcile.json; igu mode: work/igu_reconcile.json)")
     p.add_argument("--base", help="Optional reviewed corrected-rows CSV to build on "
                                   "instead of the live (possibly corrupted) backend row (fix mode)")
     p.add_argument("--backend", default=str(backend_csv_path()),
@@ -1357,6 +1642,10 @@ def main():
         if not args.reconcile:
             args.reconcile = str(work_dir() / "fsru_reconcile.json")
         build_fsru(args)
+    elif args.mode == "igu":
+        if not args.reconcile:
+            args.reconcile = str(work_dir() / "igu_reconcile.json")
+        build_igu(args)
     else:
         if not args.fix:
             p.error("--fix required for fix mode")

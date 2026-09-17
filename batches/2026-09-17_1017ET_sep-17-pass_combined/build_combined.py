@@ -30,6 +30,8 @@ B3 = "2026-09-17_0431ET_discovery_since_jun_2026"
 B4 = "2026-09-17_0511ET_data_fill_on_order"
 B5 = "2026-09-17_0505ET_ref_fill_rule_f"
 B6 = "2026-09-17_1114ET_shipvault_companion_refs"
+# comparison only (no proposals, never applied): feeds igu_findings + one open decision
+B7 = "2026-09-17_1458ET_igu_reconciliation_igu2026"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
@@ -394,6 +396,14 @@ DECISIONS = [
     ("Possible mis-citations / value conflicts", "1182-1185 and others",
      "Found by the data-fill agents; full list in the data-fill batch notes.md.", "flags_conflicts"),
     ("MISC hulls H2019A-H2023A", "", "On shipvault with no citable press: next discovery run.", "shipvault_unmatched"),
+    ("IGU 2026 intercomparison", "25, 26, 77, 94, 95, 98, 115 stay; 16, 23, 44, 46-49, 54, 63, 64, 84 leave",
+     "IGU dropped 18 backend active rows between its 2025 and 2026 editions; all are scrapped steam tonnage per "
+     "shipvault. 11 were scrapped before Dec 2025, so they are out of scope by the inclusion rule; 7 were scrapped "
+     "in 2026 (or only sold for scrap) and stay, but the Status vocabulary (active / on order / proposed) has no "
+     "value for them: add 'scrapped'? Also 13 active rows whose Delivery year should be 2026, 7 active rows still "
+     "on order, row 929 delivered, load corruption on rows 451 / 499-501 / 509, about 20 renames and one vessel to "
+     "add. None of it is a proposal yet: each accepted item needs a verified ref and a follow-up fix batch.",
+     "igu_findings"),
 ]
 table_sheet("open_decisions", ["#", "decision", "live sheet rows", "detail", "see sheet"],
             [[i, *d] for i, d in enumerate(DECISIONS, 1)],
@@ -484,6 +494,73 @@ table_sheet("shipvault_unmatched", SVC, sv, {"name": 24, "owner": 24, "yard": 36
             intro="shipvault on-order LNG units with no backend match and no citable press yet "
                   "(single-source: leads for the next discovery run, not candidates)")
 
+# IGU 2026 intercomparison (comparison only; leads, not proposals)
+igu = load_json(BATCHES / B7 / "igu_reconcile.json")
+IGU_LABEL = {"name": "Name", "shipowner": "Shipowner", "shipbuilder": "Shipbuilder", "capacity": "Capacity",
+             "cargo_type": "Cargo type", "vessel_type": "Vessel type", "propulsion": "Propulsion type",
+             "delivery_year": "Delivery year"}
+
+
+def _igu_lead(imo):
+    ld = igu.get("leads", {}).get(str(imo)) or {}
+    bits = [ld.get("name"), ld.get("status"),
+            f"fate {ld['fate_date']}" if ld.get("fate_date") else "",
+            f"delivered {ld['delivered']}" if ld.get("delivered") else ""]
+    return " | ".join(b for b in bits if b), ld.get("url", "")
+
+
+def _igu_pending(item):
+    pend = item.get("pending") or []
+    if isinstance(pend, dict):  # dropped rows: {field: [proposals]}
+        pend = [dict(p, value=f"{f} -> {p['value']}") for f, ps in pend.items() for p in ps]
+    return "; ".join(f"{p['batch'].split('ET_', 1)[-1]}: {p['value']} ({p['decision']})" for p in pend)
+
+
+def _igu_row(be, finding, field, bval, ival, prev, kind, item, note=""):
+    lead, url = _igu_lead(be.get("imo"))
+    return {"finding": finding, "live sheet row": be.get("sheet_row", ""), "row_id": be.get("row_id", ""),
+            "IMO": be.get("imo", ""), "vessel name (backend)": be.get("name", ""), "field": field,
+            "backend value": bval, "IGU 2026": ival, "IGU 2025": prev, "kind": kind,
+            "already in a pending batch": _igu_pending(item),
+            "pending agrees": "yes" if item.get("pending_agrees") else "",
+            "shipvault lead (not a ref)": lead, "note": note, "lead url": url}
+
+
+igu_rows = []
+for x in igu["dropped"]:
+    igu_rows.append(_igu_row(x["backend"], "dropped from IGU", "Status", x["backend"]["status"], "not listed",
+                             "in the fleet table", "", x, x.get("fate_vs_inclusion", "")))
+for x in igu["matched"]:
+    sf = x.get("status_finding")
+    if sf:
+        igu_rows.append(_igu_row(x["backend"], sf["finding"], "Status", sf["backend"], sf["igu"], "", "", sf,
+                                 "backend Delivery year is at or before the IGU cut-off year"
+                                 if sf.get("delivery_year_conflict") else ""))
+for x in igu["matched"]:
+    for df in x["diffs"]:
+        igu_rows.append(_igu_row(x["backend"], "field diff", IGU_LABEL.get(df["field"], df["field"]),
+                                 df["backend"], df["igu"], df.get("igu_prev", ""), df["kind"], df))
+for x in igu["igu_only"]:
+    g = x["igu"]
+    lead, url = _igu_lead(g["imo"])
+    igu_rows.append({"finding": "in IGU, not in the backend", "IMO": g["imo"], "vessel name (backend)": "",
+                     "field": "(whole vessel)", "IGU 2026": f"{g['name']} | {g['shipowner']} | {g['shipbuilder']} | "
+                     f"{g['capacity']} cbm | {g['vessel_type']} | {g['delivery_year']}",
+                     "shipvault lead (not a ref)": lead, "lead url": url,
+                     "note": x.get("reason") or "candidate to add (next discovery batch)"})
+IGC = ["finding", "live sheet row", "row_id", "IMO", "vessel name (backend)", "field", "backend value", "IGU 2026",
+       "IGU 2025", "kind", "already in a pending batch", "pending agrees", "shipvault lead (not a ref)", "note",
+       "lead url"]
+table_sheet("igu_findings", IGC, igu_rows,
+            {"finding": 24, "live sheet row": 9, "row_id": 8, "IMO": 10, "vessel name (backend)": 28, "field": 16,
+             "backend value": 24, "IGU 2026": 30, "IGU 2025": 22, "kind": 16, "already in a pending batch": 40,
+             "pending agrees": 9, "shipvault lead (not a ref)": 44, "note": 44, "lead url": 38},
+            wrap_cols=("already in a pending batch", "note"), link_col="lead url",
+            intro="Backend vs the IGU World LNG Report 2026 (fleet at end-2025), IMO-keyed, with the 2025 edition as "
+                  "the baseline. Comparison only: nothing here is a proposal, and the shipvault column is a lead, "
+                  "never a ref. kind: igu_changed = IGU moved since 2025 (review); backend_differs = the backend "
+                  "was edited since the load (do not revert blindly). Full workbook: batches/" + B7)
+
 # documented blanks + Rule-F negatives
 qa4 = qa_sections(BATCHES / B4 / "lng_carrier_data_fill.xlsx")
 blanks = []
@@ -571,7 +648,7 @@ ws.cell(r, 1, "Counts are of the lines on all_proposals (default decisions, befo
 r += 2
 ws.cell(r, 1, "Sheets").font = FONT_B
 for name, desc in [
-    ("open_decisions", "the nine judgment calls waiting on a human"),
+    ("open_decisions", f"the {len(DECISIONS)} judgment calls waiting on a human"),
     ("all_proposals", "EVERY proposed change from all six batches, one line per cell (or per new vessel): current "
                       "backend value, proposed value, source URL, confidence, default decision, note. Filter here first."),
     ("all_changes_backend_shape",
@@ -593,6 +670,8 @@ for name, desc in [
     ("manual_review", "on-order rows the roll-forward could not settle, with the press follow-up verdict"),
     ("proposed_bucket", "row-by-row review of the 34 'proposed' rows (Mozambique LNG, Woodside, Equinor)"),
     ("shipvault_unmatched", "shipvault orderbook units with no backend match and no citable press"),
+    ("igu_findings", "seventh batch, comparison only: the backend against the IGU World LNG Report 2026 - rows IGU "
+                     "dropped (scrapped), Status disagreements, field diffs, one vessel to add. Leads, not proposals"),
     ("documented_blanks", "cells researched and NOT filled, with why (so nobody repeats the search)"),
     ("url_verification", "the verification-gate log for every URL considered"),
 ]:
@@ -632,6 +711,6 @@ wb.save(OUT)
 print("wrote", OUT, "| proposals:", len(proposals), "| sheets:", wb.sheetnames)
 
 # ---- data for the report page ----------------------------------------------
-report = {"proposals": proposals, "flags": flags, "manual": manual, "proposed_bucket": prow,
+report = {"igu_findings": len(igu_rows), "proposals": proposals, "flags": flags, "manual": manual, "proposed_bucket": prow,
           "n_wide": n_wide, "blanks": len(blanks), "urls": len(ulog), "backend_shape": n_shape}
 (HERE / "report_data.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
