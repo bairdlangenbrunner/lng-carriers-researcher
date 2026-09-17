@@ -486,6 +486,11 @@ class TestCorroborates:
         seed(url2, "200", _page("t", "The carrier will be delivered in 2027"))
         assert corroborates(url2, "active")[0] is False
 
+    def test_hull_number_yard_tag_is_not_required(self):
+        got = value_variants("Hull 2598 (Hanwha)")
+        assert "Hull 2598" in got and "H2598" in got and "2598" in got
+        assert "042" not in value_variants("Hull 042 (Zvezda)")
+
     def test_price_abbreviations(self):
         assert "$250m" in value_variants("250000000")
         assert "250 million" in value_variants("$250,000,000")

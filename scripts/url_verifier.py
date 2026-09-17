@@ -857,6 +857,17 @@ def value_variants(value) -> list[str]:
         return []
     out = {v, v.lower()}
 
+    # Backend hull numbers carry a yard tag the source never prints:
+    # "Hull 2598 (Hanwha)" -> the page says "Hull 2598", "H2598", "hull no. 2598".
+    hm = re.match(r"^Hull\s+(\S+)\s+\(.+\)$", v, re.I)
+    if hm:
+        no = hm.group(1)
+        out.update({f"Hull {no}", f"hull no. {no}", f"hull number {no}", f"H{no}", f"HN{no}",
+                    f"H-{no}", f"No. {no}"})
+        if len(re.sub(r"\D", "", no)) >= 4:
+            out.add(no)
+        return [s for s in out if s]
+
     # Status "active" = the ship has been delivered. Press never writes "active";
     # it writes a past-tense delivery. Future-tense ("will be delivered") must not pass.
     if v.lower() == "active":
