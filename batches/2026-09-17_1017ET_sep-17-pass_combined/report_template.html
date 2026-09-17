@@ -1,4 +1,4 @@
-<title>LNG Carrier Overnight Update</title>
+<title>LNG Carrier Sep-17 Pass</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
 <style>
 :root{
@@ -102,8 +102,8 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 <div class="page">
 <header>
   <div class="eyebrow">LNG carrier tracker · research update · 17 Sep 2026</div>
-  <h1>Overnight update: what the run found, and what needs a decision</h1>
-  <p class="lede prose">An automated overnight pass checked the tracker backend (1,220 rows: 822 active, 364 on order, 34 proposed) against yard orderbooks, Korean disclosures, trade press and ship registries. It produced <strong>1,186 proposed changes in five batches</strong>. <strong>Nothing has been written to the backend sheet.</strong> Every line is a candidate waiting for human review, and every cited URL was checked to confirm the live page actually states the value it supports.</p>
+  <h1>Sep-17 pass: what the run found, and what needs a decision</h1>
+  <p class="lede prose">An automated pass (the sep-17-pass) checked the tracker backend (1,220 rows: 822 active, 364 on order, 34 proposed) against yard orderbooks, Korean disclosures, trade press and ship registries. It produced <strong>1,186 proposed changes in five batches</strong>. <strong>Nothing has been written to the backend sheet.</strong> Every line is a candidate waiting for human review, and every cited URL was checked to confirm the live page actually states the value it supports.</p>
 </header>
 
 <section>
@@ -195,7 +195,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 <section>
   <h2>Every proposed change</h2>
   <p class="sub prose">All 1,186 lines. Row numbers are live rows on the backend sheet as of 17 Sep, 10:15 ET. The workbook has the same table plus full paste-ready rows, the conflict list, documented blanks and the URL verification log.</p>
-  <div class="dl" id="dlwrap" hidden><button id="dl" type="button">Download the workbook (.xlsx)</button><span id="dlmsg">14 sheets, 0.5 MB</span></div>
+  <div class="dl" id="dlwrap" hidden><button id="dl" type="button">Download the workbook (.xlsx)</button><span id="dlmsg">15 sheets, 0.7 MB</span></div>
   <div class="controls">
     <label for="fb">Batch<select id="fb"><option value="">All batches</option><option value="1">1 Delivery roll-forward</option><option value="2">2 Delivery confirmed</option><option value="3">3 Discovery</option><option value="4">4 Data fill</option><option value="5">5 Missing references</option></select></label>
     <label for="fd">Decision<select id="fd"><option value="">Accept and hold</option><option value="accept">Ready to accept</option><option value="hold">Held for review</option></select></label>
@@ -283,7 +283,7 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;
     const bin = atob(XLSX_B64), buf = new Uint8Array(bin.length);
     for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
     try {
-      await downloads.save({filename: "lng_carrier_overnight_results_2026-09-17.xlsx", data: new Blob([buf])});
+      await downloads.save({filename: "lng_carrier_sep-17-pass_results_2026-09-17.xlsx", data: new Blob([buf])});
       $("dlmsg").textContent = "Saved.";
     } catch (e) {
       const code = e && e.code;

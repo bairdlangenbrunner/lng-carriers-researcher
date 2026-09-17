@@ -1,4 +1,4 @@
-# Overnight tracker update — morning summary (2026-09-17)
+# sep-17-pass — summary (2026-09-17)
 
 Fresh pull 2026-09-17 ~01:15 ET: 1,220 rows (822 active / 364 on order / 34 proposed).
 Nothing was written to the Google Sheet. Everything below is a reviewed-candidate batch with

@@ -1,4 +1,4 @@
-# Data-fill — on-order core facts + whole-backend derivables (2026-09-17 overnight update)
+# Data-fill — on-order core facts + whole-backend derivables (2026-09-17, sep-17-pass)
 
 Fresh pull 2026-09-17 (1,220 rows). Scope: `derive_fills.py --since 2000-01-01` (whole backend)
 for the derivable autofills; research fan-out limited to **on-order rows** and the core facts

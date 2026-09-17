@@ -1,23 +1,28 @@
-"""Combine the five 2026-09-17 overnight batches into one review workbook.
+"""Combine the five sep-17-pass (2026-09-17) batches into one review workbook.
 
 Read-only over the batch dirs and work/backend.csv; writes
-lng_carrier_overnight_results.xlsx + report_data.json next to this file.
-Run from the repo root: python batches/2026-09-17_1017ET_overnight_combined/build_combined.py
+lng_carrier_sep-17-pass_results.xlsx + report_data.json next to this file.
+Run from the repo root: python batches/2026-09-17_1017ET_sep-17-pass_combined/build_combined.py
 """
 import csv
 import json
+import sys
 from collections import defaultdict
 from copy import copy
 from pathlib import Path
 
 import openpyxl
 from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.comments import Comment
 from openpyxl.utils import get_column_letter
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from apply_batch import _detect, _discovery_full_row, _items_and_conflicts, _load_backend  # noqa: E402
+from build_workbook import _join_refs, _yard_location_map_table_first  # noqa: E402
 BATCHES = ROOT / "batches"
-OUT = HERE / "lng_carrier_overnight_results.xlsx"
+OUT = HERE / "lng_carrier_sep-17-pass_results.xlsx"
 
 B1 = "2026-09-17_0421ET_fix_delivery_rollforward"
 B2 = "2026-09-17_0458ET_fix_delivery_confirmed"
@@ -43,7 +48,12 @@ FONT_B = Font(name="Calibri", size=10, bold=True)
 FONT_H = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
 FONT_T = Font(name="Calibri", size=12, bold=True)
 FONT_LINK = Font(name="Calibri", size=10, color="0563C1", underline="single")
+FONT_HOLD = Font(name="Calibri", size=10, italic=True)
+FONT_DEL = Font(name="Calibri", size=10, strike=True, color="7F7F7F")
 FILL_HEADER = PatternFill("solid", fgColor="1F4E78")
+FILL_HELPER = PatternFill("solid", fgColor="595959")
+FILL_PEACH = PatternFill("solid", fgColor="FFD9B3")
+FILL_GRAY = PatternFill("solid", fgColor="EEEEEE")
 CONF_FILL = {"G": PatternFill("solid", fgColor="C6EFCE"),
              "Y": PatternFill("solid", fgColor="FFEB9C"),
              "R": PatternFill("solid", fgColor="FFC7CE")}
@@ -240,7 +250,124 @@ table_sheet("all_proposals", PROP_COLS, proposals, W, wrap_cols=("note",),
             conf_col="confidence", fill_col="proposed value", link_col="source URL(s)")
 NP = len(proposals) + 1
 
-# open decisions (from docs/plans/2026-09-17_overnight_summary.md)
+# all changes, backend-shaped: every proposal from all five batches (accept AND hold) laid
+# over the backend row it edits, in apply order, using apply_batch's own item model. Columns
+# A:AT are the backend's columns in the backend's order; helper columns sit to the right so
+# a row's A:AT can be pasted straight over the matching backend row.
+be_header, be_rows, be_colmap = _load_backend(str(ROOT / "work" / "backend.csv"))
+assert be_header == HDR, "backend_io header differs from the raw header row"
+HIDX = {h: i for i, h in enumerate(be_header)}
+yard_map = _yard_location_map_table_first(list(be_rows.values()), be_header)
+merged, cell_meta, new_full = {}, {}, []      # row_id -> row | (row_id, col) -> meta | new rows
+for order, bdir, label, *_ in BATCH_INFO:
+    mode, payload = _detect(BATCHES / bdir)
+    items, _conf = _items_and_conflicts(mode, payload, be_header, be_colmap)
+    dec = {d["id"]: d["decision"] for d in read_csv(BATCHES / bdir / "decisions.csv")}
+    for it in items:
+        decision = dec.get(it["id"], "hold")
+        if decision == "reject":
+            continue
+        meta = {"batch": label, "decision": decision, "confidence": it["confidence"],
+                "note": it["note"]}
+        if it["kind"] == "new_row":
+            full, _rd = _discovery_full_row(it, be_header, yard_map)
+            new_full.append((it["cluster_id"], full[:len(be_header)], meta))
+            continue
+        rid = it["row_id"]
+        if rid not in merged:
+            base = list(be_rows[rid])
+            merged[rid] = base + [""] * (len(be_header) - len(base))
+        row = merged[rid]
+
+        def put(col, value, _row=row, _rid=rid, _meta=meta):
+            if (_rid, col) in cell_meta:
+                print("note: cell proposed by two batches, later apply order wins:", _rid, col)
+            cell_meta[(_rid, col)] = {**_meta, "old": _row[HIDX[col]]}
+            _row[HIDX[col]] = value
+
+        if it["kind"] == "fill" and it["column"] in HIDX and not it.get("ref_only"):
+            put(it["column"], it["value"])
+        if it["ref_column"] and it["ref_value"] and it["ref_column"] in HIDX:
+            put(it["ref_column"], it["ref_value"] if it.get("replace_ref")
+                else _join_refs(row[HIDX[it["ref_column"]]], it["ref_value"].split(", ")))
+
+# cross-check: every cell the batches' own apply.json accepted must be in the merged rows
+for _o, bdir, *_ in BATCH_INFO:
+    for c in load_json(BATCHES / bdir / "apply.json")["accepted_cells"]:
+        got = merged[c["row_id"]][HIDX[c["column"]]]
+        assert got == c["value"], (bdir, c["row_id"], c["column"], got, c["value"])
+
+# rows the proposed-bucket review marks for deletion ride along unchanged, struck through
+row_action = {}
+for p in load_json(BATCHES / B3 / "proposed_review.json")["programmes"]:
+    for a in p["row_actions"]:
+        if "deletion" in a["action"]:
+            rid = next(k for k, v in BACKEND.items() if str(v["live_row"]) == str(a["live_row"]))
+            row_action[rid] = a["action"].replace("mark for deletion", "DELETE ROW")
+            merged.setdefault(rid, list(be_rows[rid]) + [""] * (len(be_header) - len(be_rows[rid])))
+
+HELPERS = ["live sheet row", "row action", "batches", "cells changed", "cells on hold",
+           "columns on hold"]
+ws = wb.create_sheet("all_changes_backend_shape")
+for j, h in enumerate(be_header + HELPERS, 1):
+    c = ws.cell(1, j, h)
+    c.font, c.alignment = FONT_H, WRAP
+    c.fill = FILL_HEADER if j <= len(be_header) else FILL_HELPER
+
+
+def shape_cell(i, j, value, meta, struck=False):
+    c = ws.cell(i, j, num(value))
+    c.alignment = TOP
+    c.font = FONT_DEL if struck else FONT
+    if meta:
+        ref_touched = be_header[j - 1].endswith("[ref]") and meta.get("old")
+        c.fill = FILL_PEACH if ref_touched else CONF_FILL.get(meta["confidence"], CONF_FILL["R"])
+        if meta["decision"] != "accept":
+            c.font = FONT_HOLD
+        text = f"{meta['batch']} | {meta['decision']} | {meta['confidence']}"
+        if "old" in meta:
+            text += f"\nwas: {meta['old'] or '(blank)'}"
+        if meta["note"]:
+            text += f"\n{meta['note']}"
+        c.comment = Comment(text[:1500], "sep-17-pass", width=420, height=140)
+    elif value not in ("", None):
+        c.fill = FILL_GRAY
+
+
+n_shape = {"rows": 0, "new": len(new_full), "cells": len(cell_meta), "hold": 0, "delete": len(row_action)}
+i = 1
+for rid in sorted(merged, key=lambda k: BACKEND[k]["live_row"]):
+    i += 1
+    metas = {col: m for (r_, col), m in cell_meta.items() if r_ == rid}
+    for j, h in enumerate(be_header, 1):
+        shape_cell(i, j, merged[rid][j - 1], metas.get(h), struck=rid in row_action)
+    held = [h for h in be_header if h in metas and metas[h]["decision"] != "accept"]
+    n_shape["rows"] += bool(metas)
+    n_shape["hold"] += len(held)
+    extra = [BACKEND[rid]["live_row"], row_action.get(rid, "edit existing row"),
+             "; ".join(dict.fromkeys(m["batch"] for m in metas.values())), len(metas), len(held),
+             ", ".join(held)]
+    for j, v in enumerate(extra, len(be_header) + 1):
+        ws.cell(i, j, v).font = FONT
+for cid, full, meta in new_full:
+    i += 1
+    for j, v in enumerate(full, 1):
+        shape_cell(i, j, v, {**meta, "note": ""} if v else None)
+    filled = sum(1 for v in full if v)
+    on_hold = meta["decision"] != "accept"
+    n_shape["cells"] += filled
+    n_shape["hold"] += filled if on_hold else 0
+    extra = ["(new)", f"ADD NEW ROW (cluster {cid})", meta["batch"], filled, filled if on_hold else 0,
+             "(whole row)" if on_hold else ""]
+    for j, v in enumerate(extra, len(be_header) + 1):
+        ws.cell(i, j, v).font = FONT
+for j, h in enumerate(be_header + HELPERS, 1):
+    ws.column_dimensions[get_column_letter(j)].width = \
+        {"row action": 34, "batches": 40, "columns on hold": 50}.get(h, 30 if h.endswith("[ref]") else 16)
+ws.freeze_panes = "E2"
+ws.auto_filter.ref = f"A1:{get_column_letter(len(be_header) + len(HELPERS))}{i}"
+
+# open decisions (from docs/plans/2026-09-17_sep-17-pass_summary.md)
 DECISIONS = [
     ("Proposed bucket", "1204-1206; 1186; 1187-1203",
      "Woodside placeholders on live rows 1204-1206 duplicate the Seapeak on-order rows 1165-1167: delete. "
@@ -394,7 +521,7 @@ ws = wb["Sheet"]
 ws.title = "README"
 wb.move_sheet("README", -(len(wb.sheetnames) - 1))
 r = 1
-ws.cell(r, 1, "LNG carrier tracker: overnight research update, 2026-09-17 (all results)").font = FONT_T
+ws.cell(r, 1, "LNG carrier tracker: sep-17-pass research update, 2026-09-17 (all results)").font = FONT_T
 r += 2
 for line in [
     "Backend pulled 2026-09-17 ~01:15 ET: 1,220 rows (822 active / 364 on order / 34 proposed). Re-pulled "
@@ -441,6 +568,15 @@ for name, desc in [
     ("open_decisions", "the nine judgment calls waiting on a human"),
     ("all_proposals", "EVERY proposed change from all five batches, one line per cell (or per new vessel): current "
                       "backend value, proposed value, source URL, confidence, default decision, note. Filter here first."),
+    ("all_changes_backend_shape",
+     f"ALL of the above merged into the backend's own structure: columns A:AT are the backend columns in backend "
+     f"order, one full row per vessel, sorted by live sheet row ({n_shape['rows']} edited rows, {n_shape['new']} new "
+     f"rows at the bottom, {n_shape['delete']} rows marked for deletion and struck through; {n_shape['cells']} "
+     f"changed cells, {n_shape['hold']} of them on hold). Accepts AND holds are laid in: a changed cell is filled "
+     "by confidence (peach where an existing [ref] was rewritten or appended to), a hold is in italics, and each "
+     "changed cell's comment gives batch, decision, the old value and the note. Helper columns AU:AZ (live sheet "
+     "row, row action, holds) sit to the right so A:AT pastes straight over the backend row. flags_conflicts are "
+     "not laid in (never auto-applied)."),
     ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows"),
     ("b1_rollforward_rows / b2_confirmed_rows", "fix batches: full corrected backend rows (paste-ready shape)"),
     ("b4_data_fill_rows", "data fill: the 477 backend rows that received at least one proposal (the other 743 "
@@ -491,5 +627,5 @@ print("wrote", OUT, "| proposals:", len(proposals), "| sheets:", wb.sheetnames)
 
 # ---- data for the report page ----------------------------------------------
 report = {"proposals": proposals, "flags": flags, "manual": manual, "proposed_bucket": prow,
-          "n_wide": n_wide, "blanks": len(blanks), "urls": len(ulog)}
+          "n_wide": n_wide, "blanks": len(blanks), "urls": len(ulog), "backend_shape": n_shape}
 (HERE / "report_data.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")

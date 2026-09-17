@@ -1,4 +1,4 @@
-# Discovery batch — orders since June 2026 (built 2026-09-17, overnight run)
+# Discovery batch — orders since June 2026 (built 2026-09-17, sep-17-pass)
 
 Gap window: 2026-05-01 → 2026-09-17 (backend's latest contract date at pull: 08-Jun-2026; window
 opened a month early for overlap). All-yards sweep: CSB (Ring A), Korean disclosures via English
@@ -57,7 +57,7 @@ converted into the Seapeak × Samsung HI order already in rows 1165–1167. Moza
 are small-scale / out of scope. Unmatched large hulls after that:
 - ADNOC H2706–H2709, H2858/H2859 → C4/C5 above.
 - **MISC × Hudong-Zhonghua H2014A–H2023A = 10 hulls; backend has 5 rows** (1154–1156, 1177, 1178).
-  Possible five missing vessels — being researched separately; see the overnight summary.
+  Possible five missing vessels — being researched separately; see the sep-17-pass summary.
 - Hanwha 2627/2628 (Knutsen) ↔ probably rows 1161/1172; SHI 2803 (J.P. Morgan) ↔ probably row
   1118; SHI 2808 (Purus) ↔ probably row 1173. Not written anywhere without press confirmation.
 - Three CNOOC × Hudong-Zhonghua units with no hull/IMO ↔ rows 943, 1220–1222.

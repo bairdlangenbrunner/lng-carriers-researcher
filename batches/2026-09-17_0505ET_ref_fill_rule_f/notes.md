@@ -1,4 +1,4 @@
-# Rule-F [ref]-fill — whole backend (2026-09-17 overnight update)
+# Rule-F [ref]-fill — whole backend (2026-09-17, sep-17-pass)
 
 Scope: every cell in the fresh 2026-09-17 pull where a data value is filled but the paired
 `[ref]` is blank (RF §4.13 Rule F). 19 such cells: Vessel type 10, Capacity 5, Hull number 3,
