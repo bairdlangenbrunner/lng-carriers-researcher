@@ -1,4 +1,4 @@
-# sep-17-pass — worklist (written 2026-09-17 evening; last updated 18:30 ET)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 19:05 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
@@ -11,8 +11,7 @@ The short version; every step points at the section with the detail. Steps 1–3
 sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 
 1. **Prep the sheet** (three settings, before any apply):
-   - [ ] Status dropdown: add `scrapped` (it offers `proposed` / `on order` / `active`) — batch 9
-         writes it on 18 rows.
+   - [x] Status dropdown: `scrapped` added (Baird, 2026-09-17 ~18:45 ET).
    - [ ] Price column: set a plain number format, no decimals. It displays `2.53E+08`, and a
          pull of that display loses digits — batch 12 writes full-dollar values into it.
    - [ ] Vessel type dropdown: it offers `supporting` (load corruption, §5) and lacks
@@ -31,7 +30,7 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    1203 ↔ 1086 (delete by hand if you agree — duplicates are yours to remove); the proposed
    bucket; batch 8's 8 owner / builder names; the manual-review lists of batches 1 and 2; and the
    reminder you asked for — **should IGU-2026-only cells get a second ref?**
-4. **Apply + verify, in this order** (§2): 1, 2, 3, 4, 5, 6, 8, 9, 11, 12, then **10 last**. **Every
+4. **Apply + verify, in this order** (§2): 1, 2, 3, 4, 5, 6, 8, **9 (done)**, 11, 12, then **10 last**. **Every
    batch goes in by `apply_patch.csv`** (`tools/apply_patch.gs`, DRY_RUN first) — the batches
    share hundreds of rows and a full-row paste would revert the batch before it (AP §2a). Set
    `OVERWRITE_NONBLANK` per batch (table in §2) or a fix batch lands nothing. After each:
@@ -44,7 +43,9 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 
 ## Where things stand
 
-- **No batch has been applied to the backend sheet.** Baird edited it by hand on 2026-09-17
+- **Batch 9 is applied** (2026-09-17 19:00 ET, by Claude at Baird's request, through the Sheets
+  API — 38 cells / 19 rows, `verify_apply.py`: 38 landed, 0 mismatch; QC after: 8 LOW, no
+  HIGH/MED). Nothing else has been applied. Baird edited the sheet by hand on 2026-09-17
   evening (~18:00 ET): the three Woodside duplicates were deleted (their names moved to
   `Other names` on the Seapeak rows) and `Hull H1955A` / `Hull H1957A` / `Hanwha Philly 2` moved
   from rows 1130–1132 to 1201–1203. Now 1,217 rows (822 active / 364 on order / 31 proposed).
@@ -89,7 +90,7 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 | 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | all accept |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
 | 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 24 / 1 reject, plus 8 manual-review |
-| 9 | `1702ET_fix_scrapped_status` | 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
+| 9 | `1702ET_fix_scrapped_status` | **APPLIED 2026-09-17** — 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
 | 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names` (131 cells / 131 rows; 19 spelling / wrong-vessel Name changes excluded); 102 carry a gated ref | 95 / 36 |
 | 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |
 | 12 | `1810ET_fix_price_full_usd` | Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref` — unit conversion, refs kept) | 58 / 0 |
@@ -256,10 +257,11 @@ In the DRY_RUN log, `would set` must equal the `set` count and there should be n
 - [ ] Batch 6 — apply via `apply_patch.csv` (not full rows) + verify
 - [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
       agree in value) + verify. After batch 6: both touch row 814's Status `[ref]`.
-- [ ] Batch 9 — apply + verify (any order; its only shared cell is row 61 Vessel type, which
-      batch 8 offered a `conventional` ref for — rejected 2026-09-17). The sheet's Status dropdown
-      is `proposed` / `on order` / `active` (checked 2026-09-17) — **add `scrapped` to it first**.
-      Row 61 → FSU changes the map fleet: re-export after applying.
+- [x] Batch 9 — **applied 2026-09-17 19:00 ET** (Sheets API `values.batchUpdate`, RAW, 38 cells;
+      `verify_report.csv` in the batch dir: 38 landed / 0 mismatch / 0 missing). The 18 rows are
+      `scrapped` and row 61 is an FSU. Map fleet re-exported (`../lng-carriers-map` branch
+      `fleet-row61-fsu`, 59 vessels — not pushed; `data/imo_mmsi.csv` still lacks IMO 9211872
+      because `fetch_mmsi.py` scrapes vesselfinder and the IP ban is still in force at 19:00 ET).
 - [ ] Batch 11 — apply via `apply_patch.csv` + verify (any order; no shared cells).
 - [ ] Batch 12 — apply via `apply_patch.csv` + verify (any order; no shared cells). Then drop `$m`
       from the Price currency vocabulary (`scripts/lookups.py`, `data/controlled_vocab.md`). Set
@@ -313,7 +315,7 @@ State is resumable from `work/citation_qc.csv`. Would become a follow-up batch (
 - [ ] MISC hulls H2019A–H2023A on shipvault — no citable press yet; next discovery run.
 - [ ] Mozambique LNG confirmation — deadline was pushed to Sep 2026; re-check next month.
 - [ ] Re-test vesselfinder with a **single** request (IP ban still in force at last probe,
-      2026-09-17 15:24 UTC). Do not loop.
+      2026-09-17 23:00 UTC — the map repo's `fetch_mmsi.py --only-missing` hung). Do not loop.
 
 - [ ] **Refs for former names (batch 10 holds).** 29 `Other names` lines have no ref that prints
       the former name. Worth a search: the real renames — rows 57 East Energy, 124 CCH LNG,

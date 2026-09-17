@@ -109,3 +109,14 @@ but the row stays — rows are never deleted. Only Vessel type is proposed; Stat
 Apply SOP unchanged (`apply_rows.csv` paste or `tools/apply_patch.gs` on `apply_patch.csv`, DRY_RUN
 first), then `python scripts/verify_apply.py --batch batches/2026-09-17_1702ET_fix_scrapped_status --pull`.
 If the sheet's Status column has a data-validation dropdown, add `scrapped` to it first.
+
+## Applied 2026-09-17 19:00 ET
+
+Written to the backend sheet by Claude at Baird's request ("go ahead and add the scrapped yourself
+from the batch"), through the Sheets API (`values.batchUpdate`, `RAW`, 38 single-cell ranges built
+from `apply.json` — row_id → live row resolved from column A of the sheet at write time; every
+target cell was read first and held the expected old value: `active` / the IGU 2025 landing-page
+ref, `conventional` / blank on row 61). The Status dropdown already listed `scrapped`.
+`python scripts/verify_apply.py --batch … --pull`: **38 landed, 0 mismatch, 0 missing**
+(`verify_report.csv`). `qc_backend.py` after: 8 LOW (name checks), no HIGH / MED. Map fleet
+re-exported in `../lng-carriers-map` (row 61 → FSU adds Puteri Delima Satu, 59 vessels).

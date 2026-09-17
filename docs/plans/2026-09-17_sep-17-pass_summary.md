@@ -11,7 +11,7 @@ re-run `python scripts/apply_batch.py --batch <dir>`, apply, then
 `docs/plans/2026-09-17_sep-17-pass_worklist.md`** — that file is the tick-off version of
 everything still open (sheet prep, decisions, apply, stream 0, remaining research) and is kept
 current; this one is the narrative. Re-pull 2026-09-17 18:00 ET: 1,217 rows (822 active / 364 on
-order / 31 proposed) — no batch applied; Baird deleted the three Woodside duplicate rows by hand
+order / 31 proposed) — **batch 9 applied 2026-09-17 19:00 ET** (18 `scrapped`, row 61 FSU; verified), nothing else; Baird deleted the three Woodside duplicate rows by hand
 and three rows moved, so live rows ≥ 1130 shifted (row numbers below are the new ones).
 
 ## Batches, in the order to apply them
@@ -26,7 +26,7 @@ and three rows moved, so live rows ≥ 1130 shifted (row numbers below are the n
 | 6 | `2026-09-17_1114ET_shipvault_companion_refs` | existing shipvault `[ref]`s that render blank: unit-record URL appended as a second ref (values untouched) | 175 cells / 27 rows — all accept |
 | 7 | `2026-09-17_1458ET_igu_reconciliation_igu2026` | whole backend vs the IGU World LNG Report 2026 (fleet at end-2025; 2025 edition as the baseline the backend was loaded from) — IMO-keyed, IG rev 1 | comparison only, never applied: 1,054 matched, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate |
 | 8 | `2026-09-17_1654ET_fix_igu2026_sourced` | follow-up to 7: what IGU 2026 prints, as proposals citing the report PDF as sole ref (interim rule, IG §5.4) — blank Vessel / Cargo type, renames, delivery years, propulsion, load corruption on rows 451 / 499–501 / 509 | 468 cells / 328 rows — 443 accept, 24 hold, 1 reject (row 61 Vessel type ref — batch 9 proposes `FSU`); 8 manual-review values (the 24 `QC-max` ones became batch 11) |
-| 9 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G) |
+| 9 | `2026-09-17_1702ET_fix_scrapped_status` | follow-up to 7: the 18 dropped rows → Status `scrapped` (new vocab value; rows are never deleted), live row 61 Puteri Delima Satu → Vessel type `FSU` | 19 cells / 19 rows — all accept (G); **applied 2026-09-17, verified** |
 | 10 | `2026-09-17_1737ET_fix_other_names_former` | new rule (RF §4.16): the former Name of every proposed rename in 1, 2 and 8 appended to `Other names` (hull placeholders included; spelling / truncation fixes and row 942's wrong-vessel name excluded) | 131 cells / 131 rows — 95 accept, 36 hold (29 with no ref for the former name, 7 whose Name line is itself held) |
 | 11 | `2026-09-17_1809ET_fix_qcmax_vessel_type` | `qc-max` joined the Vessel type vocabulary (Baird 2026-09-17): the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as ref | 24 cells / 24 rows — all accept (G) |
 | 12 | `2026-09-17_1810ET_fix_price_full_usd` | Price is always full US dollars (Baird 2026-09-17): the 29 legacy `$m` rows × 1,000,000, currency → `USD`, refs kept (`preserve_ref`) | 58 cells / 29 rows — all accept |
