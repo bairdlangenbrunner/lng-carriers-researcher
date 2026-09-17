@@ -450,7 +450,9 @@ def _title_hit(title: str, fragments, wb=()) -> str | None:
         elif bad.strip().isdigit():
             # A status code must stand alone: "IMO 1162403" is not a 403 and
             # "IMO 1040447" is not a 404 (marinetraffic.org titles, 2026-09-16).
-            if re.search(r"(?<!\d)" + re.escape(bad) + r"(?!\d)", tl):
+            # ...nor is a quantity: "$500 million order" / "404 MW" is a headline, not an error.
+            if re.search(r"(?<![\d$€£.,])" + re.escape(bad.strip())
+                         + r"(?![\d,.]|\s*(?:million|billion|mln|bn|m\b|cbm|mw|teu|ships|vessels))", tl):
                 return bad
         elif bad in tl:
             return bad

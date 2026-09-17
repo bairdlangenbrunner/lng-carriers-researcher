@@ -766,3 +766,9 @@ def test_status_on_order_corroborated_by_order_wording():
 def test_untagged_hull_number():
     vs = url_verifier.value_variants("Hull H2706")
     assert "H2706" in vs and "Hull H2706" in vs
+
+
+def test_dollar_figure_in_title_is_not_a_status_code():
+    assert url_verifier._title_hit("DSME wins $500 million LNG carrier order", url_verifier._SOFT_ERROR_TITLES) is None
+    assert url_verifier._title_hit("500 Internal Server Error", url_verifier._SOFT_ERROR_TITLES)
+    assert url_verifier._title_hit("404 Not Found", url_verifier._SOFT_ERROR_TITLES)
