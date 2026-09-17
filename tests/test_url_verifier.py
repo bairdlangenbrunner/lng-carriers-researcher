@@ -724,6 +724,26 @@ class TestHostAdapters:
         seed(self.SV_API, "200", json.dumps(json.dumps([{"name": "HULL 2580"}])))
         assert verify_url(self.SV_PAGE, ["HULL 2580"])[0]
 
+    def test_shipvault_api_url_verifies_like_its_page(self):
+        # the unit-record endpoint is the companion ref for a page that renders
+        # blank; it is gated on the same rendered record (incl. the derived delivery)
+        seed(self.SV_API, "200", json.dumps(json.dumps([{"unitid": 465056, "name": "HULL 2580",
+                                                         "cap1": 174000, "built": 2027, "month": 3}])))
+        ok, reason = verify_url(self.SV_API, ["HULL 2580", "174000", "2027-03"])
+        assert ok and reason == "OK (shipvault_api)"
+        assert not verify_url(self.SV_API, ["135000"])[0]
+
+    def test_shipvault_record_dates_and_prices_match_cell_forms(self):
+        # an ISO timestamp / whole-dollar price never sits on a match boundary;
+        # the adapter renders the date alone and the price in $m, as cells carry them
+        seed(self.SV_API, "200", json.dumps([{"name": "PUTERI DELIMA SATU",
+                                              "ordered": "1999-04-01T00:00:00",
+                                              "newprice": 165000000}]))
+        assert corroborates(self.SV_API, "1-Apr-1999")[0]
+        assert corroborates(self.SV_API, "165")[0]
+        assert not corroborates(self.SV_API, "1-May-1999")[0]
+        assert not corroborates(self.SV_API, "166")[0]
+
     def test_marinetraffic_com_matches_against_vesselinfo(self):
         seed(self.MT_PAGE, "200", _page("MarineTraffic: Global Ship Tracking", "<div id=app>"))
         seed(self.MT_API, "200", json.dumps({"name": "LIMAIL", "imo": 9953274,

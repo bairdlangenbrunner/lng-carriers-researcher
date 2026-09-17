@@ -489,7 +489,12 @@ def _bot_wall_body(body: str) -> str | None:
 # blocked grammar when the API itself was walled.
 
 SHIPVAULT_API = "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/{id}"
+SHIPVAULT_API_HOST = "shipvaultapi-gjb8c.ondigitalocean.app"
 _SHIPVAULT_PAGE_RE = re.compile(r"^/ships/(\d+)/?$")
+# The unit-record endpoint is citable in its own right (it answers a plain
+# browser click, no tenant header) — the companion ref for a page whose SPA
+# renders blank. It is verified on the same rendered record as the page.
+_SHIPVAULT_API_RE = re.compile(r"^/api/units/(\d+)/?$")
 # shipvault's Angular bundle sends this fixed tenant header on shipsearch calls.
 SHIPVAULT_HEADERS = {"tx": "06fa22ce-fd30-44e9-a7d3-2147d4b72d26",
                      "Origin": "https://www.shipvault.com", "Accept": "application/json"}
@@ -525,11 +530,17 @@ def _render_record(rec: dict) -> str:
     return "\n".join(lines)
 
 
+def _shipvault_unit_id(url: str) -> str | None:
+    """Unit id of a shipvault page URL or of its unit-record API URL, else None."""
+    pat = _SHIPVAULT_API_RE if _host(url) == SHIPVAULT_API_HOST else _SHIPVAULT_PAGE_RE
+    m = pat.match(urlsplit(url).path)
+    return m.group(1) if m else None
+
+
 def _shipvault_adapter(url: str, page: Page) -> tuple[str | None, str | None]:
-    m = _SHIPVAULT_PAGE_RE.match(urlsplit(url).path)
-    if not m:
+    uid = _shipvault_unit_id(url)
+    if not uid:
         return "", None
-    uid = m.group(1)
     api = _fetch(SHIPVAULT_API.format(id=uid), headers=SHIPVAULT_HEADERS)
     if api.status != "200":
         cls = "blocked: " if api.status in _BOT_BLOCK_STATUSES else ""
@@ -541,6 +552,14 @@ def _shipvault_adapter(url: str, page: Page) -> tuple[str | None, str | None]:
     built, month = rec.get("built"), rec.get("month")
     if built and month:
         rec["delivery"] = f"{built}-{int(month):02d}"
+    # The record's own forms never sit on a match boundary: a date is an ISO
+    # timestamp ("1999-04-01T00:00:00"), a price is whole dollars (165000000)
+    # where the backend carries $m. Render both the way a cell states them.
+    for k, v in list(rec.items()):
+        if isinstance(v, str) and re.fullmatch(r"\d{4}-\d\d-\d\dT[\d:.]+Z?", v):
+            rec[k] = v[:10]
+    if isinstance(rec.get("newprice"), (int, float)) and rec["newprice"] > 0:
+        rec["newprice (million)"] = f"{rec['newprice'] / 1e6:g}"
     page.notes.append("shipvault_api")
     return _render_record(rec), None
 
@@ -566,6 +585,7 @@ def _marinetraffic_com_adapter(url: str, page: Page) -> tuple[str | None, str | 
 
 _HOST_ADAPTERS = {
     "shipvault.com": _shipvault_adapter,
+    SHIPVAULT_API_HOST: _shipvault_adapter,
     "marinetraffic.com": _marinetraffic_com_adapter,
 }
 
