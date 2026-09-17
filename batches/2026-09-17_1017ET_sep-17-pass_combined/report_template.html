@@ -103,7 +103,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 <header>
   <div class="eyebrow">LNG carrier tracker · research update · 17 Sep 2026</div>
   <h1>Sep-17 pass: what the run found, and what needs a decision</h1>
-  <p class="lede prose">An automated pass (the sep-17-pass) checked the tracker backend (1,220 rows: 822 active, 364 on order, 34 proposed) against yard orderbooks, Korean disclosures, trade press and ship registries. It produced <strong>1,186 proposed changes in five batches</strong>. <strong>Nothing has been written to the backend sheet.</strong> Every line is a candidate waiting for human review, and every cited URL was checked to confirm the live page actually states the value it supports.</p>
+  <p class="lede prose">An automated research pass, the sep-17-pass, checked the tracker backend (1,220 rows: 822 active, 364 on order, 34 proposed) against yard orderbooks, Korean disclosures, trade press and ship registries. It produced <strong>1,186 proposed changes in five batches</strong>. <strong>Nothing has been written to the backend sheet.</strong> Every line is a candidate waiting for human review, and every cited URL was checked to confirm the live page actually states the value it supports.</p>
 </header>
 
 <section>
@@ -185,7 +185,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 <section>
   <h2>Limits of this run</h2>
   <ul class="decisions">
-    <li>Coverage is thinner than a normal run. The web-search budget ran out part-way, one AIS site throttled requests all night (it is cited nowhere), and TradeWinds and Upstream paywalls hide many contract dates and prices.</li>
+    <li>Coverage is thinner than a normal run. The web-search budget ran out part-way, one AIS site throttled requests for the whole run (it is cited nowhere), and TradeWinds and Upstream paywalls hide many contract dates and prices.</li>
     <li>Registry data (shipvault) is treated as a single source, medium confidence, and is never used for owners: it had IMO typos and wrong owner tags.</li>
     <li>Only on-order rows were researched for blanks. Blanks on active rows are untouched.</li>
     <li>The sweep for dead or decayed references on existing rows is paused and is not part of this update.</li>
@@ -194,7 +194,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font
 
 <section>
   <h2>Every proposed change</h2>
-  <p class="sub prose">All 1,186 lines. Row numbers are live rows on the backend sheet as of 17 Sep, 10:15 ET. The workbook has the same table plus full paste-ready rows, the conflict list, documented blanks and the URL verification log.</p>
+  <p class="sub prose">All 1,186 lines. Row numbers are live rows on the backend sheet as of 17 Sep, 10:15 ET. The workbook has the same table, plus one sheet (<span class="mono">all_changes_backend_shape</span>) that lays every change from all five batches into the backend's own column structure, the per-batch paste-ready rows, the conflict list, documented blanks and the URL verification log.</p>
   <div class="dl" id="dlwrap" hidden><button id="dl" type="button">Download the workbook (.xlsx)</button><span id="dlmsg">15 sheets, 0.7 MB</span></div>
   <div class="controls">
     <label for="fb">Batch<select id="fb"><option value="">All batches</option><option value="1">1 Delivery roll-forward</option><option value="2">2 Delivery confirmed</option><option value="3">3 Discovery</option><option value="4">4 Data fill</option><option value="5">5 Missing references</option></select></label>
