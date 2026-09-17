@@ -829,6 +829,12 @@ def check_url(url: str) -> dict:
 # Value ↔ ref corroboration (§3.8c)
 # ---------------------------------------------------------------------------
 
+_DELIVERED_PHRASES = (
+    "took delivery", "taken delivery", "takes delivery", "taking delivery", "was delivered",
+    "were delivered", "has been delivered", "have been delivered", "handed over", "delivery ceremony",
+    "naming and delivery", "joined the fleet", "joins the fleet", "entered service",
+    "maiden voyage", "first cargo")
+
 _MONTHS = {a.lower(): (i + 1, a, f) for i, (a, f) in enumerate([
     ("Jan", "January"), ("Feb", "February"), ("Mar", "March"), ("Apr", "April"),
     ("May", "May"), ("Jun", "June"), ("Jul", "July"), ("Aug", "August"),
@@ -850,6 +856,12 @@ def value_variants(value) -> list[str]:
     if not v:
         return []
     out = {v, v.lower()}
+
+    # Status "active" = the ship has been delivered. Press never writes "active";
+    # it writes a past-tense delivery. Future-tense ("will be delivered") must not pass.
+    if v.lower() == "active":
+        out.update(_DELIVERED_PHRASES)
+        return [s for s in out if s]
 
     # Backend dates are DD-Mon-YYYY ("08-Jun-2026", "02-June-2026"); pages write
     # "8 June 2026", "June 8, 2026", "2026-06-08" (also the datePublished meta),

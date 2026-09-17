@@ -478,6 +478,14 @@ class TestCorroborates:
         assert corroborates(url, "08-Jun-2026")[0] is True
         assert corroborates(url, "09-Jun-2026")[0] is False
 
+    def test_status_active_needs_past_tense_delivery(self):
+        url = "https://example.com/s1"
+        seed(url, "200", _page("t", "The owner took delivery of the 174,000-cbm carrier on Monday"))
+        assert corroborates(url, "active")[0] is True
+        url2 = "https://example.com/s2"
+        seed(url2, "200", _page("t", "The carrier will be delivered in 2027"))
+        assert corroborates(url2, "active")[0] is False
+
     def test_price_abbreviations(self):
         assert "$250m" in value_variants("250000000")
         assert "250 million" in value_variants("$250,000,000")
