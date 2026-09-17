@@ -55,3 +55,11 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   `b6_shipvault_companions`), that appends it to the 175 corroborated cells already citing
   shipvault in the backend (27 rows). Workbook rebuilt: 1,361 proposals, backend-shape tab
   543 rows / 2,565 cells. The published report page was **not** republished; its counts predate this.
+- **Order-total prices (afternoon rebuild, DF rev 3 §5a).** 21 batch-4 Price lines were showing a
+  value with no source URL and a default `accept` (e.g. live row 918): per-vessel prices divided
+  out of an order total, whose total-stating URL the gate had dropped while a mis-set
+  `derivable: true` kept the value. Fixed at the source — see the data-fill batch's notes.md,
+  "Order-total prices". Batch 4 now carries 48 such Prices (15 orders), each with a passing ref,
+  all Y / `hold`; 23 of them were previously documented blanks. Workbook rebuilt: 1,415
+  proposals (818 accept / 597 hold); no non-derivable proposal is without a URL. The published
+  report page still predates this.
