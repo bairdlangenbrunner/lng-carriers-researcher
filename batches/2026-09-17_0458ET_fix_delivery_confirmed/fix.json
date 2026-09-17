@@ -1,0 +1,54 @@
+{
+ "batch_label": "Delivery confirmed by trade press - rows shipvault still lists ON ORDER (2026-09-17)",
+ "reason": "26 on-order rows are AIS-live under a real name while shipvault still says ON ORDER. Two research agents looked for a past-tense delivery statement for each; only these were confirmed. The other 24 stay on order (see manual_review.json).",
+ "corrections": [
+  {
+   "row_id": "186",
+   "_live_row": 887,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://lngprime.com/asia/knutsen-takes-delivery-of-qatarenergy-lng-tanker/195695/",
+       "soft": false
+      }
+     ],
+     "note": "LNG Prime (25-Aug-2026): 'Knutsen's unit Knutsen LNG France announced the delivery of Al Nigyan in a social media post last week' -- the 174,000-cbm LNG carrier is the eighth of ten HD Hyundai Heavy Industries-built vessels Knutsen owns and charters to QatarEnergy; matches backend_delivery_year 2026."
+    },
+    {
+     "field": "Name",
+     "new_value": "Al Nigyan",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://lngprime.com/asia/knutsen-takes-delivery-of-qatarenergy-lng-tanker/195695/",
+       "soft": false
+      }
+     ],
+     "note": "named at delivery; replaces hull placeholder"
+    }
+   ]
+  },
+  {
+   "row_id": "318",
+   "_live_row": 924,
+   "cells": [
+    {
+     "field": "Status",
+     "new_value": "active",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://lngprime.com/asia/yangzijiang-delivers-its-first-lng-carrier/195486/",
+       "soft": false
+      }
+     ],
+     "note": "LNG Prime (20-Aug-2026): 'Chinese private shipyard Yangzijiang Shipbuilding has delivered its first 175,000-cbm liquefied natural gas (LNG) carrier, Yangze LNG 01'; a follow-up LNG Prime piece (10-Sep-2026) notes it has since completed its maiden voyage. Matches backend's 2026 delivery-year estimate; url_verifier PASSED for --value active, --value 2026, and --value 'Yangze LNG 01'."
+    }
+   ]
+  }
+ ]
+}

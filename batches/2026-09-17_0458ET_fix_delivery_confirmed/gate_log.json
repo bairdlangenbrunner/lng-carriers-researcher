@@ -1,0 +1,29 @@
+[
+ {
+  "row_id": "186",
+  "field": "Status",
+  "value": "active",
+  "url": "https://lngprime.com/asia/knutsen-takes-delivery-of-qatarenergy-lng-tanker/195695/",
+  "ok": true,
+  "reason": "OK",
+  "grade": "ok"
+ },
+ {
+  "row_id": "186",
+  "field": "Name",
+  "value": "Al Nigyan",
+  "url": "https://lngprime.com/asia/knutsen-takes-delivery-of-qatarenergy-lng-tanker/195695/",
+  "ok": true,
+  "reason": "OK",
+  "grade": "ok"
+ },
+ {
+  "row_id": "318",
+  "field": "Status",
+  "value": "active",
+  "url": "https://lngprime.com/asia/yangzijiang-delivers-its-first-lng-carrier/195486/",
+  "ok": true,
+  "reason": "OK",
+  "grade": "ok"
+ }
+]
