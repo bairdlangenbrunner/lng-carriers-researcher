@@ -194,3 +194,101 @@ def test_crlf_and_multiline_fields_survive(tmp_path):
     p.write_bytes(text.encode())
     out = store.plan_csv(p, {"2|B": "accept", "1|A": "hold"})
     assert out == text.replace("2|B,fill,hold,", "2|B,fill,accept,")
+
+
+# ---- items + bulk (milestone 4) ----------------------------------------------------
+
+def post_item(base, body):
+    req = urllib.request.Request(base + "/api/item", data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req) as r:
+            return r.status, json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read())
+
+
+def conflict_item(base):
+    data = json.loads(get(base + "/api/data")[1])
+    return next(it for it in data["items"] if it["type"] == "conflict")
+
+
+def test_item_status_logged_and_conflict_call_written(running):
+    base, _, b = running
+    it = conflict_item(base)
+    assert it["status"] == "open" and it["conflict_decision"] == "hold"
+    path = b["data_fill"] / "conflicts.csv"
+    before = path.read_bytes()
+    status, body = post_item(base, [{"item_id": it["item_id"], "status": "resolved",
+                                     "note": "backend right", "conflict_decision": "reject"}])
+    assert status == 200 and body["saved"][0]["reviewer"] == "tester"
+    after = path.read_bytes()
+    # only the decision cell of that record changed
+    assert after == before.replace(b",hold", b",reject", 1) and after.count(b",reject") == 1
+    log = [json.loads(x) for x in (b["data_fill"] / "review_items.jsonl").read_text().splitlines()]
+    assert log[-1]["status"] == "resolved" and log[-1]["conflict_decision"] == "reject"
+    it2 = conflict_item(base)
+    assert it2["status"] == "resolved" and it2["conflict_decision"] == "reject"
+    assert it2["last"]["note"] == "backend right"
+    # decisions.csv is not touched by an item call
+    assert not (b["data_fill"] / "review_log.jsonl").exists()
+
+
+def test_item_status_without_call_leaves_conflicts_csv(running):
+    base, _, b = running
+    it = conflict_item(base)
+    before = (b["data_fill"] / "conflicts.csv").read_bytes()
+    assert post_item(base, [{"item_id": it["item_id"], "status": "needs research"}])[0] == 200
+    assert (b["data_fill"] / "conflicts.csv").read_bytes() == before
+
+
+@pytest.mark.parametrize("body", [
+    [{"item_id": "nope::conflict:0", "status": "open"}],
+    [{"item_id": "__C__", "status": "done"}],
+    [{"item_id": "__C__", "status": "open", "conflict_decision": "maybe"}],
+    [],
+])
+def test_bad_item_request_is_400_and_writes_nothing(running, body):
+    base, _, b = running
+    body = json.loads(json.dumps(body).replace("__C__", conflict_item(base)["item_id"]))
+    before = snapshot(b.values())
+    status, resp = post_item(base, body)
+    assert status == 400 and resp["error"]
+    assert snapshot(b.values()) == before
+
+
+def test_regenerated_conflicts_csv_is_refused(running):
+    base, _, b = running
+    it = conflict_item(base)
+    path = b["data_fill"] / "conflicts.csv"
+    text = path.read_text(encoding="utf-8").replace(it["conflict_match"][1], "Something else", 1)
+    path.write_text(text, encoding="utf-8")
+    before = snapshot(b.values())
+    status, resp = post_item(base, [{"item_id": it["item_id"], "status": "resolved",
+                                     "conflict_decision": "accept"}])
+    assert status == 400 and "no longer" in resp["error"]
+    assert snapshot(b.values()) == before
+
+
+def test_bulk_records_across_batches(running):
+    base, _, b = running
+    keys = [f"{b['fix_a'].name}::10|Price", f"{b['fix_a'].name}::10|Status", f"{b['fix_b'].name}::10|Status"]
+    recs = [{"key": k, "decision": "reject", "via": "bulk:decision hold · Status"} for k in keys]
+    status, body = post(base, recs)
+    assert status == 200 and len(body["saved"]) == 3
+    assert len({r["ts"] for r in body["saved"]}) == 1
+    for d in (b["fix_a"], b["fix_b"]):
+        log = [json.loads(x) for x in (d / "review_log.jsonl").read_text().splitlines()]
+        assert all(r["via"].startswith("bulk:") for r in log)
+    data = json.loads(get(base + "/api/data")[1])
+    assert all(data["proposals"][k]["decision"] == "reject" for k in keys)
+
+
+def test_conflict_call_reset_by_apply_batch_is_shown(running, tmp_path):
+    base, _, b = running
+    from review_fixture import _run_apply
+    it = conflict_item(base)
+    post_item(base, [{"item_id": it["item_id"], "status": "resolved", "conflict_decision": "accept"}])
+    _run_apply(b["data_fill"], tmp_path / "backend.csv")       # regenerates conflicts.csv at hold
+    it2 = conflict_item(base)
+    assert it2["conflict_decision"] == "hold" and it2["logged_call"] == "accept"

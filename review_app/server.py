@@ -10,6 +10,8 @@ rebuilds work/review_data.json first (review_data.py); otherwise it serves the e
     GET  /api/data     review_data.json with the batches' current decisions laid over it
     GET  /api/whoami   {"reviewer": ...}
     POST /api/decide   [decision record, ...] -> {"saved": [...]}  (store.decide; 400 = nothing written)
+    POST /api/item     [item record, ...] -> {"saved": [...]}  (store.record_items: review_items.jsonl
+                       + a conflict's call in conflicts.csv `decision`)
 """
 import argparse
 import ipaddress
@@ -60,11 +62,17 @@ class App:
 
     def current(self):
         with self.lock:
-            return store.overlay(self.data, self.dirs)
+            out = store.overlay(self.data, self.dirs)
+            out["items"] = store.overlay_items(self.data, self.dirs)
+            return out
 
     def decide(self, records):
         with self.lock:
             return store.decide(records, self.data, self.dirs, self.reviewer)
+
+    def record_items(self, records):
+        with self.lock:
+            return store.record_items(records, self.data, self.dirs, self.reviewer)
 
 
 def make_handler(app):
@@ -127,6 +135,8 @@ def make_handler(app):
             try:
                 if path == "/api/decide":
                     return self._json({"saved": app.decide(body)})
+                if path == "/api/item":
+                    return self._json({"saved": app.record_items(body)})
             except store.Invalid as e:
                 return self._json({"error": str(e)}, HTTPStatus.BAD_REQUEST)
             except Exception as e:  # a failed write: report it loudly, the UI keeps the line undecided

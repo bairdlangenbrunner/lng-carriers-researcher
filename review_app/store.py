@@ -149,34 +149,67 @@ def _serialise(fields, raw):
     return buf.getvalue()
 
 
-def plan_csv(path, updates):
-    """New text of decisions.csv with only the `decision` cell of the ids in `updates`
-    changed; every other record keeps its exact source bytes. Invalid if an id is missing."""
+def _rewrite(path, column, new_value):
+    """New text of a csv with only cells of `column` changed, where
+    new_value(index, row_dict) returns the value (None = leave the record alone). Every other
+    record keeps its exact source bytes."""
     with open(path, encoding="utf-8", newline="") as f:   # newline="": keep \r\n as written
         text = f.read()
     recs = _records_with_raw(text)
     if not recs:
         raise Invalid(f"{path} is empty")
     header = recs[0][1]
-    if "id" not in header or "decision" not in header:
-        raise Invalid(f"{path} has no id / decision column")
-    i_id, i_dec = header.index("id"), header.index("decision")
-    seen = set()
+    if column not in header:
+        raise Invalid(f"{path} has no {column} column")
+    i_col = header.index(column)
     parts = [recs[0][0]]
-    for raw, fields in recs[1:]:
-        rid = fields[i_id] if len(fields) > i_id else None
-        if rid in updates and len(fields) > i_dec:
-            seen.add(rid)
-            if fields[i_dec] != updates[rid]:
-                fields = list(fields)
-                fields[i_dec] = updates[rid]
-                raw = _serialise(fields, raw)
+    for n, (raw, fields) in enumerate(recs[1:]):
+        v = new_value(n, dict(zip(header, fields)))
+        if v is not None and len(fields) > i_col and fields[i_col] != v:
+            fields = list(fields)
+            fields[i_col] = v
+            raw = _serialise(fields, raw)
         parts.append(raw)
+    return "".join(parts)
+
+
+def plan_csv(path, updates):
+    """New text of decisions.csv with only the `decision` cell of the ids in `updates`
+    changed. Invalid if an id is missing."""
+    seen = set()
+
+    def val(_n, row):
+        if row.get("id") in updates:
+            seen.add(row["id"])
+            return updates[row["id"]]
+        return None
+    with open(path, encoding="utf-8", newline="") as f:
+        if "id" not in next(csv.reader(f), []):
+            raise Invalid(f"{path} has no id column")
+    text = _rewrite(path, "decision", val)
     missing = set(updates) - seen
     if missing:
         raise Invalid(f"{path.parent.name}: decisions.csv has no line for {', '.join(sorted(missing))} "
                       "— re-run apply_batch.py on the batch, then rebuild review_data.json")
-    return "".join(parts)
+    return text
+
+
+def plan_conflicts(path, calls):
+    """conflicts.csv with the `decision` cell of record i set, for {i: (row_id, column, call)}.
+    Invalid when record i no longer holds that row_id + column (the file was regenerated)."""
+    seen = {}
+
+    def val(n, row):
+        if n in calls:
+            seen[n] = (row.get("row_id", ""), row.get("column", ""))
+            return calls[n][2]
+        return None
+    text = _rewrite(path, "decision", val)
+    for n, (rid, col, _c) in calls.items():
+        if seen.get(n) != (rid, col):
+            raise Invalid(f"{path.parent.name}: conflicts.csv record {n} is no longer {rid} / {col} "
+                          "— rebuild review_data.json")
+    return text
 
 
 def atomic_write(path, text):
@@ -239,3 +272,89 @@ def decide(records, data, dirs, reviewer):
             rollback(log, size)
             raise
     return recs
+
+
+# ---- review items (Items tab) ------------------------------------------------------
+
+ITEM_STATUSES = ("open", "resolved", "needs research")
+# a conflict's call, written to conflicts.csv `decision` (AP §4: decided by hand; an accepted
+# one is still applied as a deliberate single-cell edit, never by the app)
+CONFLICT_CALLS = ("accept", "hold", "reject")
+
+
+def overlay_items(data, dirs):
+    """Items with their latest status / note / call from each batch's review_items.jsonl;
+    a conflict's call is read back from conflicts.csv when it still matches the record."""
+    log = {b: latest(read_jsonl(d / "review_items.jsonl"), "item_id") for b, d in dirs.items()}
+    conflicts = {}
+    out = []
+    for it in data.get("items", []):
+        q = dict(it)
+        rec = log.get(it["batch"], {}).get(it["item_id"])
+        q["status"] = (rec or {}).get("status", "open")
+        q["last"] = rec
+        if it.get("conflict_match") and it["batch"] in dirs:
+            b = it["batch"]
+            if b not in conflicts:
+                p = dirs[b] / "conflicts.csv"
+                conflicts[b] = []
+                if p.exists():
+                    with open(p, newline="", encoding="utf-8") as f:
+                        conflicts[b] = list(csv.DictReader(f))
+            rows = conflicts[b]
+            i = it["conflict_index"]
+            if i < len(rows) and [rows[i].get("row_id", ""), rows[i].get("column", "")] == it["conflict_match"]:
+                q["conflict_decision"] = rows[i].get("decision", "")
+            # apply_batch.py regenerates conflicts.csv with every call back at hold; the log keeps it
+            call = next((r.get("conflict_decision") for r in reversed(read_jsonl(dirs[b] / "review_items.jsonl"))
+                         if r.get("item_id") == it["item_id"] and r.get("conflict_decision")), "")
+            q["logged_call"] = call
+        out.append(q)
+    return out
+
+
+def record_items(records, data, dirs, reviewer):
+    """Validate item records {item_id, status, note, conflict_decision?}; per batch append
+    them to review_items.jsonl and write conflict calls into conflicts.csv `decision`."""
+    if not isinstance(records, list) or not records:
+        raise Invalid("expected a non-empty list of item records")
+    items = {it["item_id"]: it for it in data.get("items", [])}
+    ts = now()
+    by_batch = {}
+    for i, r in enumerate(records):
+        if not isinstance(r, dict):
+            raise Invalid(f"record {i}: not an object")
+        it = items.get(r.get("item_id"))
+        if not it:
+            raise Invalid(f"record {i}: unknown item {r.get('item_id')!r}")
+        status = r.get("status") or "open"
+        if status not in ITEM_STATUSES:
+            raise Invalid(f"record {i}: status {status!r} is not one of {', '.join(ITEM_STATUSES)}")
+        rec = {"item_id": it["item_id"], "status": status, "note": str(r.get("note") or ""),
+               "reviewer": reviewer, "ts": ts}
+        call = r.get("conflict_decision")
+        if call:
+            if not it.get("conflict_match"):
+                raise Invalid(f"record {i}: {it['item_id']} is not a conflicts.csv record")
+            if call not in CONFLICT_CALLS:
+                raise Invalid(f"record {i}: conflict call {call!r} is not one of {', '.join(CONFLICT_CALLS)}")
+            rec["conflict_decision"] = call
+        if it["batch"] not in dirs:
+            raise Invalid(f"batch dir not known to the server: {it['batch']}")
+        by_batch.setdefault(it["batch"], []).append((rec, it))
+    plans = {}
+    for b, pairs in by_batch.items():
+        calls = {it["conflict_index"]: (*it["conflict_match"], rec["conflict_decision"])
+                 for rec, it in pairs if rec.get("conflict_decision")}
+        if calls:
+            plans[b] = plan_conflicts(dirs[b] / "conflicts.csv", calls)
+    for b, pairs in by_batch.items():
+        log = dirs[b] / "review_items.jsonl"
+        size = append_jsonl(log, [rec for rec, _ in pairs])
+        if b in plans:
+            try:
+                atomic_write(dirs[b] / "conflicts.csv", plans[b])
+            except Exception:
+                rollback(log, size)
+                raise
+    return [rec for pairs in by_batch.values() for rec, _ in pairs]

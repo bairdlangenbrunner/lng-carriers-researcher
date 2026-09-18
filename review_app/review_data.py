@@ -169,7 +169,10 @@ def collect_items(bdir, mode, srm):
                                                f"{c['backend_value']} → {c.get('proposed_value', '')}") if x)
                 or "backend flag",
                 "detail": c.get("recommendation", ""), "urls": split_urls(c.get("sources", "")),
+                # conflicts.csv rows carry no id: the write-back addresses record i and checks
+                # row_id + column still match (apply_batch.py regenerates the file)
                 "conflict_index": i, "conflict_decision": c.get("decision", ""),
+                "conflict_match": [c.get("row_id", ""), c.get("column", "")],
             })
     mpath = bdir / "manual_review.json"
     if mpath.exists():

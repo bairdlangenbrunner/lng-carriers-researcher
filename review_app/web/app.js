@@ -19,6 +19,11 @@
       return fetch("/api/decide", {method: "POST", headers: {"Content-Type": "application/json"},
                                    body: JSON.stringify(records)}).then(Store._json)
         .then(function (b) { return b.saved; });
+    },
+    item: function (records) {   // Items tab: status / note / a conflict's call
+      return fetch("/api/item", {method: "POST", headers: {"Content-Type": "application/json"},
+                                 body: JSON.stringify(records)}).then(Store._json)
+        .then(function (b) { return b.saved; });
     }
   };
   window.Store = Store;
@@ -31,6 +36,7 @@
     vessel: -1,             // index into D.vessels
     line: null,             // selected proposal key
     session: [],            // records saved this session
+    itemSession: [],        // item records saved this session
     undo: []                // per action: the prior state of the lines it changed
   };
   var $ = function (id) { return document.getElementById(id); };
@@ -174,6 +180,7 @@
       if (n) S.visible.push(i);
     });
     $("count").textContent = nLines + " lines on " + S.visible.length + " vessels match";
+    renderBulk(nLines);
     if (S.visible.indexOf(S.vessel) < 0 && !(keepCurrent && S.vessel >= 0))
       S.vessel = S.visible.length ? S.visible[0] : -1;
     renderVessels();
@@ -406,6 +413,7 @@
     var keepLine = S.line;
     refilter(true);
     if (keepLine && document.getElementById("line-" + keepLine)) setLine(keepLine, true);
+    if (!$("tab-summary").hidden) renderSummary();
   }
 
   function decideLine(k, decision, opts) {
@@ -604,6 +612,222 @@
     });
   }
 
+
+  // ---- bulk: apply to all N filtered ----
+  function renderBulk(n) {
+    var slot = $("bulk-slot");
+    if (!slot.firstChild) {
+      slot.innerHTML = 'apply to all <b id="bulk-n"></b> filtered: ' + CONTROLS.map(function (c) {
+        return '<button type="button" class="b-' + c[0] + '" data-bulk="' + c[0] + '">' + c[0] + "</button>";
+      }).join(" ");
+      slot.onclick = function (e) {
+        var b = e.target.closest("button[data-bulk]");
+        if (b) bulkDecide(b.getAttribute("data-bulk"));
+      };
+    }
+    $("bulk-n").textContent = n;
+    Array.prototype.forEach.call(slot.querySelectorAll("button"), function (b) { b.disabled = !n; });
+  }
+  function bulkDecide(decision) {
+    var st = filterState(), desc = filterDescription(st);
+    var keys = matchingKeys(st);
+    var inSet = {};
+    keys.forEach(function (k) { inSet[k] = 1; });
+    var change = keys.filter(function (k) { return D.proposals[k].decision !== decision; });
+    // bulk never crosses a linked pair silently: partners outside the filter are named
+    var partners = [], strict = false;
+    change.forEach(function (k) {
+      partnersOf(k).forEach(function (o) {
+        if (inSet[o] || partners.indexOf(o) >= 0 || D.proposals[o].decision === decision) return;
+        partners.push(o);
+        if (isStrict(k, o)) strict = true;
+      });
+    });
+    if (!change.length) {
+      return dialog("<h3>Nothing to change</h3><p>All " + keys.length + " filtered lines are already <b>" +
+        esc(decision) + "</b>.</p>", [["Close", null]]);
+    }
+    var h = "<h3>" + esc(decision) + " " + change.length + " line" + (change.length === 1 ? "" : "s") +
+      " — " + esc(desc) + "</h3><p>" + keys.length + " lines match the filter; " + change.length +
+      " change to <b>" + esc(decision) + "</b>" +
+      (keys.length > change.length ? " (" + (keys.length - change.length) + " already are)" : "") + ".</p>";
+    var applied = function (list) {
+      return list.filter(function (k) { return has(D.proposals[k], "applied"); }).length;
+    };
+    if (partners.length) {
+      h += "<p>The filter catches only one half of " + partners.length + " linked pair" +
+        (partners.length === 1 ? "" : "s") + ". Partners outside it: " + uniq(partners.map(function (o) {
+          return D.proposals[o].column; })).map(esc).join(", ") + ".</p>";
+      if (strict) h += "<p>Name and Other names are decided together (RF §4.16), so those partners are included.</p>";
+    }
+    var btns = [["Cancel", null]];
+    if (partners.length && !strict) btns.push(["Only the filtered lines", "one"]);
+    btns.push([partners.length ? "Include the partners" : esc(decision) + " " + change.length, "both"]);
+    var nApplied = applied(change.concat(partners));
+    if (nApplied) h += '<p class="warn">' + nApplied + " line(s) belong to an already-applied batch: the " +
+      "decision is recorded, nothing is unapplied.</p>";
+    return dialog(h, btns).then(function (ans) {
+      if (!ans) return null;
+      var recs = change.map(function (k) { return {key: k, decision: decision, via: "bulk:" + desc}; });
+      if (ans === "both") recs = recs.concat(partners.map(function (o) {
+        return {key: o, decision: decision, via: "linked"};
+      }));
+      return save(recs, true);
+    }).catch(function () { return null; });
+  }
+
+  // ---- Items tab: conflicts, manual review, proposed bucket, duplicates, flags ----
+  var ITEM_STATUSES = ["open", "resolved", "needs research"];
+  var ITEM_TYPES = {conflict: "conflict", manual: "manual review", proposed_bucket: "proposed bucket",
+                    duplicate: "possible duplicate", flag: "flag"};
+  function vesselIndexForRow(r) {
+    for (var i = 0; i < D.vessels.length; i++) if (D.vessels[i].live_row === r) return i;
+    return -1;
+  }
+  function renderItems() {
+    var box = $("tab-items");
+    if (!box.firstChild) {
+      box.innerHTML = '<form class="filters" id="item-filters" onsubmit="return false">' +
+        '<label>type <select id="i-type"><option value="">any</option></select></label>' +
+        '<label>status <select id="i-status"><option value="">any</option></select></label>' +
+        '<label>batch <select id="i-batch"><option value="">any</option></select></label>' +
+        '<span id="i-count"></span></form><div id="item-list" class="summary"></div>';
+      fillSelect("i-type", Object.keys(ITEM_TYPES), Object.keys(ITEM_TYPES).map(function (t) { return ITEM_TYPES[t]; }));
+      fillSelect("i-status", ITEM_STATUSES);
+      var bs = uniq(D.items.map(function (it) { return it.batch; }));
+      fillSelect("i-batch", bs, bs.map(function (b) { return batchOf(b).label; }));
+      ["i-type", "i-status", "i-batch"].forEach(function (id) { $(id).onchange = renderItemList; });
+      $("item-list").addEventListener("click", onItemClick);
+    }
+    renderItemList();
+  }
+  function renderItemList() {
+    var t = $("i-type").value, stt = $("i-status").value, b = $("i-batch").value;
+    var list = D.items.filter(function (it) {
+      return (!t || it.type === t) && (!stt || it.status === stt) && (!b || it.batch === b);
+    });
+    $("i-count").textContent = list.length + " of " + D.items.length + " items · " +
+      D.items.filter(function (it) { return it.status === "open"; }).length + " open";
+    $("item-list").innerHTML = list.map(itemHtml).join("") || '<div class="empty">No items match.</div>';
+  }
+  function itemHtml(it) {
+    var rows = it.live_rows.map(function (r) {
+      return vesselIndexForRow(r) >= 0
+        ? '<a href="#" data-row="' + r + '">row ' + r + "</a>" : "row " + r;
+    }).join(", ");
+    var h = '<div class="item" data-item="' + esc(it.item_id) + '"><div class="row1">' +
+      '<span class="chip">' + esc(ITEM_TYPES[it.type] || it.type) + "</span> " +
+      '<span class="col">' + esc(it.title) + "</span> " + (rows ? "<span>" + rows + "</span> " : "") +
+      '<span class="batch">' + esc(batchOf(it.batch).label) + "</span>" +
+      '<span class="state">' + esc(it.status) + (it.last ? " · " + esc(it.last.reviewer) : "") + "</span></div>";
+    if (it.detail) h += '<div class="detail">' + esc(it.detail) + "</div>";
+    if (it.logged_call && it.logged_call !== it.conflict_decision)
+      h += '<div class="detail"><span class="chip warn">call ' + esc(it.logged_call) + " is in review_items.jsonl but " +
+        "conflicts.csv says " + esc(it.conflict_decision || "nothing") + " (apply_batch.py regenerated it) — save to rewrite it</span></div>";
+    if (it.urls.length) h += '<ul class="refs">' + it.urls.map(function (u) {
+      return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(u) + "</a></li>";
+    }).join("") + "</ul>";
+    h += '<div class="controls"><label>status <select data-f="status">' + ITEM_STATUSES.map(function (s) {
+      return '<option' + (s === it.status ? " selected" : "") + ">" + s + "</option>";
+    }).join("") + "</select></label>";
+    if (it.conflict_match) {
+      // AP §4: a conflict is decided by hand; the call lands in conflicts.csv `decision`
+      h += ' <label title="written to conflicts.csv; an accepted conflict is still applied by hand (AP §4)">call ' +
+        '<select data-f="call">' + ["accept", "hold", "reject"].map(function (c) {
+          return "<option" + (c === (it.conflict_decision || "hold") ? " selected" : "") + ">" + c + "</option>";
+        }).join("") + "</select></label>";
+    }
+    h += ' <textarea data-f="note" rows="1" placeholder="note">' + esc(it.last ? it.last.note : "") + "</textarea>" +
+      ' <button type="button" data-save-item>save</button><span class="saving"></span></div></div>';
+    return h;
+  }
+  function onItemClick(e) {
+    var a = e.target.closest("a[data-row]");
+    if (a) {
+      e.preventDefault();
+      showTab("queue");
+      return selectVessel(vesselIndexForRow(+a.getAttribute("data-row")));
+    }
+    var b = e.target.closest("button[data-save-item]");
+    if (!b) return;
+    var box = b.closest(".item"), id = box.getAttribute("data-item");
+    var it = D.items.filter(function (x) { return x.item_id === id; })[0];
+    var rec = {item_id: id, status: box.querySelector('[data-f="status"]').value,
+               note: box.querySelector('[data-f="note"]').value};
+    var call = box.querySelector('[data-f="call"]');
+    if (call && call.value !== (it.conflict_decision || "hold")) rec.conflict_decision = call.value;
+    var msg = box.querySelector(".saving");
+    msg.textContent = "Saving…";
+    msg.className = "saving";
+    Store.item([rec]).then(function (saved) {
+      saved.forEach(function (r) {
+        it.status = r.status;
+        it.last = r;
+        if (r.conflict_decision) it.conflict_decision = r.conflict_decision;
+      });
+      S.itemSession = S.itemSession.concat(saved);
+      box.outerHTML = itemHtml(it);
+      renderItemList();
+    }).catch(function (err) {
+      msg.textContent = "Not saved: " + err.message;
+      msg.className = "err";
+      box.classList.add("failed");
+    });
+  }
+
+  // ---- session summary ----
+  function renderSummary() {
+    var by = {};
+    S.session.forEach(function (r) {
+      var b = D.proposals[r.key].batch;
+      by[b] = by[b] || {accept: 0, hold: 0, reject: 0, suggest: 0};
+      by[b][r.decision]++;
+    });
+    var itemsBy = {};
+    S.itemSession.forEach(function (r) {
+      var b = r.item_id.split("::")[0];
+      itemsBy[b] = (itemsBy[b] || 0) + 1;
+    });
+    var touched = uniq(Object.keys(by).concat(Object.keys(itemsBy))).sort(function (a, b) {
+      return batchOf(a).apply_order - batchOf(b).apply_order;
+    });
+    var sugg = Object.keys(D.proposals).filter(function (k) { return D.proposals[k].decision === "suggest"; });
+    var suggDirs = uniq(sugg.map(function (k) { return D.proposals[k].batch; }));
+    var h = "<h2>This session</h2>";
+    if (!touched.length) h += "<p>No decisions recorded yet this session.</p>";
+    else {
+      h += "<table><tr><th>batch</th><th>accept</th><th>hold</th><th>reject</th><th>suggest</th><th>items</th></tr>" +
+        touched.map(function (b) {
+          var c = by[b] || {accept: 0, hold: 0, reject: 0, suggest: 0};
+          return "<tr><td>" + esc(batchOf(b).label) + (batchOf(b).label !== b ? "<br><code>" + esc(b) + "</code>" : "") + "</td><td>" + c.accept +
+            "</td><td>" + c.hold + "</td><td>" + c.reject + "</td><td>" + c.suggest + "</td><td>" +
+            (itemsBy[b] || 0) + "</td></tr>";
+        }).join("") + "</table>";
+    }
+    var decTouched = touched.filter(function (b) { return by[b]; });
+    h += "<h2>Next</h2>";
+    if (decTouched.length) {
+      h += "<p>Regenerate the apply artifacts from the new decisions (Apply SOP step 2), then apply and verify as usual:</p><pre>" +
+        decTouched.map(function (b) { return "python scripts/apply_batch.py --batch batches/" + esc(b); }).join("\n") + "</pre>";
+    } else h += "<p>No batch decisions changed this session, so no apply_batch.py run is needed.</p>";
+    h += "<h2>Suggestions pending</h2>";
+    if (sugg.length) {
+      h += "<p>" + sugg.length + " line(s) set to suggest (stored as reject in decisions.csv). They reach the " +
+        "backend only through a fix batch that re-gates them:</p><pre>python review_app/suggestions.py --batches " +
+        suggDirs.map(function (b) { return "batches/" + esc(b); }).join(" ") +
+        " --out work/review_suggestions_fix.json</pre><ul>" + sugg.map(function (k) {
+          var p = D.proposals[k];
+          return "<li>" + esc(p.column) + " · " + esc(batchOf(p.batch).label) + " · " +
+            esc(p.suggestion ? p.suggestion.value : "") + "</li>";
+        }).join("") + "</ul>";
+    } else h += "<p>None.</p>";
+    var open = D.items.filter(function (it) { return it.status !== "resolved"; }).length;
+    h += "<h2>Items</h2><p>" + open + " of " + D.items.length + " items not resolved (statuses in each batch's " +
+      "<code>review_items.jsonl</code>; conflict calls in <code>conflicts.csv</code> — note that " +
+      "<code>apply_batch.py</code> regenerates conflicts.csv with every call back at hold).</p>";
+    $("tab-summary").innerHTML = '<div class="summary">' + h + "</div>";
+  }
+
   // ---- tabs ----
   function initTabs() {
     Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (t) {
@@ -615,6 +839,8 @@
       t.classList.toggle("active", t.getAttribute("data-tab") === name);
     });
     ["queue", "items", "summary"].forEach(function (n) { $("tab-" + n).hidden = n !== name; });
+    if (name === "items") renderItems();
+    if (name === "summary") renderSummary();
   }
 
   function banner(msg) {
@@ -627,7 +853,8 @@
   // Exposed for the later milestones and for debugging in the console.
   window.ReviewApp = {
     get data() { return D; }, state: S, refilter: refilter, renderCard: renderCard,
-    matchingKeys: matchingKeys, filterDescription: filterDescription, dialog: dialog, banner: banner
+    matchingKeys: matchingKeys, filterDescription: filterDescription, dialog: dialog, banner: banner,
+    bulkDecide: bulkDecide, showTab: showTab
   };
 
   initTheme();

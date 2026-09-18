@@ -41,3 +41,20 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    `Other names`, `Price` ↔ `Price currency`, `Capacity` ↔ `Capacity units`, `X` ↔ `X [ref]`)
    asks about the other; for `Name` ↔ `Other names` the answer is both or neither (RF §4.16).
    A line from an already-applied batch stays decidable, but changing it unapplies nothing.
+
+   **Bulk.** The status bar's "apply to all N filtered" (accept / hold / reject) always confirms
+   first, restating the filter and how many lines change; records carry `via: "bulk:<filter>"`.
+   When the filter catches only one half of a linked pair the dialog names the partners and
+   offers to include them (`Name` ↔ `Other names` partners are always included).
+
+   **Items tab.** Conflicts, manual-review entries, the proposed bucket, duplicate pairs and
+   discovery flags, with a status (`open` / `resolved` / `needs research`) and a note, appended
+   to `batches/<dir>/review_items.jsonl`. They feed the worklist, not the apply. A conflict also
+   takes a call (accept / hold / reject), written into that record's `decision` cell in
+   `conflicts.csv` (byte-preserving, refused if the record no longer matches). An accepted
+   conflict is still applied by hand (AP §4). `apply_batch.py` regenerates `conflicts.csv` with
+   every call back at `hold`; the log keeps the call and the tab flags the drift — save again to
+   rewrite it.
+
+   **Session summary.** Decisions and item calls made this session by batch, the
+   `apply_batch.py` command for each batch whose decisions changed, and the suggestions pending.
