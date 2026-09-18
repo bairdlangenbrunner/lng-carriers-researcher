@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Batch review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Batch review</h1>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="queue" role="tab">Queue</button>
+    <button class="tab" data-tab="items" role="tab">Items</button>
+    <button class="tab" data-tab="summary" role="tab">Session summary</button>
+  </nav>
+  <div class="who"><span id="whoami"></span> · <span id="built"></span>
+    <button id="theme" class="ghost" title="Toggle light / dark">◐</button>
+    <button id="help-btn" class="ghost" title="Keyboard shortcuts (?)">?</button>
+  </div>
+</header>
+
+<div id="banner" class="banner" hidden></div>
+
+<section id="tab-queue" class="tabpanel">
+  <form id="filters" class="filters" onsubmit="return false">
+    <label>Decision <select id="f-decision">
+      <option value="hold" selected>hold</option><option value="">any</option>
+      <option value="accept">accept</option><option value="reject">reject</option>
+      <option value="suggest">suggest</option></select></label>
+    <label>Batch <select id="f-batch"><option value="">any</option></select></label>
+    <label>Column <select id="f-column"><option value="">any</option></select></label>
+    <label>Conf. <select id="f-confidence"><option value="">any</option>
+      <option>G</option><option>Y</option><option>R</option></select></label>
+    <label>Kind <select id="f-kind"><option value="">any</option>
+      <option value="fill">fill</option><option value="ref">ref</option>
+      <option value="new_row">new row</option></select></label>
+    <label>Flag <select id="f-flag"><option value="">any</option>
+      <option value="igu_pdf_only">refs = IGU PDF only</option>
+      <option value="overlaps_batch">same cell in 2 batches</option>
+      <option value="preserve_ref">cosmetic (ref kept)</option>
+      <option value="append_ref">appends</option>
+      <option value="ref_only">ref only</option>
+      <option value="applied">already applied</option></select></label>
+    <label>Builder <select id="f-builder"><option value="">any</option></select></label>
+    <label>Owner <select id="f-owner"><option value="">any</option></select></label>
+    <label class="check"><input type="checkbox" id="f-mine"> changed by me</label>
+    <label class="grow">Search <input type="search" id="f-text" placeholder="name / IMO / row  ( / )"></label>
+    <button type="button" id="f-reset" class="ghost">reset</button>
+  </form>
+  <div class="statusbar">
+    <span id="count"></span>
+    <div class="progress" title="holds remaining"><div id="progress-bar"></div></div>
+    <span id="progress-text"></span>
+    <span class="spacer"></span>
+    <span id="bulk-slot"></span>
+  </div>
+  <div class="queue">
+    <ol id="vessels" class="vessels" aria-label="Vessels"></ol>
+    <article id="card" class="card" aria-live="polite"></article>
+  </div>
+</section>
+
+<section id="tab-items" class="tabpanel" hidden></section>
+<section id="tab-summary" class="tabpanel" hidden></section>
+
+<dialog id="dialog"></dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

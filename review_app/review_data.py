@@ -287,6 +287,8 @@ def build(batch_dirs, backend_path=None, info_path=None):
                 "confidence": it["confidence"], "derivable": it["derivable"],
                 "prev_state": it["prev_state"], "default": default, "decision": decision,
                 "note": it["note"], "links": [], "flags": flags,
+                # a ref line: the backend value the ref is meant to cite
+                "cited_value": cell(rid, vfield) if it["kind"] == "ref" and rid else "",
                 "row_data": it["row_data"] if it["kind"] == "new_row" else None,
                 "cluster_label": it.get("cluster_label", ""),
             }
