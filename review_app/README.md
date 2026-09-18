@@ -58,3 +58,29 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
 
    **Session summary.** Decisions and item calls made this session by batch, the
    `apply_batch.py` command for each batch whose decisions changed, and the suggestions pending.
+
+   **Suggest…** (`s`) records a different value for a line instead of its proposal: the value,
+   a required note, and a kind — `value` (a different fact; the original refs are re-gated
+   against it) or `cosmetic` (spelling / stylization, same fact; the cell's `[ref]` is kept).
+   It is stored as `reject` in `decisions.csv` and as `suggest` in the log. Nothing is applied
+   from the app. Not offered on discovery new rows or ref-only lines.
+
+3. `suggestions.py` turns the pending suggestions into a standard `fix.json`, so a suggested
+   value reaches the backend only through the QC-SOP path (`docs/sops/qc_release.md`):
+
+   ```bash
+   python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
+   python scripts/other_names.py --batch work/review_suggestions_fix.json  # when a Name changes (RF §4.16)
+   python scripts/build_workbook.py --mode fix --fix work/review_suggestions_fix.json \
+       --out batches/<date>_<HHMMET>_fix_review_suggestions/
+   python scripts/recalc.py batches/<dir>/lng_carrier_fix.xlsx
+   ```
+
+   A suggestion = latest log record `suggest` while the csv line still says `reject` (a later
+   decision or a hand edit supersedes it). Each cell keeps the original proposal's refs and
+   confidence, and `build_workbook.py`'s §3.8c gate is the re-gate. `cosmetic` → `preserve_ref`
+   (gated as a value when the backend cell has no `[ref]`); `Other names` → `append_ref` with
+   the one added element as `gate_value`; a data-fill cell that already carries refs →
+   `append_ref` (Data-fill SOP §4). The same cell suggested in two batches keeps the later one.
+   Discovery and ref-only suggestions are reported, not emitted. Read-only over the batches and
+   the backend; writes only `--out`.

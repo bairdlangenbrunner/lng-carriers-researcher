@@ -141,3 +141,7 @@ dialog kbd { font-family: ui-monospace, Menlo, monospace; border: 1px solid var(
 .item .err, dialog .warn { color: var(--warn); font-weight: 600; }
 #item-list { flex: 1; min-height: 0; }
 #i-count { color: var(--muted); align-self: center; }
+dialog .stack { display: flex; flex-direction: column; gap: 3px; margin: 8px 0; border: 0; padding: 0; font-size: 13px; }
+dialog fieldset.stack label { display: flex; gap: 6px; align-items: baseline; }
+dialog textarea { box-sizing: border-box; font: inherit; }
+dialog .err { color: var(--warn); font-weight: 600; min-height: 1em; margin: 4px 0; }

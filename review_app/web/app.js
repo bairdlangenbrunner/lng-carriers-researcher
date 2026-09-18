@@ -350,11 +350,16 @@
     return h;
   }
   var CONTROLS = [["accept", "a"], ["hold", "h"], ["reject", "r"]];
+  // a suggestion replaces a proposed cell value; a new row or a ref-only line has none
+  function canSuggest(p) { return p.kind !== "new_row" && p.kind !== "ref" && !has(p, "ref_only"); }
   function controlsHtml(k, p) {
     return '<div class="controls">' + CONTROLS.map(function (c) {
       return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" aria-pressed="' +
         (p.decision === c[0]) + '" title="' + c[0] + " (" + c[1] + ')">' + c[0] + "</button>";
-    }).join("") + '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
+    }).join("") + '<button type="button" class="b-suggest" data-suggest aria-pressed="' + (p.decision === "suggest") +
+      '"' + (canSuggest(p) ? ' title="suggest a different value (s)"'
+                           : ' disabled title="nothing to suggest on a new row or a ref-only line"') +
+      ">suggest…</button>" + '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
   }
 
   // ---- deciding ----
@@ -459,6 +464,48 @@
     }).catch(function () { return null; });
   }
 
+  // Suggest: the value as proposed is not wanted (reject in decisions.csv); the replacement
+  // reaches the backend only through a fix batch that re-gates it (suggestions.py).
+  function suggestLine(k) {
+    var p = D.proposals[k];
+    if (!canSuggest(p)) return banner("Nothing to suggest on a new row or a ref-only line.");
+    var s0 = p.suggestion || {value: p.proposed, kind: "value", note: ""};
+    var strict = partnersOf(k).filter(function (o) { return isStrict(k, o); });
+    var h = "<h3>Suggest a value — " + esc(lineName(k)) + "</h3>" +
+      '<p class="note">current: ' + (esc(p.current) || "(blank)") + "<br>proposed: " + (esc(p.proposed) || "(blank)") + "</p>" +
+      '<label class="stack">suggested value<textarea id="sg-value" rows="3">' + esc(s0.value) + "</textarea></label>" +
+      '<fieldset class="stack"><label><input type="radio" name="sg-kind" value="value"' + (s0.kind !== "cosmetic" ? " checked" : "") +
+      "> value — a different fact; the original refs are re-gated against it</label>" +
+      '<label><input type="radio" name="sg-kind" value="cosmetic"' + (s0.kind === "cosmetic" ? " checked" : "") +
+      "> cosmetic — spelling, stylization, same fact; the cell's [ref] is kept</label></fieldset>" +
+      '<label class="stack">note (required)<textarea id="sg-note" rows="2">' + esc(s0.note) + "</textarea></label>" +
+      '<p class="err" id="sg-err"></p>' +
+      "<p><b>Nothing is applied from here.</b> The line is recorded as <i>suggest</i> (reject in decisions.csv); " +
+      "the suggestion becomes a fix batch (<code>review_app/suggestions.py</code>) and reaches the backend only " +
+      "after it passes the §3.8c gate and its own review.</p>" +
+      (strict.length ? "<p class=\"warn\">Linked: " + strict.map(function (o) {
+        return esc(lineName(o)) + " is " + esc(D.proposals[o].decision); }).join(", ") +
+        ". other_names.py re-derives the former name in the suggestion's fix batch — decide the partner here yourself.</p>" : "") +
+      (has(p, "applied") ? '<p class="warn">This batch is already applied: recording a suggestion unapplies nothing.</p>' : "");
+    var dlg = $("dialog");
+    function attempt() {
+      var v = $("sg-value").value, n = $("sg-note").value.trim();
+      var kind = dlg.querySelector("input[name=sg-kind]:checked").value;
+      if (!v.trim()) { $("sg-err").textContent = "A suggestion needs a value."; return false; }
+      if (!n) { $("sg-err").textContent = "A suggestion needs a note."; return false; }
+      if (v === p.proposed && kind === "value") { $("sg-err").textContent = "That is the proposed value — accept it instead."; return false; }
+      return {key: k, decision: "suggest", suggested_value: v, suggest_kind: kind, note: n, via: "single"};
+    }
+    var shown = dialog(h, [["Cancel", null], ["Save suggestion", attempt]]);
+    [].forEach.call(dlg.querySelectorAll("textarea, input"), function (f) {   // fresh nodes per dialog
+      f.addEventListener("input", function () { $("sg-err").textContent = ""; });
+    });
+    return shown.then(function (rec) {
+      if (!rec) return null;
+      return save([rec], true);
+    }).catch(function () { return null; });
+  }
+
   function undo() {
     var prev = S.undo.pop();
     if (!prev) return banner("Nothing to undo.");
@@ -479,6 +526,12 @@
   }
 
   function onCardClick(e) {
+    var sg = e.target.closest("button[data-suggest]");
+    if (sg) {
+      var l = sg.closest(".line");
+      setLine(l.getAttribute("data-key"), true);
+      return suggestLine(l.getAttribute("data-key"));
+    }
     var b = e.target.closest("button[data-decide]");
     if (!b) return;
     var line = b.closest(".line");
@@ -569,12 +622,14 @@
     a: function () { if (S.line) decideLine(S.line, "accept", {advance: true}); },
     h: function () { if (S.line) decideLine(S.line, "hold", {advance: true}); },
     r: function () { if (S.line) decideLine(S.line, "reject", {advance: true}); },
+    s: function (e) { if (S.line) { e.preventDefault(); suggestLine(S.line); } },
     u: undo,
     "/": function (e) { e.preventDefault(); $("f-text").focus(); $("f-text").select(); },
     "?": showHelp
   };
   var HELP = [["j / k", "next / previous line"], ["J / K", "next / previous vessel"],
               ["a / h / r", "accept / hold / reject the line (saved at once)"],
+              ["s", "suggest a different value (a form; applied only through a re-gated fix batch)"],
               ["u", "undo the last action (adds a record; the log is never rewritten)"],
               ["o", "open the line's first ref"], ["/", "search"], ["?", "this help"]];
   function showHelp() {
@@ -603,12 +658,19 @@
       var box = dlg.querySelector(".actions");
       buttons.forEach(function (b, i) {
         var btn = el("button", {type: "button"}, esc(b[0]));
-        btn.onclick = function () { dlg.close(); resolve(b[1]); };
+        btn.onclick = function () {
+          var v = typeof b[1] === "function" ? b[1]() : b[1];
+          if (v === false) return;          // validation failed: keep the dialog open
+          dlg.close();
+          resolve(v);
+        };
         box.appendChild(btn);
-        if (i === buttons.length - 1) setTimeout(function () { btn.focus(); }, 0);
+        if (i === buttons.length - 1 && !dlg.querySelector("textarea,input")) setTimeout(function () { btn.focus(); }, 0);
       });
       dlg.oncancel = function () { resolve(null); };
       dlg.showModal();
+      var field = dlg.querySelector("textarea,input[type=text]");
+      if (field) field.focus();
     });
   }
 
@@ -853,7 +915,7 @@
   // Exposed for the later milestones and for debugging in the console.
   window.ReviewApp = {
     get data() { return D; }, state: S, refilter: refilter, renderCard: renderCard,
-    matchingKeys: matchingKeys, filterDescription: filterDescription, dialog: dialog, banner: banner,
+    matchingKeys: matchingKeys, suggestLine: suggestLine, filterDescription: filterDescription, dialog: dialog, banner: banner,
     bulkDecide: bulkDecide, showTab: showTab
   };
 
