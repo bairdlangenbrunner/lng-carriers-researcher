@@ -30,7 +30,8 @@
     visible: [],            // vessel indexes passing the filter
     vessel: -1,             // index into D.vessels
     line: null,             // selected proposal key
-    session: []             // records saved this session
+    session: [],            // records saved this session
+    undo: []                // per action: the prior state of the lines it changed
   };
   var $ = function (id) { return document.getElementById(id); };
 
@@ -158,7 +159,9 @@
   }
 
   // ---- queue ----
-  function refilter() {
+  // keepCurrent: after a save, stay on the vessel even if it no longer matches (J moves on)
+  function refilter(keepCurrent) {
+    keepCurrent = keepCurrent === true;
     var st = filterState();
     var keep = D.vessels[S.vessel];
     S.visible = [];
@@ -171,7 +174,8 @@
       if (n) S.visible.push(i);
     });
     $("count").textContent = nLines + " lines on " + S.visible.length + " vessels match";
-    if (S.visible.indexOf(S.vessel) < 0) S.vessel = S.visible.length ? S.visible[0] : -1;
+    if (S.visible.indexOf(S.vessel) < 0 && !(keepCurrent && S.vessel >= 0))
+      S.vessel = S.visible.length ? S.visible[0] : -1;
     renderVessels();
     if (keep !== D.vessels[S.vessel]) S.line = null;
     renderCard();
@@ -287,7 +291,8 @@
     if (has(p, "overlaps_batch")) chips.push('<span class="chip warn">same cell in another batch — the later batch wins on apply</span>');
     if (pairMismatch(p)) chips.push('<span class="chip warn">linked pair in different states</span>');
 
-    var h = '<div class="row1"><span class="col">' + esc(p.column) + "</span>" + chips.join(" ") +
+    var h = '<div class="row1"><span class="col">' +
+      esc(p.column || "new row · cluster " + p.cluster_id) + "</span>" + chips.join(" ") +
       '<span class="batch">' + esc(b.label) + "</span>" +
       '<span class="state st-' + esc(p.decision) + '">' + esc(p.decision) +
       (p.last ? " · " + esc(p.last.reviewer) : "") + "</span></div>";
@@ -337,7 +342,141 @@
     h += controlsHtml(k, p);
     return h;
   }
-  function controlsHtml() { return ""; }   // decisions arrive in milestone 3
+  var CONTROLS = [["accept", "a"], ["hold", "h"], ["reject", "r"]];
+  function controlsHtml(k, p) {
+    return '<div class="controls">' + CONTROLS.map(function (c) {
+      return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" aria-pressed="' +
+        (p.decision === c[0]) + '" title="' + c[0] + " (" + c[1] + ')">' + c[0] + "</button>";
+    }).join("") + '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
+  }
+
+  // ---- deciding ----
+  var askPairs = true;   // "don't ask again" for ordinary pairs; never for Name <-> Other names
+  function partnersOf(k) {
+    var p = D.proposals[k];
+    return p.links.filter(function (o) { return D.proposals[o] && D.proposals[o].column !== p.column; });
+  }
+  function isStrict(k, o) {
+    var a = D.proposals[k].column, b = D.proposals[o].column;
+    return a !== b && (a === "Name" || a === "Other names") && (b === "Name" || b === "Other names");
+  }
+  function lineName(k) {
+    var p = D.proposals[k];
+    return p.column + " (" + batchOf(p.batch).label + ")";
+  }
+  function applyRecord(rec) {
+    var p = D.proposals[rec.key];
+    p.decision = rec.decision;
+    p.last = rec;
+    p.suggestion = rec.decision === "suggest"
+      ? {value: rec.suggested_value, kind: rec.suggest_kind, note: rec.note} : null;
+  }
+  function snapshotOf(keys) {
+    return keys.map(function (k) {
+      var p = D.proposals[k];
+      return {key: k, decision: p.decision, suggestion: p.suggestion};
+    });
+  }
+  function setSaving(keys, text, failed) {
+    keys.forEach(function (k) {
+      var s = document.getElementById("saving-" + k), line = document.getElementById("line-" + k);
+      if (s) { s.textContent = text; s.className = failed ? "err" : "saving"; }
+      if (line) line.classList.toggle("failed", !!failed);
+    });
+  }
+  // Save records; the UI changes only after the server confirms (never optimistic-only).
+  function save(records, undoable) {
+    var keys = records.map(function (r) { return r.key; });
+    var before = snapshotOf(keys);
+    setSaving(keys, "Saving…");
+    return Store.decide(records).then(function (saved) {
+      saved.forEach(applyRecord);
+      S.session = S.session.concat(saved);
+      if (undoable) S.undo.push(before);
+      banner("");
+      refreshAfterSave();
+      return saved;
+    }).catch(function (e) {
+      setSaving(keys, "Not saved: " + e.message, true);
+      banner("Save failed — nothing was recorded for " + keys.length + " line(s): " + e.message);
+      throw e;
+    });
+  }
+  function refreshAfterSave() {
+    var keepLine = S.line;
+    refilter(true);
+    if (keepLine && document.getElementById("line-" + keepLine)) setLine(keepLine, true);
+  }
+
+  function decideLine(k, decision, opts) {
+    opts = opts || {};
+    var p = D.proposals[k];
+    var keys = [k];
+    var partners = partnersOf(k).filter(function (o) { return D.proposals[o].decision !== decision; });
+    var chain = Promise.resolve(true);
+    if (partners.length) {
+      var strict = partners.some(function (o) { return isStrict(k, o); });
+      if (strict || askPairs) {
+        chain = dialog("<h3>Linked " + (partners.length > 1 ? "lines" : "line") + "</h3><p>You are setting <b>" +
+          esc(lineName(k)) + "</b> to <b>" + esc(decision) + "</b>. Same for " +
+          partners.map(function (o) { return "<b>" + esc(lineName(o)) + "</b> (now " + esc(D.proposals[o].decision) + ")"; })
+            .join(", ") + "?</p>" +
+          (strict ? "<p>Name and Other names are decided together (RF §4.16).</p>"
+                  : '<label><input type="checkbox" id="dlg-noask"> don\'t ask again this session</label>'),
+          strict ? [["Cancel", null], ["Both", "both"]] : [["Cancel", null], ["Only this line", "one"], ["Both", "both"]]
+        ).then(function (ans) {
+          var cb = document.getElementById("dlg-noask");
+          if (cb && cb.checked && ans) askPairs = false;
+          if (ans === "both") keys = keys.concat(partners);
+          return !!ans;
+        });
+      }
+    }
+    return chain.then(function (go) {
+      if (!go) return null;
+      var applied = keys.filter(function (x) { return has(D.proposals[x], "applied") && D.proposals[x].decision !== decision; });
+      if (!applied.length) return true;
+      return dialog("<h3>Already applied</h3><p>" + applied.length + " of these lines belong to a batch that is " +
+        "already in the backend. Changing the decision records it, but does <b>not</b> unapply anything — " +
+        "a change to the sheet needs its own fix batch.</p>", [["Cancel", null], ["Record it", true]]);
+    }).then(function (go) {
+      if (!go) return null;
+      var recs = keys.map(function (x, i) {
+        return {key: x, decision: decision, via: i === 0 ? (opts.via || "single") : "linked"};
+      });
+      return save(recs, true).then(function (saved) {
+        if (opts.advance && S.line === k) stepLine(1);
+        return saved;
+      });
+    }).catch(function () { return null; });
+  }
+
+  function undo() {
+    var prev = S.undo.pop();
+    if (!prev) return banner("Nothing to undo.");
+    var recs = prev.map(function (s) {
+      var r = {key: s.key, decision: s.decision, via: "undo"};
+      if (s.decision === "suggest" && s.suggestion) {
+        r.suggested_value = s.suggestion.value;
+        r.suggest_kind = s.suggestion.kind;
+        r.note = s.suggestion.note;
+      }
+      return r;
+    });
+    save(recs, false).then(function () {
+      var v = D.vessels.findIndex(function (x) { return x.proposals.indexOf(recs[0].key) >= 0; });
+      if (v >= 0 && v !== S.vessel) selectVessel(v, recs[0].key);
+      else setLine(recs[0].key);
+    }).catch(function () { S.undo.push(prev); });
+  }
+
+  function onCardClick(e) {
+    var b = e.target.closest("button[data-decide]");
+    if (!b) return;
+    var line = b.closest(".line");
+    setLine(line.getAttribute("data-key"), true);
+    decideLine(line.getAttribute("data-key"), b.getAttribute("data-decide"));
+  }
 
   function renderCard() {
     var card = $("card");
@@ -398,9 +537,12 @@
     stepVessel(dir, dir < 0);
   }
   function stepVessel(dir, toLast) {
-    var i = S.visible.indexOf(S.vessel) + dir;
-    if (i < 0 || i >= S.visible.length) return;
-    selectVessel(S.visible[i]);
+    // the current vessel may have dropped out of the filter; step from its list position
+    var next = dir > 0
+      ? S.visible.filter(function (i) { return i > S.vessel; })[0]
+      : S.visible.filter(function (i) { return i < S.vessel; }).pop();
+    if (next == null) return;
+    selectVessel(next);
     if (toLast) {
       var v = D.vessels[S.vessel], st = filterState();
       var keys = cardOrder(v).filter(function (k) { return lineMatches(D.proposals[k], v, st); });
@@ -416,10 +558,16 @@
     j: function () { stepLine(1); }, k: function () { stepLine(-1); },
     J: function () { stepVessel(1); }, K: function () { stepVessel(-1); },
     o: openFirstRef,
+    a: function () { if (S.line) decideLine(S.line, "accept", {advance: true}); },
+    h: function () { if (S.line) decideLine(S.line, "hold", {advance: true}); },
+    r: function () { if (S.line) decideLine(S.line, "reject", {advance: true}); },
+    u: undo,
     "/": function (e) { e.preventDefault(); $("f-text").focus(); $("f-text").select(); },
     "?": showHelp
   };
   var HELP = [["j / k", "next / previous line"], ["J / K", "next / previous vessel"],
+              ["a / h / r", "accept / hold / reject the line (saved at once)"],
+              ["u", "undo the last action (adds a record; the log is never rewritten)"],
               ["o", "open the line's first ref"], ["/", "search"], ["?", "this help"]];
   function showHelp() {
     dialog("<h3>Keyboard</h3><table>" + HELP.map(function (r) {
@@ -452,6 +600,7 @@
         if (i === buttons.length - 1) setTimeout(function () { btn.focus(); }, 0);
       });
       dlg.oncancel = function () { resolve(null); };
+      dlg.showModal();
     });
   }
 
@@ -484,6 +633,7 @@
   initTheme();
   initTabs();
   document.addEventListener("keydown", onKey);
+  $("card").addEventListener("click", onCardClick);
   Promise.all([Store.load(), Store.whoami()]).then(function (r) {
     D = r[0];
     ME = r[1];

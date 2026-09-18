@@ -9,6 +9,7 @@ rebuilds work/review_data.json first (review_data.py); otherwise it serves the e
     GET  /             static front end (review_app/web/)
     GET  /api/data     review_data.json with the batches' current decisions laid over it
     GET  /api/whoami   {"reviewer": ...}
+    POST /api/decide   [decision record, ...] -> {"saved": [...]}  (store.decide; 400 = nothing written)
 """
 import argparse
 import ipaddress
@@ -61,6 +62,10 @@ class App:
         with self.lock:
             return store.overlay(self.data, self.dirs)
 
+    def decide(self, records):
+        with self.lock:
+            return store.decide(records, self.data, self.dirs, self.reviewer)
+
 
 def make_handler(app):
     class Handler(BaseHTTPRequestHandler):
@@ -106,6 +111,28 @@ def make_handler(app):
             self.send_header("Cache-Control", "no-store")
             self.end_headers()
             self.wfile.write(body)
+
+        def do_POST(self):
+            if not self._host_ok():
+                return self._json({"error": "bad host"}, HTTPStatus.FORBIDDEN)
+            # a cross-site page cannot send application/json without a preflight we never answer
+            if (self.headers.get("Content-Type") or "").split(";")[0].strip() != "application/json":
+                return self._json({"error": "expected application/json"}, HTTPStatus.UNSUPPORTED_MEDIA_TYPE)
+            try:
+                n = int(self.headers.get("Content-Length") or 0)
+                body = json.loads(self.rfile.read(n).decode("utf-8"))
+            except (ValueError, UnicodeDecodeError):
+                return self._json({"error": "body is not JSON"}, HTTPStatus.BAD_REQUEST)
+            path = self.path.split("?", 1)[0]
+            try:
+                if path == "/api/decide":
+                    return self._json({"saved": app.decide(body)})
+            except store.Invalid as e:
+                return self._json({"error": str(e)}, HTTPStatus.BAD_REQUEST)
+            except Exception as e:  # a failed write: report it loudly, the UI keeps the line undecided
+                print(f"review app: write failed: {e!r}", file=sys.stderr)
+                return self._json({"error": f"write failed: {e}"}, HTTPStatus.INTERNAL_SERVER_ERROR)
+            return self._json({"error": "not found"}, HTTPStatus.NOT_FOUND)
 
     return Handler
 

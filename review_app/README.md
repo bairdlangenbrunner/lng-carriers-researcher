@@ -30,4 +30,14 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
 
    `--reviewer NAME` (default `git config user.name`), `--port`, `--no-open`. The page shows
    the batches' current `decisions.csv` state, so it can be reloaded at any time.
-   Keys: `j`/`k` line, `J`/`K` vessel, `o` open the first ref, `/` search, `?` help.
+   Keys: `j`/`k` line, `J`/`K` vessel, `a`/`h`/`r` accept / hold / reject, `u` undo,
+   `o` open the first ref, `/` search, `?` help.
+
+   Each decision is saved the moment it is made, per batch and under a lock: the record is
+   appended to `batches/<dir>/review_log.jsonl` (who, when, via, note — commit it with the
+   batch), then only the `decision` cell of that line in `decisions.csv` is rewritten (every
+   other byte kept; temp file + rename). A bad request writes nothing. Undo appends a new
+   record; the log is never rewritten. Deciding one side of a linked pair (`Name` ↔
+   `Other names`, `Price` ↔ `Price currency`, `Capacity` ↔ `Capacity units`, `X` ↔ `X [ref]`)
+   asks about the other; for `Name` ↔ `Other names` the answer is both or neither (RF §4.16).
+   A line from an already-applied batch stays decidable, but changing it unapplies nothing.
