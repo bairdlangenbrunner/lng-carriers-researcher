@@ -86,25 +86,46 @@ Verified against the repo on 2026-09-18:
 
 ```
 batches/<dir>/{fix,data_fill,candidates,citations}.json ─┐
-batches/<dir>/decisions.csv, conflicts.csv, gate_log.json ├─> scripts/review_data.py ─> work/review_data.json
+batches/<dir>/decisions.csv, conflicts.csv, gate_log.json ├─> app/review_data.py ─> work/review_data.json
 work/backend.csv (fresh pull)                            ─┘                                   │
                                                                                               v
-                       review_app/ (static front end, vanilla JS)  <── Store adapter ──>  scripts/review_app.py
+                       app/web/ (static front end, vanilla JS)     <── Store adapter ──>  app/server.py
                                                                                           (local server, phase 1)
                                                                                               │ writes
                                           batches/<dir>/decisions.csv (decision column only) ─┤
                                           batches/<dir>/review_log.jsonl (audit sidecar)      ─┘
                                                                                               v
-                     scripts/review_suggestions.py ─> work/review_suggestions_fix.json ─> normal `fix` batch
+                     app/suggestions.py ─> work/review_suggestions_fix.json ─> normal `fix` batch
                      then, per touched batch: python scripts/apply_batch.py --batch <dir>   (Apply SOP, unchanged)
 ```
 
 Phase 2 swaps the Store adapter (local HTTP → `google.script.run`) and adds a publish / pull
 pair; the front end and everything downstream of `decisions.csv` do not change.
 
-### 1. `scripts/review_data.py` — build the review dataset
+### Where it lives
 
-`python scripts/review_data.py --batches batches/<dir> [<dir> ...] [--out work/review_data.json]`
+Everything app-specific sits in one folder, apart from the research pipeline in `scripts/`:
+
+```
+app/
+  README.md          how to run it; the three entry points
+  review_data.py     builds work/review_data.json
+  server.py          local server (phase 1 Store); --bundle for phase 2
+  suggestions.py     suggestions -> fix.json
+  web/               index.html, app.js, style.css
+  gas/               phase 2: Code.gs + the bundled index.html (publish.py / pull.py join app/)
+tests/test_review_*.py   with the other tests
+```
+
+- The app imports pipeline code (`apply_batch`, `backend_io`, `paths`) from `scripts/`: each entry
+  point puts `scripts/` on `sys.path` (as `build_combined.py` does) and `tests/conftest.py` gains
+  `app/`. Nothing in `scripts/` imports from `app/` — the dependency runs one way.
+- `.claude/settings.json` allows `Bash(python scripts/*)`; add `Bash(python app/*)` beside it.
+- Run from the repo root, like everything else; `paths.py` anchors `work/` regardless.
+
+### 1. `app/review_data.py` — build the review dataset
+
+`python app/review_data.py --batches batches/<dir> [<dir> ...] [--out work/review_data.json]`
 
 - Requires a fresh `work/backend.csv` (refuse to run if it is missing; warn if older than a day).
 - Per batch: `_detect` + `_items_and_conflicts`, joined with `decisions.csv` (current decision)
@@ -148,9 +169,9 @@ pair; the front end and everything downstream of `decisions.csv` do not change.
   the sep-17-pass `BATCH_INFO` constant — it is pass-specific.
 - Must be deterministic (stable key order) so rebuilds diff cleanly.
 
-### 2. `review_app/` — the front end
+### 2. `app/web/` — the front end
 
-`review_app/index.html`, `app.js`, `style.css`. **Vanilla JS, no framework, no CDN, no build
+`app/web/index.html`, `app.js`, `style.css`. **Vanilla JS, no framework, no CDN, no build
 step, no ES-module imports** — phase 2 serves it from Apps Script `HtmlService`, which wants
 inlinable files. All state in one in-memory object loaded once; filtering is client-side.
 
@@ -211,9 +232,9 @@ Store.whoami()          // -> reviewer string
 - A save failure is loud (the line turns red and stays undecided); never optimistic-only.
 - Light and dark theme; works at laptop width; no horizontal scroll on the card.
 
-### 3. `scripts/review_app.py` — local server (phase 1 Store)
+### 3. `app/server.py` — local server (phase 1 Store)
 
-`python scripts/review_app.py [--batches …] [--reviewer NAME] [--port 8765] [--no-open]`
+`python app/server.py [--batches …] [--reviewer NAME] [--port 8765] [--no-open]`
 
 - Standard library only (`http.server`), binds `127.0.0.1`. Builds `review_data.json` first if
   `--batches` is given. Reviewer defaults to `git config user.name`.
@@ -231,9 +252,9 @@ Store.whoami()          // -> reviewer string
 - Item statuses (Items tab) go to `batches/<dir>/review_items.jsonl`; conflict calls are also
   written to that batch's `conflicts.csv` `decision` column.
 
-### 4. `scripts/review_suggestions.py` — suggestions → a fix batch
+### 4. `app/suggestions.py` — suggestions → a fix batch
 
-`python scripts/review_suggestions.py --batches <dirs> --out work/review_suggestions_fix.json`
+`python app/suggestions.py --batches <dirs> --out work/review_suggestions_fix.json`
 
 - Collects the latest `suggest` record per key and emits a standard `fix.json` (`corrections` →
   `cells`): `field`, `new_value` = the suggested value, `refs` = the original proposal's refs,
@@ -259,26 +280,26 @@ Fixture: a tiny backend CSV + one batch dir per mode, built in `tmp_path`.
   following `apply_batch.py` run keeps the new decisions and produces the expected patch;
 - `suggest` → `reject` in `decisions.csv`, full record in `review_log.jsonl`; undo appends;
 - bad key / bad enum → 400 and no file changes; a failed write leaves the original file intact;
-- `review_suggestions.py`: value → refs carried; cosmetic → `preserve_ref` and no refs;
+- `suggestions.py`: value → refs carried; cosmetic → `preserve_ref` and no refs;
 - the server refuses to bind anything but loopback.
 
 ### 6. Docs to update when phase 1 lands (same PR)
 
 - `CLAUDE.md`: a "Review a batch's decisions" router entry (trigger phrases: "review app",
-  "decide the holds", "open the review app"), rows in the Scripts table for the three scripts,
-  and `review_app/` in Repository orientation.
+  "decide the holds", "open the review app"), an `app/` entry in Repository orientation pointing at
+  `app/README.md` (the three entry points are documented there, not in the Scripts table).
 - `docs/sops/apply.md`: step 2 ("edit the holds") gains the app as the recommended surface;
   `decisions.csv` by hand stays valid. Bump the AP rev and `docs/pointers.md`.
 - The sep-17-pass worklist step 2 points at the app.
 
 ## Phase 1 milestones (each ends with passing tests and a commit)
 
-1. `review_data.py` + tests; run it on the eleven un-applied sep-17-pass batches; check the
+1. `app/` skeleton (layout above) + `review_data.py` + tests; run it on the eleven un-applied sep-17-pass batches; check the
    totals against the worklist (2,125 / 1,596 / 528 / 1) and spot-check three long-text lines.
 2. Server + Store + read-only UI (queue, card, filters, keyboard navigation).
 3. Single decisions, undo, linked-pair prompts, write-back + tests.
 4. Bulk with confirm; Items tab; session summary.
-5. Suggest + `review_suggestions.py` + tests; run one real suggestion through a fix build.
+5. Suggest + `suggestions.py` + tests; run one real suggestion through a fix build.
 6. Docs (section 6). Then Baird uses it on the 528 holds — that is the acceptance test.
 
 ## Phase 2 — Google Apps Script (do not start until phase 1 has been used for real)
@@ -298,11 +319,11 @@ writes use `gws-gem-write`. Never an anonymous export URL.
   Deploy as a web app restricted to the globalenergymonitor.org domain. **Verify** at build time
   which "execute as" setting both exposes the viewer's email and avoids giving reviewers edit
   access to the store sheet; this was not tested.
-- **Bundle**: `python scripts/review_app.py --bundle out/` inlines `app.js` / `style.css` into
-  one `index.html` and swaps in the `google.script.run` Store adapter. Source kept in
-  `tools/review_app.gs` next to `apply_patch.gs`; deployed by paste or `clasp` (both free).
-- **Round trip**: `scripts/review_publish.py` (review_data → sheet; write, ask first) and
-  `scripts/review_pull.py` (sheet `decisions` → the phase 1 write-back function, then
+- **Bundle**: `python app/server.py --bundle app/gas/` inlines `app.js` / `style.css` into one
+  `index.html` and swaps in the `google.script.run` Store adapter. Script source in
+  `app/gas/Code.gs`; deployed by paste or `clasp` (both free).
+- **Round trip**: `app/publish.py` (review_data → sheet; write, ask first) and
+  `app/pull.py` (sheet `decisions` → the phase 1 write-back function, then
   `review_log.jsonl`; read-only). Everything after the pull is phase 1's path.
 - Quotas are generous for this load (one load call per session, one tiny append per decision);
   a quota hit is a failed call shown in the UI, never a charge.
