@@ -1,0 +1,47 @@
+{
+ "2026-09-17_0421ET_fix_delivery_rollforward": {
+  "label": "1 \u00b7 delivery roll-forward",
+  "apply_order": 1
+ },
+ "2026-09-17_0458ET_fix_delivery_confirmed": {
+  "label": "2 \u00b7 delivery confirmed by press",
+  "apply_order": 2
+ },
+ "2026-09-17_0431ET_discovery_since_jun_2026": {
+  "label": "3 \u00b7 discovery since Jun 2026",
+  "apply_order": 3
+ },
+ "2026-09-17_0511ET_data_fill_on_order": {
+  "label": "4 \u00b7 data fill (on-order rows)",
+  "apply_order": 4
+ },
+ "2026-09-17_0505ET_ref_fill_rule_f": {
+  "label": "5 \u00b7 Rule-F ref fill",
+  "apply_order": 5
+ },
+ "2026-09-17_1114ET_shipvault_companion_refs": {
+  "label": "6 \u00b7 shipvault companion refs",
+  "apply_order": 6
+ },
+ "2026-09-17_1654ET_fix_igu2026_sourced": {
+  "label": "8 \u00b7 IGU 2026-sourced fix",
+  "apply_order": 8
+ },
+ "2026-09-17_1702ET_fix_scrapped_status": {
+  "label": "9 \u00b7 scrapped status + FSU",
+  "apply_order": 9,
+  "applied": true
+ },
+ "2026-09-17_1737ET_fix_other_names_former": {
+  "label": "10 \u00b7 former names -> Other names",
+  "apply_order": 10
+ },
+ "2026-09-17_1809ET_fix_qcmax_vessel_type": {
+  "label": "11 \u00b7 Vessel type qc-max",
+  "apply_order": 11
+ },
+ "2026-09-17_1810ET_fix_price_full_usd": {
+  "label": "12 \u00b7 Price in full USD",
+  "apply_order": 12
+ }
+}
