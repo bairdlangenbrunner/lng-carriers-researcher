@@ -30,7 +30,7 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
 
    `--reviewer NAME` (default `git config user.name`), `--port`, `--no-open`. The page shows
    the batches' current `decisions.csv` state, so it can be reloaded at any time.
-   Keys: `j`/`k` line, `J`/`K` vessel, `a`/`h`/`r` accept / hold / reject, `u` undo,
+   Keys: `j`/`k` line, `J`/`K` vessel, `a`/`h`/`r` accept / hold / reject, `s` suggest, `u` undo,
    `o` open the first ref, `/` search, `?` help.
 
    Each decision is saved the moment it is made, per batch and under a lock: the record is
@@ -84,3 +84,15 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    `append_ref` (Data-fill SOP §4). The same cell suggested in two batches keeps the later one.
    Discovery and ref-only suggestions are reported, not emitted. Read-only over the batches and
    the backend; writes only `--out`.
+
+## What a session leaves in a batch dir
+
+| file | written by | commit it |
+|---|---|---|
+| `decisions.csv` | the `decision` column only | yes (it already is) |
+| `review_log.jsonl` | every decision, undo and suggestion — append-only, latest record per key wins | yes |
+| `review_items.jsonl` | Items-tab statuses, notes and conflict calls — append-only | yes |
+| `conflicts.csv` | a conflict's call in `decision` (reset to `hold` by `apply_batch.py`) | yes |
+
+`work/review_data.json` (backend data) and the `--out` of `suggestions.py` stay in `work/`.
+Tests: `tests/test_review_data.py`, `tests/test_review_app.py`, `tests/test_review_suggestions.py`.

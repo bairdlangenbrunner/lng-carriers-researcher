@@ -17,9 +17,12 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    - [ ] Vessel type dropdown: it offers `supporting` (load corruption, §5) and lacks
          `small-scale` / `mid-scale`, which the vocabulary and the backend use. Remove the first
          once batch 8 has fixed rows 451 / 499–501 / 509; add the other two.
-2. **Decide the 528 holds** (§1, §1c) — edit `decisions.csv`, re-run
-   `python scripts/apply_batch.py --batch batches/<dir>`. Review surface: the combined workbook,
-   tab `all_proposals` filtered to `hold` (italics on `all_changes_backend_shape`). By batch:
+2. **Decide the 528 holds** (§1, §1c) in the review app (`review_app/README.md`; Apply SOP rev 5):
+   `python scripts/pull_backend.py`, then
+   `python review_app/server.py --batches $(python -c "import json; print(' '.join(json.load(open('batches/2026-09-17_1017ET_sep-17-pass_combined/review_batches.json'))))")`
+   (the queue opens on the holds; batch 9 shows as already applied, still undoable). Then re-run
+   `python scripts/apply_batch.py --batch batches/<dir>` for each batch the session summary lists.
+   Editing `decisions.csv` by hand, or the combined workbook's `all_proposals` tab, still works. By batch:
    1 → 38, 2 → 3, 3 → 5, **4 → 414**, 5 → 8, 8 → 24, 10 → 36; batches 6, 9, 11, 12 have none.
    Batch 4's 414 are all Y (single-source): 76 Price + 76 Price currency, 71 Operator/charterer,
    68 Contract date, 32 Cargo type, 20 IMO, 19 Hull number, 16 Capacity + 16 units, 10 Propulsion,

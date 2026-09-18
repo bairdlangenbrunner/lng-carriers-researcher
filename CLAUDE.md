@@ -13,8 +13,9 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/qc_release.md` — the **pre-release QC** workflow: whole-backend consistency/corruption sweep before a data release, the authoritative Name-column placeholder conventions, and the `fix`-mode correction batch (incl. the `preserve_ref` escape hatch). **Authoritative.**
 - `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
-- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`; `2026-09-18_review-app.md` (build spec for the review app that replaces the combined xlsx as the decision surface — lives in `review_app/`; not built yet).
+- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`; `2026-09-18_review-app.md` (build spec for the review app; phase 1 built, phase 2 — Apps Script — not started).
 - `docs/inclusion_criteria.md` — what's in scope vs out.
+- `review_app/` — the review app: the recommended surface for deciding a batch's holds (replaces the combined xlsx). Local, loopback-only; writes only the `decision` column of `decisions.csv` + `review_log.jsonl`. Entry points (`review_data.py`, `server.py`, `suggestions.py`) are documented in `review_app/README.md`, not in the Scripts table. Imports from `scripts/`, never the reverse.
 - `data/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
 - `data/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
 - `data/source_roster.md` — source tier list for picking corroboration URLs.
@@ -319,6 +320,25 @@ python scripts/recalc.py batches/<date>_<HHMMET>_<label>/lng_carrier_fix.xlsx
 #    clear when HIGH/MED are resolved/allowlisted and the Name checks are at zero.
 ```
 
+### Review a batch's decisions
+
+Trigger phrases: "review app", "decide the holds", "open the review app".
+
+Governed by `docs/sops/apply.md` step 2 / §3 (AP rev 5); usage in `review_app/README.md`.
+
+```bash
+# Run from the repo root.
+python scripts/pull_backend.py                                  # fresh pull (review_data refuses without one)
+python review_app/server.py --batches batches/<dir> [<dir> ...]  # builds work/review_data.json, serves 127.0.0.1:8765
+# Suggested values (stored as reject + a `suggest` log record) -> a fix batch, QC-SOP path:
+python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
+```
+
+The app never touches the backend: it writes the `decision` cell of `decisions.csv`, appends
+`<dir>/review_log.jsonl` (commit it with the batch), and on the Items tab `review_items.jsonl` +
+a conflict's call in `conflicts.csv`. After a session, re-run `apply_batch.py` for each batch
+the session summary lists, then continue with "Apply a reviewed batch".
+
 ### Apply a reviewed batch
 
 Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
@@ -331,7 +351,7 @@ replaces manual copy/paste (which corrupted rows 1216/1217).
 python scripts/batch_digest.py --batch batches/<dir>          # -> digest.md
 
 # 2. Decisions + apply artifacts. First run pre-fills decisions.csv by confidence;
-#    edit the holds, then re-run to finalize.
+#    decide the holds (review app — see above — or edit decisions.csv), then re-run to finalize.
 python scripts/apply_batch.py --batch batches/<dir>
 #   -> decisions.csv, apply.json, apply_rows.csv, apply_patch.csv, conflicts.csv
 
