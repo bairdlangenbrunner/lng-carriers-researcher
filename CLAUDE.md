@@ -343,7 +343,7 @@ the session summary lists, then continue with "Apply a reviewed batch".
 
 Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
 
-Governed by `docs/sops/apply.md` (AP rev 4). This is the offset-proof round-trip that
+Governed by `docs/sops/apply.md` (AP rev 5). This is the offset-proof round-trip that
 replaces manual copy/paste (which corrupted rows 1216/1217).
 
 ```bash
