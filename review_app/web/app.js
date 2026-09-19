@@ -109,6 +109,14 @@
     F.forEach(function (f) { $("f-" + f).onchange = refilter; });
     $("f-mine").onchange = refilter;
     $("f-text").oninput = refilter;
+    $("f-more").onclick = function () { toggleMore(); };
+    $("active-filters").onclick = function (e) {
+      var b = e.target.closest("button[data-clear]");
+      if (!b) return;
+      var id = b.getAttribute("data-clear");
+      if (id === "mine") $("f-mine").checked = false; else $("f-" + id).value = "";
+      refilter();
+    };
     $("f-reset").onclick = function () {
       F.forEach(function (f) { $("f-" + f).value = ""; });
       $("f-decision").value = "hold";
@@ -116,6 +124,32 @@
       $("f-text").value = "";
       refilter();
     };
+  }
+  // Decision, Batch and Search stay in view; the rest sit behind "More filters". A filter that
+  // is set is always visible as a removable chip, so a hidden control never filters silently.
+  var MORE = ["column", "confidence", "kind", "flag", "builder", "owner"];
+  function toggleMore(open) {
+    var box = $("more-filters");
+    box.hidden = open == null ? !box.hidden : !open;
+    $("f-more").setAttribute("aria-expanded", String(!box.hidden));
+    renderActiveFilters();
+  }
+  function renderActiveFilters() {
+    var st = filterState(), chips = [];
+    function chip(id, text) {
+      chips.push('<span class="chip on">' + esc(text) + ' <button type="button" data-clear="' + id +
+        '" title="clear this filter" aria-label="clear ' + esc(text) + '">×</button></span>');
+    }
+    MORE.forEach(function (f) {
+      if (!st[f]) return;
+      var sel = $("f-" + f), o = sel.options[sel.selectedIndex];
+      chip(f, sel.parentNode.firstChild.textContent.trim().toLowerCase() + ": " + (o ? o.textContent : st[f]));
+    });
+    if (st.mine) chip("mine", "changed by me");
+    $("active-filters").innerHTML = chips.join(" ");
+    $("active-filters").hidden = !chips.length || !$("more-filters").hidden;   // open: the controls say it
+    var n = chips.length;
+    $("f-more").textContent = ($("more-filters").hidden ? "More filters" : "Fewer filters") + (n ? " (" + n + ")" : "");
   }
   function filterState() {
     var st = {};
@@ -180,6 +214,7 @@
       nLines += n;
       if (n) S.visible.push(i);
     });
+    renderActiveFilters();
     $("count").textContent = nLines + " lines on " + S.visible.length + " vessels match";
     renderBulk(nLines);
     if (S.visible.indexOf(S.vessel) < 0 && !(keepCurrent && S.vessel >= 0))
@@ -330,15 +365,23 @@
 
     if (p.kind === "new_row") {
       var rd = p.row_data || {};
+      // sources are numbered once (the Sources list below); a [ref] cell cites them as [1][2]
+      var num = {};
+      p.sources.forEach(function (r, i) { num[r.url] = i + 1; if (r.companion) num[r.companion] = i + 1; });
       h += '<div class="note">' + esc(p.cluster_label) + "</div><table class=\"rowdata\">";
       D.header.concat(Object.keys(rd).filter(function (c) { return D.header.indexOf(c) < 0; }))
         .forEach(function (c) {
-          if (rd[c] == null || rd[c] === "") return;
-          var val = /\[ref\]$/.test(c)
-            ? String(rd[c]).split(/,\s+/).map(function (u) { return /^https?:/.test(u) ? link(u) : esc(u); }).join("<br>")
-            : esc(rd[c]);
-          h += "<tr><td>" + esc(c) + "</td><td>" + val + "</td></tr>";
+          if (rd[c] == null || rd[c] === "" || /\[ref\]$/.test(c)) return;
+          var cites = String(rd[c + " [ref]"] || "").split(/,\s+/).filter(Boolean).map(function (u) {
+            return num[u] ? '<a class="cite" href="' + esc(u) + '" target="_blank" rel="noopener" title="' + esc(u) +
+              '">[' + num[u] + "]</a>" : (/^https?:/.test(u) ? link(u) : esc(u));
+          }).join(" ");
+          h += "<tr><td>" + esc(c) + "</td><td>" + esc(rd[c]) + (cites ? ' <span class="cites">' + cites + "</span>" : "") + "</td></tr>";
         });
+      Object.keys(rd).forEach(function (c) {       // a [ref] with no value beside it: never hide it
+        if (/\[ref\]$/.test(c) && rd[c] && !rd[c.replace(/ \[ref\]$/, "")])
+          h += "<tr><td>" + esc(c) + "</td><td>" + esc(rd[c]) + "</td></tr>";
+      });
       h += "</table>";
     } else if (p.kind === "ref" || has(p, "ref_only")) {
       // the value is untouched; the line adds the sources listed below
@@ -357,9 +400,14 @@
     h += '<div class="facts">';
     if (p.suggestion) h += '<span class="k">Suggested</span><span class="v st-suggest">' + esc(p.suggestion.value) +
       " (" + esc(p.suggestion.kind) + ")" + (p.suggestion.note ? " — " + esc(p.suggestion.note) : "") + "</span>";
-    if (p.why) h += '<span class="k">Why</span><span class="v">' + esc(p.why) + "</span>";
-    if (p.sources.length) h += '<span class="k">Source' + (p.sources.length > 1 ? "s" : "") + '</span><span class="v"><ul>' +
-      p.sources.map(function (r) { return "<li>" + sourceHtml(r) + "</li>"; }).join("") + "</ul></span>";
+    // a reason that runs past a few lines is clamped, never cut: "more" shows the rest in place
+    if (p.why) h += '<span class="k">Why</span><span class="v">' + (p.why.length > 360 && !S.open["why:" + k]
+      ? '<span class="why-clamp">' + esc(p.why) + '</span><button type="button" class="more" data-why="' + esc(k) + '">more</button>'
+      : esc(p.why)) + "</span>";
+    var numbered = p.kind === "new_row";
+    if (p.sources.length) h += '<span class="k">Source' + (p.sources.length > 1 ? "s" : "") + '</span><span class="v"><' +
+      (numbered ? 'ol class="numbered"' : "ul") + ">" +
+      p.sources.map(function (r) { return "<li>" + sourceHtml(r) + "</li>"; }).join("") + "</" + (numbered ? "ol" : "ul") + "></span>";
     h += "</div>";
 
     // everything else: nothing is hidden for good, it is one click away
@@ -551,6 +599,8 @@
   }
 
   function onCardClick(e) {
+    var w = e.target.closest("button[data-why]");
+    if (w) { S.open["why:" + w.getAttribute("data-why")] = true; return renderCard(); }
     var sg = e.target.closest("button[data-suggest]");
     if (sg) {
       var l = sg.closest(".line");
@@ -784,74 +834,102 @@
     var box = $("tab-items");
     if (!box.firstChild) {
       box.innerHTML = '<form class="filters" id="item-filters" onsubmit="return false">' +
-        '<label>type <select id="i-type"><option value="">any</option></select></label>' +
-        '<label>status <select id="i-status"><option value="">any</option></select></label>' +
-        '<label>batch <select id="i-batch"><option value="">any</option></select></label>' +
+        '<label>Status <select id="i-status"><option value="">any</option></select></label>' +
+        '<label>Type <select id="i-type"><option value="">any</option></select></label>' +
+        '<label>Batch <select id="i-batch"><option value="">any</option></select></label>' +
         '<span id="i-count"></span></form><div id="item-list" class="summary"></div>';
       fillSelect("i-type", Object.keys(ITEM_TYPES), Object.keys(ITEM_TYPES).map(function (t) { return ITEM_TYPES[t]; }));
       fillSelect("i-status", ITEM_STATUSES);
+      $("i-status").value = "open";            // like the queue's "hold": what is left to do
       var bs = uniq(D.items.map(function (it) { return it.batch; }));
       fillSelect("i-batch", bs, bs.map(function (b) { return batchOf(b).label; }));
       ["i-type", "i-status", "i-batch"].forEach(function (id) { $(id).onchange = renderItemList; });
       $("item-list").addEventListener("click", onItemClick);
+      $("item-list").addEventListener("change", onItemNote);
     }
     renderItemList();
   }
-  function renderItemList() {
+  function itemVisible(it) {
     var t = $("i-type").value, stt = $("i-status").value, b = $("i-batch").value;
-    var list = D.items.filter(function (it) {
-      return (!t || it.type === t) && (!stt || it.status === stt) && (!b || it.batch === b);
+    // an item saved this session stays in view under a status filter it has just left
+    return (!t || it.type === t) && (!b || it.batch === b) && (!stt || it.status === stt || it._touched);
+  }
+  // one block per backend row (its vessel named once), multi-row and row-less items after them
+  function itemGroups(list) {
+    var order = [], by = {};
+    list.forEach(function (it) {
+      var key = it.live_rows.length === 1 ? "row:" + it.live_rows[0] : "item:" + it.item_id;
+      if (!by[key]) { by[key] = []; order.push(key); }
+      by[key].push(it);
     });
+    order.sort(function (a, b) {
+      var ra = a.indexOf("row:") ? Infinity : +a.slice(4), rb = b.indexOf("row:") ? Infinity : +b.slice(4);
+      return ra - rb;
+    });
+    return order.map(function (k) { return by[k]; });
+  }
+  function rowLinks(rows) {
+    return rows.map(function (r) {
+      var i = vesselIndexForRow(r);
+      return i >= 0 ? '<a href="#" data-row="' + r + '" title="open in the queue">row ' + r + "</a>" : "row " + r;
+    }).join(", ");
+  }
+  function renderItemList() {
+    var list = D.items.filter(itemVisible);
     $("i-count").textContent = list.length + " of " + D.items.length + " items · " +
       D.items.filter(function (it) { return it.status === "open"; }).length + " open";
-    $("item-list").innerHTML = list.map(itemHtml).join("") || '<div class="empty">No items match.</div>';
+    $("item-list").innerHTML = itemGroups(list).map(function (g) {
+      var head = "";
+      if (g[0].live_rows.length === 1) {
+        var i = vesselIndexForRow(g[0].live_rows[0]);
+        head = '<h3 class="igroup">' + rowLinks(g[0].live_rows) + (i >= 0 ? " · " + esc(D.vessels[i].name || "(no name)") : "") +
+          (g.length > 1 ? ' <span class="n">' + g.length + " items</span>" : "") + "</h3>";
+      }
+      return '<section class="igroup-box">' + head + g.map(itemHtml).join("") + "</section>";
+    }).join("") || '<div class="empty">No items match.</div>';
   }
   function itemHtml(it) {
-    var rows = it.live_rows.map(function (r) {
-      return vesselIndexForRow(r) >= 0
-        ? '<a href="#" data-row="' + r + '">row ' + r + "</a>" : "row " + r;
-    }).join(", ");
-    var h = '<div class="item" data-item="' + esc(it.item_id) + '"><div class="row1">' +
-      '<span class="chip">' + esc(ITEM_TYPES[it.type] || it.type) + "</span> " +
-      '<span class="col">' + esc(it.title) + "</span> " + (rows ? "<span>" + rows + "</span> " : "") +
-      '<span class="batch">' + esc(batchOf(it.batch).label) + "</span>" +
-      '<span class="state">' + esc(it.status) + (it.last ? " · " + esc(it.last.reviewer) : "") + "</span></div>";
+    var label = ITEM_TYPES[it.type] || it.type;
+    // the title is worth showing only when it says more than the type chip does
+    var generic = !it.title || it.title.toLowerCase() === label.toLowerCase() || it.title === "backend flag";
+    var h = '<div class="item s-' + esc(it.status.replace(/ /g, "-")) + '" data-item="' + esc(it.item_id) + '"><div class="row1">' +
+      '<span class="chip">' + esc(label) + "</span> " +
+      (generic ? "" : '<span class="col">' + esc(it.title) + "</span> ") +
+      (it.live_rows.length > 1 ? "<span>" + rowLinks(it.live_rows) + "</span> " : "") +
+      '<span class="batch">' + esc(batchOf(it.batch).label) + "</span></div>";
     if (it.detail) h += '<div class="detail">' + esc(it.detail) + "</div>";
     if (it.logged_call && it.logged_call !== it.conflict_decision)
       h += '<div class="detail"><span class="chip warn">call ' + esc(it.logged_call) + " is in review_items.jsonl but " +
-        "conflicts.csv says " + esc(it.conflict_decision || "nothing") + " (apply_batch.py regenerated it) — save to rewrite it</span></div>";
+        "conflicts.csv says " + esc(it.conflict_decision || "nothing") + " (apply_batch.py regenerated it) — press the call again to rewrite it</span></div>";
     if (it.urls.length) h += '<ul class="refs">' + it.urls.map(function (u) {
-      return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(u) + "</a></li>";
+      return "<li>" + link(u) + "</li>";
     }).join("") + "</ul>";
-    h += '<div class="controls"><label>status <select data-f="status">' + ITEM_STATUSES.map(function (s) {
-      return '<option' + (s === it.status ? " selected" : "") + ">" + s + "</option>";
-    }).join("") + "</select></label>";
+    h += '<div class="controls">';
     if (it.conflict_match) {
       // AP §4: a conflict is decided by hand; the call lands in conflicts.csv `decision`
-      h += ' <label title="written to conflicts.csv; an accepted conflict is still applied by hand (AP §4)">call ' +
-        '<select data-f="call">' + ["accept", "hold", "reject"].map(function (c) {
-          return "<option" + (c === (it.conflict_decision || "hold") ? " selected" : "") + ">" + c + "</option>";
-        }).join("") + "</select></label>";
+      h += '<span class="seg" title="written to conflicts.csv; an accepted conflict is still applied by hand (AP §4)">' +
+        '<span class="k">call</span>' + ["accept", "hold", "reject"].map(function (c) {
+          return '<button type="button" class="ctl ' + c + '" aria-pressed="' + (c === (it.conflict_decision || "hold")) +
+            '" data-call="' + c + '">' + c + "</button>";
+        }).join("") + "</span>";
     }
-    h += ' <textarea data-f="note" rows="1" placeholder="note">' + esc(it.last ? it.last.note : "") + "</textarea>" +
-      ' <button type="button" data-save-item>save</button><span class="saving"></span></div></div>';
+    h += '<span class="seg"><span class="k">status</span>' + ITEM_STATUSES.map(function (s) {
+      return '<button type="button" class="ctl" aria-pressed="' + (s === it.status) + '" data-status="' + s + '">' + s + "</button>";
+    }).join("") + "</span>";
+    h += '<span class="saving">' + (it.last ? esc(it.last.reviewer) : "") + "</span>" +
+      '<textarea data-f="note" rows="1" placeholder="note — saved when you leave the box">' +
+      esc(it.last ? it.last.note || "" : "") + "</textarea></div></div>";
     return h;
   }
-  function onItemClick(e) {
-    var a = e.target.closest("a[data-row]");
-    if (a) {
-      e.preventDefault();
-      showTab("queue");
-      return selectVessel(vesselIndexForRow(+a.getAttribute("data-row")));
-    }
-    var b = e.target.closest("button[data-save-item]");
-    if (!b) return;
-    var box = b.closest(".item"), id = box.getAttribute("data-item");
+  function saveItem(box, change) {
+    var id = box.getAttribute("data-item");
     var it = D.items.filter(function (x) { return x.item_id === id; })[0];
-    var rec = {item_id: id, status: box.querySelector('[data-f="status"]').value,
-               note: box.querySelector('[data-f="note"]').value};
-    var call = box.querySelector('[data-f="call"]');
-    if (call && call.value !== (it.conflict_decision || "hold")) rec.conflict_decision = call.value;
+    var rec = {item_id: id, status: change.status || it.status, note: box.querySelector('[data-f="note"]').value};
+    if (change.call) {
+      rec.conflict_decision = change.call;
+      // a call other than hold settles the conflict, unless it is parked for research
+      if (!change.status && it.status === "open" && change.call !== "hold") rec.status = "resolved";
+    }
     var msg = box.querySelector(".saving");
     msg.textContent = "Saving…";
     msg.className = "saving";
@@ -859,16 +937,37 @@
       saved.forEach(function (r) {
         it.status = r.status;
         it.last = r;
-        if (r.conflict_decision) it.conflict_decision = r.conflict_decision;
+        if (r.conflict_decision) { it.conflict_decision = r.conflict_decision; it.logged_call = r.conflict_decision; }
       });
+      it._touched = true;
       S.itemSession = S.itemSession.concat(saved);
-      box.outerHTML = itemHtml(it);
-      renderItemList();
+      var tmp = document.createElement("div");
+      tmp.innerHTML = itemHtml(it);
+      tmp.firstChild.querySelector(".saving").textContent = "saved";
+      box.parentNode.replaceChild(tmp.firstChild, box);
+      $("i-count").textContent = D.items.filter(itemVisible).length + " of " + D.items.length + " items · " +
+        D.items.filter(function (x) { return x.status === "open"; }).length + " open";
     }).catch(function (err) {
       msg.textContent = "Not saved: " + err.message;
       msg.className = "err";
       box.classList.add("failed");
     });
+  }
+  function onItemClick(e) {
+    var a = e.target.closest("a[data-row]");
+    if (a) {
+      e.preventDefault();
+      showTab("queue");
+      $("f-decision").value = "";            // the row may have nothing on hold
+      refilter();
+      return selectVessel(vesselIndexForRow(+a.getAttribute("data-row")));
+    }
+    var b = e.target.closest("button[data-status], button[data-call]");
+    if (!b) return;
+    saveItem(b.closest(".item"), {status: b.getAttribute("data-status"), call: b.getAttribute("data-call")});
+  }
+  function onItemNote(e) {
+    if (e.target.matches('textarea[data-f="note"]')) saveItem(e.target.closest(".item"), {});
   }
 
   // ---- session summary ----
