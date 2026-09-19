@@ -1,0 +1,42 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+70|Hull number,fill,70,,Hull number,G,False,accept,accept,Hull 2579 (SHI),restyle 'Hull 2579' → 'Hull 2579 (SHI)': a hull number names its yard (RF §4.17)
+79|Hull number,fill,79,,Hull number,G,False,accept,accept,Hull 2585 (SHI),restyle 'Hull 2585' → 'Hull 2585 (SHI)': a hull number names its yard (RF §4.17)
+37|Hull number,fill,37,,Hull number,G,False,accept,accept,Hull 2532 (Hanwha),restyle 'Hull 2532' → 'Hull 2532 (Hanwha)': a hull number names its yard (RF §4.
+22|Hull number,fill,22,,Hull number,G,False,accept,accept,Hull 1880A (Hudong),restyle 'Hull 1880A' → 'Hull 1880A (Hudong)': a hull number names its yard (RF §
+34|Hull number,fill,34,,Hull number,G,False,accept,accept,Hull 2522 (Hanwha),restyle 'Hull 2522' → 'Hull 2522 (Hanwha)': a hull number names its yard (RF §4.
+20|Hull number,fill,20,,Hull number,G,False,accept,accept,Hull 1835A (Hudong),restyle 'Hull 1835A' → 'Hull 1835A (Hudong)': a hull number names its yard (RF §
+90|Hull number,fill,90,,Hull number,G,False,accept,accept,Hull 2596 (SHI),restyle 'Hull 2596' → 'Hull 2596 (SHI)': a hull number names its yard (RF §4.17)
+234|Hull number,fill,234,,Hull number,G,False,accept,accept,Hull 8196 (HSHI),restyle 'Hull 8196' → 'Hull 8196 (HSHI)': a hull number names its yard (RF §4.17
+33|Hull number,fill,33,,Hull number,G,False,accept,accept,Hull 2474 (SHI),restyle 'Hull 2474' → 'Hull 2474 (SHI)': a hull number names its yard (RF §4.17)
+32|Hull number,fill,32,,Hull number,G,False,accept,accept,Hull 2473 (SHI),restyle 'Hull 2473' → 'Hull 2473 (SHI)': a hull number names its yard (RF §4.17)
+229|Hull number,fill,229,,Hull number,G,False,accept,accept,Hull 8173 (HDHHI),restyle 'Hull 8173' → 'Hull 8173 (HDHHI)': a hull number names its yard (RF §4.1
+38|Hull number,fill,38,,Hull number,G,False,accept,accept,Hull 2536 (Hanwha),restyle 'Hull 2536' → 'Hull 2536 (Hanwha)': a hull number names its yard (RF §4.
+225|Hull number,fill,225,,Hull number,G,False,accept,accept,Hull 8100 (HDHHI),restyle 'Hull 8100' → 'Hull 8100 (HDHHI)': a hull number names its yard (RF §4.1
+35|Hull number,fill,35,,Hull number,G,False,accept,accept,Hull 2523 (Hanwha),restyle 'Hull 2523' → 'Hull 2523 (Hanwha)': a hull number names its yard (RF §4.
+36|Hull number,fill,36,,Hull number,G,False,accept,accept,Hull 2524 (Hanwha),restyle 'Hull 2524' → 'Hull 2524 (Hanwha)': a hull number names its yard (RF §4.
+75|Hull number,fill,75,,Hull number,G,False,accept,accept,Hull 2583 (SHI),restyle 'Hull 2583' → 'Hull 2583 (SHI)': a hull number names its yard (RF §4.17)
+46|Hull number,fill,46,,Hull number,G,False,accept,accept,Hull 2546 (SHI),restyle 'Hull 2546' → 'Hull 2546 (SHI)': a hull number names its yard (RF §4.17)
+89|Hull number,fill,89,,Hull number,G,False,accept,accept,Hull 2594 (SHI),restyle 'Hull 2594' → 'Hull 2594 (SHI)': a hull number names its yard (RF §4.17)
+175|Hull number,fill,175,,Hull number,G,False,accept,accept,Hull 3296 (HDHHI),restyle 'Hull 3296' → 'Hull 3296 (HDHHI)': a hull number names its yard (RF §4.1
+101|Hull number,fill,101,,Hull number,G,False,accept,accept,Hull 2604 (SHI),restyle 'Hull 2604' → 'Hull 2604 (SHI)': a hull number names its yard (RF §4.17)
+17|Hull number,fill,17,,Hull number,G,False,accept,accept,Hull 1790A (Hudong),restyle 'Hull 1790A' → 'Hull 1790A (Hudong)': a hull number names its yard (RF §
+18|Hull number,fill,18,,Hull number,G,False,accept,accept,Hull 1791A (Hudong),restyle 'Hull 1791A' → 'Hull 1791A (Hudong)': a hull number names its yard (RF §
+91|Hull number,fill,91,,Hull number,G,False,accept,accept,Hull 2597 (SHI),restyle 'Hull 2597' → 'Hull 2597 (SHI)': a hull number names its yard (RF §4.17)
+228|Hull number,fill,228,,Hull number,G,False,accept,accept,Hull 8170 (HDHHI),restyle 'Hull 8170' → 'Hull 8170 (HDHHI)': a hull number names its yard (RF §4.1
+1091|Hull number,fill,1091,,Hull number,G,False,accept,accept,Hull 2547 (Hanwha),"blank in backend; IGU 2026 prints 'Umm Swayyah (Hull 2547)' [fleet table, PDF p."
+612|Hull number,fill,612,,Hull number,G,False,accept,accept,Hull 8197 (HSHI),"blank in backend; IGU 2026 prints 'Gail Sagar (HSHI-8197)' [fleet table, PDF p.7"
+939|Hull number,fill,939,,Hull number,G,False,accept,accept,Hull 2595 (SHI),"blank in backend; IGU 2026 prints 'Orion Sirius (2595)' [fleet table, PDF p.76; "
+97|Hull number,fill,97,,Hull number,G,False,accept,accept,Hull 2601 (SHI),restyle 'Hull 2601' → 'Hull 2601 (SHI)': a hull number names its yard (RF §4.17)
+749|Hull number,fill,749,,Hull number,G,False,accept,accept,Hull 2548 (Hanwha),"blank in backend; IGU 2026 prints 'Lebrethah (2548)' [fleet table, PDF p.76; IMO"
+927|Hull number,fill,927,,Hull number,G,False,accept,accept,Hull 2526 (Hanwha),"blank in backend; IGU 2026 prints 'North Valley (Hull 2526)' [fleet table, PDF p"
+670|Hull number,fill,670,,Hull number,G,False,accept,accept,Hull 2607 (SHI),"blank in backend; IGU 2026 prints 'HL Alyssa Warner (2607)' [fleet table, PDF p."
+2|Hull number,fill,2,,Hull number,G,False,accept,accept,Hull H2702 (Jiangnan),restyle 'Hull H2702' → 'Hull H2702 (Jiangnan)': a hull number names its yard (RF
+671|Hull number,fill,671,,Hull number,G,False,accept,accept,Hull 2608 (SHI),"blank in backend; IGU 2026 prints 'HL Edward Austin (2608)' [fleet table, PDF p."
+864|Hull number,fill,864,,Hull number,G,False,accept,accept,Hull 3381 (HDHHI),"blank in backend; IGU 2026 prints 'Mesaieed (3381)' [fleet table, PDF p.76; IMO "
+849|Hull number,fill,849,,Hull number,G,False,accept,accept,Hull 3380 (HDHHI),"blank in backend; IGU 2026 prints 'Mraikh (3380)' [fleet table, PDF p.76; IMO 99"
+1|Hull number,fill,1,,Hull number,G,False,accept,accept,Hull H2701 (Jiangnan),restyle 'Hull H2701' → 'Hull H2701 (Jiangnan)': a hull number names its yard (RF
+1107|Hull number,fill,1107,,Hull number,G,False,accept,accept,Hull 3382 (HDHHI),"blank in backend; IGU 2026 prints 'Wadi Al Syl (3382)' [fleet table, PDF p.76; I"
+676|Hull number,fill,676,,Hull number,G,False,accept,accept,Hull 2609 (SHI),"blank in backend; IGU 2026 prints 'HL Sea Eagle (2609)' [fleet table, PDF p.76; "
+1132|Hull number,fill,1132,,Hull number,G,False,accept,accept,Hull 2534 (Hanwha),"blank in backend; IGU 2026 prints 'Woodside Jirrubakura (2534)' [fleet table, PD"
+1098|Hull number,fill,1098,,Hull number,G,False,accept,accept,Hull 2531 (Hanwha),"blank in backend; IGU 2026 prints 'Venture Creole (2531)' [fleet table, PDF p.77"
+263|Hull number,fill,263,,Hull number,G,False,accept,accept,Hull H1799A (Hudong),restyle 'Hull H1799A' → 'Hull H1799A (Hudong)': a hull number names its yard (RF

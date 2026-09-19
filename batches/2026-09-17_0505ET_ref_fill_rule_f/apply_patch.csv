@@ -1,1 +1,3 @@
 op,key,column,value
+set,415,Capacity [ref],"https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086"
+set,663,Capacity [ref],"https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085"

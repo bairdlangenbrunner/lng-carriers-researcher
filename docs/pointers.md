@@ -12,7 +12,7 @@ The SOPs live in `docs/sops/`:
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; AP rev 5 (review app) 2026-09-18. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -33,6 +33,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); D
 | 4.14 | RF | Owner/charterer names use the backend's existing short stylization (e.g. `COSCO`) |
 | 4.15 | RF | Multiple URLs in one `[ref]` cell join with `", "`, never a newline |
 | 4.16 | RF (rev 23) | A proposed Name change also proposes the former Name as an addition to `Other names` (`"; "` join, append-only, refs gated on the former name; not for spelling fixes / wrong-vessel corrections / placeholder restylings) — `other_names.py`, fix-mode `append_ref` cell |
+| 4.17 | RF (rev 24) | IGU `(ex-…)` names → `Other names` (by IMO, IGU PDF ref); IGU `Name (NNNN)` = hull number; hull numbers always `Hull NNNN (Tag)` — `other_names.py --igu-ex` |
 
 ## Workflow steps
 
@@ -137,7 +138,7 @@ The whole-backend consistency/corruption sweep before a data release. Full SOP: 
 
 Name-column QC checks (in `qc_backend.py`): `name-builder-drift` (same yard, different builder label across placeholders) and `name-ordinal-gap` (placeholder missing its sequence number while cluster siblings are numbered) — both LOW/advisory.
 
-## Apply & verify workflow (AP — 2026-06-05)
+## Apply & verify workflow (AP — 2026-06-05, rev 5 2026-09-18)
 
 The offset-proof round-trip that gets a reviewed batch into the backend. Full SOP: `docs/sops/apply.md`.
 
@@ -145,9 +146,10 @@ The offset-proof round-trip that gets a reviewed batch into the backend. Full SO
 |---|---|---|
 | Triage | AP §2 | `batch_digest.py` → `digest.md` (auto-safe vs needs-a-decision) |
 | Decisions | AP §3 | `apply_batch.py` → `decisions.csv` (accept/hold/reject; Green/derivable→accept default) — authoritative decision surface |
+| Decide the holds | AP §2 step 2, §3 | Review app (`review_app/README.md`; `python review_app/server.py --batches …`) — writes only the `decision` column + `review_log.jsonl`; a suggested value → `review_app/suggestions.py` → a fix batch (QC §4). Hand-editing `decisions.csv` stays valid |
 | Apply artifacts | AP §2 | `apply_rows.csv` (full-row paste), `apply_patch.csv` (by-name applier), `apply.json` (record) |
 | Apply | AP §2/§7 | full-row paste OR `tools/apply_patch.gs` (by header — offset impossible); never hand cherry-pick |
-| Conflicts | AP §4 | `conflicts.csv` — research vs a non-blank value; decided by hand, never auto-applied (RF §8 / DF §9) |
+| Conflicts | AP §4 | `conflicts.csv` — research vs a non-blank value; decided by hand, never auto-applied (RF §8 / DF §9); the app's Items tab records the call (`review_items.jsonl` is durable — `apply_batch.py` resets `conflicts.csv` calls to `hold`) |
 | Verify | AP §5 | `verify_apply.py --pull` → `verify_report.csv` (landed/mismatch/missing) + qc the touched rows |
 
 ## FSRU reconciliation workflow (FR — 2026-06-26)

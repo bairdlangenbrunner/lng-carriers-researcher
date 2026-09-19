@@ -1,4 +1,4 @@
-# sep-17-pass — worklist (written 2026-09-17 evening; last updated 19:05 ET)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-18 20:10 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
@@ -17,9 +17,12 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    - [ ] Vessel type dropdown: it offers `supporting` (load corruption, §5) and lacks
          `small-scale` / `mid-scale`, which the vocabulary and the backend use. Remove the first
          once batch 8 has fixed rows 451 / 499–501 / 509; add the other two.
-2. **Decide the 528 holds** (§1, §1c) — edit `decisions.csv`, re-run
-   `python scripts/apply_batch.py --batch batches/<dir>`. Review surface: the combined workbook,
-   tab `all_proposals` filtered to `hold` (italics on `all_changes_backend_shape`). By batch:
+2. **Decide the 528 holds** (§1, §1c) in the review app (`review_app/README.md`; Apply SOP rev 5):
+   `python scripts/pull_backend.py`, then
+   `python review_app/server.py --batches $(python -c "import json; print(' '.join(json.load(open('batches/2026-09-17_1017ET_sep-17-pass_combined/review_batches.json'))))")`
+   (the queue opens on the holds; batch 9 shows as already applied, still undoable). Then re-run
+   `python scripts/apply_batch.py --batch batches/<dir>` for each batch the session summary lists.
+   Editing `decisions.csv` by hand, or the combined workbook's `all_proposals` tab, still works. By batch:
    1 → 38, 2 → 3, 3 → 5, **4 → 414**, 5 → 8, 8 → 24, 10 → 36; batches 6, 9, 11, 12 have none.
    Batch 4's 414 are all Y (single-source): 76 Price + 76 Price currency, 71 Operator/charterer,
    68 Contract date, 32 Cargo type, 20 IMO, 19 Hull number, 16 Capacity + 16 units, 10 Propulsion,
@@ -91,9 +94,10 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
 | 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 24 / 1 reject, plus 8 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | **APPLIED 2026-09-17** — 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
-| 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names` (131 cells / 131 rows; 19 spelling / wrong-vessel Name changes excluded); 102 carry a gated ref | 95 / 36 |
+| 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names`; **rebuilt 2026-09-18** with every IGU 2026 `(ex-…)` name (RF §4.17) and yard-tagged hulls — 160 cells / 160 rows, 136 carry a gated ref | 125 / 35 |
 | 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |
-| 12 | `1810ET_fix_price_full_usd` | Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref` — unit conversion, refs kept) | 58 / 0 |
+| 12 | `1810ET_fix_price_full_usd` | **APPLIED 2026-09-18** — Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref`); `$m` dropped from the vocab. 8 Prices still cite the bare word `clarkson` (live rows 965, 1049–1053, 1083, 1203) — to re-source | 58 / 0 |
+| 13 | `2005ET_fix_igu2026_hulls` | RF §4.17: IGU `Name (hull)` → 13 blank Hull numbers filled + 28 untagged hulls yard-tagged; placeholder-name matches all already in batches 1 / 8; 6 yard conflicts flagged (Samho vs Ulsan ×4, row 941 SHI vs Samho) | 41 / 0 |
 
 Discovery candidates in batch 3: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y);
 HD Hyundai HI × Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undisclosed

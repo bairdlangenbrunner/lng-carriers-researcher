@@ -42,9 +42,9 @@ CONTROLLED_VOCAB = {
                         "steam reheat", "STaGE", "prismatic conventional DFDE",
                         "prismatic small-scale DFDE"},
     "Capacity units": {"cbm"},
-    # Price is always full US dollars with currency "USD" (Baird, 2026-09-17). "$m" is legacy —
-    # the price-USD fix batch converts the rows that carry it; drop it here once that is applied.
-    "Price currency": {"$m", "USD"},
+    # Price is always full US dollars with currency "USD" (Baird, 2026-09-17); the legacy "$m"
+    # rows were converted by the price-USD fix batch (applied 2026-09-18).
+    "Price currency": {"USD"},
 }
 
 

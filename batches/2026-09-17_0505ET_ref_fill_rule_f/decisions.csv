@@ -1,6 +1,6 @@
 id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
-415|Capacity [ref],ref,415,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean",live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
-663|Capacity [ref],ref,663,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean",live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
+415|Capacity [ref],ref,415,,Capacity [ref],Y,False,hold,accept,"https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean",live row 6: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
+663|Capacity [ref],ref,663,,Capacity [ref],Y,False,hold,accept,"https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean",live row 7: Rule F fill - Capacity = '126750' corroborated by the shipvault unit
 969|Capacity [ref],ref,969,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocea",live row 61: Rule F fill - Capacity = '135000' corroborated by the shipvault uni
 1044|Capacity [ref],ref,1044,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocea",live row 487: Rule F fill - Capacity = '174000' corroborated by the shipvault un
 1045|Capacity [ref],ref,1045,,Capacity [ref],Y,False,hold,hold,"https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocea",live row 488: Rule F fill - Capacity = '174000' corroborated by the shipvault un

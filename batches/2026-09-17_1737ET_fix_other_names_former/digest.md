@@ -1,12 +1,12 @@
 # Batch digest — 2026-09-17_1737ET_fix_other_names_former
 
-**Mode:** fix  ·  **Proposals:** 131 (auto-safe 95, needs-decision 36)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
+**Mode:** fix  ·  **Proposals:** 160 (auto-safe 124, needs-decision 36)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
 
 ## ✅ Auto-safe — accept in bulk (Green / derivable)
 
-By field: Other names ×95
+By field: Other names ×124
 
-These 95 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
+These 124 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
 
 ## ⚠️ Needs a decision (Yellow / Red / unknown)
 
@@ -23,7 +23,7 @@ These 95 are default-`accept` in `decisions.csv`. Skim or trust; nothing here ne
 - **row 240** · Other names: `Hull 8209 (HSHI)` (Y) — former Name 'Hull 8209 (HSHI)'; the row is renamed 'Grace Himawari' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 242** · Other names: `Hull 8238 (HSHI)` (Y) — former Name 'Hull 8238 (HSHI)'; the row is renamed 'Grace Gerbera' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 243** · Other names: `Hull 8239 (HSHI)` (Y) — former Name 'Hull 8239 (HSHI)'; the row is renamed 'Ferdy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
-- **row 259** · Other names: `Hull H1795A` (Y) — former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
+- **row 259** · Other names: `Hull H1795A (Hudong)` (Y) — former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 507** · Other names: `Dalian No 1 G175K-10` (Y) — former Name 'Dalian No 1 G175K-10'; the row is renamed 'Prime Creativity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 510** · Other names: `Dalian No 1 G175K-13` (Y) — former Name 'Dalian No 1 G175K-13'; the row is renamed 'Alliance Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 519** · Other names: `Dalian No 1 G175K-9` (Y) — former Name 'Dalian No 1 G175K-9'; the row is renamed 'Prime Unity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
@@ -36,16 +36,16 @@ These 95 are default-`accept` in `decisions.csv`. Skim or trust; nothing here ne
 - **row 508** · Other names: `Dalian No 1 G175K-11` (Y) — former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 509** · Other names: `Dalian No 1 G175K-12` (Y) — former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 186** · Other names: `Hull 3387 (HDHHI)` (Y) — former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_0458ET_fix_delivery_confirmed — no ref on hand prints the former name (backend's own published value); held
-- **row 721** · Other names: `Karmol LNGT Powership Antarctica` (Y) — former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
-- **row 811** · Other names: `LNGT Americas` (Y) — former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
-- **row 726** · Other names: `KLNGTP Black Sea` (Y) — former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
-- **row 727** · Other names: `KLNGTP Marmara` (Y) — former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
+- **row 721** · Other names: `Karmol LNGT Powership Antarctica; Northwest Sanderling` (Y) — former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Antarctica (ex-Northwest Sanderling)'
+- **row 811** · Other names: `LNGT Americas; Northwest Stormpetrel` (Y) — former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Americas (ex-Northwest Stormpetrel)'
+- **row 726** · Other names: `KLNGTP Black Sea; Portovenere; LNG Portovenere` (Y) — former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'
+- **row 727** · Other names: `KLNGTP Marmara; Lerici; LNG Lerici` (Y) — former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'
 - **row 535** · Other names: `East Energy` (Y) — former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
-- **row 459** · Other names: `Condor LNG; CCH LNG` (Y) — former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
+- **row 459** · Other names: `Condor LNG; CCH LNG; Methane Lydon Volney` (Y) — former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'LNG Soars (ex-Methane Lydon Volney)'
 - **row 1062** · Other names: `Stena Blue Sky` (Y) — former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
 - **row 377** · Other names: `Alto Acrux` (Y) — former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
 - **row 924** · Other names: `North Mountain` (Y) — former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
-- **row 263** · Other names: `Hull H1799A` (Y) — former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
+- **row 263** · Other names: `Hull H1799A (Hudong)` (Y) — former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
 
 These are default-`hold`. Flip to `accept`/`reject` in `decisions.csv`, then re-run `apply_batch.py`.
 

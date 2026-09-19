@@ -18,3 +18,16 @@ Baird ruling 2026-09-17: **Price is always entered in full US dollars, Price cur
   pull loses digits (252,500,000 reads back as 2.53E+08). Setting the column's number format to
   plain `0` in the sheet fixes it; until then `verify_apply.py` may report these cells as a
   mismatch on display form alone.
+
+## Applied 2026-09-18
+
+Written to the backend sheet by Claude at Baird's request ("convert all of those costs to USD"),
+through the Sheets API (`values.batchUpdate`, `RAW`, 58 cells / 29 rows). The row_id → live row map
+came from column A at write time. Before writing, each target cell was read and held `$m` / the
+value ÷ 1e6. `verify_apply.py --pull`: every value landed. Its 29 "mismatches" are only the Price
+column's display format (`255000000` vs `255000000.00` in the formatted pull). `$m` is dropped
+from the vocabulary. QC after: 8 LOW only.
+
+**Clarksons:** 8 Prices cite the bare word `clarkson` as their `[ref]`, and no batch has found a
+replacement. They are live rows 965, 1049–1053 (Hull 2752–2757 (SHI)), 1083 (Hanwha Philly 1)
+and 1203 (Hanwha Philly 2), row_ids 164–169, 666, 667. They need re-sourcing.

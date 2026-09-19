@@ -6,7 +6,9 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-17 rev 4 (§2a: applying several batches that share rows — full rows
+**Last revised:** 2026-09-18 rev 5 (step 2 / §3: the review app, `review_app/`, is the
+recommended surface for deciding the holds; `decisions.csv` by hand stays valid). Prior:
+2026-09-17 rev 4 (§2a: applying several batches that share rows — full rows
 are a snapshot, so go by patch; applier settings per batch mode). Prior: 2026-06-05 rev 3 (dedupe Tier-2 matching corrected: a row with a real hull
 or IMO is *identified*, never a placeholder — so identified hulls like `Hull 8254 (HSHI)` no
 longer shadow-match genuinely blank slots; delivery-year dropped from the blocking key and
@@ -38,7 +40,10 @@ python scripts/batch_digest.py --batch batches/<dir>
 #   -> <dir>/digest.md
 
 # 2. Decisions + apply artifacts. First run pre-fills decisions.csv by confidence
-#    (Green/derivable -> accept, Yellow/Red -> hold). Edit the holds, then re-run.
+#    (Green/derivable -> accept, Yellow/Red -> hold). Decide the holds, then re-run.
+#    Recommended surface: the review app (review_app/README.md) —
+#      python review_app/server.py --batches batches/<dir> [<dir> ...]
+#    Editing decisions.csv by hand stays valid.
 python scripts/apply_batch.py --batch batches/<dir>
 #   -> <dir>/decisions.csv   (acceptance tracking — editable)
 #      <dir>/apply.json      (canonical record of what was accepted)
@@ -97,6 +102,14 @@ Re-running `apply_batch.py` preserves your edits (an existing `decisions.csv` is
 clobbered) and only regenerates the apply artifacts from the current decisions. This file
 is the record of what was accepted for a batch — commit it with the batch.
 
+**The review app** (`review_app/`, recommended) is a local page over one or more batches'
+`decisions.csv`. It rewrites only the `decision` cell of the line decided (every other byte
+kept) and appends each decision — who, when, how, note — to `<dir>/review_log.jsonl`, the
+audit log; commit it with the batch. A value suggested *instead of* a proposal is recorded
+as `reject` here and `suggest` in the log, and reaches the backend only as its own fix batch
+(`review_app/suggestions.py` → the QC-SOP fix path, re-gated). The app never touches the
+backend. Hand edits of `decisions.csv` remain valid; the app reads the csv as the truth.
+
 ## 4. Conflicts are not fills (`conflicts.csv`)
 
 A proposal that contradicts a **non-blank** backend value is a **conflict**, never an
@@ -105,6 +118,9 @@ automatic fill (data-fill is additive to blanks/`unknown`s — Data-fill SOP §9
 value, the research value, sources, and a recommendation. Decide each by hand; if you
 accept one, apply it as a deliberate single-cell edit (the by-name applier with
 `OVERWRITE_NONBLANK=true`, or a direct edit). Keep the conflict record in the batch.
+The review app's Items tab records a conflict's call in `conflicts.csv` `decision` and in
+`<dir>/review_items.jsonl`; a re-run of `apply_batch.py` regenerates `conflicts.csv` with every
+call back at `hold`, so the jsonl is the durable record (the app flags the drift).
 
 ## 5. Verify (`verify_apply.py`) — close the loop
 
@@ -185,6 +201,11 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   the apply), but a HIGH/MED group means a row may duplicate an existing vessel — resolve it.
 
 ## 8. Changelog
+
+- **rev 5** (2026-09-18): Step 2 and §3 name the review app (`review_app/`) as the recommended
+  surface for deciding holds, replacing the combined xlsx; `review_log.jsonl` /
+  `review_items.jsonl` join the batch record; suggestions go through a fix batch. §4 notes that
+  `apply_batch.py` resets conflict calls. Hand-editing `decisions.csv` stays valid.
 
 - **rev 4** (2026-09-17): Added §2a. The sep-17-pass queued twelve batches with heavy row
   overlap (batch 8 shares 138 rows with batch 1 and 193 with batch 4); full-row pastes in

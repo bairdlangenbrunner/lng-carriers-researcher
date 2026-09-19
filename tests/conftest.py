@@ -11,3 +11,9 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
+
+# The review app (review_app/) imports from scripts/, never the reverse; its tests
+# import its modules by flat name too.
+REVIEW_APP = Path(__file__).resolve().parent.parent / "review_app"
+if str(REVIEW_APP) not in sys.path:
+    sys.path.insert(0, str(REVIEW_APP))

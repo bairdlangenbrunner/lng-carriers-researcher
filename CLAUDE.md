@@ -13,8 +13,9 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/qc_release.md` — the **pre-release QC** workflow: whole-backend consistency/corruption sweep before a data release, the authoritative Name-column placeholder conventions, and the `fix`-mode correction batch (incl. the `preserve_ref` escape hatch). **Authoritative.**
 - `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
-- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`.
+- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`; `2026-09-18_review-app.md` (build spec for the review app; phase 1 built, phase 2 — Apps Script — not started).
 - `docs/inclusion_criteria.md` — what's in scope vs out.
+- `review_app/` — the review app: the recommended surface for deciding a batch's holds (replaces the combined xlsx). Local, loopback-only; writes only the `decision` column of `decisions.csv` + `review_log.jsonl`. Entry points (`review_data.py`, `server.py`, `suggestions.py`) are documented in `review_app/README.md`, not in the Scripts table. Imports from `scripts/`, never the reverse.
 - `data/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
 - `data/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
 - `data/source_roster.md` — source tier list for picking corroboration URLs.
@@ -319,11 +320,30 @@ python scripts/recalc.py batches/<date>_<HHMMET>_<label>/lng_carrier_fix.xlsx
 #    clear when HIGH/MED are resolved/allowlisted and the Name checks are at zero.
 ```
 
+### Review a batch's decisions
+
+Trigger phrases: "review app", "decide the holds", "open the review app".
+
+Governed by `docs/sops/apply.md` step 2 / §3 (AP rev 5); usage in `review_app/README.md`.
+
+```bash
+# Run from the repo root.
+python scripts/pull_backend.py                                  # fresh pull (review_data refuses without one)
+python review_app/server.py --batches batches/<dir> [<dir> ...]  # builds work/review_data.json, serves 127.0.0.1:8765
+# Suggested values (stored as reject + a `suggest` log record) -> a fix batch, QC-SOP path:
+python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
+```
+
+The app never touches the backend: it writes the `decision` cell of `decisions.csv`, appends
+`<dir>/review_log.jsonl` (commit it with the batch), and on the Items tab `review_items.jsonl` +
+a conflict's call in `conflicts.csv`. After a session, re-run `apply_batch.py` for each batch
+the session summary lists, then continue with "Apply a reviewed batch".
+
 ### Apply a reviewed batch
 
 Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
 
-Governed by `docs/sops/apply.md` (AP rev 4). This is the offset-proof round-trip that
+Governed by `docs/sops/apply.md` (AP rev 5). This is the offset-proof round-trip that
 replaces manual copy/paste (which corrupted rows 1216/1217).
 
 ```bash
@@ -331,7 +351,7 @@ replaces manual copy/paste (which corrupted rows 1216/1217).
 python scripts/batch_digest.py --batch batches/<dir>          # -> digest.md
 
 # 2. Decisions + apply artifacts. First run pre-fills decisions.csv by confidence;
-#    edit the holds, then re-run to finalize.
+#    decide the holds (review app — see above — or edit decisions.csv), then re-run to finalize.
 python scripts/apply_batch.py --batch batches/<dir>
 #   -> decisions.csv, apply.json, apply_rows.csv, apply_patch.csv, conflicts.csv
 
@@ -398,7 +418,8 @@ Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
 | `ais_static.py` | AIS static-data cross-check for "has this on-order vessel been delivered and named" — **a lead, never a citable `[ref]`** (cited refs stay shipvault / marinetraffic / class / press through §3.8). Listens to aisstream.io `ShipStaticData` world-wide for a bounded time (`--minutes`, default 20) and keeps messages whose IMO is on the watch list (on-order backend rows; `--statuses`, `--imos FILE|LIST`) — the IMO filter is client-side because aisstream filters only by MMSI / bbox. Key from `$AISSTREAM_API_KEY` or the keychain item `aisstream-api-key` (exits rather than asking). Appends `work/ais_static.jsonl` (imo, name, mmsi, ship type, destination, callsign, position, ts; latest per IMO wins); the summary leads with live sheet rows. **"Not seen" is not evidence of anything** (static messages repeat every ~6 min, only for vessels transmitting near a terrestrial receiver) | aisstream message shape or subscription format changed; new watch-list rule; key storage changed |
 | `cf_clearance.py` | earns / stores bot-wall cookies (`cf_clearance`, `aws-waf-token`, Imperva `incap_ses_`/`visid_incap_`/`nlbi_`) by driving Google Chrome over DevTools (no automation flags, so Turnstile passes in ~5 s; a page is "cleared" when neither its title nor its rendered DOM looks like a challenge — a real 404 counts); store `work/cf_clearance.json` (gitignored, IP-bound; ~1 yr for Cloudflare, days for AWS WAF); `LNGCT_NO_BROWSER=1` forbids the launch; CLI `python scripts/cf_clearance.py <url>` / `--show` | Chrome path changed; challenge no longer clears; need a different CDP flow |
 | `shipvault_api_refs.py` | shipvault companion refs (RF §6a.8 rev 21): where a cited `shipvault.com/ships/{id}` page renders blank in a browser (double-encoded API answer), adds the unit-record URL as a second ref right after it, only where the record corroborates the cell (§3.8c). `--batch <dir>` patches a batch's source JSON in place (idempotent — run before `build_workbook.py`; writes `<dir>/shipvault_api_refs.json`); `--backend-batch <dir> [--skip-fix fix.json …]` writes a ref-only (`prev_state: "corroborate"`) `data_fill.json` for cells already in the backend | shipvault fixes its encoding (companions become unnecessary); a new batch source shape |
-| `other_names.py` | former Names → `Other names` (RF §4.16): derives an `append_ref` `Other names` cell from every `Name` cell in a fix batch — existing cell + `"; "` + former Name, gated on the former name alone (`gate_value`; exact name, never scattered tokens; candidates = the new Name's refs + the row's existing `Name [ref]`, then the shipvault record for the IMO as a last resort; an IGU PDF's wrapped `(ex-…)` names are checked against `work/igu_fleet_<edition>.json`; nothing is asked when the former name is part of the new one; trackers paced, not asked about hull placeholders, vesselfinder not asked), Y / blank ref when nothing passes. `--batch <dir or fix.json>` patches in place (idempotent, stamps each Name cell `former_name`; run before `build_workbook.py`); `--collect <dirs> --out fix.json` builds a standalone batch for batches already built; `--include <row_id>` overrides a skip. Skips spelling / truncation fixes (similarity ≥ 0.85 or a prefix), names claimed by another row, placeholder → placeholder | A real rename classified as a spelling fix (or the reverse) — tune `SPELLING_RATIO` / `is_placeholder`; a new multi-valued column |
+| `other_names.py` | former Names → `Other names` (RF §4.16): derives an `append_ref` `Other names` cell from every `Name` cell in a fix batch — existing cell + `"; "` + former Name, gated on the former name alone (`gate_value`; exact name, never scattered tokens; candidates = the new Name's refs + the row's existing `Name [ref]`, then the shipvault record for the IMO as a last resort; an IGU PDF's wrapped `(ex-…)` names are checked against `work/igu_fleet_<edition>.json`; nothing is asked when the former name is part of the new one; trackers paced, not asked about hull placeholders, vesselfinder not asked), Y / blank ref when nothing passes. `--batch <dir or fix.json>` patches in place (idempotent, stamps each Name cell `former_name`; run before `build_workbook.py`); `--collect <dirs> --out fix.json` builds a standalone batch for batches already built; `--include <row_id>` overrides a skip. `--igu-ex <edition>` (RF §4.17) also adds every IGU `(ex-…)` name by IMO, hulls yard-tagged `Hull NNNN (Tag)`. Skips spelling / truncation fixes (similarity ≥ 0.85 or a prefix), names claimed by another row, placeholder → placeholder | A real rename classified as a spelling fix (or the reverse) — tune `SPELLING_RATIO` / `is_placeholder`; a new multi-valued column |
+| `igu_hulls.py` | RF §4.17: IGU `Name (hull)` entries → a fix batch — by IMO, fill a blank `Hull number` (`Hull NNNN (Tag)`, IGU PDF ref) or restyle an untagged one with its yard tag (`preserve_ref`); by hull + builder family, name a row still carrying its hull placeholder (+ IMO). Yard conflicts (Samho vs Ulsan, SHI vs Hanwha overlapping series), different hulls and anything an un-applied batch already proposes (any `apply_patch.csv`) are flagged, not proposed. `--edition`, `--out <batch>/fix.json`; then `other_names.py --batch` | IGU prints a new hull form; a false yard match; a new yard needing a tag (`FALLBACK_YARD_TAGS` in `other_names.py`) |
 | `imo_tracker.py` | the §6a.8 IMO->vessel-tracker fallback — shipvault open API first (`shipsearch/{IMO}` → unit record → citable `shipvault.com/ships/{id}`), marinetraffic.org IMO search second | shipvault API / tenant header changed; marinetraffic.org URL pattern changed |
 | `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix / fsru / igu). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate), or `append_ref:true` + `gate_value` for an addition to a multi-valued cell (`Other names`, RF §4.16 — gate the added element, append passing refs to the existing `[ref]`); warns when a Name change has had no former-name check. `fsru` mode renders the `work/fsru_reconcile.json` buckets into a 10-sheet GIIGNL↔backend comparison workbook (no `[ref]` cells — GIIGNL not citable). `igu` mode renders `work/igu_reconcile.json` into the 11-sheet IGU↔backend workbook, every table led by the live sheet row (no `[ref]` cells proposed) | Adding a new sheet section; changing color convention; changing fix-mode gating; changing the fsru or igu sheet set |
 | `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
