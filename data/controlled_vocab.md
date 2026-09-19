@@ -67,8 +67,8 @@ reads `scrapped` as completed-sale wording ("sold for demolition / recycling / s
 
 - **Capacity units** — only `cbm` is used. A proposed Capacity always pairs with `cbm`.
 - **Price currency** — `USD`, with Price in **full US dollars** (`250000000`, never `250` + `$m`;
-  Baird 2026-09-17). `$m` is legacy: the rows that carry it are converted by the price-USD fix
-  batch, after which it leaves the vocabulary. A proposed Price must carry a currency (flag if a
+  Baird 2026-09-17). `$m` is gone: the legacy rows were converted by the price-USD fix
+  batch (applied 2026-09-18) and it is no longer in the vocabulary. A proposed Price must carry a currency (flag if a
   source gives KRW/another currency that would need conversion before entry).
 
 The canonical machine-readable copy is `CONTROLLED_VOCAB` in `scripts/lookups.py` — imported by

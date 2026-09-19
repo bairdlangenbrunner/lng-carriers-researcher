@@ -1,12 +1,25 @@
 {
   "batch": "2026-09-17_0505ET_ref_fill_rule_f",
   "mode": "ref_fill",
-  "accepted_cells": [],
+  "accepted_cells": [
+    {
+      "row_id": "415",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "663",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "confidence": "Y"
+    }
+  ],
   "accepted_new_rows": [],
   "counts": {
     "items": 8,
-    "accepted": 0,
-    "hold": 8,
+    "accepted": 2,
+    "hold": 6,
     "reject": 0,
     "conflicts": 0
   }
