@@ -53,15 +53,16 @@
     },
     {
      "field": "Name",
-     "new_value": "Karadeniz LNGT Antarctica",
+     "new_value": "LNGT Antarctica",
      "confidence": "Y",
      "refs": [
       {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "url": "https://www.offshoreshipadvisor.com/lngt-antarctica-8608872-636023902/",
        "soft": false
       }
      ],
-     "note": "'Karmol LNGT Powership Antarctica' -> 'Karadeniz LNGT Antarctica': IGU restyles the Karadeniz / Karmol powership names — a label choice, not a rename [IGU 2026 Appendix 3 fleet table, PDF p.77; IMO 8608872; sole source per Baird ruling 2026-09-17]"
+     "note": "'Karmol LNGT Powership Antarctica' -> 'LNGT Antarctica': current name by IMO lookup (Baird 2026-09-18; not IGU-sourced). IGU 2026's 'Karadeniz LNGT Antarctica' is a label, carried in Other names with the former Name (batch 1737ET). shipvault / marinetraffic.org still print the Karmol name for IMO 8608872",
+     "former_name": "Karmol LNGT Powership Antarctica"
     }
    ]
   },

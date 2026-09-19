@@ -6,6 +6,8 @@ set,721,Propulsion type [ref],https://www.datocms-assets.com/146580/1783403747-i
 set,721,Capacity,125000
 set,721,Capacity [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,721,Capacity units,cbm
+set,721,Name,LNGT Antarctica
+set,721,Name [ref],https://www.offshoreshipadvisor.com/lngt-antarctica-8608872-636023902/
 set,971,Name,American Energy
 set,971,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,535,Name,Arctic Vostok
