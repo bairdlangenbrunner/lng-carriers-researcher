@@ -1,0 +1,338 @@
+{
+  "batch": "2026-09-18_2005ET_fix_igu2026_hulls",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "70",
+      "column": "Hull number",
+      "value": "Hull 2579 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "79",
+      "column": "Hull number",
+      "value": "Hull 2585 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "37",
+      "column": "Hull number",
+      "value": "Hull 2532 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "22",
+      "column": "Hull number",
+      "value": "Hull 1880A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "34",
+      "column": "Hull number",
+      "value": "Hull 2522 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "20",
+      "column": "Hull number",
+      "value": "Hull 1835A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "90",
+      "column": "Hull number",
+      "value": "Hull 2596 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "234",
+      "column": "Hull number",
+      "value": "Hull 8196 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "33",
+      "column": "Hull number",
+      "value": "Hull 2474 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "32",
+      "column": "Hull number",
+      "value": "Hull 2473 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "229",
+      "column": "Hull number",
+      "value": "Hull 8173 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "38",
+      "column": "Hull number",
+      "value": "Hull 2536 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "225",
+      "column": "Hull number",
+      "value": "Hull 8100 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "35",
+      "column": "Hull number",
+      "value": "Hull 2523 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "36",
+      "column": "Hull number",
+      "value": "Hull 2524 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "75",
+      "column": "Hull number",
+      "value": "Hull 2583 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "46",
+      "column": "Hull number",
+      "value": "Hull 2546 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "89",
+      "column": "Hull number",
+      "value": "Hull 2594 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "175",
+      "column": "Hull number",
+      "value": "Hull 3296 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "101",
+      "column": "Hull number",
+      "value": "Hull 2604 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "17",
+      "column": "Hull number",
+      "value": "Hull 1790A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "18",
+      "column": "Hull number",
+      "value": "Hull 1791A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "91",
+      "column": "Hull number",
+      "value": "Hull 2597 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "228",
+      "column": "Hull number",
+      "value": "Hull 8170 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1091",
+      "column": "Hull number",
+      "value": "Hull 2547 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1091",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "612",
+      "column": "Hull number",
+      "value": "Hull 8197 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "612",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "939",
+      "column": "Hull number",
+      "value": "Hull 2595 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "939",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "97",
+      "column": "Hull number",
+      "value": "Hull 2601 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "749",
+      "column": "Hull number",
+      "value": "Hull 2548 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "749",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "927",
+      "column": "Hull number",
+      "value": "Hull 2526 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "927",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Hull number",
+      "value": "Hull 2607 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "670",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "2",
+      "column": "Hull number",
+      "value": "Hull H2702 (Jiangnan)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "671",
+      "column": "Hull number",
+      "value": "Hull 2608 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "671",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Hull number",
+      "value": "Hull 3381 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "864",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Hull number",
+      "value": "Hull 3380 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "849",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1",
+      "column": "Hull number",
+      "value": "Hull H2701 (Jiangnan)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Hull number",
+      "value": "Hull 3382 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1107",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "676",
+      "column": "Hull number",
+      "value": "Hull 2609 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "676",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Hull number",
+      "value": "Hull 2534 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1132",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1098",
+      "column": "Hull number",
+      "value": "Hull 2531 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1098",
+      "column": "Hull number [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Hull number",
+      "value": "Hull H1799A (Hudong)",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 41,
+    "accepted": 41,
+    "hold": 0,
+    "reject": 0,
+    "conflicts": 0
+  }
+}

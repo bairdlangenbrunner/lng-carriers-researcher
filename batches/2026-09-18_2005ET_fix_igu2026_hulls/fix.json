@@ -1,0 +1,739 @@
+{
+ "batch_label": "Fix — hull numbers and hull-placeholder names from IGU 2026 (RF §4.17)",
+ "reason": "IGU prints `Name (hull)`: blank Hull numbers are filled, untagged ones gain their yard tag, and rows still named by their hull get the name IGU gives that hull.",
+ "igu_ref": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+ "corrections": [
+  {
+   "row_id": "70",
+   "_live_row": 701,
+   "_name": "Celsius Gandhinagar",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2579 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2579' → 'Hull 2579 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Celsius Gandhinagar (2579)' [fleet table, PDF p.67; IMO 9946829]"
+    }
+   ]
+  },
+  {
+   "row_id": "79",
+   "_live_row": 704,
+   "_name": "Celsius Granada",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2585 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2585' → 'Hull 2585 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Celsius Granada (2585)' [fleet table, PDF p.67; IMO 9948736]"
+    }
+   ]
+  },
+  {
+   "row_id": "37",
+   "_live_row": 698,
+   "_name": "GasLog Italy",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2532 (Hanwha)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2532' → 'Hull 2532 (Hanwha)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Gaslog Italy (2532)' [fleet table, PDF p.69; IMO 9962407]"
+    }
+   ]
+  },
+  {
+   "row_id": "22",
+   "_live_row": 690,
+   "_name": "Greenergy Ocean",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 1880A (Hudong)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 1880A' → 'Hull 1880A (Hudong)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Greenergy Ocean (1880A)' [fleet table, PDF p.69; IMO 9961477]"
+    }
+   ]
+  },
+  {
+   "row_id": "34",
+   "_live_row": 695,
+   "_name": "HLS Cartagena",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2522 (Hanwha)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2522' → 'Hull 2522 (Hanwha)': a hull number names its yard (RF §4.17); IGU 2026 prints 'HLS Cartagena (2522)' [fleet table, PDF p.70; IMO 9947691]"
+    }
+   ]
+  },
+  {
+   "row_id": "20",
+   "_live_row": 688,
+   "_name": "Huashan",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 1835A (Hudong)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 1835A' → 'Hull 1835A (Hudong)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Huashan (1835A)' [fleet table, PDF p.70; IMO 9958652]"
+    }
+   ]
+  },
+  {
+   "row_id": "90",
+   "_live_row": 707,
+   "_name": "Id’Asah",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2596 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2596' → 'Hull 2596 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints \"Id'Asah (2596)\" [fleet table, PDF p.70; IMO 9977220]"
+    }
+   ]
+  },
+  {
+   "row_id": "234",
+   "_live_row": 725,
+   "_name": "Kool Tiger",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 8196 (HSHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 8196' → 'Hull 8196 (HSHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Kool Tiger (HSHI-8196)' [fleet table, PDF p.70; IMO 9976135]"
+    }
+   ]
+  },
+  {
+   "row_id": "33",
+   "_live_row": 694,
+   "_name": "Maran Gas Antibes",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2474 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2474' → 'Hull 2474 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Maran Gas Antibes (2474)' [fleet table, PDF p.72; IMO 9941520]"
+    }
+   ]
+  },
+  {
+   "row_id": "32",
+   "_live_row": 693,
+   "_name": "Maran Gas Nice",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2473 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2473' → 'Hull 2473 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Maran Gas Nice (2473)' [fleet table, PDF p.72; IMO 9941518]"
+    }
+   ]
+  },
+  {
+   "row_id": "229",
+   "_live_row": 724,
+   "_name": "Marvel Dove",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 8173 (HDHHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 8173' → 'Hull 8173 (HDHHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Marvel Dove (Hull 8173)' [fleet table, PDF p.72; IMO 9964182]"
+    }
+   ]
+  },
+  {
+   "row_id": "38",
+   "_live_row": 699,
+   "_name": "Marvel Swallow",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2536 (Hanwha)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2536' → 'Hull 2536 (Hanwha)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Marvel Swallow (2536)' [fleet table, PDF p.72; IMO 9963449]"
+    }
+   ]
+  },
+  {
+   "row_id": "225",
+   "_live_row": 721,
+   "_name": "Nantes Knutsen",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 8100 (HDHHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 8100' → 'Hull 8100 (HDHHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Nantes Knutsen (Hull 8100)' [fleet table, PDF p.73; IMO 9926714]"
+    }
+   ]
+  },
+  {
+   "row_id": "35",
+   "_live_row": 696,
+   "_name": "North Light",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2523 (Hanwha)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2523' → 'Hull 2523 (Hanwha)': a hull number names its yard (RF §4.17); IGU 2026 prints 'North Light (Hull 2523)' [fleet table, PDF p.73; IMO 9958298]"
+    }
+   ]
+  },
+  {
+   "row_id": "36",
+   "_live_row": 697,
+   "_name": "North Moon",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2524 (Hanwha)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2524' → 'Hull 2524 (Hanwha)': a hull number names its yard (RF §4.17); IGU 2026 prints 'North Moon (Hull 2524)' [fleet table, PDF p.73; IMO 9958303]"
+    }
+   ]
+  },
+  {
+   "row_id": "75",
+   "_live_row": 702,
+   "_name": "North Way",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2583 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2583' → 'Hull 2583 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'North Way (Hull 2583)' [fleet table, PDF p.73; IMO 9953535]"
+    }
+   ]
+  },
+  {
+   "row_id": "46",
+   "_live_row": 700,
+   "_name": "Nuaijah",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2546 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2546' → 'Hull 2546 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Nuaijah (Hull 2546)' [fleet table, PDF p.73; IMO 9976903]"
+    }
+   ]
+  },
+  {
+   "row_id": "89",
+   "_live_row": 706,
+   "_name": "Orion Iris",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2594 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2594' → 'Hull 2594 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Orion Iris (2594)' [fleet table, PDF p.73; IMO 9956604]"
+    }
+   ]
+  },
+  {
+   "row_id": "175",
+   "_live_row": 717,
+   "_name": "Puteri Sejinjang - 3",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 3296 (HDHHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 3296' → 'Hull 3296 (HDHHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Puteri Sejinjang - 3 (Hull 3296)' [fleet table, PDF p.74; IMO 9937969]"
+    }
+   ]
+  },
+  {
+   "row_id": "101",
+   "_live_row": 709,
+   "_name": "Quest Kirishima",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2604 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2604' → 'Hull 2604 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Quest Kirishima (2604)' [fleet table, PDF p.74; IMO 9963853]"
+    }
+   ]
+  },
+  {
+   "row_id": "17",
+   "_live_row": 685,
+   "_name": "Rex Tillerson",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 1790A (Hudong)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 1790A' → 'Hull 1790A (Hudong)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Rex Tillerson (1790A)' [fleet table, PDF p.74; IMO 9953248]"
+    }
+   ]
+  },
+  {
+   "row_id": "18",
+   "_live_row": 686,
+   "_name": "Umm Ghuwailina",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 1791A (Hudong)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 1791A' → 'Hull 1791A (Hudong)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Umm Ghuwailina (1791A)' [fleet table, PDF p.75; IMO 9953250]"
+    }
+   ]
+  },
+  {
+   "row_id": "91",
+   "_live_row": 708,
+   "_name": "Umm Graybah",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2597 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2597' → 'Hull 2597 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Umm Graybah (2597)' [fleet table, PDF p.75; IMO 9977232]"
+    }
+   ]
+  },
+  {
+   "row_id": "228",
+   "_live_row": 723,
+   "_name": "Woodside Scarlet Ibis",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 8170 (HDHHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 8170' → 'Hull 8170 (HDHHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Woodside Scarlet Ibis (8170)' [fleet table, PDF p.76; IMO 9975040]"
+    }
+   ]
+  },
+  {
+   "row_id": "1091",
+   "_live_row": 817,
+   "_name": "Umm Swayyah",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2547 (Hanwha)",
+     "gate_value": "Hull 2547",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Umm Swayyah (Hull 2547)' [fleet table, PDF p.76; IMO 9976915]"
+    }
+   ]
+  },
+  {
+   "row_id": "612",
+   "_live_row": 791,
+   "_name": "Gail Sagar",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 8197 (HSHI)",
+     "gate_value": "HSHI-8197",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Gail Sagar (HSHI-8197)' [fleet table, PDF p.76; IMO 9976147]"
+    }
+   ]
+  },
+  {
+   "row_id": "939",
+   "_live_row": 810,
+   "_name": "Orion Sirius",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2595 (SHI)",
+     "gate_value": "2595",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Orion Sirius (2595)' [fleet table, PDF p.76; IMO 9956616]"
+    }
+   ]
+  },
+  {
+   "row_id": "97",
+   "_live_row": 758,
+   "_name": "Orion Saint",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2601 (SHI)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull 2601' → 'Hull 2601 (SHI)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Orion Saint (2601)' [fleet table, PDF p.76; IMO 9958858]"
+    }
+   ]
+  },
+  {
+   "row_id": "749",
+   "_live_row": 798,
+   "_name": "Lebrethah",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2548 (Hanwha)",
+     "gate_value": "2548",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Lebrethah (2548)' [fleet table, PDF p.76; IMO 9976927]"
+    }
+   ]
+  },
+  {
+   "row_id": "927",
+   "_live_row": 807,
+   "_name": "North Valley",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2526 (Hanwha)",
+     "gate_value": "Hull 2526",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'North Valley (Hull 2526)' [fleet table, PDF p.76; IMO 9958327]"
+    }
+   ]
+  },
+  {
+   "row_id": "670",
+   "_live_row": 792,
+   "_name": "HL Alyssa Warner",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2607 (SHI)",
+     "gate_value": "2607",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'HL Alyssa Warner (2607)' [fleet table, PDF p.76; IMO 9972359]"
+    }
+   ]
+  },
+  {
+   "row_id": "2",
+   "_live_row": 750,
+   "_name": "Al Reef",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull H2702 (Jiangnan)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull H2702' → 'Hull H2702 (Jiangnan)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Al Reef (Jiangnan H2702)' [fleet table, PDF p.76; IMO 9972945]"
+    }
+   ]
+  },
+  {
+   "row_id": "671",
+   "_live_row": 793,
+   "_name": "HL Edward Austin",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2608 (SHI)",
+     "gate_value": "2608",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'HL Edward Austin (2608)' [fleet table, PDF p.76; IMO 9972361]"
+    }
+   ]
+  },
+  {
+   "row_id": "864",
+   "_live_row": 802,
+   "_name": "Mesaieed",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 3381 (HDHHI)",
+     "gate_value": "3381",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Mesaieed (3381)' [fleet table, PDF p.76; IMO 9975519]"
+    }
+   ]
+  },
+  {
+   "row_id": "849",
+   "_live_row": 801,
+   "_name": "Mareekh",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 3380 (HDHHI)",
+     "gate_value": "3380",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Mraikh (3380)' [fleet table, PDF p.76; IMO 9975507]"
+    }
+   ]
+  },
+  {
+   "row_id": "1",
+   "_live_row": 749,
+   "_name": "Al Rahba",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull H2701 (Jiangnan)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull H2701' → 'Hull H2701 (Jiangnan)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Al Rahba (Jiangnan H2701)' [fleet table, PDF p.76; IMO 9965435]"
+    }
+   ]
+  },
+  {
+   "row_id": "1107",
+   "_live_row": 820,
+   "_name": "Wadi Al Syl",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 3382 (HDHHI)",
+     "gate_value": "3382",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Wadi Al Syl (3382)' [fleet table, PDF p.76; IMO 9981374]"
+    }
+   ]
+  },
+  {
+   "row_id": "676",
+   "_live_row": 795,
+   "_name": "HL Sea Eagle",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2609 (SHI)",
+     "gate_value": "2609",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'HL Sea Eagle (2609)' [fleet table, PDF p.76; IMO 9972373]"
+    }
+   ]
+  },
+  {
+   "row_id": "1132",
+   "_live_row": 822,
+   "_name": "Woodside Jirrubakura",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2534 (Hanwha)",
+     "gate_value": "2534",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Woodside Jirrubakura (2534)' [fleet table, PDF p.77; IMO 9962421]"
+    }
+   ]
+  },
+  {
+   "row_id": "1098",
+   "_live_row": 819,
+   "_name": "Venture Creole",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull 2531 (Hanwha)",
+     "gate_value": "2531",
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "blank in backend; IGU 2026 prints 'Venture Creole (2531)' [fleet table, PDF p.77; IMO 9960590]"
+    }
+   ]
+  },
+  {
+   "row_id": "263",
+   "_live_row": 909,
+   "_name": "Hull H1799A",
+   "cells": [
+    {
+     "field": "Hull number",
+     "new_value": "Hull H1799A (Hudong)",
+     "preserve_ref": true,
+     "confidence": "G",
+     "note": "restyle 'Hull H1799A' → 'Hull H1799A (Hudong)': a hull number names its yard (RF §4.17); IGU 2026 prints 'Fath Al Khair (1799A)' [fleet table, PDF p.77; IMO 9986623]"
+    }
+   ]
+  }
+ ],
+ "flagged": [
+  {
+   "igu_name": "Elisa Ardea (Hyundai Samho 8049)",
+   "imo": "9980540",
+   "live_row": 733,
+   "reason": "IGU yard hyundai-samho ('HD Hyundai' / 'Hyundai Samho 8049') ≠ the row's 'HD Hyundai Heavy Industries' (row hull blank)"
+  },
+  {
+   "igu_name": "Ignacy Jan Paderewski (8180)",
+   "imo": "9969388",
+   "live_row": 796,
+   "reason": "IGU yard hyundai-samho ('Hyundai Samho Heavy Industries' / '8180') ≠ the row's 'HD Hyundai Heavy Industries' (row hull blank)"
+  },
+  {
+   "igu_name": "Zoe Knutsen (8102)",
+   "imo": "9946362",
+   "live_row": 775,
+   "reason": "IGU yard hyundai-samho ('Hyundai Samho Heavy Industries' / '8102') ≠ the row's 'HD Hyundai Heavy Industries' (row hull Hull 8102 (HDHHI))"
+  },
+  {
+   "igu_name": "Fath Al Khair (1799A)",
+   "imo": "9986623",
+   "live_row": 909,
+   "reason": "already proposed by 2026-09-17_1654ET_fix_igu2026_sourced"
+  },
+  {
+   "igu_name": "Al Kharrarah (2549)",
+   "imo": "9976939",
+   "live_row": 846,
+   "reason": "already proposed by 2026-09-17_0421ET_fix_delivery_rollforward"
+  },
+  {
+   "igu_name": "Josef Pilsudski (8179)",
+   "imo": "9969376",
+   "live_row": 940,
+   "reason": "IGU yard hyundai-samho ('Hyundai Samho Heavy Industries' / '8179') ≠ the row's 'HD Hyundai Heavy Industries' (row hull blank)"
+  },
+  {
+   "igu_name": "Venture Pelican (2541)",
+   "imo": "9970569",
+   "live_row": 843,
+   "reason": "already proposed by 2026-09-17_0421ET_fix_delivery_rollforward"
+  },
+  {
+   "igu_name": "Qtaifan (Hull 2640)",
+   "imo": "9981049",
+   "live_row": 870,
+   "reason": "already proposed by 2026-09-17_0421ET_fix_delivery_rollforward"
+  },
+  {
+   "igu_name": "Al Zuwair (3395)",
+   "imo": "9981491",
+   "live_row": 890,
+   "reason": "already proposed by 2026-09-17_0421ET_fix_delivery_rollforward"
+  },
+  {
+   "igu_name": "Puteri Selangor (8188)",
+   "imo": "9976109",
+   "live_row": 900,
+   "reason": "already proposed by 2026-09-17_0421ET_fix_delivery_rollforward"
+  },
+  {
+   "igu_name": "Puteri Terengganu (8189)",
+   "imo": "9976111",
+   "live_row": 901,
+   "reason": "already proposed by 2026-09-17_0421ET_fix_delivery_rollforward"
+  },
+  {
+   "igu_name": "HL Puffin (2610)",
+   "imo": "9972385",
+   "live_row": 936,
+   "reason": "Hull number already proposed by 2026-09-17_0511ET_data_fill_on_order ('Hull 2610 (SHI)')"
+  },
+  {
+   "igu_name": "Puteri Perak (2632)",
+   "imo": "9974151",
+   "live_row": 941,
+   "reason": "IGU yard 'Samsung Heavy Industries' ≠ the row's 'HD Hyundai Samho' (row hull blank)"
+  }
+ ]
+}

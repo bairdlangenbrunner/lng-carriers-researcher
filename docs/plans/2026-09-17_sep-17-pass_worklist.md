@@ -1,4 +1,4 @@
-# sep-17-pass — worklist (written 2026-09-17 evening; last updated 19:05 ET)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-18 20:10 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
@@ -94,9 +94,10 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
 | 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 24 / 1 reject, plus 8 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | **APPLIED 2026-09-17** — 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
-| 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names` (131 cells / 131 rows; 19 spelling / wrong-vessel Name changes excluded); 102 carry a gated ref | 95 / 36 |
+| 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names`; **rebuilt 2026-09-18** with every IGU 2026 `(ex-…)` name (RF §4.17) and yard-tagged hulls — 160 cells / 160 rows, 136 carry a gated ref | 125 / 35 |
 | 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |
-| 12 | `1810ET_fix_price_full_usd` | Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref` — unit conversion, refs kept) | 58 / 0 |
+| 12 | `1810ET_fix_price_full_usd` | **APPLIED 2026-09-18** — Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref`); `$m` dropped from the vocab. 8 Prices still cite the bare word `clarkson` (live rows 965, 1049–1053, 1083, 1203) — to re-source | 58 / 0 |
+| 13 | `2005ET_fix_igu2026_hulls` | RF §4.17: IGU `Name (hull)` → 13 blank Hull numbers filled + 28 untagged hulls yard-tagged; placeholder-name matches all already in batches 1 / 8; 6 yard conflicts flagged (Samho vs Ulsan ×4, row 941 SHI vs Samho) | 41 / 0 |
 
 Discovery candidates in batch 3: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y);
 HD Hyundai HI × Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undisclosed
