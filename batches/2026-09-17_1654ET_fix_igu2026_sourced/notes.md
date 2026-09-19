@@ -91,3 +91,6 @@ one cell — `build_fix_json.py` would regenerate the IGU value — workbook reb
 zero formula errors), line accepted, `apply_batch.py` re-run: 444 accept / 23 hold / 1 reject.
 Trackers disagree: shipvault (`KARMOL LNGT P ANTARCTICA`) and marinetraffic.org still print the
 Karmol name. The other Karadeniz restylings (live rows 20 / 29 / 39) are untouched and still held.
+Second Name ref added the same evening: vesseltracker.com (`Lngt Antarctica`, IMO 8608872, MMSI
+636023902, live AIS position) passes §3.8c. Equasis not checked — it needs a registered login
+and no credential is stored.
