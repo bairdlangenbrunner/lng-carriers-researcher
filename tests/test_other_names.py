@@ -150,3 +150,26 @@ class TestApplyAppendRef:
         assert r[H["Name"]] == "Arctic Pioneer" and r[H["Name [ref]"]] == "http://igu"
         assert r[H["Other names"]] == "LNG Pioneer; Pioneer Spirit"
         assert r[H["Other names [ref]"]] == "http://lp, http://igu"
+
+
+# --- RF §4.17: IGU (ex-…) names and yard-tagged hulls ---------------------------------
+
+def test_igu_ex_names_splits_chains_and_hulls():
+    assert other_names.igu_ex_names("Karadeniz LNGT Antarctica (ex-Northwest Sanderling)") == \
+        [("Northwest Sanderling", "")]
+    exes = [e for e, _ in other_names.igu_ex_names("KLNGTP Black Sea (ex-Portovenere / ex-LNG Portovenere)")]
+    assert exes == ["Portovenere", "LNG Portovenere"]
+    assert other_names.igu_ex_names("Al Sailiya (2641)") == []
+
+
+def test_hull_only_and_same_hull():
+    assert other_names.hull_only("Hull 2563 (Hanwha)") == "2563"
+    assert other_names.hull_only("Hudong-Zhonghua H1881A") == "H1881A"
+    assert other_names.hull_only("Northwest Sanderling") == ""
+    assert other_names.same_hull("H1881A", "1881A")
+    assert not other_names.same_hull("2653", "2563")
+
+
+def test_fallback_yard_tags_cover_untagged_yards():
+    assert other_names.FALLBACK_YARD_TAGS["Hudong-Zhonghua Shipbuilding"] == "Hudong"
+    assert other_names.FALLBACK_YARD_TAGS["Jiangnan Shipyard"] == "Jiangnan"

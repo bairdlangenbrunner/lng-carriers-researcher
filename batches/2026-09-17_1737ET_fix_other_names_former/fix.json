@@ -1,6 +1,6 @@
 {
- "batch_label": "Former names -> Other names (RF §4.16)",
- "reason": "Every Name change proposed by 2026-09-17_0421ET_fix_delivery_rollforward, 2026-09-17_0458ET_fix_delivery_confirmed, 2026-09-17_1654ET_fix_igu2026_sourced moves the row's former Name into Other names (appended; existing entries and refs kept). Apply each line together with its Name line.",
+ "batch_label": "Former names -> Other names (RF §4.16, §4.17)",
+ "reason": "Every Name change proposed by 2026-09-17_0421ET_fix_delivery_rollforward, 2026-09-17_0458ET_fix_delivery_confirmed, 2026-09-17_1654ET_fix_igu2026_sourced moves the row's former Name into Other names (appended; existing entries and refs kept). Apply each line together with its Name line. Every (ex-…) name the IGU 2026 report prints for a row's IMO is added too (on its own where no batch renames the row).",
  "corrections": [
   {
    "row_id": "6",
@@ -320,21 +320,28 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull 2564 (Hanwha)",
+     "new_value": "Hull 2564 (Hanwha); QatarGas LNG 37",
      "gate_value": "Hull 2564 (Hanwha)",
      "append_ref": true,
      "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465043",
-       "soft": false
+       "soft": false,
+       "gate_value": "Hull 2564 (Hanwha)"
       },
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
-       "soft": false
+       "soft": false,
+       "gate_value": "Hull 2564 (Hanwha)"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "QatarGas LNG 37"
       }
      ],
-     "note": "former Name 'Hull 2564 (Hanwha)'; the row is renamed 'Shafallah' by 2026-09-17_0421ET_fix_delivery_rollforward"
+     "note": "former Name 'Hull 2564 (Hanwha)'; the row is renamed 'Shafallah' by 2026-09-17_0421ET_fix_delivery_rollforward; plus IGU 2026 prints 'Shafallah (ex-QatarGas LNG 37 (2564))'; IGU's hull tag (2564) not checked against the row"
     }
    ]
   },
@@ -1167,21 +1174,28 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull H1800A",
+     "new_value": "Hull H1800A (Hudong); QatarGas LNG 36",
      "gate_value": "Hull H1800A",
      "append_ref": true,
      "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462939",
-       "soft": false
+       "soft": false,
+       "gate_value": "Hull H1800A"
       },
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
-       "soft": false
+       "soft": false,
+       "gate_value": "Hull H1800A"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "QatarGas LNG 36"
       }
      ],
-     "note": "former Name 'Hull H1800A'; the row is renamed 'Mihzem' by 2026-09-17_0421ET_fix_delivery_rollforward"
+     "note": "former Name 'Hull H1800A'; the row is renamed 'Mihzem' by 2026-09-17_0421ET_fix_delivery_rollforward; plus IGU 2026 prints 'Mizhem (ex-QatarGas LNG 36 (2563))'; IGU's hull tag (2563) not checked against the row"
     }
    ]
   },
@@ -1190,21 +1204,28 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull H1801A",
+     "new_value": "Hull H1801A (Hudong); QatarGas LNG 52",
      "gate_value": "Hull H1801A",
      "append_ref": true,
      "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/462940",
-       "soft": false
+       "soft": false,
+       "gate_value": "Hull H1801A"
       },
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
-       "soft": false
+       "soft": false,
+       "gate_value": "Hull H1801A"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "QatarGas LNG 52"
       }
      ],
-     "note": "former Name 'Hull H1801A'; the row is renamed 'Idd Al Shargi' by 2026-09-17_0421ET_fix_delivery_rollforward"
+     "note": "former Name 'Hull H1801A'; the row is renamed 'Idd Al Shargi' by 2026-09-17_0421ET_fix_delivery_rollforward; plus IGU 2026 prints 'IDD Al Shargi (ex-QatarGas LNG 52 (1801A))'; IGU's hull tag (1801A) not checked against the row"
     }
    ]
   },
@@ -1213,7 +1234,7 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull H1909A",
+     "new_value": "Hull H1909A (Hudong)",
      "gate_value": "Hull H1909A",
      "append_ref": true,
      "confidence": "G",
@@ -1835,7 +1856,7 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull H1794A",
+     "new_value": "Hull H1794A (Hudong)",
      "gate_value": "Hull H1794A",
      "append_ref": true,
      "confidence": "G",
@@ -1858,7 +1879,7 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull H1795A",
+     "new_value": "Hull H1795A (Hudong)",
      "gate_value": "Hull H1795A",
      "append_ref": true,
      "confidence": "Y",
@@ -2362,12 +2383,18 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Karmol LNGT Powership Antarctica",
+     "new_value": "Karmol LNGT Powership Antarctica; Northwest Sanderling",
      "gate_value": "Karmol LNGT Powership Antarctica",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Northwest Sanderling"
+      }
+     ],
+     "note": "former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Antarctica (ex-Northwest Sanderling)'"
     }
    ]
   },
@@ -2376,12 +2403,18 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "LNGT Americas",
+     "new_value": "LNGT Americas; Northwest Stormpetrel",
      "gate_value": "LNGT Americas",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Northwest Stormpetrel"
+      }
+     ],
+     "note": "former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Americas (ex-Northwest Stormpetrel)'"
     }
    ]
   },
@@ -2409,12 +2442,23 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "KLNGTP Black Sea",
+     "new_value": "KLNGTP Black Sea; Portovenere; LNG Portovenere",
      "gate_value": "KLNGTP Black Sea",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Portovenere"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "LNG Portovenere"
+      }
+     ],
+     "note": "former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'"
     }
    ]
   },
@@ -2423,12 +2467,23 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "KLNGTP Marmara",
+     "new_value": "KLNGTP Marmara; Lerici; LNG Lerici",
      "gate_value": "KLNGTP Marmara",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Lerici"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "LNG Lerici"
+      }
+     ],
+     "note": "former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'"
     }
    ]
   },
@@ -2481,6 +2536,10 @@
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/116125",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116125",
        "soft": false
       }
      ],
@@ -2573,12 +2632,18 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Condor LNG; CCH LNG",
+     "new_value": "Condor LNG; CCH LNG; Methane Lydon Volney",
      "gate_value": "CCH LNG",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Methane Lydon Volney"
+      }
+     ],
+     "note": "former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'LNG Soars (ex-Methane Lydon Volney)'"
     }
    ]
   },
@@ -2653,21 +2718,28 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Kool Baltic",
+     "new_value": "Kool Baltic; SCF Melampus",
      "gate_value": "Kool Baltic",
      "append_ref": true,
      "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/3928",
-       "soft": false
+       "soft": false,
+       "gate_value": "Kool Baltic"
       },
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928",
-       "soft": false
+       "soft": false,
+       "gate_value": "Kool Baltic"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "SCF Melampus"
       }
      ],
-     "note": "former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET_fix_igu2026_sourced"
+     "note": "former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET_fix_igu2026_sourced; plus IGU 2026 prints 'Cool Baltic (ex-SCF Melampus)'"
     }
    ]
   },
@@ -2709,12 +2781,597 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull H1799A",
+     "new_value": "Hull H1799A (Hudong)",
      "gate_value": "Hull H1799A",
      "append_ref": true,
      "confidence": "Y",
      "refs": [],
      "note": "former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+    }
+   ]
+  },
+  {
+   "row_id": "385",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3342 (HDHHI)",
+     "gate_value": "Hyundai 3342",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hyundai 3342"
+      }
+     ],
+     "note": "IGU 2026 prints 'Apostolos (ex-Hyundai 3342)' — hull-number former name written as the QC §2 placeholder 'Hull 3342 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "179",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3341 (HDHHI)",
+     "gate_value": "3341",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "3341"
+      }
+     ],
+     "note": "IGU 2026 prints 'Assos (ex-3341)' — hull-number former name written as the QC §2 placeholder 'Hull 3341 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "108",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2635 (SHI)",
+     "gate_value": "Samsung 2635",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Samsung 2635"
+      }
+     ],
+     "note": "IGU 2026 prints 'Athos LNG (ex-Samsung 2635)' — hull-number former name written as the QC §2 placeholder 'Hull 2635 (SHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "77",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2584 (SHI)",
+     "gate_value": "2584",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "2584"
+      }
+     ],
+     "note": "IGU 2026 prints 'Celsius Greenwich (ex-2584)' — hull-number former name written as the QC §2 placeholder 'Hull 2584 (SHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "173",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3293 (HDHHI)",
+     "gate_value": "3293",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "3293"
+      }
+     ],
+     "note": "IGU 2026 prints 'Clean Future (ex-3293)' — hull-number former name written as the QC §2 placeholder 'Hull 3293 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "23",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 1881A (Hudong)",
+     "gate_value": "Hudong-Zhonghua H1881A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hudong-Zhonghua H1881A"
+      }
+     ],
+     "note": "IGU 2026 prints 'Greenergy Pearl (ex-Hudong-Zhonghua H1881A)' — hull-number former name written as the QC §2 placeholder 'Hull 1881A (Hudong)'"
+    }
+   ]
+  },
+  {
+   "row_id": "19",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 1792A (Hudong)",
+     "gate_value": "H1792A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "H1792A"
+      }
+     ],
+     "note": "IGU 2026 prints 'Hlaitan (ex-H1792A)' — hull-number former name written as the QC §2 placeholder 'Hull 1792A (Hudong)'"
+    }
+   ]
+  },
+  {
+   "row_id": "719",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "LNG Unity; Provalys",
+     "gate_value": "LNG Unity",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "LNG Unity"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Provalys"
+      }
+     ],
+     "note": "IGU 2026 prints 'Karadeniz LNGT Powership Anatolia (ex-LNG Unity / ex-Provalys)'; Provalys"
+    }
+   ]
+  },
+  {
+   "row_id": "720",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dwiputra",
+     "gate_value": "Dwiputra",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Dwiputra"
+      }
+     ],
+     "note": "IGU 2026 prints 'Karmol LNGT Powership Africa (ex-Dwiputra)'"
+    }
+   ]
+  },
+  {
+   "row_id": "722",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Northwest Shearwater",
+     "gate_value": "Northwest Shearwater",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Northwest Shearwater"
+      }
+     ],
+     "note": "IGU 2026 prints 'Karmol LNGT Powership Asia (ex-Northwest Shearwater)'"
+    }
+   ]
+  },
+  {
+   "row_id": "21",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 1836A (Hudong)",
+     "gate_value": "Hudong-Zhonghua H1836A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hudong-Zhonghua H1836A"
+      }
+     ],
+     "note": "IGU 2026 prints 'Kongtong (ex-Hudong-Zhonghua H1836A)' — hull-number former name written as the QC §2 placeholder 'Hull 1836A (Hudong)'"
+    }
+   ]
+  },
+  {
+   "row_id": "731",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "SCF Mitre",
+     "gate_value": "SCF Mitre",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "SCF Mitre"
+      }
+     ],
+     "note": "IGU 2026 prints 'Kool Boreas (ex-SCF Mitre)'"
+    }
+   ]
+  },
+  {
+   "row_id": "733",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "SCF Barents",
+     "gate_value": "SCF Barents",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "SCF Barents"
+      }
+     ],
+     "note": "IGU 2026 prints 'Kool Firn (ex-SCF Barents)'"
+    }
+   ]
+  },
+  {
+   "row_id": "170",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3221 (HDHHI)",
+     "gate_value": "3221",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "3221"
+      }
+     ],
+     "note": "IGU 2026 prints 'New Brave (ex-3221)' — hull-number former name written as the QC §2 placeholder 'Hull 3221 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "172",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3224 (HDHHI)",
+     "gate_value": "3224",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "3224"
+      }
+     ],
+     "note": "IGU 2026 prints 'New Green ST (ex-3224)' — hull-number former name written as the QC §2 placeholder 'Hull 3224 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "171",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3222 (HDHHI)",
+     "gate_value": "3222",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "3222"
+      }
+     ],
+     "note": "IGU 2026 prints 'New Nature (ex-3222)' — hull-number former name written as the QC §2 placeholder 'Hull 3222 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "87",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2592 (SHI)",
+     "gate_value": "2592",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "2592"
+      }
+     ],
+     "note": "IGU 2026 prints 'Orion Spirit (ex-2592)' — hull-number former name written as the QC §2 placeholder 'Hull 2592 (SHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "24",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2315 (SHI)",
+     "gate_value": "Samsung Heavy Industries 2315",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Samsung Heavy Industries 2315"
+      }
+     ],
+     "note": "IGU 2026 prints 'Pacific Success (ex-Samsung Heavy Industries 2315)' — hull-number former name written as the QC §2 placeholder 'Hull 2315 (SHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "176",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3297 (HDHHI)",
+     "gate_value": "Hull 3297",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hull 3297"
+      }
+     ],
+     "note": "IGU 2026 prints 'Puteri Ledang (ex-Hull 3297)' — hull-number former name written as the QC §2 placeholder 'Hull 3297 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "177",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3298 (HDHHI)",
+     "gate_value": "Hull 3298",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hull 3298"
+      }
+     ],
+     "note": "IGU 2026 prints 'Puteri Mahsuri (ex-Hull 3298)' — hull-number former name written as the QC §2 placeholder 'Hull 3298 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "174",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3295 (HDHHI)",
+     "gate_value": "Hull 3295",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hull 3295"
+      }
+     ],
+     "note": "IGU 2026 prints 'Puteri Santubong (ex-Hull 3295)' — hull-number former name written as the QC §2 placeholder 'Hull 3295 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "972",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3299 (HSHI)",
+     "gate_value": "Hull 3299",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hull 3299"
+      }
+     ],
+     "note": "IGU 2026 prints 'Puteri Mayang (ex-Hull 3299)' — hull-number former name written as the QC §2 placeholder 'Hull 3299 (HSHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "257",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1793A (Hudong)",
+     "gate_value": "Hudong Hull 1793A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hudong Hull 1793A"
+      }
+     ],
+     "note": "IGU 2026 prints 'Limail (ex-Hudong Hull 1793A)' — hull-number former name written as the QC §2 placeholder 'Hull H1793A (Hudong)'"
+    }
+   ]
+  },
+  {
+   "row_id": "885",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2527 (Hanwha)",
+     "gate_value": "Hull 2527",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hull 2527"
+      }
+     ],
+     "note": "IGU 2026 prints 'MOL Azure (ex-Hull 2527)' — hull-number former name written as the QC §2 placeholder 'Hull 2527 (Hanwha)'"
+    }
+   ]
+  },
+  {
+   "row_id": "915",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 3225 (HDHHI)",
+     "gate_value": "Hyundai 3225",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hyundai 3225"
+      }
+     ],
+     "note": "IGU 2026 prints 'New Oasis (ex-Hyundai 3225)' — hull-number former name written as the QC §2 placeholder 'Hull 3225 (HDHHI)'"
+    }
+   ]
+  },
+  {
+   "row_id": "59",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2566 (Hanwha)",
+     "gate_value": "Hull 2566",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hull 2566"
+      }
+     ],
+     "note": "IGU 2026 prints 'Esteem Fuji (ex-Hull 2566)' — hull-number former name written as the QC §2 placeholder 'Hull 2566 (Hanwha)'"
+    }
+   ]
+  },
+  {
+   "row_id": "39",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2537 (Hanwha)",
+     "gate_value": "2537",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "2537"
+      }
+     ],
+     "note": "IGU 2026 prints 'Maran Gas Syros (ex-ABCDE (2537))' — hull-number former name written as the QC §2 placeholder 'Hull 2537 (Hanwha)'"
+    }
+   ]
+  },
+  {
+   "row_id": "276",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull H1892A (Hudong)",
+     "gate_value": "Hudong-Zhonghua H1892A",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Hudong-Zhonghua H1892A"
+      }
+     ],
+     "note": "IGU 2026 prints 'Ocean Inspiration (ex-Hudong-Zhonghua H1892A)' — hull-number former name written as the QC §2 placeholder 'Hull H1892A (Hudong)'"
+    }
+   ]
+  },
+  {
+   "row_id": "1111",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Hull 2535 (Hanwha)",
+     "gate_value": "2535",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "2535"
+      }
+     ],
+     "note": "IGU 2026 prints 'Woodside Barrumbara (ex-2535)' — hull-number former name written as the QC §2 placeholder 'Hull 2535 (Hanwha)'"
     }
    ]
   }

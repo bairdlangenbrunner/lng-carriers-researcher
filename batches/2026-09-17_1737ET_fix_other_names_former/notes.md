@@ -15,7 +15,12 @@ whatever is already in `Other names` with `"; "`, and its ref joins the existing
 with `", "` — nothing in either cell is replaced (row 114: `LNG Pioneer` → `LNG Pioneer; Pioneer
 Spirit`; row 124: `Condor LNG` → `Condor LNG; CCH LNG`).
 
-## What is proposed — 131 cells, 131 rows: 95 `G` accept, 36 `Y` hold
+## What is proposed — 160 cells, 160 rows: 124 `G` accept, 1 `Y` accept, 35 `Y` hold
+
+*Rebuilt 2026-09-18* with the IGU `(ex-…)` names (RF §4.17, below) and builder-tagged hulls; the
+first build's 131 cells are unchanged except where an ex-name or a yard tag was added. The
+breakdown below is the first build's; the §4.17 section covers what the rebuild added. Row 190
+(Alto Acrux) is now `Y` / accept because its Name line was accepted in the review app (linked pair).
 
 | source batch | Name changes | proposed here | skipped |
 |---|---|---|---|
@@ -75,13 +80,13 @@ beyond the stock gate, all in `other_names.py` (`other_names.json` logs every ve
 - vesselfinder is never asked (IP ban, 2026-09-17), marinetraffic is not asked about hull
   placeholders, and the IGU landing page is ungateable.
 
-Build: 0 refs dropped by the gate, zero formula errors. 102 of the 131 cells carry a ref.
+Build (2026-09-18 rebuild): 0 refs dropped by the gate, zero formula errors. 136 of the 160 cells carry a ref.
 
 ## Apply — `apply_patch.csv` only, after batches 1, 2 and 8
 
 `apply_rows.csv` holds full rows built from the *live* backend, so pasting it would revert the
 Name (and everything else) batches 1, 2 and 8 change on the same rows. Use the by-name patch
-(`tools/apply_patch.gs`; 190 lines = the 95 accepted values + their 95 `[ref]` cells — re-run
+(`tools/apply_patch.gs`; one line per accepted value + one per `[ref]` cell — re-run
 `apply_batch.py` after editing `decisions.csv` to pick up released holds), which touches only
 `Other names` and `Other names [ref]`. No other pending batch proposes either column (checked across all
 `apply_patch.csv` files), and `conflicts.csv` is empty.
@@ -97,8 +102,35 @@ Name (and everything else) batches 1, 2 and 8 change on the same rows. Use the b
 - `tests/test_other_names.py` (11 tests).
 - Docs: RF §4.16 (rev 23), QC §4, `docs/pointers.md`, `CLAUDE.md`.
 
-## Lead, not acted on
+## IGU 2026 `(ex-…)` names → `Other names` (RF §4.17, Baird 2026-09-18)
 
-IGU 2026 prints 55 `(ex-…)` names, and several are not in the backend's `Other names` (e.g.
-`Northwest Stormpetrel` for row 20). A separate data-fill if wanted — this batch only carries
-names the backend itself published.
+> when there's an "ex-", I want that old name to be included in other names.
+
+`other_names.py --igu-ex 2026` reads every `(ex-…)` the IGU 2026 PDF prints (from
+`work/igu_fleet_2026.json`), joins it to the backend by IMO, and gates the IGU PDF on the verbatim
+ex text. 38 cells carry one:
+
+- **appended to a §4.16 line on the same row (9)**, so it stays coupled to that Name line: rows 11
+  `Northwest Sanderling`, 20 `Northwest Stormpetrel`, 29 `LNG Portovenere`, 39 `LNG Lerici`, 124
+  `Methane Lydon Volney`, 365 `SCF Melampus`, 856 `QatarGas LNG 37`, 910 `QatarGas LNG 36`, 911
+  `QatarGas LNG 52`;
+- **a cell of their own (29, all `G`)**: rows 14 `Northwest Shearwater`, 18 `Dwiputra`, 131
+  `Provalys`, 367 `SCF Mitre`, 555 `SCF Barents`, and 24 rows where IGU's ex-name is a bare hull
+  number (rows 687–821, e.g. row 720 `Hull 3341 (HDHHI)`).
+
+**Hull numbers always name their yard** (Baird 2026-09-18). A hull written into `Other names`,
+whether an IGU ex-name or a former hull-placeholder Name, takes the QC §2 form `Hull NNNN (Tag)`.
+The tag is the one the backend already uses for that builder (SHI, Hanwha, HDHHI, HSHI, Zvezda).
+**`Hudong` and `Jiangnan` are new tags**, because the backend has no tagged Hudong or Jiangnan
+placeholder yet. Rows 910/911 and the other Hudong former Names therefore read `Hull H1800A (Hudong)`.
+`Hull YZJ2022-1475` already carries its yard and is left alone. The gate still runs on the
+untagged text the source prints.
+
+Not proposed; the reviewer should check these (`other_names.json` → `skipped`):
+- row 711: IGU prints ex-`Jiangnan H2700`, but the row's hull is 2702;
+- row 855: IGU prints ex-`2653`, but the row is `Hull 2563 (Hanwha)` (a typo on one side);
+- row 910: IGU's parenthetical hull `(2563)` on Mizhem does not match the row's `H1800A`, which is
+  noted on the cell;
+- rows 21, 73, 91, 114, 167, 364, 563: the ex-name is still the row's current Name, and batch 8
+  renames each row, which carries it as its §4.16 former name;
+- IMOs not in the backend: discovery leads, not Other names.

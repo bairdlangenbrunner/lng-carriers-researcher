@@ -904,7 +904,9 @@ def build_fix(args):
             for ref in (cell.get("refs", []) if not preserve_ref else []):
                 url = ref["url"] if isinstance(ref, dict) else ref
                 soft = bool(ref.get("soft")) if isinstance(ref, dict) else False
-                ok, reason = corroborates(url, gate_value)
+                # a ref may name the element it is cited for (an Other-names cell adding two)
+                ref_gate = (ref.get("gate_value") if isinstance(ref, dict) else None) or gate_value
+                ok, reason = corroborates(url, ref_gate)
                 grade = classify(reason)
                 if ok:
                     kept.append(url)
@@ -920,7 +922,7 @@ def build_fix(args):
                 elif grade == "dead":
                     verdict = f"DROPPED — unreachable, not §3.8a-flagged ({reason})"
                 else:
-                    verdict = f"DROPPED — does NOT corroborate {gate_value!r} ({reason})"
+                    verdict = f"DROPPED — does NOT corroborate {ref_gate!r} ({reason})"
                 qa_rows.append({"row_id": rid, "field": field, "value": new_value,
                                 "url": url, "verdict": verdict, "note": cell.get("note", "")})
             for u in drop_set:

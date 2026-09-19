@@ -13,7 +13,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 54|Other names,fill,54,,Other names,G,False,accept,accept,Hull 2561 (Hanwha),former Name 'Hull 2561 (Hanwha)'; the row is renamed 'Al Galayel' by 2026-09-17_
 55|Other names,fill,55,,Other names,G,False,accept,accept,Hull 2562 (Hanwha),former Name 'Hull 2562 (Hanwha)'; the row is renamed 'Bu Nakhlah' by 2026-09-17_
 56|Other names,fill,56,,Other names,G,False,accept,accept,Hull 2563 (Hanwha),former Name 'Hull 2563 (Hanwha)'; the row is renamed 'Al Sene' by 2026-09-17_042
-57|Other names,fill,57,,Other names,G,False,accept,accept,Hull 2564 (Hanwha),former Name 'Hull 2564 (Hanwha)'; the row is renamed 'Shafallah' by 2026-09-17_0
+57|Other names,fill,57,,Other names,G,False,accept,accept,Hull 2564 (Hanwha); QatarGas LNG 37,former Name 'Hull 2564 (Hanwha)'; the row is renamed 'Shafallah' by 2026-09-17_0
 58|Other names,fill,58,,Other names,G,False,accept,accept,Hull 2565 (Hanwha),former Name 'Hull 2565 (Hanwha)'; the row is renamed 'Hasbah' by 2026-09-17_0421
 60|Other names,fill,60,,Other names,G,False,accept,accept,Hull 2567 (Hanwha),former Name 'Hull 2567 (Hanwha)'; the row is renamed 'Esteem Cormorant' by 2026-
 61|Other names,fill,61,,Other names,G,False,accept,accept,Hull 2568 (Hanwha),former Name 'Hull 2568 (Hanwha)'; the row is renamed 'Esteem Denali' by 2026-09-
@@ -50,9 +50,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 236|Other names,fill,236,,Other names,G,False,accept,accept,Hull 8201 (HSHI),former Name 'Hull 8201 (HSHI)'; the row is renamed 'Frontier LNG' by 2026-09-17_
 237|Other names,fill,237,,Other names,G,False,accept,accept,Hull 8204 (HSHI),former Name 'Hull 8204 (HSHI)'; the row is renamed 'Muscat LNG' by 2026-09-17_04
 238|Other names,fill,238,,Other names,G,False,accept,accept,Hull 8205 (HSHI),former Name 'Hull 8205 (HSHI)'; the row is renamed 'Musandam LNG' by 2026-09-17_
-264|Other names,fill,264,,Other names,G,False,accept,accept,Hull H1800A,former Name 'Hull H1800A'; the row is renamed 'Mihzem' by 2026-09-17_0421ET_fix_
-265|Other names,fill,265,,Other names,G,False,accept,accept,Hull H1801A,former Name 'Hull H1801A'; the row is renamed 'Idd Al Shargi' by 2026-09-17_0421
-289|Other names,fill,289,,Other names,G,False,accept,accept,Hull H1909A,former Name 'Hull H1909A'; the row is renamed 'Tianshan' by 2026-09-17_0421ET_fi
+264|Other names,fill,264,,Other names,G,False,accept,accept,Hull H1800A (Hudong); QatarGas LNG 36,former Name 'Hull H1800A'; the row is renamed 'Mihzem' by 2026-09-17_0421ET_fix_
+265|Other names,fill,265,,Other names,G,False,accept,accept,Hull H1801A (Hudong); QatarGas LNG 52,former Name 'Hull H1801A'; the row is renamed 'Idd Al Shargi' by 2026-09-17_0421
+289|Other names,fill,289,,Other names,G,False,accept,accept,Hull H1909A (Hudong),former Name 'Hull H1909A'; the row is renamed 'Tianshan' by 2026-09-17_0421ET_fi
 318|Other names,fill,318,,Other names,G,False,accept,accept,Hull YZJ2022-1475,former Name 'Hull YZJ2022-1475'; the row is renamed 'Yangze LNG 01' by 2026-09-1
 517|Other names,fill,517,,Other names,Y,False,hold,hold,Dalian No 1 G175K-7,former Name 'Dalian No 1 G175K-7'; the row is renamed 'Sea Charity' by 2026-09-1
 26|Other names,fill,26,,Other names,Y,False,hold,hold,Hull 2317 (SHI),former Name 'Hull 2317 (SHI)'; the row is renamed 'Mediterranean Success' by 202
@@ -81,8 +81,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 240|Other names,fill,240,,Other names,Y,False,hold,hold,Hull 8209 (HSHI),former Name 'Hull 8209 (HSHI)'; the row is renamed 'Grace Himawari' by 2026-09-1
 242|Other names,fill,242,,Other names,Y,False,hold,hold,Hull 8238 (HSHI),former Name 'Hull 8238 (HSHI)'; the row is renamed 'Grace Gerbera' by 2026-09-17
 243|Other names,fill,243,,Other names,Y,False,hold,hold,Hull 8239 (HSHI),former Name 'Hull 8239 (HSHI)'; the row is renamed 'Ferdy Vanguard' by 2026-09-1
-258|Other names,fill,258,,Other names,G,False,accept,accept,Hull H1794A,former Name 'Hull H1794A'; the row is renamed 'Al Sabsab' by 2026-09-17_0421ET_f
-259|Other names,fill,259,,Other names,Y,False,hold,hold,Hull H1795A,former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fi
+258|Other names,fill,258,,Other names,G,False,accept,accept,Hull H1794A (Hudong),former Name 'Hull H1794A'; the row is renamed 'Al Sabsab' by 2026-09-17_0421ET_f
+259|Other names,fill,259,,Other names,Y,False,hold,hold,Hull H1795A (Hudong),former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fi
 507|Other names,fill,507,,Other names,Y,False,hold,hold,Dalian No 1 G175K-10,former Name 'Dalian No 1 G175K-10'; the row is renamed 'Prime Creativity' by 202
 510|Other names,fill,510,,Other names,Y,False,hold,hold,Dalian No 1 G175K-13,former Name 'Dalian No 1 G175K-13'; the row is renamed 'Alliance Venture' by 202
 519|Other names,fill,519,,Other names,Y,False,hold,hold,Dalian No 1 G175K-9,former Name 'Dalian No 1 G175K-9'; the row is renamed 'Prime Unity' by 2026-09-1
@@ -109,11 +109,11 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 508|Other names,fill,508,,Other names,Y,False,hold,hold,Dalian No 1 G175K-11,former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-
 509|Other names,fill,509,,Other names,Y,False,hold,hold,Dalian No 1 G175K-12,former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2
 186|Other names,fill,186,,Other names,Y,False,hold,hold,Hull 3387 (HDHHI),former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_04
-721|Other names,fill,721,,Other names,Y,False,hold,hold,Karmol LNGT Powership Antarctica,former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LN
-811|Other names,fill,811,,Other names,Y,False,hold,hold,LNGT Americas,former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 202
+721|Other names,fill,721,,Other names,Y,False,hold,hold,Karmol LNGT Powership Antarctica; Northwest Sanderling,former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LN
+811|Other names,fill,811,,Other names,Y,False,hold,hold,LNGT Americas; Northwest Stormpetrel,former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 202
 971|Other names,fill,971,,Other names,G,False,accept,accept,Puteri Intan,former Name 'Puteri Intan'; the row is renamed 'American Energy' by 2026-09-17_1
-726|Other names,fill,726,,Other names,Y,False,hold,hold,KLNGTP Black Sea,former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Bla
-727|Other names,fill,727,,Other names,Y,False,hold,hold,KLNGTP Marmara,former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marma
+726|Other names,fill,726,,Other names,Y,False,hold,hold,KLNGTP Black Sea; Portovenere; LNG Portovenere,former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Bla
+727|Other names,fill,727,,Other names,Y,False,hold,hold,KLNGTP Marmara; Lerici; LNG Lerici,former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marma
 535|Other names,fill,535,,Other names,Y,False,hold,hold,East Energy,former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654
 1004|Other names,fill,1004,,Other names,G,False,accept,accept,Seapeak Hispania,former Name 'Seapeak Hispania'; the row is renamed 'Seapeak Jupiter' by 2026-09-
 562|Other names,fill,562,,Other names,G,False,accept,accept,Energy Frontier,former Name 'Energy Frontier'; the row is renamed 'Arunika Jaya' by 2026-09-17_1
@@ -121,12 +121,41 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 866|Other names,fill,866,,Other names,G,False,accept,accept,Metagas Everest,former Name 'Metagas Everest'; the row is renamed 'Arctic Metagas' by 2026-09-17
 801|Other names,fill,801,,Other names,G,False,accept,accept,LNG River Orashi,former Name 'LNG River Orashi'; the row is renamed 'Gas Garuda' by 2026-09-17_16
 958|Other names,fill,958,,Other names,G,False,accept,accept,LNG Pioneer; Pioneer Spirit,former Name 'Pioneer Spirit'; the row is renamed 'Arctic Pioneer' by 2026-09-17_
-459|Other names,fill,459,,Other names,Y,False,hold,hold,Condor LNG; CCH LNG,former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_i
+459|Other names,fill,459,,Other names,Y,False,hold,hold,Condor LNG; CCH LNG; Methane Lydon Volney,former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_i
 1062|Other names,fill,1062,,Other names,Y,False,hold,hold,Stena Blue Sky,former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1
 869|Other names,fill,869,,Other names,G,False,accept,accept,Methane Heather Sally,former Name 'Methane Heather Sally'; the row is renamed 'Shandong Redwood' by 20
-377|Other names,fill,377,,Other names,Y,False,hold,hold,Alto Acrux,former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654
+377|Other names,fill,377,,Other names,Y,False,hold,accept,Alto Acrux,former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654
 649|Other names,fill,649,,Other names,G,False,accept,accept,Golar Tundra,former Name 'Golar Tundra'; the row is renamed 'Italis LNG' by 2026-09-17_1654ET
-729|Other names,fill,729,,Other names,G,False,accept,accept,Kool Baltic,former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET
+729|Other names,fill,729,,Other names,G,False,accept,accept,Kool Baltic; SCF Melampus,former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET
 993|Other names,fill,993,,Other names,G,False,accept,accept,SCF La Perouse,former Name 'SCF La Perouse'; the row is renamed 'La Perouse' by 2026-09-17_1654
 924|Other names,fill,924,,Other names,Y,False,hold,hold,North Mountain,former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_
-263|Other names,fill,263,,Other names,Y,False,hold,hold,Hull H1799A,former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654
+263|Other names,fill,263,,Other names,Y,False,hold,hold,Hull H1799A (Hudong),former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654
+385|Other names,fill,385,,Other names,G,False,accept,accept,Hull 3342 (HDHHI),IGU 2026 prints 'Apostolos (ex-Hyundai 3342)' — hull-number former name written 
+179|Other names,fill,179,,Other names,G,False,accept,accept,Hull 3341 (HDHHI),IGU 2026 prints 'Assos (ex-3341)' — hull-number former name written as the QC §2
+108|Other names,fill,108,,Other names,G,False,accept,accept,Hull 2635 (SHI),IGU 2026 prints 'Athos LNG (ex-Samsung 2635)' — hull-number former name written 
+77|Other names,fill,77,,Other names,G,False,accept,accept,Hull 2584 (SHI),IGU 2026 prints 'Celsius Greenwich (ex-2584)' — hull-number former name written 
+173|Other names,fill,173,,Other names,G,False,accept,accept,Hull 3293 (HDHHI),IGU 2026 prints 'Clean Future (ex-3293)' — hull-number former name written as th
+23|Other names,fill,23,,Other names,G,False,accept,accept,Hull 1881A (Hudong),IGU 2026 prints 'Greenergy Pearl (ex-Hudong-Zhonghua H1881A)' — hull-number form
+19|Other names,fill,19,,Other names,G,False,accept,accept,Hull 1792A (Hudong),IGU 2026 prints 'Hlaitan (ex-H1792A)' — hull-number former name written as the Q
+719|Other names,fill,719,,Other names,G,False,accept,accept,LNG Unity; Provalys,IGU 2026 prints 'Karadeniz LNGT Powership Anatolia (ex-LNG Unity / ex-Provalys)'
+720|Other names,fill,720,,Other names,G,False,accept,accept,Dwiputra,IGU 2026 prints 'Karmol LNGT Powership Africa (ex-Dwiputra)'
+722|Other names,fill,722,,Other names,G,False,accept,accept,Northwest Shearwater,IGU 2026 prints 'Karmol LNGT Powership Asia (ex-Northwest Shearwater)'
+21|Other names,fill,21,,Other names,G,False,accept,accept,Hull 1836A (Hudong),IGU 2026 prints 'Kongtong (ex-Hudong-Zhonghua H1836A)' — hull-number former name
+731|Other names,fill,731,,Other names,G,False,accept,accept,SCF Mitre,IGU 2026 prints 'Kool Boreas (ex-SCF Mitre)'
+733|Other names,fill,733,,Other names,G,False,accept,accept,SCF Barents,IGU 2026 prints 'Kool Firn (ex-SCF Barents)'
+170|Other names,fill,170,,Other names,G,False,accept,accept,Hull 3221 (HDHHI),IGU 2026 prints 'New Brave (ex-3221)' — hull-number former name written as the Q
+172|Other names,fill,172,,Other names,G,False,accept,accept,Hull 3224 (HDHHI),IGU 2026 prints 'New Green ST (ex-3224)' — hull-number former name written as th
+171|Other names,fill,171,,Other names,G,False,accept,accept,Hull 3222 (HDHHI),IGU 2026 prints 'New Nature (ex-3222)' — hull-number former name written as the 
+87|Other names,fill,87,,Other names,G,False,accept,accept,Hull 2592 (SHI),IGU 2026 prints 'Orion Spirit (ex-2592)' — hull-number former name written as th
+24|Other names,fill,24,,Other names,G,False,accept,accept,Hull 2315 (SHI),IGU 2026 prints 'Pacific Success (ex-Samsung Heavy Industries 2315)' — hull-numb
+176|Other names,fill,176,,Other names,G,False,accept,accept,Hull 3297 (HDHHI),IGU 2026 prints 'Puteri Ledang (ex-Hull 3297)' — hull-number former name written
+177|Other names,fill,177,,Other names,G,False,accept,accept,Hull 3298 (HDHHI),IGU 2026 prints 'Puteri Mahsuri (ex-Hull 3298)' — hull-number former name writte
+174|Other names,fill,174,,Other names,G,False,accept,accept,Hull 3295 (HDHHI),IGU 2026 prints 'Puteri Santubong (ex-Hull 3295)' — hull-number former name writ
+972|Other names,fill,972,,Other names,G,False,accept,accept,Hull 3299 (HSHI),IGU 2026 prints 'Puteri Mayang (ex-Hull 3299)' — hull-number former name written
+257|Other names,fill,257,,Other names,G,False,accept,accept,Hull H1793A (Hudong),IGU 2026 prints 'Limail (ex-Hudong Hull 1793A)' — hull-number former name writte
+885|Other names,fill,885,,Other names,G,False,accept,accept,Hull 2527 (Hanwha),IGU 2026 prints 'MOL Azure (ex-Hull 2527)' — hull-number former name written as 
+915|Other names,fill,915,,Other names,G,False,accept,accept,Hull 3225 (HDHHI),IGU 2026 prints 'New Oasis (ex-Hyundai 3225)' — hull-number former name written 
+59|Other names,fill,59,,Other names,G,False,accept,accept,Hull 2566 (Hanwha),IGU 2026 prints 'Esteem Fuji (ex-Hull 2566)' — hull-number former name written a
+39|Other names,fill,39,,Other names,G,False,accept,accept,Hull 2537 (Hanwha),IGU 2026 prints 'Maran Gas Syros (ex-ABCDE (2537))' — hull-number former name wr
+276|Other names,fill,276,,Other names,G,False,accept,accept,Hull H1892A (Hudong),IGU 2026 prints 'Ocean Inspiration (ex-Hudong-Zhonghua H1892A)' — hull-number fo
+1111|Other names,fill,1111,,Other names,G,False,accept,accept,Hull 2535 (Hanwha),IGU 2026 prints 'Woodside Barrumbara (ex-2535)' — hull-number former name writte

@@ -161,13 +161,13 @@
     {
       "row_id": "57",
       "column": "Other names",
-      "value": "Hull 2564 (Hanwha)",
+      "value": "Hull 2564 (Hanwha); QatarGas LNG 37",
       "confidence": "G"
     },
     {
       "row_id": "57",
       "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/465043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043",
+      "value": "https://www.shipvault.com/ships/465043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
     },
     {
@@ -593,31 +593,31 @@
     {
       "row_id": "264",
       "column": "Other names",
-      "value": "Hull H1800A",
+      "value": "Hull H1800A (Hudong); QatarGas LNG 36",
       "confidence": "G"
     },
     {
       "row_id": "264",
       "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/462939, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939",
+      "value": "https://www.shipvault.com/ships/462939, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
     },
     {
       "row_id": "265",
       "column": "Other names",
-      "value": "Hull H1801A",
+      "value": "Hull H1801A (Hudong); QatarGas LNG 52",
       "confidence": "G"
     },
     {
       "row_id": "265",
       "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/462940, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940",
+      "value": "https://www.shipvault.com/ships/462940, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
     },
     {
       "row_id": "289",
       "column": "Other names",
-      "value": "Hull H1909A",
+      "value": "Hull H1909A (Hudong)",
       "confidence": "G"
     },
     {
@@ -833,7 +833,7 @@
     {
       "row_id": "258",
       "column": "Other names",
-      "value": "Hull H1794A",
+      "value": "Hull H1794A (Hudong)",
       "confidence": "G"
     },
     {
@@ -1043,7 +1043,7 @@
     {
       "row_id": "562",
       "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/116125",
+      "value": "https://www.shipvault.com/ships/116125, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116125",
       "confidence": "G"
     },
     {
@@ -1107,6 +1107,12 @@
       "confidence": "G"
     },
     {
+      "row_id": "377",
+      "column": "Other names",
+      "value": "Alto Acrux",
+      "confidence": "Y"
+    },
+    {
       "row_id": "649",
       "column": "Other names",
       "value": "Golar Tundra",
@@ -1121,13 +1127,13 @@
     {
       "row_id": "729",
       "column": "Other names",
-      "value": "Kool Baltic",
+      "value": "Kool Baltic; SCF Melampus",
       "confidence": "G"
     },
     {
       "row_id": "729",
       "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/3928, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928",
+      "value": "https://www.shipvault.com/ships/3928, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
     },
     {
@@ -1141,13 +1147,361 @@
       "column": "Other names [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
+    },
+    {
+      "row_id": "385",
+      "column": "Other names",
+      "value": "Hull 3342 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "385",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "179",
+      "column": "Other names",
+      "value": "Hull 3341 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "179",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "108",
+      "column": "Other names",
+      "value": "Hull 2635 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "108",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "77",
+      "column": "Other names",
+      "value": "Hull 2584 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "77",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "173",
+      "column": "Other names",
+      "value": "Hull 3293 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "173",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "23",
+      "column": "Other names",
+      "value": "Hull 1881A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "23",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "19",
+      "column": "Other names",
+      "value": "Hull 1792A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "19",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "719",
+      "column": "Other names",
+      "value": "LNG Unity; Provalys",
+      "confidence": "G"
+    },
+    {
+      "row_id": "719",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "720",
+      "column": "Other names",
+      "value": "Dwiputra",
+      "confidence": "G"
+    },
+    {
+      "row_id": "720",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "722",
+      "column": "Other names",
+      "value": "Northwest Shearwater",
+      "confidence": "G"
+    },
+    {
+      "row_id": "722",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "21",
+      "column": "Other names",
+      "value": "Hull 1836A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "21",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "731",
+      "column": "Other names",
+      "value": "SCF Mitre",
+      "confidence": "G"
+    },
+    {
+      "row_id": "731",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "733",
+      "column": "Other names",
+      "value": "SCF Barents",
+      "confidence": "G"
+    },
+    {
+      "row_id": "733",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "170",
+      "column": "Other names",
+      "value": "Hull 3221 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "170",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "172",
+      "column": "Other names",
+      "value": "Hull 3224 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "172",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "171",
+      "column": "Other names",
+      "value": "Hull 3222 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "171",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "87",
+      "column": "Other names",
+      "value": "Hull 2592 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "87",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "24",
+      "column": "Other names",
+      "value": "Hull 2315 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "24",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "176",
+      "column": "Other names",
+      "value": "Hull 3297 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "176",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "177",
+      "column": "Other names",
+      "value": "Hull 3298 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "177",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "174",
+      "column": "Other names",
+      "value": "Hull 3295 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "174",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Other names",
+      "value": "Hull 3299 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "972",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "257",
+      "column": "Other names",
+      "value": "Hull H1793A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "257",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "885",
+      "column": "Other names",
+      "value": "Hull 2527 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "885",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "915",
+      "column": "Other names",
+      "value": "Hull 3225 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "915",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "59",
+      "column": "Other names",
+      "value": "Hull 2566 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "59",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "39",
+      "column": "Other names",
+      "value": "Hull 2537 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "39",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Other names",
+      "value": "Hull H1892A (Hudong)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "276",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Other names",
+      "value": "Hull 2535 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1111",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 131,
-    "accepted": 95,
-    "hold": 36,
+    "items": 160,
+    "accepted": 125,
+    "hold": 35,
     "reject": 0,
     "conflicts": 0
   }

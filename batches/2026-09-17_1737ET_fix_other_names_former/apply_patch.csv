@@ -25,8 +25,8 @@ set,55,Other names,Hull 2562 (Hanwha)
 set,55,Other names [ref],"https://www.shipvault.com/ships/465041, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465041"
 set,56,Other names,Hull 2563 (Hanwha)
 set,56,Other names [ref],"https://www.shipvault.com/ships/465042, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465042"
-set,57,Other names,Hull 2564 (Hanwha)
-set,57,Other names [ref],"https://www.shipvault.com/ships/465043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043"
+set,57,Other names,Hull 2564 (Hanwha); QatarGas LNG 37
+set,57,Other names [ref],"https://www.shipvault.com/ships/465043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465043, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
 set,58,Other names,Hull 2565 (Hanwha)
 set,58,Other names [ref],"https://www.shipvault.com/ships/465044, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465044"
 set,60,Other names,Hull 2567 (Hanwha)
@@ -97,11 +97,11 @@ set,237,Other names,Hull 8204 (HSHI)
 set,237,Other names [ref],"https://www.shipvault.com/ships/461955, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461955"
 set,238,Other names,Hull 8205 (HSHI)
 set,238,Other names [ref],"https://www.shipvault.com/ships/461956, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956"
-set,264,Other names,Hull H1800A
-set,264,Other names [ref],"https://www.shipvault.com/ships/462939, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939"
-set,265,Other names,Hull H1801A
-set,265,Other names [ref],"https://www.shipvault.com/ships/462940, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940"
-set,289,Other names,Hull H1909A
+set,264,Other names,Hull H1800A (Hudong); QatarGas LNG 36
+set,264,Other names [ref],"https://www.shipvault.com/ships/462939, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462939, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,265,Other names,Hull H1801A (Hudong); QatarGas LNG 52
+set,265,Other names [ref],"https://www.shipvault.com/ships/462940, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462940, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,289,Other names,Hull H1909A (Hudong)
 set,289,Other names [ref],"https://www.shipvault.com/ships/467899, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899"
 set,318,Other names,Hull YZJ2022-1475
 set,318,Other names [ref],"https://www.shipvault.com/ships/475022, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/475022"
@@ -137,7 +137,7 @@ set,220,Other names,Hull 3489 (HDHHI)
 set,220,Other names [ref],"https://www.shipvault.com/ships/478318, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478318"
 set,221,Other names,Hull 3490 (HDHHI)
 set,221,Other names [ref],"https://www.shipvault.com/ships/478319, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478319"
-set,258,Other names,Hull H1794A
+set,258,Other names,Hull H1794A (Hudong)
 set,258,Other names [ref],"https://www.shipvault.com/ships/462933, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933"
 set,80,Other names,Hull 2585 (Hanwha)
 set,80,Other names [ref],"https://www.shipvault.com/ships/476659, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/476659"
@@ -172,7 +172,7 @@ set,971,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-w
 set,1004,Other names,Seapeak Hispania
 set,1004,Other names [ref],"https://www.shipvault.com/ships/115017, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017"
 set,562,Other names,Energy Frontier
-set,562,Other names [ref],https://www.shipvault.com/ships/116125
+set,562,Other names [ref],"https://www.shipvault.com/ships/116125, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116125"
 set,648,Other names,Golar Arctic
 set,648,Other names [ref],"https://www.shipvault.com/ships/116640, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116640"
 set,866,Other names,Metagas Everest
@@ -183,9 +183,68 @@ set,958,Other names,LNG Pioneer; Pioneer Spirit
 set,958,Other names [ref],"https://www.igu.org/igu-reports/2025-world-lng-report, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
 set,869,Other names,Methane Heather Sally
 set,869,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,377,Other names,Alto Acrux
 set,649,Other names,Golar Tundra
 set,649,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,729,Other names,Kool Baltic
-set,729,Other names [ref],"https://www.shipvault.com/ships/3928, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928"
+set,729,Other names,Kool Baltic; SCF Melampus
+set,729,Other names [ref],"https://www.shipvault.com/ships/3928, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
 set,993,Other names,SCF La Perouse
 set,993,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,385,Other names,Hull 3342 (HDHHI)
+set,385,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,179,Other names,Hull 3341 (HDHHI)
+set,179,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,108,Other names,Hull 2635 (SHI)
+set,108,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,77,Other names,Hull 2584 (SHI)
+set,77,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,173,Other names,Hull 3293 (HDHHI)
+set,173,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,23,Other names,Hull 1881A (Hudong)
+set,23,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,19,Other names,Hull 1792A (Hudong)
+set,19,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,719,Other names,LNG Unity; Provalys
+set,719,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,720,Other names,Dwiputra
+set,720,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,722,Other names,Northwest Shearwater
+set,722,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,21,Other names,Hull 1836A (Hudong)
+set,21,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,731,Other names,SCF Mitre
+set,731,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,733,Other names,SCF Barents
+set,733,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,170,Other names,Hull 3221 (HDHHI)
+set,170,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,172,Other names,Hull 3224 (HDHHI)
+set,172,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,171,Other names,Hull 3222 (HDHHI)
+set,171,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,87,Other names,Hull 2592 (SHI)
+set,87,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,24,Other names,Hull 2315 (SHI)
+set,24,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,176,Other names,Hull 3297 (HDHHI)
+set,176,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,177,Other names,Hull 3298 (HDHHI)
+set,177,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,174,Other names,Hull 3295 (HDHHI)
+set,174,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,972,Other names,Hull 3299 (HSHI)
+set,972,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,257,Other names,Hull H1793A (Hudong)
+set,257,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,885,Other names,Hull 2527 (Hanwha)
+set,885,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,915,Other names,Hull 3225 (HDHHI)
+set,915,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,59,Other names,Hull 2566 (Hanwha)
+set,59,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,39,Other names,Hull 2537 (Hanwha)
+set,39,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,276,Other names,Hull H1892A (Hudong)
+set,276,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1111,Other names,Hull 2535 (Hanwha)
+set,1111,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf

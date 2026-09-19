@@ -217,6 +217,163 @@ def load_igu_names() -> dict:
     return out
 
 
+_EX_RE = re.compile(r"\(ex-(.*)\)\s*$", re.I)
+_PAREN_HULL_RE = re.compile(r"\s*\(([^()]*\d[^()]*)\)\s*$")   # 'Victor Hugo (8107)'
+_YARD_WORDS = {"hull", "no", "hudong", "zhonghua", "hyundai", "ulsan", "samho", "samsung",
+               "heavy", "industries", "shi", "hshi", "hdhhi", "hanwha", "jiangnan", "zvezda"}
+_DUMMY_NAMES = {"abcde"}                          # IGU's own filler: 'ex-ABCDE (2537)'
+# the citable report PDF per edition (IG §5.4; the landing page cannot pass §3.8c)
+IGU_PDF = {"2026": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"}
+
+
+def igu_ex_names(printed: str) -> list[tuple[str, str]]:
+    """IGU `Name (ex-A / ex-B (8107))` -> [(ex name, hull number IGU adds in parentheses)]."""
+    m = _EX_RE.search(printed or "")
+    if not m:
+        return []
+    out = []
+    for part in re.split(r"\s*/\s*ex-", m.group(1)):
+        hull, pm = "", _PAREN_HULL_RE.search(part)
+        if pm:
+            hull, part = pm.group(1).strip(), part[:pm.start()]
+        part = part.strip()
+        if fold(part) in _DUMMY_NAMES:
+            part, hull = hull, ""
+        if part:
+            out.append((part, hull))
+    return out
+
+
+def hull_only(name: str) -> str:
+    """The hull number when a name is nothing but one ('3341', 'Hudong-Zhonghua H1881A',
+    'Hull 2563 (Hanwha)'); '' for a real name."""
+    toks = [t for t in fold(name).split() if t not in _YARD_WORDS]
+    return toks[0].upper() if len(toks) == 1 and re.search(r"\d", toks[0]) else ""
+
+
+def same_hull(a: str, b: str) -> bool:
+    """Hull numbers equal up to the yard's optional `H` prefix (Hudong `H1881A` = `1881A`)."""
+    strip = lambda s: re.sub(r"^H(?=\d)", "", s.upper())
+    return bool(a and b) and strip(a) == strip(b)
+
+
+# Yards whose hull placeholders carry no tag in the backend yet (Baird 2026-09-18: a hull
+# number always says whose hull it is). yard_tags() wins where the backend has a tag.
+FALLBACK_YARD_TAGS = {"Hudong-Zhonghua Shipbuilding": "Hudong", "Jiangnan Shipyard": "Jiangnan",
+                      "Hanwha Philly SY": "Hanwha Philly"}
+
+
+def yard_tags(be) -> dict:
+    """Shipbuilder -> the yard tag its `Hull NNNN (Tag)` placeholders use (QC §2)."""
+    from collections import Counter
+    hi, counts = be.header_index, {}
+    for row in be.row_by_id().values():
+        for n in [be.cell(row, hi.get("Name"))] + split_names(be.cell(row, hi.get(FIELD))):
+            m = re.match(r"Hull\s+\S+\s+\(([^()]+)\)$", n.strip())
+            if m:
+                counts.setdefault(be.cell(row, hi.get("Shipbuilder")), Counter())[m.group(1)] += 1
+    return {b: c.most_common(1)[0][0] for b, c in counts.items()}
+
+
+def igu_ex_cells(be, gate: Gate, edition: str, proposals: list) -> tuple[list, list]:
+    """RF §4.17: every `(ex-…)` name the IGU report prints for a row's IMO joins the row's
+    `Other names` — whether or not any batch renames the row. Rows that already carry a
+    §4.16 proposal get the ex-names appended to that cell (it stays coupled to its Name
+    line); every other row gets a cell of its own. A bare hull number is written as the
+    row's QC §2 placeholder (`Hull 3341 (HDHHI)`). -> (new proposals, skipped)."""
+    from paths import work_dir
+    ext = json.loads((work_dir() / f"igu_fleet_{edition}.json").read_text())
+    pdf = IGU_PDF[edition]
+    rows, live, hi = be.row_by_id(), be.sheet_row_map(), be.header_index
+    by_imo = {}
+    for rid, row in rows.items():
+        imo = be.cell(row, hi.get("IMO number")).strip()
+        if imo:
+            by_imo.setdefault(imo, []).append(rid)
+    tags, pending = yard_tags(be), {p["row_id"]: p for p in proposals}
+    new, skipped, added = [], [], {}
+    for rec in ext.get("fleet", []) + ext.get("orderbook", []):
+        exes = igu_ex_names(rec.get("name", ""))
+        imo = str(rec.get("imo") or "").strip()
+        if not exes:
+            continue
+        if imo not in by_imo:
+            skipped.append({"row_id": None, "live_row": None, "igu_name": rec["name"], "imo": imo,
+                            "former": "; ".join(e for e, _ in exes),
+                            "new": f"(IGU {edition} ex-name)", "reason": "IMO not in the backend (a discovery lead, not an Other name)"})
+            continue
+        for rid in by_imo[imo]:
+            row, p = rows[rid], pending.get(rid)
+            name = be.cell(row, hi.get("Name"))
+            known = [name] + split_names(be.cell(row, hi.get(FIELD))) + \
+                    ([p["former"]] if p else []) + added.get(rid, [])
+            hull_cell = be.cell(row, hi.get("Hull number")).strip()
+            hull_col = hull_only(hull_cell)
+            for ex, paren in exes:
+                h = hull_only(ex)
+                builder = be.cell(row, hi.get("Shipbuilder"))
+                tag = tags.get(builder) or FALLBACK_YARD_TAGS.get(builder) or builder
+                if h and same_hull(h, hull_col) and re.search(r"\([^()]+\)\s*$", hull_cell):
+                    value = hull_cell                # the row's own styled hull: 'Hull 3299 (HSHI)'
+                elif h:                              # always name the yard (Baird 2026-09-18)
+                    num = hull_col if same_hull(h, hull_col) else h
+                    value = f"Hull {num} ({tag})"
+                else:
+                    value = ex
+                known_f = {fold(k) for k in known}
+                known_h = {hull_only(k) for k in known} - {""}
+                row_h = known_h | ({hull_col} - {""})
+                base = {"row_id": rid, "live_row": live.get(rid), "igu_name": rec["name"],
+                        "imo": imo, "former": ex, "new": f"(IGU {edition} ex-name)"}
+                why = None
+                if fold(ex) == fold(name):
+                    why = "is the row's current Name" + ("" if p else
+                          f" — no batch renames it to IGU's {rec['name'].split(' (ex-')[0]!r}; check")
+                elif fold(ex) in known_f or fold(value) in known_f:
+                    why = "already on the row (Other names, or a pending former-Name line)"
+                elif h and any(same_hull(h, k) for k in known_h):
+                    why = f"same hull as a name already on the row ({h})"
+                elif h and row_h and not any(same_hull(h, k) for k in row_h):
+                    why = (f"IGU hull {h} differs from the row's hull "
+                           f"({', '.join(sorted(row_h))}) — check")
+                if why:
+                    skipped.append({**base, "reason": why})
+                    continue
+                known.append(value)
+                added.setdefault(rid, []).append(value)
+                kept = gate.passing([pdf], ex, f"{rid}|{FIELD}", "", imo)
+                refs = [{"url": u, "soft": False, "gate_value": ex} for u in kept]
+                note = (f"IGU {edition} prints {rec['name']!r}" +
+                        (f" — hull-number former name written as the QC §2 placeholder {value!r}"
+                         if h else "") +
+                        (f"; IGU's hull tag ({paren}) not checked against the row" if paren else ""))
+                if p:                                  # ride on the §4.16 cell for this row
+                    c = p["cell"]
+                    for r in c["refs"]:
+                        r.setdefault("gate_value", c["gate_value"])
+                    c["new_value"] += SEP + value
+                    c["refs"] += refs
+                    c["note"] += "; plus " + note
+                    p.setdefault("igu_ex", []).append(value)
+                    continue
+                q = next((x for x in new if x["row_id"] == rid), None)
+                if q:
+                    q["cell"]["new_value"] += SEP + value
+                    q["cell"]["refs"] += refs
+                    q["cell"]["note"] += "; " + value
+                    if not kept:
+                        q["cell"]["confidence"] = "Y"
+                    continue
+                existing = be.cell(row, hi.get(FIELD))
+                new.append({"row_id": rid, "live_row": live.get(rid), "source": f"IGU {edition} (ex-…)",
+                            "former": ex, "new": name, "name_cell": None, "corr": None,
+                            "cell": {"field": FIELD, "new_value": SEP.join(split_names(existing) + [value]),
+                                     "gate_value": ex, "append_ref": True,
+                                     "confidence": "G" if kept else "Y", "refs": refs,
+                                     "note": note + ("" if kept else " — the PDF did not pass the gate; held")}})
+    return new, skipped
+
+
 def name_cells(payload: dict):
     for corr in payload.get("corrections", []):
         for c in corr.get("cells", []):
@@ -235,7 +392,7 @@ def build_cells(payloads: list[tuple[str, dict]], be, gate: Gate, include=()) ->
         for corr, c in name_cells(payload):
             claimed.setdefault(fold(c.get("new_value", "")), str(corr["row_id"]))
 
-    proposals, skipped, done = [], [], set()
+    proposals, skipped, done, tags = [], [], set(), yard_tags(be)
     for src, payload in payloads:
         for corr, c in name_cells(payload):
             rid, new = str(corr["row_id"]), str(c.get("new_value", "")).strip()
@@ -270,21 +427,36 @@ def build_cells(payloads: list[tuple[str, dict]], be, gate: Gate, include=()) ->
                    (f" by {src}" if src else "") + \
                    ("" if kept else " — no ref on hand prints the former name (backend's own "
                                     "published value); held")
-            cell = {"field": FIELD, "new_value": SEP.join(split_names(existing) + [former]),
+            value = former                  # a bare hull placeholder gains its yard tag
+            if hull_only(former) and not re.search(r"\([^()]+\)\s*$", former):
+                b = be.cell(row, hi.get("Shipbuilder"))
+                value = f"{former} ({tags.get(b) or FALLBACK_YARD_TAGS.get(b) or b})"
+            cell = {"field": FIELD, "new_value": SEP.join(split_names(existing) + [value]),
                     "gate_value": former, "append_ref": True, "confidence": conf,
                     "refs": [{"url": u, "soft": False} for u in kept], "note": note}
             proposals.append({**rec, "name_cell": c, "corr": corr, "cell": cell})
     return proposals, skipped
 
 
-def patch_batch(batch: Path, be, gate: Gate, include=(), dry_run=False):
+def patch_batch(batch: Path, be, gate: Gate, include=(), dry_run=False, igu_ex=None):
     path = batch if batch.is_file() else batch / "fix.json"   # a batch dir, or the fix.json itself
     payload = json.loads(path.read_text())
     for corr in payload.get("corrections", []):      # idempotent: drop our earlier cells
         corr["cells"] = [c for c in corr.get("cells", [])
                          if not (c.get("field") == FIELD and c.get("append_ref"))]
+    payload["corrections"] = [c for c in payload.get("corrections", []) if c["cells"]]
     proposals, skipped = build_cells([("", payload)], be, gate, include)
+    if igu_ex:
+        extra, skipped_ex = igu_ex_cells(be, gate, igu_ex, proposals)
+        proposals, skipped = proposals + extra, skipped + skipped_ex
     for p in proposals:
+        if p["corr"] is None:                        # an ex-name row the batch does not touch
+            corr = next((c for c in payload["corrections"] if str(c["row_id"]) == p["row_id"]), None)
+            if corr is None:
+                payload["corrections"].append({"row_id": p["row_id"], "cells": [p["cell"]]})
+            else:
+                corr["cells"].append(p["cell"])
+            continue
         cells = p["corr"]["cells"]
         cells.insert(cells.index(p["name_cell"]) + 1, p["cell"])
     if not dry_run:
@@ -292,12 +464,17 @@ def patch_batch(batch: Path, be, gate: Gate, include=(), dry_run=False):
     return proposals, skipped
 
 
-def collect(batch_dirs: list[Path], be, gate: Gate, include=()):
+def collect(batch_dirs: list[Path], be, gate: Gate, include=(), igu_ex=None):
     payloads = [(d.name, json.loads((d / "fix.json").read_text()))
                 for d in batch_dirs if (d / "fix.json").exists()]
     proposals, skipped = build_cells(payloads, be, gate, include)
+    if igu_ex:
+        extra, skipped_ex = igu_ex_cells(be, gate, igu_ex, proposals)
+        proposals, skipped = proposals + extra, skipped + skipped_ex
     # a former name rides with its Name line: held or rejected there -> held here
     for p in proposals:
+        if p["name_cell"] is None:
+            continue
         dec = {}
         dpath = next((d for d in batch_dirs if d.name == p["source"]), None)
         if dpath and (dpath / "decisions.csv").exists():
@@ -305,10 +482,12 @@ def collect(batch_dirs: list[Path], be, gate: Gate, include=()):
                 dec = {r["id"]: r["decision"] for r in csv.DictReader(f)}
         p["name_decision"] = dec.get(f"{p['row_id']}|Name", "")
     fix = {
-        "batch_label": "Former names -> Other names (RF §4.16)",
+        "batch_label": "Former names -> Other names (RF §4.16" + (", §4.17" if igu_ex else "") + ")",
         "reason": "Every Name change proposed by " + ", ".join(d.name for d in batch_dirs) +
                   " moves the row's former Name into Other names (appended; existing entries "
-                  "and refs kept). Apply each line together with its Name line.",
+                  "and refs kept). Apply each line together with its Name line." +
+                  (f" Every (ex-…) name the IGU {igu_ex} report prints for a row's IMO is "
+                   "added too (on its own where no batch renames the row)." if igu_ex else ""),
         "corrections": [{"row_id": p["row_id"], "cells": [p["cell"]]} for p in proposals],
     }
     return fix, proposals, skipped
@@ -323,6 +502,9 @@ def main():
                     help="row_ids to propose even though classified as a spelling fix etc.")
     ap.add_argument("--no-gate", action="store_true", help="offline: propose with no refs")
     ap.add_argument("--ask-vesselfinder", action="store_true")
+    ap.add_argument("--igu-ex", metavar="EDITION",
+                    help="also add every (ex-…) name the IGU report of this edition prints "
+                         "for a row's IMO (RF §4.17; needs work/igu_fleet_<EDITION>.json)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
     if bool(args.batch) == bool(args.collect) or (args.collect and not args.out):
@@ -331,11 +513,13 @@ def main():
     be = load_backend()
     gate = Gate(enabled=not args.no_gate, ask_vesselfinder=args.ask_vesselfinder)
     if args.batch:
-        proposals, skipped = patch_batch(Path(args.batch), be, gate, args.include, args.dry_run)
+        proposals, skipped = patch_batch(Path(args.batch), be, gate, args.include, args.dry_run,
+                                         args.igu_ex)
         b = Path(args.batch)
         log_path = b.with_name(b.stem + "_other_names.json") if b.is_file() else b / "other_names.json"
     else:
-        fix, proposals, skipped = collect([Path(d) for d in args.collect], be, gate, args.include)
+        fix, proposals, skipped = collect([Path(d) for d in args.collect], be, gate, args.include,
+                                          args.igu_ex)
         out = Path(args.out)
         if not args.dry_run:
             out.write_text(json.dumps(fix, indent=1, ensure_ascii=False) + "\n")

@@ -12,7 +12,7 @@ The SOPs live in `docs/sops/`:
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; AP rev 5 (review app) 2026-09-18. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; AP rev 5 (review app) 2026-09-18. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -33,6 +33,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); D
 | 4.14 | RF | Owner/charterer names use the backend's existing short stylization (e.g. `COSCO`) |
 | 4.15 | RF | Multiple URLs in one `[ref]` cell join with `", "`, never a newline |
 | 4.16 | RF (rev 23) | A proposed Name change also proposes the former Name as an addition to `Other names` (`"; "` join, append-only, refs gated on the former name; not for spelling fixes / wrong-vessel corrections / placeholder restylings) — `other_names.py`, fix-mode `append_ref` cell |
+| 4.17 | RF (rev 24) | IGU `(ex-…)` names → `Other names` (by IMO, IGU PDF ref); IGU `Name (NNNN)` = hull number; hull numbers always `Hull NNNN (Tag)` — `other_names.py --igu-ex` |
 
 ## Workflow steps
 
