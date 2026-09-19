@@ -59,9 +59,13 @@
       {
        "url": "https://www.offshoreshipadvisor.com/lngt-antarctica-8608872-636023902/",
        "soft": false
+      },
+      {
+       "url": "https://www.vesseltracker.com/en/Ships/Lngt-Antarctica-8608872.html",
+       "soft": false
       }
      ],
-     "note": "'Karmol LNGT Powership Antarctica' -> 'LNGT Antarctica': current name by IMO lookup (Baird 2026-09-18; not IGU-sourced). IGU 2026's 'Karadeniz LNGT Antarctica' is a label, carried in Other names with the former Name (batch 1737ET). shipvault / marinetraffic.org still print the Karmol name for IMO 8608872",
+     "note": "'Karmol LNGT Powership Antarctica' -> 'LNGT Antarctica': current name by IMO lookup (Baird 2026-09-18; not IGU-sourced). IGU 2026's 'Karadeniz LNGT Antarctica' is a label, carried in Other names with the former Name (batch 1737ET). shipvault / marinetraffic.org still print the Karmol name for IMO 8608872; vesseltracker.com (live AIS name, IMO 8608872) agrees — Equasis not checked (login)",
      "former_name": "Karmol LNGT Powership Antarctica"
     }
    ]
