@@ -137,12 +137,132 @@ def gate_verdicts(batch_dir, key_to_header):
                     res = q.get("result") if q.get("result") not in (None, "None") else q.get("status")
                     if res not in (None, "None", ""):
                         by_url[url] = f"{res} (URL log)"
+    # a shipvault companion is ADDED only where the unit record corroborates the cell value
+    # (shipvault_api_refs.py); an entry logged without a value was not gated
+    sv = batch_dir / "shipvault_api_refs.json"
+    if sv.exists():
+        added = json.loads(sv.read_text(encoding="utf-8")).get("added")
+        for a in added if isinstance(added, list) else []:
+            rid, _, field = str(a.get("where", "")).partition("|")
+            m = re.search(r"row_id (\S+?)\)", rid)
+            rid, field = (m.group(1) if m else rid.strip()), field.strip()
+            if a.get("result") == "ADDED" and a.get("value") and a.get("url"):
+                field = field[:-6] if field.endswith(" [ref]") else field
+                by_cell.setdefault((rid, field, a["url"]), "PASS (companion record corroborates)")
     gl = batch_dir / "gate_log.json"
     if gl.exists():
         for g in json.loads(gl.read_text(encoding="utf-8")):
             v = f"{'PASS' if g.get('ok') else 'FAIL'} ({g.get('reason', '')})"
             by_cell[(str(g.get("row_id")), g.get("field", ""), g.get("url", ""))] = v
     return by_cell, by_url
+
+
+# ---- presentation: what the card shows first, what goes under "details" -------------
+
+PROVENANCE_TAIL = re.compile(r"\s*\[([^\[\]]*(?:PDF p\.|IMO \d{7}|sole source)[^\[\]]*)\]\s*$")
+PDF_PAGE = re.compile(r"PDF p\.\s*(\d+)")
+SV_PAGE = re.compile(r"shipvault\.com/ships/(\d+)")
+SV_API = re.compile(r"shipvaultapi[^/]*/api/units/(\d+)")
+WHY_MAX = 240
+
+
+def _balanced(head):
+    """True when `head` does not end inside a parenthesis or a quotation."""
+    opening = len(re.findall(r"(?:^|[\s(])'(?=\S)", head))
+    closing = len(re.findall(r"(?<=\S)'(?=[\s.,;:)]|$)", head))
+    return (head.count("(") == head.count(")") and head.count('"') % 2 == 0
+            and head.count("“") == head.count("”") and opening == closing)
+
+
+def split_note(note, current="", proposed="", labels=None):
+    """(why, detail): the one sentence a reviewer needs, and the rest of the note.
+
+    Nothing is dropped — `note` stays whole in the dataset and everything cut from `why`
+    lands in `detail`, except a leading restatement of current -> proposed (the card shows
+    those right above). Batch dir names become their short labels."""
+    why, detail = (note or "").strip(), []
+    for d, label in (labels or {}).items():
+        why = why.replace(d, f"batch {label}")
+    m = PROVENANCE_TAIL.search(why)
+    if m:
+        why, tail = why[:m.start()].rstrip(), m.group(1)
+        detail.append(tail)
+    lead = re.match(r"'([^']*)' -> '([^']*)':\s*", why)
+    if lead and lead.group(1) == (current or "") and lead.group(2) == (proposed or ""):
+        why = why[lead.end():]
+    if len(why) > WHY_MAX:                  # a long closing parenthetical is an aside
+        m = re.search(r"\s*\(([^()]{60,})\)\.?$", why)
+        if m and m.start() >= 60:
+            why, aside = why[:m.start()], m.group(1)
+            detail.insert(0, aside)
+    if len(why) > WHY_MAX:                  # else cut at the last clause boundary that fits
+        cuts = [c for c in re.finditer(r"[.;]['\"]? (?=[A-Za-z'\"(])| \| | -- | — ", why[:WHY_MAX])
+                if c.start() >= 60 and _balanced(why[:c.start() + 1])]
+        if cuts:
+            c = cuts[-1]
+            head = why[:c.start() + 1] if why[c.start()] in ".;" else why[:c.start()]
+            why, rest = head.rstrip(" ;"), why[c.end():].strip()
+            detail.insert(0, rest)
+    return why, detail
+
+
+def ref_status(verdict):
+    """verified / failed / read / unchecked (+ the gate's own reason for a failure)."""
+    v = str(verdict or "")
+    if not v:
+        return "unchecked", ""
+    if re.match(r"(PASS|OK|200)\b", v, re.I):
+        return "verified", ""
+    inner = re.sub(r"\s*\(URL log\)$", "", v)
+    inner = re.sub(r"^\w+\s*\(?", "", inner).rstrip(")") if "(" in inner else ""
+    if re.match(r"(FAIL|dead|banned|blocked)", v, re.I):
+        return "failed", inner
+    if re.match(r"READ", v, re.I):
+        return "read", inner
+    return "other", v
+
+
+def ref_label(url, page=None):
+    from urllib.parse import unquote, urlsplit
+    if IGU_PDF.search(url):
+        yr = re.search(r"report-(\d{4})", url, re.I)
+        return "IGU World LNG Report" + (f" {yr.group(1)}" if yr else "") + (f", p.{page}" if page else "")
+    if SV_PAGE.search(url) or SV_API.search(url):
+        return "shipvault record"
+    u = urlsplit(url)
+    host = re.sub(r"^www\.", "", u.netloc)
+    seg = [x for x in unquote(u.path).split("/") if x]
+    slug = re.sub(r"\.(html?|php|aspx?)$", "", seg[-1]) if seg else ""
+    slug = slug if len(slug) <= 64 else slug[:63] + "…"
+    return host + (f" › {slug}" if slug and not slug.isdigit() else "") + (f", p.{page}" if page and url.lower().endswith(".pdf") else "")
+
+
+def present_refs(refs, note):
+    """Display refs: a label, a status, a #page link for a PDF the note locates, and a
+    shipvault page merged with its companion unit record (one source, RF §6a.8)."""
+    pm = PDF_PAGE.search(note or "")
+    page = pm.group(1) if pm else None
+    rank = {"verified": 0, "failed": 1, "read": 2, "other": 3, "unchecked": 4}
+    out, by_unit = [], {}
+    for r in refs:
+        url = r["url"]
+        status, reason = ref_status(r["verdict"])
+        is_pdf = url.lower().split("#")[0].split("?")[0].endswith(".pdf")
+        d = {"url": url, "href": url + (f"#page={page}" if page and is_pdf and "#" not in url else ""),
+             "label": ref_label(url, page if is_pdf else None), "status": status, "reason": reason,
+             "verdicts": [f"{url}: {r['verdict'] or 'not checked'}"]}
+        m = SV_PAGE.search(url) or SV_API.search(url)
+        if m and m.group(1) in by_unit:
+            first = by_unit[m.group(1)]
+            first["companion"] = url
+            first["verdicts"] += d["verdicts"]
+            if rank[status] < rank[first["status"]]:
+                first["status"], first["reason"] = status, reason
+            continue
+        if m:
+            by_unit[m.group(1)] = d
+        out.append(d)
+    return out
 
 
 # ---- review items (plan fact 7) --------------------------------------------------
@@ -233,6 +353,7 @@ def build(batch_dirs, backend_path=None, info_path=None):
         return r[H[col]].strip() if r is not None and col in H and len(r) > H[col] else ""
 
     batches, proposals, all_items = [], {}, []
+    labels = {d: m["label"] for d, m in info.items() if m["label"] != d}
     for bdir in sorted(batch_dirs, key=lambda d: (info[d.name]["apply_order"], d.name)):
         mode, payload = _detect(bdir)
         items, _ = _items_and_conflicts(mode, payload, header, colmap)
@@ -281,11 +402,14 @@ def build(batch_dirs, backend_path=None, info_path=None):
             current_refs = split_urls(cell(rid, it["ref_column"] or (col if col.endswith("[ref]") else "")))
             if "preserve_ref" in flags and not current_refs:
                 current_refs = split_urls(cell(rid, f"{col} [ref]"))
+            proposed = it["value"] or it["ref_value"] if it["kind"] != "new_row" else ""
+            why, detail = split_note(it["note"], cell(rid, col) if rid else "", proposed, labels)
             proposals[key] = {
+                "why": why, "detail": detail, "sources": present_refs(refs, it["note"]),
                 "batch": bdir.name, "id": it["id"], "kind": it["kind"],
                 "row_id": rid, "cluster_id": it["cluster_id"], "column": col,
                 "current": cell(rid, col) if rid else "",
-                "proposed": it["value"] or it["ref_value"] if it["kind"] != "new_row" else "",
+                "proposed": proposed,
                 "refs": refs, "ref_column": it["ref_column"], "current_refs": current_refs,
                 "confidence": it["confidence"], "derivable": it["derivable"],
                 "prev_state": it["prev_state"], "default": default, "decision": decision,

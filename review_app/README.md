@@ -31,7 +31,16 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    `--reviewer NAME` (default `git config user.name`), `--port`, `--no-open`. The page shows
    the batches' current `decisions.csv` state, so it can be reloaded at any time.
    Keys: `j`/`k` line, `J`/`K` vessel, `a`/`h`/`r` accept / hold / reject, `s` suggest, `u` undo,
-   `o` open the first ref, `/` search, `?` help.
+   `o` open the first ref, `d` details, `/` search, `?` help.
+
+   **What a line shows.** Column, `was → proposed`, then **Why** (the note's one reason) and
+   **Source** (a named link — `IGU World LNG Report 2026, p.71` opens the PDF at that page; a
+   shipvault page and its unit-record companion are one source, the record behind `(data ↗)`)
+   with the §3.8 gate's result in words: `✓ verified`, `✗ failed the gate` (+ the gate's
+   reason), `read by hand`, `not checked`. Everything else — the note's provenance tail, the
+   `[ref]` being replaced, the raw gate verdicts — is under **details** (`d`). `review_data.py`
+   makes the split at build time (`why` / `detail` / `sources`, next to the untouched `note` /
+   `refs`); nothing is dropped except a leading restatement of `'current' -> 'proposed'`.
 
    Each decision is saved the moment it is made, per batch and under a lock: the record is
    appended to `batches/<dir>/review_log.jsonl` (who, when, via, note — commit it with the
