@@ -37,7 +37,8 @@
     line: null,             // selected proposal key
     session: [],            // records saved this session
     itemSession: [],        // item records saved this session
-    undo: []                // per action: the prior state of the lines it changed
+    undo: [],               // per action: the prior state of the lines it changed
+    open: {}                // proposal keys whose "details" are open (kept across re-renders)
   };
   var $ = function (id) { return document.getElementById(id); };
 
@@ -208,9 +209,11 @@
       var li = el("li", {"data-i": i});
       if (i === S.vessel) li.className = "sel";
       li.innerHTML = '<div class="vname">' + esc(v.name || "(no name)") + "</div>" +
-        '<div class="vmeta"><span>' + esc(rowLabel(v)) + "</span><span>" + esc(v.shipbuilder) +
-        "</span><span>" + esc(v.shipowner) + '</span><span class="n" title="matching / holds">' +
-        v._match + " · " + holdsOf(v) + " held</span></div>";
+        '<div class="vmeta"><span>' + esc(rowLabel(v)) + '</span><span class="who2" title="' +
+        esc([v.shipbuilder, v.shipowner].filter(Boolean).join(" · ")) + '">' +
+        esc([v.shipbuilder, v.shipowner].filter(Boolean).join(" · ")) + "</span>" +
+        (holdsOf(v) ? '<span class="n todo" title="lines on hold / lines matching the filter">' + holdsOf(v) + " to decide</span>"
+                    : '<span class="n" title="nothing on hold">' + v._match + " · done</span>") + "</div>";
       li.onclick = function () { selectVessel(i); };
       ol.appendChild(li);
     });
@@ -267,42 +270,63 @@
     return {a: oa.join(esc(sep)), b: ob.join(esc(sep))};
   }
 
+  // Chips are one or two words; the sentence lives in the tooltip. Red is for "act on this".
   var FLAG_TEXT = {
-    preserve_ref: "cosmetic — value rewritten, [ref] kept",
-    append_ref: "appends to the cell",
-    ref_only: "ref only",
-    igu_pdf_only: "refs = IGU PDF only",
-    strict_pair: "decide with its Name / Other names partner",
-    applied: "already applied — changing it does not unapply it"
+    preserve_ref: ["cosmetic", "the value is rewritten, the cell's [ref] is kept"],
+    append_ref: ["appends", "added to what the cell already holds, nothing is replaced"],
+    ref_only: ["ref only", "adds refs; the value is untouched"],
+    igu_pdf_only: ["only source: IGU", "the IGU report PDF is the sole ref (interim ruling 2026-09-17)"],
+    applied: ["already applied", "this batch is in the backend — changing the decision does not unapply it"]
   };
-  function verdictHtml(v) {
-    if (!v) return '<span class="verdict">—</span>';
-    var cls = /^(PASS|OK|ok|200)/.test(v) ? "pass" : (/^(FAIL|dead|banned)/i.test(v) ? "fail" : "");
-    return '<span class="verdict ' + cls + '">' + esc(v) + "</span>";
+  var CONF_TEXT = {G: "green — auto-accept grade", Y: "yellow — held for a decision", R: "red — weak support"};
+  var STATUS_TEXT = {verified: "✓ verified", failed: "✗ failed the gate", read: "read by hand", unchecked: "not checked"};
+  function verdictHtml(r) {
+    var t = STATUS_TEXT[r.status] || r.reason;
+    if (r.status === "failed" && r.reason) t += " — " + r.reason;
+    return '<span class="verdict ' + esc(r.status) + '" title="' + esc(r.verdicts.join("\n")) + '">' + esc(t) + "</span>";
   }
+  function sourceHtml(r) {
+    return '<a href="' + esc(r.href) + '" target="_blank" rel="noopener" title="' + esc(r.url) + '">' + esc(r.label) + " ↗</a>" +
+      (r.companion ? ' <a class="src-more" href="' + esc(r.companion) + '" target="_blank" rel="noopener" title="' +
+        esc(r.companion) + ' — the unit record behind a page that renders blank">(data ↗)</a>' : "") + " " + verdictHtml(r);
+  }
+  function link(u) { return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(u) + "</a>"; }
+  function blank() { return '<span class="blank">blank</span>'; }
+  // the same cell proposed by another batch: quiet when the values agree, red when they do not
+  function overlapChips(p) {
+    return p.links.map(function (o) { return D.proposals[o]; }).filter(function (q) {
+      return q && q.column === p.column && q.kind !== "ref" && p.kind !== "ref";
+    }).map(function (q) {
+      var n = "batch " + batchOf(q.batch).apply_order;
+      return q.proposed === p.proposed
+        ? '<span class="chip" title="' + esc(batchOf(q.batch).label) + ' proposes the same value">also in ' + esc(n) + "</span>"
+        : '<span class="chip warn" title="' + esc(batchOf(q.batch).label) + " proposes “" + esc(q.proposed) +
+          '” — the later batch wins on apply">' + esc(n) + " differs</span>";
+    });
+  }
+  // only worth saying once a person has decided one side; defaults differ by confidence
   function pairMismatch(p) {
     return p.links.some(function (o) {
       var q = D.proposals[o];
-      return q && q.column !== p.column && q.decision !== p.decision;
+      return q && q.column !== p.column && q.decision !== p.decision && (p.last || q.last);
     });
   }
 
   function lineHtml(k, p) {
     var b = batchOf(p.batch);
-    var chips = ['<span class="chip ' + esc(p.confidence) + '">' + esc(p.confidence || "?") + "</span>"];
-    if (p.derivable) chips.push('<span class="chip">derivable</span>');
+    var chips = ['<span class="chip ' + esc(p.confidence) + '" title="' + esc(CONF_TEXT[p.confidence] || "no confidence grade") +
+                 '">' + esc(p.confidence || "?") + "</span>"];
+    if (p.derivable) chips.push('<span class="chip" title="computed from other cells, not researched">derived</span>');
     p.flags.forEach(function (f) {
-      if (FLAG_TEXT[f]) chips.push('<span class="chip' + (f === "applied" ? " warn" : "") + '">' + esc(FLAG_TEXT[f]) + "</span>");
-      else if (f.indexOf("verdict:") === 0) chips.push('<span class="chip">gate ' + esc(f.slice(8)) + "</span>");
+      if (FLAG_TEXT[f]) chips.push('<span class="chip' + (f === "applied" ? " warn" : "") + '" title="' +
+        esc(FLAG_TEXT[f][1]) + '">' + esc(FLAG_TEXT[f][0]) + "</span>");
     });
-    if (has(p, "overlaps_batch")) chips.push('<span class="chip warn">same cell in another batch — the later batch wins on apply</span>');
-    if (pairMismatch(p)) chips.push('<span class="chip warn">linked pair in different states</span>');
+    chips = chips.concat(overlapChips(p));
+    if (pairMismatch(p)) chips.push('<span class="chip warn" title="its linked line has a different decision">pair split</span>');
 
     var h = '<div class="row1"><span class="col">' +
       esc(p.column || "new row · cluster " + p.cluster_id) + "</span>" + chips.join(" ") +
-      '<span class="batch">' + esc(b.label) + "</span>" +
-      '<span class="state st-' + esc(p.decision) + '">' + esc(p.decision) +
-      (p.last ? " · " + esc(p.last.reviewer) : "") + "</span></div>";
+      '<span class="batch">' + esc(b.label) + "</span></div>";
 
     if (p.kind === "new_row") {
       var rd = p.row_data || {};
@@ -311,41 +335,41 @@
         .forEach(function (c) {
           if (rd[c] == null || rd[c] === "") return;
           var val = /\[ref\]$/.test(c)
-            ? String(rd[c]).split(/,\s+/).map(function (u) {
-                return /^https?:/.test(u) ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(u) + "</a>" : esc(u);
-              }).join("<br>")
+            ? String(rd[c]).split(/,\s+/).map(function (u) { return /^https?:/.test(u) ? link(u) : esc(u); }).join("<br>")
             : esc(rd[c]);
           h += "<tr><td>" + esc(c) + "</td><td>" + val + "</td></tr>";
         });
       h += "</table>";
     } else if (p.kind === "ref" || has(p, "ref_only")) {
-      // the value is untouched; the line adds the refs listed below
-      h += '<div class="change"><span class="k">value</span><span class="v">' +
-        (esc(p.cited_value || p.current) || '<span class="verdict">(blank)</span>') + " (unchanged)</span>" +
-        '<span class="k">adds</span><span class="v">' + p.refs.length + " ref" + (p.refs.length === 1 ? "" : "s") +
+      // the value is untouched; the line adds the sources listed below
+      h += '<div class="value">' + (esc(p.cited_value || p.current) || blank()) +
+        ' <span class="was">— value unchanged; adds ' + p.refs.length + " ref" + (p.refs.length === 1 ? "" : "s") +
         " to " + esc(p.ref_column || p.column) + "</span></div>";
+    } else if (p.current.length > 40 || p.proposed.length > 40) {
+      var d = diff(p.current, p.proposed);
+      h += '<div class="value long"><span class="was">now</span><span>' + (d.a || blank()) + "</span>" +
+        '<span class="was">proposed</span><span>' + (d.b || blank()) + "</span></div>";
     } else {
-      var d = (p.current.length > 60 || p.proposed.length > 60) ? diff(p.current, p.proposed)
-        : {a: esc(p.current), b: esc(p.proposed)};
-      h += '<div class="change">';
-      if (p.kind === "ref" && p.cited_value) h += '<span class="k">cites</span><span class="v">' + esc(p.cited_value) + "</span>";
-      h += '<span class="k">current</span><span class="v">' + (d.a || '<span class="verdict">(blank)</span>') + "</span>" +
-        '<span class="k">proposed</span><span class="v">' + (d.b || '<span class="verdict">(blank)</span>') + "</span>";
-      if (p.suggestion) h += '<span class="k">suggested</span><span class="v st-suggest">' + esc(p.suggestion.value) +
-        " (" + esc(p.suggestion.kind) + ")</span>";
-      h += "</div>";
+      h += '<div class="value"><span class="was">' + (esc(p.current) || blank()) + '</span><span class="arrow">→</span>' +
+        (esc(p.proposed) || blank()) + "</div>";
     }
-    if (p.refs.length) {
-      h += '<ul class="refs">' + p.refs.map(function (r) {
-        return '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + "</a> " + verdictHtml(r.verdict) + "</li>";
-      }).join("") + "</ul>";
-    }
+
+    h += '<div class="facts">';
+    if (p.suggestion) h += '<span class="k">Suggested</span><span class="v st-suggest">' + esc(p.suggestion.value) +
+      " (" + esc(p.suggestion.kind) + ")" + (p.suggestion.note ? " — " + esc(p.suggestion.note) : "") + "</span>";
+    if (p.why) h += '<span class="k">Why</span><span class="v">' + esc(p.why) + "</span>";
+    if (p.sources.length) h += '<span class="k">Source' + (p.sources.length > 1 ? "s" : "") + '</span><span class="v"><ul>' +
+      p.sources.map(function (r) { return "<li>" + sourceHtml(r) + "</li>"; }).join("") + "</ul></span>";
+    h += "</div>";
+
+    // everything else: nothing is hidden for good, it is one click away
+    var more = p.detail.map(function (t) { return "<div>" + esc(t) + "</div>"; });
     if (p.current_refs.length && p.kind !== "new_row")
-      h += '<div class="note">current ' + esc(p.ref_column || "[ref]") + ": " + p.current_refs.map(function (u) {
-        return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(u) + "</a>";
-      }).join(", ") + "</div>";
-    if (p.note) h += '<div class="note">' + esc(p.note) + "</div>";
-    if (p.suggestion && p.suggestion.note) h += '<div class="note">suggestion note: ' + esc(p.suggestion.note) + "</div>";
+      more.push('<div><span class="k">' + (p.kind === "fill" && !has(p, "preserve_ref") && !has(p, "append_ref") && p.refs.length
+        ? "replaces " : "current ") + esc(p.ref_column || "[ref]") + ":</span> " + p.current_refs.map(link).join(", ") + "</div>");
+    if (p.refs.length) more.push('<div><span class="k">gate:</span> ' + p.sources.map(function (r) {
+      return r.verdicts.map(esc).join("<br>"); }).join("<br>") + "</div>");
+    if (more.length) h += "<details" + (S.open[k] ? " open" : "") + ' data-more><summary>details</summary>' + more.join("") + "</details>";
     h += controlsHtml(k, p);
     return h;
   }
@@ -355,11 +379,12 @@
   function controlsHtml(k, p) {
     return '<div class="controls">' + CONTROLS.map(function (c) {
       return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" aria-pressed="' +
-        (p.decision === c[0]) + '" title="' + c[0] + " (" + c[1] + ')">' + c[0] + "</button>";
+        (p.decision === c[0]) + '">' + c[0] + "<kbd>" + c[1] + "</kbd></button>";
     }).join("") + '<button type="button" class="b-suggest" data-suggest aria-pressed="' + (p.decision === "suggest") +
       '"' + (canSuggest(p) ? ' title="suggest a different value (s)"'
                            : ' disabled title="nothing to suggest on a new row or a ref-only line"') +
-      ">suggest…</button>" + '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
+      ">suggest…<kbd>s</kbd></button>" + (p.last ? '<span class="by">' + esc(p.decision) + " by " + esc(p.last.reviewer) + "</span>" : "") +
+      '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
   }
 
   // ---- deciding ----
@@ -555,11 +580,16 @@
     card.innerHTML = h;
     groups(v).forEach(function (g) {
       var box = el("div", {"class": "group" + (g.length > 1 ? " linked" : "")});
-      if (g.length > 1) box.appendChild(el("div", {"class": "grouphead"}, "linked · " +
-        esc(uniq(g.map(function (k) { return D.proposals[k].column; })).join(" ↔ "))));
+      if (g.length > 1) {
+        var cols = uniq(g.map(function (k) { return D.proposals[k].column; }));
+        var strictG = g.some(function (k) { return has(D.proposals[k], "strict_pair"); });
+        box.appendChild(el("div", {"class": "grouphead"}, cols.length > 1
+          ? esc(cols.join(" ↔ ")) + (strictG ? " — decided together" : " — linked")
+          : esc(cols[0]) + " — proposed by " + g.length + " batches"));
+      }
       g.forEach(function (k) {
         var p = D.proposals[k];
-        var line = el("div", {"class": "line", "data-key": k, id: "line-" + k});
+        var line = el("div", {"class": "line d-" + p.decision, "data-key": k, id: "line-" + k});
         if (!lineMatches(p, v, st)) line.className += " off";
         if (k === S.line) line.className += " cur";
         line.innerHTML = lineHtml(k, p);
@@ -619,6 +649,10 @@
     j: function () { stepLine(1); }, k: function () { stepLine(-1); },
     J: function () { stepVessel(1); }, K: function () { stepVessel(-1); },
     o: openFirstRef,
+    d: function () {
+      var l = S.line && document.getElementById("line-" + S.line), m = l && l.querySelector("details[data-more]");
+      if (m) m.open = !m.open;
+    },
     a: function () { if (S.line) decideLine(S.line, "accept", {advance: true}); },
     h: function () { if (S.line) decideLine(S.line, "hold", {advance: true}); },
     r: function () { if (S.line) decideLine(S.line, "reject", {advance: true}); },
@@ -631,7 +665,7 @@
               ["a / h / r", "accept / hold / reject the line (saved at once)"],
               ["s", "suggest a different value (a form; applied only through a re-gated fix batch)"],
               ["u", "undo the last action (adds a record; the log is never rewritten)"],
-              ["o", "open the line's first ref"], ["/", "search"], ["?", "this help"]];
+              ["o", "open the line's first ref"], ["d", "show / hide the line's details"], ["/", "search"], ["?", "this help"]];
   function showHelp() {
     dialog("<h3>Keyboard</h3><table>" + HELP.map(function (r) {
       return "<tr><td><kbd>" + r[0] + "</kbd></td><td>" + r[1] + "</td></tr>";
@@ -923,12 +957,28 @@
   initTabs();
   document.addEventListener("keydown", onKey);
   $("card").addEventListener("click", onCardClick);
+  $("card").addEventListener("toggle", function (e) {
+    var l = e.target.closest && e.target.closest(".line");
+    if (l && e.target.hasAttribute("data-more")) S.open[l.getAttribute("data-key")] = e.target.open;
+  }, true);
   Promise.all([Store.load(), Store.whoami()]).then(function (r) {
     D = r[0];
     ME = r[1];
+    // a review_data.json built before the why / sources split: show the whole note and the bare refs
+    Object.keys(D.proposals).forEach(function (k) {
+      var p = D.proposals[k];
+      if (p.why == null) { p.why = p.note || ""; p.detail = []; }
+      if (!p.sources) p.sources = p.refs.map(function (x) {
+        return {url: x.url, href: x.url, label: x.url, status: x.verdict ? "other" : "unchecked",
+                reason: x.verdict || "", verdicts: [x.url + ": " + (x.verdict || "not checked")]};
+      });
+    });
     $("whoami").textContent = ME;
-    $("built").textContent = "built " + D.built.replace("T", " ").slice(0, 16) +
+    var pulledH = (Date.now() - new Date(D.backend_pulled).getTime()) / 36e5;
+    $("built").textContent = pulledH > 24 ? "backend pulled " + Math.round(pulledH) + " h ago — re-pull" : "";
+    $("built").title = "built " + D.built.replace("T", " ").slice(0, 16) +
       " · backend pulled " + D.backend_pulled.replace("T", " ").slice(0, 16);
+    $("whoami").title = $("built").title;
     initFilters();
     refilter();
   }).catch(function (e) { banner("Could not load the review data: " + e.message); });

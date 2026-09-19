@@ -95,3 +95,69 @@ def test_refuses_without_backend(tmp_path):
     import pytest
     with pytest.raises(SystemExit):
         review_data.check_backend(tmp_path / "nope.csv")
+
+
+# ---- presentation: why / detail / sources ------------------------------------------------
+
+def test_split_note_moves_provenance_and_restatement():
+    note = ("'LNGT Americas' -> 'Karadeniz LNGT Americas': IGU restyling of a Karadeniz name "
+            "[IGU 2026 Appendix 3 fleet table, PDF p.71; IMO 9045132; sole source per Baird ruling]")
+    why, detail = review_data.split_note(note, "LNGT Americas", "Karadeniz LNGT Americas")
+    assert why == "IGU restyling of a Karadeniz name"
+    assert detail == ["IGU 2026 Appendix 3 fleet table, PDF p.71; IMO 9045132; "
+                      "sole source per Baird ruling"]
+    # a restatement of other values stays; a bracketed reason is not provenance
+    assert review_data.split_note("'A' -> 'B': x", "A", "C")[0] == "'A' -> 'B': x"
+    why, detail = review_data.split_note("sourced [charterer = owner; held for review]")
+    assert why.endswith("held for review]") and detail == []
+
+
+def test_split_note_long_note_loses_nothing():
+    head = "Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 210,000,000"
+    aside = "DF 5a - derived from the reported order total, " + "equal split " * 20
+    why, detail = review_data.split_note(f"{head} ({aside}).")
+    assert why == head and detail == [aside]
+    quote = "LNG Prime: '" + "word " * 30 + "end. Then " + "more " * 30 + "close.' tail"
+    why, detail = review_data.split_note(quote)          # never cut inside a quotation
+    assert "".join([why] + detail).replace(" ", "") == quote.replace(" ", "")
+    assert why.count("'") % 2 == 0
+    assert review_data.split_note("batches-dir-x says so", labels={"batches-dir-x": "8"})[0] \
+        == "batch 8 says so"
+
+
+def test_ref_status_and_label():
+    assert review_data.ref_status("PASS (OK (cf_impersonate))") == ("verified", "")
+    assert review_data.ref_status("FAIL (uncorroborated, not used) (URL log)")[0] == "failed"
+    assert review_data.ref_status("READ")[0] == "read"
+    assert review_data.ref_status(None) == ("unchecked", "")
+    assert review_data.ref_label("https://shipvault.com/ships/501596", None) == "shipvault record"
+    assert review_data.ref_label(
+        "https://www.datocms-assets.com/1/igu-world-lng-report-2026.pdf", "71") \
+        == "IGU World LNG Report 2026, p.71"
+
+
+def test_present_refs_pdf_page_and_shipvault_merge():
+    pdf = "https://www.datocms-assets.com/1/igu-world-lng-report-2026.pdf"
+    (s,) = review_data.present_refs([{"url": pdf, "verdict": "PASS (OK)"}], "x [PDF p.71; IMO 9045132]")
+    assert s["href"] == pdf + "#page=71" and s["status"] == "verified"
+    page = "https://shipvault.com/ships/42"
+    api = "https://shipvaultapi-x.azurewebsites.net/api/units/42"
+    (s,) = review_data.present_refs([{"url": page, "verdict": "FAIL (uncorroborated)"},
+                                     {"url": api, "verdict": "PASS (companion record corroborates)"}], "")
+    assert s["url"] == page and s["companion"] == api and s["status"] == "verified"
+    assert len(s["verdicts"]) == 2
+
+
+def test_shipvault_companion_verdict(tmp_path):
+    api = "https://shipvaultapi-x.azurewebsites.net/api/units/42"
+    added = [{"where": "10|Hull number", "value": "8206", "url": api, "result": "ADDED"},
+             {"where": "live row 7 (row_id 11) | Status [ref]", "value": "on order",
+              "url": api, "result": "ADDED"},
+             {"where": "12|Status", "value": "", "url": api, "result": "ADDED"}]
+    (tmp_path / "shipvault_api_refs.json").write_text(json.dumps({"added": added}))
+    by_cell, _ = review_data.gate_verdicts(tmp_path, {})
+    assert by_cell[("10", "Hull number", api)].startswith("PASS")
+    assert ("11", "Status", api) in by_cell
+    assert ("12", "Status", api) not in by_cell          # logged without a value: not gated
+    (tmp_path / "shipvault_api_refs.json").write_text(json.dumps({"added": 3}))
+    assert review_data.gate_verdicts(tmp_path, {}) == ({}, {})
