@@ -56,14 +56,25 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    When the filter catches only one half of a linked pair the dialog names the partners and
    offers to include them (`Name` ↔ `Other names` partners are always included).
 
+   **Filters.** Decision, Batch and Search stay in view; Column, Confidence, Kind, Flag, Builder,
+   Owner and "changed by me" sit behind **More filters**. Whatever is set there shows as a
+   removable chip while the panel is closed, so a hidden control never filters silently.
+
+   **New rows.** A discovery row's sources are numbered once under **Sources**; the row table
+   cites them as `[1] [2]` beside each value instead of repeating the URLs. A long reason is
+   clamped to four lines with **more**.
+
    **Items tab.** Conflicts, manual-review entries, the proposed bucket, duplicate pairs and
-   discovery flags, with a status (`open` / `resolved` / `needs research`) and a note, appended
+   discovery flags, grouped by backend row (the row link opens the vessel in the queue) and
+   opening on `open` items. Status (`open` / `resolved` / `needs research`) and a conflict's call
+   are one-click buttons that save at once (a call other than `hold` also resolves an open
+   item); the note saves when you leave the box. Each save is appended
    to `batches/<dir>/review_items.jsonl`. They feed the worklist, not the apply. A conflict also
    takes a call (accept / hold / reject), written into that record's `decision` cell in
    `conflicts.csv` (byte-preserving, refused if the record no longer matches). An accepted
    conflict is still applied by hand (AP §4). `apply_batch.py` regenerates `conflicts.csv` with
-   every call back at `hold`; the log keeps the call and the tab flags the drift — save again to
-   rewrite it.
+   every call back at `hold`; the log keeps the call and the tab flags the drift — press the call
+   again to rewrite it.
 
    **Session summary.** Decisions and item calls made this session by batch, the
    `apply_batch.py` command for each batch whose decisions changed, and the suggestions pending.

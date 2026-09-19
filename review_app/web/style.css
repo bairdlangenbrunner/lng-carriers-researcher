@@ -168,3 +168,35 @@ dialog fieldset.stack label { display: flex; gap: 6px; align-items: baseline; }
 dialog textarea { box-sizing: border-box; font: inherit; }
 dialog .err { color: var(--warn); font-weight: 600; min-height: 1em; margin: 4px 0; }
 .item .refs { font-size: 14px; margin: 4px 0; padding-left: 18px; overflow-wrap: anywhere; }
+
+/* filters: three in view, the rest behind "More filters"; whatever is set shows as a chip */
+.more-filters { display: flex; flex-wrap: wrap; gap: 6px 12px; flex-basis: 100%; padding-top: 4px; }
+.more-filters[hidden], .active-filters[hidden] { display: none; }
+.active-filters { display: flex; flex-wrap: wrap; gap: 6px; flex-basis: 100%; }
+.chip.on { color: var(--ink); border-color: var(--accent); }
+.chip.on button { border: 0; background: none; min-height: 0; padding: 0 0 0 2px; font-size: 15px; line-height: 1; color: var(--muted); cursor: pointer; }
+.chip.on button:hover { color: var(--warn); }
+/* new-row card: sources numbered once, cited from the table */
+.cites { white-space: nowrap; }
+a.cite { font-size: 13px; text-decoration: none; font-variant-numeric: tabular-nums; }
+a.cite:hover { text-decoration: underline; }
+ol.numbered { margin: 0; padding-left: 1.6em; }
+ol.numbered li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
+.why-clamp { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
+button.more { border: 0; background: none; min-height: 0; padding: 0; color: var(--accent); cursor: pointer; font-size: 14px; }
+/* items: grouped by row, one-click status */
+.igroup-box { max-width: 60rem; margin: 0 0 18px; }
+h3.igroup { font-size: 16px; margin: 0 0 4px; font-weight: 600; }
+h3.igroup .n { font-weight: 400; font-size: 14px; color: var(--muted); margin-left: 6px; }
+.item .detail { font-size: 16px; margin-top: 4px; }
+.item.s-resolved { opacity: .62; }
+.item.s-resolved:hover, .item.s-resolved:focus-within { opacity: 1; }
+.item.s-needs-research { border-left: 4px solid var(--y-ink); }
+.item .seg { display: inline-flex; align-items: center; gap: 4px; margin-right: 8px; }
+.item .seg .k { color: var(--muted); margin-right: 2px; }
+.item .controls textarea { flex-basis: 100%; }
+.item .ctl { min-height: 32px; padding: 2px 12px; }
+.item .ctl[aria-pressed=true] { font-weight: 700; border-color: currentColor; border-width: 2px; }
+.item .ctl.accept { color: var(--accept); } .item .ctl.hold { color: var(--hold); } .item .ctl.reject { color: var(--reject); }
+.item .row1 .batch { margin-left: auto; font-size: 14px; color: var(--muted); }
+.item .saving { font-size: 14px; color: var(--muted); }

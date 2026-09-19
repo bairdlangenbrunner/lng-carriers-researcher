@@ -198,6 +198,10 @@ def split_note(note, current="", proposed="", labels=None):
     if len(why) > WHY_MAX:                  # else cut at the last clause boundary that fits
         cuts = [c for c in re.finditer(r"[.;]['\"]? (?=[A-Za-z'\"(])| \| | -- | — ", why[:WHY_MAX])
                 if c.start() >= 60 and _balanced(why[:c.start() + 1])]
+        if not cuts:                        # no boundary fits: end at the first whole sentence
+            cuts = [c for c in re.finditer(r"\.['\"]? (?=[A-Z'\"(])", why[WHY_MAX:])
+                    if _balanced(why[:WHY_MAX + c.start() + 1])][:1]
+            cuts = [re.compile(re.escape(c.group())).search(why, WHY_MAX + c.start()) for c in cuts]
         if cuts:
             c = cuts[-1]
             head = why[:c.start() + 1] if why[c.start()] in ".;" else why[:c.start()]
