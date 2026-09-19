@@ -81,3 +81,13 @@ Baird added `qc-max` to the Vessel type vocabulary. The 24 `QC-max` rows that sa
 `manual_review.json` are proposed by batch 11 (`2026-09-17_1809ET_fix_qcmax_vessel_type`);
 `manual_review.json` now holds the 8 owner / builder changes only, and `build_fix_json.py` skips
 `QC-max` so a re-run does not duplicate batch 11.
+
+## Update 2026-09-18 — row 721 (live row 11) Name is `LNGT Antarctica`, not IGU's label
+
+Baird's ruling: the current name by IMO lookup (8608872) is `LNGT Antarctica`
+(offshoreshipadvisor.com, passes §3.8c); IGU 2026's `Karadeniz LNGT Antarctica` is a label and
+goes to `Other names` with the former Name (batch `1737ET`). `fix.json` edited by hand for this
+one cell — `build_fix_json.py` would regenerate the IGU value — workbook rebuilt (0 refs dropped,
+zero formula errors), line accepted, `apply_batch.py` re-run: 444 accept / 23 hold / 1 reject.
+Trackers disagree: shipvault (`KARMOL LNGT P ANTARCTICA`) and marinetraffic.org still print the
+Karmol name. The other Karadeniz restylings (live rows 20 / 29 / 39) are untouched and still held.

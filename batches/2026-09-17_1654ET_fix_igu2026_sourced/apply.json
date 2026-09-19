@@ -45,6 +45,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "721",
+      "column": "Name",
+      "value": "LNGT Antarctica",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "721",
+      "column": "Name [ref]",
+      "value": "https://www.offshoreshipadvisor.com/lngt-antarctica-8608872-636023902/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "971",
       "column": "Name",
       "value": "American Energy",
@@ -5310,8 +5322,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 468,
-    "accepted": 443,
-    "hold": 24,
+    "accepted": 444,
+    "hold": 23,
     "reject": 1,
     "conflicts": 0
   }

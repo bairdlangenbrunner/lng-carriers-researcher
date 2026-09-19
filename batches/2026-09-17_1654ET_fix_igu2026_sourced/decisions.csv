@@ -3,7 +3,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 721|Propulsion type,fill,721,,Propulsion type,G,False,accept,accept,steam,"blank in backend; IGU prints 'Steam' [IGU 2026 Appendix 3 fleet table, PDF p.77;"
 721|Capacity,fill,721,,Capacity,G,False,accept,accept,125000,"blank in backend; IGU prints 125000 [IGU 2026 Appendix 3 fleet table, PDF p.77; "
 721|Capacity units,fill,721,,Capacity units,G,False,accept,accept,cbm,derivable companion of the Capacity fill (no [ref] column)
-721|Name,fill,721,,Name,Y,False,hold,hold,Karadeniz LNGT Antarctica,'Karmol LNGT Powership Antarctica' -> 'Karadeniz LNGT Antarctica': IGU restyles 
+721|Name,fill,721,,Name,Y,False,hold,accept,LNGT Antarctica,'Karmol LNGT Powership Antarctica' -> 'LNGT Antarctica': current name by IMO loo
 811|Name,fill,811,,Name,Y,False,hold,hold,Karadeniz LNGT Americas,'LNGT Americas' -> 'Karadeniz LNGT Americas': IGU restyling of a Karadeniz name 
 971|Name,fill,971,,Name,G,False,accept,accept,American Energy,renamed / restyled since the load: 'Puteri Intan' -> IGU 2026 'American Energy (
 726|Name,fill,726,,Name,Y,False,hold,hold,Karadeniz LNGT Powership Black Sea,'KLNGTP Black Sea' -> 'Karadeniz LNGT Powership Black Sea': IGU restyling of a K

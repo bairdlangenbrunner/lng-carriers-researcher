@@ -109,7 +109,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 508|Other names,fill,508,,Other names,Y,False,hold,hold,Dalian No 1 G175K-11,former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-
 509|Other names,fill,509,,Other names,Y,False,hold,hold,Dalian No 1 G175K-12,former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2
 186|Other names,fill,186,,Other names,Y,False,hold,hold,Hull 3387 (HDHHI),former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_04
-721|Other names,fill,721,,Other names,Y,False,hold,hold,Karmol LNGT Powership Antarctica; Northwest Sanderling,former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LN
+721|Other names,fill,721,,Other names,G,False,accept,accept,Karmol LNGT Powership Antarctica; Karadeniz LNGT Antarctica; Northwest Sanderlin,"former Name 'Karmol LNGT Powership Antarctica' (lngindustry.com, 2025-05-28); th"
 811|Other names,fill,811,,Other names,Y,False,hold,hold,LNGT Americas; Northwest Stormpetrel,former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 202
 971|Other names,fill,971,,Other names,G,False,accept,accept,Puteri Intan,former Name 'Puteri Intan'; the row is renamed 'American Energy' by 2026-09-17_1
 726|Other names,fill,726,,Other names,Y,False,hold,hold,KLNGTP Black Sea; Portovenere; LNG Portovenere,former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Bla

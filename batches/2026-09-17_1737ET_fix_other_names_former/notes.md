@@ -134,3 +134,11 @@ Not proposed; the reviewer should check these (`other_names.json` → `skipped`)
 - rows 21, 73, 91, 114, 167, 364, 563: the ex-name is still the row's current Name, and batch 8
   renames each row, which carries it as its §4.16 former name;
 - IMOs not in the backend: discovery leads, not Other names.
+
+## Update 2026-09-18 — row 721 (live row 11) `Other names`
+
+Now `Karmol LNGT Powership Antarctica; Karadeniz LNGT Antarctica; Northwest Sanderling` (Baird's
+ruling; the row's Name becomes `LNGT Antarctica` in batch `1654ET`). Refs, each gated on its own
+name: lngindustry.com 2025-05-28 (the Karmol name) and the IGU 2026 PDF (`Karadeniz LNGT
+Antarctica (ex-Northwest Sanderling)`). Was `Y` / hold with no ref for the former name; now `G`,
+accepted. Rebuilt: 0 refs dropped, zero formula errors; 126 accept / 34 hold.

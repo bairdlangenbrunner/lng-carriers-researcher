@@ -2383,18 +2383,28 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Karmol LNGT Powership Antarctica; Northwest Sanderling",
+     "new_value": "Karmol LNGT Powership Antarctica; Karadeniz LNGT Antarctica; Northwest Sanderling",
      "gate_value": "Karmol LNGT Powership Antarctica",
      "append_ref": true,
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
+      {
+       "url": "https://www.lngindustry.com/regasification/28052025/karpowership-celebrates-fsru-undocking-with-karmol-and-seatrium/",
+       "soft": false,
+       "gate_value": "Karmol LNGT Powership Antarctica"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Karadeniz LNGT Antarctica"
+      },
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
        "gate_value": "Northwest Sanderling"
       }
      ],
-     "note": "former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Antarctica (ex-Northwest Sanderling)'"
+     "note": "former Name 'Karmol LNGT Powership Antarctica' (lngindustry.com, 2025-05-28); the row is renamed 'LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced; IGU 2026 prints 'Karadeniz LNGT Antarctica (ex-Northwest Sanderling)' — both IGU names carried here (Baird 2026-09-18)"
     }
    ]
   },
