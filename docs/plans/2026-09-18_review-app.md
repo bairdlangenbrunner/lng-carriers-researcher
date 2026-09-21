@@ -345,7 +345,8 @@ review_log.jsonl / decisions.csv ◄─ pull.py ──  store spreadsheet: tabs 
 3. **Decisions and items = a spreadsheet**, tabs `decisions`, `items`, `meta`. Same record shape
    as `review_log.jsonl` / `review_items.jsonl` plus `reviewer` (server-stamped email) and
    `server_ts`; append-only; a human can read it. Calibri 10 pt, minimal formatting. `meta`
-   carries `built`, `backend_pulled`, the batch list, and the reviewer **allowlist**.
+   carries `built`, `backend_pulled` and the batch list. **No reviewer allowlist** — anyone with a
+   globalenergymonitor.org login is a reviewer (Baird, 2026-09-21); the domain restriction is the gate.
 4. **No backend write path in the shared app.** *Push accepted* and *sync backend* are removed
    from the bundle (hidden by the adapter's capability flags, not forked code). Push stays
    Baird's, in the local app, after a pull (AP §2b unchanged). Sync is replaced by publish:
@@ -370,7 +371,7 @@ review_log.jsonl / decisions.csv ◄─ pull.py ──  store spreadsheet: tabs 
 - `Code.gs`: `doGet` → `HtmlService.createHtmlOutputFromFile('index')` with `XFrameOptionsMode
   .ALLOWALL` off; `getMeta()`, `getBatch(dir)` (folder lookup by name, `CacheService` for the
   key set); `decide(records)` / `recordItems(records)`: validate every key against the published
-  set and every enum, reject a reviewer not on the allowlist, then under
+  set and every enum, reject an empty reviewer email, then under
   `LockService.getScriptLock()` append rows with the server's email + timestamp — the client's
   `reviewer` is ignored. No `UrlFetchApp` anywhere.
 - **Bundle**: `python review_app/bundle.py` (or `server.py --bundle`) inlines `app.js` +
@@ -410,7 +411,7 @@ UI, never a charge. No billing account exists to charge.
    ask before the write). Publish the un-applied sep-17-pass batches to a **staging** folder.
 3. `pull.py` + tests: a store row → `review_log.jsonl` record → `decisions.csv` decision-column
    change, byte-compared like the phase 1 tests; re-running pulls nothing twice.
-4. Polling + "decided by", allowlist, staleness warning; `/exec` deployment.
+4. Polling + "decided by", staleness warning; `/exec` deployment.
 5. Docs: `review_app/README.md` (publish / pull / deploy), `CLAUDE.md` router entry
    ("publish the review app", "pull the reviewers' decisions"), `apply.md` step 2, the
    worklist. **Acceptance:** Rob decides ~20 real holds on `/exec`, Baird runs `pull.py`, and
@@ -418,7 +419,7 @@ UI, never a charge. No billing account exists to charge.
 
 ### Decisions adopted (Baird, 2026-09-21: "let's go ahead and do this")
 
-- Reviewer **allowlist** in `meta` (emails); Baird supplies the list before milestone 4.
+- **No allowlist**: everyone with a globalenergymonitor.org login has access and can decide.
 - **Push stays local and Baird-only**; the shared app has no backend write path at all.
 - Dataset = **Drive JSON**, one file per batch + `meta.json` (subject to the milestone 0 timing).
 - Reviewers **see each other's decisions live** (poll + "decided by").
