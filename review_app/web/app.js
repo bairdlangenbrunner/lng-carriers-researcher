@@ -139,8 +139,9 @@
       refilter();
     };
   }
-  // Decision, Batch and Search stay in view; the rest sit behind "More filters". A filter that
-  // is set is always visible as a removable chip, so a hidden control never filters silently.
+  // Decision, Batch and Search stay in view; the rest sit behind "More filters". Every filter
+  // that is set — those three included — is always visible as a removable chip, so a hidden
+  // control never filters silently and any filter is one click to clear.
   var MORE = ["column", "confidence", "kind", "flag", "builder", "owner"];
   function toggleMore(open) {
     var box = $("more-filters");
@@ -154,15 +155,17 @@
       chips.push('<span class="chip on">' + esc(text) + ' <button type="button" data-clear="' + id +
         '" title="clear this filter" aria-label="clear ' + esc(text) + '">×</button></span>');
     }
-    MORE.forEach(function (f) {
+    var n = 0;                                         // the count on "More filters": hidden ones only
+    ["decision", "batch"].concat(MORE).forEach(function (f) {
       if (!st[f]) return;
       var sel = $("f-" + f), o = sel.options[sel.selectedIndex];
       chip(f, sel.parentNode.firstChild.textContent.trim().toLowerCase() + ": " + (o ? o.textContent : st[f]));
+      if (MORE.indexOf(f) >= 0) n++;
     });
-    if (st.mine) chip("mine", "changed by me");
+    if (st.mine) { chip("mine", "changed by me"); n++; }
+    if (st.text) chip("text", "search: “" + $("f-text").value.trim() + "”");
     $("active-filters").innerHTML = chips.join(" ");
-    $("active-filters").hidden = !chips.length || !$("more-filters").hidden;   // open: the controls say it
-    var n = chips.length;
+    $("active-filters").hidden = !chips.length;
     $("f-more").textContent = ($("more-filters").hidden ? "More filters" : "Fewer filters") + (n ? " (" + n + ")" : "");
   }
   function filterState() {
@@ -560,7 +563,8 @@
   function suggestLine(k) {
     var p = D.proposals[k];
     if (!canSuggest(p)) return banner("Nothing to suggest on a new row or a ref-only line.");
-    var s0 = p.suggestion || {value: p.proposed, kind: "value", note: ""};
+    // an unsent draft (the box was clicked away or Esc'd) comes back as it was left
+    var s0 = DRAFT[k] || p.suggestion || {value: p.proposed, kind: "value", note: ""};
     var strict = partnersOf(k).filter(function (o) { return isStrict(k, o); });
     var h = "<h3>Suggest a value — " + esc(lineName(k)) + "</h3>" +
       '<p class="note">current: ' + (esc(p.current) || "(blank)") + "<br>proposed: " + (esc(p.proposed) || "(blank)") + "</p>" +
@@ -587,15 +591,26 @@
       if (v === p.proposed && kind === "value") { $("sg-err").textContent = "That is the proposed value — accept it instead."; return false; }
       return {key: k, decision: "suggest", suggested_value: v, suggest_kind: kind, note: n, via: "single"};
     }
-    var shown = dialog(h, [["Cancel", null], ["Save suggestion", attempt]]);
+    var shown = dialog(h, [["Cancel", function () { delete DRAFT[k]; return null; }],
+                           [(SENT[k] ? "Resubmit" : "Submit") + " suggestion", attempt]], {clickOff: true});
     [].forEach.call(dlg.querySelectorAll("textarea, input"), function (f) {   // fresh nodes per dialog
-      f.addEventListener("input", function () { $("sg-err").textContent = ""; });
+      f.addEventListener("input", function () {
+        $("sg-err").textContent = "";
+        DRAFT[k] = {value: $("sg-value").value, note: $("sg-note").value,
+                    kind: dlg.querySelector("input[name=sg-kind]:checked").value};
+      });
     });
     return shown.then(function (rec) {
       if (!rec) return null;
-      return save([rec], true);
+      return Promise.resolve(save([rec], true)).then(function (r) {
+        delete DRAFT[k];
+        SENT[k] = true;
+        return r;
+      });
     }).catch(function () { return null; });
   }
+  var DRAFT = {};   // key -> the suggest form as it was left, until submitted or cancelled
+  var SENT = {};    // key -> a suggestion was submitted from this page (the button says Resubmit)
 
   function undo() {
     var prev = S.undo.pop();
@@ -779,7 +794,8 @@
   }
 
   // ---- dialog helper: resolves to the chosen button's value ----
-  function dialog(html, buttons) {
+  // opts.clickOff: a click outside the box dismisses it like Esc (resolves null).
+  function dialog(html, buttons, opts) {
     var dlg = $("dialog");
     dlg.innerHTML = html + '<div class="actions"></div>';
     return new Promise(function (resolve) {
@@ -796,6 +812,19 @@
         if (i === buttons.length - 1 && !dlg.querySelector("textarea,input")) setTimeout(function () { btn.focus(); }, 0);
       });
       dlg.oncancel = function () { resolve(null); };
+      // outside = the backdrop: the target is the dialog itself and the press began out of its box
+      // (a text selection dragged out of the box must not close it)
+      var out = function (e) {
+        var r = dlg.getBoundingClientRect();
+        return e.target === dlg && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom);
+      };
+      var downOut = false;
+      dlg.onmousedown = function (e) { downOut = out(e); };
+      dlg.onclick = !(opts && opts.clickOff) ? null : function (e) {
+        if (!downOut || !out(e)) return;
+        dlg.close();
+        resolve(null);
+      };
       dlg.showModal();
       var field = dlg.querySelector("textarea,input[type=text]");
       if (field) field.focus();

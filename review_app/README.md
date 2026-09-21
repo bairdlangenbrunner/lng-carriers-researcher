@@ -101,8 +101,9 @@ cell first and writes on one confirmation.
    offers to include them (`Name` ↔ `Other names` partners are always included).
 
    **Filters.** Decision, Batch and Search stay in view; Column, Confidence, Kind, Flag, Builder,
-   Owner and "changed by me" sit behind **More filters**. Whatever is set there shows as a
-   removable chip while the panel is closed, so a hidden control never filters silently.
+   Owner and "changed by me" sit behind **More filters**. Every filter that is set — Decision,
+   Batch and the search text included — shows as a chip with an × that clears it, so a hidden
+   control never filters silently.
 
    **New rows.** A discovery row's sources are numbered once under **Sources**; the row table
    cites them as `[1] [2]` beside each value instead of repeating the URLs. A long reason is
@@ -127,7 +128,10 @@ cell first and writes on one confirmation.
    a required note, and a kind — `value` (a different fact; the original refs are re-gated
    against it) or `cosmetic` (spelling / stylization, same fact; the cell's `[ref]` is kept).
    It is stored as `reject` in `decisions.csv` and as `suggest` in the log. Nothing is applied
-   from the app. Not offered on discovery new rows or ref-only lines.
+   from the app. Not offered on discovery new rows or ref-only lines. Clicking outside the box
+   (or Esc) closes it and keeps what was typed for the next time it opens on that line; Cancel
+   discards it. The button reads **Submit suggestion**, or **Resubmit suggestion** once one was
+   submitted for the line from this page.
 
 3. `suggestions.py` turns the pending suggestions into a standard `fix.json`, so a suggested
    value reaches the backend only through the QC-SOP path (`docs/sops/qc_release.md`):
