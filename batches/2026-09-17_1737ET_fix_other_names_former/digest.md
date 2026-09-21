@@ -1,12 +1,12 @@
 # Batch digest — 2026-09-17_1737ET_fix_other_names_former
 
-**Mode:** fix  ·  **Proposals:** 160 (auto-safe 124, needs-decision 36)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
+**Mode:** fix  ·  **Proposals:** 162 (auto-safe 125, needs-decision 37)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
 
 ## ✅ Auto-safe — accept in bulk (Green / derivable)
 
-By field: Other names ×124
+By field: Other names ×125
 
-These 124 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
+These 125 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
 
 ## ⚠️ Needs a decision (Yellow / Red / unknown)
 
@@ -36,16 +36,17 @@ These 124 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 508** · Other names: `Dalian No 1 G175K-11` (Y) — former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 509** · Other names: `Dalian No 1 G175K-12` (Y) — former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held
 - **row 186** · Other names: `Hull 3387 (HDHHI)` (Y) — former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_0458ET_fix_delivery_confirmed — no ref on hand prints the former name (backend's own published value); held
-- **row 721** · Other names: `Karmol LNGT Powership Antarctica; Northwest Sanderling` (Y) — former Name 'Karmol LNGT Powership Antarctica'; the row is renamed 'Karadeniz LNGT Antarctica' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Antarctica (ex-Northwest Sanderling)'
-- **row 811** · Other names: `LNGT Americas; Northwest Stormpetrel` (Y) — former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Americas (ex-Northwest Stormpetrel)'
-- **row 726** · Other names: `KLNGTP Black Sea; Portovenere; LNG Portovenere` (Y) — former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'
-- **row 727** · Other names: `KLNGTP Marmara; Lerici; LNG Lerici` (Y) — former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'
+- **row 811** · Other names: `LNGT Americas; Karadeniz LNGT Americas; Northwest Stormpetrel` (Y) — former Name 'LNGT Americas' (no ref prints it — the backend's own published value); IGU 2026 prints 'Karadeniz LNGT Americas (ex-Northwest Stormpetrel)' — IGU's name is carried here, not as the Name [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
 - **row 535** · Other names: `East Energy` (Y) — former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
-- **row 459** · Other names: `Condor LNG; CCH LNG; Methane Lydon Volney` (Y) — former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'LNG Soars (ex-Methane Lydon Volney)'
+- **row 1004** · Other names: `Seapeak Hispania; Seapeak Jupiter` (Y) — former Name 'Seapeak Hispania'; the row is renamed 'Gas Polaris'; IGU 2026's 'Seapeak Jupiter' carried here [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
+- **row 459** · Other names: `Condor LNG; CCH LNG; LNG Soars; Methane Lydon Volney` (Y) — former Name 'CCH LNG' (no ref prints it — the backend's own published value); the row is renamed 'LNG Scorpio'; IGU 2026 prints 'LNG Soars (ex-Methane Lydon Volney)' — both carried here [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
 - **row 1062** · Other names: `Stena Blue Sky` (Y) — former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
 - **row 377** · Other names: `Alto Acrux` (Y) — former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
+- **row 729** · Other names: `Cool Baltic; SCF Melampus` (Y) — Name stays 'Kool Baltic' (shipvault, marinetraffic.org, vesseltracker.com); IGU 2026 prints 'Cool Baltic (ex-SCF Melampus)' — probably IGU's misspelling; reject to leave it out [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
 - **row 924** · Other names: `North Mountain` (Y) — former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
-- **row 263** · Other names: `Hull H1799A (Hudong)` (Y) — former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held
+- **row 263** · Other names: `Hull H1799A (Hudong); Fath Al Khair` (Y) — former Name 'Hull H1799A'; the row is named 'Fat'h Al Khair'; IGU 2026's spelling 'Fath Al Khair' carried here [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
+- **row 1100** · Other names: `Vivit City LNG` (Y) — Name stays 'Vivirt City LNG' (shipvault, marinetraffic.org, vesseltracker.com); IGU 2026 prints 'Vivit City LNG' — probably IGU's misspelling; reject to leave it out [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
+- **row 686** · Other names: `Ergy` (Y) — Name stays IGU's 'Hongkong Energy' (the trading name); every database prints the demolition-voyage name 'Ergy' for IMO 9250725 (shipvault: SCRAPPED) — carried here. Status is still `active`: needs a scrapped fix [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
 
 These are default-`hold`. Flip to `accept`/`reject` in `decisions.csv`, then re-run `apply_batch.py`.
 

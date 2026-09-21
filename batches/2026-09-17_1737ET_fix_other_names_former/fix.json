@@ -818,6 +818,10 @@
       {
        "url": "https://www.shipvault.com/ships/458163",
        "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458163",
+       "soft": false
       }
      ],
      "note": "former Name 'Hull 3385 (HDHHI)'; the row is renamed 'Barzan' by 2026-09-17_0421ET_fix_delivery_rollforward"
@@ -2396,7 +2400,7 @@
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
-       "gate_value": "Karadeniz LNGT Antarctica"
+       "gate_value": "Northwest Sanderling"
       },
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
@@ -2413,7 +2417,7 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "LNGT Americas; Northwest Stormpetrel",
+     "new_value": "LNGT Americas; Karadeniz LNGT Americas; Northwest Stormpetrel",
      "gate_value": "LNGT Americas",
      "append_ref": true,
      "confidence": "Y",
@@ -2422,9 +2426,14 @@
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
        "gate_value": "Northwest Stormpetrel"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Northwest Stormpetrel"
       }
      ],
-     "note": "former Name 'LNGT Americas'; the row is renamed 'Karadeniz LNGT Americas' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Americas (ex-Northwest Stormpetrel)'"
+     "note": "former Name 'LNGT Americas' (no ref prints it — the backend's own published value); IGU 2026 prints 'Karadeniz LNGT Americas (ex-Northwest Stormpetrel)' — IGU's name is carried here, not as the Name [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2452,15 +2461,25 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "KLNGTP Black Sea; Portovenere; LNG Portovenere",
-     "gate_value": "KLNGTP Black Sea",
+     "new_value": "Karadeniz LNGT Powership Black Sea; Portovenere; LNG Portovenere",
+     "gate_value": "Karadeniz LNGT Powership Black Sea",
      "append_ref": true,
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
-       "gate_value": "Portovenere"
+       "gate_value": "LNG Portovenere"
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/KARADENIZ-LNGT-POWERSHIP-BLACK-SEA/9064073/352004132",
+       "soft": false,
+       "gate_value": "Karadeniz LNGT Powership Black Sea"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "LNG Portovenere"
       },
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
@@ -2468,7 +2487,7 @@
        "gate_value": "LNG Portovenere"
       }
      ],
-     "note": "former Name 'KLNGTP Black Sea'; the row is renamed 'Karadeniz LNGT Powership Black Sea' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Black Sea (ex-Portovenere / ex-LNG Portovenere)'"
+     "note": "Name stays 'KLNGTP Black Sea' (vesseltracker.com live AIS name); the long form IGU 2026 and marinetraffic.org print is carried here (Baird 2026-09-21), with IGU's (ex-…) names [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2477,15 +2496,25 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "KLNGTP Marmara; Lerici; LNG Lerici",
-     "gate_value": "KLNGTP Marmara",
+     "new_value": "Karadeniz LNGT Powership Marmara; Lerici; LNG Lerici",
+     "gate_value": "Karadeniz LNGT Powership Marmara",
      "append_ref": true,
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
-       "gate_value": "Lerici"
+       "gate_value": "LNG Lerici"
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/KARADENIZ-LNGT-POWERSHIP-MARMARA/9064085/352004078",
+       "soft": false,
+       "gate_value": "Karadeniz LNGT Powership Marmara"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "LNG Lerici"
       },
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
@@ -2493,7 +2522,7 @@
        "gate_value": "LNG Lerici"
       }
      ],
-     "note": "former Name 'KLNGTP Marmara'; the row is renamed 'Karadeniz LNGT Powership Marmara' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'; plus IGU 2026 prints 'Karadeniz LNGT Powership Marmara (ex-Lerici / ex-LNG Lerici)'"
+     "note": "Name stays 'KLNGTP Marmara' (vesseltracker.com live AIS name); the long form IGU 2026 and marinetraffic.org print is carried here (Baird 2026-09-21), with IGU's (ex-…) names [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2516,21 +2545,28 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Seapeak Hispania",
+     "new_value": "Seapeak Hispania; Seapeak Jupiter",
      "gate_value": "Seapeak Hispania",
      "append_ref": true,
-     "confidence": "G",
+     "confidence": "Y",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/115017",
-       "soft": false
+       "soft": false,
+       "gate_value": "Seapeak Hispania"
       },
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017",
-       "soft": false
+       "soft": false,
+       "gate_value": "Seapeak Hispania"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Seapeak Jupiter"
       }
      ],
-     "note": "former Name 'Seapeak Hispania'; the row is renamed 'Seapeak Jupiter' by 2026-09-17_1654ET_fix_igu2026_sourced"
+     "note": "former Name 'Seapeak Hispania'; the row is renamed 'Gas Polaris'; IGU 2026's 'Seapeak Jupiter' carried here [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2585,17 +2621,23 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Metagas Everest",
+     "new_value": "Metagas Everest; Arctic Metagas",
      "gate_value": "Metagas Everest",
      "append_ref": true,
      "confidence": "G",
      "refs": [
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
+       "soft": false,
+       "gate_value": "Arctic Metagas"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Arctic Metagas"
       }
      ],
-     "note": "former Name 'Metagas Everest'; the row is renamed 'Arctic Metagas' by 2026-09-17_1654ET_fix_igu2026_sourced"
+     "note": "former Name 'Metagas Everest'; the row is renamed 'Arctic Metagaz'; IGU 2026's spelling 'Arctic Metagas' carried here [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2642,7 +2684,7 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Condor LNG; CCH LNG; Methane Lydon Volney",
+     "new_value": "Condor LNG; CCH LNG; LNG Soars; Methane Lydon Volney",
      "gate_value": "CCH LNG",
      "append_ref": true,
      "confidence": "Y",
@@ -2651,9 +2693,14 @@
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
        "gate_value": "Methane Lydon Volney"
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Methane Lydon Volney"
       }
      ],
-     "note": "former Name 'CCH LNG'; the row is renamed 'LNG Soars' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held; plus IGU 2026 prints 'LNG Soars (ex-Methane Lydon Volney)'"
+     "note": "former Name 'CCH LNG' (no ref prints it — the backend's own published value); the row is renamed 'LNG Scorpio'; IGU 2026 prints 'LNG Soars (ex-Methane Lydon Volney)' — both carried here [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2728,20 +2775,15 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Kool Baltic; SCF Melampus",
-     "gate_value": "Kool Baltic",
+     "new_value": "Cool Baltic; SCF Melampus",
+     "gate_value": "Cool Baltic",
      "append_ref": true,
-     "confidence": "G",
+     "confidence": "Y",
      "refs": [
       {
-       "url": "https://www.shipvault.com/ships/3928",
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
-       "gate_value": "Kool Baltic"
-      },
-      {
-       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928",
-       "soft": false,
-       "gate_value": "Kool Baltic"
+       "gate_value": "SCF Melampus"
       },
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
@@ -2749,7 +2791,7 @@
        "gate_value": "SCF Melampus"
       }
      ],
-     "note": "former Name 'Kool Baltic'; the row is renamed 'Cool Baltic' by 2026-09-17_1654ET_fix_igu2026_sourced; plus IGU 2026 prints 'Cool Baltic (ex-SCF Melampus)'"
+     "note": "Name stays 'Kool Baltic' (shipvault, marinetraffic.org, vesseltracker.com); IGU 2026 prints 'Cool Baltic (ex-SCF Melampus)' — probably IGU's misspelling; reject to leave it out [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2791,12 +2833,18 @@
    "cells": [
     {
      "field": "Other names",
-     "new_value": "Hull H1799A (Hudong)",
+     "new_value": "Hull H1799A (Hudong); Fath Al Khair",
      "gate_value": "Hull H1799A",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull H1799A'; the row is renamed 'Fath Al Khair' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Fath Al Khair"
+      }
+     ],
+     "note": "former Name 'Hull H1799A'; the row is named 'Fat'h Al Khair'; IGU 2026's spelling 'Fath Al Khair' carried here [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   },
@@ -2953,7 +3001,7 @@
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
        "soft": false,
-       "gate_value": "LNG Unity"
+       "gate_value": "Provalys"
       },
       {
        "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
@@ -3382,6 +3430,53 @@
       }
      ],
      "note": "IGU 2026 prints 'Woodside Barrumbara (ex-2535)' — hull-number former name written as the QC §2 placeholder 'Hull 2535 (Hanwha)'"
+    }
+   ]
+  },
+  {
+   "row_id": "1100",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Vivit City LNG",
+     "gate_value": "Vivit City LNG",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false,
+       "gate_value": "Vivit City LNG"
+      }
+     ],
+     "note": "Name stays 'Vivirt City LNG' (shipvault, marinetraffic.org, vesseltracker.com); IGU 2026 prints 'Vivit City LNG' — probably IGU's misspelling; reject to leave it out [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
+    }
+   ]
+  },
+  {
+   "row_id": "686",
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Ergy",
+     "gate_value": "Ergy",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.vesseltracker.com/en/Ships/Ergy-9250725.html",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/116466",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116466",
+       "soft": false
+      }
+     ],
+     "note": "Name stays IGU's 'Hongkong Energy' (the trading name); every database prints the demolition-voyage name 'Ergy' for IMO 9250725 (shipvault: SCRAPPED) — carried here. Status is still `active`: needs a scrapped fix [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]"
     }
    ]
   }

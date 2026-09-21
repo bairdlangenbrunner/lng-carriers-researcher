@@ -241,7 +241,7 @@ python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §
 
 Trigger phrases: "IGU reconciliation", "compare the backend to the IGU report", "intercompare with the World LNG Report", "new IGU edition", "what did IGU drop / change".
 
-Governed by `docs/sops/igu_reconciliation.md` (IG rev 2). IMO-keyed join of the **whole
+Governed by `docs/sops/igu_reconciliation.md` (IG rev 3). IMO-keyed join of the **whole
 backend** against the IGU World LNG Report's Appendix 3 (fleet) and Appendix 4 (orderbook),
 with the previous edition layered on top so each diff says which side moved (`igu_changed` /
 `new_to_igu` / `backend_differs` — never revert the last blindly). The backend was seeded from
@@ -250,6 +250,9 @@ value, so cite the **report PDF**, which passes §3.8c. Interim rule (Baird 2026
 what IGU 2026 prints is a sufficient sole source, Vessel type included — no second ref for now
 (open decision: back these cells up at the ref-validation step?). IGU's *silence* (a dropped
 vessel) is not a statement and still needs its own verified ref.
+**A Name is the exception** (Baird 2026-09-21, IG §5.4): look the IMO up in shipvault / marinetraffic.org /
+vesseltracker first; unless one explicitly agrees with IGU's name, the databases' name (or the backend's) is the
+`Name` and IGU's goes to `Other names`.
 The batch itself is never applied; findings promote through a `fix` / discovery batch.
 
 ```bash

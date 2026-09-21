@@ -12,22 +12,18 @@ set,971,Name,American Energy
 set,971,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,535,Name,Arctic Vostok
 set,535,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,1004,Name,Seapeak Jupiter
-set,1004,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,562,Name,Arunika Jaya
 set,562,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,648,Name,SC Serenity
 set,648,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,866,Name,Arctic Metagas
-set,866,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,866,Name,Arctic Metagaz
+set,866,Name [ref],"https://www.vesseltracker.com/en/Ships/Arctic-Metagaz-9243148.html, https://www.marinetraffic.org/ship-owner-manager-ism-data/ARCTIC-METAGAZ/9243148/1, https://www.shipvault.com/ships/115953, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115953"
 set,686,Name,Hongkong Energy
 set,686,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,801,Name,Gas Garuda
 set,801,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,958,Name,Arctic Pioneer
 set,958,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,459,Name,LNG Soars
-set,459,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,1062,Name,Blue Dragon I
 set,1062,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,869,Name,Shandong Redwood
@@ -38,8 +34,6 @@ set,437,Name,BW ENN Crystal Sky
 set,437,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,649,Name,Italis LNG
 set,649,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,729,Name,Cool Baltic
-set,729,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,467,Name,Cesi Lianyungang
 set,467,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,568,Vessel type,conventional
@@ -74,8 +68,6 @@ set,993,Name,La Perouse
 set,993,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,559,Name,Energy Endeavour
 set,559,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,1100,Name,Vivit City LNG
-set,1100,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,924,Name,Voskhod
 set,924,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,39,Vessel type,conventional
@@ -546,8 +538,8 @@ set,263,Vessel type,conventional
 set,263,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,263,Cargo type,membrane
 set,263,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,263,Name,Fath Al Khair
-set,263,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,263,Name,Fat'h Al Khair
+set,263,Name [ref],"https://www.shipvault.com/ships/462938, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462938"
 set,264,Vessel type,conventional
 set,264,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,264,Cargo type,membrane

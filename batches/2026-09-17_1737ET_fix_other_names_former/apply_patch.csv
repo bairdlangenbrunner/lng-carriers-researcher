@@ -66,7 +66,7 @@ set,132,Other names [ref],"https://www.shipvault.com/ships/465879, https://shipv
 set,181,Other names,Hull 3371 (HDHHI)
 set,181,Other names [ref],"https://www.shipvault.com/ships/467719, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719"
 set,184,Other names,Hull 3385 (HDHHI)
-set,184,Other names [ref],https://www.shipvault.com/ships/458163
+set,184,Other names [ref],"https://www.shipvault.com/ships/458163, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458163"
 set,185,Other names,Hull 3386 (HDHHI)
 set,185,Other names [ref],"https://www.shipvault.com/ships/458164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458164"
 set,189,Other names,Hull 3395 (HDHHI)
@@ -171,13 +171,15 @@ set,721,Other names,Karmol LNGT Powership Antarctica; Karadeniz LNGT Antarctica;
 set,721,Other names [ref],"https://www.lngindustry.com/regasification/28052025/karpowership-celebrates-fsru-undocking-with-karmol-and-seatrium/, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
 set,971,Other names,Puteri Intan
 set,971,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,1004,Other names,Seapeak Hispania
-set,1004,Other names [ref],"https://www.shipvault.com/ships/115017, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017"
+set,726,Other names,Karadeniz LNGT Powership Black Sea; Portovenere; LNG Portovenere
+set,726,Other names [ref],"https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.marinetraffic.org/ship-owner-manager-ism-data/KARADENIZ-LNGT-POWERSHIP-BLACK-SEA/9064073/352004132"
+set,727,Other names,Karadeniz LNGT Powership Marmara; Lerici; LNG Lerici
+set,727,Other names [ref],"https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.marinetraffic.org/ship-owner-manager-ism-data/KARADENIZ-LNGT-POWERSHIP-MARMARA/9064085/352004078"
 set,562,Other names,Energy Frontier
 set,562,Other names [ref],"https://www.shipvault.com/ships/116125, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116125"
 set,648,Other names,Golar Arctic
 set,648,Other names [ref],"https://www.shipvault.com/ships/116640, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116640"
-set,866,Other names,Metagas Everest
+set,866,Other names,Metagas Everest; Arctic Metagas
 set,866,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,801,Other names,LNG River Orashi
 set,801,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
@@ -188,8 +190,6 @@ set,869,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-w
 set,377,Other names,Alto Acrux
 set,649,Other names,Golar Tundra
 set,649,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
-set,729,Other names,Kool Baltic; SCF Melampus
-set,729,Other names [ref],"https://www.shipvault.com/ships/3928, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
 set,993,Other names,SCF La Perouse
 set,993,Other names [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,385,Other names,Hull 3342 (HDHHI)
