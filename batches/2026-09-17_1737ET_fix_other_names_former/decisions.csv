@@ -110,7 +110,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 509|Other names,fill,509,,Other names,Y,False,hold,hold,Dalian No 1 G175K-12,former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2
 186|Other names,fill,186,,Other names,Y,False,hold,hold,Hull 3387 (HDHHI),former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_04
 721|Other names,fill,721,,Other names,G,False,accept,accept,Karmol LNGT Powership Antarctica; Karadeniz LNGT Antarctica; Northwest Sanderlin,"former Name 'Karmol LNGT Powership Antarctica' (lngindustry.com, 2025-05-28); th"
-811|Other names,fill,811,,Other names,Y,False,hold,hold,LNGT Americas; Karadeniz LNGT Americas; Northwest Stormpetrel,former Name 'LNGT Americas' (no ref prints it — the backend's own published valu
+811|Other names,fill,811,,Other names,Y,False,hold,accept,LNGT Americas; Karadeniz LNGT Americas; Northwest Stormpetrel,former Name 'LNGT Americas' (no ref prints it — the backend's own published valu
 971|Other names,fill,971,,Other names,G,False,accept,accept,Puteri Intan,former Name 'Puteri Intan'; the row is renamed 'American Energy' by 2026-09-17_1
 726|Other names,fill,726,,Other names,G,False,accept,accept,Karadeniz LNGT Powership Black Sea; Portovenere; LNG Portovenere,Name stays 'KLNGTP Black Sea' (vesseltracker.com live AIS name); the long form I
 727|Other names,fill,727,,Other names,G,False,accept,accept,Karadeniz LNGT Powership Marmara; Lerici; LNG Lerici,Name stays 'KLNGTP Marmara' (vesseltracker.com live AIS name); the long form IGU

@@ -4,7 +4,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 721|Capacity,fill,721,,Capacity,G,False,accept,accept,125000,"blank in backend; IGU prints 125000 [IGU 2026 Appendix 3 fleet table, PDF p.77; "
 721|Capacity units,fill,721,,Capacity units,G,False,accept,accept,cbm,derivable companion of the Capacity fill (no [ref] column)
 721|Name,fill,721,,Name,Y,False,hold,accept,LNGT Antarctica,'Karmol LNGT Powership Antarctica' -> 'LNGT Antarctica': current name by IMO loo
-811|Name,fill,811,,Name,Y,False,hold,hold,KLNGTP Americas,"'LNGT Americas' -> 'KLNGTP Americas': vesseltracker.com (live AIS name, IMO 9045"
+811|Name,fill,811,,Name,Y,False,hold,accept,KLNGTP Americas,"'LNGT Americas' -> 'KLNGTP Americas': vesseltracker.com (live AIS name, IMO 9045"
 971|Name,fill,971,,Name,G,False,accept,accept,American Energy,renamed / restyled since the load: 'Puteri Intan' -> IGU 2026 'American Energy (
 535|Name,fill,535,,Name,G,False,accept,accept,Arctic Vostok,renamed / restyled since the load: 'East Energy' -> IGU 2026 'Arctic Vostok' (IG
 969|Vessel type,fill,969,,Vessel type,Y,False,hold,reject,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this
@@ -14,6 +14,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 866|Name,fill,866,,Name,G,False,accept,accept,Arctic Metagaz,"'Metagas Everest' -> 'Arctic Metagaz': shipvault, marinetraffic.org and vesseltr"
 416|Vessel type,fill,416,,Vessel type,Y,False,hold,hold,FSU,'conventional' -> 'FSU' per IGU 2026 (igu_changed; IGU 2025: 'Conventional') — F
 686|Name,fill,686,,Name,G,False,accept,accept,Hongkong Energy,backend name defect 'Hongkong'; IGU prints 'Hongkong Energy' in both editions [I
+686|Status,fill,686,,Status,Y,False,hold,hold,scrapped,'active' -> 'scrapped': shipvault (status SCRAPPED) and vesseltracker.com (heade
 801|Name,fill,801,,Name,G,False,accept,accept,Gas Garuda,renamed / restyled since the load: 'LNG River Orashi' -> IGU 2026 'Gas Garuda (e
 958|Name,fill,958,,Name,G,False,accept,accept,Arctic Pioneer,renamed / restyled since the load: 'Pioneer Spirit' -> IGU 2026 'Arctic Pioneer 
 459|Name,fill,459,,Name,Y,False,hold,hold,LNG Scorpio,'CCH LNG' -> 'LNG Scorpio': marinetraffic.org and vesseltracker.com (IMO 9307205

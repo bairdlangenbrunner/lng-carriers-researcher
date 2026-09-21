@@ -119,6 +119,11 @@ IGU's name goes to `Other names` in batch `1737ET` in every case. Live row 88 ke
 Decisions made for the old values were reset to the confidence default on the changed lines.
 Rebuilt: 0 refs dropped, zero formula errors; 440 accept / 23 hold / 1 reject.
 
-Not in this batch — leads for a Status fix: live row 88 (IMO 9250725) is `SCRAPPED` on shipvault
-and beached in Bangladesh on vesseltracker; live row 73 (IMO 9243148) is `LOST` on shipvault.
-Both are still `active` in the backend.
+Later the same day (Baird): live row 20 `KLNGTP Americas` accepted, with its `Other names` line in
+batch `1737ET`. Live row 88 (IMO 9250725) gains a **Status `active` -> `scrapped`** line as a
+suggestion — Y, held: shipvault (status `SCRAPPED`, + unit record) and vesseltracker.com (header
+label `scrapped`, last position Bangladesh) both pass §3.8c; IGU 2026 still lists the vessel. The
+row is kept (IG §5.2). Rebuilt: 0 refs dropped, zero formula errors; 441 accept / 23 hold / 1 reject.
+
+Still a lead, not in this batch: live row 73 (IMO 9243148) is `LOST` on shipvault and `active` in
+the backend — `lost` is not a vocabulary value; needs its own ref and a call on the Status.

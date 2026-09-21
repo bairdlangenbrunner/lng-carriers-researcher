@@ -153,3 +153,5 @@ Jupiter`), 73 (`Arctic Metagas`), 124 (`LNG Soars`), 365 (`Cool Baltic`), 624 (`
 new line) and 909 (`Fath Al Khair`); live row 88 gains the demolition name `Ergy` (new line).
 `Cool Baltic` and `Vivit City LNG` are probably IGU misspellings — Y, reject to leave them out.
 Each ref is gated on its own name. Rebuilt: 0 refs dropped, zero formula errors; 126 accept / 36 hold.
+
+Later the same day: live row 20's line accepted with its Name line (`KLNGTP Americas`); 127 accept / 35 hold.

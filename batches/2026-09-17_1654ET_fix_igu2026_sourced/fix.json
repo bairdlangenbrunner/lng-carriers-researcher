@@ -276,6 +276,26 @@
       }
      ],
      "note": "backend name defect 'Hongkong'; IGU prints 'Hongkong Energy' in both editions [IGU 2026 Appendix 3 fleet table, PDF p.70; IMO 9250725; sole source per Baird ruling 2026-09-17]"
+    },
+    {
+     "field": "Status",
+     "new_value": "scrapped",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipvault.com/ships/116466",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116466",
+       "soft": false
+      },
+      {
+       "url": "https://www.vesseltracker.com/en/Ships/Ergy-9250725.html",
+       "soft": false
+      }
+     ],
+     "note": "'active' -> 'scrapped': shipvault (status SCRAPPED) and vesseltracker.com (header label 'scrapped', last position Bangladesh) for IMO 9250725, sailing under the demolition-voyage name 'Ergy'. IGU 2026 still lists the vessel — suggestion, held (Baird 2026-09-21); the row is kept, never deleted (IG §5.2)"
     }
    ]
   },
