@@ -127,3 +127,19 @@ row is kept (IG §5.2). Rebuilt: 0 refs dropped, zero formula errors; 441 accept
 
 Still a lead, not in this batch: live row 73 (IMO 9243148) is `LOST` on shipvault and `active` in
 the backend — `lost` is not a vocabulary value; needs its own ref and a call on the Status.
+
+## Delivery history cells (added 2026-09-21, RF rev 25 §4.19)
+
+`python scripts/delivery_history.py --batch <this dir>` — 21 Delivery year cells here move the year
+**later** than the backend's 2025 (15 → 2026, 6 Arc7 rows → 2027), so each row also gets
+`Previous delivery year(s)` = `2025` and `Delivery delayed` = `yes`, at its Delivery year line's
+confidence (14 G / 7 Y) and **decided together with that line**. Row_ids 40, 41, 42, 116, 117,
+118, 121, 183, 432, 445, 488, 703, 752, 797, 916, 917, 981, 994, 995, 996, 1143.
+
+- Ref for the former year: the **IGU 2025 report PDF**, whose extraction prints 2025 for every one
+  of the 21 IMOs. Row_ids 41 and 42 (`Rotmistrz Witold Pilecki`, `Maran Gas Antiparos`) also keep
+  their shipnext page, which says `built in 2025` — i.e. a live source still disagrees with
+  IGU 2026's 2026 on those two; worth a look when deciding the Delivery year line.
+- 42 proposals added (465 -> 507; 469 accept / 37 hold / 1 reject). Rebuilt paced: 0 refs dropped,
+  recalc zero errors. `decisions.csv` keeps every existing decision; each new line's default matches
+  its Delivery year line's decision.

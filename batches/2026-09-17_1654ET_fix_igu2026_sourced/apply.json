@@ -489,6 +489,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "40",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "40",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "40",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "41",
       "column": "Vessel type",
       "value": "conventional",
@@ -513,6 +531,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "41",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "41",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://shipnext.com/vessel/9963815-rotmistrz-witold-pilecki, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "41",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "42",
       "column": "Vessel type",
       "value": "conventional",
@@ -534,6 +570,24 @@
       "row_id": "42",
       "column": "Delivery year [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "42",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "42",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://shipnext.com/vessel/9963827-maran-gas-antiparos, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "42",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -897,6 +951,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "116",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "116",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "116",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "117",
       "column": "Vessel type",
       "value": "conventional",
@@ -921,6 +993,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "117",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "117",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "117",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "118",
       "column": "Vessel type",
       "value": "conventional",
@@ -945,6 +1035,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "118",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "118",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "118",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "121",
       "column": "Vessel type",
       "value": "conventional",
@@ -966,6 +1074,24 @@
       "row_id": "121",
       "column": "Delivery year [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "121",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -1038,6 +1164,24 @@
       "row_id": "183",
       "column": "Delivery year [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "183",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -1365,6 +1509,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "432",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "432",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "432",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "445",
       "column": "Vessel type",
       "value": "conventional",
@@ -1386,6 +1548,24 @@
       "row_id": "445",
       "column": "Delivery year [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "445",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "445",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "445",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -1494,6 +1674,24 @@
       "row_id": "488",
       "column": "Delivery year [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "488",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -1725,6 +1923,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "797",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "797",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "797",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "849",
       "column": "Vessel type",
       "value": "conventional",
@@ -2001,6 +2217,24 @@
       "confidence": "G"
     },
     {
+      "row_id": "994",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "994",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "994",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "995",
       "column": "Vessel type",
       "value": "conventional",
@@ -2034,6 +2268,24 @@
       "row_id": "996",
       "column": "Delivery year [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "996",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "996",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "996",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -5285,9 +5537,9 @@
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 465,
-    "accepted": 441,
-    "hold": 23,
+    "items": 507,
+    "accepted": 469,
+    "hold": 37,
     "reject": 1,
     "conflicts": 0
   }

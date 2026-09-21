@@ -46,10 +46,16 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 39|Cargo type,fill,39,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 40|Vessel type,fill,40,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 40|Delivery year,fill,40,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+40|Previous delivery year(s),fill,40,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+40|Delivery delayed,fill,40,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 41|Vessel type,fill,41,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 41|Delivery year,fill,41,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+41|Previous delivery year(s),fill,41,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+41|Delivery delayed,fill,41,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 42|Vessel type,fill,42,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 42|Delivery year,fill,42,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+42|Previous delivery year(s),fill,42,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+42|Delivery delayed,fill,42,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 59|Vessel type,fill,59,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 59|Cargo type,fill,59,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 93|Vessel type,fill,93,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
@@ -80,18 +86,28 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 115|Cargo type,fill,115,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 116|Vessel type,fill,116,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 116|Delivery year,fill,116,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+116|Previous delivery year(s),fill,116,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+116|Delivery delayed,fill,116,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 117|Vessel type,fill,117,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 117|Delivery year,fill,117,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+117|Previous delivery year(s),fill,117,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+117|Delivery delayed,fill,117,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 118|Vessel type,fill,118,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 118|Delivery year,fill,118,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+118|Previous delivery year(s),fill,118,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+118|Delivery delayed,fill,118,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 121|Vessel type,fill,121,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 121|Delivery year,fill,121,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+121|Previous delivery year(s),fill,121,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+121|Delivery delayed,fill,121,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 180|Vessel type,fill,180,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 180|Cargo type,fill,180,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 182|Vessel type,fill,182,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 182|Cargo type,fill,182,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 183|Vessel type,fill,183,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 183|Delivery year,fill,183,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+183|Previous delivery year(s),fill,183,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+183|Delivery delayed,fill,183,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 226|Vessel type,fill,226,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 226|Cargo type,fill,226,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 230|Vessel type,fill,230,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
@@ -120,8 +136,12 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 371|Propulsion type,fill,371,,Propulsion type,G,False,accept,accept,X-DF,'ME-GA' -> 'X-DF': IGU changed its own value this edition (IGU 2025: 'ME-GA') [I
 432|Vessel type,fill,432,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 432|Delivery year,fill,432,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+432|Previous delivery year(s),fill,432,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+432|Delivery delayed,fill,432,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 445|Vessel type,fill,445,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 445|Delivery year,fill,445,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+445|Previous delivery year(s),fill,445,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+445|Delivery delayed,fill,445,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 482|Vessel type,fill,482,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 482|Cargo type,fill,482,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 482|Propulsion type,fill,482,,Propulsion type,G,False,accept,accept,ME-GA,'X-DF' -> 'ME-GA': IGU changed its own value this edition (IGU 2025: 'X-DF') [IG
@@ -131,6 +151,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 488|Vessel type,fill,488,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 488|Name,fill,488,,Name,G,False,accept,accept,Clean Sirocco,renamed / restyled since the load: 'Clean Srocco' -> IGU 2026 'Clean Sirocco' (I
 488|Delivery year,fill,488,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+488|Previous delivery year(s),fill,488,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+488|Delivery delayed,fill,488,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 612|Vessel type,fill,612,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 612|Cargo type,fill,612,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 670|Vessel type,fill,670,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
@@ -147,13 +169,19 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 703|Vessel type,fill,703,,Vessel type,G,False,accept,accept,icebreaker,"blank in backend; IGU prints 'Icebreaker' [IGU 2026 Appendix 4 orderbook table, "
 703|Status,fill,703,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
 703|Delivery year,fill,703,,Delivery year,Y,False,hold,hold,2027,rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [I
+703|Previous delivery year(s),fill,703,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2027) — decide with the Delivery year li
+703|Delivery delayed,fill,703,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2027 — decide with the Delivery year line
 749|Vessel type,fill,749,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 749|Cargo type,fill,749,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 752|Vessel type,fill,752,,Vessel type,G,False,accept,accept,icebreaker,"blank in backend; IGU prints 'Icebreaker' [IGU 2026 Appendix 4 orderbook table, "
 752|Status,fill,752,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
 752|Delivery year,fill,752,,Delivery year,Y,False,hold,hold,2027,rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [I
+752|Previous delivery year(s),fill,752,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2027) — decide with the Delivery year li
+752|Delivery delayed,fill,752,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2027 — decide with the Delivery year line
 797|Vessel type,fill,797,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 797|Delivery year,fill,797,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+797|Previous delivery year(s),fill,797,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+797|Delivery delayed,fill,797,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 849|Vessel type,fill,849,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 849|Cargo type,fill,849,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 864|Vessel type,fill,864,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
@@ -165,9 +193,13 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 916|Vessel type,fill,916,,Vessel type,G,False,accept,accept,icebreaker,"blank in backend; IGU prints 'Icebreaker' [IGU 2026 Appendix 4 orderbook table, "
 916|Status,fill,916,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
 916|Delivery year,fill,916,,Delivery year,Y,False,hold,hold,2027,rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [I
+916|Previous delivery year(s),fill,916,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2027) — decide with the Delivery year li
+916|Delivery delayed,fill,916,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2027 — decide with the Delivery year line
 917|Vessel type,fill,917,,Vessel type,G,False,accept,accept,icebreaker,"blank in backend; IGU prints 'Icebreaker' [IGU 2026 Appendix 4 orderbook table, "
 917|Status,fill,917,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
 917|Delivery year,fill,917,,Delivery year,Y,False,hold,hold,2027,rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [I
+917|Previous delivery year(s),fill,917,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2027) — decide with the Delivery year li
+917|Delivery delayed,fill,917,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2027 — decide with the Delivery year line
 927|Vessel type,fill,927,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 927|Cargo type,fill,927,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 933|Vessel type,fill,933,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
@@ -181,13 +213,21 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 981|Vessel type,fill,981,,Vessel type,G,False,accept,accept,icebreaker,"blank in backend; IGU prints 'Icebreaker' [IGU 2026 Appendix 4 orderbook table, "
 981|Status,fill,981,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
 981|Delivery year,fill,981,,Delivery year,Y,False,hold,hold,2027,rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [I
+981|Previous delivery year(s),fill,981,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2027) — decide with the Delivery year li
+981|Delivery delayed,fill,981,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2027 — decide with the Delivery year line
 994|Vessel type,fill,994,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 994|Delivery year,fill,994,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+994|Previous delivery year(s),fill,994,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+994|Delivery delayed,fill,994,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 995|Vessel type,fill,995,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 995|Status,fill,995,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
 995|Delivery year,fill,995,,Delivery year,Y,False,hold,hold,2026,rides with the Status change: IGU orderbook delivery year 2026 (backend 2025) [I
+995|Previous delivery year(s),fill,995,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+995|Delivery delayed,fill,995,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 996|Vessel type,fill,996,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 996|Delivery year,fill,996,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
+996|Previous delivery year(s),fill,996,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+996|Delivery delayed,fill,996,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 997|Vessel type,fill,997,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 997|Cargo type,fill,997,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 1091|Vessel type,fill,1091,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
@@ -205,6 +245,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1143|Vessel type,fill,1143,,Vessel type,G,False,accept,accept,icebreaker,"blank in backend; IGU prints 'Icebreaker' [IGU 2026 Appendix 4 orderbook table, "
 1143|Status,fill,1143,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
 1143|Delivery year,fill,1143,,Delivery year,Y,False,hold,hold,2027,rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [I
+1143|Previous delivery year(s),fill,1143,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2027) — decide with the Delivery year li
+1143|Delivery delayed,fill,1143,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2027 — decide with the Delivery year line
 43|Vessel type,fill,43,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 43|Cargo type,fill,43,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 43|Propulsion type,fill,43,,Propulsion type,G,False,accept,accept,ME-GA,'ME-GI' -> 'ME-GA': IGU changed its own value this edition (IGU 2025: 'ME-GI') [
