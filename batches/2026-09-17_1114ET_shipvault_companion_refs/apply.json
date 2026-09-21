@@ -868,12 +868,6 @@
     },
     {
       "row_id": "415",
-      "column": "Shipbuilder [ref]",
-      "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "415",
       "column": "Status [ref]",
       "value": "https://www.shipvault.com/ships/73086, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
       "confidence": "Y"
@@ -1056,9 +1050,9 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 175,
-    "accepted": 175,
+    "accepted": 174,
     "hold": 0,
-    "reject": 0,
+    "reject": 1,
     "conflicts": 0
   }
 }

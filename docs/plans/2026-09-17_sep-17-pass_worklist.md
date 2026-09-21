@@ -34,7 +34,8 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    509, 510, 517 (batch 1 names; live 827, 1031, 1032, 1034, 1035, 1080, 1008, 935), 1062 (live 144),
    924 (live 742) are G after the 2026-09-21 ref pass and only hold from the pre-fill; 263 (live 909) and
    686 (live 88) are still Y. Batch 5's three Hull number refs (row_ids 121, 226, 230; live 771, 775, 776)
-   are G since 2026-09-21 and hold only from the pre-fill.
+   were G since 2026-09-21 and held only from the pre-fill — **pushed 2026-09-21 18:29 ET** with the
+   other held ref-only lines (Baird: push every "value unchanged; adds N refs" hold).
    Batch 4's 414 are all Y (single-source): 76 Price + 76 Price currency, 71 Operator/charterer,
    68 Contract date, 32 Cargo type, 20 IMO, 19 Hull number, 16 Capacity + 16 units, 10 Propulsion,
    9 Vessel type, 1 Shipowner. A blanket call ("accept Y contract dates", "leave Y prices") is
@@ -122,8 +123,8 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 | 2 | `0458ET_fix_delivery_confirmed` | rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 0 / 3 |
 | 3 | `0431ET_discovery_since_jun_2026` | 12 new vessels in 5 clusters | 7 / 5, plus 10 backend flags |
 | 4 | `0511ET_data_fill_on_order` | 1,003 cells / 483 rows, incl. 48 order-total Prices (accepted 2026-09-17) | 589 / 414 |
-| 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives; 3 hull refs Y→G with IGU PDFs 2026-09-21; **2 accepted refs applied 2026-09-18** | 2 / 6 |
-| 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | 173 / 1, 1 reject |
+| 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives; 3 hull refs Y→G with IGU PDFs 2026-09-21; **2 refs applied 2026-09-18, the other 6 pushed 2026-09-21** — batch fully in, `verify_report.csv` clean | 8 / 0 |
+| 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched); 172 pushed 2026-09-21 17:04 ET, the held row 6 Status ref 18:29 ET; row_id 995 (live 814) Status ref is an un-clicked pre-fill accept, not yet in the sheet | 174 / 0, 1 reject |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
 | 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs; + 42 delivery-history lines for the 21 years that move later (RF §4.19, 2026-09-21); the 10 Vessel type Rule-F refs **withdrawn** 2026-09-21 — IGU 2026 does not print those vessels (live rows 61, 487, 488, 994, 1118, 1169, 1179–1182; now manual-review) — 497 proposals | 462 / 35, plus 18 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | **APPLIED 2026-09-17** — 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
@@ -177,8 +178,8 @@ Edit the `hold` rows in each batch's `decisions.csv`, then re-run
       `decisions.csv` carries 589 accept / 414 hold.)
 - [x] **48 order-total Prices** in batch 4 (total ÷ N, Y max) — **accepted 2026-09-17**, with their
       48 `Price currency` cells; `apply_batch.py` re-run.
-- [ ] **Batch 5**: 6 Rule-F refs still on hold (2 Capacity refs accepted and applied 2026-09-18); the
-      3 Hull number refs are G since 2026-09-21 and only hold from the pre-fill.
+- [x] **Batch 5**: all 8 Rule-F refs in the sheet (2 applied 2026-09-18, 6 pushed 2026-09-21 18:29 ET
+      at Baird's directive — held ref-only lines, value unchanged); `verify_apply` 8 / 8 landed.
 
 ## 1b. IGU 2026 intercomparison — decisions it opens
 

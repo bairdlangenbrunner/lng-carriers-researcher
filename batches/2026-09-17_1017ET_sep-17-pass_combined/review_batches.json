@@ -18,11 +18,12 @@
  "2026-09-17_0505ET_ref_fill_rule_f": {
   "label": "5 \u00b7 Rule-F ref fill",
   "apply_order": 5,
-  "applied": false
+  "applied": true
  },
  "2026-09-17_1114ET_shipvault_companion_refs": {
   "label": "6 \u00b7 shipvault companion refs",
-  "apply_order": 6
+  "apply_order": 6,
+  "applied": false
  },
  "2026-09-17_1654ET_fix_igu2026_sourced": {
   "label": "8 \u00b7 IGU 2026-sourced fix",

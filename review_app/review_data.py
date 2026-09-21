@@ -114,6 +114,15 @@ def _qa_sections(wb_path):
     return out
 
 
+def _citation_ok(note):
+    """A ref_fill Per-cell citation log note that records a pass: url_verifier's `: OK`, or an
+    igu_refs pass written as "IGU <edition> report PDF … prints this hull for the row's IMO"
+    (a note saying IGU prints *no* such column, or that an earlier pass was false, is a fail)."""
+    if ": OK" in note:
+        return True
+    return bool(re.search(r"\bprints\b", note)) and not re.search(r"\b(not|no|false|nothing)\b", note)
+
+
 def gate_verdicts(batch_dir, key_to_header):
     """(by_cell, by_url): (row_id, field, url) -> verdict and url -> verdict.
 
@@ -132,7 +141,7 @@ def gate_verdicts(batch_dir, key_to_header):
                     field = key_to_header.get(str(q.get("field")), str(q.get("field")))
                     for u in split_urls(url):
                         by_cell[(str(q.get("row_id")), field, u)] = \
-                            f"{'PASS' if ': OK' in note else 'FAIL'} ({note})"
+                            f"{'PASS' if _citation_ok(note) else 'FAIL'} ({note})"
                 elif title == "URL verification log" and url:      # data_fill / discovery
                     res = q.get("result") if q.get("result") not in (None, "None") else q.get("status")
                     if res not in (None, "None", ""):
@@ -287,7 +296,7 @@ def _same(a, b):
         return False
 
 
-def backend_state(kind, current, proposed, ref_urls, current_refs, append=False, keep_ref=False):
+def backend_state(kind, current, proposed, ref_urls, current_refs, append=False, keep_ref=False, ref_only=False):
     """"in_backend" when the pulled backend already holds the proposal (value and refs),
     "value_in_backend" when the value is there but a proposed ref is not, else "".
 
@@ -295,7 +304,7 @@ def backend_state(kind, current, proposed, ref_urls, current_refs, append=False,
     (`Other names`) has landed when every proposed element is in the cell."""
     have = {_norm(u) for u in current_refs}
     refs_in = all(_norm(u) in have for u in ref_urls)
-    if kind == "ref":
+    if kind == "ref" or ref_only:      # a ref-only line has landed when its refs are in the cell
         return "in_backend" if ref_urls and refs_in else ""
     if not _norm(proposed):
         return ""
@@ -464,7 +473,8 @@ def build(batch_dirs, backend_path=None, info_path=None):
                                             if _norm(rd.get(h))) else ""
             else:
                 state = backend_state(it["kind"], cell(rid, col), proposed, ref_urls, current_refs,
-                                      append="append_ref" in flags, keep_ref="preserve_ref" in flags)
+                                      append="append_ref" in flags, keep_ref="preserve_ref" in flags,
+                                      ref_only="ref_only" in flags)
             if state:
                 flags.append(state)
             why, detail = split_note(it["note"], cell(rid, col) if rid else "", proposed, labels)

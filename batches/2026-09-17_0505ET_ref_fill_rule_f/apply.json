@@ -13,13 +13,49 @@
       "column": "Capacity [ref]",
       "value": "https://www.shipvault.com/ships/73085, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
       "confidence": "Y"
+    },
+    {
+      "row_id": "969",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1044",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/373877, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1045",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/373876, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "121",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/450944, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/450944, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "226",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/448545, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "230",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/461187, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461187, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
     "items": 8,
-    "accepted": 2,
-    "hold": 6,
+    "accepted": 8,
+    "hold": 0,
     "reject": 0,
     "conflicts": 0
   }

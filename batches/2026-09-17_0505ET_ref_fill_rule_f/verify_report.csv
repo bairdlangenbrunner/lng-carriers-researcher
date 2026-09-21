@@ -1,3 +1,9 @@
 status,sheet_row,row_id,column,accepted_value,backend_value
 landed,6,415,Capacity [ref],,
 landed,7,663,Capacity [ref],,
+landed,61,969,Capacity [ref],,
+landed,487,1044,Capacity [ref],,
+landed,488,1045,Capacity [ref],,
+landed,771,121,Hull number [ref],,
+landed,775,226,Hull number [ref],,
+landed,776,230,Hull number [ref],,
