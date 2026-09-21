@@ -1,4 +1,4 @@
-# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-18 20:10 ET)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-21 17:10 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
@@ -17,13 +17,24 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    - [ ] Vessel type dropdown: it offers `supporting` (load corruption, §5) and lacks
          `small-scale` / `mid-scale`, which the vocabulary and the backend use. Remove the first
          once batch 8 has fixed rows 451 / 499–501 / 509; add the other two.
-2. **Decide the 528 holds** (§1, §1c) in the review app (`review_app/README.md`; Apply SOP rev 5):
+2. **Decide the 538 holds** (§1, §1c) in the review app (`review_app/README.md`; Apply SOP rev 6):
    `python scripts/pull_backend.py`, then
-   `python review_app/server.py --batches $(python -c "import json; print(' '.join(json.load(open('batches/2026-09-17_1017ET_sep-17-pass_combined/review_batches.json'))))")`
-   (the queue opens on the holds; batch 9 shows as already applied, still undoable). Then re-run
+   `python review_app/server.py --batches $(python -c "import json; print(' '.join('batches/'+d for d in json.load(open('batches/2026-09-17_1017ET_sep-17-pass_combined/review_batches.json'))))")`
+   (the queue opens on the holds; the manifest lists all twelve reviewable batches, 9 and 12 marked
+   applied — grayed, still undoable). The dataset was rebuilt over all twelve and the server restarted
+   2026-09-21 16:34 ET; press `↻ sync backend` after any batch rebuild or sheet edit. Then re-run
    `python scripts/apply_batch.py --batch batches/<dir>` for each batch the session summary lists.
    Editing `decisions.csv` by hand, or the combined workbook's `all_proposals` tab, still works. By batch:
-   1 → 38, 2 → 3, 3 → 5, **4 → 414**, 5 → 8, 8 → 24, 10 → 36; batches 6, 9, 11, 12 have none.
+   1 → 40, 2 → 3, 3 → 5, **4 → 414**, 5 → 6, 6 → 1, 8 → 35, 10 → 34; batches 9, 11, 12, 13 have none.
+   **Log ↔ csv mismatches (2026-09-21 audit):** batch 8 `Name` on row_ids 721 and 811 (live 11 and 20; and their batch 10
+   `Other names` lines) read `accept` in `decisions.csv` (set by later session commits at Baird's request)
+   while the latest `review_log.jsonl` record is Baird's `hold` — the app shows them undecided; the csv is
+   what applies. Re-clicking accept in the app aligns the log. **Linked pairs out of step:** 12 batch 10
+   `Other names` lines are held while the partner Name line is accepted — row_ids 6, 136, 138, 140, 142,
+   509, 510, 517 (batch 1 names; live 827, 1031, 1032, 1034, 1035, 1080, 1008, 935), 1062 (live 144),
+   924 (live 742) are G after the 2026-09-21 ref pass and only hold from the pre-fill; 263 (live 909) and
+   686 (live 88) are still Y. Batch 5's three Hull number refs (row_ids 121, 226, 230; live 771, 775, 776)
+   are G since 2026-09-21 and hold only from the pre-fill.
    Batch 4's 414 are all Y (single-source): 76 Price + 76 Price currency, 71 Operator/charterer,
    68 Contract date, 32 Cargo type, 20 IMO, 19 Hull number, 16 Capacity + 16 units, 10 Propulsion,
    9 Vessel type, 1 Shipowner. A blanket call ("accept Y contract dates", "leave Y prices") is
@@ -45,9 +56,30 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 
 ## Where things stand
 
+- **Bulk push 2026-09-21 17:04 ET (Claude, at Baird's directive "for anything with *batch suggests
+  accept* and ref(s) verified, accept and make the changes directly in the sheet"):** every undecided
+  line whose pre-fill was `accept` and whose every source read `✓ verified` in the app was clicked
+  accept through the running server (`via: bulk:batch-suggests-accept+refs-verified`, 1,268 lines:
+  1,173 verified + 95 companion `Price currency` / `Delivery delayed` / `Capacity units` lines decided
+  with their primary; a line whose linked partner is held was left undecided, both-or-neither), then
+  **push accepted** wrote **2,268 cells / 440 rows** and verified all of them (`push_log.jsonl` in
+  batches 1, 4, 6, 8, 10, 11, 13; 0 mismatches). Written: batch 8 871 cells, 4 486, 1 410, 10 256,
+  6 171, 11 48, 13 26. QC after: 8 LOW only; dedupe: the two pre-existing MED pairs (live 779 vs 943 /
+  1217). Left undecided on purpose: row 942 `Puteri Sarawak → Puteri Perlis` (batch 1; a real rename
+  with no `Other names` companion — RF §4.16, decide by hand), the 15 Names / 9 Vessel types whose
+  partner line is held, 4 Prices with an unchecked ref, and every line with no source, a `read by
+  hand` or `not checked` source (292 `Shipowner country/area` facts-table fills, batch 13's 28
+  `preserve_ref` hull restylings, yard-location cells). Discovery new rows stay by hand. Batches
+  11 and 13's sourced lines are fully in; 1, 4, 6, 8, 10 are partly in (their holds remain) — none
+  has a `verify_report.csv` yet, because `verify_apply.py` would count the un-clicked pre-fill
+  accepts as missing; close each batch after its holds are decided.
 - **Batch 9 is applied** (2026-09-17 19:00 ET, by Claude at Baird's request, through the Sheets
   API — 38 cells / 19 rows, `verify_apply.py`: 38 landed, 0 mismatch; QC after: 8 LOW, no
-  HIGH/MED). Nothing else has been applied. Baird edited the sheet by hand on 2026-09-17
+  HIGH/MED). **Batch 12 is applied** (2026-09-18, 58 cells; verify shows `.00` display-format
+  mismatches only). **Batch 5 is partly applied**: its 2 accepted Capacity refs (row_ids 415, 663)
+  landed 2026-09-18 (`verify_report.csv`, 2 landed) — the other 6 are still held, so the manifest marks
+  it `applied: false`. Batch 6 row_id 6's IMO ref and the five `Greenergy` names (live 780, 781, 912,
+  914, 915) are also in the sheet by hand edit. Nothing else has been applied. Baird edited the sheet by hand on 2026-09-17
   evening (~18:00 ET): the three Woodside duplicates were deleted (their names moved to
   `Other names` on the Seapeak rows) and `Hull H1955A` / `Hull H1957A` / `Hanwha Philly 2` moved
   from rows 1130–1132 to 1201–1203. Now 1,217 rows (822 active / 364 on order / 31 proposed).
@@ -88,12 +120,12 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 | 2 | `0458ET_fix_delivery_confirmed` | rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 0 / 3 |
 | 3 | `0431ET_discovery_since_jun_2026` | 12 new vessels in 5 clusters | 7 / 5, plus 10 backend flags |
 | 4 | `0511ET_data_fill_on_order` | 1,003 cells / 483 rows, incl. 48 order-total Prices (accepted 2026-09-17) | 589 / 414 |
-| 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives | 0 / 8 |
-| 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | all accept |
+| 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives; 3 hull refs Y→G with IGU PDFs 2026-09-21; **2 accepted refs applied 2026-09-18** | 2 / 6 |
+| 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | 173 / 1, 1 reject |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
 | 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs; + 42 delivery-history lines for the 21 years that move later (RF §4.19, 2026-09-21); the 10 Vessel type Rule-F refs **withdrawn** 2026-09-21 — IGU 2026 does not print those vessels (live rows 61, 487, 488, 994, 1118, 1169, 1179–1182; now manual-review) — 497 proposals | 462 / 35, plus 18 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | **APPLIED 2026-09-17** — 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
-| 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names`; **rebuilt 2026-09-18** with every IGU 2026 `(ex-…)` name (RF §4.17) and yard-tagged hulls — 160 cells / 160 rows, 136 carry a gated ref | 125 / 35 |
+| 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names`; **rebuilt 2026-09-18** with every IGU 2026 `(ex-…)` name (RF §4.17) and yard-tagged hulls — 162 cells / 162 rows; 23 lines got IGU PDF refs 2026-09-21 (Y→G) | 128 / 34 |
 | 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |
 | 12 | `1810ET_fix_price_full_usd` | **APPLIED 2026-09-18** — Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref`); `$m` dropped from the vocab. 8 Prices still cite the bare word `clarkson` (live rows 965, 1049–1053, 1083, 1203) — to re-source | 58 / 0 |
 | 13 | `2005ET_fix_igu2026_hulls` | RF §4.17: IGU `Name (hull)` → 13 blank Hull numbers filled + 28 untagged hulls yard-tagged; placeholder-name matches all already in batches 1 / 8; 6 yard conflicts flagged (Samho vs Ulsan ×4, row 941 SHI vs Samho) | 41 / 0 |
@@ -123,7 +155,8 @@ Edit the `hold` rows in each batch's `decisions.csv`, then re-run
       no Capacity). Batch 4's Y type fills on IGU-listed rows are re-proposed there as G.
 - [x] **Price convention — decided 2026-09-17: always full US dollars + `USD`.** Batch 12 converts
       the 29 `$m` rows. (Shipvault contract prices were left unused — single-source.)
-- [ ] **`Greenenergy …` names** look wrong — shipvault and AIS both say `Greenergy`.
+- [x] **`Greenenergy …` names** — Baird fixed them in the sheet by hand (`Greenergy`, live rows 780,
+      781, 912, 914, 915; confirmed in the 2026-09-21 pull).
 - [ ] **Manual-review rows**: `…rollforward/manual_review.json` (54) and
       `…delivery_confirmed/manual_review.json` (24 unconfirmed). Mostly ships AIS-live while
       shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls (status
@@ -141,7 +174,8 @@ Edit the `hold` rows in each batch's `decisions.csv`, then re-run
       `decisions.csv` carries 589 accept / 414 hold.)
 - [x] **48 order-total Prices** in batch 4 (total ÷ N, Y max) — **accepted 2026-09-17**, with their
       48 `Price currency` cells; `apply_batch.py` re-run.
-- [ ] **Batch 5**: 8 Rule-F refs on hold.
+- [ ] **Batch 5**: 6 Rule-F refs still on hold (2 Capacity refs accepted and applied 2026-09-18); the
+      3 Hull number refs are G since 2026-09-21 and only hold from the pre-fill.
 
 ## 1b. IGU 2026 intercomparison — decisions it opens
 
@@ -253,7 +287,7 @@ In the DRY_RUN log, `would set` must equal the `set` count and there should be n
 - [ ] Batch 2 — apply + verify
 - [ ] Batch 3 — apply + verify
 - [ ] Batch 4 — apply + verify
-- [ ] Batch 5 — apply + verify
+- [ ] Batch 5 — 2 of 8 cells applied 2026-09-18 (`verify_report.csv`: 2 landed); the rest wait on the holds.
 - [ ] Batch 6 — apply via `apply_patch.csv` (not full rows) + verify
 - [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
       agree in value) + verify. After batch 6: both touch row 814's Status `[ref]`.
@@ -262,11 +296,11 @@ In the DRY_RUN log, `would set` must equal the `set` count and there should be n
       `scrapped` and row 61 is an FSU. Map fleet re-exported (`../lng-carriers-map` branch
       `fleet-row61-fsu`, 59 vessels — not pushed; `data/imo_mmsi.csv` still lacks IMO 9211872
       because `fetch_mmsi.py` scrapes vesselfinder and the IP ban is still in force at 19:00 ET).
-- [ ] Batch 11 — apply via `apply_patch.csv` + verify (any order; no shared cells).
-- [ ] Batch 12 — apply via `apply_patch.csv` + verify (any order; no shared cells). Then drop `$m`
-      from the Price currency vocabulary (`scripts/lookups.py`, `data/controlled_vocab.md`). Set
-      the sheet's Price column to a plain number format first: it shows `2.53E+08` today and the
-      formatted pull loses digits (see the batch `notes.md`).
+- [x] Batch 11 — **pushed 2026-09-21 17:04 ET** (48 cells, review-app push; `push_log.jsonl`). Run `verify_apply.py --pull` to close.
+- [x] Batch 12 — **applied 2026-09-18** (58 cells; `verify_report.csv`: 29 landed / 29 MISMATCH that
+      are `.00` display format only). `$m` dropped from the vocabulary.
+- [ ] Batch 13 (`2026-09-18_2005ET_fix_igu2026_hulls`, 41 accept) — 13 sourced hull fills **pushed 2026-09-21**
+      (26 cells); the 28 `preserve_ref` restylings (no source line) still need a click. Added to the review manifest 2026-09-21.
 - [ ] Batch 10 — apply **last, via `apply_patch.csv` only** (its full rows are built from the
       live backend and would revert the Names of 1, 2 and 8) + verify. Decide each `Other names`
       line with its Name line: a rejected rename takes its former-name line with it; a released
