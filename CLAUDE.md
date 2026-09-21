@@ -13,9 +13,9 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/sops/qc_release.md` — the **pre-release QC** workflow: whole-backend consistency/corruption sweep before a data release, the authoritative Name-column placeholder conventions, and the `fix`-mode correction batch (incl. the `preserve_ref` escape hatch). **Authoritative.**
 - `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
 - `docs/pointers.md` — "which SOP section governs X" index.
-- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`; `2026-09-18_review-app.md` (build spec for the review app; phase 1 built, phase 2 — Apps Script — not started).
+- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`; `2026-09-18_review-app.md` (build spec for the review app; phase 1 built and in use, phase 2 — Apps Script — planned 2026-09-21, not started).
 - `docs/inclusion_criteria.md` — what's in scope vs out.
-- `review_app/` — the review app: the recommended surface for deciding a batch's holds (replaces the combined xlsx). Local, loopback-only; deciding writes only the `decision` column of `decisions.csv` + `review_log.jsonl`; its **push accepted** button is the one script path that writes the backend sheet (AP §2b — listed cells, confirmed once in the app). Entry points (`review_data.py`, `server.py`, `suggestions.py`) are documented in `review_app/README.md`, not in the Scripts table. Imports from `scripts/`, never the reverse.
+- `review_app/` — the review app: the recommended surface for deciding a batch's holds (replaces the combined xlsx). Local, loopback-only; deciding writes only the `decision` column of `decisions.csv` + `review_log.jsonl`; its **push changes** button is the one script path that writes the backend sheet (AP §2b — accepted lines + gated suggestions, listed cells, confirmed once in the app). Entry points (`review_data.py`, `server.py`, `suggestions.py`) are documented in `review_app/README.md`, not in the Scripts table. Imports from `scripts/`, never the reverse.
 - `data/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
 - `data/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
 - `data/source_roster.md` — source tier list for picking corroboration URLs.
@@ -339,7 +339,8 @@ Governed by `docs/sops/apply.md` step 2 / §3 / §2b (AP rev 6); usage in `revie
 # Run from the repo root.
 python scripts/pull_backend.py                                  # fresh pull (review_data refuses without one)
 python review_app/server.py --batches batches/<dir> [<dir> ...]  # builds work/review_data.json, serves 127.0.0.1:8765
-# Suggested values (stored as reject + a `suggest` log record) -> a fix batch, QC-SOP path:
+# Suggested values (stored as reject + a `suggest` log record) are pushed by "push changes" once their refs
+# pass §3.8c; the ones it lists as not pushed -> a fix batch, QC-SOP path:
 python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
 #   also -> work/review_suggestions_fix_notes.md: the reviewer's notes as a to-do list. Nothing acts on
 #   a note by itself — read each one and follow it up before building the fix batch.
@@ -347,11 +348,12 @@ python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work
 
 The `↻ sync backend` button re-pulls the backend and rebuilds in place; a held line the backend
 already holds becomes `accept` and an open item it resolves becomes `resolved` (logged as
-`backend sync`). The `⇪ push accepted` button (AP §2b, `review_app/push.py`) writes accepted
-value / `[ref]` lines into the sheet: it lists every cell (live row, column, old → new), and one
+`backend sync`). The `⇪ push changes` button (AP §2b, `review_app/push.py`) writes accepted
+value / `[ref]` lines and the reviewer's suggestions (value + the refs typed with it, each gated
+against the suggested value by `igu_refs.corroborates_cell` at plan time; no passing ref → listed
+as not pushed) into the sheet: it lists every cell (live row, column, old → new), and one
 confirmation in the app writes that plan through the `gws-gem-write` profile, verifies it and
-appends `<dir>/push_log.jsonl`. New rows, conflicts and suggestions stay by hand; reject writes
-nothing. **That confirmation is Baird's, in the browser — never call `/api/push`, `push.write_sheet`
+appends `<dir>/push_log.jsonl`. New rows and conflicts stay by hand; reject writes nothing. **That confirmation is Baird's, in the browser — never call `/api/push`, `push.write_sheet`
 or `App.push` from a session, a script or a test against the live sheet.** Deciding itself never
 touches the backend: it writes the `decision` cell of `decisions.csv`, appends
 `<dir>/review_log.jsonl` (commit it with the batch), and on the Items tab `review_items.jsonl` +
@@ -391,7 +393,7 @@ existing vessel (apply.md §5a). Run standalone any time: `python scripts/dedupe
 
 ## Hard requirements (these override anything below)
 
-- **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited. The single exception is the review app's **push accepted** (AP §2b), which Baird triggers and confirms in the app himself; Claude never triggers it.
+- **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited. The single exception is the review app's **push changes** (AP §2b), which Baird triggers and confirms in the app himself; Claude never triggers it.
 - **Never propose deleting the row of a vessel that leaves service.** It keeps its row and changes Status — a scrapped vessel moves to `scrapped` (Baird directive 2026-09-17; `docs/inclusion_criteria.md`, IG §5.2). The inclusion criteria govern what gets *added*. **The rule does not extend to duplicates** (Baird 2026-09-17): the same vessel entered twice is not a vessel leaving the fleet, and the duplicate row *is* removed — flag it (dedupe sweep, apply.md §5a), and Baird deletes it by hand in the sheet, carrying a placeholder name worth keeping into the surviving row's `Other names` (as with `Woodside Energy 01`–`03` → the Seapeak rows).
 - **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in prior batches — URLs decay.
 - **Never cite GEM as a data source** — this includes `gem.wiki` and any other GEM-published page or dataset, as a `[ref]` URL or as corroboration ([ref]-Fill SOP §4.2; Forbidden lists in `docs/sops/ref_fill.md` and `data/source_roster.md`). GEM is downstream of this tracker, so citing it would be circular.
