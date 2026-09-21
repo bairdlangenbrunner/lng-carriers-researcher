@@ -12,7 +12,13 @@ decisions.csv line still says `reject` (suggest is stored as reject). Each becom
 original's, `note` = reviewer + note. `cosmetic` -> `preserve_ref: true`, no refs.
 
 Not emitted, reported instead: discovery (new-row) and ref-only lines. Read-only over the
-batch dirs and the backend; writes only --out.
+batch dirs and the backend; writes only --out and the notes file beside it.
+
+A reviewer's note is an instruction nothing here acts on ("wrong ship, check the IMO", "find a
+better source"): the script only carries it into the cell's `note`. So every suggestion with a
+note — emitted or not — is also listed as a to-do, printed and written to
+`<out stem>_notes.md`, for the session building the fix batch to read and follow up before it
+builds.
 """
 import argparse
 import json
@@ -85,12 +91,22 @@ def collect(batch_dirs, backend_path=None, info_path=None):
             if rec.get("decision") == "suggest" and p and p["decision"] != "suggest":
                 reports.append(("superseded", p, f"decisions.csv now says {p['decision']}"))
     cells = {}   # (row_id, field) -> (apply_order, proposal, cell)
+    notes = []   # every suggestion carrying a reviewer note: the to-do list
     for key in sorted(cur["proposals"]):
         p = cur["proposals"][key]
         if p["decision"] != "suggest":
             continue
         rec = p["last"]
         cell, rep = cell_for(p, modes[p["batch"]], rec)
+        if (rec.get("note") or "").strip():
+            v = live.get(p["row_id"], {})
+            notes.append({"key": key, "batch": p["batch"], "row_id": p["row_id"],
+                          "live_row": v.get("live_row"), "name": v.get("name", ""),
+                          "column": p["column"] or "new row", "proposed": p["proposed"],
+                          "suggested": rec.get("suggested_value", ""),
+                          "kind": rec.get("suggest_kind") or "value", "note": rec["note"].strip(),
+                          "reviewer": rec.get("reviewer", ""), "ts": rec.get("ts", "")[:16],
+                          "emitted": bool(cell)})
         if rep:
             reports.append((rep[0], p, rep[1]))
         if not cell:
@@ -121,7 +137,23 @@ def collect(batch_dirs, backend_path=None, info_path=None):
                      "is rejected in its decisions.csv). Each value is re-gated here (§3.8c) against the "
                      "original proposal's refs; cosmetic suggestions keep the paired [ref] (QC §4).",
            "corrections": corrections}
-    return fix, reports
+    notes.sort(key=lambda n: (n["live_row"] is None, n["live_row"] or 0, n["row_id"], n["column"]))
+    return fix, reports, notes
+
+
+def notes_md(notes):
+    """The reviewer notes as a to-do list (markdown), led by the live sheet row."""
+    out = ["# Review suggestions — reviewer notes to follow up", "",
+           "Each note is an instruction from the reviewer that no script acts on. Read each one and",
+           "follow it up (research, a different ref, a corrected cell in the fix.json) before building",
+           "the fix batch; tick it off here.", ""]
+    for n in notes:
+        where = f"row {n['live_row']}" if n["live_row"] else f"row_id {n['row_id'] or '—'}"
+        out.append(f"- [ ] **{where} · {n['name'] or '(no name)'} · {n['column']}** — {n['note']}")
+        out.append(f"  - suggested {n['suggested']!r} ({n['kind']}) instead of {n['proposed']!r}"
+                   + ("" if n["emitted"] else " — **not emitted**: no cell carries this, handle it by hand"))
+        out.append(f"  - {n['reviewer']}, {n['ts']} · `{n['key']}`")
+    return "\n".join(out) + "\n"
 
 
 def main(argv=None):
@@ -133,7 +165,7 @@ def main(argv=None):
     args = ap.parse_args(argv)
     batch_dirs = review_data.resolve_dirs(args.batches)
     review_data.check_backend(args.backend)
-    fix, reports = collect(batch_dirs, args.backend, args.info)
+    fix, reports, notes = collect(batch_dirs, args.backend, args.info)
     out = Path(args.out) if args.out else work_dir() / "review_suggestions_fix.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(fix, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -148,6 +180,17 @@ def main(argv=None):
             print(f"\n{head} ({len(rows)}):")
             for p, t in rows:
                 print(f"  {p['batch']} · {p['column'] or 'new row'} · row_id {p['row_id']}: {t}")
+    notes_path = out.with_name(out.stem + "_notes.md")
+    if notes:
+        notes_path.write_text(notes_md(notes), encoding="utf-8")
+        print(f"\nreviewer notes to follow up ({len(notes)}) -> {notes_path}")
+        print("  nothing acts on these: read each and follow it up before building the fix batch")
+        for x in notes:
+            where = f"row {x['live_row']}" if x["live_row"] else f"row_id {x['row_id'] or '—'}"
+            print(f"  [ ] {where} · {x['name'] or '(no name)'} · {x['column']}: {x['note']}"
+                  + ("" if x["emitted"] else "  (not emitted)"))
+    elif notes_path.exists():
+        notes_path.unlink()      # a stale list from an earlier run
     if n:
         print("\nnext (QC SOP, nothing new):")
         if any(c["field"] == "Name" and not c.get("preserve_ref") for corr in fix["corrections"] for c in corr["cells"]):

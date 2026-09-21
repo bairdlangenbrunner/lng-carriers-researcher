@@ -140,6 +140,13 @@ cell first and writes on one confirmation.
    python scripts/recalc.py batches/<dir>/lng_carrier_fix.xlsx
    ```
 
+   **Reviewer notes are a to-do list.** No script acts on a suggestion's note ("wrong ship, check
+   the IMO", "find a better source") — it is only copied into the cell's `note`. So
+   `suggestions.py` also prints every suggestion's note, led by the live sheet row, and writes
+   them as a checklist to `work/review_suggestions_fix_notes.md`. The session building the fix
+   batch reads each one and follows it up (research, another ref, a corrected cell in the
+   `fix.json`) **before** `build_workbook.py`; copy the checklist into the batch dir's `notes.md`.
+
    A suggestion = latest log record `suggest` while the csv line still says `reject` (a later
    decision or a hand edit supersedes it). Each cell keeps the original proposal's refs and
    confidence, and `build_workbook.py`'s §3.8c gate is the re-gate. `cosmetic` → `preserve_ref`
