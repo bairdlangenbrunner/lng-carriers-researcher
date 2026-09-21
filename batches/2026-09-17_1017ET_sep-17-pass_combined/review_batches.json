@@ -17,7 +17,8 @@
  },
  "2026-09-17_0505ET_ref_fill_rule_f": {
   "label": "5 \u00b7 Rule-F ref fill",
-  "apply_order": 5
+  "apply_order": 5,
+  "applied": false
  },
  "2026-09-17_1114ET_shipvault_companion_refs": {
   "label": "6 \u00b7 shipvault companion refs",
@@ -39,5 +40,14 @@
  "2026-09-17_1809ET_fix_qcmax_vessel_type": {
   "label": "11 \u00b7 Vessel type qc-max",
   "apply_order": 11
+ },
+ "2026-09-17_1810ET_fix_price_full_usd": {
+  "label": "12 \u00b7 Price in full USD",
+  "apply_order": 12,
+  "applied": true
+ },
+ "2026-09-18_2005ET_fix_igu2026_hulls": {
+  "label": "13 \u00b7 IGU hull numbers",
+  "apply_order": 13
  }
 }
