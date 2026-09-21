@@ -68,7 +68,9 @@ cell first and writes on one confirmation.
    the backend; it never writes it.
 
    **Push accepted** (the `⇪ push accepted` button; `POST /api/push/plan`, `POST /api/push`;
-   `push.py`). Never on a click of `accept`. The server re-pulls, then plans: every cell the
+   `push.py`). Never on a click of `accept` — and only for lines someone did click accept on
+   (latest `review_log.jsonl` record is a reviewer's accept; a pre-filled or backend-sync accept
+   is counted in the dialog and not pushed). The server re-pulls, then plans: every cell the
    accepted lines would change — the same cells `apply_patch.csv` carries
    (`apply_batch.cell_writes`), laid over the pull in apply order — and the dialog lists them by
    batch (live row, vessel, column, now → becomes). One confirmation writes exactly that plan: it
@@ -84,6 +86,14 @@ cell first and writes on one confirmation.
    and written only when the box is ticked. Reject and hold write nothing, and a reject never
    reverts a cell. A push does not write `verify_report.csv`: run `verify_apply.py --pull` to
    close the batch (dedupe sweep included).
+
+   **Card links and Back.** On a card, the vessel name, IMO, shipbuilder and shipowner are links:
+   a click filters the queue to just that (every other filter cleared, decision `any`), so a
+   name or IMO shows everything queued for the vessel. The tab, the filters and the selected
+   vessel live in `location.hash`: a changed tab or filter is a history entry (moving between
+   vessels and typing on in the search box replace it), so the browser's Back / Forward walk the
+   filter history and a reload or bookmark returns to the same view. Only the view is restored —
+   decisions are saved as they are made and stay.
 
    **Bulk.** The status bar's "apply to all N filtered" (accept / hold / reject) always confirms
    first, restating the filter and how many lines change; records carry `via: "bulk:<filter>"`.

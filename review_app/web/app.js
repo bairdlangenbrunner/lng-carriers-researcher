@@ -237,6 +237,7 @@
     if (keep !== D.vessels[S.vessel]) S.line = null;
     renderCard();
     renderProgress();
+    writeRoute();
   }
   function renderProgress() {
     var holds = 0, total = 0;
@@ -274,6 +275,7 @@
     renderCard();
     var sel = $("vessels").querySelector("li.sel");
     if (sel) sel.scrollIntoView({block: "nearest"});
+    writeRoute();
   }
 
   // Linked groups within one vessel: union of each line's links, emitted at first member.
@@ -614,7 +616,29 @@
     }).catch(function () { S.undo.push(prev); });
   }
 
+  // A name / IMO / builder / owner on the card: filter the queue to just that (every other
+  // filter cleared, decision "any"). Back returns to the filter that was set before.
+  function only(filter, value, text, title) {
+    return '<a href="#" class="only" data-only="' + filter + '" data-value="' + esc(value) +
+      '" title="show only: ' + esc(title) + '">' + esc(text) + "</a>";
+  }
+  function filterOnly(filter, value) {
+    var keep = D.vessels[S.vessel];
+    F.forEach(function (f) { $("f-" + f).value = ""; });
+    $("f-mine").checked = false;
+    $("f-text").value = "";
+    $("f-" + filter).value = value;
+    PUSH = true;
+    refilter();
+    var i = D.vessels.indexOf(keep);
+    if (S.visible.indexOf(i) >= 0 && i !== S.vessel) selectVessel(i);
+  }
   function onCardClick(e) {
+    var o = e.target.closest("a[data-only]");
+    if (o) {
+      e.preventDefault();
+      return filterOnly(o.getAttribute("data-only"), o.getAttribute("data-value"));
+    }
     var w = e.target.closest("button[data-why]");
     if (w) { S.open["why:" + w.getAttribute("data-why")] = true; return renderCard(); }
     var sg = e.target.closest("button[data-suggest]");
@@ -637,9 +661,13 @@
       return;
     }
     var v = D.vessels[S.vessel], st = filterState();
-    var h = "<h2>" + esc(v.name || "(no name)") + "</h2><div class=\"ctx\">" +
-      ["<b>" + esc(rowLabel(v)) + "</b>", v.imo && "IMO " + esc(v.imo), v.status && esc(v.status),
-       v.shipbuilder && esc(v.shipbuilder), v.hull && "hull " + esc(v.hull), v.shipowner && esc(v.shipowner),
+    var h = "<h2>" + (v.name ? only("text", v.name, v.name, "everything in the queue for this name") : "(no name)") +
+      "</h2><div class=\"ctx\">" +
+      ["<b>" + esc(rowLabel(v)) + "</b>",
+       v.imo && only("text", v.imo, "IMO " + v.imo, "everything in the queue for this IMO"), v.status && esc(v.status),
+       v.shipbuilder && only("builder", v.shipbuilder, v.shipbuilder, "every line on this shipbuilder's vessels"),
+       v.hull && "hull " + esc(v.hull),
+       v.shipowner && only("owner", v.shipowner, v.shipowner, "every line on this shipowner's vessels"),
        v.delivery_year && "delivery " + esc(v.delivery_year),
        !v.new && !v.in_backend && '<span class="chip warn">row no longer in backend</span>']
         .filter(Boolean).map(function (x) { return "<span>" + x + "</span>"; }).join("") + "</div>";
@@ -1052,7 +1080,67 @@
     ["queue", "items", "summary"].forEach(function (n) { $("tab-" + n).hidden = n !== name; });
     if (name === "items") renderItems();
     if (name === "summary") renderSummary();
+    writeRoute();
   }
+
+  // ---- routing: tab + filters + vessel live in location.hash, so Back / Forward walk the
+  // filter history. Only the view is restored — decisions are saved as they are made and stay.
+  // A changed tab or filter pushes an entry; moving between vessels (and typing on in the
+  // search box) replaces it, so Back is one step per filter, not per keystroke or vessel.
+  var ROUTING = false;      // true while a route is being applied: nothing is written back
+  var PUSH = false;         // the next write is a new entry whatever changed (a card link)
+  function vesselId(v) { return v ? (v.row_id || "c:" + v.batch + ":" + v.cluster_id) : ""; }
+  function activeTab() {
+    var t = document.querySelector(".tab.active");
+    return t ? t.getAttribute("data-tab") : "queue";
+  }
+  function routeParts() {
+    var q = ["tab=" + activeTab()];
+    F.forEach(function (f) { q.push(f + "=" + encodeURIComponent($("f-" + f).value)); });
+    if ($("f-mine").checked) q.push("mine=1");
+    return {view: q.join("&"), text: $("f-text").value, v: vesselId(D.vessels[S.vessel])};
+  }
+  function parseRoute(hash) {
+    var o = {};
+    hash.replace(/^#/, "").split("&").forEach(function (kv) {
+      var i = kv.indexOf("=");
+      if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1));
+    });
+    return o;
+  }
+  function writeRoute() {
+    if (ROUTING || !D) return;
+    var r = routeParts();
+    var hash = "#" + r.view + "&text=" + encodeURIComponent(r.text) + "&v=" + encodeURIComponent(r.v);
+    if (hash === location.hash) return;
+    var was = history.state || {};
+    var push = was.view != null && (PUSH || was.view !== r.view || (was.text !== r.text && (!was.text || !r.text)));
+    PUSH = false;
+    history[push ? "pushState" : "replaceState"]({view: r.view, text: r.text}, "", hash);
+  }
+  function applyRoute() {
+    var o = parseRoute(location.hash);
+    ROUTING = true;
+    try {
+      F.forEach(function (f) {
+        var sel = $("f-" + f), want = o[f] != null ? o[f] : (f === "decision" ? "hold" : "");
+        sel.value = want;
+        if (sel.value !== want) sel.value = "";        // a batch / builder no longer in the dataset
+      });
+      $("f-mine").checked = o.mine === "1";
+      $("f-text").value = o.text || "";
+      showTab(o.tab && $("tab-" + o.tab) ? o.tab : "queue");
+      refilter();
+      if (o.v) {
+        var i = -1;
+        D.vessels.forEach(function (v, n) { if (vesselId(v) === o.v) i = n; });
+        if (S.visible.indexOf(i) >= 0 && i !== S.vessel) selectVessel(i);
+      }
+    } finally { ROUTING = false; }
+    var r = routeParts();
+    history.replaceState({view: r.view, text: r.text}, "", location.hash || "#" + r.view);
+  }
+  window.addEventListener("popstate", applyRoute);
 
   function banner(msg, ok) {
     var b = $("banner");
@@ -1152,13 +1240,18 @@
     var batch = $("f-batch").value;      // the Batch filter scopes the push
     var scope = batch ? " of batch " + ((D.batches.filter(function (x) { return x.dir === batch; })[0] || {}).label || batch) : "";
     Store.pushPlan(batch).then(function (plan) {
-      var n = plan.writes.length, m = plan.applied_writes.length, k = plan.skipped.length;
+      var n = plan.writes.length, m = plan.applied_writes.length, k = plan.skipped.length, u = plan.unclicked || 0;
+      // only a clicked accept is pushed; a pre-filled accept nobody clicked is left alone
+      var unclicked = u ? u + " pre-filled accept" + (u === 1 ? "" : "s") + " nobody clicked " +
+        (u === 1 ? "is" : "are") + " not pushed — click accept on a line to push it." : "";
       if (!n && !m) {
-        return reload("Nothing to push: every accepted line" + scope + " is already in the backend" +
-          (k ? " (" + k + " accepted line" + (k === 1 ? " stays" : "s stay") + " on the by-hand path)." : "."), true);
+        return reload("Nothing to push: every line you accepted" + scope + " is already in the backend" +
+          (k ? " (" + k + " accepted line" + (k === 1 ? " stays" : "s stay") + " on the by-hand path)." : ".") +
+          (unclicked ? " " + unclicked : ""), true);
       }
       var html = '<h3>Push accepted lines' + esc(scope) + ' to the backend sheet</h3>' +
-        '<p>' + n + ' cell' + (n === 1 ? "" : "s") + ' will be written to the live sheet. Rejects and holds write nothing.' +
+        '<p>' + n + ' cell' + (n === 1 ? "" : "s") + ' will be written to the live sheet — only lines someone clicked accept on. Rejects and holds write nothing.' +
+        (unclicked ? " " + esc(unclicked) : "") +
         (batch ? "" : " Pick a batch in the Batch filter first to push one batch at a time.") + '</p>' +
         '<div class="planbox">' + planTable(plan.writes) +
         (m ? '<details><summary>' + m + ' more from batches already applied — the sheet differs, likely a later hand edit</summary>' +
@@ -1195,6 +1288,6 @@
     $("whoami").textContent = ME;
     adopt(r[0]);
     initFilters();
-    refilter();
+    applyRoute();            // a reload or a bookmarked link comes back to the same view
   }).catch(function (e) { banner("Could not load the review data: " + e.message); });
 })();

@@ -395,6 +395,9 @@ def pushing(running, tmp_path):
         for w in writes:
             edit_backend(backend, w["row_id"], **{w["column"]: w["new"]})
     app.write = write
+    # only a clicked accept is pushed: click every line apply_batch pre-filled as accept
+    pre = [k for k, p in app.current()["proposals"].items() if p["decision"] == "accept"]
+    assert post(base, [{"key": k, "decision": "accept"} for k in pre])[0] == 200
     return base, app, b, backend, sent
 
 
@@ -492,3 +495,16 @@ def test_push_scoped_to_one_batch(pushing):
     out = post_json(base, "/api/push", {"token": plan["token"], "batch": b["data_fill"].name})[1]
     assert out["written"] == 3
     assert {k[0] for k in cells(post_json(base, "/api/push/plan", {})[1])} == {"10"}
+
+
+def test_push_leaves_an_accept_nobody_clicked(running, tmp_path):
+    base, app, b = running
+    app.backend_path, app.pull = tmp_path / "backend.csv", lambda: None
+    plan = post_json(base, "/api/push/plan", {})[1]
+    assert plan["writes"] == [] and plan["unclicked"] > 0           # pre-filled accepts only
+    n = plan["unclicked"]
+    assert post(base, [{"key": f"{b['fix_a'].name}::10|Name", "decision": "accept"}])[0] == 200
+    plan = post_json(base, "/api/push/plan", {})[1]
+    assert set(cells(plan)) == {("10", "Name"), ("10", "Name [ref]")} and plan["unclicked"] == n - 1
+    assert post(base, [{"key": f"{b['fix_a'].name}::10|Name", "decision": "hold"}])[0] == 200
+    assert post_json(base, "/api/push/plan", {})[1]["writes"] == []

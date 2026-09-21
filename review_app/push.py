@@ -8,7 +8,12 @@ server pulls again, recomputes, and refuses when the plan is no longer the one t
 (the sheet or a decision changed in between). After the write it pulls once more and verifies
 every cell, as verify_apply.py does.
 
-What is pushed: accepted value / [ref] lines, computed by apply_batch.cell_writes — the same
+Only a line a reviewer clicked accept on is pushed: its latest review_log.jsonl record is an
+accept by a person. An accept that apply_batch pre-filled by confidence, one typed into
+decisions.csv, or one the backend sync set was never clicked — it is counted (`unclicked`) and
+left alone.
+
+What is pushed: clicked-accept value / [ref] lines, computed by apply_batch.cell_writes — the same
 cells apply_patch.csv would carry — laid over the pull in apply order, so a later batch's value
 wins and appended refs accumulate. What is not (they stay on the Apply SOP's by-hand path):
 discovery new rows, conflicts, suggestions (stored as reject; they arrive through a fix batch),
@@ -66,8 +71,15 @@ def token(writes):
     return hashlib.sha256(json.dumps(doc, ensure_ascii=False).encode("utf-8")).hexdigest()[:16]
 
 
+def clicked(p):
+    """A reviewer clicked accept on this line: its latest log record is a person's accept."""
+    rec = p.get("last")
+    return bool(rec) and rec.get("decision") == "accept" and rec.get("reviewer") != store.SYNC_REVIEWER
+
+
 def plan(data, dirs, backend_path=None, batch=None):
-    """{"writes": [...], "applied_writes": [...], "skipped": [...], "token", "token_all"} against
+    """{"writes": [...], "applied_writes": [...], "skipped": [...], "unclicked": n, "token",
+    "token_all"} against
     the backend csv as pulled. Read-only. `batch` (a dir name) keeps only that batch's cells —
     every batch is still laid over the pull, so a cell a later batch also sets belongs to the
     later batch and is left to its push."""
@@ -80,6 +92,7 @@ def plan(data, dirs, backend_path=None, batch=None):
     name_i = H.get("Name")
 
     source, skipped = {}, []      # (row_id, column) -> the line that last set it
+    unclicked = 0                 # accept in decisions.csv, never clicked, not yet in the backend
 
     def skip(key, p, why):
         skipped.append({"key": key, "batch": p["batch"], "row_id": p["row_id"],
@@ -94,6 +107,10 @@ def plan(data, dirs, backend_path=None, batch=None):
             key = f"{b['dir']}::{it['id']}"
             p = current.get(key)
             if not p or p["decision"] != "accept":
+                continue
+            if not clicked(p):
+                if "in_backend" not in p["flags"] and (not batch or b["dir"] == batch):
+                    unclicked += 1
                 continue
             if it["kind"] == "new_row":
                 if "in_backend" not in p["flags"]:
@@ -134,7 +151,8 @@ def plan(data, dirs, backend_path=None, batch=None):
     applied_writes.sort(key=order)
     if batch:
         skipped = [x for x in skipped if x["batch"] == batch]
-    return {"writes": writes, "applied_writes": applied_writes, "skipped": skipped, "batch": batch,
+    return {"writes": writes, "applied_writes": applied_writes, "skipped": skipped,
+            "unclicked": unclicked, "batch": batch,
             "token": token(writes), "token_all": token(writes + applied_writes)}
 
 

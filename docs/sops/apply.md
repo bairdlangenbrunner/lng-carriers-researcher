@@ -103,6 +103,10 @@ overlap problem does not arise.
   column, now → becomes). The confirmation is bound to that plan: the server re-pulls and
   recomputes before writing and refuses a plan that changed. This confirmation is the human
   edit of §7 — nothing is written on a click of `accept`.
+- **Clicked accepts only** (Baird 2026-09-21). A line is pushed only when its latest
+  `review_log.jsonl` record is a reviewer's accept. An accept `apply_batch.py` pre-filled by
+  confidence, one typed into `decisions.csv`, or one the backend sync set was never clicked:
+  the dialog counts these and leaves them alone.
 - **Value / `[ref]` lines only.** Discovery new rows, conflicts and suggestions stay on paths
   (a) / (b) and §4. A data-fill or ref-fill value is written only into a blank or `unknown`
   cell; otherwise it is listed as not pushed (it is a conflict).

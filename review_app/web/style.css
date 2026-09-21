@@ -210,3 +210,7 @@ table.plan { border-collapse: collapse; width: 100%; font-size: 14px; }
 table.plan th, table.plan td { text-align: left; vertical-align: top; padding: 3px 8px 3px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 table.plan td.old { color: var(--muted, inherit); opacity: 0.75; }
 table.plan td.new { font-weight: 600; }
+
+/* card header: name / IMO / builder / owner filter the queue to just that */
+a.only { color: inherit; text-decoration: none; border-bottom: 1px dotted currentColor; cursor: pointer; }
+a.only:hover { color: var(--accent, inherit); border-bottom-style: solid; }
