@@ -77,15 +77,16 @@
    "cells": [
     {
      "field": "Name",
-     "new_value": "Karadeniz LNGT Americas",
+     "new_value": "KLNGTP Americas",
      "confidence": "Y",
      "refs": [
       {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "url": "https://www.vesseltracker.com/en/Ships/Klngtp-Americas-9045132.html",
        "soft": false
       }
      ],
-     "note": "'LNGT Americas' -> 'Karadeniz LNGT Americas': IGU restyling of a Karadeniz name — label choice [IGU 2026 Appendix 3 fleet table, PDF p.71; IMO 9045132; sole source per Baird ruling 2026-09-17]"
+     "note": "'LNGT Americas' -> 'KLNGTP Americas': vesseltracker.com (live AIS name, IMO 9045132), matching the backend's KLNGTP Black Sea / KLNGTP Marmara; shipvault prints 'Karadeniz LNGT P Americas', marinetraffic.org 'Karadeniz LNGT Powership Americas' — none prints IGU's 'Karadeniz LNGT Americas', which goes to Other names. No database prints the backend's 'LNGT Americas' — reject to keep it [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]",
+     "former_name": "LNGT Americas"
     }
    ]
   },
@@ -105,44 +106,6 @@
       }
      ],
      "note": "renamed / restyled since the load: 'Puteri Intan' -> IGU 2026 'American Energy (ex-Puteri Intan)' (IGU 2025: 'Puteri Intan') [IGU 2026 Appendix 3 fleet table, PDF p.74; IMO 9030802; sole source per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "726",
-   "_live_row": 29,
-   "_name": "KLNGTP Black Sea",
-   "cells": [
-    {
-     "field": "Name",
-     "new_value": "Karadeniz LNGT Powership Black Sea",
-     "confidence": "Y",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "'KLNGTP Black Sea' -> 'Karadeniz LNGT Powership Black Sea': IGU restyling of a Karadeniz name — label choice [IGU 2026 Appendix 3 fleet table, PDF p.70; IMO 9064073; sole source per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "727",
-   "_live_row": 39,
-   "_name": "KLNGTP Marmara",
-   "cells": [
-    {
-     "field": "Name",
-     "new_value": "Karadeniz LNGT Powership Marmara",
-     "confidence": "Y",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "'KLNGTP Marmara' -> 'Karadeniz LNGT Powership Marmara': IGU restyling of a Karadeniz name — label choice [IGU 2026 Appendix 3 fleet table, PDF p.70; IMO 9064085; sole source per Baird ruling 2026-09-17]"
     }
    ]
   },
@@ -191,15 +154,20 @@
    "cells": [
     {
      "field": "Name",
-     "new_value": "Seapeak Jupiter",
-     "confidence": "G",
+     "new_value": "Gas Polaris",
+     "confidence": "Y",
      "refs": [
       {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "url": "https://www.vesseltracker.com/en/Ships/Gas-Polaris-9230048.html",
+       "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GAS-POLARIS/9230048/525121118",
        "soft": false
       }
      ],
-     "note": "renamed / restyled since the load: 'Seapeak Hispania' -> IGU 2026 'Seapeak Jupiter' (IGU 2025: 'Seapeak Hispania') [IGU 2026 Appendix 3 fleet table, PDF p.74; IMO 9230048; sole source per Baird ruling 2026-09-17]"
+     "note": "'Seapeak Hispania' -> 'Gas Polaris': marinetraffic.org and vesseltracker.com (IMO 9230048, Indonesian flag) — renamed again since IGU 2026's 'Seapeak Jupiter', which goes to Other names; shipvault still prints 'Seapeak Hispania' [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]",
+     "former_name": "Seapeak Hispania"
     }
    ]
   },
@@ -248,15 +216,28 @@
    "cells": [
     {
      "field": "Name",
-     "new_value": "Arctic Metagas",
+     "new_value": "Arctic Metagaz",
      "confidence": "G",
      "refs": [
       {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "url": "https://www.vesseltracker.com/en/Ships/Arctic-Metagaz-9243148.html",
+       "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/ARCTIC-METAGAZ/9243148/1",
+       "soft": false
+      },
+      {
+       "url": "https://www.shipvault.com/ships/115953",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115953",
        "soft": false
       }
      ],
-     "note": "renamed / restyled since the load: 'Metagas Everest' -> IGU 2026 'Arctic Metagas (ex-Metagas Everest)' (IGU 2025: 'Metagas Everest') [IGU 2026 Appendix 3 fleet table, PDF p.72; IMO 9243148; sole source per Baird ruling 2026-09-17]"
+     "note": "'Metagas Everest' -> 'Arctic Metagaz': shipvault, marinetraffic.org and vesseltracker.com all print 'Arctic Metagaz' for IMO 9243148; IGU 2026's spelling 'Arctic Metagas' goes to Other names [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]",
+     "former_name": "Metagas Everest"
     }
    ]
   },
@@ -343,15 +324,20 @@
    "cells": [
     {
      "field": "Name",
-     "new_value": "LNG Soars",
-     "confidence": "G",
+     "new_value": "LNG Scorpio",
+     "confidence": "Y",
      "refs": [
       {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "url": "https://www.vesseltracker.com/en/Ships/Lng-Scorpio-9307205.html",
+       "soft": false
+      },
+      {
+       "url": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LNG-SCORPIO/9307205/352006648",
        "soft": false
       }
      ],
-     "note": "renamed / restyled since the load: 'CCH LNG' -> IGU 2026 'LNG Soars (ex-Methane Lydon Volney)' (IGU 2025: 'Condor LNG') [IGU 2026 Appendix 3 fleet table, PDF p.67; IMO 9307205; sole source per Baird ruling 2026-09-17]"
+     "note": "'CCH LNG' -> 'LNG Scorpio': marinetraffic.org and vesseltracker.com (IMO 9307205); shipvault prints 'CCH Gas'; IGU 2026's 'LNG Soars' goes to Other names — a sanctioned vessel, renamed often [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]",
+     "former_name": "CCH LNG"
     }
    ]
   },
@@ -466,25 +452,6 @@
       }
      ],
      "note": "renamed / restyled since the load: 'Golar Tundra' -> IGU 2026 'Italis LNG (ex-Golar Tundra)' (IGU 2025: 'Golar Tundra') [IGU 2026 Appendix 3 fleet table, PDF p.69; IMO 9655808; sole source per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "729",
-   "_live_row": 365,
-   "_name": "Kool Baltic",
-   "cells": [
-    {
-     "field": "Name",
-     "new_value": "Cool Baltic",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "renamed / restyled since the load: 'Kool Baltic' -> IGU 2026 'Cool Baltic (ex-SCF Melampus)' (IGU 2025: 'Kool Baltic') [IGU 2026 Appendix 3 fleet table, PDF p.70; IMO 9654878; sole source per Baird ruling 2026-09-17]"
     }
    ]
   },
@@ -773,25 +740,6 @@
       }
      ],
      "note": "backend name defect 'Energy Endeavor'; IGU prints 'Energy Endeavour' in both editions [IGU 2026 Appendix 3 fleet table, PDF p.68; IMO 9854624; sole source per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1100",
-   "_live_row": 624,
-   "_name": "Vivirt City LNG",
-   "cells": [
-    {
-     "field": "Name",
-     "new_value": "Vivit City LNG",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "renamed / restyled since the load: 'Vivirt City LNG' -> IGU 2026 'Vivit City LNG' (IGU 2025: 'Vivirt City LNG') [IGU 2026 Appendix 3 fleet table, PDF p.75; IMO 9895238; sole source per Baird ruling 2026-09-17]"
     }
    ]
   },
@@ -4782,15 +4730,20 @@
     },
     {
      "field": "Name",
-     "new_value": "Fath Al Khair",
+     "new_value": "Fat'h Al Khair",
      "confidence": "G",
      "refs": [
       {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "url": "https://www.shipvault.com/ships/462938",
+       "soft": false
+      },
+      {
+       "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462938",
        "soft": false
       }
      ],
-     "note": "renamed / restyled since the load: 'Hull H1799A' -> IGU 2026 'Fath Al Khair (1799A)' (IGU 2025: 'Hull H1799A') [IGU 2026 Appendix 3 fleet table, PDF p.77; IMO 9986623; sole source per Baird ruling 2026-09-17]"
+     "note": "'Hull H1799A' -> 'Fat'h Al Khair': shipvault and marinetraffic.org print the apostrophe form for IMO 9986623; IGU 2026's 'Fath Al Khair (1799A)' goes to Other names [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]",
+     "former_name": "Hull H1799A"
     }
    ]
   },

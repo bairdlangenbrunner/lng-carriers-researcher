@@ -94,3 +94,31 @@ Karmol name. The other Karadeniz restylings (live rows 20 / 29 / 39) are untouch
 Second Name ref added the same evening: vesseltracker.com (`Lngt Antarctica`, IMO 8608872, MMSI
 636023902, live AIS position) passes §3.8c. Equasis not checked — it needs a registered login
 and no credential is stored.
+
+## Update 2026-09-21 — IGU-sole-source Names checked against other databases (IG §5.4 rev 3)
+
+Baird's ruling: IGU alone never decides a Name. All 32 Name changes citing only the IGU PDF were
+looked up by IMO in shipvault, marinetraffic.org (`imo_tracker.py`, paced) and, for the contested
+ones, vesseltracker.com. 22 stand (a database explicitly agrees; shipvault lags on live rows 69,
+70, 114, 167 but marinetraffic.org agrees). Changed by `name_lookup_overrides.py` (patches this
+batch's and batch `1737ET`'s `fix.json`; re-run it after `build_fix_json.py`):
+
+| live row | was proposed (IGU) | now | refs |
+|---|---|---|---|
+| 20 | Karadeniz LNGT Americas | `KLNGTP Americas` (Y, hold) | vesseltracker — no database prints the backend's `LNGT Americas`; reject to keep it |
+| 29, 39 | Karadeniz LNGT Powership Black Sea / Marmara | Name line dropped — `KLNGTP …` stays | — |
+| 62 | Seapeak Jupiter | `Gas Polaris` (Y, hold) | vesseltracker, marinetraffic.org — renamed again since IGU |
+| 73 | Arctic Metagas | `Arctic Metagaz` (G) | vesseltracker, marinetraffic.org, shipvault |
+| 124 | LNG Soars | `LNG Scorpio` (Y, hold) | vesseltracker, marinetraffic.org; shipvault says `CCH Gas` |
+| 365 | Cool Baltic | Name line dropped — `Kool Baltic` stays | — |
+| 624 | Vivit City LNG | Name line dropped — `Vivirt City LNG` stays | — |
+| 909 | Fath Al Khair | `Fat'h Al Khair` (G) | shipvault + unit record |
+
+IGU's name goes to `Other names` in batch `1737ET` in every case. Live row 88 keeps IGU's
+`Hongkong Energy`: the databases print `Ergy`, a demolition-voyage name (→ `Other names`).
+Decisions made for the old values were reset to the confidence default on the changed lines.
+Rebuilt: 0 refs dropped, zero formula errors; 440 accept / 23 hold / 1 reject.
+
+Not in this batch — leads for a Status fix: live row 88 (IMO 9250725) is `SCRAPPED` on shipvault
+and beached in Bangladesh on vesseltracker; live row 73 (IMO 9243148) is `LOST` on shipvault.
+Both are still `active` in the backend.

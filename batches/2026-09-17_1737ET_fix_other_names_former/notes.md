@@ -142,3 +142,14 @@ ruling; the row's Name becomes `LNGT Antarctica` in batch `1654ET`). Refs, each 
 name: lngindustry.com 2025-05-28 (the Karmol name) and the IGU 2026 PDF (`Karadeniz LNGT
 Antarctica (ex-Northwest Sanderling)`). Was `Y` / hold with no ref for the former name; now `G`,
 accepted. Rebuilt: 0 refs dropped, zero formula errors; 126 accept / 34 hold.
+
+## Update 2026-09-21 — IGU names carried here where the databases do not back them (IG §5.4 rev 3)
+
+Companion to the same-day update in batch `1654ET` (`name_lookup_overrides.py` there patches this
+`fix.json`). `Other names` now carries IGU 2026's name on live rows 20 (`Karadeniz LNGT Americas`),
+29 / 39 (`Karadeniz LNGT Powership Black Sea` / `Marmara` — G, also on marinetraffic.org; these
+replace the `KLNGTP …` former-name entries, since those rows are no longer renamed), 62 (`Seapeak
+Jupiter`), 73 (`Arctic Metagas`), 124 (`LNG Soars`), 365 (`Cool Baltic`), 624 (`Vivit City LNG`,
+new line) and 909 (`Fath Al Khair`); live row 88 gains the demolition name `Ergy` (new line).
+`Cool Baltic` and `Vivit City LNG` are probably IGU misspellings — Y, reject to leave them out.
+Each ref is gated on its own name. Rebuilt: 0 refs dropped, zero formula errors; 126 accept / 36 hold.

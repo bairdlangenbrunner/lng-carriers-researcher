@@ -81,18 +81,6 @@
       "confidence": "G"
     },
     {
-      "row_id": "1004",
-      "column": "Name",
-      "value": "Seapeak Jupiter",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1004",
-      "column": "Name [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
       "row_id": "562",
       "column": "Name",
       "value": "Arunika Jaya",
@@ -119,13 +107,13 @@
     {
       "row_id": "866",
       "column": "Name",
-      "value": "Arctic Metagas",
+      "value": "Arctic Metagaz",
       "confidence": "G"
     },
     {
       "row_id": "866",
       "column": "Name [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "value": "https://www.vesseltracker.com/en/Ships/Arctic-Metagaz-9243148.html, https://www.marinetraffic.org/ship-owner-manager-ism-data/ARCTIC-METAGAZ/9243148/1, https://www.shipvault.com/ships/115953, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115953",
       "confidence": "G"
     },
     {
@@ -160,18 +148,6 @@
     },
     {
       "row_id": "958",
-      "column": "Name [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "459",
-      "column": "Name",
-      "value": "LNG Soars",
-      "confidence": "G"
-    },
-    {
-      "row_id": "459",
       "column": "Name [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
@@ -232,18 +208,6 @@
     },
     {
       "row_id": "649",
-      "column": "Name [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "729",
-      "column": "Name",
-      "value": "Cool Baltic",
-      "confidence": "G"
-    },
-    {
-      "row_id": "729",
       "column": "Name [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
@@ -448,18 +412,6 @@
     },
     {
       "row_id": "559",
-      "column": "Name [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1100",
-      "column": "Name",
-      "value": "Vivit City LNG",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1100",
       "column": "Name [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
@@ -3287,13 +3239,13 @@
     {
       "row_id": "263",
       "column": "Name",
-      "value": "Fath Al Khair",
+      "value": "Fat'h Al Khair",
       "confidence": "G"
     },
     {
       "row_id": "263",
       "column": "Name [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "value": "https://www.shipvault.com/ships/462938, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462938",
       "confidence": "G"
     },
     {
@@ -5321,8 +5273,8 @@
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 468,
-    "accepted": 444,
+    "items": 464,
+    "accepted": 440,
     "hold": 23,
     "reject": 1,
     "conflicts": 0

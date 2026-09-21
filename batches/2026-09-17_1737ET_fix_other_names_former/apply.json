@@ -407,7 +407,7 @@
     {
       "row_id": "184",
       "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/458163",
+      "value": "https://www.shipvault.com/ships/458163, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/458163",
       "confidence": "G"
     },
     {
@@ -1035,15 +1035,27 @@
       "confidence": "G"
     },
     {
-      "row_id": "1004",
+      "row_id": "726",
       "column": "Other names",
-      "value": "Seapeak Hispania",
+      "value": "Karadeniz LNGT Powership Black Sea; Portovenere; LNG Portovenere",
       "confidence": "G"
     },
     {
-      "row_id": "1004",
+      "row_id": "726",
       "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/115017, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.marinetraffic.org/ship-owner-manager-ism-data/KARADENIZ-LNGT-POWERSHIP-BLACK-SEA/9064073/352004132",
+      "confidence": "G"
+    },
+    {
+      "row_id": "727",
+      "column": "Other names",
+      "value": "Karadeniz LNGT Powership Marmara; Lerici; LNG Lerici",
+      "confidence": "G"
+    },
+    {
+      "row_id": "727",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.marinetraffic.org/ship-owner-manager-ism-data/KARADENIZ-LNGT-POWERSHIP-MARMARA/9064085/352004078",
       "confidence": "G"
     },
     {
@@ -1073,7 +1085,7 @@
     {
       "row_id": "866",
       "column": "Other names",
-      "value": "Metagas Everest",
+      "value": "Metagas Everest; Arctic Metagas",
       "confidence": "G"
     },
     {
@@ -1134,18 +1146,6 @@
       "row_id": "649",
       "column": "Other names [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "729",
-      "column": "Other names",
-      "value": "Kool Baltic; SCF Melampus",
-      "confidence": "G"
-    },
-    {
-      "row_id": "729",
-      "column": "Other names [ref]",
-      "value": "https://www.shipvault.com/ships/3928, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/3928, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
     },
     {
@@ -1511,9 +1511,9 @@
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 160,
+    "items": 162,
     "accepted": 126,
-    "hold": 34,
+    "hold": 36,
     "reject": 0,
     "conflicts": 0
   }

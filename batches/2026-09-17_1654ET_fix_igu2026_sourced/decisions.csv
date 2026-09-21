@@ -4,28 +4,25 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 721|Capacity,fill,721,,Capacity,G,False,accept,accept,125000,"blank in backend; IGU prints 125000 [IGU 2026 Appendix 3 fleet table, PDF p.77; "
 721|Capacity units,fill,721,,Capacity units,G,False,accept,accept,cbm,derivable companion of the Capacity fill (no [ref] column)
 721|Name,fill,721,,Name,Y,False,hold,accept,LNGT Antarctica,'Karmol LNGT Powership Antarctica' -> 'LNGT Antarctica': current name by IMO loo
-811|Name,fill,811,,Name,Y,False,hold,hold,Karadeniz LNGT Americas,'LNGT Americas' -> 'Karadeniz LNGT Americas': IGU restyling of a Karadeniz name 
+811|Name,fill,811,,Name,Y,False,hold,hold,KLNGTP Americas,"'LNGT Americas' -> 'KLNGTP Americas': vesseltracker.com (live AIS name, IMO 9045"
 971|Name,fill,971,,Name,G,False,accept,accept,American Energy,renamed / restyled since the load: 'Puteri Intan' -> IGU 2026 'American Energy (
-726|Name,fill,726,,Name,Y,False,hold,hold,Karadeniz LNGT Powership Black Sea,'KLNGTP Black Sea' -> 'Karadeniz LNGT Powership Black Sea': IGU restyling of a K
-727|Name,fill,727,,Name,Y,False,hold,hold,Karadeniz LNGT Powership Marmara,'KLNGTP Marmara' -> 'Karadeniz LNGT Powership Marmara': IGU restyling of a Karad
 535|Name,fill,535,,Name,G,False,accept,accept,Arctic Vostok,renamed / restyled since the load: 'East Energy' -> IGU 2026 'Arctic Vostok' (IG
 969|Vessel type,fill,969,,Vessel type,Y,False,hold,reject,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this
-1004|Name,fill,1004,,Name,G,False,accept,accept,Seapeak Jupiter,renamed / restyled since the load: 'Seapeak Hispania' -> IGU 2026 'Seapeak Jupit
+1004|Name,fill,1004,,Name,Y,False,hold,hold,Gas Polaris,'Seapeak Hispania' -> 'Gas Polaris': marinetraffic.org and vesseltracker.com (IM
 562|Name,fill,562,,Name,G,False,accept,accept,Arunika Jaya,renamed / restyled since the load: 'Energy Frontier' -> IGU 2026 'Arunika Jaya' 
 648|Name,fill,648,,Name,G,False,accept,accept,SC Serenity,renamed / restyled since the load: 'Golar Arctic' -> IGU 2026 'SC SERENITY' (IGU
-866|Name,fill,866,,Name,G,False,accept,accept,Arctic Metagas,renamed / restyled since the load: 'Metagas Everest' -> IGU 2026 'Arctic Metagas
+866|Name,fill,866,,Name,G,False,accept,accept,Arctic Metagaz,"'Metagas Everest' -> 'Arctic Metagaz': shipvault, marinetraffic.org and vesseltr"
 416|Vessel type,fill,416,,Vessel type,Y,False,hold,hold,FSU,'conventional' -> 'FSU' per IGU 2026 (igu_changed; IGU 2025: 'Conventional') — F
 686|Name,fill,686,,Name,G,False,accept,accept,Hongkong Energy,backend name defect 'Hongkong'; IGU prints 'Hongkong Energy' in both editions [I
 801|Name,fill,801,,Name,G,False,accept,accept,Gas Garuda,renamed / restyled since the load: 'LNG River Orashi' -> IGU 2026 'Gas Garuda (e
 958|Name,fill,958,,Name,G,False,accept,accept,Arctic Pioneer,renamed / restyled since the load: 'Pioneer Spirit' -> IGU 2026 'Arctic Pioneer 
-459|Name,fill,459,,Name,G,False,accept,accept,LNG Soars,renamed / restyled since the load: 'CCH LNG' -> IGU 2026 'LNG Soars (ex-Methane 
+459|Name,fill,459,,Name,Y,False,hold,hold,LNG Scorpio,'CCH LNG' -> 'LNG Scorpio': marinetraffic.org and vesseltracker.com (IMO 9307205
 1062|Name,fill,1062,,Name,G,False,accept,accept,Blue Dragon I,renamed / restyled since the load: 'Stena Blue Sky' -> IGU 2026 'Blue Dragon I' 
 869|Name,fill,869,,Name,G,False,accept,accept,Shandong Redwood,renamed / restyled since the load: 'Methane Heather Sally' -> IGU 2026 'Shandong
 377|Name,fill,377,,Name,G,False,accept,accept,LNGT Karadeniz,renamed / restyled since the load: 'Alto Acrux' -> IGU 2026 'LNGT Karadeniz' (IG
 374|Vessel type,fill,374,,Vessel type,Y,False,hold,hold,FSRU,'conventional' -> 'FSRU' per IGU 2026 (backend_differs; IGU 2025: 'FSRU') [IGU 2
 437|Name,fill,437,,Name,G,False,accept,accept,BW ENN Crystal Sky,backend name defect 'BW ENN Crystal'; IGU prints 'BW ENN Crystal Sky' in both ed
 649|Name,fill,649,,Name,G,False,accept,accept,Italis LNG,renamed / restyled since the load: 'Golar Tundra' -> IGU 2026 'Italis LNG (ex-Go
-729|Name,fill,729,,Name,G,False,accept,accept,Cool Baltic,renamed / restyled since the load: 'Kool Baltic' -> IGU 2026 'Cool Baltic (ex-SC
 467|Name,fill,467,,Name,G,False,accept,accept,Cesi Lianyungang,backend name defect 'Cesi'; IGU prints 'Cesi Lianyungang' in both editions [IGU 
 568|Vessel type,fill,568,,Vessel type,G,False,accept,accept,conventional,load corruption (`Supporting` bled from the wrapped 'Self-Supporting Prismatic' 
 568|Propulsion type,fill,568,,Propulsion type,G,False,accept,accept,DFDE,load corruption ('prismatic conventional DFDE'); IGU prints 'DFDE' in both editi
@@ -43,7 +40,6 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 781|Propulsion type,fill,781,,Propulsion type,G,False,accept,accept,DFDE,load corruption ('prismatic small-scale DFDE'); IGU prints 'DFDE' in both editio
 993|Name,fill,993,,Name,G,False,accept,accept,La Perouse,renamed / restyled since the load: 'SCF La Perouse' -> IGU 2026 'La Perouse (ex-
 559|Name,fill,559,,Name,G,False,accept,accept,Energy Endeavour,backend name defect 'Energy Endeavor'; IGU prints 'Energy Endeavour' in both edi
-1100|Name,fill,1100,,Name,G,False,accept,accept,Vivit City LNG,renamed / restyled since the load: 'Vivirt City LNG' -> IGU 2026 'Vivit City LNG
 924|Name,fill,924,,Name,G,False,accept,accept,Voskhod,renamed / restyled since the load: 'North Mountain' -> IGU 2026 'Voskhod' (IGU 2
 39|Vessel type,fill,39,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 39|Cargo type,fill,39,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
@@ -294,7 +290,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 252|Vessel type,fill,252,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 263|Vessel type,fill,263,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 263|Cargo type,fill,263,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
-263|Name,fill,263,,Name,G,False,accept,accept,Fath Al Khair,renamed / restyled since the load: 'Hull H1799A' -> IGU 2026 'Fath Al Khair (179
+263|Name,fill,263,,Name,G,False,accept,accept,Fat'h Al Khair,'Hull H1799A' -> 'Fat'h Al Khair': shipvault and marinetraffic.org print the apo
 264|Vessel type,fill,264,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 264|Cargo type,fill,264,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 265|Vessel type,fill,265,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
