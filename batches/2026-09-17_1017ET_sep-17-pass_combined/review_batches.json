@@ -39,9 +39,5 @@
  "2026-09-17_1809ET_fix_qcmax_vessel_type": {
   "label": "11 \u00b7 Vessel type qc-max",
   "apply_order": 11
- },
- "2026-09-17_1810ET_fix_price_full_usd": {
-  "label": "12 \u00b7 Price in full USD",
-  "apply_order": 12
  }
 }

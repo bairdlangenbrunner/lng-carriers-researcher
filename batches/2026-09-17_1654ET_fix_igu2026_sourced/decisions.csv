@@ -7,7 +7,6 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 811|Name,fill,811,,Name,Y,False,hold,accept,KLNGTP Americas,"'LNGT Americas' -> 'KLNGTP Americas': vesseltracker.com (live AIS name, IMO 9045"
 971|Name,fill,971,,Name,G,False,accept,accept,American Energy,renamed / restyled since the load: 'Puteri Intan' -> IGU 2026 'American Energy (
 535|Name,fill,535,,Name,G,False,accept,accept,Arctic Vostok,renamed / restyled since the load: 'East Energy' -> IGU 2026 'Arctic Vostok' (IG
-969|Vessel type,fill,969,,Vessel type,Y,False,hold,reject,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this
 1004|Name,fill,1004,,Name,Y,False,hold,hold,Gas Polaris,'Seapeak Hispania' -> 'Gas Polaris': marinetraffic.org and vesseltracker.com (IM
 562|Name,fill,562,,Name,G,False,accept,accept,Arunika Jaya,renamed / restyled since the load: 'Energy Frontier' -> IGU 2026 'Arunika Jaya' 
 648|Name,fill,648,,Name,G,False,accept,accept,SC Serenity,renamed / restyled since the load: 'Golar Arctic' -> IGU 2026 'SC SERENITY' (IGU
@@ -28,8 +27,6 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 568|Vessel type,fill,568,,Vessel type,G,False,accept,accept,conventional,load corruption (`Supporting` bled from the wrapped 'Self-Supporting Prismatic' 
 568|Propulsion type,fill,568,,Propulsion type,G,False,accept,accept,DFDE,load corruption ('prismatic conventional DFDE'); IGU prints 'DFDE' in both editi
 679|Name,fill,679,,Name,G,False,accept,accept,Hoegh Esperanza,backend name defect 'Hoegh'; IGU prints 'Hoegh Esperanza' in both editions [IGU 
-1044|Vessel type,fill,1044,,Vessel type,G,False,accept,accept,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not 
-1045|Vessel type,fill,1045,,Vessel type,G,False,accept,accept,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not 
 563|Vessel type,fill,563,,Vessel type,G,False,accept,accept,conventional,load corruption (`Supporting` bled from the wrapped 'Self-Supporting Prismatic' 
 563|Propulsion type,fill,563,,Propulsion type,G,False,accept,accept,DFDE,load corruption ('prismatic conventional DFDE'); IGU prints 'DFDE' in both editi
 565|Vessel type,fill,565,,Vessel type,G,False,accept,accept,conventional,load corruption (`Supporting` bled from the wrapped 'Self-Supporting Prismatic' 
@@ -423,7 +420,6 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 243|Vessel type,fill,243,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 248|Vessel type,fill,248,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 249|Vessel type,fill,249,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
-250|Vessel type,fill,250,,Vessel type,Y,False,hold,hold,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: no b
 253|Vessel type,fill,253,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 254|Vessel type,fill,254,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 255|Vessel type,fill,255,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
@@ -500,9 +496,3 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1146|Propulsion type,fill,1146,,Propulsion type,G,False,accept,accept,ME-GI,"blank in backend; IGU prints 'ME-GI' [IGU 2026 Appendix 4 orderbook table, PDF p"
 1147|Vessel type,fill,1147,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 1147|Propulsion type,fill,1147,,Propulsion type,G,False,accept,accept,ME-GI,"blank in backend; IGU prints 'ME-GI' [IGU 2026 Appendix 4 orderbook table, PDF p"
-1218|Vessel type,fill,1218,,Vessel type,Y,False,hold,hold,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: no b
-1219|Vessel type,fill,1219,,Vessel type,G,False,accept,accept,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not 
-1220|Vessel type,fill,1220,,Vessel type,G,False,accept,accept,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not 
-1221|Vessel type,fill,1221,,Vessel type,G,False,accept,accept,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not 
-1222|Vessel type,fill,1222,,Vessel type,G,False,accept,accept,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not 
-1223|Vessel type,fill,1223,,Vessel type,G,False,accept,accept,conventional,value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not 

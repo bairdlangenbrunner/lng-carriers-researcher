@@ -1,5 +1,1056 @@
 {
-  "added": 175,
+  "added": [
+    {
+      "where": "live row 840 (row_id 29) | Delivery year [ref]",
+      "value": "2026",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456060",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 840 (row_id 29) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456060",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Contract date [ref]",
+      "value": "1-Sep-2022",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Hull number [ref]",
+      "value": "Hull 2580",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | IMO number [ref]",
+      "value": "9995480",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Name [ref]",
+      "value": "Hull 2580",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Shipowner [ref]",
+      "value": "Mitsui OSK Lines",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 946 (row_id 72) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Contract date [ref]",
+      "value": "1-Mar-2023",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Hull number [ref]",
+      "value": "Hull 2582 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | IMO number [ref]",
+      "value": "1022043",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Price [ref]",
+      "value": "256",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Shipowner [ref]",
+      "value": "Maran Gas Maritime",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 948 (row_id 74) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Contract date [ref]",
+      "value": "1-Aug-2023",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Hull number [ref]",
+      "value": "Hull 2584 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | IMO number [ref]",
+      "value": "1030363",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Name [ref]",
+      "value": "Hull 2584 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Price [ref]",
+      "value": "251",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Shipowner [ref]",
+      "value": "Mitsui OSK Lines",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 950 (row_id 78) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Contract date [ref]",
+      "value": "1-Jul-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Hull number [ref]",
+      "value": "Hull 2598 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | IMO number [ref]",
+      "value": "1094412",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Name [ref]",
+      "value": "Hull 2598 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Price [ref]",
+      "value": "260",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1025 (row_id 92) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478881",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Contract date [ref]",
+      "value": "1-Jul-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Hull number [ref]",
+      "value": "Hull 2599 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | IMO number [ref]",
+      "value": "1094321",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Name [ref]",
+      "value": "Hull 2599 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Price [ref]",
+      "value": "260",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1026 (row_id 94) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478882",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Hull number [ref]",
+      "value": "Hull 2600 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | IMO number [ref]",
+      "value": "1094333",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Name [ref]",
+      "value": "Hull 2600 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Price [ref]",
+      "value": "260",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1027 (row_id 96) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478883",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Hull number [ref]",
+      "value": "Hull 2601 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | IMO number [ref]",
+      "value": "1094345",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Name [ref]",
+      "value": "Hull 2601 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Price [ref]",
+      "value": "260",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1028 (row_id 98) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478884",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Contract date [ref]",
+      "value": "01-Nov-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Hull number [ref]",
+      "value": "Hull 2606 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | IMO number [ref]",
+      "value": "1115072",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Name [ref]",
+      "value": "Hull 2606 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Price [ref]",
+      "value": "255",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Shipowner [ref]",
+      "value": "Hanwha Ocean Co Ltd",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 953 (row_id 102) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Contract date [ref]",
+      "value": "01-Nov-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Hull number [ref]",
+      "value": "Hull 2607 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | IMO number [ref]",
+      "value": "1115084",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Name [ref]",
+      "value": "Hull 2607 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Price [ref]",
+      "value": "255",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Shipbuilder [ref]",
+      "value": "Hanwha Ocean",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Shipowner [ref]",
+      "value": "Hanwha Ocean Co Ltd",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 954 (row_id 103) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 769 (row_id 117) | Name [ref]",
+      "value": "Al Na'amah",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457612",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 769 (row_id 117) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457612",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Hull number [ref]",
+      "value": "Hull 2729 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 964 (row_id 163) | IMO number [ref]",
+      "value": "1109047",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Name [ref]",
+      "value": "Hull 2729 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Price [ref]",
+      "value": "261.5",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 964 (row_id 163) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483838",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Contract date [ref]",
+      "value": "01-May-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | IMO number [ref]",
+      "value": "1066568",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Price [ref]",
+      "value": "266.1",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Shipbuilder [ref]",
+      "value": "HD Hyundai Heavy Industries",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Shipowner [ref]",
+      "value": "Evalend Shipping",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1054 (row_id 178) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Contract date [ref]",
+      "value": "01-May-2024",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Hull number [ref]",
+      "value": "Hull 3502 (HDHHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | IMO number [ref]",
+      "value": "1066570",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Name [ref]",
+      "value": "Hull 3502 (HDHHI)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Price [ref]",
+      "value": "266.1",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Shipbuilder [ref]",
+      "value": "HD Hyundai Heavy Industries",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Shipowner [ref]",
+      "value": "Evalend Shipping",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1059 (row_id 224) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477423",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Contract date [ref]",
+      "value": "01-Apr-2025",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Hull number [ref]",
+      "value": "Hull 8276 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | IMO number [ref]",
+      "value": "1119078",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Name [ref]",
+      "value": "Hull 8276 (Hanwha)",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Price [ref]",
+      "value": "261.8",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Shipbuilder [ref]",
+      "value": "HD Hyundai Samho",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Shipowner [ref]",
+      "value": "Purus Marine",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 994 (row_id 250) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Contract date [ref]",
+      "value": "1-Jul-2025",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | IMO number [ref]",
+      "value": "1130773",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Price [ref]",
+      "value": "257",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Shipbuilder [ref]",
+      "value": "HD Hyundai Samho",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Shipowner [ref]",
+      "value": "Capital Maritime & Trading Corp",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1075 (row_id 314) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Contract date [ref]",
+      "value": "1-Jul-2025",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | IMO number [ref]",
+      "value": "1130785",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Price [ref]",
+      "value": "257",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Shipbuilder [ref]",
+      "value": "HD Hyundai Samho",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Shipowner [ref]",
+      "value": "Capital Maritime & Trading Corp",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1076 (row_id 315) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Contract date [ref]",
+      "value": "1-Jul-2025",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | IMO number [ref]",
+      "value": "1130797",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Price [ref]",
+      "value": "257",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Shipbuilder [ref]",
+      "value": "HD Hyundai Samho",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Shipowner [ref]",
+      "value": "Capital Maritime & Trading Corp",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1077 (row_id 316) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Contract date [ref]",
+      "value": "1-Jul-2025",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Delivery year [ref]",
+      "value": "2028",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | IMO number [ref]",
+      "value": "1130802",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Price [ref]",
+      "value": "257",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Shipbuilder [ref]",
+      "value": "HD Hyundai Samho",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Shipowner [ref]",
+      "value": "Capital Maritime & Trading Corp",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1078 (row_id 317) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Contract date [ref]",
+      "value": "1-Jan-2023",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Delivery year [ref]",
+      "value": "2027",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | IMO number [ref]",
+      "value": "9999981",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Name [ref]",
+      "value": "Athlos",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Price [ref]",
+      "value": "250",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Shipbuilder [ref]",
+      "value": "HD Hyundai Samho",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 1004 (row_id 408) | Status [ref]",
+      "value": "on order",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 6 (row_id 415) | Delivery year [ref]",
+      "value": "1978",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 6 (row_id 415) | IMO number [ref]",
+      "value": "7390155",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 6 (row_id 415) | Name [ref]",
+      "value": "Bering Energy",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 6 (row_id 415) | Shipbuilder [ref]",
+      "value": "General Dynamics",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 6 (row_id 415) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 7 (row_id 663) | Contract date [ref]",
+      "value": "1-Sep-1976",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 7 (row_id 663) | Delivery year [ref]",
+      "value": "1978",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 7 (row_id 663) | IMO number [ref]",
+      "value": "7390143",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 7 (row_id 663) | Name [ref]",
+      "value": "Gulf Energy",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 7 (row_id 663) | Shipbuilder [ref]",
+      "value": "General Dynamics",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 7 (row_id 663) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 11 (row_id 721) | Delivery year [ref]",
+      "value": "1989",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 11 (row_id 721) | IMO number [ref]",
+      "value": "8608872",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 11 (row_id 721) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/94117",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | Contract date [ref]",
+      "value": "1-Apr-1999",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | Delivery year [ref]",
+      "value": "2002",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | IMO number [ref]",
+      "value": "9211872",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | Name [ref]",
+      "value": "Puteri Delima Satu",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | Price [ref]",
+      "value": "165",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | Shipbuilder [ref]",
+      "value": "Mitsui E&S Shipbuilding",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | Shipowner country/area [ref]",
+      "value": "Malaysia",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 61 (row_id 969) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 814 (row_id 995) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | Contract date [ref]",
+      "value": "1-Nov-2014",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | Delivery year [ref]",
+      "value": "2018",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | IMO number [ref]",
+      "value": "9761803",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | Name [ref]",
+      "value": "SK Serenity",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | Price [ref]",
+      "value": "207",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 487 (row_id 1044) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | Delivery year [ref]",
+      "value": "2018",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | IMO number [ref]",
+      "value": "9761815",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | Name [ref]",
+      "value": "SK Spica",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | Price [ref]",
+      "value": "207",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "ADDED"
+    },
+    {
+      "where": "live row 488 (row_id 1045) | Status [ref]",
+      "value": "active",
+      "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373876",
+      "result": "ADDED"
+    }
+  ],
   "skipped": [
     {
       "where": "live row 6 (row_id 415) | Shipbuilder yard country/area [ref]",

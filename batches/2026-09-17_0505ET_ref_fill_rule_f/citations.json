@@ -39,23 +39,23 @@
   {
    "row_id": "121",
    "field": "hull_ref",
-   "url": "https://www.shipvault.com/ships/450944, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/450944",
-   "confidence": "Y",
-   "note": "live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the shipvault unit record"
+   "url": "https://www.shipvault.com/ships/450944, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/450944, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "confidence": "G",
+   "note": "live row 771: Rule F fill - Hull number = 'Hull 2651 (SHI)' corroborated by the shipvault unit record; second source: the IGU World LNG Report PDF prints 'Hull 2651' in both editions for the row's IMO (IMO-keyed coordinate extraction, IG §1) - G"
   },
   {
    "row_id": "226",
    "field": "hull_ref",
-   "url": "https://www.shipvault.com/ships/448545",
-   "confidence": "Y",
-   "note": "live row 775: Rule F fill - Hull number = 'Hull 8102 (HDHHI)' corroborated by the shipvault unit record"
+   "url": "https://www.shipvault.com/ships/448545, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "confidence": "G",
+   "note": "live row 775: Rule F fill - Hull number = 'Hull 8102 (HDHHI)' corroborated by the shipvault unit record; second source: the IGU World LNG Report PDF prints 'Hull 8102' (2025), 'Zoe Knutsen (8102)' (2026) for the row's IMO (IMO-keyed coordinate extraction, IG §1) - G"
   },
   {
    "row_id": "230",
    "field": "hull_ref",
-   "url": "https://www.shipvault.com/ships/461187, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461187",
-   "confidence": "Y",
-   "note": "live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by the shipvault unit record"
+   "url": "https://www.shipvault.com/ships/461187, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461187, https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+   "confidence": "G",
+   "note": "live row 776: Rule F fill - Hull number = 'Hull 8181 (HDHHI)' corroborated by the shipvault unit record; second source: the IGU World LNG Report PDF prints 'Hull 8181' (2025; the 2026 edition prints only the name 'Amaryllis Knutsen') for the row's IMO (IMO-keyed coordinate extraction, IG §1) - G"
   }
  ],
  "qa_log": [
@@ -224,8 +224,8 @@
    "row_id": "1135",
    "field": "Shipowner country/area",
    "url": "https://www.igu.org/igu-reports/2025-world-lng-report",
-   "status": "PASS",
-   "note": "live row 652: value 'China': OK"
+   "status": "FAIL",
+   "note": "live row 652: value 'China': IGU prints no Shipowner country/area column - the earlier text-search PASS was false (igu_refs, IG §1)"
   },
   {
    "row_id": "1135",
@@ -527,6 +527,41 @@
    "url": "https://www.google.com/maps/place/Jiangnan+Shipyard+%EF%BC%88Group%EF%BC%89+Co.",
    "status": "FAIL",
    "note": "live row 1185: value 'conventional': page does not contain value 'conventional'"
+  },
+  {
+   "row_id": "121",
+   "field": "Hull number",
+   "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+   "status": "PASS",
+   "note": "live row 771: IGU 2025 report PDF (stands in for the landing page) prints this hull for the row's IMO - igu_refs.corroborates_cell"
+  },
+  {
+   "row_id": "121",
+   "field": "Hull number",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "status": "PASS",
+   "note": "live row 771: IGU 2026 report PDF (stands in for the landing page) prints this hull for the row's IMO - igu_refs.corroborates_cell"
+  },
+  {
+   "row_id": "226",
+   "field": "Hull number",
+   "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+   "status": "PASS",
+   "note": "live row 775: IGU 2025 report PDF (stands in for the landing page) prints this hull for the row's IMO - igu_refs.corroborates_cell"
+  },
+  {
+   "row_id": "226",
+   "field": "Hull number",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "status": "PASS",
+   "note": "live row 775: IGU 2026 report PDF (stands in for the landing page) prints this hull for the row's IMO - igu_refs.corroborates_cell"
+  },
+  {
+   "row_id": "230",
+   "field": "Hull number",
+   "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+   "status": "PASS",
+   "note": "live row 776: IGU 2025 report PDF (stands in for the landing page) prints this hull for the row's IMO - igu_refs.corroborates_cell"
   }
  ],
  "data_conflicts": [],

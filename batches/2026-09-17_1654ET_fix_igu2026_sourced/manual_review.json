@@ -78,5 +78,105 @@
   "igu": "Samsung Heavy Industries",
   "igu_prev": "Hyundai Samho Heavy Industries",
   "why": "IGU prints a short / group label — the canonical backend stylization and, for a builder, the yard-location columns that cascade from it need a human pick"
+ },
+ {
+  "live_row": 61,
+  "row_id": "969",
+  "name": "Puteri Delima Satu",
+  "field": "Vessel type",
+  "backend": "FSU",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 487,
+  "row_id": "1044",
+  "name": "SK Serenity",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 488,
+  "row_id": "1045",
+  "name": "SK Spica",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 994,
+  "row_id": "250",
+  "name": "Hull 8276 (Hanwha)",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 1118,
+  "row_id": "1218",
+  "name": "Samsung HI (unknown shipowner 1)",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 1169,
+  "row_id": "1219",
+  "name": "Hanwha Ocean (Knutsen)",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 1179,
+  "row_id": "1220",
+  "name": "Jiangnan (COSCO 1)",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 1180,
+  "row_id": "1221",
+  "name": "Jiangnan (COSCO 2)",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 1181,
+  "row_id": "1222",
+  "name": "Jiangnan (COSCO 3)",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
+ },
+ {
+  "live_row": 1182,
+  "row_id": "1223",
+  "name": "Jiangnan (COSCO 4)",
+  "field": "Vessel type",
+  "backend": "conventional",
+  "igu": null,
+  "igu_prev": null,
+  "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no IMO to look it up by), so the report PDF is not a ref for it (IG §1) — needs its own source, or a ruling that a capacity-derived size class stands on the Capacity ref"
  }
 ]

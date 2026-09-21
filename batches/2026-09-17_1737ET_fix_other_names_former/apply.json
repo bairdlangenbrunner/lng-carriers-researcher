@@ -1071,6 +1071,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "535",
+      "column": "Other names",
+      "value": "East Energy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "535",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
       "row_id": "562",
       "column": "Other names",
       "value": "Energy Frontier",
@@ -1146,7 +1158,13 @@
       "row_id": "377",
       "column": "Other names",
       "value": "Alto Acrux",
-      "confidence": "Y"
+      "confidence": "G"
+    },
+    {
+      "row_id": "377",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
     },
     {
       "row_id": "649",
@@ -1524,8 +1542,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 162,
-    "accepted": 127,
-    "hold": 35,
+    "accepted": 128,
+    "hold": 34,
     "reject": 0,
     "conflicts": 0
   }

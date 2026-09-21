@@ -155,3 +155,15 @@ new line) and 909 (`Fath Al Khair`); live row 88 gains the demolition name `Ergy
 Each ref is gated on its own name. Rebuilt: 0 refs dropped, zero formula errors; 126 accept / 36 hold.
 
 Later the same day: live row 20's line accepted with its Name line (`KLNGTP Americas`); 127 accept / 35 hold.
+
+## Update 2026-09-21 — IGU report PDFs for former names the landing page was hiding
+
+23 `Other names` lines sat at `Y` / hold with a blank `[ref]` ("no ref on hand prints the former
+name") although the row's `Name [ref]` was the IGU 2025 landing page: `other_names.py` skipped the
+landing page as ungateable and never asked the edition's PDF. Fixed in the script (landing page →
+report PDF via `url_verifier.citable_form`; the IGU PDF of every edition whose extraction prints the
+former name for the row's IMO is a candidate; an IGU PDF passes only on that IMO's name cell). The
+23 cells now cite the IGU 2025 PDF (19 also 2026) and take their Name line's confidence — live rows
+57, 144, 190, 742, 827, 935, 1008, 1031, 1032, 1034, 1035, 1080 → `G`; 887, 988–991, 1000, 1007,
+1012, 1014, 1039, 1079 stay `Y` with their Name line. Rebuilt: 0 refs dropped, zero formula errors;
+decisions already made are unchanged (128 accept / 34 hold by pre-fill).
