@@ -302,34 +302,128 @@ Fixture: a tiny backend CSV + one batch dir per mode, built in `tmp_path`.
 5. Suggest + `suggestions.py` + tests; run one real suggestion through a fix build.
 6. Docs (section 6). Then Baird uses it on the 528 holds — that is the acceptance test.
 
-## Phase 2 — Google Apps Script (do not start until phase 1 has been used for real)
+## Phase 2 — Google Apps Script (revised 2026-09-21, after phase 1 was used for real)
+
+Goal: other GEM researchers decide holds from a browser, with a GEM login and no install. The
+local pipeline stays the source of truth — batches, `decisions.csv`, `review_log.jsonl`, apply,
+verify — and Baird's machine stays the **only** thing that ever writes the backend. The shared
+app is a second front end on the same data, not a second pipeline.
 
 **Every step that creates or changes a work Drive file needs Baird's explicit OK, each time**
-(creating the spreadsheet, creating the script project, every publish). Reads use `gws-gem`;
-writes use `gws-gem-write`. Never an anonymous export URL.
+(the store spreadsheet, the data folder, the script project, every publish). Reads use
+`gws-gem`; writes use `gws-gem-write`. Never an anonymous export URL.
 
-- **Store**: a new spreadsheet, separate from the backend, tabs `proposals` (one row per
-  proposal, one column per field — *not* a JSON blob: a cell holds at most 50,000 characters),
-  `vessels`, `items`, `decisions` (append-only log, same record as phase 1), `meta`.
-  Calibri 10 pt, minimal formatting.
-- **Script**: `doGet()` serves the bundled front end via `HtmlService`;
-  `getData()` returns the dataset (chunk by batch if a single return is too large — measure it);
-  `decide(records)` appends to `decisions` under `LockService.getScriptLock()`, stamping
-  `Session.getActiveUser().getEmail()` as reviewer server-side (never trust the client's).
-  Deploy as a web app restricted to the globalenergymonitor.org domain. **Verify** at build time
-  which "execute as" setting both exposes the viewer's email and avoids giving reviewers edit
-  access to the store sheet; this was not tested.
-- **Bundle**: `python review_app/server.py --bundle review_app/gas/` inlines `app.js` / `style.css` into one
-  `index.html` and swaps in the `google.script.run` Store adapter. Script source in
-  `review_app/gas/Code.gs`; deployed by paste or `clasp` (both free).
-- **Round trip**: `review_app/publish.py` (review_data → sheet; write, ask first) and
-  `review_app/pull.py` (sheet `decisions` → the phase 1 write-back function, then
-  `review_log.jsonl`; read-only). Everything after the pull is phase 1's path.
-- Quotas are generous for this load (one load call per session, one tiny append per decision);
-  a quota hit is a failed call shown in the UI, never a charge.
-- Staleness: `meta` carries `built` and the backend pull time; the UI warns when the published
-  set is older than the newest batch commit, and a publish over undecided-but-changed lines
-  must not drop existing decisions (decisions are keyed, the log is append-only).
+### Shape
+
+```
+local (Baird)                                   Google (free tier)
+─────────────────────────────                   ─────────────────────────────────────────────
+pull_backend → review_data.py ─ publish.py ──►  Drive folder: <batch_dir>.json × N + meta.json
+                                                   (the dataset; read-only for the app)
+review_log.jsonl / decisions.csv ◄─ pull.py ──  store spreadsheet: tabs decisions · items · meta
+   via store.decide() / record_items()             (append-only rows; LockService; reviewer
+   → apply_batch.py → push (local app) → verify     stamped server-side)
+                                                Apps Script web app: doGet (bundled index.html),
+                                                   getMeta, getBatch, getDecisionsSince,
+                                                   decide, recordItems, whoami
+```
+
+### Decisions (recommendations marked; confirm with Baird before milestone 1)
+
+1. **Deployment: execute as Baird, access "Anyone within globalenergymonitor.org".**
+   Reviewers then need no access to the store or the data folder, and the script never runs
+   with a reviewer's rights. `Session.getActiveUser().getEmail()` is populated for a
+   same-domain user of a domain-restricted web app — **this is the one fact to verify first**
+   (milestone 0). Fallback if it comes back empty: execute as the accessing user, share the
+   folder (view) and the store sheet (edit) with the domain group, and the script writes as them.
+2. **Dataset = JSON files in Drive, not proposal rows in a sheet** (recommended; changes the
+   2026-09-18 note). `review_data.json` is exactly what the local app loads (4.1 MB for the
+   eleven sep-17-pass batches); a file per batch avoids the 50,000-character cell limit, the
+   row↔object mapping code, and any drift between the two front ends. `getBatch(dir)` returns
+   one file's text; the client merges. Measure the return-payload time in milestone 0 and chunk
+   further only if a batch is slow.
+3. **Decisions and items = a spreadsheet**, tabs `decisions`, `items`, `meta`. Same record shape
+   as `review_log.jsonl` / `review_items.jsonl` plus `reviewer` (server-stamped email) and
+   `server_ts`; append-only; a human can read it. Calibri 10 pt, minimal formatting. `meta`
+   carries `built`, `backend_pulled`, the batch list, and the reviewer **allowlist**.
+4. **No backend write path in the shared app.** *Push accepted* and *sync backend* are removed
+   from the bundle (hidden by the adapter's capability flags, not forked code). Push stays
+   Baird's, in the local app, after a pull (AP §2b unchanged). Sync is replaced by publish:
+   the UI shows `backend_pulled` from `meta` and warns when it is older than a day.
+5. **Reviewers see each other's decisions.** `getDecisionsSince(ts)` polled every 30–60 s;
+   last write wins on the same line (the log is keyed, latest record per key), and a card says
+   "decided by <name>, 3 min ago". Cheap, and it stops two people working the same vessel.
+6. **`reviewed` in the shared app** = the latest store record for the key (a person's, not
+   `undecided`), else what the published dataset carries (Baird's local state at publish).
+   Keys are `<batch_dir>::<id>` as in phase 1, so store records survive a republish.
+7. **Suggest, Items tab, bulk, undo, linked pairs: unchanged** — each is already a record.
+   Suggestions reach the backend only through `pull.py` → `suggestions.py` → a fix batch.
+
+### Code
+
+- `review_app/gas/` in git: `Code.gs`, `appsscript.json` (`webapp.access: DOMAIN`,
+  `executeAs: USER_DEPLOYING`, timezone), and the generated `index.html` (committed, so a
+  paste-deploy works without node). Deploy with `clasp` (npm, free; needs the Apps Script API
+  switched on for Baird's account) or by paste; two deployments — `/dev` (head, Baird only) and
+  versioned `/exec` for reviewers. Nothing in `Code.gs` may `openById` anything but the store
+  sheet and the data folder (execute-as-owner could otherwise reach any of Baird's files).
+- `Code.gs`: `doGet` → `HtmlService.createHtmlOutputFromFile('index')` with `XFrameOptionsMode
+  .ALLOWALL` off; `getMeta()`, `getBatch(dir)` (folder lookup by name, `CacheService` for the
+  key set); `decide(records)` / `recordItems(records)`: validate every key against the published
+  set and every enum, reject a reviewer not on the allowlist, then under
+  `LockService.getScriptLock()` append rows with the server's email + timestamp — the client's
+  `reviewer` is ignored. No `UrlFetchApp` anywhere.
+- **Bundle**: `python review_app/bundle.py` (or `server.py --bundle`) inlines `app.js` +
+  `style.css` into `web/index.html` → `gas/index.html`, and selects the adapter. The front end
+  keeps one `Store` object; the GAS adapter wraps `google.script.run` in promises and reports
+  `capabilities: {refresh: false, push: false}` so the two buttons are not drawn.
+- **Routing shim**: `location.hash` / `history.*` do not reach the address bar inside the
+  HtmlService iframe. Put the routing behind one `Router` object with two implementations —
+  the current one, and `google.script.history.push/replace` + `google.script.url.getLocation`.
+  `localStorage` (theme) and `target="_blank"` links work as they are.
+- `review_app/publish.py --batches <dir> ...`: refuses to run unless `pull.py` ran first (never
+  publish over undecided-but-changed lines without the store's records merged); fresh backend
+  pull; `review_data.build`; writes one JSON per batch + `meta.json` to the folder and refreshes
+  `meta` in the sheet (write, ask first). A key that disappeared from a batch is reported as
+  orphaned, never silently dropped; the store's rows are never rewritten.
+- `review_app/pull.py`: reads new `decisions` / `items` rows (read-only profile; cursor in
+  `work/gas_pull_state.json`), turns them into phase 1 records and calls `store.decide()` /
+  `store.record_items()` per batch — reviewer = the stamped email, `via` prefixed `gas:` — so
+  `decisions.csv` and `review_log.jsonl` receive exactly what the local app would have written.
+  Idempotent on `(key, server_ts, reviewer)`. Everything after the pull is phase 1's path.
+
+### Quotas and cost
+
+Free tier throughout: no URL Fetch, one file read per batch per session, one small append per
+decision, 6 min per call is far above anything here. A quota hit is a failed call shown in the
+UI, never a charge. No billing account exists to charge.
+
+### Milestones (each ends with passing tests and a commit)
+
+0. **Spike (before any other work).** Empty web app, execute as Baird, domain access. A
+   colleague opens `/dev`: does `getActiveUser().getEmail()` return their address? Time a 1 MB
+   string returned through `google.script.run`. Decide (1) and (2) on the result.
+1. Bundle + adapter + Router shim, run first against the **local** server (`?store=local`)
+   so the bundled page is proven identical before it touches Google. Tests: the bundle has no
+   external references and no `fetch(`; Router shim unit tests.
+2. Store spreadsheet + data folder (ask), `Code.gs`, `publish.py` (dry run prints the plan;
+   ask before the write). Publish the un-applied sep-17-pass batches to a **staging** folder.
+3. `pull.py` + tests: a store row → `review_log.jsonl` record → `decisions.csv` decision-column
+   change, byte-compared like the phase 1 tests; re-running pulls nothing twice.
+4. Polling + "decided by", allowlist, staleness warning; `/exec` deployment.
+5. Docs: `review_app/README.md` (publish / pull / deploy), `CLAUDE.md` router entry
+   ("publish the review app", "pull the reviewers' decisions"), `apply.md` step 2, the
+   worklist. **Acceptance:** Rob decides ~20 real holds on `/exec`, Baird runs `pull.py`, and
+   `apply_batch.py` shows them.
+
+### Decisions adopted (Baird, 2026-09-21: "let's go ahead and do this")
+
+- Reviewer **allowlist** in `meta` (emails); Baird supplies the list before milestone 4.
+- **Push stays local and Baird-only**; the shared app has no backend write path at all.
+- Dataset = **Drive JSON**, one file per batch + `meta.json` (subject to the milestone 0 timing).
+- Reviewers **see each other's decisions live** (poll + "decided by").
+
+Handoff for the build session: `docs/plans/2026-09-21_review-app-phase2_handoff.md`.
 
 ## Open items
 
@@ -344,5 +438,5 @@ writes use `gws-gem-write`. Never an anonymous export URL.
 The build is mechanical from this spec — run it on Opus (or Sonnet for the test-writing and CSS
 passes). Come back to the top tier only for: an SOP conflict, a change to the decision /
 suggestion semantics above, anything touching how `apply_batch.py` interprets `decisions.csv`,
-and the phase 2 "execute as" / permissions call. Verification is the same regardless of model:
+and the phase 2 milestone 0 spike + the `Code.gs` access review. Verification is the same regardless of model:
 the tests in section 5, the milestone-1 totals check, and Baird's use on the real holds.
