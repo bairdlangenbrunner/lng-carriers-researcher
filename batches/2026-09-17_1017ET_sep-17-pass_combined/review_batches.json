@@ -49,5 +49,9 @@
  "2026-09-18_2005ET_fix_igu2026_hulls": {
   "label": "13 \u00b7 IGU hull numbers",
   "apply_order": 13
+ },
+ "2026-09-21_1740ET_fix_review_suggestions": {
+  "label": "14 \u00b7 review-app suggestions (hand-built)",
+  "apply_order": 14
  }
 }
