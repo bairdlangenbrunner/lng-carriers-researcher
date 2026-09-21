@@ -24,6 +24,16 @@
       return fetch("/api/refresh", {method: "POST", headers: {"Content-Type": "application/json"},
                                     body: "{}"}).then(Store._json);
     },
+    pushPlan: function (batch) { // re-pull, then every cell the accepted lines would change
+      return fetch("/api/push/plan", {method: "POST", headers: {"Content-Type": "application/json"},
+                                      body: JSON.stringify({batch: batch || null})}).then(Store._json);
+    },
+    push: function (token, includeApplied, batch) {   // the one backend write; 409 = plan went stale
+      return fetch("/api/push", {method: "POST", headers: {"Content-Type": "application/json"},
+                                 body: JSON.stringify({token: token, include_applied: includeApplied,
+                                                       batch: batch || null})})
+        .then(Store._json);
+    },
     item: function (records) {   // Items tab: status / note / a conflict's call
       return fetch("/api/item", {method: "POST", headers: {"Content-Type": "application/json"},
                                  body: JSON.stringify(records)}).then(Store._json)
@@ -1108,6 +1118,77 @@
       .then(function () { b.disabled = false; b.textContent = "↻ sync backend"; });
   }
   $("sync").onclick = syncBackend;
+
+  // Push: the server plans on a fresh pull; the dialog lists every cell that would change and
+  // one confirmation writes exactly that plan (the token; a stale plan is refused, not written).
+  function planTable(ws) {
+    var byBatch = {}, order = [];
+    ws.forEach(function (w) {
+      if (!byBatch[w.batch]) { byBatch[w.batch] = []; order.push(w.batch); }
+      byBatch[w.batch].push(w);
+    });
+    return order.map(function (b) {
+      return '<h4>batch ' + esc(byBatch[b][0].label) + ' · ' + byBatch[b].length + '</h4><table class="plan">' +
+        '<tr><th>row</th><th>vessel</th><th>column</th><th>now</th><th>→ becomes</th></tr>' +
+        byBatch[b].map(function (w) {
+          return '<tr><td>' + w.live_row + '</td><td>' + esc(w.name) + '</td><td>' + esc(w.column) +
+            '</td><td class="old">' + (esc(w.old) || '<i>blank</i>') + '</td><td class="new">' + esc(w.new) + '</td></tr>';
+        }).join("") + '</table>';
+    }).join("");
+  }
+  function reload(msg, ok) {
+    return Store.load().then(function (data) {
+      adopt(data);
+      refilter();
+      if (!$("tab-items").hidden) renderItems();
+      if (!$("tab-summary").hidden) renderSummary();
+      banner(msg, ok);
+    });
+  }
+  function pushAccepted() {
+    var b = $("push");
+    b.disabled = true;
+    b.textContent = "planning…";
+    var batch = $("f-batch").value;      // the Batch filter scopes the push
+    var scope = batch ? " of batch " + ((D.batches.filter(function (x) { return x.dir === batch; })[0] || {}).label || batch) : "";
+    Store.pushPlan(batch).then(function (plan) {
+      var n = plan.writes.length, m = plan.applied_writes.length, k = plan.skipped.length;
+      if (!n && !m) {
+        return reload("Nothing to push: every accepted line" + scope + " is already in the backend" +
+          (k ? " (" + k + " accepted line" + (k === 1 ? " stays" : "s stay") + " on the by-hand path)." : "."), true);
+      }
+      var html = '<h3>Push accepted lines' + esc(scope) + ' to the backend sheet</h3>' +
+        '<p>' + n + ' cell' + (n === 1 ? "" : "s") + ' will be written to the live sheet. Rejects and holds write nothing.' +
+        (batch ? "" : " Pick a batch in the Batch filter first to push one batch at a time.") + '</p>' +
+        '<div class="planbox">' + planTable(plan.writes) +
+        (m ? '<details><summary>' + m + ' more from batches already applied — the sheet differs, likely a later hand edit</summary>' +
+          planTable(plan.applied_writes) + '</details>' : "") +
+        (k ? '<details><summary>' + k + ' accepted line' + (k === 1 ? "" : "s") + ' not pushed (by-hand path)</summary><ul>' +
+          plan.skipped.map(function (x) {
+            return '<li>' + (x.live_row ? 'row ' + x.live_row + ' · ' : "") + esc(x.column) + ' — ' + esc(x.why) + '</li>';
+          }).join("") + '</ul></details>' : "") + '</div>' +
+        (m ? '<label class="check"><input type="checkbox" id="push-applied"> also overwrite the ' + m +
+          ' cell' + (m === 1 ? "" : "s") + ' from applied batches</label>' : "");
+      var label = n ? "write " + n + " cell" + (n === 1 ? "" : "s") : "write";
+      return dialog(html, [["cancel", null], [label, function () {
+        var inc = !!($("push-applied") && $("push-applied").checked);
+        if (!n && !inc) return false;
+        return {token: inc ? plan.token_all : plan.token, inc: inc};
+      }]]).then(function (go) {
+        if (!go) return reload("", true);
+        b.textContent = "writing…";
+        return Store.push(go.token, go.inc, batch).then(function (r) {
+          var bad = r.mismatches.length;
+          return reload(r.written + " cell" + (r.written === 1 ? "" : "s") + " written to the backend and verified" +
+            (bad ? "; " + bad + " did NOT land (" + r.mismatches.slice(0, 5).map(function (w) {
+              return "row " + w.live_row + " " + w.column; }).join(", ") + (bad > 5 ? ", …" : "") + ")" : ".") +
+            (r.error ? " " + r.error : ""), !bad && !r.error);
+        });
+      });
+    }).catch(function (e) { banner("Push: " + e.message); })
+      .then(function () { b.disabled = false; b.textContent = "⇪ push accepted"; });
+  }
+  $("push").onclick = pushAccepted;
 
   Promise.all([Store.load(), Store.whoami()]).then(function (r) {
     ME = r[1];

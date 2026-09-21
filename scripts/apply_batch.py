@@ -216,6 +216,21 @@ def _discovery_full_row(it, header, yard_map):
     return [row_data.get(h, "") for h in header], row_data
 
 
+def cell_writes(it, header_index, row):
+    """[(column, value)] an accepted non-new-row item writes, given the backend `row` it lands
+    on: the value (unless ref-only), then the paired [ref] — replaced by a fix cell's gated
+    refs, else joined onto what `row` already holds. Shared with review_app/push.py."""
+    H, out = header_index, []
+    if it["kind"] == "fill" and it["column"] in H and not it.get("ref_only"):
+        out.append((it["column"], it["value"]))
+    if it["ref_column"] and it["ref_value"] and it["ref_column"] in H:
+        i = H[it["ref_column"]]
+        existing_ref = row[i] if row is not None and len(row) > i else ""
+        out.append((it["ref_column"], it["ref_value"] if it.get("replace_ref") else
+                    _join_refs(existing_ref, it["ref_value"].split(", "))))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--batch", required=True, help="Batch directory under batches/")
@@ -258,19 +273,10 @@ def main():
         touched[rid] = base + [""] * (len(header) - len(base))
         base = touched[rid]
         H = {h: i for i, h in enumerate(header)}
-        if it["kind"] == "fill" and it["column"] in H and not it.get("ref_only"):
-            base[H[it["column"]]] = it["value"]
-            patch.append(["set", rid, it["column"], it["value"]])
-            cells.append({"row_id": rid, "column": it["column"], "value": it["value"],
-                          "confidence": it["confidence"]})
-        if it["ref_column"] and it["ref_value"] and it["ref_column"] in H:
-            existing_ref = row_by_id.get(rid, [""] * len(header))[H[it["ref_column"]]] \
-                if rid in row_by_id and len(row_by_id[rid]) > H[it["ref_column"]] else ""
-            joined = it["ref_value"] if it.get("replace_ref") else \
-                _join_refs(existing_ref, it["ref_value"].split(", "))
-            base[H[it["ref_column"]]] = joined
-            patch.append(["set", rid, it["ref_column"], joined])
-            cells.append({"row_id": rid, "column": it["ref_column"], "value": joined,
+        for column, value in cell_writes(it, H, row_by_id.get(rid)):
+            base[H[column]] = value
+            patch.append(["set", rid, column, value])
+            cells.append({"row_id": rid, "column": column, "value": value,
                           "confidence": it["confidence"]})
 
     with open(batch_dir / "apply_rows.csv", "w", encoding="utf-8", newline="") as f:

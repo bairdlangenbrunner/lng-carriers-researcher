@@ -3,9 +3,11 @@
 The review surface for accept / hold / reject decisions, replacing the combined xlsx.
 Build spec: `docs/plans/2026-09-18_review-app.md`. Run everything from the repo root.
 
-The app never touches the backend. It writes only the `decision` column of each batch's
-`decisions.csv` plus an append-only audit log (`review_log.jsonl`). Accepted proposals reach the
-sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
+Deciding never touches the backend: accept / hold / reject write only the `decision` column of
+each batch's `decisions.csv` plus an append-only audit log (`review_log.jsonl`). Accepted
+proposals reach the sheet through the Apply SOP (`docs/sops/apply.md`) — by hand as before, or
+with the **push accepted** button below (AP §2b), the app's one backend write: it lists every
+cell first and writes on one confirmation.
 
 ## Entry points
 
@@ -21,7 +23,8 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    without one, label = dir name, order = dir sort order, applied = `verify_report.csv` exists.
 
 2. `server.py` serves the front end (`web/`) on `http://127.0.0.1:8765/` (loopback only;
-   standard library; its one outward call is the **sync backend** pull below):
+   standard library; its outward calls are the **sync backend** pull and the **push accepted**
+   write below):
 
    ```bash
    python review_app/server.py --batches batches/<dir> [<dir> ...]   # rebuilds review_data.json first
@@ -63,6 +66,24 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    ordinary write paths, logged as reviewer `backend sync`, `via: "sync:backend"`. A line
    someone already decided is never touched. A failed pull changes nothing. The sync reads
    the backend; it never writes it.
+
+   **Push accepted** (the `⇪ push accepted` button; `POST /api/push/plan`, `POST /api/push`;
+   `push.py`). Never on a click of `accept`. The server re-pulls, then plans: every cell the
+   accepted lines would change — the same cells `apply_patch.csv` carries
+   (`apply_batch.cell_writes`), laid over the pull in apply order — and the dialog lists them by
+   batch (live row, vessel, column, now → becomes). One confirmation writes exactly that plan: it
+   carries the plan's token, the server re-pulls and recomputes, and a plan that changed in
+   between (the sheet or a decision moved) is refused with nothing written. Cells are addressed
+   by row_id + header against the fresh pull, written RAW through `gws` under the work **write**
+   profile (`~/.config/gws-gem-write`), then re-pulled and verified cell by cell; what landed is
+   appended to `<dir>/push_log.jsonl`. With a batch picked in the Batch filter the push covers
+   that batch only. Not pushed — these stay by hand: discovery new rows, conflicts, suggestions
+   (a fix batch), and a data-fill / ref-fill value whose cell is no longer blank or `unknown`
+   (additive to blanks; the dialog lists these under "not pushed"). Cells of an
+   already-applied batch that differ from the sheet (likely a later hand edit) are listed apart
+   and written only when the box is ticked. Reject and hold write nothing, and a reject never
+   reverts a cell. A push does not write `verify_report.csv`: run `verify_apply.py --pull` to
+   close the batch (dedupe sweep included).
 
    **Bulk.** The status bar's "apply to all N filtered" (accept / hold / reject) always confirms
    first, restating the filter and how many lines change; records carry `via: "bulk:<filter>"`.
@@ -124,6 +145,7 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
 |---|---|---|
 | `decisions.csv` | the `decision` column only (a sync's accepts included) | yes (it already is) |
 | `review_log.jsonl` | every decision, undo, suggestion and sync accept — append-only, latest record per key wins | yes |
+| `push_log.jsonl` | every cell a push wrote and verified (row, column, old → new, who, when) — append-only | yes |
 | `review_items.jsonl` | Items-tab statuses, notes, conflict calls and sync resolutions — append-only | yes |
 | `conflicts.csv` | a conflict's call in `decision` (reset to `hold` by `apply_batch.py`) | yes |
 

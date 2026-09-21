@@ -200,3 +200,13 @@ h3.igroup .n { font-weight: 400; font-size: 14px; color: var(--muted); margin-le
 .item .ctl.accept { color: var(--accept); } .item .ctl.hold { color: var(--hold); } .item .ctl.reject { color: var(--reject); }
 .item .row1 .batch { margin-left: auto; font-size: 14px; color: var(--muted); }
 .item .saving { font-size: 14px; color: var(--muted); }
+
+/* push plan */
+dialog:has(.planbox) { max-width: 1000px; }
+.planbox { max-height: 58vh; overflow: auto; border: 1px solid var(--line); border-radius: 6px; padding: 4px 12px; margin: 8px 0; }
+.planbox h4 { margin: 12px 0 4px; }
+.planbox details { margin: 12px 0; }
+table.plan { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.plan th, table.plan td { text-align: left; vertical-align: top; padding: 3px 8px 3px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+table.plan td.old { color: var(--muted, inherit); opacity: 0.75; }
+table.plan td.new { font-weight: 600; }
