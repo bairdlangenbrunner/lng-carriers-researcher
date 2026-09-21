@@ -28,7 +28,9 @@ stays the only thing that writes the backend. Follow the phase 2 milestones 0 â†
 - Dataset = **Drive JSON files** (one per batch + `meta.json`) written by `review_app/publish.py`.
 - Decisions / items = an append-only **spreadsheet** (`decisions`, `items`, `meta` tabs), rows
   appended under `LockService`, reviewer email stamped **server-side** from `Session.getActiveUser()`.
-- **Reviewer allowlist** in `meta`. Baird supplies the emails; ask for them when milestone 4 starts.
+- **No reviewer allowlist.** Everyone with a globalenergymonitor.org login has access and can
+  decide (Baird, 2026-09-21). The domain restriction on the deployment is the only gate; `decide`
+  still rejects an empty reviewer email.
 - **No backend write path in the shared app.** Push accepted and sync backend are hidden by
   adapter capability flags (`{refresh:false, push:false}`), not forked code.
 - Reviewers see each other's decisions live (`getDecisionsSince`, poll 30â€“60 s, "decided by").
@@ -73,7 +75,7 @@ per the spec's fallback and tell Baird before continuing. Report both results to
 - Anything that changes how `apply_batch.py` reads `decisions.csv`, or the decision / suggestion
   semantics in the spec.
 - Anything that would give a reviewer a path to the backend sheet.
-- The reviewer allowlist and who tests `/exec`.
+- Who tests `/exec` first.
 
 ## Acceptance
 
