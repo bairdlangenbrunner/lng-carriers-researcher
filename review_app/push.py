@@ -73,8 +73,7 @@ def token(writes):
 
 def clicked(p):
     """A reviewer clicked accept on this line: its latest log record is a person's accept."""
-    rec = p.get("last")
-    return bool(rec) and rec.get("decision") == "accept" and rec.get("reviewer") != store.SYNC_REVIEWER
+    return store.reviewed(p.get("last"), p.get("decision")) == "accept"
 
 
 def plan(data, dirs, backend_path=None, batch=None):
