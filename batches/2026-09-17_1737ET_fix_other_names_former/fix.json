@@ -10,9 +10,18 @@
      "new_value": "Hull 045 (Zvezda)",
      "gate_value": "Hull 045 (Zvezda)",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 045 (Zvezda)'; the row is renamed 'Konstantin Posiet' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 045 (Zvezda)'; the row is renamed 'Konstantin Posiet' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 9904704 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1287,9 +1296,18 @@
      "new_value": "Dalian No 1 G175K-7",
      "gate_value": "Dalian No 1 G175K-7",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Dalian No 1 G175K-7'; the row is renamed 'Sea Charity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Dalian No 1 G175K-7'; the row is renamed 'Sea Charity' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1013511 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1808,8 +1826,17 @@
      "gate_value": "Hull 8208 (HSHI)",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 8208 (HSHI)'; the row is renamed 'Diamond Gas Nexus' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8208 (HSHI)'; the row is renamed 'Diamond Gas Nexus' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1023877 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1822,8 +1849,17 @@
      "gate_value": "Hull 8209 (HSHI)",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 8209 (HSHI)'; the row is renamed 'Grace Himawari' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8209 (HSHI)'; the row is renamed 'Grace Himawari' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1023889 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1836,8 +1872,17 @@
      "gate_value": "Hull 8238 (HSHI)",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 8238 (HSHI)'; the row is renamed 'Grace Gerbera' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8238 (HSHI)'; the row is renamed 'Grace Gerbera' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1023906 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1850,8 +1895,17 @@
      "gate_value": "Hull 8239 (HSHI)",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 8239 (HSHI)'; the row is renamed 'Ferdy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 8239 (HSHI)'; the row is renamed 'Ferdy Vanguard' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1023918 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1887,8 +1941,17 @@
      "gate_value": "Hull H1795A",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull H1795A'; the row is renamed 'Al Fanar' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 9986582 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1901,8 +1964,17 @@
      "gate_value": "Dalian No 1 G175K-10",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Dalian No 1 G175K-10'; the row is renamed 'Prime Creativity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Dalian No 1 G175K-10'; the row is renamed 'Prime Creativity' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1058327 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1914,9 +1986,18 @@
      "new_value": "Dalian No 1 G175K-13",
      "gate_value": "Dalian No 1 G175K-13",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Dalian No 1 G175K-13'; the row is renamed 'Alliance Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Dalian No 1 G175K-13'; the row is renamed 'Alliance Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1030569 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1929,8 +2010,17 @@
      "gate_value": "Dalian No 1 G175K-9",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Dalian No 1 G175K-9'; the row is renamed 'Prime Unity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Dalian No 1 G175K-9'; the row is renamed 'Prime Unity' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1058315 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -1943,8 +2033,17 @@
      "gate_value": "Gdansk FSRU",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Gdansk FSRU'; the row is renamed 'Solidarity' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Gdansk FSRU'; the row is renamed 'Solidarity' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1056410 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2140,9 +2239,14 @@
      "new_value": "Hull 2693 (Hanwha)",
      "gate_value": "Hull 2693 (Hanwha)",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 2693 (Hanwha)'; the row is renamed 'Al Ghafat' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2693 (Hanwha)'; the row is renamed 'Al Ghafat' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025 prints the former name for IMO 1069950 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2154,9 +2258,14 @@
      "new_value": "Hull 2694 (Hanwha)",
      "gate_value": "Hull 2694 (Hanwha)",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 2694 (Hanwha)'; the row is renamed 'Al Sidriya' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2694 (Hanwha)'; the row is renamed 'Al Sidriya' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025 prints the former name for IMO 1069962 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2191,9 +2300,14 @@
      "new_value": "Hull 2695 (Hanwha)",
      "gate_value": "Hull 2695 (Hanwha)",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 2695 (Hanwha)'; the row is renamed 'Ain Snan' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2695 (Hanwha)'; the row is renamed 'Ain Snan' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025 prints the former name for IMO 1069974 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2205,9 +2319,14 @@
      "new_value": "Hull 2696 (Hanwha)",
      "gate_value": "Hull 2696 (Hanwha)",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 2696 (Hanwha)'; the row is renamed 'Al Wasmi' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2696 (Hanwha)'; the row is renamed 'Al Wasmi' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025 prints the former name for IMO 1069986 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2266,8 +2385,17 @@
      "gate_value": "Hull 2702 (SHI)",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 2702 (SHI)'; the row is renamed 'Libsayer' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2702 (SHI)'; the row is renamed 'Libsayer' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1070806 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2349,8 +2477,17 @@
      "gate_value": "Dalian No 1 G175K-11",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Dalian No 1 G175K-11'; the row is renamed 'Prime Glory' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1069194 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2362,9 +2499,18 @@
      "new_value": "Dalian No 1 G175K-12",
      "gate_value": "Dalian No 1 G175K-12",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Dalian No 1 G175K-12'; the row is renamed 'Friendship Venture' by 2026-09-17_0421ET_fix_delivery_rollforward — IGU 2025, 2026 prints the former name for IMO 1030557 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2377,8 +2523,17 @@
      "gate_value": "Hull 3387 (HDHHI)",
      "append_ref": true,
      "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_0458ET_fix_delivery_confirmed — no ref on hand prints the former name (backend's own published value); held"
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 3387 (HDHHI)'; the row is renamed 'Al Nigyan' by 2026-09-17_0458ET_fix_delivery_confirmed — IGU 2025, 2026 prints the former name for IMO 9981427 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2534,9 +2689,14 @@
      "new_value": "East Energy",
      "gate_value": "East Energy",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'East Energy'; the row is renamed 'Arctic Vostok' by 2026-09-17_1654ET_fix_igu2026_sourced — IGU 2025 prints the former name for IMO 9216298 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2712,9 +2872,14 @@
      "new_value": "Stena Blue Sky",
      "gate_value": "Stena Blue Sky",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Stena Blue Sky'; the row is renamed 'Blue Dragon I' by 2026-09-17_1654ET_fix_igu2026_sourced — IGU 2025 prints the former name for IMO 9315393 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2745,9 +2910,14 @@
      "new_value": "Alto Acrux",
      "gate_value": "Alto Acrux",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Alto Acrux'; the row is renamed 'LNGT Karadeniz' by 2026-09-17_1654ET_fix_igu2026_sourced — IGU 2025 prints the former name for IMO 9343106 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },
@@ -2822,9 +2992,14 @@
      "new_value": "North Mountain",
      "gate_value": "North Mountain",
      "append_ref": true,
-     "confidence": "Y",
-     "refs": [],
-     "note": "former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_fix_igu2026_sourced — no ref on hand prints the former name (backend's own published value); held"
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'North Mountain'; the row is renamed 'Voskhod' by 2026-09-17_1654ET_fix_igu2026_sourced — IGU 2025 prints the former name for IMO 9953511 (report PDF; the row's Name [ref] was the landing page)"
     }
    ]
   },

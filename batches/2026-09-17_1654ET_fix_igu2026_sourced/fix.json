@@ -1,6 +1,6 @@
 {
  "batch_label": "Fix — values sourced from the IGU World LNG Report 2026 (2026-09-17, sep-17-pass batch 8)",
- "reason": "Promotes the batch 7 IGU 2026 intercomparison into proposals. Baird ruling 2026-09-17: what IGU 2026 prints is a sufficient sole source for now, Vessel type included — every cell cites the report PDF. OPEN decision: whether these cells get a second ref at the ref-validation step.",
+ "reason": "Promotes the batch 7 IGU 2026 intercomparison into proposals. Baird ruling 2026-09-17: what IGU 2026 prints is a sufficient sole source for now, Vessel type included — every cell cites the report PDF, checked on what IGU prints for the row's IMO (IG §1) — a vessel IGU does not list gets no IGU ref. OPEN decision: whether these cells get a second ref at the ref-validation step.",
  "igu_ref": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
  "corrections": [
   {
@@ -125,25 +125,6 @@
       }
      ],
      "note": "renamed / restyled since the load: 'East Energy' -> IGU 2026 'Arctic Vostok' (IGU 2025: 'East Energy') [IGU 2026 Appendix 3 fleet table, PDF p.68; IMO 9216298; sole source per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "969",
-   "_live_row": 61,
-   "_name": "Puteri Delima Satu",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "Y",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this row's FSU-conversion question (batch 5) is still open [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 135000 cbm; per Baird ruling 2026-09-17]"
     }
    ]
   },
@@ -541,44 +522,6 @@
       }
      ],
      "note": "backend name defect 'Hoegh'; IGU prints 'Hoegh Esperanza' in both editions [IGU 2026 Appendix 3 fleet table, PDF p.70; IMO 9780354; sole source per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1044",
-   "_live_row": 487,
-   "_name": "SK Serenity",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 174000 cbm; per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1045",
-   "_live_row": 488,
-   "_name": "SK Spica",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 174000 cbm; per Baird ruling 2026-09-17]"
     }
    ]
   },
@@ -6825,25 +6768,6 @@
    ]
   },
   {
-   "row_id": "250",
-   "_live_row": 994,
-   "_name": "Hull 8276 (Hanwha)",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "Y",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: no backend Capacity, so the size class cannot be derived [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity blank cbm; per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
    "row_id": "253",
    "_live_row": 995,
    "_name": "Hull CMHI-282-03",
@@ -8237,120 +8161,6 @@
       }
      ],
      "note": "blank in backend; IGU prints 'ME-GI' [IGU 2026 Appendix 4 orderbook table, PDF p.82; IMO 1148299; sole source per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1218",
-   "_live_row": 1118,
-   "_name": "Samsung HI (unknown shipowner 1)",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "Y",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: no backend Capacity, so the size class cannot be derived [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity blank cbm; per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1219",
-   "_live_row": 1172,
-   "_name": "Hanwha Ocean (Knutsen)",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 174000 cbm; per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1220",
-   "_live_row": 1182,
-   "_name": "Jiangnan (COSCO 1)",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 175000 cbm; per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1221",
-   "_live_row": 1183,
-   "_name": "Jiangnan (COSCO 2)",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 175000 cbm; per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1222",
-   "_live_row": 1184,
-   "_name": "Jiangnan (COSCO 3)",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 175000 cbm; per Baird ruling 2026-09-17]"
-    }
-   ]
-  },
-  {
-   "row_id": "1223",
-   "_live_row": 1185,
-   "_name": "Jiangnan (COSCO 4)",
-   "cells": [
-    {
-     "field": "Vessel type",
-     "new_value": "conventional",
-     "confidence": "G",
-     "refs": [
-      {
-       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-       "soft": false
-      }
-     ],
-     "note": "value unchanged — Rule F ref-fill: backend Vessel type had no [ref] [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 175000 cbm; per Baird ruling 2026-09-17]"
     }
    ]
   }

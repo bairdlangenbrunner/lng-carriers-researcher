@@ -49,3 +49,24 @@ such a page now carries the unit-record URL
 `scripts/shipvault_api_refs.py`, workbook rebuilt + recalced (zero errors), apply artifacts
 regenerated; decisions unchanged, and the only diff in `apply.json` / `apply_rows.csv` /
 `apply_patch.csv` is the added URLs.
+
+## IGU report PDF as the second source on the three hull cells (rebuilt 2026-09-21)
+
+The first build asked the IGU 2025 **landing page** for the hull numbers, failed it (it prints no
+per-vessel value) and left the three Hull number cells at Y on shipvault alone. The landing page
+stands for the report PDF (IG §1 rev 5), and the PDF is now checked **by the row's IMO** against
+the coordinate extraction (`scripts/igu_refs.py`), not by a text search:
+
+| live row | row_id | IMO | Hull number | IGU 2025 prints | IGU 2026 prints | refs added |
+|---|---|---|---|---|---|---|
+| 771 | 121 | 9988700 | Hull 2651 (SHI) | Hull 2651 | Hull 2651 | 2025 + 2026 PDF |
+| 775 | 226 | 9946362 | Hull 8102 (HDHHI) | Hull 8102 | Zoe Knutsen (8102) | 2025 + 2026 PDF |
+| 776 | 230 | 9972218 | Hull 8181 (HDHHI) | Hull 8181 | Amaryllis Knutsen (no hull) | 2025 PDF |
+
+Two independent sources → **Y → G** on all three (default `accept`; the reviewer's `hold` is
+kept until re-decided). The five Capacity cells stay Y: neither edition lists their IMOs.
+
+The `China` PASS on the landing page (live row 652, Shipowner country/area) was a false pass —
+IGU prints no such column; `qa_log` now records it as FAIL. The cell was already dropped, so
+nothing proposed changes. Workbook rebuilt against a filtered copy of the 2026-09-21 pull,
+recalc zero errors, apply artifacts regenerated; no `decision` cell changed.

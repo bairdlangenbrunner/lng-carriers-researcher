@@ -57,8 +57,23 @@ def read_decisions(batch_dir):
         return {r["id"]: (r.get("decision") or "").strip().lower() for r in csv.DictReader(f)}
 
 
+def reviewed(rec, csv_decision):
+    """The researcher's own call on a line, or None while nobody has made one.
+
+    `decision` is what decisions.csv holds — pre-filled by the batch (apply_batch.py, by
+    confidence) until someone decides. A line is reviewed when its latest log record is a
+    person's: not the backend sync's, not an undo back to undecided, and still the decision
+    the csv carries (a regenerated or hand-edited csv makes the line undecided again)."""
+    if not rec or rec.get("reviewer") == SYNC_REVIEWER or rec.get("undecided"):
+        return None
+    if CSV_DECISION.get(rec.get("decision")) != csv_decision:
+        return None
+    return rec["decision"]
+
+
 def overlay(data, dirs):
-    """A copy of `data` with every proposal's current decision and last review record.
+    """A copy of `data` with every proposal's current decision, the researcher's own call
+    (`reviewed`, None = undecided) and last review record.
 
     decisions.csv is authoritative for the decision; review_log.jsonl supplies who / when /
     note, and turns a csv `reject` back into `suggest` when the latest record is a suggestion
@@ -73,6 +88,7 @@ def overlay(data, dirs):
         q["decision"] = dec.get(b, {}).get(p["id"]) or p["decision"]
         rec = log.get(b, {}).get(key)
         q["last"] = rec
+        q["reviewed"] = reviewed(rec, q["decision"])
         q["suggestion"] = None
         if rec and rec.get("decision") == "suggest" and q["decision"] == "reject":
             q["decision"] = "suggest"
@@ -118,6 +134,10 @@ def validate(records, proposals):
                 raise Invalid(f"record {i}: a suggestion needs a note")
             rec["suggested_value"] = str(r["suggested_value"])
             rec["suggest_kind"] = kind
+        elif r.get("undecided"):
+            # back to a line nobody has decided (an undo, or a click on the pressed button): the
+            # csv gets its pre-filled decision back and the line reads as undecided again
+            rec["undecided"] = True
         out.append(rec)
     return out
 

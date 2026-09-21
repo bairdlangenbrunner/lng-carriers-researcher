@@ -52,6 +52,8 @@
     session: [],            // records saved this session
     itemSession: [],        // item records saved this session
     undo: [],               // per action: the prior state of the lines it changed
+    showLanded: false,      // lines the backend already holds are in view (set by refilter)
+    stay: {},               // lines decided on this card: kept in view, off-filter, until the vessel or filter changes
     open: {}                // proposal keys whose "details" are open (kept across re-renders)
   };
   var $ = function (id) { return document.getElementById(id); };
@@ -72,6 +74,17 @@
     return {label: dir, apply_order: 0};
   }
   function has(p, flag) { return p.flags.indexOf(flag) >= 0; }
+  // Two things per line: `decision` is what decisions.csv holds — pre-filled by the batch until
+  // someone decides — and `reviewed` is the researcher's own call (null = undecided). The card
+  // is drawn from `reviewed` alone; the batch's pre-fill is only ever shown as a suggestion.
+  function settled(p) { return p.reviewed === "accept" || p.reviewed === "reject" || p.reviewed === "suggest"; }
+  // in the backend as of the last pull, and nobody has said it should not be: nothing left to do
+  function landed(p) { return has(p, "in_backend") && p.reviewed !== "reject" && p.reviewed !== "suggest"; }
+  function shown(p) { return S.showLanded || !landed(p); }
+  // drawn grayed: decided (hold stays bright), or already applied / in the backend
+  function dimmed(p) { return settled(p) || has(p, "applied") || has(p, "in_backend"); }
+  function linesOf(v) { return v.proposals.filter(function (k) { return shown(D.proposals[k]); }); }
+  function reviewedText(p) { return p.reviewed || "not reviewed"; }
   function rowLabel(v) { return v.new ? "new row" : (v.live_row == null ? "row gone" : "row " + v.live_row); }
 
   // ---- theme ----
@@ -122,22 +135,27 @@
     fillSelect("f-owner", uniq(D.vessels.map(function (v) { return v.shipowner; })));
     F.forEach(function (f) { $("f-" + f).onchange = refilter; });
     $("f-mine").onchange = refilter;
+    $("f-landed").onchange = refilter;
     $("f-text").oninput = refilter;
     $("f-more").onclick = function () { toggleMore(); };
     $("active-filters").onclick = function (e) {
       var b = e.target.closest("button[data-clear]");
       if (!b) return;
       var id = b.getAttribute("data-clear");
-      if (id === "mine") $("f-mine").checked = false; else $("f-" + id).value = "";
+      if (id === "mine" || id === "landed") $("f-" + id).checked = false; else $("f-" + id).value = "";
       refilter();
     };
     $("f-reset").onclick = function () {
-      F.forEach(function (f) { $("f-" + f).value = ""; });
-      $("f-decision").value = "hold";
-      $("f-mine").checked = false;
-      $("f-text").value = "";
+      clearFilters();
+      $("f-decision").value = "todo";
       refilter();
     };
+  }
+  function clearFilters() {           // every filter off, decision "any"
+    F.forEach(function (f) { $("f-" + f).value = ""; });
+    $("f-mine").checked = false;
+    $("f-landed").checked = false;
+    $("f-text").value = "";
   }
   // Decision, Batch and Search stay in view; the rest sit behind "More filters". Every filter
   // that is set — those three included — is always visible as a removable chip, so a hidden
@@ -163,6 +181,7 @@
       if (MORE.indexOf(f) >= 0) n++;
     });
     if (st.mine) { chip("mine", "changed by me"); n++; }
+    if (st.landed) { chip("landed", "showing lines already in the backend"); n++; }
     if (st.text) chip("text", "search: “" + $("f-text").value.trim() + "”");
     $("active-filters").innerHTML = chips.join(" ");
     $("active-filters").hidden = !chips.length;
@@ -172,6 +191,7 @@
     var st = {};
     F.forEach(function (f) { st[f] = $("f-" + f).value; });
     st.mine = $("f-mine").checked;
+    st.landed = $("f-landed").checked;
     st.text = $("f-text").value.trim().toLowerCase();
     return st;
   }
@@ -181,12 +201,13 @@
     if (st.batch) parts.push(batchOf(st.batch).label);
     if (st.column) parts.push(st.column);
     if (st.confidence) parts.push(st.confidence);
-    if (st.decision) parts.push("decision " + st.decision);
+    if (st.decision) parts.push(st.decision === "todo" ? "to decide" : st.decision === "none" ? "not reviewed" : "decision " + st.decision);
     if (st.kind) parts.push("kind " + st.kind);
     if (st.flag) parts.push("flag " + st.flag);
     if (st.builder) parts.push(st.builder);
     if (st.owner) parts.push(st.owner);
     if (st.mine) parts.push("changed by me");
+    if (st.landed) parts.push("incl. lines already in the backend");
     if (st.text) parts.push('"' + st.text + '"');
     return parts.join(" · ") || "everything";
   }
@@ -195,8 +216,16 @@
     var hay = [v.name, v.imo, v.live_row == null ? "" : String(v.live_row), v.hull].join(" ").toLowerCase();
     return hay.indexOf(t) >= 0 || (/^\d+$/.test(t) && String(v.live_row) === t);
   }
+  // Applied / in-the-backend lines are asked for by name (the checkbox, or their Flag): "to
+  // decide" then lets them through, so neither control is a dead end under the default decision.
+  function askedFor(p, st) {
+    return !settled(p) && ((has(p, "in_backend") && S.showLanded) || (has(p, "applied") && st.flag === "applied"));
+  }
   function lineMatches(p, v, st) {
-    if (st.decision && p.decision !== st.decision) return false;
+    if (!shown(p)) return false;
+    if (st.decision === "todo") { if (dimmed(p) && !askedFor(p, st)) return false; }
+    else if (st.decision === "none") { if (p.reviewed) return false; }
+    else if (st.decision && p.reviewed !== st.decision) return false;
     if (st.batch && p.batch !== st.batch) return false;
     if (st.column && p.column !== st.column) return false;
     if (st.confidence && p.confidence !== st.confidence) return false;
@@ -211,7 +240,7 @@
     st = st || filterState();
     var out = [];
     D.vessels.forEach(function (v) {
-      v.proposals.forEach(function (k) { if (lineMatches(D.proposals[k], v, st)) out.push(k); });
+      linesOf(v).forEach(function (k) { if (lineMatches(D.proposals[k], v, st)) out.push(k); });
     });
     return out;
   }
@@ -222,12 +251,20 @@
     keepCurrent = keepCurrent === true;
     var st = filterState();
     var keep = D.vessels[S.vessel];
+    if (!keepCurrent) S.stay = {};
+    // what the backend already holds is out of the queue unless asked for
+    S.showLanded = st.landed || st.flag === "in_backend" || st.flag === "applied";
     S.visible = [];
     var nLines = 0;
     D.vessels.forEach(function (v, i) {
-      var n = 0;
-      v.proposals.forEach(function (k) { if (lineMatches(D.proposals[k], v, st)) n++; });
+      var n = 0, todo = 0;
+      linesOf(v).forEach(function (k) {
+        if (!lineMatches(D.proposals[k], v, st)) return;
+        n++;
+        if (!dimmed(D.proposals[k])) todo++;
+      });
       v._match = n;
+      v._todo = todo;                 // the list badge counts what the filter matches, like the status bar
       nLines += n;
       if (n) S.visible.push(i);
     });
@@ -243,16 +280,14 @@
     writeRoute();
   }
   function renderProgress() {
-    var holds = 0, total = 0;
+    var todo = 0, total = 0;
     Object.keys(D.proposals).forEach(function (k) {
+      if (landed(D.proposals[k])) return;
       total++;
-      if (D.proposals[k].decision === "hold") holds++;
+      if (!dimmed(D.proposals[k])) todo++;
     });
-    $("progress-bar").style.width = total ? (100 * (total - holds) / total) + "%" : "0";
-    $("progress-text").textContent = holds + " holds remaining · " + S.session.length + " decided this session";
-  }
-  function holdsOf(v) {
-    return v.proposals.filter(function (k) { return D.proposals[k].decision === "hold"; }).length;
+    $("progress-bar").style.width = total ? (100 * (total - todo) / total) + "%" : "0";
+    $("progress-text").textContent = todo + " to decide · " + S.session.length + " decided this session";
   }
   function renderVessels() {
     var ol = $("vessels");
@@ -265,8 +300,8 @@
         '<div class="vmeta"><span>' + esc(rowLabel(v)) + '</span><span class="who2" title="' +
         esc([v.shipbuilder, v.shipowner].filter(Boolean).join(" · ")) + '">' +
         esc([v.shipbuilder, v.shipowner].filter(Boolean).join(" · ")) + "</span>" +
-        (holdsOf(v) ? '<span class="n todo" title="lines on hold / lines matching the filter">' + holdsOf(v) + " to decide</span>"
-                    : '<span class="n" title="nothing on hold">' + v._match + " · done</span>") + "</div>";
+        (v._todo ? '<span class="n todo" title="matching lines nobody has decided, or on hold">' + v._todo + " to decide</span>"
+                 : '<span class="n" title="nothing left to decide among the matching lines">' + v._match + " · done</span>") + "</div>";
       li.onclick = function () { selectVessel(i); };
       ol.appendChild(li);
     });
@@ -274,6 +309,8 @@
   function selectVessel(i, lineKey) {
     S.vessel = i;
     S.line = lineKey || null;
+    S.stay = {};
+    if (lineKey) S.stay[lineKey] = true;   // a line asked for by key is shown whatever the filter
     renderVessels();
     renderCard();
     var sel = $("vessels").querySelector("li.sel");
@@ -283,14 +320,14 @@
 
   // Linked groups within one vessel: union of each line's links, emitted at first member.
   function groups(v) {
-    var inV = {}, parent = {};
-    v.proposals.forEach(function (k) { inV[k] = 1; parent[k] = k; });
+    var inV = {}, parent = {}, lines = linesOf(v);
+    lines.forEach(function (k) { inV[k] = 1; parent[k] = k; });
     function find(k) { while (parent[k] !== k) k = parent[k] = parent[parent[k]]; return k; }
-    v.proposals.forEach(function (k) {
+    lines.forEach(function (k) {
       D.proposals[k].links.forEach(function (o) { if (inV[o]) parent[find(o)] = find(k); });
     });
     var byRoot = {}, order = [];
-    v.proposals.forEach(function (k) {
+    lines.forEach(function (k) {
       var r = find(k);
       if (!byRoot[r]) { byRoot[r] = []; order.push(r); }
       byRoot[r].push(k);
@@ -360,18 +397,21 @@
           '” — the later batch wins on apply">' + esc(n) + " differs</span>";
     });
   }
-  // only worth saying once a person has decided one side; defaults differ by confidence
+  // only worth saying once a person has decided both sides differently
   function pairMismatch(p) {
     return p.links.some(function (o) {
       var q = D.proposals[o];
-      return q && q.column !== p.column && q.decision !== p.decision && (p.last || q.last);
+      return q && q.column !== p.column && p.reviewed && q.reviewed && q.reviewed !== p.reviewed;
     });
   }
 
   function lineHtml(k, p) {
     var b = batchOf(p.batch);
-    var chips = ['<span class="chip ' + esc(p.confidence) + '" title="' + esc(CONF_TEXT[p.confidence] || "no confidence grade") +
-                 '">' + esc(p.confidence || "?") + "</span>"];
+    // one chip: the batch's pre-fill, coloured by the confidence grade it was derived from
+    var chips = ['<span class="chip ' + esc(p.confidence) + '" title="confidence ' + esc(CONF_TEXT[p.confidence] || "not graded") +
+                 " — what the batch pre-filled in decisions.csv; a suggestion, " +
+                 (p.reviewed ? "decided since" : "nobody has decided this line") + '">' +
+                 (p.default ? "batch suggest" + (p.reviewed ? "ed " : "s ") + esc(p.default) : esc(p.confidence || "?")) + "</span>"];
     if (p.derivable) chips.push('<span class="chip" title="computed from other cells, not researched">derived</span>');
     p.flags.forEach(function (f) {
       if (FLAG_TEXT[f]) chips.push('<span class="chip' + (f === "applied" ? " warn" : "") + '" title="' +
@@ -447,12 +487,13 @@
   function canSuggest(p) { return p.kind !== "new_row" && p.kind !== "ref" && !has(p, "ref_only"); }
   function controlsHtml(k, p) {
     return '<div class="controls">' + CONTROLS.map(function (c) {
-      return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" title="' + c[0] + " (" + c[1] + ')" aria-pressed="' +
-        (p.decision === c[0]) + '">' + c[0] + "</button>";
-    }).join("") + '<button type="button" class="b-suggest" data-suggest aria-pressed="' + (p.decision === "suggest") +
-      '"' + (canSuggest(p) ? ' title="suggest a different value (s)"'
-                           : ' disabled title="nothing to suggest on a new row or a ref-only line"') +
-      ">suggest…</button>" + (p.last ? '<span class="by">' + esc(p.decision) + " by " + esc(p.last.reviewer) + "</span>" : "") +
+      return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" title="' +
+        (p.reviewed === c[0] ? "click again to clear — back to not reviewed" : c[0] + " (" + c[1] + ")") + '" aria-pressed="' +
+        (p.reviewed === c[0]) + '">' + c[0] + "</button>";
+    }).join("") + '<button type="button" class="b-suggest" data-suggest aria-pressed="' + (p.reviewed === "suggest") +
+      '"' + (canSuggest(p) ? ' title="suggest a different value (s)"'     // not `disabled`: a click says why
+                           : ' aria-disabled="true" title="nothing to suggest on a new row or a ref-only line"') +
+      ">suggest…</button>" + (p.reviewed ? '<span class="by">' + esc(p.reviewed) + " by " + esc(p.last.reviewer) + "</span>" : "") +
       '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
   }
 
@@ -460,7 +501,9 @@
   var askPairs = true;   // "don't ask again" for ordinary pairs; never for Name <-> Other names
   function partnersOf(k) {
     var p = D.proposals[k];
-    return p.links.filter(function (o) { return D.proposals[o] && D.proposals[o].column !== p.column; });
+    return p.links.filter(function (o) {     // a partner the backend already holds has nothing to decide
+      return D.proposals[o] && D.proposals[o].column !== p.column && shown(D.proposals[o]);
+    });
   }
   function isStrict(k, o) {
     var a = D.proposals[k].column, b = D.proposals[o].column;
@@ -473,6 +516,7 @@
   function applyRecord(rec) {
     var p = D.proposals[rec.key];
     p.decision = rec.decision;
+    p.reviewed = rec.undecided ? null : rec.decision;
     p.last = rec;
     p.suggestion = rec.decision === "suggest"
       ? {value: rec.suggested_value, kind: rec.suggest_kind, note: rec.note} : null;
@@ -480,7 +524,7 @@
   function snapshotOf(keys) {
     return keys.map(function (k) {
       var p = D.proposals[k];
-      return {key: k, decision: p.decision, suggestion: p.suggestion};
+      return {key: k, decision: p.decision, reviewed: p.reviewed, suggestion: p.suggestion};
     });
   }
   function setSaving(keys, text, failed) {
@@ -497,9 +541,13 @@
     setSaving(keys, "Saving…");
     return Store.decide(records).then(function (saved) {
       saved.forEach(applyRecord);
+      saved.forEach(function (r) { S.stay[r.key] = true; });
       S.session = S.session.concat(saved);
       if (undoable) S.undo.push(before);
-      banner("");
+      // a server started before store.py learned `undecided` drops the flag and records a real call
+      var stale = records.some(function (r, i) { return r.undecided && !(saved[i] && saved[i].undecided); });
+      banner(stale ? "The running server is older than this page: the clear was recorded as a decision, not as " +
+        "not reviewed. Restart review_app/server.py, then clear the line again." : "");
       refreshAfterSave();
       return saved;
     }).catch(function (e) {
@@ -515,18 +563,27 @@
     if (!$("tab-summary").hidden) renderSummary();
   }
 
+  function clearRecord(k, via) {
+    return {key: k, decision: D.proposals[k].default || "hold", undecided: true, via: via};
+  }
   function decideLine(k, decision, opts) {
     opts = opts || {};
     var p = D.proposals[k];
     var keys = [k];
-    var partners = partnersOf(k).filter(function (o) { return D.proposals[o].decision !== decision; });
+    // a click on the button that is already pressed takes the call back: the line is undecided
+    // again and decisions.csv gets the batch's pre-fill back (the same record an undo writes)
+    var clearing = !!opts.toggle && p.reviewed === decision;
+    var partners = partnersOf(k).filter(function (o) {
+      return clearing ? D.proposals[o].reviewed === decision : D.proposals[o].reviewed !== decision;
+    });
     var chain = Promise.resolve(true);
     if (partners.length) {
       var strict = partners.some(function (o) { return isStrict(k, o); });
       if (strict || askPairs) {
-        chain = dialog("<h3>Linked " + (partners.length > 1 ? "lines" : "line") + "</h3><p>You are setting <b>" +
-          esc(lineName(k)) + "</b> to <b>" + esc(decision) + "</b>. Same for " +
-          partners.map(function (o) { return "<b>" + esc(lineName(o)) + "</b> (now " + esc(D.proposals[o].decision) + ")"; })
+        chain = dialog("<h3>Linked " + (partners.length > 1 ? "lines" : "line") + "</h3><p>You are " +
+          (clearing ? "clearing <b>" + esc(lineName(k)) + "</b> back to <b>not reviewed</b>"
+                    : "setting <b>" + esc(lineName(k)) + "</b> to <b>" + esc(decision) + "</b>") + ". Same for " +
+          partners.map(function (o) { return "<b>" + esc(lineName(o)) + "</b> (now " + esc(reviewedText(D.proposals[o])) + ")"; })
             .join(", ") + "?</p>" +
           (strict ? "<p>Name and Other names are decided together (RF §4.16).</p>"
                   : '<label><input type="checkbox" id="dlg-noask"> don\'t ask again this session</label>'),
@@ -541,7 +598,9 @@
     }
     return chain.then(function (go) {
       if (!go) return null;
-      var applied = keys.filter(function (x) { return has(D.proposals[x], "applied") && D.proposals[x].decision !== decision; });
+      var applied = keys.filter(function (x) {
+        return has(D.proposals[x], "applied") && (clearing || D.proposals[x].reviewed !== decision);
+      });
       if (!applied.length) return true;
       return dialog("<h3>Already applied</h3><p>" + applied.length + " of these lines belong to a batch that is " +
         "already in the backend. Changing the decision records it, but does <b>not</b> unapply anything — " +
@@ -549,9 +608,12 @@
     }).then(function (go) {
       if (!go) return null;
       var recs = keys.map(function (x, i) {
-        return {key: x, decision: decision, via: i === 0 ? (opts.via || "single") : "linked"};
+        var via = i === 0 ? (opts.via || "single") : "linked";
+        return clearing ? clearRecord(x, via) : {key: x, decision: decision, via: via};
       });
       return save(recs, true).then(function (saved) {
+        // a keypress decides without a pointer on the line, and the line may leave the view: say what it did
+        if (opts.via === "key") toast(decision + " — " + lineName(k) + (keys.length > 1 ? " + " + (keys.length - 1) + " linked" : ""));
         if (opts.advance && S.line === k) stepLine(1);
         return saved;
       });
@@ -562,7 +624,8 @@
   // reaches the backend only through a fix batch that re-gates it (suggestions.py).
   function suggestLine(k) {
     var p = D.proposals[k];
-    if (!canSuggest(p)) return banner("Nothing to suggest on a new row or a ref-only line.");
+    if (!canSuggest(p)) return banner(p.kind === "new_row" ? "Nothing to suggest on a new row — accept, hold or reject it."
+      : "This line proposes only a [ref], no value — there is nothing to suggest against. Accept, hold or reject the ref.", true);
     // an unsent draft (the box was clicked away or Esc'd) comes back as it was left
     var s0 = DRAFT[k] || p.suggestion || {value: p.proposed, kind: "value", note: ""};
     var strict = partnersOf(k).filter(function (o) { return isStrict(k, o); });
@@ -579,7 +642,7 @@
       "the suggestion becomes a fix batch (<code>review_app/suggestions.py</code>) and reaches the backend only " +
       "after it passes the §3.8c gate and its own review.</p>" +
       (strict.length ? "<p class=\"warn\">Linked: " + strict.map(function (o) {
-        return esc(lineName(o)) + " is " + esc(D.proposals[o].decision); }).join(", ") +
+        return esc(lineName(o)) + " is " + esc(reviewedText(D.proposals[o])); }).join(", ") +
         ". other_names.py re-derives the former name in the suggestion's fix batch — decide the partner here yourself.</p>" : "") +
       (has(p, "applied") ? '<p class="warn">This batch is already applied: recording a suggestion unapplies nothing.</p>' : "");
     var dlg = $("dialog");
@@ -591,8 +654,13 @@
       if (v === p.proposed && kind === "value") { $("sg-err").textContent = "That is the proposed value — accept it instead."; return false; }
       return {key: k, decision: "suggest", suggested_value: v, suggest_kind: kind, note: n, via: "single"};
     }
-    var shown = dialog(h, [["Cancel", function () { delete DRAFT[k]; return null; }],
-                           [(SENT[k] ? "Resubmit" : "Submit") + " suggestion", attempt]], {clickOff: true});
+    var buttons = [["Cancel", function () { delete DRAFT[k]; return null; }],
+                   [(SENT[k] || p.reviewed === "suggest" ? "Resubmit" : "Submit") + " suggestion", attempt]];
+    if (p.reviewed === "suggest") buttons.splice(1, 0, ["Clear suggestion — back to not reviewed", function () {
+      delete DRAFT[k];
+      return clearRecord(k, "single");
+    }]);
+    var shown = dialog(h, buttons, {clickOff: true});
     [].forEach.call(dlg.querySelectorAll("textarea, input"), function (f) {   // fresh nodes per dialog
       f.addEventListener("input", function () {
         $("sg-err").textContent = "";
@@ -604,7 +672,7 @@
       if (!rec) return null;
       return Promise.resolve(save([rec], true)).then(function (r) {
         delete DRAFT[k];
-        SENT[k] = true;
+        SENT[k] = !rec.undecided;
         return r;
       });
     }).catch(function () { return null; });
@@ -617,6 +685,7 @@
     if (!prev) return banner("Nothing to undo.");
     var recs = prev.map(function (s) {
       var r = {key: s.key, decision: s.decision, via: "undo"};
+      if (!s.reviewed) r.undecided = true;     // back to a line nobody had decided
       if (s.decision === "suggest" && s.suggestion) {
         r.suggested_value = s.suggestion.value;
         r.suggest_kind = s.suggestion.kind;
@@ -639,9 +708,7 @@
   }
   function filterOnly(filter, value) {
     var keep = D.vessels[S.vessel];
-    F.forEach(function (f) { $("f-" + f).value = ""; });
-    $("f-mine").checked = false;
-    $("f-text").value = "";
+    clearFilters();
     $("f-" + filter).value = value;
     PUSH = true;
     refilter();
@@ -666,7 +733,7 @@
     if (!b) return;
     var line = b.closest(".line");
     setLine(line.getAttribute("data-key"), true);
-    decideLine(line.getAttribute("data-key"), b.getAttribute("data-decide"));
+    decideLine(line.getAttribute("data-key"), b.getAttribute("data-decide"), {toggle: true, via: "click"});
   }
 
   function renderCard() {
@@ -687,7 +754,13 @@
        !v.new && !v.in_backend && '<span class="chip warn">row no longer in backend</span>']
         .filter(Boolean).map(function (x) { return "<span>" + x + "</span>"; }).join("") + "</div>";
     card.innerHTML = h;
-    groups(v).forEach(function (g) {
+    // a line the filter does not match is not drawn (gray means decided / applied / in the backend)
+    function inView(k) { return lineMatches(D.proposals[k], v, st) || S.stay[k]; }
+    var hidden = 0;
+    groups(v).forEach(function (all) {
+      var g = all.filter(inView);
+      hidden += all.filter(function (k) { return !inView(k) && shown(D.proposals[k]); }).length;
+      if (!g.length) return;
       var box = el("div", {"class": "group" + (g.length > 1 ? " linked" : "")});
       if (g.length > 1) {
         var cols = uniq(g.map(function (k) { return D.proposals[k].column; }));
@@ -698,8 +771,8 @@
       }
       g.forEach(function (k) {
         var p = D.proposals[k];
-        var line = el("div", {"class": "line d-" + p.decision, "data-key": k, id: "line-" + k});
-        if (!lineMatches(p, v, st)) line.className += " off";
+        var line = el("div", {"class": "line d-" + (p.reviewed || "none"), "data-key": k, id: "line-" + k});
+        if (dimmed(p)) line.className += " done";
         if (k === S.line) line.className += " cur";
         line.innerHTML = lineHtml(k, p);
         line.addEventListener("click", function (e) {
@@ -710,6 +783,12 @@
       });
       card.appendChild(box);
     });
+    if (hidden) {
+      var what = hidden + " more line" + (hidden === 1 ? "" : "s") + " on this vessel " + (hidden === 1 ? "is" : "are") +
+        " hidden by the filter";
+      card.appendChild(el("div", {"class": "hiddennote"}, esc(what) + (v.imo || v.name
+        ? " — " + only("text", v.imo || v.name, "show all", "every line on this vessel, filters cleared") : "")));
+    }
     if (!S.line) {
       var first = cardOrder(v).filter(function (k) { return lineMatches(D.proposals[k], v, st); })[0];
       if (first) setLine(first, true);
@@ -731,7 +810,7 @@
     if (S.vessel < 0) return;
     var st = filterState();
     var v = D.vessels[S.vessel];
-    var keys = cardOrder(v).filter(function (k) { return lineMatches(D.proposals[k], v, st) || k === S.line; });
+    var keys = cardOrder(v).filter(function (k) { return lineMatches(D.proposals[k], v, st) || S.stay[k] || k === S.line; });
     var i = keys.indexOf(S.line) + dir;
     if (i >= 0 && i < keys.length) return setLine(keys[i]);
     stepVessel(dir, dir < 0);
@@ -762,9 +841,9 @@
       var l = S.line && document.getElementById("line-" + S.line), m = l && l.querySelector("details[data-more]");
       if (m) m.open = !m.open;
     },
-    a: function () { if (S.line) decideLine(S.line, "accept", {advance: true}); },
-    h: function () { if (S.line) decideLine(S.line, "hold", {advance: true}); },
-    r: function () { if (S.line) decideLine(S.line, "reject", {advance: true}); },
+    a: function () { if (S.line) decideLine(S.line, "accept", {advance: true, via: "key"}); },
+    h: function () { if (S.line) decideLine(S.line, "hold", {advance: true, via: "key"}); },
+    r: function () { if (S.line) decideLine(S.line, "reject", {advance: true, via: "key"}); },
     s: function (e) { if (S.line) { e.preventDefault(); suggestLine(S.line); } },
     u: undo,
     "/": function (e) { e.preventDefault(); $("f-text").focus(); $("f-text").select(); },
@@ -852,12 +931,12 @@
     var keys = matchingKeys(st);
     var inSet = {};
     keys.forEach(function (k) { inSet[k] = 1; });
-    var change = keys.filter(function (k) { return D.proposals[k].decision !== decision; });
+    var change = keys.filter(function (k) { return D.proposals[k].reviewed !== decision; });
     // bulk never crosses a linked pair silently: partners outside the filter are named
     var partners = [], strict = false;
     change.forEach(function (k) {
       partnersOf(k).forEach(function (o) {
-        if (inSet[o] || partners.indexOf(o) >= 0 || D.proposals[o].decision === decision) return;
+        if (inSet[o] || partners.indexOf(o) >= 0 || D.proposals[o].reviewed === decision) return;
         partners.push(o);
         if (isStrict(k, o)) strict = true;
       });
@@ -916,7 +995,12 @@
       $("i-status").value = "open";            // like the queue's "hold": what is left to do
       var bs = uniq(D.items.map(function (it) { return it.batch; }));
       fillSelect("i-batch", bs, bs.map(function (b) { return batchOf(b).label; }));
-      ["i-type", "i-status", "i-batch"].forEach(function (id) { $(id).onchange = renderItemList; });
+      ["i-type", "i-status", "i-batch"].forEach(function (id) {
+        $(id).onchange = function () {       // a changed filter is a fresh look: nothing is held in view
+          D.items.forEach(function (it) { it._touched = false; });
+          renderItemList();
+        };
+      });
       $("item-list").addEventListener("click", onItemClick);
       $("item-list").addEventListener("change", onItemNote);
     }
@@ -1030,10 +1114,17 @@
     var a = e.target.closest("a[data-row]");
     if (a) {
       e.preventDefault();
+      var vi = vesselIndexForRow(+a.getAttribute("data-row"));
+      if (vi < 0) return banner("Row " + a.getAttribute("data-row") + " has no lines in these batches.");
       showTab("queue");
-      $("f-decision").value = "";            // the row may have nothing on hold
+      clearFilters();                        // a filter left set could hide the row; decision "any":
+      PUSH = true;                           // the row may have nothing left to decide
       refilter();
-      return selectVessel(vesselIndexForRow(+a.getAttribute("data-row")));
+      if (S.visible.indexOf(vi) < 0) {       // every line on it is already in the backend
+        $("f-landed").checked = true;
+        refilter();
+      }
+      return selectVessel(vi);
     }
     var b = e.target.closest("button[data-status], button[data-call]");
     if (!b) return;
@@ -1127,6 +1218,7 @@
     var q = ["tab=" + activeTab()];
     F.forEach(function (f) { q.push(f + "=" + encodeURIComponent($("f-" + f).value)); });
     if ($("f-mine").checked) q.push("mine=1");
+    if ($("f-landed").checked) q.push("landed=1");
     return {view: q.join("&"), text: $("f-text").value, v: vesselId(D.vessels[S.vessel])};
   }
   function parseRoute(hash) {
@@ -1152,11 +1244,12 @@
     ROUTING = true;
     try {
       F.forEach(function (f) {
-        var sel = $("f-" + f), want = o[f] != null ? o[f] : (f === "decision" ? "hold" : "");
+        var sel = $("f-" + f), want = o[f] != null ? o[f] : (f === "decision" ? "todo" : "");
         sel.value = want;
         if (sel.value !== want) sel.value = "";        // a batch / builder no longer in the dataset
       });
       $("f-mine").checked = o.mine === "1";
+      $("f-landed").checked = o.landed === "1";
       $("f-text").value = o.text || "";
       showTab(o.tab && $("tab-" + o.tab) ? o.tab : "queue");
       refilter();
@@ -1176,6 +1269,15 @@
     b.classList.toggle("ok", !!ok);
     b.textContent = msg;
     b.hidden = !msg;
+  }
+  var toastTimer = null;
+  function toast(msg) {
+    var t = $("toast");
+    t.innerHTML = esc(msg) + ' <button type="button">undo (u)</button>';
+    t.querySelector("button").onclick = function () { t.hidden = true; undo(); };
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 8000);
   }
 
   // ---- boot ----
@@ -1228,7 +1330,7 @@
         if (!$("tab-summary").hidden) renderSummary();
         var n = r.accepted.length, m = r.resolved.length;
         banner("Backend synced" + (n || m ? ": " + n + " held line" + (n === 1 ? "" : "s") +
-          " already in the backend → accept, " + m + " item" + (m === 1 ? "" : "s") + " resolved."
+          " already in the backend → accept in decisions.csv (out of the queue), " + m + " item" + (m === 1 ? "" : "s") + " resolved."
           : " — nothing new was settled by it."), true);
       });
     }).catch(function (e) { banner("Sync failed, nothing changed: " + e.message); })

@@ -32,6 +32,7 @@ from collections import defaultdict
 from backend_io import load_backend
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
+from url_verifier import citable_form, citable_forms
 
 IGU_URL = "https://www.igu.org/igu-reports/2025-world-lng-report"
 
@@ -68,6 +69,8 @@ def main():
     args = ap.parse_args()
     _check_stale_research(args.force)
     lo, hi = _parse_rows(args.rows)
+    # the landing page and the edition's report PDF are one source (IG §1): a cell holding
+    # either is in scope. The backend's ref stays as it is — the batch keeps --igu-url as given.
     igu = args.igu_url.strip()
 
     be = load_backend(args.backend)
@@ -97,7 +100,7 @@ def main():
             value = r[vi].strip() if len(r) > vi else ""
             cell_refs = _refs(r[ri] if len(r) > ri else "")
             # in scope iff the value is real AND the ONLY ref is the IGU report
-            if value and value.lower() != "unknown" and cell_refs == [igu]:
+            if value and value.lower() != "unknown" and citable_forms(cell_refs) == [citable_form(igu)]:
                 targets.append({
                     "field": value_col, "ref_field": ref_col, "existing_value": value,
                 })

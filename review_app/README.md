@@ -36,6 +36,28 @@ cell first and writes on one confirmation.
    Keys: `j`/`k` line, `J`/`K` vessel, `a`/`h`/`r` accept / hold / reject, `s` suggest, `u` undo,
    `o` open the first ref, `d` details, `/` search, `?` help.
 
+   **Suggested vs decided.** A line carries two things. `decision` is what `decisions.csv`
+   holds — pre-filled by the batch (`apply_batch.py`, by confidence) until someone decides —
+   and `reviewed` is the researcher's own call (`store.reviewed`: the latest
+   `review_log.jsonl` record, when it is a person's, is not an undo back to undecided, and
+   still matches the csv; else `null`). The page is drawn from `reviewed` alone: every card
+   starts undecided, with the pre-fill shown as a `batch suggests …` chip coloured by the
+   confidence grade (green G / yellow Y / red R — there is no separate letter chip). Accept, reject and
+   suggest gray the card out; hold keeps it bright. **Clicking the pressed button again clears
+   the call** — the line is undecided again and `decisions.csv` gets the batch's pre-fill back
+   (an `undecided` log record, the same one an undo writes; a linked partner is asked about as
+   usual). A suggestion is cleared from its form (*Clear suggestion*). The `a`/`h`/`r` keys
+   never clear — `u` undoes. A line of an already-applied batch, or one
+   the backend already holds, is grayed too. Gray never means "filtered out": a line the set
+   filter does not match is not drawn at all (the card ends with `N more lines on this vessel are
+   hidden by the filter — show all`); the one exception is a line decided on the open card, which
+   stays, grayed, until the vessel or the filter changes, so a misclick can be clicked back. A line `in the backend` (value and refs, as
+   of the last sync) leaves the queue altogether, unless someone rejected it or suggested
+   another value (More filters → *show lines already in the backend* brings them back). The
+   Decision filter follows `reviewed`; its default, *to decide*, is every bright card
+   (*not reviewed* + hold). The pipeline still reads `decisions.csv`, pre-fills included —
+   `apply_batch.py` is unchanged; only **push accepted** asks for a clicked accept.
+
    **What a line shows.** Column, `was → proposed`, then **Why** (the note's one reason) and
    **Source** (a named link — `IGU World LNG Report 2026, p.71` opens the PDF at that page; a
    shipvault page and its unit-record companion are one source, the record behind `(data ↗)`)
@@ -47,7 +69,8 @@ cell first and writes on one confirmation.
 
    Each decision is saved the moment it is made, per batch and under a lock: the record is
    appended to `batches/<dir>/review_log.jsonl` (who, when, via, note — commit it with the
-   batch), then only the `decision` cell of that line in `decisions.csv` is rewritten (every
+   batch; `via` says how: `click`, `key`, `linked`, `undo`, `bulk:<filter>`, `single` = a suggestion or a
+   record older than 2026-09-21. A keypress also shows a toast naming the line, with an undo button), then only the `decision` cell of that line in `decisions.csv` is rewritten (every
    other byte kept; temp file + rename). A bad request writes nothing. Undo appends a new
    record; the log is never rewritten. Deciding one side of a linked pair (`Name` ↔
    `Other names`, `Price` ↔ `Price currency`, `Capacity` ↔ `Capacity units`, `X` ↔ `X [ref]`)
@@ -103,7 +126,13 @@ cell first and writes on one confirmation.
    **Filters.** Decision, Batch and Search stay in view; Column, Confidence, Kind, Flag, Builder,
    Owner and "changed by me" sit behind **More filters**. Every filter that is set — Decision,
    Batch and the search text included — shows as a chip with an × that clears it, so a hidden
-   control never filters silently.
+   control never filters silently. The vessel list's badge counts the lines the filter matches
+   (it sums to the status bar's count), not everything on the vessel. Under *to decide*, lines
+   already in the backend or already applied stay out unless asked for by name — *show lines
+   already in the backend*, or Flag → *in the backend* / *already applied* — and then come
+   through unless a person settled them. A card link and an Items row link clear every filter,
+   that checkbox included. The Items tab's Status / Type / Batch filters keep an item saved
+   this session in view until one of them changes.
 
    **New rows.** A discovery row's sources are numbered once under **Sources**; the row table
    cites them as `[1] [2]` beside each value instead of repeating the URLs. A long reason is

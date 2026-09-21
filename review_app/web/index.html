@@ -23,11 +23,13 @@
 </header>
 
 <div id="banner" class="banner" hidden></div>
+<div id="toast" class="toast" role="status" hidden></div>
 
 <section id="tab-queue" class="tabpanel">
   <form id="filters" class="filters" onsubmit="return false">
     <label>Decision <select id="f-decision">
-      <option value="hold" selected>hold</option><option value="">any</option>
+      <option value="todo" selected>to decide</option><option value="">any</option>
+      <option value="none">not reviewed</option><option value="hold">hold</option>
       <option value="accept">accept</option><option value="reject">reject</option>
       <option value="suggest">suggest</option></select></label>
     <label>Batch <select id="f-batch"><option value="">any</option></select></label>
@@ -53,12 +55,13 @@
       <label>Builder <select id="f-builder"><option value="">any</option></select></label>
       <label>Owner <select id="f-owner"><option value="">any</option></select></label>
       <label class="check"><input type="checkbox" id="f-mine"> changed by me</label>
+      <label class="check" title="lines the backend already holds (value and refs, as of the last sync) are left out of the queue"><input type="checkbox" id="f-landed"> show lines already in the backend</label>
     </div>
     <div id="active-filters" class="active-filters"></div>
   </form>
   <div class="statusbar">
     <span id="count"></span>
-    <div class="progress" title="holds remaining"><div id="progress-bar"></div></div>
+    <div class="progress" title="lines left to decide"><div id="progress-bar"></div></div>
     <span id="progress-text"></span>
     <span class="spacer"></span>
     <span id="bulk-slot"></span>

@@ -31,8 +31,7 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    does not get applied.
 3. **Decisions that are not a hold line** (§1, §1b, §1c): Hanwha Philly duplicates 1083 ↔ 1085 and
    1203 ↔ 1086 (delete by hand if you agree — duplicates are yours to remove); the proposed
-   bucket; batch 8's 8 owner / builder names; the manual-review lists of batches 1 and 2; and the
-   reminder you asked for — **should IGU-2026-only cells get a second ref?**
+   bucket; batch 8's 8 owner / builder names; and the manual-review lists of batches 1 and 2.
 4. **Apply + verify, in this order** (§2): 1, 2, 3, 4, 5, 6, 8, **9 (done)**, 11, 12, then **10 last**. **Every
    batch goes in by `apply_patch.csv`** (`tools/apply_patch.gs`, DRY_RUN first) — the batches
    share hundreds of rows and a full-row paste would revert the batch before it (AP §2a). Set
@@ -92,7 +91,7 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 | 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives | 0 / 8 |
 | 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | all accept |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
-| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs; + 42 delivery-history lines for the 21 years that move later (RF §4.19, 2026-09-21; 507 proposals) | 469 / 37 / 1 reject, plus 8 manual-review |
+| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs; + 42 delivery-history lines for the 21 years that move later (RF §4.19, 2026-09-21); the 10 Vessel type Rule-F refs **withdrawn** 2026-09-21 — IGU 2026 does not print those vessels (live rows 61, 487, 488, 994, 1118, 1169, 1179–1182; now manual-review) — 497 proposals | 462 / 35, plus 18 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | **APPLIED 2026-09-17** — 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
 | 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names`; **rebuilt 2026-09-18** with every IGU 2026 `(ex-…)` name (RF §4.17) and yard-tagged hulls — 160 cells / 160 rows, 136 carry a gated ref | 125 / 35 |
 | 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |
@@ -202,17 +201,14 @@ leads, so each accepted item needs a verified ref and goes into a follow-up `fix
 
 ## 1c. Batch 8 — IGU-2026-sourced fix (`1654ET_fix_igu2026_sourced`)
 
-Decided 2026-09-17: **what IGU 2026 prints is a sufficient sole source for now** — no second ref is
-chased. Batch 8 turns the §1b findings IGU actually prints into proposals citing the report PDF.
+Decided 2026-09-17: **what IGU 2026 prints is a sufficient sole source** — no second ref is
+chased (settled 2026-09-21: none needed unless Baird explicitly says otherwise). Batch 8 turns the §1b findings IGU actually prints into proposals citing the report PDF.
 Covered there (so no separate research is owed): the 13 delivery years + rows 800 / 929, the load
 corruption rows, the renames and backend name defects, `Greenergy` (780 / 781 / 915 / 916), row 909,
 rows 843 / 844, row 503, the ME-GA ↔ X-DF flips. **Not** covered: the 18 scrapped rows (IGU's
 silence is not a statement — batch 9, with demolition refs), rows 873 / 910 spellings,
 `Maran Gas Efessos` (discovery).
 
-- [ ] **REMINDER — open decision (Baird asked to be reminded):** should IGU-2026-only cells get a
-      second reference at the ref-validation step? They are identifiable by the PDF URL being their
-      only ref. Raise at apply / next citation-QC pass / pre-release QC, whichever is first.
 - [ ] **24 holds** in `decisions.csv`: Status → `on order` + delivery year on row 814 and the six
       Arctic LNG 2 hulls (797, 799, 805, 806, 812, 823); Vessel type row 81 → FSU and row 270 →
       FSRU; Karadeniz restylings (11, 20, 29, 39); row 785 `Al Kheesah`; row 929 `TFDE`; rows

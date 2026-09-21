@@ -143,3 +143,23 @@ confidence (14 G / 7 Y) and **decided together with that line**. Row_ids 40, 41,
 - 42 proposals added (465 -> 507; 469 accept / 37 hold / 1 reject). Rebuilt paced: 0 refs dropped,
   recalc zero errors. `decisions.csv` keeps every existing decision; each new line's default matches
   its Delivery year line's decision.
+
+## 10 Vessel type lines withdrawn (2026-09-21, IG rev 5 §1 / RF rev 26 §3.8c)
+
+An IGU report PDF is a ref only for what it prints **for the row's IMO, in that column**
+(`igu_refs.corroborates_cell`). Ten value-unchanged Rule F lines here cited the IGU 2026 PDF for
+Vessel type `conventional` on vessels IGU 2026 does not print — the earlier text gate passed them
+only because `conventional` appears ~700 times in the table:
+
+- IMO not listed in IGU 2026: live rows 61 (IMO 9211872), 487 (9761803), 488 (9761815), 994 (1119078).
+- No IMO, so nothing IGU prints can be tied to the row: live rows 1118, 1169, 1179–1182.
+
+The lines are removed (value unchanged + no ref = nothing to apply) and listed in
+`manual_review.json`; `build_fix_json.py` now routes this case there. They stay Rule F negatives:
+each needs its own source, or a ruling that a capacity-derived size class stands on the Capacity
+ref. Decisions lost with them: 7 accept, 2 hold, 1 reject (live row 61). Script fix in the same
+change: a blank IMO now fails the IGU check instead of falling back to the text gate.
+
+507 -> 497 proposals (462 accept / 35 hold); every other decision unchanged. Rebuilt paced:
+0 refs dropped, recalc zero errors. The other fix batches were audited offline against the same
+check: no other IGU ref fails.

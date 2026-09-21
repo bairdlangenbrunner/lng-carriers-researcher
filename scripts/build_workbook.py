@@ -834,7 +834,8 @@ def build_fix(args):
     they paste straight over the matching backend rows. The backend is NEVER
     edited here (RF §4.7).
     """
-    from url_verifier import classify, corroborates
+    from igu_refs import corroborates_cell
+    from url_verifier import citable_form, classify
 
     payload = json.loads(Path(args.fix).read_text())
     with open(args.backend, encoding="utf-8") as f:
@@ -879,6 +880,12 @@ def build_fix(args):
         if rid not in row_by_id:
             missing.append(rid)
             continue
+        # an IGU report PDF is held to what it prints for THIS vessel (igu_refs, IG §1):
+        # the IMO the batch proposes, else the row's
+        imo_i = header_index.get("IMO number")
+        row_imo = next((str(c.get("new_value", "")) for c in corr.get("cells", [])
+                        if c.get("field") == "IMO number"), "") or \
+            (row_by_id[rid][imo_i] if imo_i is not None and len(row_by_id[rid]) > imo_i else "")
         for cell in corr.get("cells", []):
             field = cell["field"]
             ref_field = field + " [ref]"
@@ -902,11 +909,13 @@ def build_fix(args):
                                            "§3.8c gate N/A)",
                                 "note": cell.get("note", "")})
             for ref in (cell.get("refs", []) if not preserve_ref else []):
-                url = ref["url"] if isinstance(ref, dict) else ref
+                url = citable_form(ref["url"] if isinstance(ref, dict) else ref)  # IGU landing page -> PDF
+                if url in kept:
+                    continue
                 soft = bool(ref.get("soft")) if isinstance(ref, dict) else False
                 # a ref may name the element it is cited for (an Other-names cell adding two)
                 ref_gate = (ref.get("gate_value") if isinstance(ref, dict) else None) or gate_value
-                ok, reason = corroborates(url, ref_gate)
+                ok, reason = corroborates_cell(url, ref_gate, field, row_imo)
                 grade = classify(reason)
                 if ok:
                     kept.append(url)

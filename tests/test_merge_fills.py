@@ -23,8 +23,8 @@ def _run(tmp_path, monkeypatch, fills, page_values):
     monkeypatch.setenv("LNGCT_WORK_DIR", str(tmp_path))
     (tmp_path / "data_fill.json").write_text(json.dumps({"fills": fills}))
     monkeypatch.setattr(
-        merge_fills, "corroborates",
-        lambda u, v: (True, "OK") if str(v) in page_values
+        merge_fills, "corroborates_cell",
+        lambda u, v, field="", imo="": (True, "OK") if str(v) in page_values
         else (False, "none of expected content found"))
     merge_fills.main()
     return json.loads((tmp_path / "data_fill.json").read_text())

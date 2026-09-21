@@ -203,16 +203,14 @@ matched_ids = {x["backend"]["row_id"] for x in matched}
 
 
 def add_class(rid, value, conf, note):
+    # 2026-09-21: these rows are NOT in IGU 2026, so its PDF is not a ref for them (IG §1 — an IGU
+    # ref is what the report prints for the row's IMO). They go to manual review, not fix.json.
     raw = by_id[rid]
-    cap = raw[H["Capacity"]].strip() or "blank"
-    if cap == "blank" and conf == "G":
-        conf, note = "Y", note + " — HOLD: no backend Capacity, so the size class cannot be derived"
-    cells.setdefault(rid, {"_live_row": sheet_row[rid], "_name": raw[H["Name"]], "cells": []})
-    cells[rid]["cells"].append({
-        "field": "Vessel type", "new_value": value, "confidence": conf,
-        "refs": [{"url": IGU_PDF, "soft": False}],
-        "note": f"{note} [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type "
-                f"classification (size classes), capacity {cap} cbm; per Baird ruling 2026-09-17]"})
+    manual.append({"live_row": sheet_row[rid], "row_id": rid, "name": raw[H["Name"]], "field": "Vessel type",
+                   "backend": raw[H["Vessel type"]].strip(), "igu": None, "igu_prev": None,
+                   "why": "Vessel type has no [ref] and IGU 2026 does not list this vessel (or the row has no "
+                          "IMO to look it up by) — needs its own source, or a ruling that a capacity-derived "
+                          "size class stands on the Capacity ref"})
 
 
 for rid, raw in by_id.items():

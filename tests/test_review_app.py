@@ -8,6 +8,7 @@ import pytest
 
 import review_data
 import server
+import store
 from review_fixture import make_batches
 
 
@@ -50,6 +51,7 @@ def test_serves_static_and_api(running):
     data = json.loads(get(base + "/api/data")[1])
     k = f"{b['fix_a'].name}::10|Name"
     assert data["proposals"][k]["decision"] == "accept" and data["proposals"][k]["last"] is None
+    assert data["proposals"][k]["reviewed"] is None       # pre-filled by the batch, nobody decided
 
 
 def test_static_does_not_escape_web_dir(running):
@@ -135,6 +137,26 @@ def test_suggest_is_reject_in_csv_and_full_in_log(running):
     data = json.loads(get(base + "/api/data")[1])
     p = data["proposals"][key]
     assert p["decision"] == "suggest" and p["suggestion"]["value"] == "Atlantic Star II"
+
+
+def test_reviewed_is_the_researchers_call_not_the_prefill(running):
+    base, _, b = running
+    key = f"{b['fix_a'].name}::10|Status"
+    prop = lambda: json.loads(get(base + "/api/data")[1])["proposals"][key]
+    before = prop()["decision"]
+    assert prop()["reviewed"] is None
+    post(base, [{"key": key, "decision": "reject"}])
+    assert prop()["reviewed"] == "reject"
+    # undo back to a line nobody had decided: the csv gets its pre-fill back, reviewed is None again
+    post(base, [{"key": key, "decision": before, "via": "undo", "undecided": True}])
+    assert prop()["decision"] == before and prop()["reviewed"] is None
+    post(base, [{"key": key, "decision": "hold"}])
+    assert prop()["reviewed"] == "hold"
+    # decisions.csv edited behind the log: the log no longer describes the line
+    path = b["fix_a"] / "decisions.csv"
+    text = store.plan_csv(path, {"10|Status": "accept"})
+    path.write_text(text, encoding="utf-8", newline="")
+    assert prop()["decision"] == "accept" and prop()["reviewed"] is None
 
 
 def test_undo_appends(running):

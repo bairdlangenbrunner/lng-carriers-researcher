@@ -145,7 +145,7 @@ def backend_batch(out_dir: Path, skip_fix: list[str]) -> None:
         for corr in json.loads(Path(fx).read_text()).get("corrections", []):
             pending |= {(str(corr.get("row_id")), f"{c.get('field')} [ref]")
                         for c in corr.get("cells", []) if not c.get("preserve_ref")}
-    fills, skipped = [], []
+    fills, skipped, added = [], [], []
     for rid, row in be.row_by_id().items():
         for h, idx in be.header_index.items():
             if not h.endswith(" [ref]"):
@@ -166,6 +166,7 @@ def backend_batch(out_dir: Path, skip_fix: list[str]) -> None:
                 continue
             log: list = []
             new = [u for u in with_companions(urls, value, where, log) if u not in urls]
+            added += [e for e in log if e["result"] == "ADDED"]
             skipped += [e for e in log if e["result"] != "ADDED"]
             if new:
                 fills.append({
@@ -188,7 +189,7 @@ def backend_batch(out_dir: Path, skip_fix: list[str]) -> None:
         "candidate_findings": [],
     }, indent=2, ensure_ascii=False) + "\n")
     (out_dir / "shipvault_api_refs.json").write_text(
-        json.dumps({"added": len(fills), "skipped": skipped}, indent=2, ensure_ascii=False) + "\n")
+        json.dumps({"added": added, "skipped": skipped}, indent=2, ensure_ascii=False) + "\n")
     print(f"  {out_dir.name}: {len(_blank_cache)} shipvault pages cited in the backend, "
           f"{sum(_blank_cache.values())} render blank; {len(fills)} ref-only fills in "
           f"{len({f['row_id'] for f in fills})} rows, {len(skipped)} cells skipped", file=sys.stderr)

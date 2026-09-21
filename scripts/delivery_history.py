@@ -29,12 +29,10 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from other_names import IGU_PDF as _IGU_2026, UNGATEABLE, _split_refs  # noqa: E402
+from other_names import IGU_PDF, UNGATEABLE, _split_refs  # noqa: E402
 from paths import work_dir  # noqa: E402
 
 PREV, FLAG = "Previous delivery year(s)", "Delivery delayed"
-IGU_PDF = {**_IGU_2026,
-           "2025": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf"}
 
 
 def split_years(cell: str) -> list[str]:

@@ -273,30 +273,6 @@
       "confidence": "G"
     },
     {
-      "row_id": "1044",
-      "column": "Vessel type",
-      "value": "conventional",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1044",
-      "column": "Vessel type [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1045",
-      "column": "Vessel type",
-      "value": "conventional",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1045",
-      "column": "Vessel type [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
       "row_id": "563",
       "column": "Vessel type",
       "value": "conventional",
@@ -5473,74 +5449,14 @@
       "column": "Propulsion type [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
-    },
-    {
-      "row_id": "1219",
-      "column": "Vessel type",
-      "value": "conventional",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1219",
-      "column": "Vessel type [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1220",
-      "column": "Vessel type",
-      "value": "conventional",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1220",
-      "column": "Vessel type [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1221",
-      "column": "Vessel type",
-      "value": "conventional",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1221",
-      "column": "Vessel type [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1222",
-      "column": "Vessel type",
-      "value": "conventional",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1222",
-      "column": "Vessel type [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1223",
-      "column": "Vessel type",
-      "value": "conventional",
-      "confidence": "G"
-    },
-    {
-      "row_id": "1223",
-      "column": "Vessel type [ref]",
-      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
-      "confidence": "G"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 507,
-    "accepted": 469,
-    "hold": 37,
-    "reject": 1,
+    "items": 497,
+    "accepted": 462,
+    "hold": 35,
+    "reject": 0,
     "conflicts": 0
   }
 }
