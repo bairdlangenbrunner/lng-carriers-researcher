@@ -12,7 +12,7 @@ The SOPs live in `docs/sops/`:
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -174,8 +174,8 @@ IMO-keyed intercomparison of the whole backend against the IGU World LNG Report'
 
 | Phase | Section | What |
 |---|---|---|
-| Scope / positioning | IG §1 | whole fleet; IGU **is** citable (the backend's seed source) but its landing page cannot pass §3.8c for a new proposal; inclusion criteria apply |
-| IGU 2026 as sole source (interim) | IG §5.4 | what IGU 2026 prints is enough on its own — cite the report PDF, Vessel type included; silence is not a statement; open decision on a second ref at ref-validation |
+| Scope / positioning | IG §1 | whole fleet; IGU **is** citable (the backend's seed source); its landing page cannot pass §3.8c, so the edition's report PDF is gated and cited in its place (`url_verifier.citable_form`), per-vessel claims keyed by IMO **and column** in every gate caller (`igu_refs.corroborates_cell`); a row with no IMO gets no IGU ref; the backend's landing-page refs stay — a landing page means *confirm the data point in that edition's PDF, by IMO*; inclusion criteria apply |
+| IGU 2026 as sole source | IG §5.4 | what IGU 2026 prints is enough on its own — cite the report PDF, Vessel type included; silence is not a statement; no second ref unless Baird explicitly says otherwise (settled 2026-09-21) |
 | Parameters | IG §2 | current + previous edition, pending batches to cross-reference, capacity tolerance (max 6000 m³ / 3%), tracker leads, output name |
 | Extraction | IG §3 | `igu_fleet.py` — word coordinates, no assumed column set; extract every edition fresh (layout changes); read the warnings; acceptance check `prev − dropped + delivered + added = current` |
 | Join + comparison | IG §4.1–4.2 | IMO as a string, no fuzzy pairing; builder labels through a learned co-occurrence map (≥ 3 vessels) |

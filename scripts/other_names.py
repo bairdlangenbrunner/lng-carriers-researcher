@@ -131,15 +131,29 @@ class Gate:
         self.last, self.seen, self.log = {}, {}, []
         self._igu = igu_names          # {edition: {imo: printed name}}; loaded on first use
 
-    def _igu_prints(self, url: str, imo: str, former: str) -> bool:
-        """The IGU report's name cell for this IMO carries the former name (`(ex-…)`)."""
+    @staticmethod
+    def _igu_edition(url: str) -> str:
         m = re.search(r"igu-world-lng-report-(\d{4})", url.lower())
-        if not m or not imo:
-            return False
+        return m.group(1) if m else ""
+
+    def _names(self) -> dict:
         if self._igu is None:
             self._igu = load_igu_names()
-        printed = self._igu.get(m.group(1), {}).get(str(imo).strip(), "")
-        return f" {fold(former)} " in f" {fold(printed)} "
+        return self._igu
+
+    def _igu_prints(self, url: str, imo: str, former: str) -> bool:
+        """The IGU report's name cell for this IMO carries the former name (`(ex-…)`)."""
+        ed = self._igu_edition(url)
+        if not ed or not imo:
+            return False
+        return igu_prints_name(self._names().get(ed, {}).get(str(imo).strip(), ""), former)
+
+    def igu_candidates(self, imo: str, former: str) -> list[str]:
+        """The report PDF of every edition whose extraction prints the former name for this
+        IMO. The backend was seeded from IGU 2025, so a bulk-loaded row's `Name [ref]` is the
+        landing page — ungateable, but the same edition's PDF is the ref (IG §5.4)."""
+        return [IGU_PDF[ed] for ed, names in sorted(self._names().items()) if ed in IGU_PDF
+                and igu_prints_name(names.get(str(imo).strip(), ""), former)]
 
     def shipvault_candidates(self, imo: str) -> list[str]:
         """Page + unit-record URL of the shipvault record for an IMO (RF §6a.8)."""
@@ -165,7 +179,7 @@ class Gate:
         if new and f" {fold(former)} " in f" {fold(new)} ":
             return "former name is part of the new name — a page printing the new name proves nothing"
         if any(u in url for u in UNGATEABLE):
-            return "landing page, no per-vessel value"
+            return "landing page, no per-vessel value (no report PDF known for this edition)"
         if host.endswith("vesselfinder.com") and not self.ask_vf:
             return "vesselfinder not asked (IP ban)"
         if is_placeholder(former) and any(host.endswith(t) for t in TRACKER_HOSTS):
@@ -175,7 +189,7 @@ class Gate:
     def passing(self, urls: list[str], former: str, where: str, new: str = "", imo: str = "") -> list[str]:
         from url_verifier import corroborates, url_ban_reason
         kept = []
-        for url in dict.fromkeys(urls):
+        for url in citable_forms(urls):       # an IGU landing page -> its edition's PDF
             why = url_ban_reason(url) or self._skip(url, former, new)
             if why or not self.enabled:
                 self.log.append({"where": where, "url": url, "former": former,
@@ -188,7 +202,14 @@ class Gate:
                 if wait > 0:
                     self.sleep(wait)
             ok, reason = corroborates(url, former)
-            if ok and "all tokens present" in reason:
+            ed = self._igu_edition(url)
+            if ok and ed and imo and ed in self._names():
+                # a 1,000-vessel table prints someone's 'Hull 3387' on any page: the IGU PDF
+                # passes only on what it prints for THIS IMO (coordinate extraction)
+                ok = self._igu_prints(url, imo, former)
+                reason = (f"OK (IGU {ed} name cell for IMO {imo}, coordinate extraction)" if ok
+                          else f"IGU {ed} does not print this name for IMO {imo}")
+            elif ok and "all tokens present" in reason:
                 # the scattered-token fallback suits an owner string, not a vessel name:
                 # 'Energy Frontier' would pass on any long report. The phrase or nothing —
                 # except an IGU PDF, whose table wraps names: ask the coordinate extraction.
@@ -203,6 +224,23 @@ class Gate:
             if ok:
                 kept.append(url)
         return kept
+
+
+def igu_prints_name(printed: str, former: str) -> bool:
+    """IGU's name cell carries the former name — as the phrase, or, for a hull placeholder,
+    as the same hull number (IGU prints `Hull 3387`, the backend `Hull 3387 (HDHHI)`)."""
+    if not printed or not former:
+        return False
+    if f" {fold(former)} " in f" {fold(printed)} ":
+        return True
+    h = hull_only(former)
+    if not h:
+        return False
+    paren = _PAREN_HULL_RE.search(printed.split(" (ex-")[0])
+    if same_hull(h, hull_only(printed)) or (paren and same_hull(h, hull_only(paren.group(1)))):
+        return True
+    # 'Hlaitan (ex-H1792A)', '… (ex-Victor Hugo (8107))': the hull sits in the ex-name chain
+    return any(same_hull(h, hull_only(x)) for pair in igu_ex_names(printed) for x in pair if x)
 
 
 def load_igu_names() -> dict:
@@ -223,7 +261,7 @@ _YARD_WORDS = {"hull", "no", "hudong", "zhonghua", "hyundai", "ulsan", "samho", 
                "heavy", "industries", "shi", "hshi", "hdhhi", "hanwha", "jiangnan", "zvezda"}
 _DUMMY_NAMES = {"abcde"}                          # IGU's own filler: 'ex-ABCDE (2537)'
 # the citable report PDF per edition (IG §5.4; the landing page cannot pass §3.8c)
-IGU_PDF = {"2026": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"}
+from url_verifier import IGU_PDF, citable_forms  # noqa: E402
 
 
 def igu_ex_names(printed: str) -> list[tuple[str, str]]:
@@ -418,6 +456,7 @@ def build_cells(payloads: list[tuple[str, dict]], be, gate: Gate, include=()) ->
             cand = [r["url"] if isinstance(r, dict) else r for r in c.get("refs", [])]
             cand += _split_refs(be.cell(row, hi.get("Name [ref]")))
             imo = be.cell(row, hi.get("IMO number"))
+            cand += gate.igu_candidates(imo, former)
             where = f"{rid}|{FIELD}"
             kept = gate.passing(cand, former, where, new, imo)
             if not kept and not is_placeholder(former):

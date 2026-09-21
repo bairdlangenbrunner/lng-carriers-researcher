@@ -795,6 +795,17 @@ def test_untagged_hull_number():
     assert "H2706" in vs and "Hull H2706" in vs
 
 
+def test_igu_landing_page_has_a_citable_form():
+    landing = "https://www.igu.org/igu-reports/2025-world-lng-report"
+    assert url_verifier.citable_form(landing) == url_verifier.IGU_PDF["2025"]
+    assert url_verifier.citable_form(landing + "/") == url_verifier.IGU_PDF["2025"]
+    assert url_verifier.citable_form("https://www.igu.org/igu-reports/2019-world-lng-report") \
+        == "https://www.igu.org/igu-reports/2019-world-lng-report"          # no PDF known: unchanged
+    assert url_verifier.citable_form("https://example.org/a") == "https://example.org/a"
+    assert url_verifier.citable_forms([landing, url_verifier.IGU_PDF["2025"], "https://example.org/a"]) \
+        == [url_verifier.IGU_PDF["2025"], "https://example.org/a"]
+
+
 def test_dollar_figure_in_title_is_not_a_status_code():
     assert url_verifier._title_hit("DSME wins $500 million LNG carrier order", url_verifier._SOFT_ERROR_TITLES) is None
     assert url_verifier._title_hit("500 Internal Server Error", url_verifier._SOFT_ERROR_TITLES)

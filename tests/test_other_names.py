@@ -104,6 +104,26 @@ class TestBuildCells:
         assert gate.passing([url], "Pioneer Spirit", "1|Other names", "Arctic Pioneer", "9256602") == [url]
         assert gate.passing([url], "Energy Frontier", "2|Other names", "Arunika Jaya", "9245720") == []
 
+    def test_igu_landing_page_is_swapped_for_its_pdf_and_keyed_by_imo(self, monkeypatch):
+        # the backend was seeded from IGU 2025: a bulk-loaded row's Name [ref] is the landing
+        # page. It is never skipped — the edition's PDF is gated and cited in its place, on
+        # what the extraction prints for THIS IMO (any long table prints someone's 3387).
+        import url_verifier
+        asked = []
+        monkeypatch.setattr(url_verifier, "corroborates", lambda u, v: (asked.append(u), (True, "OK"))[1])
+        gate = other_names.Gate(sleep=lambda s: None, igu_names={"2025": {"9981427": "Hull 3387"}})
+        landing, pdf = "https://www.igu.org/igu-reports/2025-world-lng-report", other_names.IGU_PDF["2025"]
+        assert gate.passing([landing], "Hull 3387 (HDHHI)", "186|Other names", "Al Nigyan", "9981427") == [pdf]
+        assert asked == [pdf]
+        assert gate.passing([landing], "Hull 3387 (HDHHI)", "9|Other names", "Other", "9999999") == []
+        assert gate.igu_candidates("9981427", "Hull 3387 (HDHHI)") == [pdf]
+
+    def test_igu_prints_name_hull_forms(self):
+        assert other_names.igu_prints_name("Hull 3387", "Hull 3387 (HDHHI)")
+        assert other_names.igu_prints_name("Al Nigyan (3387)", "Hull 3387 (HDHHI)")
+        assert not other_names.igu_prints_name("Hull 3388", "Hull 3387 (HDHHI)")
+        assert not other_names.igu_prints_name("", "Hull 3387 (HDHHI)")
+
     def test_former_name_inside_the_new_name_is_not_gated(self):
         gate = other_names.Gate(sleep=lambda s: None)
         assert gate.passing(["https://example.org/a"], "LNGT Americas", "1|Other names",

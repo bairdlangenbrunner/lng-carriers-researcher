@@ -36,7 +36,8 @@ from datetime import date
 from pathlib import Path
 
 from paths import work_dir
-from url_verifier import classify, corroborates
+from igu_refs import corroborates_cell
+from url_verifier import citable_forms, classify
 
 # Data-fill SOP §5 — the only columns a backend-internal autofill may fill.
 DERIVABLE_FIELDS = {"Shipowner country/area", "Capacity units", "Price currency",
@@ -68,6 +69,17 @@ def order_total(f: dict) -> tuple[str | None, str | None]:
     if abs(total / n - val) > 1:
         return None, f"proposed_value {val} != {total} / {n}"
     return str(total), None
+
+
+def _imo_by_row_id() -> dict:
+    """row_id -> IMO from the fresh pull ({} without one: the IGU check then abstains)."""
+    try:
+        from backend_io import BackendNotPulled, load_backend
+        be = load_backend()
+    except (BackendNotPulled, FileNotFoundError):
+        return {}
+    i = be.header_index.get("IMO number")
+    return {rid: be.cell(row, i).strip() for rid, row in be.row_by_id().items()} if i is not None else {}
 
 
 def main():
@@ -139,6 +151,7 @@ def main():
     #     §3.8c value↔ref gate) and logged as a conflict finding for human review
     #   - corroborated (live page or its Wayback snapshot) -> kept
     survivors, demoted, conflicts_logged = [], 0, 0
+    imo_by_id = _imo_by_row_id()
     for f in fills:
         val = f.get("proposed_value", "")
         if f.get("derivable") and not is_derivable_field(f.get("field", "")):
@@ -159,8 +172,9 @@ def main():
                 f["confidence"] = "Y"
 
         kept, dropped_conflict, dropped_blocked = [], [], []
-        for u in f.get("new_urls", []):
-            ok, reason = corroborates(u, val)
+        for u in citable_forms(f.get("new_urls", [])):   # IGU landing page -> the edition's PDF
+            # an IGU report PDF is held to what it prints for this row's IMO (igu_refs, IG §1)
+            ok, reason = corroborates_cell(u, val, f.get("field", ""), imo_by_id.get(str(f["row_id"]), ""))
             grade = classify(reason)
             if ok:
                 kept.append(u)

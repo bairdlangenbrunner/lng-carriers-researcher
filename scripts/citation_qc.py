@@ -55,7 +55,8 @@ from urllib.parse import urlsplit
 import url_verifier
 from backend_io import load_backend
 from paths import backend_csv_path, work_dir
-from url_verifier import check_url, classify, corroborates
+from igu_refs import corroborates_cell
+from url_verifier import check_url, citable_form, classify, corroborates
 
 _URL_SPLIT = re.compile(r"[\s,;|]+")
 
@@ -214,6 +215,8 @@ def main():
     if args.corroborate:
         cell_out = str(work_dir() / "citation_qc_cells.csv")
         ok_urls = {r["url"] for r in results if r["verdict"] == "ok"}
+        _imo = be.header_index.get("IMO number")
+        imo_by_id = {rid: be.cell(row, _imo).strip() for rid, row in be.row_by_id().items()} if _imo is not None else {}
         with open(cell_out, "w", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
             w.writerow(["sheet_row", "row_id", "field", "value", "url", "grade", "reason"])
@@ -226,7 +229,13 @@ def main():
                     if not value.strip():
                         w.writerow([sr, rid, field, value, u, "orphan", "ref with blank value (Rule F)"])
                         continue
-                    ok, reason = corroborates(u, value)
+                    # an IGU report PDF is held to what it prints for this row's IMO (igu_refs)
+                    ok, reason = corroborates_cell(u, value, field, imo_by_id.get(rid, ""))
+                    if not ok and citable_form(u) != u and classify(reason) == "uncorroborated":
+                        # a landing page prints no per-vessel value; the report it stands for does
+                        ok, reason = corroborates_cell(citable_form(u), value, field, imo_by_id.get(rid, ""))
+                        if ok:
+                            reason = f"OK (via the report PDF {citable_form(u)} — cite it, not the landing page)"
                     if not ok and field == "Price" and classify(reason) == "uncorroborated":
                         # DF §5a: a per-vessel Price divided out of an order total cites
                         # the page stating the TOTAL. The backend keeps no divisor, so

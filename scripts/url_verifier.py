@@ -311,6 +311,27 @@ def _host_in(host: str, hosts) -> bool:
     return any(host == h or host.endswith("." + h) for h in hosts)
 
 
+# A report's landing page surfaces no per-vessel value, so it can never pass §3.8c — but the
+# report it stands for can (IG §5.4). The backend was seeded from IGU 2025 and cites its
+# landing page on thousands of cells: wherever such a ref is a candidate, gate and cite the
+# edition's PDF instead. Never skip the landing page and call the cell unsourced.
+IGU_PDF = {"2025": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+           "2026": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"}
+_IGU_LANDING_RE = re.compile(r"^https?://(?:www\.)?igu\.org/igu-reports/(\d{4})-world-lng-report/?(?:[?#].*)?$", re.I)
+
+
+def citable_form(url: str) -> str:
+    """The URL to gate and cite in place of `url`: an IGU landing page -> that edition's
+    report PDF; anything else unchanged. Pure — no network."""
+    m = _IGU_LANDING_RE.match((url or "").strip())
+    return IGU_PDF.get(m.group(1), url) if m else url
+
+
+def citable_forms(urls) -> list[str]:
+    """`citable_form` over a list, order kept, duplicates dropped."""
+    return list(dict.fromkeys(citable_form(u) for u in urls))
+
+
 def url_ban_reason(url: str) -> str | None:
     """Why this URL can never be a citation, or None if its shape is fine.
     Pure — no network. Checked before any fetch."""
