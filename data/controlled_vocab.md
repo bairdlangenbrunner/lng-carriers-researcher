@@ -71,6 +71,12 @@ reads `scrapped` as completed-sale wording ("sold for demolition / recycling / s
   batch (applied 2026-09-18) and it is no longer in the vocabulary. A proposed Price must carry a currency (flag if a
   source gives KRW/another currency that would need conversion before entry).
 
+## Delivery delayed
+
+- `yes`, or blank (RF §4.19, Baird 2026-09-21). `yes` = the Delivery year has moved later at least
+  once; the former years sit in `Previous delivery year(s)` (oldest first, `"; "`-joined). Derived by
+  `scripts/delivery_history.py`, never researched; stays `yes` after the vessel delivers.
+
 The canonical machine-readable copy is `CONTROLLED_VOCAB` in `scripts/lookups.py` — imported by
 `build_workbook.py`'s data-fill validator AND by `qc_backend.py` (which uses it to detect a
 controlled value sitting in the wrong column). This markdown is the human mirror; keep the two in

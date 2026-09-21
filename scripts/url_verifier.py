@@ -75,6 +75,7 @@ import argparse
 import html as _html
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -99,6 +100,12 @@ WAYBACK_ENABLED = True
 # Polite spacing between live fetches (seconds); 0 in tests. The rot sweep
 # sets this via --delay.
 FETCH_DELAY = 0.0
+# Per-host floor between live fetches, on top of FETCH_DELAY: a gate run over a
+# batch asks one host (shipvault, a tracker, a press site) many times in a row.
+# Hosts in sweep.HOST_DELAYS (trackers, bloomberg.com) get their slower floor.
+# 0 disables (tests).
+HOST_MIN_GAP = 2.0
+_LAST_FETCH: dict[str, float] = {}
 # Wayback API 429/5xx: retry this many times after WAYBACK_RETRY_DELAY seconds
 # (the availability API rate-limits a long sweep; a 429 is NOT "no snapshot").
 WAYBACK_RETRIES = 1
@@ -259,9 +266,29 @@ def _fetch(url: str, timeout: int = 30, ua: str = _DEFAULT_UA,
         ua = _SEC_UA      # sec.gov rejects browser UAs from non-browsers
     if FETCH_DELAY:
         time.sleep(FETCH_DELAY)
+    _pace_host(host)
     page = fetch_page(url, timeout=timeout, ua=ua, headers=headers)
+    _LAST_FETCH[_pace_key(host)] = time.monotonic()
     _CACHE[url] = page
     return page
+
+
+def _pace_key(host: str) -> str:
+    return host[4:] if host.startswith("www.") else host
+
+
+def _pace_host(host: str) -> None:
+    """Sleep until `host`'s floor since its last live fetch has passed."""
+    if not HOST_MIN_GAP:
+        return
+    from sweep import host_delay          # late import: sweep.py imports fetch too
+    key = _pace_key(host)
+    gap, jitter = host_delay(key, HOST_MIN_GAP)
+    last = _LAST_FETCH.get(key)
+    if last is not None:
+        wait = last + gap + random.uniform(0, jitter) - time.monotonic()
+        if wait > 0:
+            time.sleep(wait)
 
 
 def _fetch_pair(url: str) -> tuple[str, str]:

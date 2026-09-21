@@ -962,6 +962,16 @@ def build_fix(args):
               f"their own fix batch: row_ids {unchecked[:12]}{' …' if len(unchecked) > 12 else ''}",
               file=sys.stderr)
 
+    # RF §4.19: a later Delivery year carries the former year into `Previous delivery year(s)`.
+    # delivery_history.py stamps every Delivery year cell it has looked at (`former_year`).
+    unchecked = [str(corr["row_id"]) for corr in corrections for c in corr.get("cells", [])
+                 if c.get("field") == "Delivery year" and not c.get("preserve_ref")
+                 and "former_year" not in c]
+    if unchecked:
+        print(f"  [warn] {len(unchecked)} Delivery year change(s) with no delivery-history check "
+              f"(RF §4.19) — run `python scripts/delivery_history.py --batch <dir>` first: "
+              f"row_ids {unchecked[:12]}{' …' if len(unchecked) > 12 else ''}", file=sys.stderr)
+
     dropped =[q for q in qa_rows if q["verdict"].startswith(("DROPPED", "REMOVED"))]
 
     wb = Workbook()
