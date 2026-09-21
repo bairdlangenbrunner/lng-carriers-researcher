@@ -335,6 +335,8 @@ python scripts/pull_backend.py                                  # fresh pull (re
 python review_app/server.py --batches batches/<dir> [<dir> ...]  # builds work/review_data.json, serves 127.0.0.1:8765
 # Suggested values (stored as reject + a `suggest` log record) -> a fix batch, QC-SOP path:
 python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
+#   also -> work/review_suggestions_fix_notes.md: the reviewer's notes as a to-do list. Nothing acts on
+#   a note by itself — read each one and follow it up before building the fix batch.
 ```
 
 The `↻ sync backend` button re-pulls the backend and rebuilds in place; a held line the backend

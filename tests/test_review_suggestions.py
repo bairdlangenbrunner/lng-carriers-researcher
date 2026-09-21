@@ -31,7 +31,7 @@ def cells(fix):
 def test_value_suggestion_keeps_original_refs_and_confidence(env):
     b, _, _, suggest, run = env
     suggest("fix_a", "10|Name", "Atlantic Star II", note="class register spelling")
-    fix, reports = run()
+    fix, reports, _ = run()
     c = cells(fix)[("10", "Name")]
     assert c["new_value"] == "Atlantic Star II" and c["confidence"] == "G"
     assert c["refs"] == [{"url": "http://ship/10"}] and "preserve_ref" not in c
@@ -50,7 +50,7 @@ def test_cosmetic_preserves_ref(env):
 def test_cosmetic_on_a_cell_with_no_ref_is_gated(env):
     _, _, _, suggest, run = env
     suggest("data_fill", "5|Capacity", "174,000", kind="cosmetic")
-    fix, reports = run()
+    fix, reports, _ = run()
     c = cells(fix)[("5", "Capacity")]
     assert "preserve_ref" not in c and c["refs"] == [{"url": "http://cap/5"}]
     assert [r[0] for r in reports] == ["cosmetic_gated"]
@@ -62,7 +62,7 @@ def test_other_names_suggestion_gates_the_added_element(env):
     c = cells(run()[0])[("10", "Other names")]
     assert c["append_ref"] is True and c["gate_value"] == "Hull 1 (SHI)"
     suggest("fix_b", "10|Other names", "A; B")               # two new elements: hand-build
-    fix, reports = run()
+    fix, reports, _ = run()
     assert ("10", "Other names") not in cells(fix)
     assert reports[0][0] == "not_emitted"
 
@@ -73,7 +73,7 @@ def test_discovery_and_ref_lines_are_reported_not_emitted(env):
         if p["kind"] in ("new_row", "ref"):
             store.decide([{"key": f"{p['batch']}::{p['id']}", "decision": "suggest",
                            "suggested_value": "x", "note": "n"}], data, dirs, "tester")
-    fix, reports = run()
+    fix, reports, _ = run()
     assert fix["corrections"] == []
     assert sorted(r[1]["kind"] for r in reports) == ["new_row", "ref"]
     assert all(r[0] == "not_emitted" for r in reports)
@@ -83,7 +83,7 @@ def test_same_cell_in_two_batches_keeps_the_later(env):
     _, _, _, suggest, run = env
     suggest("fix_a", "10|Status", "in service")
     suggest("fix_b", "10|Status", "active (2026)")
-    fix, reports = run()
+    fix, reports, _ = run()
     assert cells(fix)[("10", "Status")]["new_value"] == "active (2026)"
     assert [r[0] for r in reports] == ["duplicate"] and reports[0][1]["batch"] == "b1_fix"
 
@@ -96,7 +96,7 @@ def test_later_decision_or_hand_edit_supersedes(env):
     suggest("fix_a", "10|Status", "in service")
     path = b["fix_a"] / "decisions.csv"                      # a hand edit of the csv
     path.write_text(store.plan_csv(path, {"10|Status": "accept"}), encoding="utf-8")
-    fix, reports = run()
+    fix, reports, _ = run()
     assert fix["corrections"] == [] and [r[0] for r in reports] == ["superseded"]
 
 
@@ -111,3 +111,14 @@ def test_main_writes_only_out(env, tmp_path, capsys):
     fix = json.loads(out.read_text())
     assert fix["corrections"][0]["cells"][0]["field"] == "Name"
     assert "other_names.py --batch" in capsys.readouterr().out
+
+
+def test_reviewer_notes_become_a_todo_list(env):
+    _, _, _, suggest, run = env
+    suggest("fix_a", "10|Name", "Atlantic Star II", note="wrong ship? check the IMO")
+    suggest("fix_a", "10|Status", "Active", kind="cosmetic", note="house style")
+    notes = run()[2]
+    assert [(n["live_row"], n["column"], n["note"], n["emitted"]) for n in notes] == \
+        [(3, "Name", "wrong ship? check the IMO", True), (3, "Status", "house style", True)]
+    md = suggestions.notes_md(notes)
+    assert "- [ ] **row 3 ·" in md and "wrong ship? check the IMO" in md and "Atlantic Star II" in md
