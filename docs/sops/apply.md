@@ -6,7 +6,9 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-18 rev 5 (step 2 / §3: the review app, `review_app/`, is the
+**Last revised:** 2026-09-21 rev 6 (§2b: the review app's **push accepted** — a third apply
+path, a listed and once-confirmed sheet write; §7 reworded). Prior: 2026-09-18 rev 5 (step 2 /
+§3: the review app, `review_app/`, is the
 recommended surface for deciding the holds; `decisions.csv` by hand stays valid). Prior:
 2026-09-17 rev 4 (§2a: applying several batches that share rows — full rows
 are a snapshot, so go by patch; applier settings per batch mode). Prior: 2026-06-05 rev 3 (dedupe Tier-2 matching corrected: a row with a real hull
@@ -58,6 +60,8 @@ python scripts/apply_batch.py --batch batches/<dir>
 #    (b) By-name applier: paste apply_patch.csv into the backend sheet's "apply_patch"
 #        tab and run tools/apply_patch.gs (DRY_RUN=true first to preview, then false).
 #        It writes each cell by row_id + header, so a column offset is impossible.
+#    (c) Review app push (§2b): the "push accepted" button — value / [ref] lines only;
+#        new rows and conflicts still go by (a) / (b).
 
 # 4. Verify: re-pull the backend and confirm everything landed.
 python scripts/verify_apply.py --batch batches/<dir> --pull
@@ -85,6 +89,33 @@ additive to blanks — leave it `false`, so a cell someone filled since the pull
 shows up in the verify report instead of being overwritten. Discovery rows are `append` ops and
 ignore the flag. Always read the DRY_RUN log first: the `would set` count should equal the
 batch's `set` lines.
+
+## 2b. Push from the review app
+
+The review app's **push accepted** button (Baird 2026-09-21; `review_app/push.py`,
+`review_app/README.md`) writes accepted lines straight into the backend sheet. It is path (b)
+without the paste: the same cells `apply_patch.csv` carries, addressed by row_id + header
+against a fresh pull, with fix / ref-append semantics taken from each line (no
+`OVERWRITE_NONBLANK` switch) and every batch laid over the pull in apply order, so §2a's
+overlap problem does not arise.
+
+- **Listed, then confirmed once.** The dialog shows every cell that will change (live row,
+  column, now → becomes). The confirmation is bound to that plan: the server re-pulls and
+  recomputes before writing and refuses a plan that changed. This confirmation is the human
+  edit of §7 — nothing is written on a click of `accept`.
+- **Clicked accepts only** (Baird 2026-09-21). A line is pushed only when its latest
+  `review_log.jsonl` record is a reviewer's accept. An accept `apply_batch.py` pre-filled by
+  confidence, one typed into `decisions.csv`, or one the backend sync set was never clicked:
+  the dialog counts these and leaves them alone.
+- **Value / `[ref]` lines only.** Discovery new rows, conflicts and suggestions stay on paths
+  (a) / (b) and §4. A data-fill or ref-fill value is written only into a blank or `unknown`
+  cell; otherwise it is listed as not pushed (it is a conflict).
+- **An applied batch is not re-pushed by default.** Where the sheet differs from an applied
+  batch's accepted value, the likelier cause is a later hand edit; those cells are listed apart
+  and need their own tick.
+- **Reject writes nothing** and never reverts a cell that is already in the sheet.
+- The push verifies its own cells and appends `<dir>/push_log.jsonl`. Step 4 still closes the
+  batch: `verify_apply.py --batch <dir> --pull` writes `verify_report.csv` and runs §5a.
 
 ## 3. Decisions & acceptance tracking (`decisions.csv`)
 
@@ -192,6 +223,9 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
 
 - **The backend is still human-edited.** Every cell written is one the reviewer set to
   `accept` in `decisions.csv`. No script writes to the backend without that ([ref]-Fill §4.7).
+  The one script that writes the sheet at all is the review app's push (§2b), and only the
+  listed cells, on the reviewer's confirmation in the app — never from a command line, a batch
+  build or an agent session.
 - **Apply by name or by full row — never cherry-pick cells by hand.** Both supported paths
   address columns by header (applier) or paste full backend-width rows (apply_rows.csv);
   neither can land a value in the wrong column.
@@ -201,6 +235,11 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   the apply), but a HIGH/MED group means a row may duplicate an existing vessel — resolve it.
 
 ## 8. Changelog
+
+- **rev 6** (2026-09-21): Added §2b and step 3(c): the review app's **push accepted** button
+  writes accepted value / `[ref]` lines into the sheet after listing every cell and one
+  confirmation (plan token, re-pull before and after, `push_log.jsonl`). New rows, conflicts
+  and suggestions stay by hand; reject writes nothing. §7 names it as the only script write.
 
 - **rev 5** (2026-09-18): Step 2 and §3 name the review app (`review_app/`) as the recommended
   surface for deciding holds, replacing the combined xlsx; `review_log.jsonl` /

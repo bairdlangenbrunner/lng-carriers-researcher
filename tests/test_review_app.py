@@ -292,3 +292,219 @@ def test_conflict_call_reset_by_apply_batch_is_shown(running, tmp_path):
     _run_apply(b["data_fill"], tmp_path / "backend.csv")       # regenerates conflicts.csv at hold
     it2 = conflict_item(base)
     assert it2["conflict_decision"] == "hold" and it2["logged_call"] == "accept"
+
+
+# ---- backend sync (the refresh button) -----------------------------------------------
+
+def edit_backend(path, row_id, **cells):
+    import csv
+    from review_fixture import HEADER
+    with open(path, newline="", encoding="utf-8") as f:
+        grid = list(csv.reader(f))
+    for r in grid[2:]:
+        if r[0] == row_id:
+            for col, v in cells.items():
+                r[HEADER.index(col.replace("_ref", " [ref]").replace("_", " "))] = v
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        csv.writer(f).writerows(grid)
+
+
+def post_refresh(base):
+    req = urllib.request.Request(base + "/api/refresh", data=b"{}",
+                                 headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req) as r:
+            return r.status, json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read())
+
+
+def test_refresh_accepts_holds_the_backend_already_holds(running, tmp_path):
+    base, app, b = running
+    backend = tmp_path / "backend.csv"
+    app.backend_path = backend
+    # by hand in the sheet: the batch-2 Status fix (a hold) incl. its ref, and the conflict's value
+    app.pull = lambda: (edit_backend(backend, "10", Status="active", Status_ref="http://press/10"),
+                        edit_backend(backend, "7", Capacity="174000"))
+    held = f"{b['fix_b'].name}::10|Status"
+    other = f"{b['fix_b'].name}::10|Other names"
+    assert json.loads(get(base + "/api/data")[1])["proposals"][held]["decision"] == "hold"
+    status, out = post_refresh(base)
+    assert status == 200 and out["accepted"] == [held]
+    assert out["resolved"] == [conflict_item(base)["item_id"]]
+    data = json.loads(get(base + "/api/data")[1])
+    p = data["proposals"][held]
+    assert p["decision"] == "accept" and "in_backend" in p["flags"] and p["current"] == "active"
+    assert p["last"]["reviewer"] == "backend sync" and p["last"]["via"] == "sync:backend"
+    assert data["proposals"][other]["decision"] == "hold"          # not in the backend: untouched
+    assert {r["id"]: r["decision"] for r in rows(b["fix_b"] / "decisions.csv")}["10|Status"] == "accept"
+    assert conflict_item(base)["status"] == "resolved"
+    assert post_refresh(base)[1]["accepted"] == []                 # idempotent
+
+
+def test_refresh_leaves_a_decided_line_and_a_value_without_its_ref(running, tmp_path):
+    base, app, b = running
+    backend = tmp_path / "backend.csv"
+    app.backend_path = backend
+    held = f"{b['fix_b'].name}::10|Status"
+    app.pull = lambda: edit_backend(backend, "10", Status="active")   # value only, old ref
+    assert post_refresh(base)[1]["accepted"] == []
+    p = json.loads(get(base + "/api/data")[1])["proposals"][held]
+    assert p["decision"] == "hold" and "value_in_backend" in p["flags"]
+    post(base, [{"key": held, "decision": "reject"}])
+    app.pull = lambda: edit_backend(backend, "10", Status_ref="http://press/10")
+    assert post_refresh(base)[1]["accepted"] == []                 # a human's reject stands
+    assert json.loads(get(base + "/api/data")[1])["proposals"][held]["decision"] == "reject"
+
+
+def test_failed_pull_changes_nothing(running):
+    base, app, b = running
+    before = snapshot(b.values())
+
+    def boom():
+        raise server.PullFailed("backend pull failed: gws not found")
+    app.pull = boom
+    status, out = post_refresh(base)
+    assert status == 502 and "gws not found" in out["error"]
+    assert snapshot(b.values()) == before
+
+
+# ---- push accepted (the one backend write) -------------------------------------------
+
+def post_json(base, path, body):
+    req = urllib.request.Request(base + path, data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req) as r:
+            return r.status, json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read())
+
+
+@pytest.fixture
+def pushing(running, tmp_path):
+    """The running app with a no-op pull and a writer that edits the backend csv."""
+    base, app, b = running
+    backend = tmp_path / "backend.csv"
+    app.backend_path = backend
+    app.pull = lambda: None
+    sent = []
+
+    def write(writes):
+        sent.append(writes)
+        for w in writes:
+            edit_backend(backend, w["row_id"], **{w["column"]: w["new"]})
+    app.write = write
+    # only a clicked accept is pushed: click every line apply_batch pre-filled as accept
+    pre = [k for k, p in app.current()["proposals"].items() if p["decision"] == "accept"]
+    assert post(base, [{"key": k, "decision": "accept"} for k in pre])[0] == 200
+    return base, app, b, backend, sent
+
+
+def cells(plan, group="writes"):
+    return {(w["row_id"], w["column"]): w for w in plan[group]}
+
+
+def test_push_plan_lists_accepted_cells_only(pushing):
+    base, app, b, backend, sent = pushing
+    status, plan = post_json(base, "/api/push/plan", {})
+    assert status == 200 and sent == []
+    c = cells(plan)
+    assert set(c) == {("10", "Name"), ("10", "Name [ref]"), ("10", "Status"), ("10", "Status [ref]"),
+                      ("5", "Capacity"), ("5", "Capacity [ref]"), ("5", "Capacity units")}
+    w = c[("10", "Name")]
+    assert (w["old"], w["new"], w["batch"]) == ("Hull 1 (SHI)", "Atlantic Star", b["fix_a"].name)
+    assert w["a1"] == f"C{w['live_row']}" and w["live_row"] != 10
+    assert c[("10", "Name [ref]")]["new"] == "http://ship/10"          # a fix replaces the ref
+    assert plan["applied_writes"] == [] and plan["skipped"] == []       # holds are not skips
+
+
+def test_push_writes_verifies_and_logs(pushing):
+    base, app, b, backend, sent = pushing
+    plan = post_json(base, "/api/push/plan", {})[1]
+    status, out = post_json(base, "/api/push", {"token": plan["token"]})
+    assert status == 200 and out["written"] == 7 and out["mismatches"] == [] and not out["error"]
+    assert len(sent) == 1 and len(sent[0]) == 7
+    log = [json.loads(l) for l in (b["fix_a"] / "push_log.jsonl").read_text().splitlines()]
+    assert {(r["row_id"], r["column"]) for r in log} == {("10", "Name"), ("10", "Name [ref]"),
+                                                          ("10", "Status"), ("10", "Status [ref]")}
+    assert all(r["reviewer"] == "tester" for r in log)
+    data = json.loads(get(base + "/api/data")[1])
+    assert "in_backend" in data["proposals"][f"{b['fix_a'].name}::10|Name"]["flags"]
+    again = post_json(base, "/api/push/plan", {})[1]
+    assert again["writes"] == []
+    assert post_json(base, "/api/push", {"token": plan["token"]})[0] == 409    # the old plan is gone
+    assert len(sent) == 1
+
+
+def test_push_refuses_a_stale_plan(pushing):
+    base, app, b, backend, sent = pushing
+    plan = post_json(base, "/api/push/plan", {})[1]
+    app.pull = lambda: edit_backend(backend, "10", Name="Hand Edited")        # the sheet moved on
+    status, out = post_json(base, "/api/push", {"token": plan["token"]})
+    assert status == 409 and "nothing was written" in out["error"] and sent == []
+
+
+def test_push_never_overwrites_a_filled_cell_from_a_fill_batch(pushing):
+    base, app, b, backend, sent = pushing
+    edit_backend(backend, "5", Capacity="180000")
+    plan = post_json(base, "/api/push/plan", {})[1]
+    assert ("5", "Capacity") not in cells(plan) and ("5", "Capacity [ref]") not in cells(plan)
+    assert [s["why"] for s in plan["skipped"] if s["column"] == "Capacity"][0].startswith("cell is no longer blank")
+
+
+def test_push_holds_back_lines_of_an_applied_batch(pushing):
+    base, app, b, backend, sent = pushing
+    (b["fix_a"] / "verify_report.csv").write_text("status\n")
+    plan = post_json(base, "/api/push/plan", {})[1]
+    assert {k[0] for k in cells(plan)} == {"5"}
+    assert {k[0] for k in cells(plan, "applied_writes")} == {"10"}
+    out = post_json(base, "/api/push", {"token": plan["token"]})[1]
+    assert out["written"] == 3 and all(w["row_id"] == "5" for w in sent[0])
+    plan = post_json(base, "/api/push/plan", {})[1]
+    out = post_json(base, "/api/push", {"token": plan["token_all"], "include_applied": True})[1]
+    assert out["written"] == 4
+
+
+def test_failed_sheet_write_is_reported_not_logged(pushing):
+    import push
+
+    base, app, b, backend, sent = pushing
+
+    def boom(writes):
+        raise push.PushFailed("sheet write failed after 0 of 7 cells: 403")
+    app.write = boom
+    plan = post_json(base, "/api/push/plan", {})[1]
+    status, out = post_json(base, "/api/push", {"token": plan["token"]})
+    assert status == 200 and out["written"] == 0 and len(out["mismatches"]) == 7 and "403" in out["error"]
+    assert not (b["fix_a"] / "push_log.jsonl").exists()
+
+
+def test_sheet_value_types():
+    import push
+
+    assert push.sheet_value("250000000") == 250000000 and push.sheet_value("1.5") == 1.5
+    assert push.sheet_value("0123") == "0123" and push.sheet_value("2027-03") == "2027-03"
+    assert push.a1(0, 2) == "A2" and push.a1(26, 10) == "AA10"
+
+
+def test_push_scoped_to_one_batch(pushing):
+    base, app, b, backend, sent = pushing
+    plan = post_json(base, "/api/push/plan", {"batch": b["data_fill"].name})[1]
+    assert {k[0] for k in cells(plan)} == {"5"}
+    out = post_json(base, "/api/push", {"token": plan["token"], "batch": b["data_fill"].name})[1]
+    assert out["written"] == 3
+    assert {k[0] for k in cells(post_json(base, "/api/push/plan", {})[1])} == {"10"}
+
+
+def test_push_leaves_an_accept_nobody_clicked(running, tmp_path):
+    base, app, b = running
+    app.backend_path, app.pull = tmp_path / "backend.csv", lambda: None
+    plan = post_json(base, "/api/push/plan", {})[1]
+    assert plan["writes"] == [] and plan["unclicked"] > 0           # pre-filled accepts only
+    n = plan["unclicked"]
+    assert post(base, [{"key": f"{b['fix_a'].name}::10|Name", "decision": "accept"}])[0] == 200
+    plan = post_json(base, "/api/push/plan", {})[1]
+    assert set(cells(plan)) == {("10", "Name"), ("10", "Name [ref]")} and plan["unclicked"] == n - 1
+    assert post(base, [{"key": f"{b['fix_a'].name}::10|Name", "decision": "hold"}])[0] == 200
+    assert post_json(base, "/api/push/plan", {})[1]["writes"] == []

@@ -20,6 +20,20 @@
                                    body: JSON.stringify(records)}).then(Store._json)
         .then(function (b) { return b.saved; });
     },
+    refresh: function () {       // re-pull the backend, rebuild, settle what the backend settles
+      return fetch("/api/refresh", {method: "POST", headers: {"Content-Type": "application/json"},
+                                    body: "{}"}).then(Store._json);
+    },
+    pushPlan: function (batch) { // re-pull, then every cell the accepted lines would change
+      return fetch("/api/push/plan", {method: "POST", headers: {"Content-Type": "application/json"},
+                                      body: JSON.stringify({batch: batch || null})}).then(Store._json);
+    },
+    push: function (token, includeApplied, batch) {   // the one backend write; 409 = plan went stale
+      return fetch("/api/push", {method: "POST", headers: {"Content-Type": "application/json"},
+                                 body: JSON.stringify({token: token, include_applied: includeApplied,
+                                                       batch: batch || null})})
+        .then(Store._json);
+    },
     item: function (records) {   // Items tab: status / note / a conflict's call
       return fetch("/api/item", {method: "POST", headers: {"Content-Type": "application/json"},
                                  body: JSON.stringify(records)}).then(Store._json)
@@ -223,6 +237,7 @@
     if (keep !== D.vessels[S.vessel]) S.line = null;
     renderCard();
     renderProgress();
+    writeRoute();
   }
   function renderProgress() {
     var holds = 0, total = 0;
@@ -260,6 +275,7 @@
     renderCard();
     var sel = $("vessels").querySelector("li.sel");
     if (sel) sel.scrollIntoView({block: "nearest"});
+    writeRoute();
   }
 
   // Linked groups within one vessel: union of each line's links, emitted at first member.
@@ -311,6 +327,8 @@
     append_ref: ["appends", "added to what the cell already holds, nothing is replaced"],
     ref_only: ["ref only", "adds refs; the value is untouched"],
     igu_pdf_only: ["only source: IGU", "the IGU report PDF is the sole ref (interim ruling 2026-09-17)"],
+    in_backend: ["in the backend", "the pulled backend already holds this value and its refs"],
+    value_in_backend: ["value in the backend", "the backend holds this value, but not every proposed ref"],
     applied: ["already applied", "this batch is in the backend — changing the decision does not unapply it"]
   };
   var CONF_TEXT = {G: "green — auto-accept grade", Y: "yellow — held for a decision", R: "red — weak support"};
@@ -361,7 +379,7 @@
 
     var h = '<div class="row1"><span class="col">' +
       esc(p.column || "new row · cluster " + p.cluster_id) + "</span>" + chips.join(" ") +
-      '<span class="batch">' + esc(b.label) + "</span></div>";
+      '<span class="batch">' + "batch " + esc(b.label) + "</span></div>";
 
     if (p.kind === "new_row") {
       var rd = p.row_data || {};
@@ -426,12 +444,12 @@
   function canSuggest(p) { return p.kind !== "new_row" && p.kind !== "ref" && !has(p, "ref_only"); }
   function controlsHtml(k, p) {
     return '<div class="controls">' + CONTROLS.map(function (c) {
-      return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" aria-pressed="' +
-        (p.decision === c[0]) + '">' + c[0] + "<kbd>" + c[1] + "</kbd></button>";
+      return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" title="' + c[0] + " (" + c[1] + ')" aria-pressed="' +
+        (p.decision === c[0]) + '">' + c[0] + "</button>";
     }).join("") + '<button type="button" class="b-suggest" data-suggest aria-pressed="' + (p.decision === "suggest") +
       '"' + (canSuggest(p) ? ' title="suggest a different value (s)"'
                            : ' disabled title="nothing to suggest on a new row or a ref-only line"') +
-      ">suggest…<kbd>s</kbd></button>" + (p.last ? '<span class="by">' + esc(p.decision) + " by " + esc(p.last.reviewer) + "</span>" : "") +
+      ">suggest…</button>" + (p.last ? '<span class="by">' + esc(p.decision) + " by " + esc(p.last.reviewer) + "</span>" : "") +
       '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
   }
 
@@ -598,7 +616,29 @@
     }).catch(function () { S.undo.push(prev); });
   }
 
+  // A name / IMO / builder / owner on the card: filter the queue to just that (every other
+  // filter cleared, decision "any"). Back returns to the filter that was set before.
+  function only(filter, value, text, title) {
+    return '<a href="#" class="only" data-only="' + filter + '" data-value="' + esc(value) +
+      '" title="show only: ' + esc(title) + '">' + esc(text) + "</a>";
+  }
+  function filterOnly(filter, value) {
+    var keep = D.vessels[S.vessel];
+    F.forEach(function (f) { $("f-" + f).value = ""; });
+    $("f-mine").checked = false;
+    $("f-text").value = "";
+    $("f-" + filter).value = value;
+    PUSH = true;
+    refilter();
+    var i = D.vessels.indexOf(keep);
+    if (S.visible.indexOf(i) >= 0 && i !== S.vessel) selectVessel(i);
+  }
   function onCardClick(e) {
+    var o = e.target.closest("a[data-only]");
+    if (o) {
+      e.preventDefault();
+      return filterOnly(o.getAttribute("data-only"), o.getAttribute("data-value"));
+    }
     var w = e.target.closest("button[data-why]");
     if (w) { S.open["why:" + w.getAttribute("data-why")] = true; return renderCard(); }
     var sg = e.target.closest("button[data-suggest]");
@@ -621,9 +661,13 @@
       return;
     }
     var v = D.vessels[S.vessel], st = filterState();
-    var h = "<h2>" + esc(v.name || "(no name)") + "</h2><div class=\"ctx\">" +
-      ["<b>" + esc(rowLabel(v)) + "</b>", v.imo && "IMO " + esc(v.imo), v.status && esc(v.status),
-       v.shipbuilder && esc(v.shipbuilder), v.hull && "hull " + esc(v.hull), v.shipowner && esc(v.shipowner),
+    var h = "<h2>" + (v.name ? only("text", v.name, v.name, "everything in the queue for this name") : "(no name)") +
+      "</h2><div class=\"ctx\">" +
+      ["<b>" + esc(rowLabel(v)) + "</b>",
+       v.imo && only("text", v.imo, "IMO " + v.imo, "everything in the queue for this IMO"), v.status && esc(v.status),
+       v.shipbuilder && only("builder", v.shipbuilder, v.shipbuilder, "every line on this shipbuilder's vessels"),
+       v.hull && "hull " + esc(v.hull),
+       v.shipowner && only("owner", v.shipowner, v.shipowner, "every line on this shipowner's vessels"),
        v.delivery_year && "delivery " + esc(v.delivery_year),
        !v.new && !v.in_backend && '<span class="chip warn">row no longer in backend</span>']
         .filter(Boolean).map(function (x) { return "<span>" + x + "</span>"; }).join("") + "</div>";
@@ -896,7 +940,7 @@
       '<span class="chip">' + esc(label) + "</span> " +
       (generic ? "" : '<span class="col">' + esc(it.title) + "</span> ") +
       (it.live_rows.length > 1 ? "<span>" + rowLinks(it.live_rows) + "</span> " : "") +
-      '<span class="batch">' + esc(batchOf(it.batch).label) + "</span></div>";
+      '<span class="batch">' + "batch " + esc(batchOf(it.batch).label) + "</span></div>";
     if (it.detail) h += '<div class="detail">' + esc(it.detail) + "</div>";
     if (it.logged_call && it.logged_call !== it.conflict_decision)
       h += '<div class="detail"><span class="chip warn">call ' + esc(it.logged_call) + " is in review_items.jsonl but " +
@@ -1036,10 +1080,71 @@
     ["queue", "items", "summary"].forEach(function (n) { $("tab-" + n).hidden = n !== name; });
     if (name === "items") renderItems();
     if (name === "summary") renderSummary();
+    writeRoute();
   }
 
-  function banner(msg) {
+  // ---- routing: tab + filters + vessel live in location.hash, so Back / Forward walk the
+  // filter history. Only the view is restored — decisions are saved as they are made and stay.
+  // A changed tab or filter pushes an entry; moving between vessels (and typing on in the
+  // search box) replaces it, so Back is one step per filter, not per keystroke or vessel.
+  var ROUTING = false;      // true while a route is being applied: nothing is written back
+  var PUSH = false;         // the next write is a new entry whatever changed (a card link)
+  function vesselId(v) { return v ? (v.row_id || "c:" + v.batch + ":" + v.cluster_id) : ""; }
+  function activeTab() {
+    var t = document.querySelector(".tab.active");
+    return t ? t.getAttribute("data-tab") : "queue";
+  }
+  function routeParts() {
+    var q = ["tab=" + activeTab()];
+    F.forEach(function (f) { q.push(f + "=" + encodeURIComponent($("f-" + f).value)); });
+    if ($("f-mine").checked) q.push("mine=1");
+    return {view: q.join("&"), text: $("f-text").value, v: vesselId(D.vessels[S.vessel])};
+  }
+  function parseRoute(hash) {
+    var o = {};
+    hash.replace(/^#/, "").split("&").forEach(function (kv) {
+      var i = kv.indexOf("=");
+      if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1));
+    });
+    return o;
+  }
+  function writeRoute() {
+    if (ROUTING || !D) return;
+    var r = routeParts();
+    var hash = "#" + r.view + "&text=" + encodeURIComponent(r.text) + "&v=" + encodeURIComponent(r.v);
+    if (hash === location.hash) return;
+    var was = history.state || {};
+    var push = was.view != null && (PUSH || was.view !== r.view || (was.text !== r.text && (!was.text || !r.text)));
+    PUSH = false;
+    history[push ? "pushState" : "replaceState"]({view: r.view, text: r.text}, "", hash);
+  }
+  function applyRoute() {
+    var o = parseRoute(location.hash);
+    ROUTING = true;
+    try {
+      F.forEach(function (f) {
+        var sel = $("f-" + f), want = o[f] != null ? o[f] : (f === "decision" ? "hold" : "");
+        sel.value = want;
+        if (sel.value !== want) sel.value = "";        // a batch / builder no longer in the dataset
+      });
+      $("f-mine").checked = o.mine === "1";
+      $("f-text").value = o.text || "";
+      showTab(o.tab && $("tab-" + o.tab) ? o.tab : "queue");
+      refilter();
+      if (o.v) {
+        var i = -1;
+        D.vessels.forEach(function (v, n) { if (vesselId(v) === o.v) i = n; });
+        if (S.visible.indexOf(i) >= 0 && i !== S.vessel) selectVessel(i);
+      }
+    } finally { ROUTING = false; }
+    var r = routeParts();
+    history.replaceState({view: r.view, text: r.text}, "", location.hash || "#" + r.view);
+  }
+  window.addEventListener("popstate", applyRoute);
+
+  function banner(msg, ok) {
     var b = $("banner");
+    b.classList.toggle("ok", !!ok);
     b.textContent = msg;
     b.hidden = !msg;
   }
@@ -1060,9 +1165,8 @@
     var l = e.target.closest && e.target.closest(".line");
     if (l && e.target.hasAttribute("data-more")) S.open[l.getAttribute("data-key")] = e.target.open;
   }, true);
-  Promise.all([Store.load(), Store.whoami()]).then(function (r) {
-    D = r[0];
-    ME = r[1];
+  function adopt(data) {
+    D = data;
     // a review_data.json built before the why / sources split: show the whole note and the bare refs
     Object.keys(D.proposals).forEach(function (k) {
       var p = D.proposals[k];
@@ -1072,13 +1176,118 @@
                 reason: x.verdict || "", verdicts: [x.url + ": " + (x.verdict || "not checked")]};
       });
     });
-    $("whoami").textContent = ME;
     var pulledH = (Date.now() - new Date(D.backend_pulled).getTime()) / 36e5;
-    $("built").textContent = pulledH > 24 ? "backend pulled " + Math.round(pulledH) + " h ago — re-pull" : "";
+    $("built").textContent = pulledH > 24 ? "backend pulled " + Math.round(pulledH) + " h ago — sync" : "";
     $("built").title = "built " + D.built.replace("T", " ").slice(0, 16) +
       " · backend pulled " + D.backend_pulled.replace("T", " ").slice(0, 16);
     $("whoami").title = $("built").title;
+    $("sync").title = "Re-pull the backend and settle what it already holds · last pulled " +
+      D.backend_pulled.replace("T", " ").slice(0, 16);
+  }
+  // Sync: the server re-pulls and rebuilds, accepts the holds the backend already holds and
+  // resolves the items it settles; the page then takes the new dataset in place (the session
+  // summary and the filters stay).
+  function syncBackend() {
+    var b = $("sync");
+    b.disabled = true;
+    b.textContent = "syncing…";
+    Store.refresh().then(function (r) {
+      return Store.load().then(function (data) {
+        adopt(data);
+        refilter();
+        if (!$("tab-items").hidden) renderItems();
+        if (!$("tab-summary").hidden) renderSummary();
+        var n = r.accepted.length, m = r.resolved.length;
+        banner("Backend synced" + (n || m ? ": " + n + " held line" + (n === 1 ? "" : "s") +
+          " already in the backend → accept, " + m + " item" + (m === 1 ? "" : "s") + " resolved."
+          : " — nothing new was settled by it."), true);
+      });
+    }).catch(function (e) { banner("Sync failed, nothing changed: " + e.message); })
+      .then(function () { b.disabled = false; b.textContent = "↻ sync backend"; });
+  }
+  $("sync").onclick = syncBackend;
+
+  // Push: the server plans on a fresh pull; the dialog lists every cell that would change and
+  // one confirmation writes exactly that plan (the token; a stale plan is refused, not written).
+  function planTable(ws) {
+    var byBatch = {}, order = [];
+    ws.forEach(function (w) {
+      if (!byBatch[w.batch]) { byBatch[w.batch] = []; order.push(w.batch); }
+      byBatch[w.batch].push(w);
+    });
+    return order.map(function (b) {
+      return '<h4>batch ' + esc(byBatch[b][0].label) + ' · ' + byBatch[b].length + '</h4><table class="plan">' +
+        '<tr><th>row</th><th>vessel</th><th>column</th><th>now</th><th>→ becomes</th></tr>' +
+        byBatch[b].map(function (w) {
+          return '<tr><td>' + w.live_row + '</td><td>' + esc(w.name) + '</td><td>' + esc(w.column) +
+            '</td><td class="old">' + (esc(w.old) || '<i>blank</i>') + '</td><td class="new">' + esc(w.new) + '</td></tr>';
+        }).join("") + '</table>';
+    }).join("");
+  }
+  function reload(msg, ok) {
+    return Store.load().then(function (data) {
+      adopt(data);
+      refilter();
+      if (!$("tab-items").hidden) renderItems();
+      if (!$("tab-summary").hidden) renderSummary();
+      banner(msg, ok);
+    });
+  }
+  function pushAccepted() {
+    var b = $("push");
+    b.disabled = true;
+    b.textContent = "planning…";
+    var batch = $("f-batch").value;      // the Batch filter scopes the push
+    var scope = batch ? " of batch " + ((D.batches.filter(function (x) { return x.dir === batch; })[0] || {}).label || batch) : "";
+    Store.pushPlan(batch).then(function (plan) {
+      var n = plan.writes.length, m = plan.applied_writes.length, k = plan.skipped.length, u = plan.unclicked || 0;
+      // only a clicked accept is pushed; a pre-filled accept nobody clicked is left alone
+      var unclicked = u ? u + " pre-filled accept" + (u === 1 ? "" : "s") + " nobody clicked " +
+        (u === 1 ? "is" : "are") + " not pushed — click accept on a line to push it." : "";
+      if (!n && !m) {
+        return reload("Nothing to push: every line you accepted" + scope + " is already in the backend" +
+          (k ? " (" + k + " accepted line" + (k === 1 ? " stays" : "s stay") + " on the by-hand path)." : ".") +
+          (unclicked ? " " + unclicked : ""), true);
+      }
+      var html = '<h3>Push accepted lines' + esc(scope) + ' to the backend sheet</h3>' +
+        '<p>' + n + ' cell' + (n === 1 ? "" : "s") + ' will be written to the live sheet — only lines someone clicked accept on. Rejects and holds write nothing.' +
+        (unclicked ? " " + esc(unclicked) : "") +
+        (batch ? "" : " Pick a batch in the Batch filter first to push one batch at a time.") + '</p>' +
+        '<div class="planbox">' + planTable(plan.writes) +
+        (m ? '<details><summary>' + m + ' more from batches already applied — the sheet differs, likely a later hand edit</summary>' +
+          planTable(plan.applied_writes) + '</details>' : "") +
+        (k ? '<details><summary>' + k + ' accepted line' + (k === 1 ? "" : "s") + ' not pushed (by-hand path)</summary><ul>' +
+          plan.skipped.map(function (x) {
+            return '<li>' + (x.live_row ? 'row ' + x.live_row + ' · ' : "") + esc(x.column) + ' — ' + esc(x.why) + '</li>';
+          }).join("") + '</ul></details>' : "") + '</div>' +
+        (m ? '<label class="check"><input type="checkbox" id="push-applied"> also overwrite the ' + m +
+          ' cell' + (m === 1 ? "" : "s") + ' from applied batches</label>' : "");
+      var label = n ? "write " + n + " cell" + (n === 1 ? "" : "s") : "write";
+      return dialog(html, [["cancel", null], [label, function () {
+        var inc = !!($("push-applied") && $("push-applied").checked);
+        if (!n && !inc) return false;
+        return {token: inc ? plan.token_all : plan.token, inc: inc};
+      }]]).then(function (go) {
+        if (!go) return reload("", true);
+        b.textContent = "writing…";
+        return Store.push(go.token, go.inc, batch).then(function (r) {
+          var bad = r.mismatches.length;
+          return reload(r.written + " cell" + (r.written === 1 ? "" : "s") + " written to the backend and verified" +
+            (bad ? "; " + bad + " did NOT land (" + r.mismatches.slice(0, 5).map(function (w) {
+              return "row " + w.live_row + " " + w.column; }).join(", ") + (bad > 5 ? ", …" : "") + ")" : ".") +
+            (r.error ? " " + r.error : ""), !bad && !r.error);
+        });
+      });
+    }).catch(function (e) { banner("Push: " + e.message); })
+      .then(function () { b.disabled = false; b.textContent = "⇪ push accepted"; });
+  }
+  $("push").onclick = pushAccepted;
+
+  Promise.all([Store.load(), Store.whoami()]).then(function (r) {
+    ME = r[1];
+    $("whoami").textContent = ME;
+    adopt(r[0]);
     initFilters();
-    refilter();
+    applyRoute();            // a reload or a bookmarked link comes back to the same view
   }).catch(function (e) { banner("Could not load the review data: " + e.message); });
 })();

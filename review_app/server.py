@@ -12,6 +12,15 @@ rebuilds work/review_data.json first (review_data.py); otherwise it serves the e
     POST /api/decide   [decision record, ...] -> {"saved": [...]}  (store.decide; 400 = nothing written)
     POST /api/item     [item record, ...] -> {"saved": [...]}  (store.record_items: review_items.jsonl
                        + a conflict's call in conflicts.csv `decision`)
+    POST /api/refresh  {} -> {"backend_pulled", "accepted": [...], "resolved": [...]}  re-pull the
+                       backend (pull_backend.py, read-only profile), rebuild the dataset, then
+                       store.sync_backend: holds the backend already holds -> accept, open items
+                       it resolves -> resolved. Reads the backend; never writes it.
+    POST /api/push/plan {"batch"?} -> push.plan(): re-pull, then every cell the accepted lines would change
+                       (live row, column, old -> new) + a token. Writes nothing.
+    POST /api/push     {"token", "include_applied", "batch"?} -> {"written", "mismatches", ...}  the ONE
+                       backend write (push.py, gws write profile): re-pull, recompute, refuse (409)
+                       unless the plan still has the confirmed token, write, re-pull, verify.
 """
 import argparse
 import ipaddress
@@ -32,9 +41,21 @@ for p in (ROOT / "scripts", HERE):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
+import push  # noqa: E402
 import review_data  # noqa: E402
 import store  # noqa: E402
 from paths import work_dir  # noqa: E402
+
+
+class PullFailed(RuntimeError):
+    """pull_backend.py did not produce a fresh backend csv (HTTP 502; nothing changed)."""
+
+
+def pull_backend():
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "pull_backend.py")],
+                       capture_output=True, text=True, cwd=ROOT)
+    if r.returncode != 0:
+        raise PullFailed("backend pull failed: " + (r.stderr.strip().splitlines() or ["no output"])[-1])
 
 
 def ensure_loopback(host):
@@ -52,10 +73,13 @@ def ensure_loopback(host):
 class App:
     """Server state: the dataset, where its batch dirs live, who is reviewing."""
 
-    def __init__(self, data_path, reviewer, batches_root=None):
+    def __init__(self, data_path, reviewer, batches_root=None, backend_path=None, pull=None, write=None):
         self.data_path = Path(data_path)
         self.reviewer = reviewer
         self.batches_root = Path(batches_root) if batches_root else ROOT / "batches"
+        self.backend_path = backend_path      # None = work/backend.csv
+        self.pull = pull or pull_backend      # refresh(): how the backend csv is renewed
+        self.write = write or push.write_sheet  # push(): how planned cells reach the sheet
         self.lock = threading.Lock()
         self.data = json.loads(self.data_path.read_text(encoding="utf-8"))
         self.dirs = {b["dir"]: self.batches_root / b["dir"] for b in self.data["batches"]}
@@ -64,6 +88,50 @@ class App:
         with self.lock:
             out = store.overlay(self.data, self.dirs)
             out["items"] = store.overlay_items(self.data, self.dirs)
+            return out
+
+    def refresh(self):
+        """Re-pull, rebuild the dataset over the same batch dirs, settle what the backend
+        settles. A failed pull or build leaves the served dataset as it was."""
+        with self.lock:
+            return self._renew()
+
+    def _renew(self):
+        self.pull()
+        data = review_data.build(list(self.dirs.values()), self.backend_path)
+        review_data.write(data, self.data_path)
+        self.data = data
+        out = store.sync_backend(self.data, self.dirs)
+        out["backend_pulled"] = data["backend_pulled"]
+        return out
+
+    def push_plan(self, batch=None):
+        with self.lock:
+            self._renew()
+            return push.plan(self.data, self.dirs, self.backend_path, batch)
+
+    def push(self, token, include_applied=False, batch=None):
+        """Write the confirmed plan. The plan is recomputed on a fresh pull and must still carry
+        the token the reviewer confirmed; otherwise nothing is written (PlanChanged)."""
+        with self.lock:
+            self._renew()
+            plan = push.plan(self.data, self.dirs, self.backend_path, batch)
+            writes = plan["writes"] + (plan["applied_writes"] if include_applied else [])
+            if token != (plan["token_all"] if include_applied else plan["token"]) or not writes:
+                raise push.PlanChanged("the backend or a decision changed since the plan was shown — "
+                                       "nothing was written; open the push again")
+            failed = None
+            try:
+                self.write(writes)
+            except push.PushFailed as e:
+                failed = str(e)
+            self.pull()
+            bad = push.verify(writes, self.backend_path)
+            missed = {(w["row_id"], w["column"]) for w in bad}
+            landed = [w for w in writes if (w["row_id"], w["column"]) not in missed]
+            push.log(landed, self.dirs, self.reviewer)
+            out = self._renew()
+            out.update({"written": len(landed), "mismatches": bad, "error": failed})
             return out
 
     def decide(self, records):
@@ -137,6 +205,17 @@ def make_handler(app):
                     return self._json({"saved": app.decide(body)})
                 if path == "/api/item":
                     return self._json({"saved": app.record_items(body)})
+                if path == "/api/refresh":
+                    return self._json(app.refresh())
+                if path == "/api/push/plan":
+                    return self._json(app.push_plan(body.get("batch") or None))
+                if path == "/api/push":
+                    return self._json(app.push(body.get("token"), bool(body.get("include_applied")),
+                                               body.get("batch") or None))
+            except push.PlanChanged as e:
+                return self._json({"error": str(e)}, HTTPStatus.CONFLICT)
+            except PullFailed as e:
+                return self._json({"error": str(e)}, HTTPStatus.BAD_GATEWAY)
             except store.Invalid as e:
                 return self._json({"error": str(e)}, HTTPStatus.BAD_REQUEST)
             except Exception as e:  # a failed write: report it loudly, the UI keeps the line undecided
