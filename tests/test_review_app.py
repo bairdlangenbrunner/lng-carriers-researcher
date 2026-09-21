@@ -292,3 +292,78 @@ def test_conflict_call_reset_by_apply_batch_is_shown(running, tmp_path):
     _run_apply(b["data_fill"], tmp_path / "backend.csv")       # regenerates conflicts.csv at hold
     it2 = conflict_item(base)
     assert it2["conflict_decision"] == "hold" and it2["logged_call"] == "accept"
+
+
+# ---- backend sync (the refresh button) -----------------------------------------------
+
+def edit_backend(path, row_id, **cells):
+    import csv
+    from review_fixture import HEADER
+    with open(path, newline="", encoding="utf-8") as f:
+        grid = list(csv.reader(f))
+    for r in grid[2:]:
+        if r[0] == row_id:
+            for col, v in cells.items():
+                r[HEADER.index(col.replace("_ref", " [ref]").replace("_", " "))] = v
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        csv.writer(f).writerows(grid)
+
+
+def post_refresh(base):
+    req = urllib.request.Request(base + "/api/refresh", data=b"{}",
+                                 headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req) as r:
+            return r.status, json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read())
+
+
+def test_refresh_accepts_holds_the_backend_already_holds(running, tmp_path):
+    base, app, b = running
+    backend = tmp_path / "backend.csv"
+    app.backend_path = backend
+    # by hand in the sheet: the batch-2 Status fix (a hold) incl. its ref, and the conflict's value
+    app.pull = lambda: (edit_backend(backend, "10", Status="active", Status_ref="http://press/10"),
+                        edit_backend(backend, "7", Capacity="174000"))
+    held = f"{b['fix_b'].name}::10|Status"
+    other = f"{b['fix_b'].name}::10|Other names"
+    assert json.loads(get(base + "/api/data")[1])["proposals"][held]["decision"] == "hold"
+    status, out = post_refresh(base)
+    assert status == 200 and out["accepted"] == [held]
+    assert out["resolved"] == [conflict_item(base)["item_id"]]
+    data = json.loads(get(base + "/api/data")[1])
+    p = data["proposals"][held]
+    assert p["decision"] == "accept" and "in_backend" in p["flags"] and p["current"] == "active"
+    assert p["last"]["reviewer"] == "backend sync" and p["last"]["via"] == "sync:backend"
+    assert data["proposals"][other]["decision"] == "hold"          # not in the backend: untouched
+    assert {r["id"]: r["decision"] for r in rows(b["fix_b"] / "decisions.csv")}["10|Status"] == "accept"
+    assert conflict_item(base)["status"] == "resolved"
+    assert post_refresh(base)[1]["accepted"] == []                 # idempotent
+
+
+def test_refresh_leaves_a_decided_line_and_a_value_without_its_ref(running, tmp_path):
+    base, app, b = running
+    backend = tmp_path / "backend.csv"
+    app.backend_path = backend
+    held = f"{b['fix_b'].name}::10|Status"
+    app.pull = lambda: edit_backend(backend, "10", Status="active")   # value only, old ref
+    assert post_refresh(base)[1]["accepted"] == []
+    p = json.loads(get(base + "/api/data")[1])["proposals"][held]
+    assert p["decision"] == "hold" and "value_in_backend" in p["flags"]
+    post(base, [{"key": held, "decision": "reject"}])
+    app.pull = lambda: edit_backend(backend, "10", Status_ref="http://press/10")
+    assert post_refresh(base)[1]["accepted"] == []                 # a human's reject stands
+    assert json.loads(get(base + "/api/data")[1])["proposals"][held]["decision"] == "reject"
+
+
+def test_failed_pull_changes_nothing(running):
+    base, app, b = running
+    before = snapshot(b.values())
+
+    def boom():
+        raise server.PullFailed("backend pull failed: gws not found")
+    app.pull = boom
+    status, out = post_refresh(base)
+    assert status == 502 and "gws not found" in out["error"]
+    assert snapshot(b.values()) == before

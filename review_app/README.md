@@ -21,7 +21,7 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    without one, label = dir name, order = dir sort order, applied = `verify_report.csv` exists.
 
 2. `server.py` serves the front end (`web/`) on `http://127.0.0.1:8765/` (loopback only;
-   standard library, no network calls of its own):
+   standard library; its one outward call is the **sync backend** pull below):
 
    ```bash
    python review_app/server.py --batches batches/<dir> [<dir> ...]   # rebuilds review_data.json first
@@ -50,6 +50,19 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
    `Other names`, `Price` ↔ `Price currency`, `Capacity` ↔ `Capacity units`, `X` ↔ `X [ref]`)
    asks about the other; for `Name` ↔ `Other names` the answer is both or neither (RF §4.16).
    A line from an already-applied batch stays decidable, but changing it unapplies nothing.
+
+   **Sync backend** (the `↻ sync backend` button, `POST /api/refresh`). Re-runs
+   `scripts/pull_backend.py` (read-only profile), rebuilds the dataset over the same batch dirs
+   and takes it in place — filters and the session summary stay. Every line is compared with
+   the fresh pull (whitespace- and number-normalised, as `verify_apply.py` does): value and
+   proposed refs both there → flag `in the backend`; value there, a proposed ref missing →
+   `value in the backend` (shown, never auto-decided). A discovery row is in the backend when
+   its Name or Hull number is. Then what the backend already settles is settled: a **held**
+   line that is `in the backend` becomes `accept`, an **open** conflict whose proposed value
+   the backend now holds, or duplicate pair with a row gone, becomes `resolved` — through the
+   ordinary write paths, logged as reviewer `backend sync`, `via: "sync:backend"`. A line
+   someone already decided is never touched. A failed pull changes nothing. The sync reads
+   the backend; it never writes it.
 
    **Bulk.** The status bar's "apply to all N filtered" (accept / hold / reject) always confirms
    first, restating the filter and how many lines change; records carry `via: "bulk:<filter>"`.
@@ -109,9 +122,9 @@ sheet through the Apply SOP (`docs/sops/apply.md`), unchanged.
 
 | file | written by | commit it |
 |---|---|---|
-| `decisions.csv` | the `decision` column only | yes (it already is) |
-| `review_log.jsonl` | every decision, undo and suggestion — append-only, latest record per key wins | yes |
-| `review_items.jsonl` | Items-tab statuses, notes and conflict calls — append-only | yes |
+| `decisions.csv` | the `decision` column only (a sync's accepts included) | yes (it already is) |
+| `review_log.jsonl` | every decision, undo, suggestion and sync accept — append-only, latest record per key wins | yes |
+| `review_items.jsonl` | Items-tab statuses, notes, conflict calls and sync resolutions — append-only | yes |
 | `conflicts.csv` | a conflict's call in `decision` (reset to `hold` by `apply_batch.py`) | yes |
 
 `work/review_data.json` (backend data) and the `--out` of `suggestions.py` stay in `work/`.

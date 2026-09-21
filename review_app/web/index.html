@@ -15,6 +15,7 @@
     <button class="tab" data-tab="summary" role="tab">Session summary</button>
   </nav>
   <div class="who"><span id="whoami"></span> <span id="built" class="st-reject"></span>
+    <button id="sync" class="ghost">↻ sync backend</button>
     <button id="theme" class="ghost" title="Toggle light / dark">◐</button>
     <button id="help-btn" class="ghost" title="Keyboard shortcuts (?)">?</button>
   </div>
@@ -45,6 +46,8 @@
         <option value="preserve_ref">cosmetic (ref kept)</option>
         <option value="append_ref">appends</option>
         <option value="ref_only">ref only</option>
+        <option value="in_backend">in the backend</option>
+        <option value="value_in_backend">value in the backend</option>
         <option value="applied">already applied</option></select></label>
       <label>Builder <select id="f-builder"><option value="">any</option></select></label>
       <label>Owner <select id="f-owner"><option value="">any</option></select></label>

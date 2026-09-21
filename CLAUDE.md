@@ -334,7 +334,9 @@ python review_app/server.py --batches batches/<dir> [<dir> ...]  # builds work/r
 python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
 ```
 
-The app never touches the backend: it writes the `decision` cell of `decisions.csv`, appends
+The `↻ sync backend` button re-pulls the backend and rebuilds in place; a held line the backend
+already holds becomes `accept` and an open item it resolves becomes `resolved` (logged as
+`backend sync`). The app never touches the backend: it writes the `decision` cell of `decisions.csv`, appends
 `<dir>/review_log.jsonl` (commit it with the batch), and on the Items tab `review_items.jsonl` +
 a conflict's call in `conflicts.csv`. After a session, re-run `apply_batch.py` for each batch
 the session summary lists, then continue with "Apply a reviewed batch".

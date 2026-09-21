@@ -269,9 +269,51 @@ def present_refs(refs, note):
     return out
 
 
+# ---- backend sync: what the live backend already holds ------------------------------
+
+def _norm(s):
+    return " ".join((s or "").split())
+
+
+def _same(a, b):
+    """Equal after whitespace normalisation, or as numbers (the sheet renders 165000000
+    as `165000000.00`)."""
+    a, b = _norm(a), _norm(b)
+    if a == b:
+        return True
+    try:
+        return float(a.replace(",", "")) == float(b.replace(",", ""))
+    except ValueError:
+        return False
+
+
+def backend_state(kind, current, proposed, ref_urls, current_refs, append=False, keep_ref=False):
+    """"in_backend" when the pulled backend already holds the proposal (value and refs),
+    "value_in_backend" when the value is there but a proposed ref is not, else "".
+
+    Same test as verify_apply.py (whitespace-normalised equality); an appended element
+    (`Other names`) has landed when every proposed element is in the cell."""
+    have = {_norm(u) for u in current_refs}
+    refs_in = all(_norm(u) in have for u in ref_urls)
+    if kind == "ref":
+        return "in_backend" if ref_urls and refs_in else ""
+    if not _norm(proposed):
+        return ""
+    if append:
+        cur = {_norm(x) for x in current.split(";")}
+        value_in = all(_norm(x) in cur for x in proposed.split(";") if _norm(x))
+    else:
+        value_in = _same(current, proposed)
+    if not value_in:
+        return ""
+    return "in_backend" if keep_ref or refs_in else "value_in_backend"
+
+
 # ---- review items (plan fact 7) --------------------------------------------------
 
-def collect_items(bdir, mode, srm):
+def collect_items(bdir, mode, srm, cell=None):
+    """`cell(row_id, column)` reads the pulled backend; with it a conflict whose proposed value
+    the backend now holds, and a duplicate pair with a row gone, carry `backend_resolved`."""
     name = bdir.name
     items = []
 
@@ -297,6 +339,9 @@ def collect_items(bdir, mode, srm):
                 # row_id + column still match (apply_batch.py regenerates the file)
                 "conflict_index": i, "conflict_decision": c.get("decision", ""),
                 "conflict_match": [c.get("row_id", ""), c.get("column", "")],
+                "backend_resolved": "the backend now holds the proposed value"
+                if cell and len(ids) == 1 and _norm(c.get("proposed_value")) and
+                _same(cell(ids[0], c.get("column", "")), c["proposed_value"]) else "",
             })
     mpath = bdir / "manual_review.json"
     if mpath.exists():
@@ -336,6 +381,8 @@ def collect_items(bdir, mode, srm):
                 "title": f"{d.get('tier', '')} {d.get('reason', '')}".strip() or "possible duplicate",
                 "detail": "; ".join(f"{k}: {v}" for k, v in d.items() if v and k not in ("row_ids",)),
                 "urls": [],
+                "backend_resolved": "a row of the pair is no longer in the backend"
+                if len(ids) > 1 and len(live(ids)) < 2 else "",
             })
     return items
 
@@ -355,6 +402,10 @@ def build(batch_dirs, backend_path=None, info_path=None):
     def cell(rid, col):
         r = rows.get(rid)
         return r[H[col]].strip() if r is not None and col in H and len(r) > H[col] else ""
+
+    # a discovery row is in the backend when its Name or Hull number is (verify_apply.py's match)
+    present = {h: {_norm(r[H[h]]) for r in rows.values() if len(r) > H[h] and _norm(r[H[h]])}
+               for h in ("Name", "Hull number") if h in H}
 
     batches, proposals, all_items = [], {}, []
     labels = {d: m["label"] for d, m in info.items() if m["label"] != d}
@@ -407,6 +458,15 @@ def build(batch_dirs, backend_path=None, info_path=None):
             if "preserve_ref" in flags and not current_refs:
                 current_refs = split_urls(cell(rid, f"{col} [ref]"))
             proposed = it["value"] or it["ref_value"] if it["kind"] != "new_row" else ""
+            if it["kind"] == "new_row":
+                rd = it["row_data"] or {}
+                state = "in_backend" if any(_norm(rd.get(h)) in names for h, names in present.items()
+                                            if _norm(rd.get(h))) else ""
+            else:
+                state = backend_state(it["kind"], cell(rid, col), proposed, ref_urls, current_refs,
+                                      append="append_ref" in flags, keep_ref="preserve_ref" in flags)
+            if state:
+                flags.append(state)
             why, detail = split_note(it["note"], cell(rid, col) if rid else "", proposed, labels)
             proposals[key] = {
                 "why": why, "detail": detail, "sources": present_refs(refs, it["note"]),
@@ -426,7 +486,7 @@ def build(batch_dirs, backend_path=None, info_path=None):
         batches.append({"dir": bdir.name, "mode": mode, "label": meta["label"],
                         "apply_order": meta["apply_order"], "applied": meta["applied"],
                         "counts": counts, "n": len(items)})
-        all_items.extend(collect_items(bdir, mode, srm))
+        all_items.extend(collect_items(bdir, mode, srm, cell))
 
     # links: linked-column partners on the same row (any batch) + same id in another batch
     by_cell_key = defaultdict(list)

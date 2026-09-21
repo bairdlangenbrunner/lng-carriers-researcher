@@ -161,3 +161,14 @@ def test_shipvault_companion_verdict(tmp_path):
     assert ("12", "Status", api) not in by_cell          # logged without a value: not gated
     (tmp_path / "shipvault_api_refs.json").write_text(json.dumps({"added": 3}))
     assert review_data.gate_verdicts(tmp_path, {}) == ({}, {})
+
+
+def test_backend_state():
+    st = review_data.backend_state
+    assert st("fill", "165000000.00", "165000000", [], [], keep_ref=True) == "in_backend"
+    assert st("fill", "active", "active", ["http://a"], ["http://a", "http://b"]) == "in_backend"
+    assert st("fill", "active", "active", ["http://a"], []) == "value_in_backend"
+    assert st("fill", "on order", "active", [], []) == "" and st("fill", "", "", [], []) == ""
+    assert st("fill", "Old One; Hull 1 (SHI)", "Hull 1 (SHI)", [], [], append=True) == "in_backend"
+    assert st("ref", "", "", ["http://a"], ["http://a"]) == "in_backend"
+    assert st("ref", "", "", ["http://a"], ["http://b"]) == ""

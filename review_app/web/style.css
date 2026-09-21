@@ -43,6 +43,7 @@ code { font-family: ui-monospace, Menlo, monospace; font-size: 14px; }
 .who { margin-left: auto; color: var(--muted); font-size: 14px; }
 
 .banner { padding: 6px 12px; background: var(--r); color: var(--r-ink); }
+.banner.ok { background: var(--g); color: var(--g-ink); }
 .tabpanel { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .tabpanel[hidden] { display: none; }
 
@@ -109,7 +110,6 @@ code { font-family: ui-monospace, Menlo, monospace; font-size: 14px; }
 .line .controls { display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 .line .controls button { min-height: 36px; padding: 4px 16px; }
 .line .controls button[aria-pressed=true] { font-weight: 700; border-color: currentColor; border-width: 2px; }
-.line .controls kbd { font: 13px ui-monospace, Menlo, monospace; opacity: .7; margin-left: 6px; }
 .line .controls .b-accept { color: var(--accept); }
 .line .controls .b-hold { color: var(--hold); }
 .line .controls .b-reject { color: var(--reject); }

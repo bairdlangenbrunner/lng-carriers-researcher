@@ -358,3 +358,28 @@ def record_items(records, data, dirs, reviewer):
                 rollback(log, size)
                 raise
     return [rec for pairs in by_batch.values() for rec, _ in pairs]
+
+
+# ---- backend sync (the refresh button) ---------------------------------------------
+
+SYNC_REVIEWER = "backend sync"
+SYNC_VIA = "sync:backend"
+
+
+def sync_backend(data, dirs):
+    """After a fresh pull + rebuild: settle what the backend already settles.
+
+    A held line the backend already holds (`in_backend`) is accepted; an open item the backend
+    resolves (`backend_resolved`) is marked resolved. Both go through the ordinary write paths,
+    logged as SYNC_REVIEWER / SYNC_VIA, so the batch dir records why. A line someone decided
+    (accept / reject / suggest) is never touched. Reads the backend's state, never writes it."""
+    cur = overlay(data, dirs)["proposals"]
+    lines = [{"key": k, "decision": "accept", "via": SYNC_VIA,
+              "note": "the backend already holds this"}
+             for k, p in cur.items() if "in_backend" in p["flags"] and p["decision"] == "hold"]
+    items = [{"item_id": it["item_id"], "status": "resolved", "note": it["backend_resolved"]}
+             for it in overlay_items(data, dirs)
+             if it.get("backend_resolved") and it["status"] == "open"]
+    accepted = decide(lines, data, dirs, SYNC_REVIEWER) if lines else []
+    resolved = record_items(items, data, dirs, SYNC_REVIEWER) if items else []
+    return {"accepted": [r["key"] for r in accepted], "resolved": [r["item_id"] for r in resolved]}

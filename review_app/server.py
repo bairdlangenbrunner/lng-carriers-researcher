@@ -12,6 +12,10 @@ rebuilds work/review_data.json first (review_data.py); otherwise it serves the e
     POST /api/decide   [decision record, ...] -> {"saved": [...]}  (store.decide; 400 = nothing written)
     POST /api/item     [item record, ...] -> {"saved": [...]}  (store.record_items: review_items.jsonl
                        + a conflict's call in conflicts.csv `decision`)
+    POST /api/refresh  {} -> {"backend_pulled", "accepted": [...], "resolved": [...]}  re-pull the
+                       backend (pull_backend.py, read-only profile), rebuild the dataset, then
+                       store.sync_backend: holds the backend already holds -> accept, open items
+                       it resolves -> resolved. Reads the backend; never writes it.
 """
 import argparse
 import ipaddress
@@ -37,6 +41,17 @@ import store  # noqa: E402
 from paths import work_dir  # noqa: E402
 
 
+class PullFailed(RuntimeError):
+    """pull_backend.py did not produce a fresh backend csv (HTTP 502; nothing changed)."""
+
+
+def pull_backend():
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "pull_backend.py")],
+                       capture_output=True, text=True, cwd=ROOT)
+    if r.returncode != 0:
+        raise PullFailed("backend pull failed: " + (r.stderr.strip().splitlines() or ["no output"])[-1])
+
+
 def ensure_loopback(host):
     """Raise ValueError unless `host` is a loopback address (the data is unreleased)."""
     if host == "localhost":
@@ -52,10 +67,12 @@ def ensure_loopback(host):
 class App:
     """Server state: the dataset, where its batch dirs live, who is reviewing."""
 
-    def __init__(self, data_path, reviewer, batches_root=None):
+    def __init__(self, data_path, reviewer, batches_root=None, backend_path=None, pull=None):
         self.data_path = Path(data_path)
         self.reviewer = reviewer
         self.batches_root = Path(batches_root) if batches_root else ROOT / "batches"
+        self.backend_path = backend_path      # None = work/backend.csv
+        self.pull = pull or pull_backend      # refresh(): how the backend csv is renewed
         self.lock = threading.Lock()
         self.data = json.loads(self.data_path.read_text(encoding="utf-8"))
         self.dirs = {b["dir"]: self.batches_root / b["dir"] for b in self.data["batches"]}
@@ -64,6 +81,18 @@ class App:
         with self.lock:
             out = store.overlay(self.data, self.dirs)
             out["items"] = store.overlay_items(self.data, self.dirs)
+            return out
+
+    def refresh(self):
+        """Re-pull, rebuild the dataset over the same batch dirs, settle what the backend
+        settles. A failed pull or build leaves the served dataset as it was."""
+        with self.lock:
+            self.pull()
+            data = review_data.build(list(self.dirs.values()), self.backend_path)
+            review_data.write(data, self.data_path)
+            self.data = data
+            out = store.sync_backend(self.data, self.dirs)
+            out["backend_pulled"] = data["backend_pulled"]
             return out
 
     def decide(self, records):
@@ -137,6 +166,10 @@ def make_handler(app):
                     return self._json({"saved": app.decide(body)})
                 if path == "/api/item":
                     return self._json({"saved": app.record_items(body)})
+                if path == "/api/refresh":
+                    return self._json(app.refresh())
+            except PullFailed as e:
+                return self._json({"error": str(e)}, HTTPStatus.BAD_GATEWAY)
             except store.Invalid as e:
                 return self._json({"error": str(e)}, HTTPStatus.BAD_REQUEST)
             except Exception as e:  # a failed write: report it loudly, the UI keeps the line undecided

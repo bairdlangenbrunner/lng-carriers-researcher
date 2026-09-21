@@ -20,6 +20,10 @@
                                    body: JSON.stringify(records)}).then(Store._json)
         .then(function (b) { return b.saved; });
     },
+    refresh: function () {       // re-pull the backend, rebuild, settle what the backend settles
+      return fetch("/api/refresh", {method: "POST", headers: {"Content-Type": "application/json"},
+                                    body: "{}"}).then(Store._json);
+    },
     item: function (records) {   // Items tab: status / note / a conflict's call
       return fetch("/api/item", {method: "POST", headers: {"Content-Type": "application/json"},
                                  body: JSON.stringify(records)}).then(Store._json)
@@ -311,6 +315,8 @@
     append_ref: ["appends", "added to what the cell already holds, nothing is replaced"],
     ref_only: ["ref only", "adds refs; the value is untouched"],
     igu_pdf_only: ["only source: IGU", "the IGU report PDF is the sole ref (interim ruling 2026-09-17)"],
+    in_backend: ["in the backend", "the pulled backend already holds this value and its refs"],
+    value_in_backend: ["value in the backend", "the backend holds this value, but not every proposed ref"],
     applied: ["already applied", "this batch is in the backend — changing the decision does not unapply it"]
   };
   var CONF_TEXT = {G: "green — auto-accept grade", Y: "yellow — held for a decision", R: "red — weak support"};
@@ -361,7 +367,7 @@
 
     var h = '<div class="row1"><span class="col">' +
       esc(p.column || "new row · cluster " + p.cluster_id) + "</span>" + chips.join(" ") +
-      '<span class="batch">' + esc(b.label) + "</span></div>";
+      '<span class="batch">' + "batch " + esc(b.label) + "</span></div>";
 
     if (p.kind === "new_row") {
       var rd = p.row_data || {};
@@ -426,12 +432,12 @@
   function canSuggest(p) { return p.kind !== "new_row" && p.kind !== "ref" && !has(p, "ref_only"); }
   function controlsHtml(k, p) {
     return '<div class="controls">' + CONTROLS.map(function (c) {
-      return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" aria-pressed="' +
-        (p.decision === c[0]) + '">' + c[0] + "<kbd>" + c[1] + "</kbd></button>";
+      return '<button type="button" class="b-' + c[0] + '" data-decide="' + c[0] + '" title="' + c[0] + " (" + c[1] + ')" aria-pressed="' +
+        (p.decision === c[0]) + '">' + c[0] + "</button>";
     }).join("") + '<button type="button" class="b-suggest" data-suggest aria-pressed="' + (p.decision === "suggest") +
       '"' + (canSuggest(p) ? ' title="suggest a different value (s)"'
                            : ' disabled title="nothing to suggest on a new row or a ref-only line"') +
-      ">suggest…<kbd>s</kbd></button>" + (p.last ? '<span class="by">' + esc(p.decision) + " by " + esc(p.last.reviewer) + "</span>" : "") +
+      ">suggest…</button>" + (p.last ? '<span class="by">' + esc(p.decision) + " by " + esc(p.last.reviewer) + "</span>" : "") +
       '<span class="saving" id="saving-' + esc(k) + '"></span></div>';
   }
 
@@ -896,7 +902,7 @@
       '<span class="chip">' + esc(label) + "</span> " +
       (generic ? "" : '<span class="col">' + esc(it.title) + "</span> ") +
       (it.live_rows.length > 1 ? "<span>" + rowLinks(it.live_rows) + "</span> " : "") +
-      '<span class="batch">' + esc(batchOf(it.batch).label) + "</span></div>";
+      '<span class="batch">' + "batch " + esc(batchOf(it.batch).label) + "</span></div>";
     if (it.detail) h += '<div class="detail">' + esc(it.detail) + "</div>";
     if (it.logged_call && it.logged_call !== it.conflict_decision)
       h += '<div class="detail"><span class="chip warn">call ' + esc(it.logged_call) + " is in review_items.jsonl but " +
@@ -1038,8 +1044,9 @@
     if (name === "summary") renderSummary();
   }
 
-  function banner(msg) {
+  function banner(msg, ok) {
     var b = $("banner");
+    b.classList.toggle("ok", !!ok);
     b.textContent = msg;
     b.hidden = !msg;
   }
@@ -1060,9 +1067,8 @@
     var l = e.target.closest && e.target.closest(".line");
     if (l && e.target.hasAttribute("data-more")) S.open[l.getAttribute("data-key")] = e.target.open;
   }, true);
-  Promise.all([Store.load(), Store.whoami()]).then(function (r) {
-    D = r[0];
-    ME = r[1];
+  function adopt(data) {
+    D = data;
     // a review_data.json built before the why / sources split: show the whole note and the bare refs
     Object.keys(D.proposals).forEach(function (k) {
       var p = D.proposals[k];
@@ -1072,12 +1078,41 @@
                 reason: x.verdict || "", verdicts: [x.url + ": " + (x.verdict || "not checked")]};
       });
     });
-    $("whoami").textContent = ME;
     var pulledH = (Date.now() - new Date(D.backend_pulled).getTime()) / 36e5;
-    $("built").textContent = pulledH > 24 ? "backend pulled " + Math.round(pulledH) + " h ago — re-pull" : "";
+    $("built").textContent = pulledH > 24 ? "backend pulled " + Math.round(pulledH) + " h ago — sync" : "";
     $("built").title = "built " + D.built.replace("T", " ").slice(0, 16) +
       " · backend pulled " + D.backend_pulled.replace("T", " ").slice(0, 16);
     $("whoami").title = $("built").title;
+    $("sync").title = "Re-pull the backend and settle what it already holds · last pulled " +
+      D.backend_pulled.replace("T", " ").slice(0, 16);
+  }
+  // Sync: the server re-pulls and rebuilds, accepts the holds the backend already holds and
+  // resolves the items it settles; the page then takes the new dataset in place (the session
+  // summary and the filters stay).
+  function syncBackend() {
+    var b = $("sync");
+    b.disabled = true;
+    b.textContent = "syncing…";
+    Store.refresh().then(function (r) {
+      return Store.load().then(function (data) {
+        adopt(data);
+        refilter();
+        if (!$("tab-items").hidden) renderItems();
+        if (!$("tab-summary").hidden) renderSummary();
+        var n = r.accepted.length, m = r.resolved.length;
+        banner("Backend synced" + (n || m ? ": " + n + " held line" + (n === 1 ? "" : "s") +
+          " already in the backend → accept, " + m + " item" + (m === 1 ? "" : "s") + " resolved."
+          : " — nothing new was settled by it."), true);
+      });
+    }).catch(function (e) { banner("Sync failed, nothing changed: " + e.message); })
+      .then(function () { b.disabled = false; b.textContent = "↻ sync backend"; });
+  }
+  $("sync").onclick = syncBackend;
+
+  Promise.all([Store.load(), Store.whoami()]).then(function (r) {
+    ME = r[1];
+    $("whoami").textContent = ME;
+    adopt(r[0]);
     initFilters();
     refilter();
   }).catch(function (e) { banner("Could not load the review data: " + e.message); });
