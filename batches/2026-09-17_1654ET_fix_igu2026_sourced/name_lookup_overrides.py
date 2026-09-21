@@ -96,18 +96,32 @@ OTHER = {
             "name 'Ergy' for IMO 9250725 (shipvault: SCRAPPED) — carried here. Status is still `active`: needs a scrapped fix"),
 }
 
+# row_id -> extra cells the lookup surfaced (not Names)
+EXTRA = {
+    "686": {"field": "Status", "new_value": "scrapped", "confidence": "Y",
+            "refs": [ref(SV + "116466"), ref(VT + "Ergy-9250725.html")],
+            "note": "'active' -> 'scrapped': shipvault (status SCRAPPED) and "
+                    "vesseltracker.com (header label 'scrapped', last position Bangladesh) for IMO 9250725, sailing "
+                    "under the demolition-voyage name 'Ergy'. IGU 2026 still lists the vessel — suggestion, held "
+                    "(Baird 2026-09-21); the row is kept, never deleted (IG §5.2)"},
+}
+
 
 def main():
     d = json.loads(B8.read_text())
     for row in d["corrections"]:
         rid = row["row_id"]
-        if rid not in NAMES:
+        if rid not in NAMES and rid not in EXTRA:
             continue
-        cells = [c for c in row["cells"] if c["field"] != "Name"]
-        if NAMES[rid]:
+        cells = list(row["cells"])
+        if rid in NAMES:
+            cells = [c for c in cells if c["field"] != "Name"]
+        if NAMES.get(rid):
             value, conf, former, refs, note = NAMES[rid]
             cells.append({"field": "Name", "new_value": value, "confidence": conf, "refs": refs,
                           "note": f"{note} [{RULE}]", "former_name": former})
+        if rid in EXTRA:
+            cells = [c for c in cells if c["field"] != EXTRA[rid]["field"]] + [EXTRA[rid]]
         row["cells"] = cells
     d["corrections"] = [r for r in d["corrections"] if r["cells"]]
     B8.write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n")

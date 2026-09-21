@@ -1,6 +1,6 @@
 # Batch digest — 2026-09-17_1654ET_fix_igu2026_sourced
 
-**Mode:** fix  ·  **Proposals:** 464 (auto-safe 439, needs-decision 25)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
+**Mode:** fix  ·  **Proposals:** 465 (auto-safe 439, needs-decision 26)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
 
 ## ✅ Auto-safe — accept in bulk (Green / derivable)
 
@@ -15,6 +15,7 @@ These 439 are default-`accept` in `decisions.csv`. Skim or trust; nothing here n
 - **row 969** · Vessel type: `conventional` (Y) — value unchanged — Rule F ref-fill: backend Vessel type had no [ref] — HOLD: this row's FSU-conversion question (batch 5) is still open [vessel not listed in IGU 2026; the report is cited as the source of the Vessel type classification (size classes), capacity 135000 cbm; per Baird ruling 2026-09-17]
 - **row 1004** · Name: `Gas Polaris` (Y) — 'Seapeak Hispania' -> 'Gas Polaris': marinetraffic.org and vesseltracker.com (IMO 9230048, Indonesian flag) — renamed again since IGU 2026's 'Seapeak Jupiter', which goes to Other names; shipvault still prints 'Seapeak Hispania' [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
 - **row 416** · Vessel type: `FSU` (Y) — 'conventional' -> 'FSU' per IGU 2026 (igu_changed; IGU 2025: 'Conventional') — FSU is out of scope for additions; row stays, scope flag [IGU 2026 Appendix 3 fleet table, PDF p.66; IMO 9236432; sole source per Baird ruling 2026-09-17]
+- **row 686** · Status: `scrapped` (Y) — 'active' -> 'scrapped': shipvault (status SCRAPPED) and vesseltracker.com (header label 'scrapped', last position Bangladesh) for IMO 9250725, sailing under the demolition-voyage name 'Ergy'. IGU 2026 still lists the vessel — suggestion, held (Baird 2026-09-21); the row is kept, never deleted (IG §5.2)
 - **row 459** · Name: `LNG Scorpio` (Y) — 'CCH LNG' -> 'LNG Scorpio': marinetraffic.org and vesseltracker.com (IMO 9307205); shipvault prints 'CCH Gas'; IGU 2026's 'LNG Soars' goes to Other names — a sanctioned vessel, renamed often [IGU 2026 was the sole source; databases checked by IMO (Baird 2026-09-21)]
 - **row 374** · Vessel type: `FSRU` (Y) — 'conventional' -> 'FSRU' per IGU 2026 (backend_differs; IGU 2025: 'FSRU') [IGU 2026 Appendix 3 fleet table, PDF p.66; IMO 9390185; sole source per Baird ruling 2026-09-17]
 - **row 371** · Name: `Al Kheesah` (Y) — 'Al-Kheesha' -> 'Al Kheesah': spelling only (`Al-Kheesha` vs IGU `Al Kheesah`) — sources differ on the transliteration [IGU 2026 Appendix 3 fleet table, PDF p.76; IMO 9982677; sole source per Baird ruling 2026-09-17]
