@@ -58,7 +58,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918779 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918779"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -80,7 +102,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918781 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918781"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -102,7 +146,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918793 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918793"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -124,7 +190,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918808 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918808"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -146,7 +234,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918810 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918810"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -157,7 +267,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/438620",
@@ -166,9 +276,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438620",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; second source: IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918822 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2025 prints 2026 for IMO 9918822"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -179,7 +315,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/438622",
@@ -188,9 +324,30 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438622",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 9918846 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; no ref prints the former year — [ref] left blank"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -212,7 +369,24 @@
        "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03; IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 9918858 prints 2027 — no second source for 2028 yet; sources disagree on the new year (shipvault 2028, IGU 2027) — both later than the backend's 2026; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [],
+     "note": "former Delivery year 2026 (now proposed 2028) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; no ref prints the former year — [ref] left blank"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2028 — decide with the Delivery year line"
     }
    ]
   },
@@ -272,7 +446,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-08-28 per shipvault"
+     "note": "backend 2026 -> delivered 2025-08-28 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -326,7 +501,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-11-26 per shipvault"
+     "note": "backend 2026 -> delivered 2025-11-26 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -418,7 +594,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-03-17 per shipvault"
+     "note": "backend 2026 -> delivered 2025-03-17 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -472,7 +649,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-09-30 per shipvault"
+     "note": "backend 2026 -> delivered 2025-09-30 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -640,7 +818,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-04-04 per shipvault"
+     "note": "backend 2026 -> delivered 2025-04-04 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -694,7 +873,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-06-27 per shipvault"
+     "note": "backend 2026 -> delivered 2025-06-27 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -748,7 +928,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-07-29 per shipvault"
+     "note": "backend 2026 -> delivered 2025-07-29 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -802,7 +983,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-11-28 per shipvault"
+     "note": "backend 2026 -> delivered 2025-11-28 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -856,7 +1038,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-12-18 per shipvault"
+     "note": "backend 2026 -> delivered 2025-12-18 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -1242,7 +1425,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-09-15 per shipvault"
+     "note": "backend 2026 -> delivered 2025-09-15 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -1443,7 +1627,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/463995",
@@ -1452,9 +1636,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463995",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 1019670 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 1019670"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -1509,7 +1719,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479142",
@@ -1518,9 +1728,14 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 1063401 prints 2027",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -1537,6 +1752,27 @@
       }
      ],
      "note": "placeholder 'Hull 2697 (SHI)' -> vessel named"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 1063401"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -1547,7 +1783,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/479143",
@@ -1556,9 +1792,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479143",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 1063413 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 1063413"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -1569,7 +1831,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/483994",
@@ -1578,9 +1840,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483994",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 1096769 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 1096769"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -1618,7 +1906,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-03-31 per shipvault"
+     "note": "backend 2026 -> delivered 2025-03-31 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -1740,7 +2029,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-08-18 per shipvault"
+     "note": "backend 2026 -> delivered 2025-08-18 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -1794,7 +2084,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-12-16 per shipvault"
+     "note": "backend 2026 -> delivered 2025-12-16 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -1985,7 +2276,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/464884",
@@ -1994,9 +2285,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464884",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 1017646 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 1017646"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2072,7 +2389,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-07-25 per shipvault"
+     "note": "backend 2026 -> delivered 2025-07-25 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -2126,7 +2444,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-08-31 per shipvault"
+     "note": "backend 2026 -> delivered 2025-08-31 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -2305,7 +2624,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/468295",
@@ -2314,9 +2633,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468295",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 1023891 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 1023891"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2376,7 +2721,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-08-25 per shipvault"
+     "note": "backend 2026 -> delivered 2025-08-25 per shipvault",
+     "former_year": "2026"
     }
    ]
   },
@@ -2414,7 +2760,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-10-30 per shipvault"
+     "note": "backend 2026 -> delivered 2025-10-30 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -2468,7 +2815,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-12-10 per shipvault"
+     "note": "backend 2026 -> delivered 2025-12-10 per shipvault",
+     "former_year": "2026"
     },
     {
      "field": "Name",
@@ -2621,7 +2969,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/468859",
@@ -2630,9 +2978,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468859",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 9994319 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 9994319"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2643,7 +3017,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/468860",
@@ -2652,9 +3026,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468860",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-05"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-05; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 9994321 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 9994321"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2665,7 +3065,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/467893",
@@ -2674,9 +3074,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467893",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 1023669 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 1023669"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2731,7 +3157,7 @@
     {
      "field": "Delivery year",
      "new_value": "2027",
-     "confidence": "Y",
+     "confidence": "G",
      "refs": [
       {
        "url": "https://www.shipvault.com/ships/465809",
@@ -2740,9 +3166,35 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465809",
        "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; second source: IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 9997696 prints 2027",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 9997696"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2862,7 +3314,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-05-21 per shipvault"
+     "note": "backend 2026 -> delivered 2025-05-21 per shipvault",
+     "former_year": "2026"
     }
    ]
   },
@@ -2926,9 +3379,39 @@
       {
        "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459925",
        "soft": false
+      },
+      {
+       "url": "https://maritimeoptima.com/public/vessels/pages/imo:9989120/mmsi:477255600/SEA_ARGOSY.html",
+       "soft": false
       }
      ],
-     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01"
+     "note": "backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9989120 prints 2026 — no second source for 2027 yet; second source: Maritime Optima prints `SEA ARGOSY built in 2027` for IMO 9989120. Kept Y: the row is in manual_review.json (vesselfinder showed it AIS-live as `Dachuan Haishang`, built 2025; Maritime Optima lists an MMSI, callsign and Hong Kong flag) — it may be delivered or on trials, settle Status first",
+     "former_year": "2026"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2026",
+     "gate_value": "2026",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 9989120; IGU 2026 prints 2026 for IMO 9989120"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2026 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2988,7 +3471,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-09-30 per shipvault"
+     "note": "backend 2026 -> delivered 2025-09-30 per shipvault",
+     "former_year": "2026"
     }
    ]
   },
@@ -3026,7 +3510,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-12-10 per shipvault"
+     "note": "backend 2026 -> delivered 2025-12-10 per shipvault",
+     "former_year": "2026"
     }
    ]
   },
@@ -3108,7 +3593,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-03-24 per shipvault"
+     "note": "backend 2026 -> delivered 2025-03-24 per shipvault",
+     "former_year": "2026"
     }
    ]
   },
@@ -3146,7 +3632,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> delivered 2025-12-09 per shipvault"
+     "note": "backend 2026 -> delivered 2025-12-09 per shipvault",
+     "former_year": "2026"
     }
    ]
   },
@@ -3882,7 +4369,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2027 -> delivered 2026-07-06 per shipvault; marinetraffic.org shows CLEAN RIO GRANDE with MMSI 249569000 (AIS-registered) - cross-check, not cited"
+     "note": "backend 2027 -> delivered 2026-07-06 per shipvault; marinetraffic.org shows CLEAN RIO GRANDE with MMSI 249569000 (AIS-registered) - cross-check, not cited",
+     "former_year": "2027"
     }
    ]
   },
@@ -3920,7 +4408,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2027 -> delivered 2026-04-30 per shipvault; marinetraffic.org shows CLEAN TEXAS with MMSI 249342000 (AIS-registered) - cross-check, not cited"
+     "note": "backend 2027 -> delivered 2026-04-30 per shipvault; marinetraffic.org shows CLEAN TEXAS with MMSI 249342000 (AIS-registered) - cross-check, not cited",
+     "former_year": "2027"
     }
    ]
   },
@@ -4020,7 +4509,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2027 -> delivered 2025-10-31 per shipvault; marinetraffic.org shows ELISA HALCYON with MMSI 228488900 (AIS-registered) - cross-check, not cited"
+     "note": "backend 2027 -> delivered 2025-10-31 per shipvault; marinetraffic.org shows ELISA HALCYON with MMSI 228488900 (AIS-registered) - cross-check, not cited",
+     "former_year": "2027"
     },
     {
      "field": "Name",

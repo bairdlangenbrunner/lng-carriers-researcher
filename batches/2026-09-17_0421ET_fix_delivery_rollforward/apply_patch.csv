@@ -3,6 +3,15 @@ set,6,Status,active
 set,6,Status [ref],"https://www.shipvault.com/ships/431882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/431882"
 set,6,Name,Konstantin Posiet
 set,6,Name [ref],"https://www.shipvault.com/ships/431882, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/431882"
+set,12,Delivery year,2027
+set,12,Delivery year [ref],"https://www.shipvault.com/ships/438620, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438620, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,12,Previous delivery year(s),2026
+set,12,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,12,Delivery delayed,yes
+set,14,Delivery year,2027
+set,14,Delivery year [ref],"https://www.shipvault.com/ships/438622, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438622, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,14,Previous delivery year(s),2026
+set,14,Delivery delayed,yes
 set,25,Name,Atlantic Success
 set,25,Name [ref],"https://www.shipvault.com/ships/432642, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432642"
 set,43,Status,active
@@ -133,10 +142,30 @@ set,123,Name,Minerva Roxanne
 set,123,Name [ref],"https://www.shipvault.com/ships/461096, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461096"
 set,129,Name,Gamy Vanguard
 set,129,Name [ref],"https://www.shipvault.com/ships/463994, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463994"
+set,130,Delivery year,2027
+set,130,Delivery year [ref],"https://www.shipvault.com/ships/463995, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463995, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,130,Previous delivery year(s),2026
+set,130,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,130,Delivery delayed,yes
 set,131,Name,Diamond Gas Jade
 set,131,Name [ref],"https://www.shipvault.com/ships/465878, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465878"
 set,132,Name,Toho Emerald
 set,132,Name [ref],"https://www.shipvault.com/ships/465879, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465879"
+set,144,Delivery year,2027
+set,144,Delivery year [ref],"https://www.shipvault.com/ships/479142, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,144,Previous delivery year(s),2026
+set,144,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,144,Delivery delayed,yes
+set,145,Delivery year,2027
+set,145,Delivery year [ref],"https://www.shipvault.com/ships/479143, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479143, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,145,Previous delivery year(s),2026
+set,145,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,145,Delivery delayed,yes
+set,162,Delivery year,2027
+set,162,Delivery year [ref],"https://www.shipvault.com/ships/483994, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483994, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,162,Previous delivery year(s),2026
+set,162,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,162,Delivery delayed,yes
 set,181,Status,active
 set,181,Status [ref],"https://www.shipvault.com/ships/467719, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467719"
 set,181,Delivery year,2025
@@ -179,6 +208,11 @@ set,196,Status,active
 set,196,Status [ref],"https://www.shipvault.com/ships/460369, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369"
 set,196,Name,Excelerate Acadia
 set,196,Name [ref],"https://www.shipvault.com/ships/460369, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/460369"
+set,197,Delivery year,2027
+set,197,Delivery year [ref],"https://www.shipvault.com/ships/464884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464884, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,197,Previous delivery year(s),2026
+set,197,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,197,Delivery delayed,yes
 set,231,Status,active
 set,231,Status [ref],"https://www.shipvault.com/ships/428603, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/428603"
 set,231,Name,Parthenon LNG
@@ -211,6 +245,11 @@ set,238,Status,active
 set,238,Status [ref],"https://www.shipvault.com/ships/461956, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956"
 set,238,Name,Musandam LNG
 set,238,Name [ref],"https://www.shipvault.com/ships/461956, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461956"
+set,241,Delivery year,2027
+set,241,Delivery year [ref],"https://www.shipvault.com/ships/468295, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468295, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,241,Previous delivery year(s),2026
+set,241,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,241,Delivery delayed,yes
 set,252,Status,active
 set,252,Status [ref],"https://www.shipvault.com/ships/467052, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467052"
 set,263,Status,active
@@ -237,10 +276,30 @@ set,269,Status,active
 set,269,Status [ref],"https://www.shipvault.com/ships/456804, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456804"
 set,270,Name,Greenergy River
 set,270,Name [ref],"https://www.shipvault.com/ships/467890, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467890"
+set,273,Delivery year,2027
+set,273,Delivery year [ref],"https://www.shipvault.com/ships/468859, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468859, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,273,Previous delivery year(s),2026
+set,273,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,273,Delivery delayed,yes
+set,274,Delivery year,2027
+set,274,Delivery year [ref],"https://www.shipvault.com/ships/468860, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468860, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,274,Previous delivery year(s),2026
+set,274,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,274,Delivery delayed,yes
+set,275,Delivery year,2027
+set,275,Delivery year [ref],"https://www.shipvault.com/ships/467893, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467893, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,275,Previous delivery year(s),2026
+set,275,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,275,Delivery delayed,yes
 set,278,Status,active
 set,278,Status [ref],"https://www.shipvault.com/ships/465806, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465806"
 set,279,Status,active
 set,279,Status [ref],"https://www.shipvault.com/ships/465807, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465807"
+set,281,Delivery year,2027
+set,281,Delivery year [ref],"https://www.shipvault.com/ships/465809, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465809, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf"
+set,281,Previous delivery year(s),2026
+set,281,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,281,Delivery delayed,yes
 set,289,Status,active
 set,289,Status [ref],"https://www.shipvault.com/ships/467899, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467899"
 set,289,Name,Tianshan

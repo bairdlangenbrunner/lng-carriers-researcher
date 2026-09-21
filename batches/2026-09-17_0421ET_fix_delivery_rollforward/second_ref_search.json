@@ -1,0 +1,72 @@
+[
+  {
+    "imo": "9989120",
+    "hull": "Dalian No 1 G175K-4 / Sea Argosy",
+    "year_supported": 2027,
+    "url": "https://maritimeoptima.com/public/vessels/pages/imo:9989120/mmsi:477255600/DACHUAN_HAISHANG.html",
+    "quote": "SEA ARGOSY (IMO 9989120) is a LNG/Large vessel built in 2027",
+    "verifier_result": "PASS  (OK) [ok]",
+    "grade": "ref",
+    "notes": "Maritime Optima (independent AIS/vessel database, Norway) lists SEA ARGOSY's build year as 2027, independently corroborating shipvault's 2027 figure over IGU 2026's 2026 figure. Vessel identity (IMO 9989120 = Sea Argosy, 4th of 8 CMES/DSIC 175,000 cbm G175K series vessels, launched May 2025) confirmed via WebSearch. Supporting circumstantial timeline: three chronological LNG Prime articles (Aug 2025, Jun 2026, Jul 2026) show that as of 27 Jul 2026 Sea Argosy had still not been delivered while several later-launched sister ships had been, consistent with a slip past 2026. Verified with url_verifier.py against expected tokens '2027' and 'SEA ARGOSY' -> PASS."
+  },
+  {
+    "imo": "9918779",
+    "hull": "046",
+    "year_supported": null,
+    "url": null,
+    "quote": null,
+    "verifier_result": null,
+    "grade": "none",
+    "notes": "No hull-specific second source found stating a delivery year (2027 or otherwise) for this vessel. Hull is unnamed and pre-delivery, so it receives essentially no individual trade-press coverage (unlike hulls 041-045, which were named/covered individually as they neared completion). Searched: 'IMO 9918779', 'Zvezda hull 046', Russian-language search (Звезда 046 2027), war-sanctions.gur.gov.ua (found 'ZVEZDA 046; IMO 9918779' entry but its 'Build year' field read 2025 -- a placeholder/unverified DB field on an undelivered ship, not usable), shipinfo.net (JSON-LD 'Built: 2024' field, MMSI '0', no AIS history -- assessed as auto-generated placeholder data, not citable), maritimeoptima.com (guessed URL imo:9918779 -> 404, vessel not yet tracked/named on that DB), sskzvezda.ru official site search, gcaptain/highnorthnews/offshore-energy.biz/lngprime/tradewinds/splash247/rivieramm/tass/interfax/portnews.ru/sudostroenie.info/korabel.ru/neftegaz.ru searches (English and Russian) for the Arc7 program did not tie a year to this specific hull -- only series-level statements (e.g. gcaptain's Bloomberg-sourced piece: 'two more expected in 2026, no firm timeline confirmed, further delays remain likely') which refer to the next-in-line named hulls (Pyotr Stolypin / Sergei Witte, hulls ~042-045), not to hull 046 specifically."
+  },
+  {
+    "imo": "9918781",
+    "hull": "047",
+    "year_supported": null,
+    "url": null,
+    "quote": null,
+    "verifier_result": null,
+    "grade": "none",
+    "notes": "No hull-specific second source found. Same search coverage as hull 046 (Arc7 program English/Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima.com). war-sanctions.gur.gov.ua has a 'ZVEZDA 047' entry but with the same unreliable/placeholder build-year field pattern seen on 046; not used. No dedicated coverage of this hull's expected delivery year found in any searched source."
+  },
+  {
+    "imo": "9918793",
+    "hull": "048",
+    "year_supported": null,
+    "url": null,
+    "quote": null,
+    "verifier_result": null,
+    "grade": "none",
+    "notes": "No hull-specific second source found. Searched war-sanctions.gur.gov.ua specifically for 'ZVEZDA 048' -- no dedicated entry surfaced (only 045/046/047 and an unrelated 'ZVEZDA 131040' recur in results), suggesting this hull is not yet individually tracked/sanctioned/named in that database. Same general Arc7-program trade press sweep as hull 046 found no hull-specific delivery-year statement."
+  },
+  {
+    "imo": "9918808",
+    "hull": "049",
+    "year_supported": null,
+    "url": null,
+    "quote": null,
+    "verifier_result": null,
+    "grade": "none",
+    "notes": "No hull-specific second source found. Searched war-sanctions.gur.gov.ua for 'ZVEZDA 049' -- no dedicated entry found (same recurring 045/046/047 result set). Same general Arc7-program trade press sweep as hull 046 found no hull-specific delivery-year statement."
+  },
+  {
+    "imo": "9918810",
+    "hull": "050",
+    "year_supported": null,
+    "url": null,
+    "quote": null,
+    "verifier_result": null,
+    "grade": "none",
+    "notes": "No hull-specific second source found. Searched war-sanctions.gur.gov.ua for 'ZVEZDA 050' -- no dedicated entry found (same recurring 045/046/047 result set). Same general Arc7-program trade press sweep as hull 046 found no hull-specific delivery-year statement."
+  },
+  {
+    "imo": "9918858",
+    "hull": "054",
+    "year_supported": null,
+    "url": null,
+    "quote": null,
+    "verifier_result": null,
+    "grade": "none",
+    "notes": "No hull-specific second source found bearing on the shipvault (2027) vs IGU 2026 (2027 per task framing note -- re-check task text) discrepancy for this hull. Searched 'IMO 9918858', 'Zvezda hull 054', 'ZVEZDA 054' on war-sanctions.gur.gov.ua (no dedicated entry -- only 045/046/047 recur), maritimeoptima.com (guessed URL imo:9918858 -> 404, not tracked), and the general Arc7-program English/Russian trade-press sweep. This hull, being furthest back in the construction queue and unnamed, has effectively zero individual press coverage. Cannot corroborate or refute either the shipvault or IGU figure from any independently verifiable public source found within budget."
+  }
+]

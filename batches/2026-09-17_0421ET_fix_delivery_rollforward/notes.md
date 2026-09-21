@@ -94,3 +94,46 @@ last bullet. The bullets before it describe the first run.
   passed (`gate_log.json`, 263 entries). Workbook rebuilt paced, 0 refs dropped, recalc zero
   errors; `decisions.csv` again had no hand edits and was regenerated. All 176 IMOs vesselfinder
   missed have now had an AIS-site cross-check.
+
+## Second source for the rolled-forward years (added 2026-09-21, RF rev 25 §4.18)
+
+Baird, reviewing live row 828: a proposed delivery delay should carry at least one ref besides
+shipvault, and IGU 2026 is a good backup where it agrees. `add_igu_second_ref.py` (this directory)
+looks each of the 19 roll-forwards up by IMO in `work/igu_fleet_2026.json`:
+
+- **12 rows Y -> G** — IGU 2026 Appendix 4 prints the same year (2027); the report PDF is added after
+  the shipvault refs: live rows 833, 835, 876, 881, 882, 883, 898, 906, 917, 918, 919, 922.
+- **5 rows stay Y, no second source** — live rows 828-832 (Zvezda hulls 046-050, Smart LNG): IGU 2026
+  still prints **2026** for these (its schedule is as of end-2025 — not a disagreement, just no help;
+  row 828 is *not* 2027 in IGU, PDF p.78). A press / database search found nothing hull-level for the
+  sanctioned Arc7 series (`second_ref_search.json`).
+- **Row 836 (Zvezda hull 054) stays Y** — shipvault says 2028, IGU 2027. Both later than the
+  backend's 2026; nothing found to settle which.
+- **Row 933 (`Dalian No 1 G175K-4`) stays Y, second ref added** — Maritime Optima prints `SEA ARGOSY
+  built in 2027` for IMO 9989120 (gate PASS). Not moved to G: the row is in `manual_review.json`
+  (vesselfinder had it AIS-live, and Maritime Optima lists an MMSI, callsign and flag), so Status may
+  be the real question. `Sea Argosy` is shipvault's and Maritime Optima's name for it — a Name lead.
+
+## Delivery history cells (added 2026-09-21, RF rev 25 §4.19)
+
+Baird added three columns to the sheet — `Delivery delayed`, `Previous delivery year(s)`,
+`Previous delivery year(s) [ref]` — and `python scripts/delivery_history.py --batch <this dir>`
+(new) adds the history to every Delivery year cell that moves the year **later**: the 19
+roll-forwards. The other 26 Delivery year cells are actual deliveries that moved the year earlier
+or kept it — not delays, nothing added.
+
+- **19 × `Previous delivery year(s)` = `2026`** and **19 × `Delivery delayed` = `yes`**, each at its
+  Delivery year line's confidence (12 G / 7 Y) and **decided together with that line** — never
+  accept the history where the year change is held or rejected.
+- **Refs for the former year:** the IGU report PDF wherever an IGU extraction prints 2026 for the
+  IMO (17 rows; row 933 has both the 2025 and 2026 editions). Live rows **835 and 836: `[ref]`
+  blank** — IGU prints 2027 and no existing ref prints 2026 as a delivery year. The rows' old
+  `Delivery year [ref]` URLs were asked too; none states 2026 as a delivery year (one Riviera
+  article passed the plain gate on a sidebar date — hence the same-sentence check in the script).
+- Totals now **262 cells / 151 rows** (Name 97 G / 19 Y, Status 63 G, Delivery year 38 G / 7 Y,
+  Previous delivery year(s) 12 G / 7 Y, Delivery delayed 12 G / 7 Y). Rebuilt paced: 0 refs dropped, recalc zero
+  errors. `decisions.csv` had no hand edits (no `review_log.jsonl`), so the 12 upgraded Delivery year
+  lines moved from their stale Y default to `accept` with their history lines: **222 accept / 40 hold**.
+- Tooling follow-up: a bare year passes §3.8c on any page with a dated sidebar (and any long PDF).
+  That affects every Delivery year gate in the repo, not only this batch; `delivery_history.py`
+  has the stricter `states_delivery_year`, the main gate does not yet.

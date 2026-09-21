@@ -85,7 +85,7 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 
 | # | Batch dir | Contents | Accept / hold |
 |---|---|---|---|
-| 1 | `0421ET_fix_delivery_rollforward` | 63 rows → `active`, 26 delivery years corrected, 19 rolled forward, 116 names (224 cells / 151 rows) | 186 / 38 |
+| 1 | `0421ET_fix_delivery_rollforward` | 63 rows → `active`, 26 delivery years corrected, 19 rolled forward (12 with the IGU 2026 PDF as second source, RF §4.18; each with its `Previous delivery year(s)` + `Delivery delayed` lines, RF §4.19), 116 names (262 cells / 151 rows) | 222 / 40 |
 | 2 | `0458ET_fix_delivery_confirmed` | rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 0 / 3 |
 | 3 | `0431ET_discovery_since_jun_2026` | 12 new vessels in 5 clusters | 7 / 5, plus 10 backend flags |
 | 4 | `0511ET_data_fill_on_order` | 1,003 cells / 483 rows, incl. 48 order-total Prices (accepted 2026-09-17) | 589 / 414 |

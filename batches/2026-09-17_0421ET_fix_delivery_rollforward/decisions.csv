@@ -1,14 +1,30 @@
 id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
 6|Status,fill,6,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-26, yard ZVEZDA no. 45; vesselfinder"
 6|Name,fill,6,,Name,G,False,accept,accept,Konstantin Posiet,placeholder 'Hull 045 (Zvezda)' -> vessel named
-7|Delivery year,fill,7,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
-8|Delivery year,fill,8,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
-9|Delivery year,fill,9,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
-10|Delivery year,fill,10,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
-11|Delivery year,fill,11,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
-12|Delivery year,fill,12,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
-14|Delivery year,fill,14,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
-15|Delivery year,fill,15,,Delivery year,Y,False,hold,hold,2028,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03
+7|Delivery year,fill,7,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
+7|Previous delivery year(s),fill,7,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+7|Delivery delayed,fill,7,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+8|Delivery year,fill,8,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
+8|Previous delivery year(s),fill,8,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+8|Delivery delayed,fill,8,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+9|Delivery year,fill,9,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
+9|Previous delivery year(s),fill,9,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+9|Delivery delayed,fill,9,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+10|Delivery year,fill,10,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
+10|Previous delivery year(s),fill,10,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+10|Delivery delayed,fill,10,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+11|Delivery year,fill,11,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
+11|Previous delivery year(s),fill,11,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+11|Delivery delayed,fill,11,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+12|Delivery year,fill,12,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; secon
+12|Previous delivery year(s),fill,12,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+12|Delivery delayed,fill,12,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+14|Delivery year,fill,14,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; secon
+14|Previous delivery year(s),fill,14,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+14|Delivery delayed,fill,14,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+15|Delivery year,fill,15,,Delivery year,Y,False,hold,hold,2028,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03; IGU 2
+15|Previous delivery year(s),fill,15,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2028) — decide with the Delivery year li
+15|Delivery delayed,fill,15,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2028 — decide with the Delivery year line
 25|Name,fill,25,,Name,G,False,accept,accept,Atlantic Success,placeholder 'Hull 2316 (SHI)' -> vessel named
 43|Status,fill,43,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-08-28, yard HANWHA OCEAN no. 2541; vess"
 43|Delivery year,fill,43,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-08-28 per shipvault
@@ -74,13 +90,21 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 123|Status,fill,123,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-03-31, yard SAMSUNG SHIPBUILDING & HEAV"
 123|Name,fill,123,,Name,G,False,accept,accept,Minerva Roxanne,placeholder 'Hull 2653 (SHI)' -> vessel named
 129|Name,fill,129,,Name,G,False,accept,accept,Gamy Vanguard,placeholder 'Hull 2662 (SHI)' -> vessel named
-130|Delivery year,fill,130,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+130|Delivery year,fill,130,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; secon
+130|Previous delivery year(s),fill,130,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+130|Delivery delayed,fill,130,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 131|Name,fill,131,,Name,G,False,accept,accept,Diamond Gas Jade,placeholder 'Hull 2664 (SHI)' -> vessel named
 132|Name,fill,132,,Name,G,False,accept,accept,Toho Emerald,placeholder 'Hull 2665 (SHI)' -> vessel named
-144|Delivery year,fill,144,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04
+144|Delivery year,fill,144,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04; secon
 144|Name,fill,144,,Name,Y,False,hold,hold,E'saila,placeholder 'Hull 2697 (SHI)' -> vessel named
-145|Delivery year,fill,145,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
-162|Delivery year,fill,162,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
+144|Previous delivery year(s),fill,144,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+144|Delivery delayed,fill,144,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+145|Delivery year,fill,145,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; secon
+145|Previous delivery year(s),fill,145,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+145|Delivery delayed,fill,145,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+162|Delivery year,fill,162,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; secon
+162|Previous delivery year(s),fill,162,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+162|Delivery delayed,fill,162,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 181|Status,fill,181,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-03-31, yard HYUNDAI HEAVY INDUSTRIES CO"
 181|Delivery year,fill,181,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-03-31 per shipvault
 181|Name,fill,181,,Name,G,False,accept,accept,Puteri Sarawak,placeholder 'Hull 3371 (HDHHI)' -> vessel named
@@ -102,7 +126,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 195|Name,fill,195,,Name,G,False,accept,accept,Qaffal,placeholder 'Hull 3401 (HDHHI)' -> vessel named
 196|Status,fill,196,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-07, yard HYUNDAI HEAVY INDUSTRIES CO"
 196|Name,fill,196,,Name,G,False,accept,accept,Excelerate Acadia,placeholder 'Hull 3407 (HDHHI)' -> vessel named
-197|Delivery year,fill,197,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03
+197|Delivery year,fill,197,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03; secon
+197|Previous delivery year(s),fill,197,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+197|Delivery delayed,fill,197,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 231|Status,fill,231,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-01-05, yard HYUNDAI SAMHO HEAVY INDUSTR"
 231|Name,fill,231,,Name,G,False,accept,accept,Parthenon LNG,placeholder 'Hull 8182 (HSHI)' -> vessel named
 232|Status,fill,232,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-07-25, yard HYUNDAI SAMHO HEAVY INDUSTR"
@@ -119,7 +145,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 237|Name,fill,237,,Name,G,False,accept,accept,Muscat LNG,placeholder 'Hull 8204 (HSHI)' -> vessel named
 238|Status,fill,238,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-30, yard HYUNDAI SAMHO HEAVY INDUSTR"
 238|Name,fill,238,,Name,G,False,accept,accept,Musandam LNG,placeholder 'Hull 8205 (HSHI)' -> vessel named
-241|Delivery year,fill,241,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12
+241|Delivery year,fill,241,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12; secon
+241|Previous delivery year(s),fill,241,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+241|Delivery delayed,fill,241,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 252|Status,fill,252,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-24, yard CM JIANGSU no. CMHI-282-02;"
 263|Status,fill,263,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-08-25, yard HUDONG-ZHONGHUA SHIPYARD GR"
 263|Delivery year,fill,263,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-08-25 per shipvault
@@ -135,12 +163,20 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 270|Name,fill,270,,Name,G,False,accept,accept,Greenergy River,backend 'Greenenergy River' differs from registry name
 271|Name,fill,271,,Name,Y,False,hold,hold,Greenergy Sea,backend 'Greenenergy Sea' differs from registry name
 272|Name,fill,272,,Name,Y,False,hold,hold,Greenergy Whale,backend 'Greenenergy Whale' differs from registry name
-273|Delivery year,fill,273,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03
-274|Delivery year,fill,274,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-05
-275|Delivery year,fill,275,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10
+273|Delivery year,fill,273,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03; secon
+273|Previous delivery year(s),fill,273,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+273|Delivery delayed,fill,273,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+274|Delivery year,fill,274,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-05; secon
+274|Previous delivery year(s),fill,274,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+274|Delivery delayed,fill,274,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+275|Delivery year,fill,275,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10; secon
+275|Previous delivery year(s),fill,275,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+275|Delivery delayed,fill,275,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 278|Status,fill,278,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-05-29, yard HUDONG-ZHONGHUA SHIPYARD GR"
 279|Status,fill,279,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-30, yard HUDONG-ZHONGHUA SHIPYARD GR"
-281|Delivery year,fill,281,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
+281|Delivery year,fill,281,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; secon
+281|Previous delivery year(s),fill,281,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+281|Delivery delayed,fill,281,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 289|Status,fill,289,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-01-30, yard HUDONG-ZHONGHUA SHIPYARD GR"
 289|Name,fill,289,,Name,G,False,accept,accept,Tianshan,placeholder 'Hull H1909A' -> vessel named
 318|Name,fill,318,,Name,G,False,accept,accept,Yangze LNG 01,placeholder 'Hull YZJ2022-1475' -> vessel named
@@ -149,7 +185,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 372|Delivery year,fill,372,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-05-21 per shipvault
 375|Name,fill,375,,Name,G,False,accept,accept,Aleksey Kosygin,backend 'Alexey Kosygin' differs from registry name
 386|Status,fill,386,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-02, yard HYUNDAI SAMHO HEAVY INDUSTR"
-515|Delivery year,fill,515,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+515|Delivery year,fill,515,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
+515|Previous delivery year(s),fill,515,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+515|Delivery delayed,fill,515,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 517|Name,fill,517,,Name,G,False,accept,accept,Sea Charity,backend 'Dalian No 1 G175K-7' differs from registry name
 674|Status,fill,674,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-09-30, yard SAMSUNG SHIPBUILDING & HEAV"
 674|Delivery year,fill,674,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-09-30 per shipvault
