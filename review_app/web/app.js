@@ -1207,11 +1207,11 @@
     });
     var pulledH = (Date.now() - new Date(D.backend_pulled).getTime()) / 36e5;
     $("built").textContent = pulledH > 24 ? "backend pulled " + Math.round(pulledH) + " h ago — sync" : "";
-    $("built").title = "built " + D.built.replace("T", " ").slice(0, 16) +
-      " · backend pulled " + D.backend_pulled.replace("T", " ").slice(0, 16);
+    // the server stamps both in ET (store.ET), so the wall-clock part is ET whatever the browser's zone
+    var et = function (iso) { return iso.replace("T", " ").slice(0, 16) + " ET"; };
+    $("built").title = "built " + et(D.built) + " · backend pulled " + et(D.backend_pulled);
     $("whoami").title = $("built").title;
-    $("sync").title = "Re-pull the backend and settle what it already holds · last pulled " +
-      D.backend_pulled.replace("T", " ").slice(0, 16);
+    $("sync").title = "Re-pull the backend and settle what it already holds · last pulled " + et(D.backend_pulled);
   }
   // Sync: the server re-pulls and rebuilds, accepts the holds the backend already holds and
   // resolves the items it settles; the page then takes the new dataset in place (the session
