@@ -68,6 +68,7 @@ def _offline(monkeypatch):
     url_verifier.set_log_path(None)
     url_verifier.WAYBACK_ENABLED = True
     url_verifier.FETCH_DELAY = 0
+    url_verifier.HOST_MIN_GAP = 0
     url_verifier.WAYBACK_RETRIES = 0
 
     def _no_network(url, **kw):
@@ -798,3 +799,25 @@ def test_dollar_figure_in_title_is_not_a_status_code():
     assert url_verifier._title_hit("DSME wins $500 million LNG carrier order", url_verifier._SOFT_ERROR_TITLES) is None
     assert url_verifier._title_hit("500 Internal Server Error", url_verifier._SOFT_ERROR_TITLES)
     assert url_verifier._title_hit("404 Not Found", url_verifier._SOFT_ERROR_TITLES)
+
+
+class TestHostPacing:
+    def test_same_host_waits_its_floor_other_host_does_not(self, monkeypatch):
+        clock, slept = [100.0], []
+        monkeypatch.setattr(url_verifier.time, "monotonic", lambda: clock[0])
+        monkeypatch.setattr(url_verifier.time, "sleep", lambda s: (slept.append(s), clock.__setitem__(0, clock[0] + s)))
+        monkeypatch.setattr(url_verifier.random, "uniform", lambda a, b: 0.0)
+        monkeypatch.setattr(url_verifier, "fetch_page", lambda url, **kw: Page(status="200", text="x"))
+        url_verifier.HOST_MIN_GAP = 2.0
+        url_verifier._LAST_FETCH.clear()
+        url_verifier._fetch("https://www.bloomberg.com/a")
+        url_verifier._fetch("https://example.com/a")
+        assert slept == []
+        url_verifier._fetch("https://bloomberg.com/b")        # www. and bare share a floor
+        assert slept == [30.0]
+        url_verifier._fetch("https://example.com/b")
+        assert slept == [30.0]                                # 30 s already passed for example.com
+        url_verifier._fetch("https://example.com/c")
+        assert slept == [30.0, 2.0]
+        url_verifier._fetch("https://example.com/c")          # cached: no fetch, no wait
+        assert slept == [30.0, 2.0]

@@ -68,6 +68,9 @@ HOST_DELAYS = {
     "vesselfinder.com": (10.0, 3.0),
     "marinetraffic.com": (10.0, 3.0),
     "marinetraffic.org": (10.0, 3.0),
+    # Paywalled press that fingerprints the network: Bloomberg flagged "unusual
+    # activity" on 2026-09-21. One fetch_page() is several requests (the ladder).
+    "bloomberg.com": (30.0, 10.0),
 }
 FAIL_STATUSES = {"000", "429", "403"}
 MAX_CONSEC_FAILS = 3

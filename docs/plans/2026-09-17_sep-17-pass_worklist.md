@@ -85,14 +85,14 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 
 | # | Batch dir | Contents | Accept / hold |
 |---|---|---|---|
-| 1 | `0421ET_fix_delivery_rollforward` | 63 rows → `active`, 26 delivery years corrected, 19 rolled forward, 116 names (224 cells / 151 rows) | 186 / 38 |
+| 1 | `0421ET_fix_delivery_rollforward` | 63 rows → `active`, 26 delivery years corrected, 19 rolled forward (12 with the IGU 2026 PDF as second source, RF §4.18; each with its `Previous delivery year(s)` + `Delivery delayed` lines, RF §4.19), 116 names (262 cells / 151 rows) | 222 / 40 |
 | 2 | `0458ET_fix_delivery_confirmed` | rows 887 (→ active, `Al Nigyan`) and 924 (→ active) | 0 / 3 |
 | 3 | `0431ET_discovery_since_jun_2026` | 12 new vessels in 5 clusters | 7 / 5, plus 10 backend flags |
 | 4 | `0511ET_data_fill_on_order` | 1,003 cells / 483 rows, incl. 48 order-total Prices (accepted 2026-09-17) | 589 / 414 |
 | 5 | `0505ET_ref_fill_rule_f` | 8 refs, 11 documented negatives | 0 / 8 |
 | 6 | `1114ET_shipvault_companion_refs` | unit-record URL appended as second ref on 175 cells / 27 rows (values untouched) | all accept |
 | 7 | `1458ET_igu_reconciliation_igu2026` | whole backend vs IGU 2026 (fleet at end-2025), IGU 2025 as the previous edition: 1,054 rows matched by IMO, 188 with a field diff, 18 dropped, 47 Status disagreements (24 already in batch 1), 1 candidate | n/a — comparison only (IG rev 2) |
-| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs | 443 / 24 / 1 reject, plus 8 manual-review |
+| 8 | `1654ET_fix_igu2026_sourced` | IGU 2026 findings promoted to proposals, the report PDF as sole ref (IG §5.4): 468 cells / 328 rows — 284 Vessel type + 78 Cargo type blanks, 33 names, 22 delivery years, 16 propulsion, load corruption on rows 451 / 499–501 / 509, 10 Vessel type Rule-F refs; + 42 delivery-history lines for the 21 years that move later (RF §4.19, 2026-09-21; 507 proposals) | 469 / 37 / 1 reject, plus 8 manual-review |
 | 9 | `1702ET_fix_scrapped_status` | **APPLIED 2026-09-17** — 18 rows IGU dropped → Status `scrapped` (press + shipvault refs replace the IGU-2025 `Status [ref]`); row 61 Puteri Delima Satu → Vessel type `FSU` (two MISC documents) | 19 / 0 |
 | 10 | `1737ET_fix_other_names_former` | RF §4.16: former Name of each proposed rename in 1, 2 and 8 appended to `Other names`; **rebuilt 2026-09-18** with every IGU 2026 `(ex-…)` name (RF §4.17) and yard-tagged hulls — 160 cells / 160 rows, 136 carry a gated ref | 125 / 35 |
 | 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |

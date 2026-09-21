@@ -1,37 +1,39 @@
 # Batch digest — 2026-09-17_0421ET_fix_delivery_rollforward
 
-**Mode:** fix  ·  **Proposals:** 224 (auto-safe 186, needs-decision 38)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
+**Mode:** fix  ·  **Proposals:** 262 (auto-safe 222, needs-decision 40)  ·  **Conflicts:** 0  ·  **Documented blanks:** 0
 
 ## ✅ Auto-safe — accept in bulk (Green / derivable)
 
-By field: Name ×97, Status ×63, Delivery year ×26
+By field: Name ×97, Status ×63, Delivery year ×38, Previous delivery year(s) ×12, Delivery delayed ×12
 
-These 186 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
+These 222 are default-`accept` in `decisions.csv`. Skim or trust; nothing here needs a per-item call.
 
 ## ⚠️ Needs a decision (Yellow / Red / unknown)
 
-- **row 7** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
-- **row 8** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
-- **row 9** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02
-- **row 10** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
-- **row 11** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
-- **row 12** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
-- **row 14** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
-- **row 15** · Delivery year: `2028` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03
-- **row 130** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
-- **row 144** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04
+- **row 7** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918779 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls
+- **row 7** · Previous delivery year(s): `2026` (Y) — former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918779
+- **row 7** · Delivery delayed: `yes` (Y) — derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+- **row 8** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918781 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls
+- **row 8** · Previous delivery year(s): `2026` (Y) — former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918781
+- **row 8** · Delivery delayed: `yes` (Y) — derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+- **row 9** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918793 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls
+- **row 9** · Previous delivery year(s): `2026` (Y) — former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918793
+- **row 9** · Delivery delayed: `yes` (Y) — derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+- **row 10** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918808 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls
+- **row 10** · Previous delivery year(s): `2026` (Y) — former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918808
+- **row 10** · Delivery delayed: `yes` (Y) — derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+- **row 11** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9918810 prints 2026 — no second source for 2027 yet; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls
+- **row 11** · Previous delivery year(s): `2026` (Y) — former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; IGU 2026 prints 2026 for IMO 9918810
+- **row 11** · Delivery delayed: `yes` (Y) — derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+- **row 15** · Delivery year: `2028` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03; IGU 2026 Appendix 4 orderbook, PDF p.79, IMO 9918858 prints 2027 — no second source for 2028 yet; sources disagree on the new year (shipvault 2028, IGU 2027) — both later than the backend's 2026; no second source found 2026-09-21: English + Russian trade press, war-sanctions.gur.gov.ua, shipinfo.net, maritimeoptima (no record) give no hull-level delivery year for the Zvezda Arc7 hulls
+- **row 15** · Previous delivery year(s): `2026` (Y) — former Delivery year 2026 (now proposed 2028) — decide with the Delivery year line; https://www.rivieramm.com/news-content-hub/news-content-hub/fleet-of-ice-breaking-carriers-propel-russiarsquos-arctic-lng-ambitions-61509: prints 2026 but not as a delivery year; no ref prints the former year — [ref] left blank
+- **row 15** · Delivery delayed: `yes` (Y) — derived: Delivery year 2026 -> 2028 — decide with the Delivery year line
 - **row 144** · Name: `E'saila` (Y) — placeholder 'Hull 2697 (SHI)' -> vessel named
-- **row 145** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
-- **row 162** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
-- **row 197** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03
-- **row 241** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-12
 - **row 271** · Name: `Greenergy Sea` (Y) — backend 'Greenenergy Sea' differs from registry name
 - **row 272** · Name: `Greenergy Whale` (Y) — backend 'Greenenergy Whale' differs from registry name
-- **row 273** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03
-- **row 274** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-05
-- **row 275** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-10
-- **row 281** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06
-- **row 515** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01
+- **row 515** · Delivery year: `2027` (Y) — backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2026 Appendix 4 orderbook, PDF p.78, IMO 9989120 prints 2026 — no second source for 2027 yet; second source: Maritime Optima prints `SEA ARGOSY built in 2027` for IMO 9989120. Kept Y: the row is in manual_review.json (vesselfinder showed it AIS-live as `Dachuan Haishang`, built 2025; Maritime Optima lists an MMSI, callsign and Hong Kong flag) — it may be delivered or on trials, settle Status first
+- **row 515** · Previous delivery year(s): `2026` (Y) — former Delivery year 2026 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2026 for IMO 9989120; IGU 2026 prints 2026 for IMO 9989120
+- **row 515** · Delivery delayed: `yes` (Y) — derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 - **row 26** · Name: `Mediterranean Success` (Y) — placeholder 'Hull 2317 (SHI)' -> vessel named
 - **row 27** · Name: `Caribbean Success` (Y) — placeholder 'Hull 2318 (SHI)' -> vessel named
 - **row 74** · Name: `Maran Gas Poliegos` (Y) — placeholder 'Hull 2582 (Hanwha)' -> vessel named

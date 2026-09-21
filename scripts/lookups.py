@@ -45,6 +45,9 @@ CONTROLLED_VOCAB = {
     # Price is always full US dollars with currency "USD" (Baird, 2026-09-17); the legacy "$m"
     # rows were converted by the price-USD fix batch (applied 2026-09-18).
     "Price currency": {"USD"},
+    # RF §4.19 (Baird, 2026-09-21): `yes` when the Delivery year has moved later at least
+    # once (the former years are in `Previous delivery year(s)`); blank otherwise.
+    "Delivery delayed": {"yes"},
 }
 
 

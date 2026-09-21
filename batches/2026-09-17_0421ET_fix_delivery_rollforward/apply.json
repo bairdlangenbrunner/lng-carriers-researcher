@@ -27,6 +27,60 @@
       "confidence": "G"
     },
     {
+      "row_id": "12",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "12",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438620, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438620, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "12",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "12",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "12",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
+      "row_id": "14",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "14",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438622, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438622, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "14",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "14",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "25",
       "column": "Name",
       "value": "Atlantic Success",
@@ -807,6 +861,36 @@
       "confidence": "G"
     },
     {
+      "row_id": "130",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "130",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/463995, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/463995, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "130",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "130",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "130",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "131",
       "column": "Name",
       "value": "Diamond Gas Jade",
@@ -828,6 +912,96 @@
       "row_id": "132",
       "column": "Name [ref]",
       "value": "https://www.shipvault.com/ships/465879, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465879",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/479142, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "144",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/479143, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479143, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
+      "row_id": "162",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "162",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/483994, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/483994, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "162",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "162",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "162",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -1083,6 +1257,36 @@
       "confidence": "G"
     },
     {
+      "row_id": "197",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/464884, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/464884, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "231",
       "column": "Status",
       "value": "active",
@@ -1275,6 +1479,36 @@
       "confidence": "G"
     },
     {
+      "row_id": "241",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/468295, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468295, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "241",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "252",
       "column": "Status",
       "value": "active",
@@ -1431,6 +1665,96 @@
       "confidence": "G"
     },
     {
+      "row_id": "273",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/468859, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468859, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/468860, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/468860, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/467893, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467893, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "G"
+    },
+    {
       "row_id": "278",
       "column": "Status",
       "value": "active",
@@ -1452,6 +1776,36 @@
       "row_id": "279",
       "column": "Status [ref]",
       "value": "https://www.shipvault.com/ships/465807, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465807",
+      "confidence": "G"
+    },
+    {
+      "row_id": "281",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "281",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/465809, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465809, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "281",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "281",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "281",
+      "column": "Delivery delayed",
+      "value": "yes",
       "confidence": "G"
     },
     {
@@ -2237,9 +2591,9 @@
   ],
   "accepted_new_rows": [],
   "counts": {
-    "items": 224,
-    "accepted": 186,
-    "hold": 38,
+    "items": 262,
+    "accepted": 222,
+    "hold": 40,
     "reject": 0,
     "conflicts": 0
   }

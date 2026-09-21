@@ -840,7 +840,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9961403; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9961403; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9961403"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -871,7 +893,33 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9963815; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9963815; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://shipnext.com/vessel/9963815-rotmistrz-witold-pilecki",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU 2025 prints 2025 for IMO 9963815"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -902,7 +950,33 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9963827; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9963827; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://shipnext.com/vessel/9963827-maran-gas-antiparos",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU 2025 prints 2025 for IMO 9963827"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -1360,7 +1434,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9977294; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9977294; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9977294"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -1391,7 +1487,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9977309; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9977309; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9977309"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -1422,7 +1540,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9977311; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9977311; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9977311"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -1453,7 +1593,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9988700; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9988700; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9988700"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -1546,7 +1708,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9981398; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9981398; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9981398"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -1966,7 +2150,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9968944; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9968944; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9968944"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -1997,7 +2203,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9968932; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9968932; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9968932"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -2126,7 +2354,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9967342; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9967342; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9967342"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -2367,7 +2617,29 @@
        "soft": false
       }
      ],
-     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918030; sole source per Baird ruling 2026-09-17]"
+     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918030; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9918030"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2441,7 +2713,29 @@
        "soft": false
       }
      ],
-     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918016; sole source per Baird ruling 2026-09-17]"
+     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918016; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9918016"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2472,7 +2766,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026; Status `active` is a separate stream 0 item for this row [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 1040447; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026; Status `active` is a separate stream 0 item for this row [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 1040447; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 1040447"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -2639,7 +2955,29 @@
        "soft": false
       }
      ],
-     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918042; sole source per Baird ruling 2026-09-17]"
+     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918042; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9918042"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2682,7 +3020,29 @@
        "soft": false
       }
      ],
-     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918054; sole source per Baird ruling 2026-09-17]"
+     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918054; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9918054"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2880,7 +3240,29 @@
        "soft": false
       }
      ],
-     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918004; sole source per Baird ruling 2026-09-17]"
+     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918004; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9918004"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -2911,7 +3293,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.79; IMO 9989118; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.79; IMO 9989118; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9989118"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -2954,7 +3358,29 @@
        "soft": false
       }
      ],
-     "note": "rides with the Status change: IGU orderbook delivery year 2026 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.79; IMO 1013494; sole source per Baird ruling 2026-09-17]"
+     "note": "rides with the Status change: IGU orderbook delivery year 2026 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.79; IMO 1013494; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 1013494"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -2985,7 +3411,29 @@
        "soft": false
       }
      ],
-     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9970662; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel on order, delivery 2026 [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9970662; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2026) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9970662"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "G",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2026 — decide with the Delivery year line"
     }
    ]
   },
@@ -3245,7 +3693,29 @@
        "soft": false
       }
      ],
-     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918028; sole source per Baird ruling 2026-09-17]"
+     "note": "rides with the Status change: IGU orderbook delivery year 2027 (backend 2025) [IGU 2026 Appendix 4 orderbook table, PDF p.78; IMO 9918028; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2025"
+    },
+    {
+     "field": "Previous delivery year(s)",
+     "new_value": "2025",
+     "gate_value": "2025",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Delivery year 2025 (now proposed 2027) — decide with the Delivery year line; IGU landing page not asked; IGU 2025 prints 2025 for IMO 9918028"
+    },
+    {
+     "field": "Delivery delayed",
+     "new_value": "yes",
+     "confidence": "Y",
+     "refs": [],
+     "note": "derived: Delivery year 2025 -> 2027 — decide with the Delivery year line"
     }
    ]
   },
@@ -5251,7 +5721,8 @@
        "soft": false
       }
      ],
-     "note": "backend 2026 -> 2025 (IGU fleet table delivery year) [IGU 2026 Appendix 3 fleet table, PDF p.77; IMO 9904546; sole source per Baird ruling 2026-09-17]"
+     "note": "backend 2026 -> 2025 (IGU fleet table delivery year) [IGU 2026 Appendix 3 fleet table, PDF p.77; IMO 9904546; sole source per Baird ruling 2026-09-17]",
+     "former_year": "2026"
     }
    ]
   },
