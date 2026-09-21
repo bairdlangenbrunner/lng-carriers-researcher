@@ -172,3 +172,22 @@ def test_backend_state():
     assert st("fill", "Old One; Hull 1 (SHI)", "Hull 1 (SHI)", [], [], append=True) == "in_backend"
     assert st("ref", "", "", ["http://a"], ["http://a"]) == "in_backend"
     assert st("ref", "", "", ["http://a"], ["http://b"]) == ""
+
+
+def test_citation_ok_reads_igu_pass_notes():
+    ok = review_data._citation_ok
+    assert ok("live row 6: value '126750': OK (cf_impersonate, shipvault_api)")
+    assert ok("live row 771: IGU 2025 report PDF (stands in for the landing page) prints this hull "
+              "for the row's IMO - igu_refs.corroborates_cell")
+    assert not ok("live row 771: value 'Hull 2651 (SHI)': page does not contain value 'Hull 2651 (SHI)'")
+    assert not ok("live row 652: value 'China': IGU prints no Shipowner country/area column - "
+                  "the earlier text-search PASS was false (igu_refs, IG §1)")
+    assert not ok("live row 1182: value 'conventional': blocked: HTTP 000")
+
+
+def test_backend_state_ref_only_line():
+    st = review_data.backend_state
+    # a ref-only fill (shipvault companion): `proposed` is the ref itself; landed when the refs are in the cell
+    assert st("fill", "active", "http://api/1", ["http://api/1"], ["http://page/1", "http://api/1"],
+              ref_only=True) == "in_backend"
+    assert st("fill", "active", "http://api/1", ["http://api/1"], ["http://page/1"], ref_only=True) == ""

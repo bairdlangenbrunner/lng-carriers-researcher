@@ -144,7 +144,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 415|IMO number,fill,415,,IMO number,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
 415|Name,fill,415,,Name,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
 415|Shipbuilder,fill,415,,Shipbuilder,Y,False,hold,reject,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
-415|Status,fill,415,,Status,Y,False,hold,hold,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
+415|Status,fill,415,,Status,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
 663|Contract date,fill,663,,Contract date,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085,live row 7: the cited shipvault page renders blank (site bug); companion unit re
 663|Delivery year,fill,663,,Delivery year,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085,live row 7: the cited shipvault page renders blank (site bug); companion unit re
 663|IMO number,fill,663,,IMO number,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085,live row 7: the cited shipvault page renders blank (site bug); companion unit re
