@@ -20,7 +20,7 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 2. **Decide the 538 holds** (§1, §1c) in the review app (`review_app/README.md`; Apply SOP rev 6):
    `python scripts/pull_backend.py`, then
    `python review_app/server.py --batches $(python -c "import json; print(' '.join('batches/'+d for d in json.load(open('batches/2026-09-17_1017ET_sep-17-pass_combined/review_batches.json'))))")`
-   (the queue opens on the holds; the manifest lists all twelve reviewable batches, 9 and 12 marked
+   (the queue opens on the holds; the manifest lists all thirteen reviewable batches (14 added 2026-09-21), 9 and 12 marked
    applied — grayed, still undoable). The dataset was rebuilt over all twelve and the server restarted
    2026-09-21 16:34 ET; press `↻ sync backend` after any batch rebuild or sheet edit. Then re-run
    `python scripts/apply_batch.py --batch batches/<dir>` for each batch the session summary lists.
@@ -107,6 +107,8 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
   the 150 Name changes in batches 1, 2 and 8 get one (95 accept / 36 hold); 19 do not — spelling /
   truncation fixes and row 942's wrong-vessel name (list in the batch `notes.md`; overrule with
   `other_names.py --include`). Future fix batches run `other_names.py --batch` before the build.
+  Row 1080's line is rejected there and replaced by **batch 14** (`2026-09-21_1740ET_fix_review_suggestions`):
+  `Dalian No 1 G175K-12; Youyi Yongshi`, the AIS-transmitted name added per Baird's review-app suggestion (RF §4.16 rev 27).
 - **Batches 11 and 12** come from Baird's evening rulings: `qc-max` is a Vessel type value
   (batch 11, the 24 QatarEnergy 271,000 cbm ships) and **Price is always full US dollars + `USD`**
   (batch 12 converts the 29 `$m` rows). The 48 order-total Prices in batch 4 are accepted.
@@ -129,6 +131,7 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 | 11 | `1809ET_fix_qcmax_vessel_type` | Vessel type blank → `qc-max` on the 24 × 271,000 cbm QatarEnergy ships, IGU 2026 PDF as sole ref | 24 / 0 |
 | 12 | `1810ET_fix_price_full_usd` | **APPLIED 2026-09-18** — Price `$m` → full US dollars + `USD` on 29 rows (58 cells, `preserve_ref`); `$m` dropped from the vocab. 8 Prices still cite the bare word `clarkson` (live rows 965, 1049–1053, 1083, 1203) — to re-source | 58 / 0 |
 | 13 | `2005ET_fix_igu2026_hulls` | RF §4.17: IGU `Name (hull)` → 13 blank Hull numbers filled + 28 untagged hulls yard-tagged; placeholder-name matches all already in batches 1 / 8; 6 yard conflicts flagged (Samho vs Ulsan ×4, row 941 SHI vs Samho) | 41 / 0 |
+| 14 | `2026-09-21_1740ET_fix_review_suggestions` | review-app suggestion hand-built into a fix batch: row 1080 `Other names` = `Dalian No 1 G175K-12; Youyi Yongshi` — the former Name plus the AIS-transmitted name (vesselfinder + the IGU PDFs; RF §4.16 rev 27). Replaces batch 10's rejected `509|Other names` line; decided with batch 1's `Friendship Venture` Name line. Added to the review manifest 2026-09-21 | 1 / 0 |
 
 Discovery candidates in batch 3: Samsung HI × Dynagas 4 × 200,000 cbm (14-Sep-2026, Y);
 HD Hyundai HI × Tsakos (01-Jul-2026, $254M, G); HD Hyundai HI FSRU, owner undisclosed

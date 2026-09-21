@@ -1,0 +1,25 @@
+{
+ "batch_label": "Fix — review app suggestions (2026-09-21)",
+ "reason": "Values suggested in the review app instead of a batch's proposal (the proposal itself is rejected in its decisions.csv). Hand-built where suggestions.py could not emit the cell; every ref gated per element (§3.8c).",
+ "corrections": [
+  {
+   "row_id": "509",
+   "_live_row": 1080,
+   "cells": [
+    {
+     "field": "Other names",
+     "new_value": "Dalian No 1 G175K-12; Youyi Yongshi",
+     "gate_value": "Dalian No 1 G175K-12",
+     "append_ref": true,
+     "confidence": "G",
+     "refs": [
+      {"url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf", "soft": false, "gate_value": "Dalian No 1 G175K-12"},
+      {"url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf", "soft": false, "gate_value": "Dalian No 1 G175K-12"},
+      {"url": "https://www.vesselfinder.com/vessels/details/1030557", "soft": false, "gate_value": "Youyi Yongshi"}
+     ],
+     "note": "former Name 'Dalian No 1 G175K-12' plus the AIS-transmitted name 'Youyi Yongshi' (the Chinese name of Friendship Venture); the row is renamed 'Friendship Venture' by 2026-09-17_0421ET_fix_delivery_rollforward (Name line accepted) — decide with that Name line; reviewer suggestion of 2026-09-21 17:30 on 2026-09-17_1737ET_fix_other_names_former::509|Other names (rejected there), which suggestions.py could not emit (two elements added); IGU 2025, 2026 print the former name for IMO 1030557; vesselfinder IMO 1030557 (MMSI 636025371) titles the vessel YOUYI YONGSHI and prints FRIENDSHIP VENTURE as the registered Vessel Name"
+    }
+   ]
+  }
+ ]
+}

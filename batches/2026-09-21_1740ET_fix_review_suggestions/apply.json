@@ -1,0 +1,26 @@
+{
+  "batch": "2026-09-21_1740ET_fix_review_suggestions",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "509",
+      "column": "Other names",
+      "value": "Dalian No 1 G175K-12; Youyi Yongshi",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.vesselfinder.com/vessels/details/1030557",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 1,
+    "accepted": 1,
+    "hold": 0,
+    "reject": 0,
+    "conflicts": 0
+  }
+}
