@@ -1,4 +1,4 @@
-# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-21 16:40 ET)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-21 17:10 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
@@ -56,6 +56,23 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 
 ## Where things stand
 
+- **Bulk push 2026-09-21 17:04 ET (Claude, at Baird's directive "for anything with *batch suggests
+  accept* and ref(s) verified, accept and make the changes directly in the sheet"):** every undecided
+  line whose pre-fill was `accept` and whose every source read `✓ verified` in the app was clicked
+  accept through the running server (`via: bulk:batch-suggests-accept+refs-verified`, 1,268 lines:
+  1,173 verified + 95 companion `Price currency` / `Delivery delayed` / `Capacity units` lines decided
+  with their primary; a line whose linked partner is held was left undecided, both-or-neither), then
+  **push accepted** wrote **2,268 cells / 440 rows** and verified all of them (`push_log.jsonl` in
+  batches 1, 4, 6, 8, 10, 11, 13; 0 mismatches). Written: batch 8 871 cells, 4 486, 1 410, 10 256,
+  6 171, 11 48, 13 26. QC after: 8 LOW only; dedupe: the two pre-existing MED pairs (live 779 vs 943 /
+  1217). Left undecided on purpose: row 942 `Puteri Sarawak → Puteri Perlis` (batch 1; a real rename
+  with no `Other names` companion — RF §4.16, decide by hand), the 15 Names / 9 Vessel types whose
+  partner line is held, 4 Prices with an unchecked ref, and every line with no source, a `read by
+  hand` or `not checked` source (292 `Shipowner country/area` facts-table fills, batch 13's 28
+  `preserve_ref` hull restylings, yard-location cells). Discovery new rows stay by hand. Batches
+  11 and 13's sourced lines are fully in; 1, 4, 6, 8, 10 are partly in (their holds remain) — none
+  has a `verify_report.csv` yet, because `verify_apply.py` would count the un-clicked pre-fill
+  accepts as missing; close each batch after its holds are decided.
 - **Batch 9 is applied** (2026-09-17 19:00 ET, by Claude at Baird's request, through the Sheets
   API — 38 cells / 19 rows, `verify_apply.py`: 38 landed, 0 mismatch; QC after: 8 LOW, no
   HIGH/MED). **Batch 12 is applied** (2026-09-18, 58 cells; verify shows `.00` display-format
@@ -279,11 +296,11 @@ In the DRY_RUN log, `would set` must equal the `set` count and there should be n
       `scrapped` and row 61 is an FSU. Map fleet re-exported (`../lng-carriers-map` branch
       `fleet-row61-fsu`, 59 vessels — not pushed; `data/imo_mmsi.csv` still lacks IMO 9211872
       because `fetch_mmsi.py` scrapes vesselfinder and the IP ban is still in force at 19:00 ET).
-- [ ] Batch 11 — apply via `apply_patch.csv` + verify (any order; no shared cells).
+- [x] Batch 11 — **pushed 2026-09-21 17:04 ET** (48 cells, review-app push; `push_log.jsonl`). Run `verify_apply.py --pull` to close.
 - [x] Batch 12 — **applied 2026-09-18** (58 cells; `verify_report.csv`: 29 landed / 29 MISMATCH that
       are `.00` display format only). `$m` dropped from the vocabulary.
-- [ ] Batch 13 (`2026-09-18_2005ET_fix_igu2026_hulls`, 41 accept) — apply via `apply_patch.csv` + verify;
-      added to the review manifest 2026-09-21.
+- [ ] Batch 13 (`2026-09-18_2005ET_fix_igu2026_hulls`, 41 accept) — 13 sourced hull fills **pushed 2026-09-21**
+      (26 cells); the 28 `preserve_ref` restylings (no source line) still need a click. Added to the review manifest 2026-09-21.
 - [ ] Batch 10 — apply **last, via `apply_patch.csv` only** (its full rows are built from the
       live backend and would revert the Names of 1, 2 and 8) + verify. Decide each `Other names`
       line with its Name line: a rejected rename takes its former-name line with it; a released
