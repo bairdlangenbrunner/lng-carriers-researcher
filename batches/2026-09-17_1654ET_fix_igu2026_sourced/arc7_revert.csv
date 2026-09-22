@@ -1,0 +1,43 @@
+a1,live_row,column,restore_value
+K797,797,Status,active
+N797,797,Status [ref],https://www.marinetraffic.com/en/ais/details/ships/shipid:8334708/mmsi:209655000/imo:9918030/vessel:ILYA_MECHNIKOV
+AK797,797,Delivery year,2025
+AL797,797,Delivery year [ref],https://www.igu.org/igu-reports/2025-world-lng-report
+AN797,797,Previous delivery year(s),
+AO797,797,Previous delivery year(s) [ref],
+AM797,797,Delivery delayed,
+K799,799,Status,active
+N799,799,Status [ref],https://www.marinetraffic.com/en/ais/details/ships/shipid:7987403/mmsi:352003097/imo:9918016/vessel:LEV%20LANDAU
+AK799,799,Delivery year,2025
+AL799,799,Delivery year [ref],https://www.igu.org/igu-reports/2025-world-lng-report
+AN799,799,Previous delivery year(s),
+AO799,799,Previous delivery year(s) [ref],
+AM799,799,Delivery delayed,
+K805,805,Status,active
+N805,805,Status [ref],https://www.marinetraffic.com/en/ais/details/ships/shipid:8676688/mmsi:210267000/imo:9918042/vessel:NIKOLAY%20BASOV
+AK805,805,Delivery year,2025
+AL805,805,Delivery year [ref],https://www.igu.org/igu-reports/2025-world-lng-report
+AN805,805,Previous delivery year(s),
+AO805,805,Previous delivery year(s) [ref],
+AM805,805,Delivery delayed,
+K806,806,Status,active
+N806,806,Status [ref],https://www.vesselfinder.com/vessels/details/9918054
+AK806,806,Delivery year,2025
+AL806,806,Delivery year [ref],https://www.igu.org/igu-reports/2025-world-lng-report
+AN806,806,Previous delivery year(s),
+AO806,806,Previous delivery year(s) [ref],
+AM806,806,Delivery delayed,
+K812,812,Status,active
+N812,812,Status [ref],https://www.marinetraffic.com/en/ais/details/ships/shipid:7846840/mmsi:352002888/imo:9918004/vessel:PYOTR_KAPITSA
+AK812,812,Delivery year,2025
+AL812,812,Delivery year [ref],https://www.igu.org/igu-reports/2025-world-lng-report
+AN812,812,Previous delivery year(s),
+AO812,812,Previous delivery year(s) [ref],
+AM812,812,Delivery delayed,
+K823,823,Status,active
+N823,823,Status [ref],https://www.vesselfinder.com/vessels/details/9918028
+AK823,823,Delivery year,2025
+AL823,823,Delivery year [ref],https://www.igu.org/igu-reports/2025-world-lng-report
+AN823,823,Previous delivery year(s),
+AO823,823,Previous delivery year(s) [ref],
+AM823,823,Delivery delayed,
