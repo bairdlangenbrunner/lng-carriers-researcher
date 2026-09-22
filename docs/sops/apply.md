@@ -6,7 +6,10 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-21 rev 8 (§2c: the living workbook — the reconciliation's copy on
+**Last revised:** 2026-09-22 rev 9 (§2d: the **directed session write** — Claude may write the
+sheet when Baird directs it in-session, with a printed plan, a revert file, re-pull verification
+and honest `push_log` attribution; never automatic, never a forged reviewer click). Prior:
+2026-09-21 rev 8 (§2c: the living workbook — the reconciliation's copy on
 the work Drive, whose `processed` column every sync and push mirrors; §7 follows). Prior:
 2026-09-21 rev 7 (§2b: the button is **push changes** — it also writes the
 reviewer's suggestions, each ref §3.8c-gated against the suggested value at plan time; §3 / §7
@@ -128,6 +131,45 @@ over the pull in apply order, so §2a's overlap problem does not arise.
 - **Reject writes nothing** and never reverts a cell that is already in the sheet.
 - The push verifies its own cells and appends `<dir>/push_log.jsonl`. Step 4 still closes the
   batch: `verify_apply.py --batch <dir> --pull` writes `verify_report.csv` and runs §5a.
+
+## 2d. Directed session write (Baird 2026-09-22)
+
+Claude may write the backend sheet itself — **only when Baird directs it to, in that session,
+for that specific write.** It is never automatic, never inferred, and never a way to finish a
+task faster. Absent an explicit direction, §2b stands: the push button is the only script path
+to the sheet, and Baird confirms it in the browser.
+
+What counts as a direction, and what does not:
+
+- **Counts:** Baird saying, in the session, to make this write / apply these cells / do it for
+  him, with the cells identifiable from the conversation.
+- **Does not count:** a selected option in a picker; approval of a *plan* that mentioned a
+  write; permission given for an earlier write in the same session; "go ahead" on an unrelated
+  step; silence; inferring that he would obviously want it. Permission is per write — it does
+  not carry to the next batch, the next cluster, or the next day.
+
+Preconditions, every time:
+
+1. **Fresh pull immediately before** building the plan (`pull_backend.py`), not a pull from
+   earlier in the session.
+2. **The plan is printed cell by cell** — live sheet row, column, old → new — and no-ops are
+   dropped. If the plan is too long to show, it is too long to write this way; use §2b.
+3. **A revert file** next to the batch: every cell's pre-write value, keyed by A1
+   (`arc7_revert.csv` is the pattern).
+4. **Verify by re-pull** after writing, and report the count that actually holds its new value.
+5. **Honest attribution in `push_log.jsonl`**: `reviewer` names the session and the direction
+   (`via`, `directive`). **Never forge a reviewer click.** A line written this way still has no
+   `review_log.jsonl` record, and §2b will still count it `unclicked` — that is correct and
+   must not be "fixed" by writing a fake accept record.
+6. **Scope is exactly what Baird named.** Neighbouring cells that look wrong are reported, not
+   written.
+
+The write itself is the same `gws-gem-write` `values.batchUpdate` §2b uses. Record the
+deviation in the batch's `notes.md` — what was written, on whose direction, and where the
+revert file is.
+
+First exercised 2026-09-22: the six Hanwha Arc7 rows, 42 cells, after the push button skipped
+them as `unclicked`.
 
 ## 2c. The living workbook (the reconciliation's copy on Drive)
 
@@ -279,6 +321,9 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   the apply), but a HIGH/MED group means a row may duplicate an existing vessel — resolve it.
 
 ## 8. Changelog
+
+- **rev 9** (2026-09-22): §2d **directed session write** — a second sanctioned path to the
+  sheet, gated on an explicit per-write direction from Baird rather than a browser click.
 
 - **rev 8** (2026-09-21): Added §2c: the living workbook — the pass's copy on the work Drive
   (`review_app/living.py`), whose `processed` column every **sync backend** and **push changes**
