@@ -41,7 +41,7 @@ Authoritative version: [ref]-Fill SOP §7. This file is for picking sources at q
 ## Tier 3 — Vessel databases (real IMOs and newbuilds pre-IMO)
 
 - VesselFinder
-- **shipvault.com** (`/ships/{id}` — the §6a.8 IMO tracker's first stop since 2026-09-16, see `scripts/imo_tracker.py`; open backend API, record carries hull / IMO / owner / yard / status / delivery / capacity and the verifier corroborates against it; indexes pre-delivery 1XXXXXX IMOs)
+- **shipvault.com** (`/ships/{id}` — the §6a.8 IMO tracker's first stop since 2026-09-16, see `scripts/imo_tracker.py`; open backend API, record carries hull / IMO / owner / yard / status / delivery / capacity and the verifier corroborates against it; indexes pre-delivery 1XXXXXX IMOs; **never a `Shipowner country/area` ref** — it carries the owner string and the vessel's *flag*, not the owner's base)
 - MarineTraffic / **marinetraffic.org** (the §6a.8 fallback for IMOs shipvault lacks; Cloudflare JS challenge cleared automatically by `scripts/fetch.py` + `cf_clearance.py`)
 - marinetraffic.com (delivered vessels with an AIS identity; verifier reads its `vesselInfo` JSON)
 - marinevesseltraffic.com

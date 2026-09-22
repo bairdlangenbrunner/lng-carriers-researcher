@@ -32,12 +32,15 @@ set,693,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR
 set,780,Shipowner country/area,Japan
 set,780,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,1082,Shipowner country/area,Greece
+set,1082,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,1083,Shipowner country/area,Greece
+set,1083,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,946,Shipowner country/area,Japan
 set,946,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,975,Shipowner country/area,Malaysia
 set,975,Shipowner country/area [ref],"https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
 set,1046,Shipowner country/area,South Korea
+set,1046,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,416,Shipowner country/area,Norway
 set,416,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,453,Shipowner country/area,Norway
@@ -199,15 +202,19 @@ set,634,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, htt
 set,852,Shipowner country/area,Japan
 set,852,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,964,Shipowner country/area,South Korea
+set,964,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,965,Shipowner country/area,South Korea
+set,965,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,986,Shipowner country/area,Norway
 set,986,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,381,Shipowner country/area,Greece
 set,381,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,395,Shipowner country/area,Greece
+set,395,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,418,Shipowner country/area,Greece
 set,418,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,463,Shipowner country/area,Denmark
+set,463,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,525,Shipowner country/area,Japan
 set,525,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,532,Shipowner country/area,Greece
@@ -231,13 +238,21 @@ set,1084,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,1102,Shipowner country/area,Greece
 set,1102,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,322,Shipowner country/area,Greece
+set,322,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,393,Shipowner country/area,Greece
+set,393,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,394,Shipowner country/area,Greece
+set,394,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,406,Shipowner country/area,Greece
+set,406,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,409,Shipowner country/area,Greece
+set,409,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,460,Shipowner country/area,Denmark
+set,460,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,461,Shipowner country/area,Denmark
+set,461,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,462,Shipowner country/area,Denmark
+set,462,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,492,Shipowner country/area,Greece
 set,492,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,524,Shipowner country/area,Japan
@@ -265,6 +280,7 @@ set,809,Shipowner country/area [ref],https://system.new-vessels.com/orderer-4541
 set,810,Shipowner country/area,Greece
 set,810,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,966,Shipowner country/area,South Korea
+set,966,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,985,Shipowner country/area,Norway
 set,985,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,376,Shipowner country/area,Norway
@@ -278,14 +294,19 @@ set,687,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,816,Shipowner country/area,Norway
 set,816,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,967,Shipowner country/area,South Korea
+set,967,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,992,Shipowner country/area,Norway
 set,992,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,1036,Shipowner country/area,China
 set,1036,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
 set,382,Shipowner country/area,Greece
+set,382,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,407,Shipowner country/area,Greece
+set,407,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,464,Shipowner country/area,Denmark
+set,464,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,465,Shipowner country/area,Denmark
+set,465,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,543,Shipowner country/area,China
 set,543,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
 set,592,Shipowner country/area,Norway
@@ -309,8 +330,11 @@ set,1029,Shipowner country/area [ref],"https://www.shipvault.com/ships/113754, h
 set,1030,Shipowner country/area,Malaysia
 set,1030,Shipowner country/area [ref],"https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
 set,70,Shipowner country/area,Denmark
+set,70,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,77,Shipowner country/area,Denmark
+set,77,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,79,Shipowner country/area,Denmark
+set,79,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,101,Shipowner country/area,Japan
 set,101,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,108,Shipowner country/area,Greece
@@ -326,13 +350,19 @@ set,176,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR
 set,177,Shipowner country/area,South Korea
 set,177,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
 set,179,Shipowner country/area,Greece
+set,179,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,225,Shipowner country/area,Norway
 set,225,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,229,Shipowner country/area,South Korea
+set,229,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,325,Shipowner country/area,Greece
+set,325,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,385,Shipowner country/area,Greece
+set,385,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,410,Shipowner country/area,Greece
+set,410,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,466,Shipowner country/area,Denmark
+set,466,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,540,Shipowner country/area,Japan
 set,540,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,678,Shipowner country/area,South Korea
@@ -344,10 +374,15 @@ set,859,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, htt
 set,977,Shipowner country/area,South Korea
 set,977,Shipowner country/area [ref],https://www.emis.com/php/company-profile/KR/Hyundai_Lng_Shipping_CoLtd_en_4269939.html
 set,93,Shipowner country/area,Denmark
+set,93,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,95,Shipowner country/area,Denmark
+set,95,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,105,Shipowner country/area,Denmark
+set,105,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,121,Shipowner country/area,Denmark
+set,121,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,180,Shipowner country/area,South Korea
+set,180,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,182,Shipowner country/area,Norway
 set,182,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,183,Shipowner country/area,Norway
@@ -397,6 +432,7 @@ set,137,Shipowner country/area [ref],"https://www.shipvault.com/ships/113754, ht
 set,144,Shipowner country/area,Malaysia
 set,144,Shipowner country/area [ref],"https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
 set,181,Shipowner country/area,South Korea
+set,181,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,184,Shipowner country/area,Norway
 set,184,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,185,Shipowner country/area,Norway
@@ -426,7 +462,9 @@ set,197,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profil
 set,231,Shipowner country/area,Greece
 set,231,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,232,Shipowner country/area,South Korea
+set,232,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,233,Shipowner country/area,South Korea
+set,233,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/"
 set,235,Shipowner country/area,Greece
 set,235,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,236,Shipowner country/area,Greece
@@ -434,7 +472,9 @@ set,236,Shipowner country/area [ref],https://system.new-vessels.com/orderer-4541
 set,241,Shipowner country/area,Japan
 set,241,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,251,Shipowner country/area,Denmark
+set,251,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,252,Shipowner country/area,Denmark
+set,252,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,263,Shipowner country/area,Japan
 set,263,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,264,Shipowner country/area,Japan
@@ -448,11 +488,15 @@ set,274,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profil
 set,289,Shipowner country/area,Hong Kong
 set,289,Shipowner country/area [ref],https://www1.hkexnews.hk/listedco/listconews/sehk/2020/0630/2020063001526.pdf
 set,324,Shipowner country/area,Greece
+set,324,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,373,Shipowner country/area,Greece
+set,373,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,375,Shipowner country/area,Russia
 set,375,Shipowner country/area [ref],https://2021-2025.state.gov/imposing-measures-in-response-to-navalnys-death-and-two-years-of-russias-full-scale-war-against-ukraine/
 set,384,Shipowner country/area,Greece
+set,384,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,386,Shipowner country/area,Greece
+set,386,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,708,Shipowner country/area,United Arab Emirates
 set,708,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
 set,709,Shipowner country/area,United Arab Emirates
@@ -476,7 +520,9 @@ set,199,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profil
 set,200,Shipowner country/area,Japan
 set,200,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,203,Shipowner country/area,Greece
+set,203,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/"
 set,204,Shipowner country/area,Greece
+set,204,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/"
 set,239,Shipowner country/area,Japan
 set,239,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,240,Shipowner country/area,Japan
@@ -486,10 +532,15 @@ set,242,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profil
 set,243,Shipowner country/area,Japan
 set,243,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,253,Shipowner country/area,Denmark
+set,253,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,254,Shipowner country/area,Denmark
+set,254,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,255,Shipowner country/area,Denmark
+set,255,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,256,Shipowner country/area,Denmark
+set,256,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,387,Shipowner country/area,Greece
+set,387,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,513,Shipowner country/area,China
 set,513,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
 set,514,Shipowner country/area,China
@@ -505,11 +556,17 @@ set,160,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785
 set,161,Shipowner country/area,United Arab Emirates
 set,161,Shipowner country/area [ref],https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china
 set,205,Shipowner country/area,Greece
+set,205,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/"
 set,206,Shipowner country/area,Greece
+set,206,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/"
 set,244,Shipowner country/area,Greece
+set,244,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,245,Shipowner country/area,Greece
+set,245,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,246,Shipowner country/area,Greece
+set,246,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,247,Shipowner country/area,Greece
+set,247,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,508,Shipowner country/area,China
 set,508,Shipowner country/area [ref],https://en.wikipedia.org/wiki/COSCO_Shipping
 set,1144,Shipowner country/area,United States
@@ -527,8 +584,11 @@ set,1153,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profi
 set,1156,Shipowner country/area,United Kingdom
 set,1156,Shipowner country/area [ref],https://www.purus.com/our-services/gas
 set,1166,Shipowner country/area,Denmark
+set,1166,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,1170,Shipowner country/area,Denmark
+set,1170,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,1171,Shipowner country/area,Denmark
+set,1171,Shipowner country/area [ref],"https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/"
 set,1175,Shipowner country/area,Norway
 set,1175,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,1176,Shipowner country/area,Norway
@@ -546,6 +606,7 @@ set,1184,Shipowner country/area [ref],https://system.new-vessels.com/orderer-454
 set,1185,Shipowner country/area,Greece
 set,1185,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
 set,1193,Shipowner country/area,Greece
+set,1193,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,1216,Yard location latitude,22.33849
 set,1216,Yard location longitude,114.092895
 set,1216,Yard location plus code,"83QV+H7 Sai Tso Wan, Hong Kong"
@@ -571,7 +632,9 @@ set,1180,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,1181,Shipowner country/area,Norway
 set,1181,Shipowner country/area [ref],https://www.imarinenews.com/35664.html
 set,1194,Shipowner country/area,Greece
+set,1194,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,1195,Shipowner country/area,Greece
+set,1195,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819"
 set,1196,Shipowner country/area,Malaysia
 set,1196,Shipowner country/area [ref],"https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754"
 set,1197,Shipowner country/area,Malaysia
@@ -804,6 +867,10 @@ set,1156,Cargo type,membrane
 set,1156,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
 set,1157,Cargo type,membrane
 set,1157,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
+set,201,Contract date,17-Jan-2023
+set,201,Contract date [ref],https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/
+set,201,Price,261000000
+set,201,Price [ref],https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/
 set,509,Operator/charterer,China Gas Hongda Energy Trading
 set,509,Operator/charterer [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
 set,510,Operator/charterer,China Gas Hongda Energy Trading
@@ -938,6 +1005,7 @@ set,194,Price currency,USD
 set,195,Price currency,USD
 set,1156,Price currency,USD
 set,1157,Price currency,USD
+set,201,Price currency,USD
 set,509,Price currency,USD
 set,510,Price currency,USD
 set,511,Price currency,USD

@@ -498,8 +498,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1157|Cargo type,fill,1157,,Cargo type,G,False,accept,accept,membrane,Same as row 1156.
 1174|Price,fill,1174,,Price,Y,False,hold,hold,252000000,Article states the single vessel is 'valued at just over US$252M' literally (not
 1186|Price,fill,1186,,Price,Y,False,hold,hold,245000000,"Splash247 (03-Feb-2026): HD Hyundai Samho contract for a 174,000 cu m unit for S"
-201|Contract date,fill,201,,Contract date,Y,False,hold,hold,17-Jan-2023,LNG Prime (published 17-Jan-2023): 'Parent KSOE said on Tuesday HHI would build 
-201|Price,fill,201,,Price,Y,False,hold,hold,261000000,Same article: 'contract has a price tag of 971.4 billion won ($783 million) or $
+201|Contract date,fill,201,,Contract date,Y,False,hold,accept,17-Jan-2023,LNG Prime (published 17-Jan-2023): 'Parent KSOE said on Tuesday HHI would build 
+201|Price,fill,201,,Price,Y,False,hold,accept,261000000,Same article: 'contract has a price tag of 971.4 billion won ($783 million) or $
 202|Contract date,fill,202,,Contract date,Y,False,hold,hold,17-Jan-2023,"Same trio order as row 201 (yardno 3453, sister hull). See row 201 note for full"
 202|Price,fill,202,,Price,Y,False,hold,hold,261000000,"Same trio order as row 201 ($261m/vessel, shipvault newprice 261300000 corrobora"
 476|Contract date,fill,476,,Contract date,Y,False,hold,hold,02-May-2023,TradeWinds (2-May-2023): 'Korea Shipbuilding & Offshore Engineering said on Tues
@@ -853,7 +853,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1157|Price currency,fill,1157,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1174|Price currency,fill,1174,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1186|Price currency,fill,1186,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-201|Price currency,fill,201,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+201|Price currency,fill,201,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 202|Price currency,fill,202,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 258|Price currency,fill,258,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 259|Price currency,fill,259,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)

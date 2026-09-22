@@ -1,0 +1,56 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+1077|Shipowner country/area,fill,1077,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1078|Shipowner country/area,fill,1078,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+971|Shipowner country/area,fill,971,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+968|Shipowner country/area,fill,968,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+974|Shipowner country/area,fill,974,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+726|Shipowner country/area,fill,726,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+979|Shipowner country/area,fill,979,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+727|Shipowner country/area,fill,727,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+969|Shipowner country/area,fill,969,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+975|Shipowner country/area,fill,975,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+970|Shipowner country/area,fill,970,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+980|Shipowner country/area,fill,980,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+973|Shipowner country/area,fill,973,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1014|Shipowner country/area,fill,1014,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1015|Shipowner country/area,fill,1015,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1016|Shipowner country/area,fill,1016,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1017|Shipowner country/area,fill,1017,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1018|Shipowner country/area,fill,1018,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1019|Shipowner country/area,fill,1019,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1022|Shipowner country/area,fill,1022,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1023|Shipowner country/area,fill,1023,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1020|Shipowner country/area,fill,1020,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1021|Shipowner country/area,fill,1021,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1044|Shipowner country/area,fill,1044,,Shipowner country/area,G,False,accept,accept,South Korea,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1045|Shipowner country/area,fill,1045,,Shipowner country/area,G,False,accept,accept,South Korea,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1029|Shipowner country/area,fill,1029,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1030|Shipowner country/area,fill,1030,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+63|Shipowner country/area,fill,63,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+64|Shipowner country/area,fill,64,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+137|Shipowner country/area,fill,137,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+144|Shipowner country/area,fill,144,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+72|Shipowner country/area,fill,72,,Shipowner country/area,G,False,accept,accept,Japan,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+74|Shipowner country/area,fill,74,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+78|Shipowner country/area,fill,78,,Shipowner country/area,G,False,accept,accept,Japan,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+102|Shipowner country/area,fill,102,,Shipowner country/area,Y,False,hold,hold,South Korea,country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the
+103|Shipowner country/area,fill,103,,Shipowner country/area,Y,False,hold,hold,South Korea,country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the
+147|Shipowner country/area,fill,147,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+156|Shipowner country/area,fill,156,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+157|Shipowner country/area,fill,157,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+163|Shipowner country/area,fill,163,,Shipowner country/area,G,False,accept,accept,Denmark,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+408|Shipowner country/area,fill,408,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+92|Shipowner country/area,fill,92,,Shipowner country/area,G,False,accept,accept,United Arab Emirates,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+94|Shipowner country/area,fill,94,,Shipowner country/area,G,False,accept,accept,United Arab Emirates,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+96|Shipowner country/area,fill,96,,Shipowner country/area,G,False,accept,accept,United Arab Emirates,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+178|Shipowner country/area,fill,178,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+224|Shipowner country/area,fill,224,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+314|Shipowner country/area,fill,314,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+315|Shipowner country/area,fill,315,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+316|Shipowner country/area,fill,316,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+317|Shipowner country/area,fill,317,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1196|Shipowner country/area,fill,1196,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1197|Shipowner country/area,fill,1197,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1199|Shipowner country/area,fill,1199,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1198|Shipowner country/area,fill,1198,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
+1200|Shipowner country/area,fill,1200,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
