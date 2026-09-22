@@ -1,0 +1,50 @@
+{
+ "proposed": [
+  {
+   "row_id": "130",
+   "live_row": 876,
+   "source": "",
+   "former": "Hull 2663 (SHI)",
+   "new": "Christy Vanguard",
+   "cell": {
+    "field": "Other names",
+    "new_value": "Hull 2663 (SHI)",
+    "gate_value": "Hull 2663 (SHI)",
+    "append_ref": true,
+    "confidence": "Y",
+    "refs": [
+     {
+      "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "soft": false
+     },
+     {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "soft": false
+     }
+    ],
+    "note": "former Name 'Hull 2663 (SHI)'; the row is renamed 'Christy Vanguard'"
+   }
+  }
+ ],
+ "skipped": [],
+ "gate": [
+  {
+   "where": "130|Other names",
+   "url": "https://www.shipspotting.com/photos/4013161",
+   "former": "Hull 2663 (SHI)",
+   "verdict": "no: page does not contain value 'Hull 2663 (SHI)'"
+  },
+  {
+   "where": "130|Other names",
+   "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+   "former": "Hull 2663 (SHI)",
+   "verdict": "PASS (OK (IGU 2025 name cell for IMO 1019670, coordinate extraction))"
+  },
+  {
+   "where": "130|Other names",
+   "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+   "former": "Hull 2663 (SHI)",
+   "verdict": "PASS (OK (IGU 2026 name cell for IMO 1019670, coordinate extraction))"
+  }
+ ]
+}
