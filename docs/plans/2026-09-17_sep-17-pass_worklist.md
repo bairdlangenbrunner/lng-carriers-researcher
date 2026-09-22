@@ -74,6 +74,14 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
   11 and 13's sourced lines are fully in; 1, 4, 6, 8, 10 are partly in (their holds remain) — none
   has a `verify_report.csv` yet, because `verify_apply.py` would count the un-clicked pre-fill
   accepts as missing; close each batch after its holds are decided.
+- **The shipowner-country ref batch is applied** (`2026-09-21_2003ET_fix_shipowner_country_refs`,
+  2026-09-21 20:18 ET, by Claude at Baird's directive, through the Sheets API): 53 cells / 53 rows,
+  every one a `Shipowner country/area [ref]` replacing a shipvault URL that never stated the
+  country; the values already matched, so none was rewritten. `verify_apply.py`: 106 landed,
+  0 mismatch; QC clean, dedupe 10 LOW sister-ship pairs. Its two holds (live 953/954, Hanwha) were
+  settled by Baird in the sheet: Shipowner `Hanwha Ocean`, South Korea, hanwha.com ref. The **292**
+  `Shipowner country/area` fills in batch 4 below are a separate call — they now carry refs, 0 of
+  them conflict, and they still need their own instruction.
 - **Batch 9 is applied** (2026-09-17 19:00 ET, by Claude at Baird's request, through the Sheets
   API — 38 cells / 19 rows, `verify_apply.py`: 38 landed, 0 mismatch; QC after: 8 LOW, no
   HIGH/MED). **Batch 12 is applied** (2026-09-18, 58 cells; verify shows `.00` display-format
