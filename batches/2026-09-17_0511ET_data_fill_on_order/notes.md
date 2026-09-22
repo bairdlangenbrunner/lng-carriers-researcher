@@ -165,3 +165,48 @@ such a page now carries the unit-record URL
 `scripts/shipvault_api_refs.py`, workbook rebuilt + recalced (zero errors), apply artifacts
 regenerated; decisions unchanged, and the only diff in `apply.json` / `apply_rows.csv` /
 `apply_patch.csv` is the added URLs.
+
+## Shipowner country/area lines applied — 2026-09-21 20:40 ET
+
+Baird's directive ("yes push them now"), following the shipowner-country ref batch
+`2026-09-21_2003ET_fix_shipowner_country_refs`. **Only the
+`Shipowner country/area` (+ `[ref]`) lines of this batch were written** — every
+other column is untouched and still pending.
+
+**Written:** 584 cells / 292 rows through the Sheets API (`gws-gem-write`,
+`values.batchUpdate` RAW), addressed by row_id + header against a fresh pull —
+292 country values into blank/`unknown` cells and their 292 `[ref]`s. 74 further
+cells (37 rows) were already in the sheet and skipped as no-ops. **0 conflicts**:
+no country line contradicted a non-blank backend value.
+
+**verify:** all **658** `Shipowner country/area` lines read `landed` in
+`verify_report.csv`. The report's 69 MISMATCH (all `Price`) and 26 MISSING
+(`Price`, `Yard location*`, `Operator/charterer`) are this batch's *other*
+columns, never applied — they are not from this push, and the batch stays open.
+QC: 0 HIGH/MED. Dedupe: 0 HIGH, 71 MED / 29 LOW over the batch's rows — the
+unidentified-slot pairs of the on-order fleet, unchanged by this push (the dedupe
+key is builder|owner|capacity, which a country write cannot move).
+
+### Two corrections made before writing (this is why it wasn't a straight push)
+
+1. **The apply artifacts were a stale snapshot** (AP §2a). `apply_patch.csv`
+   predated the ref batch, so 36 of its `[ref]` cells would have written the
+   shipvault URL back over refs corrected 20 minutes earlier. Re-ran
+   `apply_batch.py` against the fresh pull (decisions preserved, byte-identical).
+2. **`data_fill.json` itself was stale against `data/shipowner_facts.csv`.** The
+   2026-09-21 pass re-sourced the table but only rewrote the 63 *ref-less* fills;
+   61 more still carried the old shipvault URLs. All 329 country fills were
+   re-pointed at the table's current row for their owner tag (values all still
+   agree with the table; no `AMBIGUOUS` tag in this set). Recorded in DF §5 rev 4.
+
+Then every distinct (url, country) pair was re-run through the §3.8c gate
+(`igu_refs.corroborates_cell`): **30 of 32 pass**. The two failures were dropped
+from the 17 fills citing them, each of which keeps a passing ref (Rule F intact):
+
+- `hls.co.kr/en/contact/location.do` (Hyundai LNG Shipping → South Korea, 15 rows)
+  — 403, Wayback snapshots lack the content. Those rows keep the EMIS profile.
+- `dnb.com/…united_liquefied_gas_shipping_(hong_kong)…` (→ Hong Kong, 2 rows) —
+  the page does not contain "Hong Kong". Those rows keep the HKEXnews filing.
+
+Countries written: Greece 88, Japan 83, Norway 49, South Korea 25, Denmark 23,
+China 8, UAE 8, UK 3, Hong Kong 2, United States 2, Russia 1.
