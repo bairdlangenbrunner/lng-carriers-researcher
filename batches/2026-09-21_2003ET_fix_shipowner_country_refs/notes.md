@@ -85,3 +85,29 @@ those owners except `sinokor merchant` still has a passing ref.
 
 Patch path (`apply_patch.csv`, 106 cells over 53 rows) with
 `OVERWRITE_NONBLANK=true` — this is a ref-replacement batch (AP §2a).
+
+## Applied — 2026-09-21 20:18 ET
+
+Baird's directive ("go ahead and replace all of those updated owner countries now
+in the backend, you have my complete approval. note I fixed 953 and 954 myself").
+Written by Claude through the Sheets API (`gws-gem-write`, `values.batchUpdate`
+RAW), addressed by row_id + header against a fresh pull — **53 cells / 53 rows**,
+every one a `Shipowner country/area [ref]` replacing a shipvault URL. The 53
+`Shipowner country/area` values already matched the sheet, so no value cell was
+written (this batch never changed a country outside the two holds).
+
+`verify_apply.py --pull`: **106 landed, 0 mismatch, 0 missing**. QC over the
+touched rows clean; `dedupe_report.csv` is 10 LOW tier-4 sister-ship pairs in the
+MISC/Hudong-Zhonghua 170,000 cbm series (distinct ordinals) — nothing to act on.
+
+**The two holds are closed by Baird's own edit**, not by this batch: live rows 953
+and 954 now read Shipowner `Hanwha Ocean`, country **South Korea**, ref
+`https://www.hanwha.com/companies/hanwha-ocean.do`. So the shipbuilder reading won
+and `Hanwha Shipping LLC` was not the owner. `decisions.csv` keeps both lines at
+`hold` as the record that this batch did not write them.
+
+Still open (separate decision, not covered by this directive): the pending
+data-fill batch `2026-09-17_0511ET_data_fill_on_order` holds **329**
+`Shipowner country/area` lines, all `accept` but never clicked — 292 of them would
+fill a blank/`unknown` country cell (0 conflicts), 37 are already in the sheet.
+The 63 re-sourced in this pass are among them.
