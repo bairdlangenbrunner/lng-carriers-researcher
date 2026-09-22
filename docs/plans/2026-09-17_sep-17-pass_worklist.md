@@ -70,18 +70,34 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
   with no `Other names` companion — RF §4.16, decide by hand), the 15 Names / 9 Vessel types whose
   partner line is held, 4 Prices with an unchecked ref, and every line with no source, a `read by
   hand` or `not checked` source (292 `Shipowner country/area` facts-table fills, batch 13's 28
-  `preserve_ref` hull restylings, yard-location cells). Discovery new rows stay by hand. Batches
-  11 and 13's sourced lines are fully in; 1, 4, 6, 8, 10 are partly in (their holds remain) — none
-  has a `verify_report.csv` yet, because `verify_apply.py` would count the un-clicked pre-fill
-  accepts as missing; close each batch after its holds are decided.
+  `preserve_ref` hull restylings, yard-location cells). Discovery new rows stay by hand.
+- **Reconciliation 2026-09-21 21:05 ET (Claude, at Baird's directive):** every batch re-finalised
+  (`apply_batch.py` on the fresh pull — seven had `apply.json` older than their `decisions.csv`;
+  no decision changed) and verified (`verify_apply.py`, which now compares numerically — the
+  sheet renders a Price as `165000000.00`, which had read as 98 false mismatches). Fully in the
+  backend, `applied: true` in `review_batches.json`: **1, 2, 5, 6, 9, 10, 11, 12, 15**. Still open
+  (accepted lines not in the backend, all `not checked` / `read by hand` sources the bulk push
+  skipped, or hand work): **3** (7 new rows), **4** (20 cells: Price + currency on 4 rows,
+  yard-location cells on live 1116/1117, Operator/charterer on 2 rows), **8** (12 cells: 9 Vessel
+  types, Cargo type / Capacity / units on live 929 / 1004 — the "batch 4 proposes the same value"
+  duplicates; plus live 915/916 `Name [ref]`: the spelling fix landed but the IGU PDF ref did not —
+  the cells still carry shipvault + companion), **13** (28 `preserve_ref` hull restylings), **14**
+  (live 1080 `Other names` append). Batch 6's two companion lines that later pushes superseded were
+  set to `reject` (live 61 `Shipowner country/area [ref]` — shipvault is never a country ref; live
+  814 `Status [ref]` — batch 8 moved Status to `on order` with the IGU PDF as sole ref). Review app
+  restarted on all 14 batches: 1,797 lines `in the backend`, incl. all 329 batch-4 and 53 batch-15
+  `Shipowner country/area` lines; the 2 batch-15 holds (live 953/954) read `value_in_backend` because
+  Baird's hand-entered ref differs from the proposal — reject or accept them in the app to close.
+  Dedupe reports on the re-verified batches are the known sister-ship MED groups (placeholder ↔
+  identified on builder+owner+capacity+delivery), no HIGH.
 - **The shipowner-country ref batch is applied** (`2026-09-21_2003ET_fix_shipowner_country_refs`,
   2026-09-21 20:18 ET, by Claude at Baird's directive, through the Sheets API): 53 cells / 53 rows,
   every one a `Shipowner country/area [ref]` replacing a shipvault URL that never stated the
   country; the values already matched, so none was rewritten. `verify_apply.py`: 106 landed,
   0 mismatch; QC clean, dedupe 10 LOW sister-ship pairs. Its two holds (live 953/954, Hanwha) were
   settled by Baird in the sheet: Shipowner `Hanwha Ocean`, South Korea, hanwha.com ref. The **292**
-  `Shipowner country/area` fills in batch 4 below are a separate call — they now carry refs, 0 of
-  them conflict, and they still need their own instruction.
+  `Shipowner country/area` fills in batch 4 followed at 20:40 ET on Baird's "yes push them now"
+  (584 cells, after re-pointing the batch's stale table refs and re-gating; all landed).
 - **Batch 9 is applied** (2026-09-17 19:00 ET, by Claude at Baird's request, through the Sheets
   API — 38 cells / 19 rows, `verify_apply.py`: 38 landed, 0 mismatch; QC after: 8 LOW, no
   HIGH/MED). **Batch 12 is applied** (2026-09-18, 58 cells; verify shows `.00` display-format

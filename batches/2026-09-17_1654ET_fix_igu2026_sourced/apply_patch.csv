@@ -14,6 +14,8 @@ set,971,Name,American Energy
 set,971,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,535,Name,Arctic Vostok
 set,535,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1004,Name,Gas Polaris
+set,1004,Name [ref],"https://www.vesseltracker.com/en/Ships/Gas-Polaris-9230048.html, https://www.marinetraffic.org/ship-owner-manager-ism-data/GAS-POLARIS/9230048/525121118"
 set,562,Name,Arunika Jaya
 set,562,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,648,Name,SC Serenity
@@ -26,6 +28,8 @@ set,801,Name,Gas Garuda
 set,801,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,958,Name,Arctic Pioneer
 set,958,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,459,Name,LNG Scorpio
+set,459,Name [ref],"https://www.vesseltracker.com/en/Ships/Lng-Scorpio-9307205.html, https://www.marinetraffic.org/ship-owner-manager-ism-data/LNG-SCORPIO/9307205/352006648"
 set,1062,Name,Blue Dragon I
 set,1062,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,869,Name,Shandong Redwood
@@ -369,6 +373,13 @@ set,994,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/17
 set,994,Delivery delayed,yes
 set,995,Vessel type,conventional
 set,995,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,995,Status,on order
+set,995,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,995,Delivery year,2026
+set,995,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,995,Previous delivery year(s),2025
+set,995,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,995,Delivery delayed,yes
 set,996,Vessel type,conventional
 set,996,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,996,Delivery year,2026

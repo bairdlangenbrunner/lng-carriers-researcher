@@ -27,6 +27,156 @@
       "confidence": "G"
     },
     {
+      "row_id": "7",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "7",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438615, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438615",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "7",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "7",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "7",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "8",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "8",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438616, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438616",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "8",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "8",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "8",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "9",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "9",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438617, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438617",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "9",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "9",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "9",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "10",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "10",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438618, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438618",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "10",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "10",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "10",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "11",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "11",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438619, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438619",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "11",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "11",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "11",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
+    },
+    {
       "row_id": "12",
       "column": "Delivery year",
       "value": "2027",
@@ -79,6 +229,30 @@
       "column": "Delivery delayed",
       "value": "yes",
       "confidence": "G"
+    },
+    {
+      "row_id": "15",
+      "column": "Delivery year",
+      "value": "2028",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "15",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/438623, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/438623",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "15",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "15",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
     },
     {
       "row_id": "25",
@@ -928,6 +1102,18 @@
     },
     {
       "row_id": "144",
+      "column": "Name",
+      "value": "E'saila",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "144",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/479142, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "144",
       "column": "Previous delivery year(s)",
       "value": "2026",
       "confidence": "G"
@@ -1665,6 +1851,30 @@
       "confidence": "G"
     },
     {
+      "row_id": "271",
+      "column": "Name",
+      "value": "Greenergy Sea",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "271",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/467891, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467891",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "272",
+      "column": "Name",
+      "value": "Greenergy Whale",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "272",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/467892, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/467892",
+      "confidence": "Y"
+    },
+    {
       "row_id": "273",
       "column": "Delivery year",
       "value": "2027",
@@ -1905,6 +2115,36 @@
       "confidence": "G"
     },
     {
+      "row_id": "515",
+      "column": "Delivery year",
+      "value": "2027",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "515",
+      "column": "Delivery year [ref]",
+      "value": "https://www.shipvault.com/ships/459925, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459925, https://maritimeoptima.com/public/vessels/pages/imo:9989120/mmsi:477255600/SEA_ARGOSY.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "515",
+      "column": "Previous delivery year(s)",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "515",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "515",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
+    },
+    {
       "row_id": "517",
       "column": "Name",
       "value": "Sea Charity",
@@ -2061,6 +2301,42 @@
       "confidence": "G"
     },
     {
+      "row_id": "26",
+      "column": "Name",
+      "value": "Mediterranean Success",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "26",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/432643, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432643",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "27",
+      "column": "Name",
+      "value": "Caribbean Success",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "27",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/432644, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432644",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Name",
+      "value": "Maran Gas Poliegos",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
       "row_id": "135",
       "column": "Name",
       "value": "Barthy Vanguard",
@@ -2071,6 +2347,42 @@
       "column": "Name [ref]",
       "value": "https://www.shipvault.com/ships/471277, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
       "confidence": "G"
+    },
+    {
+      "row_id": "147",
+      "column": "Name",
+      "value": "Al Seej",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "147",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/479145, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479145",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "201",
+      "column": "Name",
+      "value": "Clean Astraeus",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "201",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/462869, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462869",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "202",
+      "column": "Name",
+      "value": "Clean Azeus",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "202",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/462870, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462870",
+      "confidence": "Y"
     },
     {
       "row_id": "207",
@@ -2253,6 +2565,54 @@
       "confidence": "G"
     },
     {
+      "row_id": "239",
+      "column": "Name",
+      "value": "Diamond Gas Nexus",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "239",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/DIAMOND-GAS-NEXUS/1023877/563334400",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "240",
+      "column": "Name",
+      "value": "Grace Himawari",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "240",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-HIMAWARI/1023889/1",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "242",
+      "column": "Name",
+      "value": "Grace Gerbera",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "242",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/GRACE-GERBERA/1023906/1",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "243",
+      "column": "Name",
+      "value": "Ferdy Vanguard",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "243",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/FERDY-VANGUARD/1023918/1",
+      "confidence": "Y"
+    },
+    {
       "row_id": "258",
       "column": "Name",
       "value": "Al Sabsab",
@@ -2265,6 +2625,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "259",
+      "column": "Name",
+      "value": "Al Fanar",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "259",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/AL-FANAR/9986582/636025824",
+      "confidence": "Y"
+    },
+    {
       "row_id": "487",
       "column": "Status",
       "value": "active",
@@ -2311,6 +2683,18 @@
       "column": "Delivery year [ref]",
       "value": "https://www.shipvault.com/ships/466739, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/466739",
       "confidence": "G"
+    },
+    {
+      "row_id": "507",
+      "column": "Name",
+      "value": "Prime Creativity",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "507",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-CREATIVITY/1058327/1",
+      "confidence": "Y"
     },
     {
       "row_id": "510",
@@ -2323,6 +2707,18 @@
       "column": "Name [ref]",
       "value": "https://www.shipvault.com/ships/469428, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469428, https://www.marinetraffic.org/ship-owner-manager-ism-data/ALLIANCE-VENTURE/1030569/1",
       "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Name",
+      "value": "Prime Unity",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "519",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-UNITY/1058315/1",
+      "confidence": "Y"
     },
     {
       "row_id": "541",
@@ -2359,6 +2755,18 @@
       "column": "Name [ref]",
       "value": "https://www.shipvault.com/ships/461185, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/461185, https://www.marinetraffic.org/ship-owner-manager-ism-data/ELISA-HALCYON/9980552/228488900",
       "confidence": "G"
+    },
+    {
+      "row_id": "639",
+      "column": "Name",
+      "value": "Solidarity",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "639",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/SOLIDARITY/1056410/1",
+      "confidence": "Y"
     },
     {
       "row_id": "80",
@@ -2541,6 +2949,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "150",
+      "column": "Name",
+      "value": "Libsayer",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "150",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/LIBSAYER/1070806/1",
+      "confidence": "Y"
+    },
+    {
       "row_id": "154",
       "column": "Name",
       "value": "Al Nouf",
@@ -2577,6 +2997,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "508",
+      "column": "Name",
+      "value": "Prime Glory",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "508",
+      "column": "Name [ref]",
+      "value": "https://www.marinetraffic.org/ship-owner-manager-ism-data/PRIME-GLORY/1069194/1",
+      "confidence": "Y"
+    },
+    {
       "row_id": "509",
       "column": "Name",
       "value": "Friendship Venture",
@@ -2592,8 +3024,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 262,
-    "accepted": 222,
-    "hold": 40,
+    "accepted": 262,
+    "hold": 0,
     "reject": 0,
     "conflicts": 0
   }

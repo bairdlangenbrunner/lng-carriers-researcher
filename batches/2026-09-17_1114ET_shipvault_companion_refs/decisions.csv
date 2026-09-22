@@ -160,9 +160,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 969|Name,fill,969,,Name,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
 969|Price,fill,969,,Price,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
 969|Shipbuilder,fill,969,,Shipbuilder,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
-969|Shipowner country/area,fill,969,,Shipowner country/area,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
+969|Shipowner country/area,fill,969,,Shipowner country/area,Y,False,hold,reject,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
 969|Status,fill,969,,Status,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
-995|Status,fill,995,,Status,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926,live row 814: the cited shipvault page renders blank (site bug); companion unit 
+995|Status,fill,995,,Status,Y,False,hold,reject,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926,live row 814: the cited shipvault page renders blank (site bug); companion unit 
 1044|Contract date,fill,1044,,Contract date,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877,live row 487: the cited shipvault page renders blank (site bug); companion unit 
 1044|Delivery year,fill,1044,,Delivery year,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877,live row 487: the cited shipvault page renders blank (site bug); companion unit 
 1044|IMO number,fill,1044,,IMO number,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877,live row 487: the cited shipvault page renders blank (site bug); companion unit 

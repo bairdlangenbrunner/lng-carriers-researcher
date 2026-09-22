@@ -1,0 +1,55 @@
+status,sheet_row,row_id,column,accepted_value,backend_value
+landed,817,1091,Hull number,,
+landed,817,1091,Hull number [ref],,
+landed,791,612,Hull number,,
+landed,791,612,Hull number [ref],,
+landed,810,939,Hull number,,
+landed,810,939,Hull number [ref],,
+landed,798,749,Hull number,,
+landed,798,749,Hull number [ref],,
+landed,807,927,Hull number,,
+landed,807,927,Hull number [ref],,
+landed,792,670,Hull number,,
+landed,792,670,Hull number [ref],,
+landed,793,671,Hull number,,
+landed,793,671,Hull number [ref],,
+landed,802,864,Hull number,,
+landed,802,864,Hull number [ref],,
+landed,801,849,Hull number,,
+landed,801,849,Hull number [ref],,
+landed,820,1107,Hull number,,
+landed,820,1107,Hull number [ref],,
+landed,795,676,Hull number,,
+landed,795,676,Hull number [ref],,
+landed,822,1132,Hull number,,
+landed,822,1132,Hull number [ref],,
+landed,819,1098,Hull number,,
+landed,819,1098,Hull number [ref],,
+MISMATCH,701,70,Hull number,Hull 2579 (SHI),Hull 2579
+MISMATCH,704,79,Hull number,Hull 2585 (SHI),Hull 2585
+MISMATCH,698,37,Hull number,Hull 2532 (Hanwha),Hull 2532
+MISMATCH,690,22,Hull number,Hull 1880A (Hudong),Hull 1880A
+MISMATCH,695,34,Hull number,Hull 2522 (Hanwha),Hull 2522
+MISMATCH,688,20,Hull number,Hull 1835A (Hudong),Hull 1835A
+MISMATCH,707,90,Hull number,Hull 2596 (SHI),Hull 2596
+MISMATCH,725,234,Hull number,Hull 8196 (HSHI),Hull 8196
+MISMATCH,694,33,Hull number,Hull 2474 (SHI),Hull 2474
+MISMATCH,693,32,Hull number,Hull 2473 (SHI),Hull 2473
+MISMATCH,724,229,Hull number,Hull 8173 (HDHHI),Hull 8173
+MISMATCH,699,38,Hull number,Hull 2536 (Hanwha),Hull 2536
+MISMATCH,721,225,Hull number,Hull 8100 (HDHHI),Hull 8100
+MISMATCH,696,35,Hull number,Hull 2523 (Hanwha),Hull 2523
+MISMATCH,697,36,Hull number,Hull 2524 (Hanwha),Hull 2524
+MISMATCH,702,75,Hull number,Hull 2583 (SHI),Hull 2583
+MISMATCH,700,46,Hull number,Hull 2546 (SHI),Hull 2546
+MISMATCH,706,89,Hull number,Hull 2594 (SHI),Hull 2594
+MISMATCH,717,175,Hull number,Hull 3296 (HDHHI),Hull 3296
+MISMATCH,709,101,Hull number,Hull 2604 (SHI),Hull 2604
+MISMATCH,685,17,Hull number,Hull 1790A (Hudong),Hull 1790A
+MISMATCH,686,18,Hull number,Hull 1791A (Hudong),Hull 1791A
+MISMATCH,708,91,Hull number,Hull 2597 (SHI),Hull 2597
+MISMATCH,723,228,Hull number,Hull 8170 (HDHHI),Hull 8170
+MISMATCH,758,97,Hull number,Hull 2601 (SHI),Hull 2601
+MISMATCH,750,2,Hull number,Hull H2702 (Jiangnan),Hull H2702
+MISMATCH,749,1,Hull number,Hull H2701 (Jiangnan),Hull H2701
+MISMATCH,909,263,Hull number,Hull H1799A (Hudong),Hull H1799A

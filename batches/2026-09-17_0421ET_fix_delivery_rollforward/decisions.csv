@@ -1,30 +1,30 @@
 id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
 6|Status,fill,6,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-26, yard ZVEZDA no. 45; vesselfinder"
 6|Name,fill,6,,Name,G,False,accept,accept,Konstantin Posiet,placeholder 'Hull 045 (Zvezda)' -> vessel named
-7|Delivery year,fill,7,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
-7|Previous delivery year(s),fill,7,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
-7|Delivery delayed,fill,7,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
-8|Delivery year,fill,8,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
-8|Previous delivery year(s),fill,8,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
-8|Delivery delayed,fill,8,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
-9|Delivery year,fill,9,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
-9|Previous delivery year(s),fill,9,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
-9|Delivery delayed,fill,9,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
-10|Delivery year,fill,10,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
-10|Previous delivery year(s),fill,10,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
-10|Delivery delayed,fill,10,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
-11|Delivery year,fill,11,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
-11|Previous delivery year(s),fill,11,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
-11|Delivery delayed,fill,11,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+7|Delivery year,fill,7,,Delivery year,Y,False,hold,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
+7|Previous delivery year(s),fill,7,,Previous delivery year(s),Y,False,hold,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+7|Delivery delayed,fill,7,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+8|Delivery year,fill,8,,Delivery year,Y,False,hold,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
+8|Previous delivery year(s),fill,8,,Previous delivery year(s),Y,False,hold,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+8|Delivery delayed,fill,8,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+9|Delivery year,fill,9,,Delivery year,Y,False,hold,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-02; IGU 2
+9|Previous delivery year(s),fill,9,,Previous delivery year(s),Y,False,hold,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+9|Delivery delayed,fill,9,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+10|Delivery year,fill,10,,Delivery year,Y,False,hold,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
+10|Previous delivery year(s),fill,10,,Previous delivery year(s),Y,False,hold,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+10|Delivery delayed,fill,10,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+11|Delivery year,fill,11,,Delivery year,Y,False,hold,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
+11|Previous delivery year(s),fill,11,,Previous delivery year(s),Y,False,hold,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+11|Delivery delayed,fill,11,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 12|Delivery year,fill,12,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; secon
 12|Previous delivery year(s),fill,12,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
 12|Delivery delayed,fill,12,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 14|Delivery year,fill,14,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; secon
 14|Previous delivery year(s),fill,14,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
 14|Delivery delayed,fill,14,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
-15|Delivery year,fill,15,,Delivery year,Y,False,hold,hold,2028,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03; IGU 2
-15|Previous delivery year(s),fill,15,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2028) — decide with the Delivery year li
-15|Delivery delayed,fill,15,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2028 — decide with the Delivery year line
+15|Delivery year,fill,15,,Delivery year,Y,False,hold,accept,2028,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2028-03; IGU 2
+15|Previous delivery year(s),fill,15,,Previous delivery year(s),Y,False,hold,accept,2026,former Delivery year 2026 (now proposed 2028) — decide with the Delivery year li
+15|Delivery delayed,fill,15,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2026 -> 2028 — decide with the Delivery year line
 25|Name,fill,25,,Name,G,False,accept,accept,Atlantic Success,placeholder 'Hull 2316 (SHI)' -> vessel named
 43|Status,fill,43,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-08-28, yard HANWHA OCEAN no. 2541; vess"
 43|Delivery year,fill,43,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-08-28 per shipvault
@@ -96,7 +96,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 131|Name,fill,131,,Name,G,False,accept,accept,Diamond Gas Jade,placeholder 'Hull 2664 (SHI)' -> vessel named
 132|Name,fill,132,,Name,G,False,accept,accept,Toho Emerald,placeholder 'Hull 2665 (SHI)' -> vessel named
 144|Delivery year,fill,144,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-04; secon
-144|Name,fill,144,,Name,Y,False,hold,hold,E'saila,placeholder 'Hull 2697 (SHI)' -> vessel named
+144|Name,fill,144,,Name,Y,False,hold,accept,E'saila,placeholder 'Hull 2697 (SHI)' -> vessel named
 144|Previous delivery year(s),fill,144,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
 144|Delivery delayed,fill,144,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 145|Delivery year,fill,145,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-06; secon
@@ -161,8 +161,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 268|Name,fill,268,,Name,G,False,accept,accept,Greenergy Wind,backend 'Greenenergy Wind' differs from registry name
 269|Status,fill,269,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-01, yard HUDONG-ZHONGHUA SHIPYARD GR"
 270|Name,fill,270,,Name,G,False,accept,accept,Greenergy River,backend 'Greenenergy River' differs from registry name
-271|Name,fill,271,,Name,Y,False,hold,hold,Greenergy Sea,backend 'Greenenergy Sea' differs from registry name
-272|Name,fill,272,,Name,Y,False,hold,hold,Greenergy Whale,backend 'Greenenergy Whale' differs from registry name
+271|Name,fill,271,,Name,Y,False,hold,accept,Greenergy Sea,backend 'Greenenergy Sea' differs from registry name
+272|Name,fill,272,,Name,Y,False,hold,accept,Greenergy Whale,backend 'Greenenergy Whale' differs from registry name
 273|Delivery year,fill,273,,Delivery year,G,False,accept,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-03; secon
 273|Previous delivery year(s),fill,273,,Previous delivery year(s),G,False,accept,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
 273|Delivery delayed,fill,273,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
@@ -185,9 +185,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 372|Delivery year,fill,372,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-05-21 per shipvault
 375|Name,fill,375,,Name,G,False,accept,accept,Aleksey Kosygin,backend 'Alexey Kosygin' differs from registry name
 386|Status,fill,386,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-06-02, yard HYUNDAI SAMHO HEAVY INDUSTR"
-515|Delivery year,fill,515,,Delivery year,Y,False,hold,hold,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
-515|Previous delivery year(s),fill,515,,Previous delivery year(s),Y,False,hold,hold,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
-515|Delivery delayed,fill,515,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
+515|Delivery year,fill,515,,Delivery year,Y,False,hold,accept,2027,backend 2026; not delivered as of 2026-09-17; shipvault schedules 2027-01; IGU 2
+515|Previous delivery year(s),fill,515,,Previous delivery year(s),Y,False,hold,accept,2026,former Delivery year 2026 (now proposed 2027) — decide with the Delivery year li
+515|Delivery delayed,fill,515,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2026 -> 2027 — decide with the Delivery year line
 517|Name,fill,517,,Name,G,False,accept,accept,Sea Charity,backend 'Dalian No 1 G175K-7' differs from registry name
 674|Status,fill,674,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-09-30, yard SAMSUNG SHIPBUILDING & HEAV"
 674|Delivery year,fill,674,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-09-30 per shipvault
@@ -201,13 +201,13 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 976|Delivery year,fill,976,,Delivery year,G,False,accept,accept,2025,backend 2026 -> delivered 2025-12-09 per shipvault
 978|Status,fill,978,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-01-09, yard SAMSUNG SHIPBUILDING & HEAV"
 978|Name,fill,978,,Name,G,False,accept,accept,Puteri Perlis,backend 'Puteri Sarawak' differs from registry name
-26|Name,fill,26,,Name,Y,False,hold,hold,Mediterranean Success,placeholder 'Hull 2317 (SHI)' -> vessel named
-27|Name,fill,27,,Name,Y,False,hold,hold,Caribbean Success,placeholder 'Hull 2318 (SHI)' -> vessel named
-74|Name,fill,74,,Name,Y,False,hold,hold,Maran Gas Poliegos,placeholder 'Hull 2582 (Hanwha)' -> vessel named
+26|Name,fill,26,,Name,Y,False,hold,accept,Mediterranean Success,placeholder 'Hull 2317 (SHI)' -> vessel named
+27|Name,fill,27,,Name,Y,False,hold,accept,Caribbean Success,placeholder 'Hull 2318 (SHI)' -> vessel named
+74|Name,fill,74,,Name,Y,False,hold,accept,Maran Gas Poliegos,placeholder 'Hull 2582 (Hanwha)' -> vessel named
 135|Name,fill,135,,Name,G,False,accept,accept,Barthy Vanguard,placeholder 'Hull 2687 (SHI)' -> vessel named
-147|Name,fill,147,,Name,Y,False,hold,hold,Al Seej,placeholder 'Hull 2700 (SHI)' -> vessel named
-201|Name,fill,201,,Name,Y,False,hold,hold,Clean Astraeus,placeholder 'Hull 3452 (HDHHI)' -> vessel named
-202|Name,fill,202,,Name,Y,False,hold,hold,Clean Azeus,placeholder 'Hull 3453 (HDHHI)' -> vessel named
+147|Name,fill,147,,Name,Y,False,hold,accept,Al Seej,placeholder 'Hull 2700 (SHI)' -> vessel named
+201|Name,fill,201,,Name,Y,False,hold,accept,Clean Astraeus,placeholder 'Hull 3452 (HDHHI)' -> vessel named
+202|Name,fill,202,,Name,Y,False,hold,accept,Clean Azeus,placeholder 'Hull 3453 (HDHHI)' -> vessel named
 207|Name,fill,207,,Name,G,False,accept,accept,Al Ghuwair,placeholder 'Hull 3476 (HDHHI)' -> vessel named; marinetraffic.org independently
 208|Name,fill,208,,Name,G,False,accept,accept,Wadi Sultana,placeholder 'Hull 3477 (HDHHI)' -> vessel named; marinetraffic.org independently
 209|Name,fill,209,,Name,G,False,accept,accept,Lesha,placeholder 'Hull 3478 (HDHHI)' -> vessel named; marinetraffic.org independently
@@ -223,23 +223,23 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 219|Name,fill,219,,Name,G,False,accept,accept,Eshairej,placeholder 'Hull 3488 (HDHHI)' -> vessel named; marinetraffic.org independently
 220|Name,fill,220,,Name,G,False,accept,accept,Mneefa,placeholder 'Hull 3489 (HDHHI)' -> vessel named; marinetraffic.org independently
 221|Name,fill,221,,Name,G,False,accept,accept,Ezhara,placeholder 'Hull 3490 (HDHHI)' -> vessel named; marinetraffic.org independently
-239|Name,fill,239,,Name,Y,False,hold,hold,Diamond Gas Nexus,placeholder 'Hull 8208 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
-240|Name,fill,240,,Name,Y,False,hold,hold,Grace Himawari,placeholder 'Hull 8209 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
-242|Name,fill,242,,Name,Y,False,hold,hold,Grace Gerbera,placeholder 'Hull 8238 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
-243|Name,fill,243,,Name,Y,False,hold,hold,Ferdy Vanguard,placeholder 'Hull 8239 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+239|Name,fill,239,,Name,Y,False,hold,accept,Diamond Gas Nexus,placeholder 'Hull 8208 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+240|Name,fill,240,,Name,Y,False,hold,accept,Grace Himawari,placeholder 'Hull 8209 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+242|Name,fill,242,,Name,Y,False,hold,accept,Grace Gerbera,placeholder 'Hull 8238 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
+243|Name,fill,243,,Name,Y,False,hold,accept,Ferdy Vanguard,placeholder 'Hull 8239 (HSHI)' -> vessel named; marinetraffic.org lists IMO 1023
 258|Name,fill,258,,Name,G,False,accept,accept,Al Sabsab,placeholder 'Hull H1794A' -> vessel named; marinetraffic.org independently lists
-259|Name,fill,259,,Name,Y,False,hold,hold,Al Fanar,placeholder 'Hull H1795A' -> vessel named; marinetraffic.org lists IMO 9986582 a
+259|Name,fill,259,,Name,Y,False,hold,accept,Al Fanar,placeholder 'Hull H1795A' -> vessel named; marinetraffic.org lists IMO 9986582 a
 487|Status,fill,487,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-07-06, yard HYUNDAI HEAVY INDUSTRIES CO"
 487|Delivery year,fill,487,,Delivery year,G,False,accept,accept,2026,backend 2027 -> delivered 2026-07-06 per shipvault; marinetraffic.org shows CLEA
 489|Status,fill,489,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2026-04-30, yard HYUNDAI HEAVY INDUSTRIES CO"
 489|Delivery year,fill,489,,Delivery year,G,False,accept,accept,2026,backend 2027 -> delivered 2026-04-30 per shipvault; marinetraffic.org shows CLEA
-507|Name,fill,507,,Name,Y,False,hold,hold,Prime Creativity,placeholder 'Dalian No 1 G175K-10' -> vessel named; marinetraffic.org lists IMO 
+507|Name,fill,507,,Name,Y,False,hold,accept,Prime Creativity,placeholder 'Dalian No 1 G175K-10' -> vessel named; marinetraffic.org lists IMO 
 510|Name,fill,510,,Name,G,False,accept,accept,Alliance Venture,backend 'Dalian No 1 G175K-13' differs from registry name; marinetraffic.org ind
-519|Name,fill,519,,Name,Y,False,hold,hold,Prime Unity,placeholder 'Dalian No 1 G175K-9' -> vessel named; marinetraffic.org lists IMO 1
+519|Name,fill,519,,Name,Y,False,hold,accept,Prime Unity,placeholder 'Dalian No 1 G175K-9' -> vessel named; marinetraffic.org lists IMO 1
 541|Status,fill,541,,Status,G,False,accept,accept,active,"shipvault: status ACTIVE, delivered 2025-10-31, yard HYUNDAI SAMHO HEAVY INDUSTR"
 541|Delivery year,fill,541,,Delivery year,G,False,accept,accept,2025,backend 2027 -> delivered 2025-10-31 per shipvault; marinetraffic.org shows ELIS
 541|Name,fill,541,,Name,G,False,accept,accept,Elisa Halcyon,backend 'Elisa Halycon' differs from registry name; marinetraffic.org independen
-639|Name,fill,639,,Name,Y,False,hold,hold,Solidarity,placeholder 'Gdansk FSRU' -> vessel named; marinetraffic.org lists IMO 1056410 a
+639|Name,fill,639,,Name,Y,False,hold,accept,Solidarity,placeholder 'Gdansk FSRU' -> vessel named; marinetraffic.org lists IMO 1056410 a
 80|Name,fill,80,,Name,G,False,accept,accept,Al Nasraniya,placeholder 'Hull 2585 (Hanwha)' -> vessel named; marinetraffic.org independentl
 81|Name,fill,81,,Name,G,False,accept,accept,Al Yousifiya,placeholder 'Hull 2586 (Hanwha)' -> vessel named; marinetraffic.org independentl
 82|Name,fill,82,,Name,G,False,accept,accept,Athba,placeholder 'Hull 2587 (Hanwha)' -> vessel named; marinetraffic.org independentl
@@ -255,9 +255,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 142|Name,fill,142,,Name,G,False,accept,accept,Al Wasmi,placeholder 'Hull 2696 (Hanwha)' -> vessel named; marinetraffic.org independentl
 143|Name,fill,143,,Name,G,False,accept,accept,Wadi Al Askar,placeholder 'Hull 2696 (SHI)' -> vessel named; marinetraffic.org independently l
 146|Name,fill,146,,Name,G,False,accept,accept,Al Shaheen,placeholder 'Hull 2699 (SHI)' -> vessel named; marinetraffic.org independently l
-150|Name,fill,150,,Name,Y,False,hold,hold,Libsayer,placeholder 'Hull 2702 (SHI)' -> vessel named; marinetraffic.org lists IMO 10708
+150|Name,fill,150,,Name,Y,False,hold,accept,Libsayer,placeholder 'Hull 2702 (SHI)' -> vessel named; marinetraffic.org lists IMO 10708
 154|Name,fill,154,,Name,G,False,accept,accept,Al Nouf,placeholder 'Hull 2706 (SHI)' -> vessel named; marinetraffic.org independently l
 222|Name,fill,222,,Name,G,False,accept,accept,Izghawa,placeholder 'Hull 3491 (HDHHI)' -> vessel named; marinetraffic.org independently
 223|Name,fill,223,,Name,G,False,accept,accept,Al Wa'ab,placeholder 'Hull 3492 (HDHHI)' -> vessel named; marinetraffic.org independently
-508|Name,fill,508,,Name,Y,False,hold,hold,Prime Glory,placeholder 'Dalian No 1 G175K-11' -> vessel named; marinetraffic.org lists IMO 
+508|Name,fill,508,,Name,Y,False,hold,accept,Prime Glory,placeholder 'Dalian No 1 G175K-11' -> vessel named; marinetraffic.org lists IMO 
 509|Name,fill,509,,Name,G,False,accept,accept,Friendship Venture,backend 'Dalian No 1 G175K-12' differs from registry name; marinetraffic.org ind

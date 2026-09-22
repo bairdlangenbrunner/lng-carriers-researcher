@@ -29,6 +29,18 @@ def _norm(s):
     return " ".join((s or "").split()).strip()
 
 
+def _same(a, b):
+    """Equal after whitespace normalisation, or as numbers — the sheet renders a Price
+    of 165000000 as `165000000.00` (same rule as review_data._same)."""
+    a, b = _norm(a), _norm(b)
+    if a == b:
+        return True
+    try:
+        return float(a.replace(",", "")) == float(b.replace(",", ""))
+    except ValueError:
+        return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--batch", required=True)
@@ -63,7 +75,7 @@ def main():
         got = row[idx] if row is not None and idx is not None and len(row) > idx else None
         if got is None or not _norm(got):
             missing.append((rid, col, want, got or ""))
-        elif _norm(got) == _norm(want):
+        elif _same(got, want):
             landed.append((rid, col))
         else:
             mismatch.append((rid, col, want, got))
