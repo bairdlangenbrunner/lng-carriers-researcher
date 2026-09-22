@@ -201,9 +201,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "1082",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "1083",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1083",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -234,6 +246,12 @@
       "row_id": "1046",
       "column": "Shipowner country/area",
       "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1046",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
       "confidence": "G"
     },
     {
@@ -1203,9 +1221,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "964",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+      "confidence": "G"
+    },
+    {
       "row_id": "965",
       "column": "Shipowner country/area",
       "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "965",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
       "confidence": "G"
     },
     {
@@ -1239,6 +1269,12 @@
       "confidence": "G"
     },
     {
+      "row_id": "395",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "418",
       "column": "Shipowner country/area",
       "value": "Greece",
@@ -1254,6 +1290,12 @@
       "row_id": "463",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "463",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -1395,9 +1437,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "322",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "393",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "393",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -1407,9 +1461,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "394",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "406",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "406",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -1419,9 +1485,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "409",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "460",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "460",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -1431,9 +1509,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "461",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "462",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "462",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -1599,6 +1689,12 @@
       "confidence": "G"
     },
     {
+      "row_id": "966",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+      "confidence": "G"
+    },
+    {
       "row_id": "985",
       "column": "Shipowner country/area",
       "value": "Norway",
@@ -1677,6 +1773,12 @@
       "confidence": "G"
     },
     {
+      "row_id": "967",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+      "confidence": "G"
+    },
+    {
       "row_id": "992",
       "column": "Shipowner country/area",
       "value": "Norway",
@@ -1707,9 +1809,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "382",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "407",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "407",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -1719,9 +1833,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "464",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "465",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "465",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -1863,15 +1989,33 @@
       "confidence": "G"
     },
     {
+      "row_id": "70",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "77",
       "column": "Shipowner country/area",
       "value": "Denmark",
       "confidence": "G"
     },
     {
+      "row_id": "77",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "79",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "79",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -1965,6 +2109,12 @@
       "confidence": "G"
     },
     {
+      "row_id": "179",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "225",
       "column": "Shipowner country/area",
       "value": "Norway",
@@ -1983,9 +2133,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "229",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+      "confidence": "G"
+    },
+    {
       "row_id": "325",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "325",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -1995,15 +2157,33 @@
       "confidence": "G"
     },
     {
+      "row_id": "385",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "410",
       "column": "Shipowner country/area",
       "value": "Greece",
       "confidence": "G"
     },
     {
+      "row_id": "410",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "466",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "466",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -2073,9 +2253,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "93",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "95",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "95",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -2085,15 +2277,33 @@
       "confidence": "G"
     },
     {
+      "row_id": "105",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "121",
       "column": "Shipowner country/area",
       "value": "Denmark",
       "confidence": "G"
     },
     {
+      "row_id": "121",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "180",
       "column": "Shipowner country/area",
       "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "180",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
       "confidence": "G"
     },
     {
@@ -2391,6 +2601,12 @@
       "confidence": "G"
     },
     {
+      "row_id": "181",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+      "confidence": "G"
+    },
+    {
       "row_id": "184",
       "column": "Shipowner country/area",
       "value": "Norway",
@@ -2565,9 +2781,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "232",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+      "confidence": "G"
+    },
+    {
       "row_id": "233",
       "column": "Shipowner country/area",
       "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "233",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://en.wikipedia.org/wiki/SK_Shipping, https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
       "confidence": "G"
     },
     {
@@ -2613,9 +2841,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "251",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "252",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "252",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -2697,9 +2937,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "324",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "373",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "373",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -2721,9 +2973,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "384",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "386",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "386",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -2865,9 +3129,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "203",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/",
+      "confidence": "G"
+    },
+    {
       "row_id": "204",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "204",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/",
       "confidence": "G"
     },
     {
@@ -2925,9 +3201,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "253",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "254",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "254",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -2937,15 +3225,33 @@
       "confidence": "G"
     },
     {
+      "row_id": "255",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "256",
       "column": "Shipowner country/area",
       "value": "Denmark",
       "confidence": "G"
     },
     {
+      "row_id": "256",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "387",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "387",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -3039,9 +3345,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "205",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/",
+      "confidence": "G"
+    },
+    {
       "row_id": "206",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "206",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa, https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/, https://splash247.com/evalend-poised-to-enter-lng-trades/",
       "confidence": "G"
     },
     {
@@ -3051,9 +3369,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "244",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "245",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -3063,9 +3393,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "246",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "247",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -3171,15 +3513,33 @@
       "confidence": "G"
     },
     {
+      "row_id": "1166",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "1170",
       "column": "Shipowner country/area",
       "value": "Denmark",
       "confidence": "G"
     },
     {
+      "row_id": "1170",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+      "confidence": "G"
+    },
+    {
       "row_id": "1171",
       "column": "Shipowner country/area",
       "value": "Denmark",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1171",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
       "confidence": "G"
     },
     {
@@ -3282,6 +3642,12 @@
       "row_id": "1193",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1193",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -3435,9 +3801,21 @@
       "confidence": "G"
     },
     {
+      "row_id": "1194",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+      "confidence": "G"
+    },
+    {
       "row_id": "1195",
       "column": "Shipowner country/area",
       "value": "Greece",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1195",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management, https://stockanalysis.com/stocks/ccec/company/, https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
       "confidence": "G"
     },
     {
@@ -4833,6 +5211,30 @@
       "confidence": "G"
     },
     {
+      "row_id": "201",
+      "column": "Contract date",
+      "value": "17-Jan-2023",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "201",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "201",
+      "column": "Price",
+      "value": "261000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "201",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "509",
       "column": "Operator/charterer",
       "value": "China Gas Hongda Energy Trading",
@@ -5637,6 +6039,12 @@
       "confidence": "G"
     },
     {
+      "row_id": "201",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
       "row_id": "509",
       "column": "Price currency",
       "value": "USD",
@@ -6204,9 +6612,9 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 1003,
-    "accepted": 589,
-    "hold": 414,
+    "accepted": 592,
+    "hold": 411,
     "reject": 0,
-    "conflicts": 145
+    "conflicts": 82
   }
 }

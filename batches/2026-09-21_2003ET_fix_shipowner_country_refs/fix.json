@@ -1,0 +1,1353 @@
+{
+  "batch_label": "fix — shipowner country refs off shipvault",
+  "reason": "shipvault.com pages/unit records name the owner and the vessel's flag but never the owner's country, so they do not corroborate a Shipowner country/area cell (RF §3.8c). Each cell is re-sourced to >=2 pages that print the country; one value correction is flagged Yellow.",
+  "corrections": [
+    {
+      "row_id": "1077",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1078",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "971",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "968",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "974",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "726",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "979",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "727",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "969",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'Malaysia Int Shpg Co'"
+        }
+      ]
+    },
+    {
+      "row_id": "975",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "970",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "980",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "973",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1014",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1015",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1016",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1017",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1018",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1019",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1022",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1023",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1020",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1021",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1044",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "South Korea",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://en.wikipedia.org/wiki/SK_Shipping",
+              "soft": false
+            },
+            {
+              "url": "https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 2 sources that name South Korea for 'SK Shipping'"
+        }
+      ]
+    },
+    {
+      "row_id": "1045",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "South Korea",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://en.wikipedia.org/wiki/SK_Shipping",
+              "soft": false
+            },
+            {
+              "url": "https://splash247.com/sk-shipping-takes-aim-at-asia-lng-top-spot-in-h-line-tanker-swap/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 2 sources that name South Korea for 'SK Shipping'"
+        }
+      ]
+    },
+    {
+      "row_id": "1029",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1030",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "63",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "64",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "137",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "144",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "72",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Japan",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://en.wikipedia.org/wiki/Mitsui_O.S.K._Lines",
+              "soft": false
+            },
+            {
+              "url": "https://magicport.ai/owners-managers/japan/mitsui-osk-lines-ltd",
+              "soft": false
+            },
+            {
+              "url": "https://stockanalysis.com/quote/tyo/9104/company/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Japan for 'Mitsui OSK Lines'"
+        }
+      ]
+    },
+    {
+      "row_id": "74",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/maran-gas-maritime-inc",
+              "soft": false
+            },
+            {
+              "url": "https://lngprime.com/europe/greeces-maran-gas-welcomes-lng-carrier-john-a-angelicoussis-to-its-fleet/47566/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 2 sources that name Greece for 'Maran Gas Maritime'"
+        }
+      ]
+    },
+    {
+      "row_id": "78",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Japan",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://en.wikipedia.org/wiki/Mitsui_O.S.K._Lines",
+              "soft": false
+            },
+            {
+              "url": "https://magicport.ai/owners-managers/japan/mitsui-osk-lines-ltd",
+              "soft": false
+            },
+            {
+              "url": "https://stockanalysis.com/quote/tyo/9104/company/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Japan for 'Mitsui OSK Lines'"
+        }
+      ]
+    },
+    {
+      "row_id": "102",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "South Korea",
+          "confidence": "Y",
+          "refs": [
+            {
+              "url": "https://www.hanwha.com/companies/hanwha-ocean.do",
+              "soft": false
+            },
+            {
+              "url": "https://www.lr.org/en/shipyards/korea/hanwha-ocean-co-ltd/",
+              "soft": false
+            },
+            {
+              "url": "https://www.cnbc.com/2025/10/14/china-sanctions-five-us-subsidiaries-of-south-koreas-hanwha-ocean-over-their-ties-with-washington.html",
+              "soft": false
+            }
+          ],
+          "note": "country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the South Korean shipbuilder (ex-DSME, Geoje), distinct from the US arm Hanwha Shipping LLC; the prior value came with a shipvault.com [ref] that states neither. HOLD: if the intended owner of this hull is Hanwha Shipping LLC, fix the Shipowner cell instead and leave the country as United States."
+        }
+      ]
+    },
+    {
+      "row_id": "103",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "South Korea",
+          "confidence": "Y",
+          "refs": [
+            {
+              "url": "https://www.hanwha.com/companies/hanwha-ocean.do",
+              "soft": false
+            },
+            {
+              "url": "https://www.lr.org/en/shipyards/korea/hanwha-ocean-co-ltd/",
+              "soft": false
+            },
+            {
+              "url": "https://www.cnbc.com/2025/10/14/china-sanctions-five-us-subsidiaries-of-south-koreas-hanwha-ocean-over-their-ties-with-washington.html",
+              "soft": false
+            }
+          ],
+          "note": "country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the South Korean shipbuilder (ex-DSME, Geoje), distinct from the US arm Hanwha Shipping LLC; the prior value came with a shipvault.com [ref] that states neither. HOLD: if the intended owner of this hull is Hanwha Shipping LLC, fix the Shipowner cell instead and leave the country as United States."
+        }
+      ]
+    },
+    {
+      "row_id": "147",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "156",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "157",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "163",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Denmark",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/denmark/celsius-shipping-aps",
+              "soft": false
+            },
+            {
+              "url": "https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/",
+              "soft": false
+            },
+            {
+              "url": "https://lngprime.com/asia/celsius-takes-delivery-of-new-lng-tanker/127252/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Denmark for 'Celsius Tankers'"
+        }
+      ]
+    },
+    {
+      "row_id": "408",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/capital-gas-ship-management",
+              "soft": false
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/ccec/company/",
+              "soft": false
+            },
+            {
+              "url": "https://www.rivieramm.com/news-content-hub/capital-gas-enhances-fleet-reliability-amid-greek-lng-expansion-82819",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Greece for 'Capital Clean ECC'"
+        }
+      ]
+    },
+    {
+      "row_id": "92",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "United Arab Emirates",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/united-arab-emirates/adnoc-logistics-services",
+              "soft": false
+            },
+            {
+              "url": "https://stockanalysis.com/quote/adx/ADNOCLS/company/",
+              "soft": false
+            },
+            {
+              "url": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name United Arab Emirates for 'ADNOC L&S'"
+        }
+      ]
+    },
+    {
+      "row_id": "94",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "United Arab Emirates",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/united-arab-emirates/adnoc-logistics-services",
+              "soft": false
+            },
+            {
+              "url": "https://stockanalysis.com/quote/adx/ADNOCLS/company/",
+              "soft": false
+            },
+            {
+              "url": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name United Arab Emirates for 'ADNOC L&S'"
+        }
+      ]
+    },
+    {
+      "row_id": "96",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "United Arab Emirates",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/united-arab-emirates/adnoc-logistics-services",
+              "soft": false
+            },
+            {
+              "url": "https://stockanalysis.com/quote/adx/ADNOCLS/company/",
+              "soft": false
+            },
+            {
+              "url": "https://shipandbunker.com/news/world/249785-adnoc-ls-takes-delivery-of-lng-carrier-from-china",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name United Arab Emirates for 'ADNOC L&S'"
+        }
+      ]
+    },
+    {
+      "row_id": "178",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa",
+              "soft": false
+            },
+            {
+              "url": "https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/",
+              "soft": false
+            },
+            {
+              "url": "https://splash247.com/evalend-poised-to-enter-lng-trades/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Greece for 'Evalend Shipping'"
+        }
+      ]
+    },
+    {
+      "row_id": "224",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/evalend-shipping-co-sa",
+              "soft": false
+            },
+            {
+              "url": "https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/",
+              "soft": false
+            },
+            {
+              "url": "https://splash247.com/evalend-poised-to-enter-lng-trades/",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Greece for 'Evalend Shipping'"
+        }
+      ]
+    },
+    {
+      "row_id": "314",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/capital-maritime-trading-corp",
+              "soft": false
+            },
+            {
+              "url": "https://www.capitalship.gr/content/press-releases/20-capital-maritime-trading-corp-chief-executive-officer-mr-evangelos-marinakis-voted-ldquo-greek-shipping-newsmaker-of-the-year-rdquo-at-the-2014-lloyd-rsquo-s-list-greek-shipping-awards",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 2 sources that name Greece for 'Capital Maritime & Trading Corp'"
+        }
+      ]
+    },
+    {
+      "row_id": "315",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/capital-maritime-trading-corp",
+              "soft": false
+            },
+            {
+              "url": "https://www.capitalship.gr/content/press-releases/20-capital-maritime-trading-corp-chief-executive-officer-mr-evangelos-marinakis-voted-ldquo-greek-shipping-newsmaker-of-the-year-rdquo-at-the-2014-lloyd-rsquo-s-list-greek-shipping-awards",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 2 sources that name Greece for 'Capital Maritime & Trading Corp'"
+        }
+      ]
+    },
+    {
+      "row_id": "316",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/capital-maritime-trading-corp",
+              "soft": false
+            },
+            {
+              "url": "https://www.capitalship.gr/content/press-releases/20-capital-maritime-trading-corp-chief-executive-officer-mr-evangelos-marinakis-voted-ldquo-greek-shipping-newsmaker-of-the-year-rdquo-at-the-2014-lloyd-rsquo-s-list-greek-shipping-awards",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 2 sources that name Greece for 'Capital Maritime & Trading Corp'"
+        }
+      ]
+    },
+    {
+      "row_id": "317",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Greece",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://magicport.ai/owners-managers/greece/capital-maritime-trading-corp",
+              "soft": false
+            },
+            {
+              "url": "https://www.capitalship.gr/content/press-releases/20-capital-maritime-trading-corp-chief-executive-officer-mr-evangelos-marinakis-voted-ldquo-greek-shipping-newsmaker-of-the-year-rdquo-at-the-2014-lloyd-rsquo-s-list-greek-shipping-awards",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 2 sources that name Greece for 'Capital Maritime & Trading Corp'"
+        }
+      ]
+    },
+    {
+      "row_id": "1196",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1197",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1199",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1198",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    },
+    {
+      "row_id": "1200",
+      "cells": [
+        {
+          "field": "Shipowner country/area",
+          "new_value": "Malaysia",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.misc.com.my/contact-us/",
+              "soft": false
+            },
+            {
+              "url": "https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf",
+              "soft": false
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/MISC_Berhad",
+              "soft": false
+            }
+          ],
+          "note": "replaces a shipvault.com [ref] that does not state the country (the page/unit record prints owner + flag only) with 3 sources that name Malaysia for 'MISC'"
+        }
+      ]
+    }
+  ]
+}
