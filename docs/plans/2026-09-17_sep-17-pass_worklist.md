@@ -114,9 +114,12 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 - The research is done. Twelve batches are merged to main (PRs #11–#25); every one that gets
   applied (all but 7) has `digest.md`, `decisions.csv` and offset-proof apply artifacts.
 - Combined workbook (name = build date + ET time; newest file in the dir is current):
-  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-17_1810ET.xlsx`
-  — 23 sheets, 2,125 proposals (1,596 accept / 528 hold / 1 reject), keyed by live sheet row; the
-  `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).
+  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-21_2225ET.xlsx`
+  — rebuilt 2026-09-21 22:25 ET from the reconciled state: 26 sheets, all fourteen proposal batches,
+  2,320 proposals (1,797 landed / 78 open accept / 441 hold / 4 reject), each line with its live
+  decision, `in backend` and `status`; `open_lines` = the 519 lines not yet in the backend;
+  `remaining_changes_backend_shape` = only what is still to change, over the backend rows. Keyed by
+  live sheet row; the `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).
 - Report shared with Rob is at version 4 and **predates batches 7–12** (no IGU section, no
   scrapped rows, no former names; not republished): https://claude.ai/artifact/C1eEJt5CKeqauvfGGg8Ph3
 - A seventh batch was added in the afternoon: the **IGU World LNG Report 2026

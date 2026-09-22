@@ -1,4 +1,9 @@
-"""Combine the six sep-17-pass (2026-09-17) batches into one review workbook.
+"""Combine the sep-17-pass batches (2026-09-17 onward, fourteen so far) into one review workbook.
+
+Every line carries its current decision (each batch's decisions.csv, as decided in the review app)
+and whether the pulled backend already holds it (review_app.review_data.backend_state — the same
+test the app's "in the backend" flag uses), so the workbook is a snapshot of where the pass stands:
+landed / open accept / hold / reject.
 
 Read-only over the batch dirs and work/backend.csv; writes
 lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx + report_data.json next to this
@@ -47,6 +52,12 @@ B10 = "2026-09-17_1737ET_fix_other_names_former"
 # B11 / B12: Baird's evening rulings - `qc-max` is a Vessel type value; Price is always full USD
 B11 = "2026-09-17_1809ET_fix_qcmax_vessel_type"
 B12 = "2026-09-17_1810ET_fix_price_full_usd"
+# B13: IGU `Name (hull)` entries -> Hull number (RF 4.17). B14: the review app's hand-typed suggestions
+# whose refs the push could not gate. B15: Shipowner country/area refs that cited shipvault (never a
+# country ref) -> the owner's own documents
+B13 = "2026-09-18_2005ET_fix_igu2026_hulls"
+B14 = "2026-09-21_1740ET_fix_review_suggestions"
+B15 = "2026-09-21_2003ET_fix_shipowner_country_refs"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
@@ -77,6 +88,14 @@ BATCH_INFO = [
     (12, B12, "Price in full USD", "lng_carrier_fix.xlsx", "fix",
      "the 29 rows with a Price in millions + currency $m -> full US dollars + USD (unit conversion only; the "
      "existing Price [ref] is kept)"),
+    (13, B13, "IGU hull numbers", "lng_carrier_fix.xlsx", "fix",
+     "IGU 2026 `Name (hull)` entries -> a blank Hull number filled as `Hull NNNN (Tag)` (IGU PDF ref) or an untagged "
+     "hull restyled with its yard tag (preserve_ref, existing ref kept); RF 4.17"),
+    (14, B14, "review-app suggestions (hand-built)", "lng_carrier_fix.xlsx", "fix",
+     "a value Baird typed into the review app whose refs the push could not gate, rebuilt as a fix batch"),
+    (15, B15, "shipowner country refs off shipvault", "lng_carrier_fix.xlsx", "fix",
+     "Shipowner country/area [ref] cells that cited a shipvault page (it never states the country) -> the owner's "
+     "own site / annual report from data/shipowner_facts.csv; the values were already right and are unchanged"),
 ]
 
 FONT = Font(name="Calibri", size=10)
@@ -141,17 +160,36 @@ def qa_sections(wb_path):
     return out
 
 
+# ---- what the backend already holds (the review app's own test) -------------
+sys.path.insert(0, str(ROOT / "review_app"))
+import review_data as _review_data  # noqa: E402
+_review = _review_data.build([BATCHES / b for _o, b, *_ in BATCH_INFO], info_path=HERE / "review_batches.json")
+BACKEND_PULLED = _review["backend_pulled"]
+STATE = {}   # "<batch dir>::<decision id>" -> in_backend | value_in_backend | ""
+for _k, _p in _review["proposals"].items():
+    _fl = _p.get("flags") or []
+    STATE[_k] = "in_backend" if "in_backend" in _fl else ("value_in_backend" if "value_in_backend" in _fl else "")
+APPLIED = {k: bool(v.get("applied")) for k, v in load_json(HERE / "review_batches.json").items()}
+IN_BACKEND = {"in_backend": "yes", "value_in_backend": "value only", "": "no"}
+
+
+def line_status(decision, state):
+    if decision == "accept":
+        return "landed" if state == "in_backend" else "open accept"
+    return decision
+
+
 # ---- unified long table -----------------------------------------------------
 proposals = []   # dict rows
 PROP_COLS = ["apply order", "batch", "kind", "live sheet row", "row_id", "cluster",
              "vessel name (backend)", "IMO", "status (backend)", "shipbuilder", "shipowner",
              "column", "current backend value", "proposed value", "source URL(s)",
-             "confidence", "derivable", "decision", "gate verdict", "note"]
+             "confidence", "derivable", "decision", "in backend", "status", "gate verdict", "note"]
 
 for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
     qa = qa_sections(BATCHES / bdir / wbname)
     urls, verdicts, prev = defaultdict(list), defaultdict(list), {}
-    if bdir in (B1, B2, B8, B9, B10, B11, B12):
+    if bdir in (B1, B2, B8, B9, B10, B11, B12, B13, B14, B15):
         for q in next(iter(qa.values())):
             k = (str(q["row_id"]), q["field"])
             if q.get("url"):
@@ -191,10 +229,12 @@ for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
             k = (rid, col[:-6] if col.endswith(" [ref]") else col)
             src = d["proposed_value"] if d["kind"] == "ref" else "\n".join(urls.get((rid, col), []) or urls.get(k, []))
             verdict = "\n".join(dict.fromkeys(verdicts.get((rid, col), [])))
+        state = STATE.get(f"{bdir}::{d['id']}", "")
         proposals.append(dict(zip(PROP_COLS, [
             order, label, d["kind"], context[0], rid, d["cluster_id"], context[1], context[2],
             context[3], context[4], context[5], col_label, cur, val, src, d["confidence"],
-            d["derivable"], d["decision"], verdict, d["note"]])))
+            d["derivable"], d["decision"], IN_BACKEND[state], line_status(d["decision"], state), verdict,
+            d["note"]])))
 
 # ---- workbook ---------------------------------------------------------------
 wb = openpyxl.Workbook()
@@ -280,14 +320,15 @@ def copy_wide(src_path, src_sheet, title, keep=None, add_live_row_from=None):
 W = {"apply order": 7, "batch": 24, "kind": 9, "live sheet row": 9, "row_id": 8, "cluster": 9,
      "vessel name (backend)": 26, "IMO": 10, "status (backend)": 11, "shipbuilder": 24,
      "shipowner": 22, "column": 22, "current backend value": 22, "proposed value": 28,
-     "source URL(s)": 45, "confidence": 10, "derivable": 9, "decision": 9, "gate verdict": 24,
-     "note": 70}
+     "source URL(s)": 45, "confidence": 10, "derivable": 9, "decision": 9, "in backend": 10, "status": 12,
+     "gate verdict": 24, "note": 70}
 table_sheet("all_proposals", PROP_COLS, proposals, W, wrap_cols=("note",),
             conf_col="confidence", fill_col="proposed value", link_col="source URL(s)")
 NP = len(proposals) + 1
 
-# all changes, backend-shaped: every proposal from all the proposal batches (accept AND hold) laid
-# over the backend row it edits, in apply order, using apply_batch's own item model. Columns
+# remaining changes, backend-shaped: every proposal from all the proposal batches (accept AND hold) laid
+# over the backend row it edits, in apply order, using apply_batch's own item model; a cell the
+# backend already holds (landed) is rendered as context, so the sheet shows what is still to change. Columns
 # A:AT are the backend's columns in the backend's order; helper columns sit to the right so
 # a row's A:AT can be pasted straight over the matching backend row.
 be_header, be_rows, be_colmap = _load_backend(str(ROOT / "work" / "backend.csv"))
@@ -304,7 +345,7 @@ for order, bdir, label, *_ in BATCH_INFO:
         if decision == "reject":
             continue
         meta = {"batch": label, "decision": decision, "confidence": it["confidence"],
-                "note": it["note"]}
+                "note": it["note"], "landed": STATE.get(f"{bdir}::{it['id']}") == "in_backend"}
         if it["kind"] == "new_row":
             full, _rd = _discovery_full_row(it, be_header, yard_map)
             new_full.append((it["cluster_id"], full[:len(be_header)], meta))
@@ -333,9 +374,13 @@ for order, bdir, label, *_ in BATCH_INFO:
             put(it["ref_column"], it["ref_value"] if it.get("replace_ref")
                 else _join_refs(row[HIDX[it["ref_column"]]], it["ref_value"].split(", ")))
 
-# cross-check: every cell the batches' own apply.json accepted must be in the merged rows
-for _o, bdir, *_ in BATCH_INFO:
+# cross-check: every cell the batches' own apply.json accepted must be in the merged rows — unless a
+# later batch accepted the same cell (the "later apply order wins" note above; e.g. batch 8's IGU PDF
+# Name [ref] on rows 271/272 over batch 1's shipvault refs, which are what the backend holds)
+for _o, bdir, label, *_ in BATCH_INFO:
     for c in load_json(BATCHES / bdir / "apply.json")["accepted_cells"]:
+        if cell_meta.get((c["row_id"], c["column"]), {}).get("batch") != label:
+            continue
         got = merged[c["row_id"]][HIDX[c["column"]]]
         assert got == c["value"], (bdir, c["row_id"], c["column"], got, c["value"])
 
@@ -350,7 +395,7 @@ for p in load_json(BATCHES / B3 / "proposed_review.json")["programmes"]:
 
 HELPERS = ["live sheet row", "row action", "batches", "cells changed", "cells on hold",
            "columns on hold"]
-ws = wb.create_sheet("all_changes_backend_shape")
+ws = wb.create_sheet("remaining_changes_backend_shape")
 for j, h in enumerate(be_header + HELPERS, 1):
     c = ws.cell(1, j, h)
     c.font, c.alignment = FONT_H, WRAP
@@ -361,6 +406,8 @@ def shape_cell(i, j, value, meta, struck=False):
     c = ws.cell(i, j, num(value))
     c.alignment = TOP
     c.font = FONT_DEL if struck else FONT
+    if meta and meta.get("landed"):
+        meta = None   # already the backend's value: context, not a change
     if meta:
         ref_touched = be_header[j - 1].endswith("[ref]") and meta.get("old")
         c.fill = FILL_PEACH if ref_touched else CONF_FILL.get(meta["confidence"], CONF_FILL["R"])
@@ -376,11 +423,15 @@ def shape_cell(i, j, value, meta, struck=False):
         c.fill = FILL_GRAY
 
 
-n_shape = {"rows": 0, "new": len(new_full), "cells": len(cell_meta), "hold": 0, "delete": len(row_action)}
+new_full = [x for x in new_full if not x[2].get("landed")]
+n_shape = {"rows": 0, "new": len(new_full), "cells": sum(1 for m in cell_meta.values() if not m.get("landed")),
+           "hold": 0, "delete": len(row_action), "landed": sum(1 for m in cell_meta.values() if m.get("landed"))}
 i = 1
 for rid in sorted(merged, key=lambda k: BACKEND[k]["live_row"]):
+    metas = {col: m for (r_, col), m in cell_meta.items() if r_ == rid and not m.get("landed")}
+    if not metas and rid not in row_action:
+        continue   # everything this row was proposed is in the backend already
     i += 1
-    metas = {col: m for (r_, col), m in cell_meta.items() if r_ == rid}
     for j, h in enumerate(be_header, 1):
         shape_cell(i, j, merged[rid][j - 1], metas.get(h), struck=rid in row_action)
     held = [h for h in be_header if h in metas and metas[h]["decision"] != "accept"]
@@ -409,45 +460,21 @@ for j, h in enumerate(be_header + HELPERS, 1):
 ws.freeze_panes = "E2"
 ws.auto_filter.ref = f"A1:{get_column_letter(len(be_header) + len(HELPERS))}{i}"
 
-# open decisions (from docs/plans/2026-09-17_sep-17-pass_summary.md)
-DECISIONS = [
-    ("Proposed bucket", "1204-1216; 1183; 1184-1200",
-     "DONE 2026-09-17 (Baird, in the sheet): the three Woodside placeholders that duplicated the Seapeak on-order "
-     "rows (now live 1162-1164) were deleted, their names moved to Other names; never-delete covers vessels leaving "
-     "service, not duplicates. "
-     "Other Woodside rows (1204-1216), Equinor 4 (1183) and the 17 Mozambique LNG slots (1184-1200) stay proposed; "
-     "Mozambique confirmation deadline was pushed to Sep 2026, so re-check next month. Also the Mozambique "
-     "owner/yard split flagged in the discovery batch.", "proposed_bucket"),
-    ("Likely duplicates", "1083/1085; 1203/1086", "Hanwha Philly pairs flagged by the dedupe sweep and an agent.", ""),
-    ("Vessel type / Cargo type rule", "10 Rule-F orphans",
-     "'conventional' is a tracker classification, never page wording, so the hard gate cannot ref it. Decide: let a "
-     "capacity-derived type stand on the Capacity ref, or leave unreffed.", "documented_blanks"),
-    ("Price convention", "whole backend",
-     "DECIDED 2026-09-17: Price is always full US dollars + USD. Batch 12 converts the 29 rows that carry 250 + $m. "
-     "The 48 order-total Prices in batch 4 are accepted. Shipvault contract prices were not used (single-source, "
-     "unverifiable).", "b12_price_usd_rows"),
-    ("'Greenenergy ...' names", "", "Look wrong against both shipvault and AIS ('Greenergy').", ""),
-    ("Manual-review rows", "54 + 24",
-     "Mostly ships AIS-live while shipvault says on order; plus the sanctioned Zvezda / Arctic LNG 2 hulls "
-     "(status untouched).", "manual_review"),
-    ("Backend flags from discovery", "1165/1166; 1159",
-     "BW LNG capacity (177,000), row 1159 price, COSCO hulls.", "flags_conflicts"),
-    ("Possible mis-citations / value conflicts", "1179-1182 and others",
-     "Found by the data-fill agents; full list in the data-fill batch notes.md.", "flags_conflicts"),
-    ("MISC hulls H2019A-H2023A", "", "On shipvault with no citable press: next discovery run.", "shipvault_unmatched"),
-    ("IGU 2026 intercomparison", "787, 790, 752 ...; 814, 797 ...; 929; 451, 499-501, 509",
-     "DECIDED 2026-09-17: 'scrapped' is now a Status value and rows are never deleted, so all 18 rows IGU dropped "
-     "(scrapped steam tonnage) move to 'scrapped' in batch 9 (on all_proposals), and row 61 Puteri Delima Satu "
-     "moves to Vessel type FSU. Still open from the comparison: 13 active rows whose Delivery year should be 2026, "
-     "7 active rows still on order, row 929 delivered, load corruption on rows 451 / 499-501 / 509, about 20 "
-     "renames and one vessel to add. None of those is a proposal yet: each accepted item needs a verified ref and "
-     "a follow-up fix batch.",
-     "igu_findings"),
-]
-table_sheet("open_decisions", ["#", "decision", "live sheet rows", "detail", "see sheet"],
-            [[i, *d] for i, d in enumerate(DECISIONS, 1)],
-            {"#": 5, "decision": 32, "live sheet rows": 24, "detail": 100, "see sheet": 20},
-            wrap_cols=("detail",))
+# open lines: every proposal not yet in the backend (accepted but not pushed, or on hold)
+OPEN_COLS = ["status", "apply order", "batch", "live sheet row", "row_id", "vessel name (backend)", "column",
+             "current backend value", "proposed value", "source URL(s)", "confidence", "in backend",
+             "gate verdict", "note"]
+open_lines = [p for p in proposals if p["status"] in ("open accept", "hold")]
+open_lines.sort(key=lambda p: (p["status"] != "open accept", p["apply order"],
+                               p["live sheet row"] if isinstance(p["live sheet row"], int) else 10 ** 6))
+n_open = {"open accept": sum(p["status"] == "open accept" for p in open_lines),
+          "hold": sum(p["status"] == "hold" for p in open_lines)}
+table_sheet("open_lines", OPEN_COLS, open_lines, {**W, "status": 12}, wrap_cols=("note",),
+            conf_col="confidence", fill_col="proposed value", link_col="source URL(s)",
+            intro=f"{len(open_lines)} lines not yet in the backend: {n_open['open accept']} accepted in review but "
+                  f"not pushed (open accept — sources the bulk push skipped: not checked / read by hand / no ref; "
+                  f"push them from the review app or a fix batch), {n_open['hold']} on hold (decide in the review "
+                  f"app). Backend pulled {BACKEND_PULLED}.")
 
 # wide sheets, one per batch
 n_wide = {}
@@ -473,6 +500,12 @@ n_wide[10] = copy_wide(BATCHES / B10 / "lng_carrier_fix.xlsx", "fix", "b10_forme
 n_wide[11] = copy_wide(BATCHES / B11 / "lng_carrier_fix.xlsx", "fix", "b11_qcmax_rows",
                        add_live_row_from="original order in sheet")
 n_wide[12] = copy_wide(BATCHES / B12 / "lng_carrier_fix.xlsx", "fix", "b12_price_usd_rows",
+                       add_live_row_from="original order in sheet")
+n_wide[13] = copy_wide(BATCHES / B13 / "lng_carrier_fix.xlsx", "fix", "b13_igu_hull_rows",
+                       add_live_row_from="original order in sheet")
+n_wide[14] = copy_wide(BATCHES / B14 / "lng_carrier_fix.xlsx", "fix", "b14_suggestion_rows",
+                       add_live_row_from="original order in sheet")
+n_wide[15] = copy_wide(BATCHES / B15 / "lng_carrier_fix.xlsx", "fix", "b15_country_ref_rows",
                        add_live_row_from="original order in sheet")
 
 # flags + conflicts
@@ -684,22 +717,31 @@ ws = wb["Sheet"]
 ws.title = "README"
 wb.move_sheet("README", -(len(wb.sheetnames) - 1))
 r = 1
-ws.cell(r, 1, "LNG carrier tracker: sep-17-pass research update, 2026-09-17 (all results)").font = FONT_T
+ws.cell(r, 1, f"LNG carrier tracker: sep-17-pass research update — where it stands as of "
+              f"{BUILT:%Y-%m-%d %H:%M} ET").font = FONT_T
 r += 2
+n_status = defaultdict(int)
+for p in proposals:
+    n_status[p["status"]] += 1
 for line in [
-    "Backend pulled 2026-09-17 ~01:15 ET: 1,220 rows (822 active / 364 on order / 34 proposed). Re-pulled "
-    "10:15 ET: unchanged, so none of this has been applied yet.",
-    "Nothing here has been written to the Google Sheet. Every line is a candidate for human review. Each batch "
-    "folder under batches/2026-09-17_* carries the apply artifacts (decisions.csv, apply_rows.csv, apply_patch.csv).",
-    "Row numbers are LIVE SHEET ROWS on the backend tab as of the 10:15 ET pull; row_id is column A "
-    "('original order in sheet'), which is what the apply artifacts key on.",
+    f"Backend pulled {BACKEND_PULLED}: {len(BACKEND):,} rows. Every line on all_proposals carries its current "
+    f"decision (each batch's decisions.csv, as decided in the review app), whether the backend already holds it "
+    f"(in backend: yes / value only / no) and a status: landed = accepted and in the sheet "
+    f"({n_status['landed']:,}), open accept = accepted in review but not yet pushed ({n_status['open accept']}), "
+    f"hold ({n_status['hold']}), reject ({n_status['reject']}).",
+    "Landed lines were written to the Google Sheet through the review app's push (2026-09-21 17:04 ET onward) or "
+    "the Sheets API at Baird's direction, and verified against a re-pull (verify_apply.py, per batch). What is still "
+    "to change is on open_lines (one line per cell) and remaining_changes_backend_shape (laid over the backend rows).",
+    "Row numbers are LIVE SHEET ROWS on the backend tab as of that pull; row_id is column A ('original order in "
+    "sheet'), which is what the apply artifacts key on. Each batch folder carries its apply artifacts "
+    "(decisions.csv, apply_patch.csv, verify_report.csv).",
 ]:
     ws.cell(r, 1, line).font = FONT
     r += 1
 r += 1
 ws.cell(r, 1, "Batches, in the order to apply them").font = FONT_B
 r += 1
-heads = ["apply order", "batch", "what", "proposals", "accept (default)", "hold (needs a look)",
+heads = ["apply order", "batch", "what", "proposals", "landed", "open accept", "hold", "reject", "fully applied",
          "green (high)", "yellow (medium)", "rows in wide sheet", "wide sheet", "batch folder"]
 for j, h in enumerate(heads, 1):
     c = ws.cell(r, j, h)
@@ -708,12 +750,15 @@ first = r + 1
 wide_name = {1: "b1_rollforward_rows", 2: "b2_confirmed_rows", 3: "b3_new_vessels",
              4: "b4_data_fill_rows", 5: "b5_ref_fill_rows", 6: "b6_shipvault_companions",
              8: "b8_igu_sourced_rows", 9: "b9_scrapped_rows",
-             10: "b10_former_names_rows", 11: "b11_qcmax_rows", 12: "b12_price_usd_rows"}
+             10: "b10_former_names_rows", 11: "b11_qcmax_rows", 12: "b12_price_usd_rows",
+             13: "b13_igu_hull_rows", 14: "b14_suggestion_rows", 15: "b15_country_ref_rows"}
 for order, bdir, label, _w, _s, what in BATCH_INFO:
     r += 1
     mine = [p for p in proposals if p["apply order"] == order]
     vals = [order, label, what, len(mine),
-            sum(p["decision"] == "accept" for p in mine), sum(p["decision"] == "hold" for p in mine),
+            sum(p["status"] == "landed" for p in mine), sum(p["status"] == "open accept" for p in mine),
+            sum(p["status"] == "hold" for p in mine), sum(p["status"] == "reject" for p in mine),
+            "yes" if APPLIED.get(bdir) else "",
             sum(p["confidence"] == "G" for p in mine), sum(p["confidence"] == "Y" for p in mine),
             n_wide[order], wide_name[order], bdir]
     for j, v in enumerate(vals, 1):
@@ -721,36 +766,37 @@ for order, bdir, label, _w, _s, what in BATCH_INFO:
         c.font, c.alignment = FONT, WRAP
 r += 1
 ws.cell(r, 2, "total").font = FONT_B
-for j in range(4, 9):
-    L = get_column_letter(j)
+for j in (4, 5, 6, 7, 8, 10, 11):
     ws.cell(r, j, sum(ws.cell(k, j).value for k in range(first, r))).font = FONT_B
 r += 1
-ws.cell(r, 1, "Counts are of the lines on all_proposals (default decisions, before any review edits). Apply 1-2 before 4 (they rename rows 4 also touches; "
-              "artifacts are keyed by row_id, so order is about readability, not safety). There is no apply order 7: "
-              "batch 7 is the IGU comparison (igu_findings), which is never applied. Batches 8 and 9 both touch row 61 "
-              "Vessel type: 9 (FSU, sourced) supersedes 8's held 'conventional' ref. Batch 10 rides on the Name lines of "
-              "1, 2 and 8: accept, hold or reject each Other names line together with its Name line.").font = FONT
+ws.cell(r, 1, "Counts are of the lines on all_proposals with their current decisions. 'fully applied' = every accepted "
+              "line is in the backend (review_batches.json). There is no apply order 7: batch 7 is the IGU comparison "
+              "(igu_findings), which is never applied. Batch 10 rides on the Name lines of 1, 2 and 8: each Other names "
+              "line is decided with its Name line. Batch 15 supersedes batch 6's companion ref on live row 61 "
+              "(rejected there); batch 8 superseded its Status companion on live row 814.").font = FONT
 r += 2
 ws.cell(r, 1, "Sheets").font = FONT_B
 for name, desc in [
-    ("open_decisions", f"the {len(DECISIONS)} judgment calls waiting on a human"),
-    ("all_proposals", "EVERY proposed change from all nine proposal batches, one line per cell (or per new vessel): current "
-                      "backend value, proposed value, source URL, confidence, default decision, note. Filter here first."),
-    ("all_changes_backend_shape",
-     f"ALL of the above merged into the backend's own structure: columns A:AT are the backend columns in backend "
-     f"order, one full row per vessel, sorted by live sheet row ({n_shape['rows']} edited rows, {n_shape['new']} new "
-     f"rows at the bottom, {n_shape['delete']} rows marked for deletion and struck through; {n_shape['cells']} "
-     f"changed cells, {n_shape['hold']} of them on hold). Accepts AND holds are laid in: a changed cell is filled "
-     "by confidence (peach where an existing [ref] was rewritten or appended to), a hold is in italics, and each "
-     "changed cell's comment gives batch, decision, the old value and the note. Helper columns AU:AZ (live sheet "
-     "row, row action, holds) sit to the right so A:AT pastes straight over the backend row. flags_conflicts are "
-     "not laid in (never auto-applied)."),
-    ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows"),
+    ("open_lines", f"the {len(open_lines)} lines not yet in the backend: {n_open['open accept']} accepted but not "
+                   f"pushed, {n_open['hold']} on hold. Start here."),
+    ("all_proposals", "EVERY proposed change from all fourteen proposal batches, one line per cell (or per new vessel): "
+                      "current backend value, proposed value, source URL, confidence, decision, in-backend state, status, "
+                      "note. Filter on status."),
+    ("remaining_changes_backend_shape",
+     f"only what is NOT yet in the backend, merged into the backend's own structure: columns A:AT are the backend "
+     f"columns in backend order, one full row per vessel, sorted by live sheet row ({n_shape['rows']} rows still to "
+     f"edit, {n_shape['new']} new rows at the bottom, {n_shape['delete']} rows struck through; {n_shape['cells']} cells "
+     f"still to change, {n_shape['hold']} of them on hold; the {n_shape['landed']:,} cells already in the backend are "
+     "shown gray as context). Open accepts AND holds are laid in: a cell is filled by confidence (peach where an "
+     "existing [ref] is rewritten or appended to), a hold is in italics, and each cell's comment gives batch, "
+     "decision, the old value and the note. Helper columns (live sheet row, row action, holds) sit to the right. "
+     "flags_conflicts are not laid in (never auto-applied)."),
+    ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows (still to add by hand)"),
     ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows / b10_former_names_rows / "
-     "b11_qcmax_rows / b12_price_usd_rows",
-     "fix batches: full corrected backend rows (paste-ready shape)"),
-    ("b4_data_fill_rows", "data fill: the 477 backend rows that received at least one proposal (the other 743 "
-                          "in-scope rows were unchanged and are left out)"),
+     "b11_qcmax_rows / b12_price_usd_rows / b13_igu_hull_rows / b14_suggestion_rows / b15_country_ref_rows",
+     "fix batches: full corrected backend rows as each batch proposed them (paste-ready shape; most are in the "
+     "backend already — see the status column on all_proposals)"),
+    ("b4_data_fill_rows", f"data fill: the {n_wide[4]} backend rows that received at least one proposal"),
     ("b5_ref_fill_rows", "Rule-F: rows with a proposed [ref] for an already-filled value"),
     ("flags_conflicts", "places research disagrees with a non-blank backend value, or flags a backend problem; "
                         "never auto-applied"),
@@ -793,7 +839,7 @@ for line in [
 ]:
     r += 1
     ws.cell(r, 1, line).font = FONT
-for L, w in zip("ABCDEFGHIJK", [12, 28, 60, 11, 11, 12, 11, 11, 11, 22, 48]):
+for L, w in zip("ABCDEFGHIJKLMN", [12, 28, 60, 11, 9, 9, 9, 9, 9, 11, 11, 11, 22, 48]):
     ws.column_dimensions[L].width = w
 
 wb.save(OUT)
@@ -803,6 +849,8 @@ for old in HERE.glob(f"{OUT_STEM}*.xlsx"):  # one current workbook per dir; git 
 print("wrote", OUT, "| proposals:", len(proposals), "| sheets:", wb.sheetnames)
 
 # ---- data for the report page ----------------------------------------------
-report = {"igu_findings": len(igu_rows), "proposals": proposals, "flags": flags, "manual": manual, "proposed_bucket": prow,
-          "n_wide": n_wide, "blanks": len(blanks), "urls": len(ulog), "backend_shape": n_shape}
+report = {"built": BUILT.isoformat(timespec="minutes"), "backend_pulled": BACKEND_PULLED, "status": dict(n_status),
+          "open_lines": len(open_lines), "igu_findings": len(igu_rows), "proposals": proposals, "flags": flags,
+          "manual": manual, "proposed_bucket": prow, "n_wide": n_wide, "blanks": len(blanks), "urls": len(ulog),
+          "backend_shape": n_shape}
 (HERE / "report_data.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")

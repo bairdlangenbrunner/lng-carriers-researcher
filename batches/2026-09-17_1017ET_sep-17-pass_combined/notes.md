@@ -1,18 +1,21 @@
 # 2026-09-17 10:17 ET — sep-17-pass, combined results
 
-Not a research batch. A read-only roll-up of the six sep-17-pass batches
-(`batches/2026-09-17_04*ET_*`, `_05*ET_*`; see `docs/plans/2026-09-17_sep-17-pass_summary.md`)
-into one workbook and one shareable report page. Nothing here is applied to the backend;
-apply still runs per batch through the Apply SOP, in the order on the README sheet.
+Not a research batch. A read-only roll-up of the sep-17-pass batches (fourteen as of 2026-09-21;
+see `docs/plans/2026-09-17_sep-17-pass_summary.md`) into one workbook and one shareable report
+page. Since the 2026-09-21 rebuild every line also carries whether the pulled backend already
+holds it, so the workbook is a snapshot of where the pass stands (landed / open accept / hold /
+reject). Nothing is applied *from* here; apply still runs per batch through the Apply SOP.
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-17_1810ET.xlsx`) — the
+- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-21_2225ET.xlsx`) — the
   name carries the build date and US Eastern time; each rebuild writes a new name and removes
   the previous file (git keeps it). 17 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
   row**, current backend value, proposed value, source URL(s), confidence, decision and
-  gate verdict. `all_changes_backend_shape` is all six batches merged into the backend's own
+  gate verdict (since 2026-09-21 also `in backend` and `status`). `remaining_changes_backend_shape` (`all_changes_backend_shape`
+  before 2026-09-21, when it held every accept and hold; it now shows only what the backend
+  does not hold yet, landed cells gray as context) is the batches merged into the backend's own
   structure: columns A:AT are the backend columns in backend order, one full row per vessel,
   sorted by live sheet row (549 edited rows, 12 new rows at the bottom, the 3 Woodside
   duplicates struck through as DELETE ROW — since deleted from the sheet by Baird, see the
@@ -21,7 +24,7 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   italics = hold, cell comment = batch / decision / old value / note — so it is a review
   surface, not a blind paste: the per-batch `apply_rows.csv` files stay the accept-only
   apply artifacts. Helper columns AU:AZ (live sheet row, row action, holds) sit right of
-  the backend columns. `flags_conflicts` are not laid in. `open_decisions` lists the ten decisions waiting on a person. `b1_`–`b6_`
+  the backend columns. `flags_conflicts` are not laid in. `open_lines` (`open_decisions` before 2026-09-21, then a hand-written list of ten questions) is every line not yet in the backend. `b1_`–`b6_`
   are each batch's wide paste-ready sheet with a live-row column prepended (data-fill
   filtered to rows with at least one proposal). Then `flags_conflicts` (155),
   `manual_review` (54), `proposed_bucket`, `shipvault_unmatched`, `documented_blanks`
@@ -41,10 +44,13 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   (this dir, the workbook, the `docs/plans/2026-09-17_sep-17-pass_*.md` docs). `work/overnight/`
   scratch paths and the `overnight-update-2026-09-17` branch keep the old name.
 - `all_changes_backend_shape` is built with `apply_batch.py`'s own item model, in apply order,
-  and asserts that every cell in each batch's `apply.json` lands with the same value.
+  and asserts that every cell in each batch's `apply.json` lands with the same value (since
+  2026-09-21: unless a later batch accepted the same cell — batch 8's IGU PDF `Name [ref]` on
+  live rows 915/916 over batch 1's shipvault refs, which are what the backend holds).
 
-- Live rows and "current backend value" come from a 10:15 ET re-pull, identical to the
-  original ~01:15 ET pull (1,220 row_ids, 0 rows changed): none of the five batches had been applied.
+- Live rows and "current backend value" come from whichever `work/backend.csv` pull the build
+  read (the README's first line says which). The 2026-09-17 builds read a 10:15 ET pull identical
+  to the original ~01:15 ET one (1,220 row_ids): nothing had been applied yet.
 - README counts are static values computed in Python, not COUNTIFS formulas: LibreOffice is
   not installed here, so formulas would ship with no cached values. They count the default
   decisions and will not follow review edits made in `all_proposals`.
@@ -136,3 +142,21 @@ apply still runs per batch through the Apply SOP, in the order on the README she
   24 `QC-max` rows (8 left). Workbook `…_2026-09-17_1810ET.xlsx`: **23 sheets, 2,125 proposals
   (1,596 accept / 528 hold / 1 reject; 1,327 G / 798 Y)**; backend-shape tab 652 edited + 12 new
   rows, 3,967 changed cells, 995 on hold. The report page is still version 4 (six batches).
+- **Rebuilt from the reconciled state (2026-09-21 22:25 ET).** After the bulk push (17:04 ET), the
+  Sheets-API writes and the reconciliation of every batch (21:05 ET pull; PR #49), the builder
+  now covers batches 13–15 (`2026-09-18_2005ET_fix_igu2026_hulls`, `2026-09-21_1740ET_fix_review_suggestions`,
+  `2026-09-21_2003ET_fix_shipowner_country_refs`; tabs `b13_igu_hull_rows`, `b14_suggestion_rows`,
+  `b15_country_ref_rows`), reads each batch's live `decisions.csv`, and asks
+  `review_app.review_data.build()` — the review app's own "in the backend" test — whether the
+  pulled backend holds each line. `all_proposals` gained `in backend` (yes / value only / no) and
+  `status` (landed / open accept / hold / reject); `open_decisions` became the generated
+  `open_lines`; `all_changes_backend_shape` became `remaining_changes_backend_shape` (landed cells
+  gray context, only rows with an open cell); the README table shows landed / open accept / hold /
+  reject / fully applied per batch. Workbook `…_2026-09-21_2225ET.xlsx`: **26 sheets, 2,320 proposals
+  (1,797 landed / 78 open accept / 441 hold / 4 reject; 1,520 G / 800 Y)** — the same 1,875 / 441 / 4
+  as the fourteen `decisions.csv` files; backend-shape tab 204 rows still to edit + 12 new rows,
+  1,132 cells still to change (862 on hold), 3,172 already in the backend. The open accepts: batch 3's
+  7 new rows (by hand), batch 4's 28 cells (sources the bulk push skipped), batch 8's 14 (incl. the
+  live 915/916 `Name [ref]` swap), batch 13's 28 hull restylings, batch 14's 1. Includes the 8
+  batch-4 lines Baird accepted in the review app at 21:24 ET (`apply_batch.py` re-run: 600 / 403).
+  The report page (`build_report.py`) was **not** republished and still describes six batches.
