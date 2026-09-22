@@ -78,11 +78,13 @@
   // someone decides — and `reviewed` is the researcher's own call (null = undecided). The card
   // is drawn from `reviewed` alone; the batch's pre-fill is only ever shown as a suggestion.
   function settled(p) { return p.reviewed === "accept" || p.reviewed === "reject" || p.reviewed === "suggest"; }
-  // in the backend as of the last pull, and nobody has said it should not be: nothing left to do
-  function landed(p) { return has(p, "in_backend") && p.reviewed !== "reject" && p.reviewed !== "suggest"; }
+  // the backend holds the value as of the last pull (with or without every proposed ref — the
+  // value was the decision), and nobody has said it should not be: nothing left to do
+  function inBackend(p) { return has(p, "in_backend") || has(p, "value_in_backend"); }
+  function landed(p) { return inBackend(p) && p.reviewed !== "reject" && p.reviewed !== "suggest"; }
   function shown(p) { return S.showLanded || !landed(p); }
   // drawn grayed: decided (hold stays bright), or already applied / in the backend
-  function dimmed(p) { return settled(p) || has(p, "applied") || has(p, "in_backend"); }
+  function dimmed(p) { return settled(p) || has(p, "applied") || inBackend(p); }
   function linesOf(v) { return v.proposals.filter(function (k) { return shown(D.proposals[k]); }); }
   function reviewedText(p) { return p.reviewed || "not reviewed"; }
   function rowLabel(v) { return v.new ? "new row" : (v.live_row == null ? "row gone" : "row " + v.live_row); }
@@ -240,7 +242,7 @@
   // Applied / in-the-backend lines are asked for by name (the checkbox, or their Flag): "to
   // decide" then lets them through, so neither control is a dead end under the default decision.
   function askedFor(p, st) {
-    return !settled(p) && ((has(p, "in_backend") && S.showLanded) || (has(p, "applied") && st.flag === "applied"));
+    return !settled(p) && ((inBackend(p) && S.showLanded) || (has(p, "applied") && st.flag === "applied"));
   }
   function lineMatches(p, v, st) {
     if (!shown(p)) return false;
@@ -275,7 +277,7 @@
     var keep = D.vessels[S.vessel];
     if (!keepCurrent) S.stay = {};
     // what the backend already holds is out of the queue unless asked for
-    S.showLanded = st.landed || st.flag === "in_backend" || st.flag === "applied";
+    S.showLanded = st.landed || st.flag === "in_backend" || st.flag === "value_in_backend" || st.flag === "applied";
     S.visible = [];
     var nLines = 0;
     D.vessels.forEach(function (v, i) {
