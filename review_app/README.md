@@ -57,7 +57,9 @@ the app's one backend write: it lists every cell first and writes on one confirm
    another value (More filters → *show lines already in the backend* brings them back). The
    Decision filter follows `reviewed`; its default, *to decide*, is every bright card
    (*not reviewed* + hold). The pipeline still reads `decisions.csv`, pre-fills included —
-   `apply_batch.py` is unchanged; only **push changes** asks for a clicked accept.
+   `apply_batch.py` is unchanged; only **push changes** asks for a clicked accept. A line
+   Baird directs a session to write instead (AP §2d) stays `unclicked` here — that is
+   correct, and a fake `review_log.jsonl` accept must never be written to hide it.
 
    **What a line shows.** Column, `was → proposed`, then **Why** (the note's one reason) and
    **Source** (a named link — `IGU World LNG Report 2026, p.71` opens the PDF at that page; a
