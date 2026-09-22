@@ -24,7 +24,7 @@
       return fetch("/api/refresh", {method: "POST", headers: {"Content-Type": "application/json"},
                                     body: "{}"}).then(Store._json);
     },
-    pushPlan: function (batch) { // re-pull, then every cell the accepted lines would change
+    pushPlan: function (batch) { // re-pull, then every cell the accepted lines and suggestions would change
       return fetch("/api/push/plan", {method: "POST", headers: {"Content-Type": "application/json"},
                                       body: JSON.stringify({batch: batch || null})}).then(Store._json);
     },
@@ -137,6 +137,7 @@
     $("f-mine").onchange = refilter;
     $("f-landed").onchange = refilter;
     $("f-text").oninput = refilter;
+    $("f-row").oninput = refilter;
     $("f-more").onclick = function () { toggleMore(); };
     $("active-filters").onclick = function (e) {
       var b = e.target.closest("button[data-clear]");
@@ -156,8 +157,9 @@
     $("f-mine").checked = false;
     $("f-landed").checked = false;
     $("f-text").value = "";
+    $("f-row").value = "";
   }
-  // Decision, Batch and Search stay in view; the rest sit behind "More filters". Every filter
+  // Decision, Batch, Search and Row stay in view; the rest sit behind "More filters". Every filter
   // that is set — those three included — is always visible as a removable chip, so a hidden
   // control never filters silently and any filter is one click to clear.
   var MORE = ["column", "confidence", "kind", "flag", "builder", "owner"];
@@ -183,6 +185,7 @@
     if (st.mine) { chip("mine", "changed by me"); n++; }
     if (st.landed) { chip("landed", "showing lines already in the backend"); n++; }
     if (st.text) chip("text", "search: “" + $("f-text").value.trim() + "”");
+    if (st.row) chip("row", "row" + (st.rows && st.rows.length === 1 && st.rows[0][0] === st.rows[0][1] ? " " : "s ") + $("f-row").value.trim());
     $("active-filters").innerHTML = chips.join(" ");
     $("active-filters").hidden = !chips.length;
     $("f-more").textContent = ($("more-filters").hidden ? "More filters" : "Fewer filters") + (n ? " (" + n + ")" : "");
@@ -193,7 +196,24 @@
     st.mine = $("f-mine").checked;
     st.landed = $("f-landed").checked;
     st.text = $("f-text").value.trim().toLowerCase();
+    st.row = $("f-row").value.trim();
+    st.rows = parseRows(st.row);
     return st;
+  }
+  // The Row filter takes live sheet rows: "1130-1180, 1215" -> [[1130, 1180], [1215, 1215]];
+  // null when empty or nothing in it parses (a filter that is set but unreadable matches nothing).
+  function parseRows(s) {
+    var out = [];
+    s.replace(/\s*[-\u2013]\s*/g, "-").split(/[,;\s]+/).forEach(function (t) {
+      var m = /^(\d+)(?:-(\d+))?$/.exec(t);
+      if (m) { var a = +m[1], b = m[2] ? +m[2] : a; out.push([Math.min(a, b), Math.max(a, b)]); }
+    });
+    return out.length ? out : null;
+  }
+  function vesselMatchesRows(v, st) {     // a new row has no live row and never matches a row filter
+    if (!st.row) return true;
+    if (!st.rows || v.live_row == null) return false;
+    return st.rows.some(function (r) { return v.live_row >= r[0] && v.live_row <= r[1]; });
   }
   function filterDescription(st) {
     st = st || filterState();
@@ -209,6 +229,7 @@
     if (st.mine) parts.push("changed by me");
     if (st.landed) parts.push("incl. lines already in the backend");
     if (st.text) parts.push('"' + st.text + '"');
+    if (st.row) parts.push("rows " + st.row);
     return parts.join(" · ") || "everything";
   }
   function vesselMatchesText(v, t) {
@@ -234,6 +255,7 @@
     if (st.builder && v.shipbuilder !== st.builder) return false;
     if (st.owner && v.shipowner !== st.owner) return false;
     if (st.mine && !(p.last && p.last.reviewer === ME)) return false;
+    if (!vesselMatchesRows(v, st)) return false;
     return vesselMatchesText(v, st.text);
   }
   function matchingKeys(st) {
@@ -279,15 +301,23 @@
     renderProgress();
     writeRoute();
   }
+  // "N to decide" and the bar follow the filter — every facet but Decision, so the bar shows
+  // how far the scoped set (a batch, a row range, a column …) has come, not just what is left.
   function renderProgress() {
-    var todo = 0, total = 0;
-    Object.keys(D.proposals).forEach(function (k) {
-      if (landed(D.proposals[k])) return;
-      total++;
-      if (!dimmed(D.proposals[k])) todo++;
+    var st = filterState(), todo = 0, total = 0;
+    st.decision = "";
+    D.vessels.forEach(function (v) {
+      linesOf(v).forEach(function (k) {
+        var p = D.proposals[k];
+        if (landed(p) || !lineMatches(p, v, st)) return;
+        total++;
+        if (!dimmed(p)) todo++;
+      });
     });
+    var scoped = Object.keys(st).some(function (f) { return f !== "decision" && f !== "rows" && f !== "landed" && st[f]; });
     $("progress-bar").style.width = total ? (100 * (total - todo) / total) + "%" : "0";
-    $("progress-text").textContent = todo + " to decide · " + S.session.length + " decided this session";
+    $("progress-bar").parentNode.title = "lines left to decide" + (scoped ? " under the filter" : "");
+    $("progress-text").textContent = todo + " to decide" + (scoped ? " here" : "") + " · " + S.session.length + " decided this session";
   }
   function renderVessels() {
     var ol = $("vessels");
@@ -460,7 +490,8 @@
 
     h += '<div class="facts">';
     if (p.suggestion) h += '<span class="k">Suggested</span><span class="v st-suggest">' + esc(p.suggestion.value) +
-      " (" + esc(p.suggestion.kind) + ")" + (p.suggestion.note ? " — " + esc(p.suggestion.note) : "") + "</span>";
+      " (" + esc(p.suggestion.kind) + ")" + (p.suggestion.note ? " — " + esc(p.suggestion.note) : "") +
+      (p.suggestion.refs && p.suggestion.refs.length ? "<br>refs: " + p.suggestion.refs.map(link).join(", ") : "") + "</span>";
     // a reason that runs past a few lines is clamped, never cut: "more" shows the rest in place
     if (p.why) h += '<span class="k">Why</span><span class="v">' + (p.why.length > 360 && !S.open["why:" + k]
       ? '<span class="why-clamp">' + esc(p.why) + '</span><button type="button" class="more" data-why="' + esc(k) + '">more</button>'
@@ -519,7 +550,7 @@
     p.reviewed = rec.undecided ? null : rec.decision;
     p.last = rec;
     p.suggestion = rec.decision === "suggest"
-      ? {value: rec.suggested_value, kind: rec.suggest_kind, note: rec.note} : null;
+      ? {value: rec.suggested_value, kind: rec.suggest_kind, note: rec.note, refs: rec.suggested_refs || []} : null;
   }
   function snapshotOf(keys) {
     return keys.map(function (k) {
@@ -621,13 +652,16 @@
   }
 
   // Suggest: the value as proposed is not wanted (reject in decisions.csv); the replacement
-  // reaches the backend only through a fix batch that re-gates it (suggestions.py).
+  // reaches the backend through "push changes" (push.py gates the refs typed with it), or a fix
+  // batch (suggestions.py) for what the push cannot write.
   function suggestLine(k) {
     var p = D.proposals[k];
     if (!canSuggest(p)) return banner(p.kind === "new_row" ? "Nothing to suggest on a new row — accept, hold or reject it."
       : "This line proposes only a [ref], no value — there is nothing to suggest against. Accept, hold or reject the ref.", true);
     // an unsent draft (the box was clicked away or Esc'd) comes back as it was left
-    var s0 = DRAFT[k] || p.suggestion || {value: p.proposed, kind: "value", note: ""};
+    // the refs box starts from the proposal's own refs — the data point's sources — to keep or replace
+    var s0 = DRAFT[k] || p.suggestion || {value: p.proposed, kind: "value", note: "", refs: null};
+    var refs0 = s0.refs == null ? p.refs.map(function (r) { return r.url; }).filter(Boolean) : s0.refs;
     var strict = partnersOf(k).filter(function (o) { return isStrict(k, o); });
     var h = "<h3>Suggest a value — " + esc(lineName(k)) + "</h3>" +
       '<p class="note">current: ' + (esc(p.current) || "(blank)") + "<br>proposed: " + (esc(p.proposed) || "(blank)") + "</p>" +
@@ -636,23 +670,33 @@
       "> value — a different fact; the original refs are re-gated against it</label>" +
       '<label><input type="radio" name="sg-kind" value="cosmetic"' + (s0.kind === "cosmetic" ? " checked" : "") +
       "> cosmetic — spelling, stylization, same fact; the cell's [ref] is kept</label></fieldset>" +
+      '<label class="stack">refs for the value — one URL per line' +
+      '<textarea id="sg-refs" rows="3" spellcheck="false" placeholder="https://…">' + esc(refs0.join("\n")) + "</textarea>" +
+      '<span class="hint">start = the proposal\'s refs; each is gated against the suggested value at push time (§3.8c), ' +
+      'passing refs replace the cell\'s [ref]. A cosmetic suggestion keeps the cell\'s [ref] unless you change these.</span></label>' +
       '<label class="stack">note (required)<textarea id="sg-note" rows="2">' + esc(s0.note) + "</textarea></label>" +
       '<p class="err" id="sg-err"></p>' +
-      "<p><b>Nothing is applied from here.</b> The line is recorded as <i>suggest</i> (reject in decisions.csv); " +
-      "the suggestion becomes a fix batch (<code>review_app/suggestions.py</code>) and reaches the backend only " +
-      "after it passes the §3.8c gate and its own review.</p>" +
+      "<p><b>Nothing is written from here.</b> The line is recorded as <i>suggest</i> (reject in decisions.csv); " +
+      "<b>push changes</b> lists it with the accepted lines and writes the suggested value with the refs that pass the gate — " +
+      "a suggestion no ref corroborates is listed as not pushed (<code>review_app/suggestions.py</code> builds those into a fix batch).</p>" +
       (strict.length ? "<p class=\"warn\">Linked: " + strict.map(function (o) {
         return esc(lineName(o)) + " is " + esc(reviewedText(D.proposals[o])); }).join(", ") +
         ". other_names.py re-derives the former name in the suggestion's fix batch — decide the partner here yourself.</p>" : "") +
       (has(p, "applied") ? '<p class="warn">This batch is already applied: recording a suggestion unapplies nothing.</p>' : "");
     var dlg = $("dialog");
+    function refsTyped() {
+      return $("sg-refs").value.split(/[\s,]+/).map(function (u) { return u.trim(); }).filter(Boolean)
+        .filter(function (u, i, a) { return a.indexOf(u) === i; });
+    }
     function attempt() {
-      var v = $("sg-value").value, n = $("sg-note").value.trim();
+      var v = $("sg-value").value, n = $("sg-note").value.trim(), refs = refsTyped();
       var kind = dlg.querySelector("input[name=sg-kind]:checked").value;
       if (!v.trim()) { $("sg-err").textContent = "A suggestion needs a value."; return false; }
       if (!n) { $("sg-err").textContent = "A suggestion needs a note."; return false; }
       if (v === p.proposed && kind === "value") { $("sg-err").textContent = "That is the proposed value — accept it instead."; return false; }
-      return {key: k, decision: "suggest", suggested_value: v, suggest_kind: kind, note: n, via: "single"};
+      var bad = refs.filter(function (u) { return !/^https?:\/\/\S+$/.test(u); });
+      if (bad.length) { $("sg-err").textContent = "Not a URL: " + bad[0]; return false; }
+      return {key: k, decision: "suggest", suggested_value: v, suggest_kind: kind, suggested_refs: refs, note: n, via: "single"};
     }
     var buttons = [["Cancel", function () { delete DRAFT[k]; return null; }],
                    [(SENT[k] || p.reviewed === "suggest" ? "Resubmit" : "Submit") + " suggestion", attempt]];
@@ -664,7 +708,7 @@
     [].forEach.call(dlg.querySelectorAll("textarea, input"), function (f) {   // fresh nodes per dialog
       f.addEventListener("input", function () {
         $("sg-err").textContent = "";
-        DRAFT[k] = {value: $("sg-value").value, note: $("sg-note").value,
+        DRAFT[k] = {value: $("sg-value").value, note: $("sg-note").value, refs: refsTyped(),
                     kind: dlg.querySelector("input[name=sg-kind]:checked").value};
       });
     });
@@ -689,6 +733,7 @@
       if (s.decision === "suggest" && s.suggestion) {
         r.suggested_value = s.suggestion.value;
         r.suggest_kind = s.suggestion.kind;
+        r.suggested_refs = s.suggestion.refs || [];
         r.note = s.suggestion.note;
       }
       return r;
@@ -745,7 +790,7 @@
     var v = D.vessels[S.vessel], st = filterState();
     var h = "<h2>" + (v.name ? only("text", v.name, v.name, "everything in the queue for this name") : "(no name)") +
       "</h2><div class=\"ctx\">" +
-      ["<b>" + esc(rowLabel(v)) + "</b>",
+      ["<b>" + (v.live_row == null ? esc(rowLabel(v)) : only("row", String(v.live_row), rowLabel(v), "every line on this row, filters cleared")) + "</b>",
        v.imo && only("text", v.imo, "IMO " + v.imo, "everything in the queue for this IMO"), v.status && esc(v.status),
        v.shipbuilder && only("builder", v.shipbuilder, v.shipbuilder, "every line on this shipbuilder's vessels"),
        v.hull && "hull " + esc(v.hull),
@@ -1171,8 +1216,9 @@
     } else h += "<p>No batch decisions changed this session, so no apply_batch.py run is needed.</p>";
     h += "<h2>Suggestions pending</h2>";
     if (sugg.length) {
-      h += "<p>" + sugg.length + " line(s) set to suggest (stored as reject in decisions.csv). They reach the " +
-        "backend only through a fix batch that re-gates them:</p><pre>python review_app/suggestions.py --batches " +
+      h += "<p>" + sugg.length + " line(s) set to suggest (stored as reject in decisions.csv). <b>Push changes</b> writes " +
+        "them with the accepted lines (refs gated at push time); the ones it lists as not pushed become a fix batch:</p>" +
+        "<pre>python review_app/suggestions.py --batches " +
         suggDirs.map(function (b) { return "batches/" + esc(b); }).join(" ") +
         " --out work/review_suggestions_fix.json</pre><ul>" + sugg.map(function (k) {
           var p = D.proposals[k];
@@ -1219,7 +1265,7 @@
     F.forEach(function (f) { q.push(f + "=" + encodeURIComponent($("f-" + f).value)); });
     if ($("f-mine").checked) q.push("mine=1");
     if ($("f-landed").checked) q.push("landed=1");
-    return {view: q.join("&"), text: $("f-text").value, v: vesselId(D.vessels[S.vessel])};
+    return {view: q.join("&"), text: $("f-text").value, row: $("f-row").value, v: vesselId(D.vessels[S.vessel])};
   }
   function parseRoute(hash) {
     var o = {};
@@ -1232,12 +1278,14 @@
   function writeRoute() {
     if (ROUTING || !D) return;
     var r = routeParts();
-    var hash = "#" + r.view + "&text=" + encodeURIComponent(r.text) + "&v=" + encodeURIComponent(r.v);
+    var hash = "#" + r.view + "&text=" + encodeURIComponent(r.text) + (r.row ? "&row=" + encodeURIComponent(r.row) : "") +
+      "&v=" + encodeURIComponent(r.v);
     if (hash === location.hash) return;
     var was = history.state || {};
-    var push = was.view != null && (PUSH || was.view !== r.view || (was.text !== r.text && (!was.text || !r.text)));
+    function typed(a, b) { return a !== b && (!a || !b); }     // set or cleared, not typed on
+    var push = was.view != null && (PUSH || was.view !== r.view || typed(was.text, r.text) || typed(was.row || "", r.row));
     PUSH = false;
-    history[push ? "pushState" : "replaceState"]({view: r.view, text: r.text}, "", hash);
+    history[push ? "pushState" : "replaceState"]({view: r.view, text: r.text, row: r.row}, "", hash);
   }
   function applyRoute() {
     var o = parseRoute(location.hash);
@@ -1251,6 +1299,7 @@
       $("f-mine").checked = o.mine === "1";
       $("f-landed").checked = o.landed === "1";
       $("f-text").value = o.text || "";
+      $("f-row").value = o.row || "";
       showTab(o.tab && $("tab-" + o.tab) ? o.tab : "queue");
       refilter();
       if (o.v) {
@@ -1260,7 +1309,7 @@
       }
     } finally { ROUTING = false; }
     var r = routeParts();
-    history.replaceState({view: r.view, text: r.text}, "", location.hash || "#" + r.view);
+    history.replaceState({view: r.view, text: r.text, row: r.row}, "", location.hash || "#" + r.view);
   }
   window.addEventListener("popstate", applyRoute);
 
@@ -1315,6 +1364,17 @@
     $("whoami").title = $("built").title;
     $("sync").title = "Re-pull the backend and settle what it already holds · last pulled " + et(D.backend_pulled);
   }
+  // The living workbook (review_app/living.py): the reconciliation's copy on the work Drive.
+  // Every sync and every push mirrors the current decisions into its `processed` columns; it
+  // touches no backend cell, so a failure there is reported and nothing else changes.
+  function livingNote(l) {
+    if (!l) return "";                                   // none configured, or switched off
+    if (l.error) return " Living workbook NOT updated: " + l.error;
+    if (!l.written) return " Living workbook already up to date.";
+    return " Living workbook: " + l.written + " processed cell" + (l.written === 1 ? "" : "s") + " updated.";
+  }
+  function livingOk(l) { return !(l && l.error); }
+
   // Sync: the server re-pulls and rebuilds, accepts the holds the backend already holds and
   // resolves the items it settles; the page then takes the new dataset in place (the session
   // summary and the filters stay).
@@ -1331,7 +1391,7 @@
         var n = r.accepted.length, m = r.resolved.length;
         banner("Backend synced" + (n || m ? ": " + n + " held line" + (n === 1 ? "" : "s") +
           " already in the backend → accept in decisions.csv (out of the queue), " + m + " item" + (m === 1 ? "" : "s") + " resolved."
-          : " — nothing new was settled by it."), true);
+          : " — nothing new was settled by it.") + livingNote(r.living), livingOk(r.living));
       });
     }).catch(function (e) { banner("Sync failed, nothing changed: " + e.message); })
       .then(function () { b.disabled = false; b.textContent = "↻ sync backend"; });
@@ -1351,6 +1411,7 @@
         '<tr><th>row</th><th>vessel</th><th>column</th><th>now</th><th>→ becomes</th></tr>' +
         byBatch[b].map(function (w) {
           return '<tr><td>' + w.live_row + '</td><td>' + esc(w.name) + '</td><td>' + esc(w.column) +
+            (w.suggest ? ' <span class="chip st-suggest" title="your suggestion, not the batch\'s proposal">suggested</span>' : "") +
             '</td><td class="old">' + (esc(w.old) || '<i>blank</i>') + '</td><td class="new">' + esc(w.new) + '</td></tr>';
         }).join("") + '</table>';
     }).join("");
@@ -1364,7 +1425,7 @@
       banner(msg, ok);
     });
   }
-  function pushAccepted() {
+  function pushChanges() {
     var b = $("push");
     b.disabled = true;
     b.textContent = "planning…";
@@ -1372,24 +1433,29 @@
     var scope = batch ? " of batch " + ((D.batches.filter(function (x) { return x.dir === batch; })[0] || {}).label || batch) : "";
     Store.pushPlan(batch).then(function (plan) {
       var n = plan.writes.length, m = plan.applied_writes.length, k = plan.skipped.length, u = plan.unclicked || 0;
+      var ns = plan.writes.filter(function (w) { return w.suggest; }).length;
       // only a clicked accept is pushed; a pre-filled accept nobody clicked is left alone
       var unclicked = u ? u + " pre-filled accept" + (u === 1 ? "" : "s") + " nobody clicked " +
         (u === 1 ? "is" : "are") + " not pushed — click accept on a line to push it." : "";
       if (!n && !m) {
-        return reload("Nothing to push: every line you accepted" + scope + " is already in the backend" +
-          (k ? " (" + k + " accepted line" + (k === 1 ? " stays" : "s stay") + " on the by-hand path)." : ".") +
+        return reload("Nothing to push: every line you accepted or suggested" + scope + " is already in the backend" +
+          (k ? " (" + k + " line" + (k === 1 ? " stays" : "s stay") + " on the by-hand path — open the push again to see why)." : ".") +
           (unclicked ? " " + unclicked : ""), true);
       }
-      var html = '<h3>Push accepted lines' + esc(scope) + ' to the backend sheet</h3>' +
-        '<p>' + n + ' cell' + (n === 1 ? "" : "s") + ' will be written to the live sheet — only lines someone clicked accept on. Rejects and holds write nothing.' +
+      var html = '<h3>Push changes' + esc(scope) + ' to the backend sheet</h3>' +
+        '<p>' + n + ' cell' + (n === 1 ? "" : "s") + ' will be written to the live sheet — ' +
+        (ns === n ? 'all from your suggestions' : 'lines someone clicked accept on' +
+          (ns ? ', and ' + ns + ' from your suggestions' : "")) +
+        (ns ? ' (marked; the refs are the ones that pass the §3.8c gate against the suggested value)' : "") + '. Rejects and holds write nothing.' +
         (unclicked ? " " + esc(unclicked) : "") +
         (batch ? "" : " Pick a batch in the Batch filter first to push one batch at a time.") + '</p>' +
         '<div class="planbox">' + planTable(plan.writes) +
         (m ? '<details><summary>' + m + ' more from batches already applied — the sheet differs, likely a later hand edit</summary>' +
           planTable(plan.applied_writes) + '</details>' : "") +
-        (k ? '<details><summary>' + k + ' accepted line' + (k === 1 ? "" : "s") + ' not pushed (by-hand path)</summary><ul>' +
+        (k ? '<details><summary>' + k + ' line' + (k === 1 ? "" : "s") + ' not pushed (by-hand path)</summary><ul>' +
           plan.skipped.map(function (x) {
-            return '<li>' + (x.live_row ? 'row ' + x.live_row + ' · ' : "") + esc(x.column) + ' — ' + esc(x.why) + '</li>';
+            return '<li>' + (x.live_row ? 'row ' + x.live_row + ' · ' : "") + esc(x.column) +
+              (x.decision === "suggest" ? ' (suggested)' : "") + ' — ' + esc(x.why) + '</li>';
           }).join("") + '</ul></details>' : "") + '</div>' +
         (m ? '<label class="check"><input type="checkbox" id="push-applied"> also overwrite the ' + m +
           ' cell' + (m === 1 ? "" : "s") + ' from applied batches</label>' : "");
@@ -1406,13 +1472,13 @@
           return reload(r.written + " cell" + (r.written === 1 ? "" : "s") + " written to the backend and verified" +
             (bad ? "; " + bad + " did NOT land (" + r.mismatches.slice(0, 5).map(function (w) {
               return "row " + w.live_row + " " + w.column; }).join(", ") + (bad > 5 ? ", …" : "") + ")" : ".") +
-            (r.error ? " " + r.error : ""), !bad && !r.error);
+            (r.error ? " " + r.error : "") + livingNote(r.living), !bad && !r.error && livingOk(r.living));
         });
       });
     }).catch(function (e) { banner("Push: " + e.message); })
-      .then(function () { b.disabled = false; b.textContent = "⇪ push accepted"; });
+      .then(function () { b.disabled = false; b.textContent = "⇪ push changes"; });
   }
-  $("push").onclick = pushAccepted;
+  $("push").onclick = pushChanges;
 
   Promise.all([Store.load(), Store.whoami()]).then(function (r) {
     ME = r[1];

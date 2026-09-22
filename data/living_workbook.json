@@ -1,0 +1,28 @@
+{
+  "spreadsheet_id": "1f1----zCM-qxND3jjf4wEZHfkGLN-TuwOgZq-lGcEec",
+  "name": "living-workbook-for-update",
+  "url": "https://docs.google.com/spreadsheets/d/1f1----zCM-qxND3jjf4wEZHfkGLN-TuwOgZq-lGcEec/edit?usp=drivesdk",
+  "folder_id": "1DnF6niKeRnbRyhVcmJDy7UkeZLjNGc4r",
+  "source_workbook": "batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-21_2328ET.xlsx",
+  "batches": [
+    "2026-09-17_0421ET_fix_delivery_rollforward",
+    "2026-09-17_0431ET_discovery_since_jun_2026",
+    "2026-09-17_0458ET_fix_delivery_confirmed",
+    "2026-09-17_0505ET_ref_fill_rule_f",
+    "2026-09-17_0511ET_data_fill_on_order",
+    "2026-09-17_1114ET_shipvault_companion_refs",
+    "2026-09-17_1654ET_fix_igu2026_sourced",
+    "2026-09-17_1702ET_fix_scrapped_status",
+    "2026-09-17_1737ET_fix_other_names_former",
+    "2026-09-17_1809ET_fix_qcmax_vessel_type",
+    "2026-09-17_1810ET_fix_price_full_usd",
+    "2026-09-18_2005ET_fix_igu2026_hulls",
+    "2026-09-21_1740ET_fix_review_suggestions",
+    "2026-09-21_2003ET_fix_shipowner_country_refs"
+  ],
+  "tabs": {
+    "all_proposals": "line id",
+    "remaining_changes_backend_shape": "line key"
+  },
+  "created": "2026-09-21T23:28:33-04:00"
+}

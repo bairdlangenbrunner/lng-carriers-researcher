@@ -1,15 +1,18 @@
 """
-Review-app suggestions -> a standard fix.json, so a suggested value reaches the backend only
-through the normal QC-SOP path (other_names.py -> build_workbook.py --mode fix, whose §3.8c
-gate is the re-gate -> recalc -> batch_digest / apply_batch).
+Review-app suggestions -> a standard fix.json: the fix-batch path for a suggested value
+(other_names.py -> build_workbook.py --mode fix, whose §3.8c gate is the re-gate -> recalc ->
+batch_digest / apply_batch). The app's **push changes** writes suggestions itself (push.py, the
+same cells, gated the same way); this script is for the ones the push could not write, or for a
+reviewed batch of suggestions.
 
     python review_app/suggestions.py --batches batches/<dir> [<dir> ...] \
         [--out work/review_suggestions_fix.json]
 
 A suggestion is a proposal whose latest review_log.jsonl record is `suggest` and whose
 decisions.csv line still says `reject` (suggest is stored as reject). Each becomes one cell:
-`new_value` = the suggested value, `refs` = the original proposal's refs, `confidence` = the
-original's, `note` = reviewer + note. `cosmetic` -> `preserve_ref: true`, no refs.
+`new_value` = the suggested value, `refs` = the refs typed with the suggestion (else the original
+proposal's), `confidence` = the original's, `note` = reviewer + note. `cosmetic` -> `preserve_ref:
+true`, no refs — unless the reviewer changed the refs, which then gate as a value's.
 
 Not emitted, reported instead: discovery (new-row) and ref-only lines. Read-only over the
 batch dirs and the backend; writes only --out and the notes file beside it.
@@ -53,8 +56,9 @@ def cell_for(p, mode, rec):
                     f"{rec.get('note', '')} — instead of {p['proposed']!r} ({p['batch']}::{p['id']})",
             "review_key": f"{p['batch']}::{p['id']}"}
     report = None
-    refs = _refs(p)
-    if kind == "cosmetic" and p["current_refs"]:
+    own = list(rec.get("suggested_refs") or [])     # the reviewer's refs win over the proposal's
+    refs = own or _refs(p)
+    if kind == "cosmetic" and p["current_refs"] and (not own or set(own) == set(p["current_refs"])):
         cell["preserve_ref"] = True     # same fact: the paired [ref] stays, the gate is skipped
         return cell, None
     if kind == "cosmetic":

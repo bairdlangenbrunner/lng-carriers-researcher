@@ -15,7 +15,7 @@ This file is read automatically at the start of every Claude Code session in thi
 - `docs/pointers.md` — "which SOP section governs X" index.
 - `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`; `2026-09-18_review-app.md` (build spec for the review app; phase 1 built and in use, phase 2 — Apps Script — planned 2026-09-21, not started).
 - `docs/inclusion_criteria.md` — what's in scope vs out.
-- `review_app/` — the review app: the recommended surface for deciding a batch's holds (replaces the combined xlsx). Local, loopback-only; deciding writes only the `decision` column of `decisions.csv` + `review_log.jsonl`; its **push changes** button is the one script path that writes the backend sheet (AP §2b — accepted lines + gated suggestions, listed cells, confirmed once in the app). Entry points (`review_data.py`, `server.py`, `suggestions.py`) are documented in `review_app/README.md`, not in the Scripts table. Imports from `scripts/`, never the reverse.
+- `review_app/` — the review app: the recommended surface for deciding a batch's holds (replaces the combined xlsx). Local, loopback-only; deciding writes only the `decision` column of `decisions.csv` + `review_log.jsonl`; its **push changes** button is the one script path that writes the backend sheet (AP §2b — accepted lines + gated suggestions, listed cells, confirmed once in the app). Its **living workbook** (`living.py`, AP §2c) is the pass's copy on the work Drive: every sync and every push mirrors the current decisions into the `processed` column of its `all_proposals` / `remaining_changes_backend_shape` tabs, keyed by `line id` / `line key`, and writes nothing else. Entry points (`review_data.py`, `server.py`, `suggestions.py`, `living.py`) are documented in `review_app/README.md`, not in the Scripts table. Imports from `scripts/`, never the reverse.
 - `data/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
 - `data/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
 - `data/source_roster.md` — source tier list for picking corroboration URLs.
@@ -342,11 +342,13 @@ python review_app/server.py --batches batches/<dir> [<dir> ...]  # builds work/r
 # Suggested values (stored as reject + a `suggest` log record) are pushed by "push changes" once their refs
 # pass §3.8c; the ones it lists as not pushed -> a fix batch, QC-SOP path:
 python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
+# after rebuilding the pass's combined workbook, refresh its Drive copy — rebuild, never --create:
+python review_app/living.py --rebuild --xlsx batches/<combined dir>/<workbook>.xlsx
 #   also -> work/review_suggestions_fix_notes.md: the reviewer's notes as a to-do list. Nothing acts on
 #   a note by itself — read each one and follow it up before building the fix batch.
 ```
 
-The `↻ sync backend` button re-pulls the backend and rebuilds in place; a held line the backend
+Both buttons also update the living workbook on Drive (`data/living_workbook.json`, AP §2c) — its `processed` column only, never a backend cell; a failure there is reported and changes nothing else. The `↻ sync backend` button re-pulls the backend and rebuilds in place; a held line the backend
 already holds becomes `accept` and an open item it resolves becomes `resolved` (logged as
 `backend sync`). The `⇪ push changes` button (AP §2b, `review_app/push.py`) writes accepted
 value / `[ref]` lines and the reviewer's suggestions (value + the refs typed with it, each gated

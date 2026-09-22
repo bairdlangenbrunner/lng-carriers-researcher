@@ -162,6 +162,7 @@ def qa_sections(wb_path):
 
 # ---- what the backend already holds (the review app's own test) -------------
 sys.path.insert(0, str(ROOT / "review_app"))
+import living as _living  # noqa: E402
 import review_data as _review_data  # noqa: E402
 _review = _review_data.build([BATCHES / b for _o, b, *_ in BATCH_INFO], info_path=HERE / "review_batches.json")
 BACKEND_PULLED = _review["backend_pulled"]
@@ -171,6 +172,10 @@ for _k, _p in _review["proposals"].items():
     STATE[_k] = "in_backend" if "in_backend" in _fl else ("value_in_backend" if "value_in_backend" in _fl else "")
 APPLIED = {k: bool(v.get("applied")) for k, v in load_json(HERE / "review_batches.json").items()}
 IN_BACKEND = {"in_backend": "yes", "value_in_backend": "value only", "": "no"}
+# the `processed` column the living workbook on Drive carries, computed here so a fresh build
+# and a review_app sync agree cell for cell (review_app/living.py)
+DIRS = {b: BATCHES / b for _o, b, *_ in BATCH_INFO}
+PROCESSED = _living.states(_review, DIRS)
 
 
 def line_status(decision, state):
@@ -184,7 +189,8 @@ proposals = []   # dict rows
 PROP_COLS = ["apply order", "batch", "kind", "live sheet row", "row_id", "cluster",
              "vessel name (backend)", "IMO", "status (backend)", "shipbuilder", "shipowner",
              "column", "current backend value", "proposed value", "source URL(s)",
-             "confidence", "derivable", "decision", "in backend", "status", "gate verdict", "note"]
+             "confidence", "derivable", "decision", "in backend", "status", "processed",
+             "gate verdict", "note", "line id"]
 
 for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
     qa = qa_sections(BATCHES / bdir / wbname)
@@ -229,12 +235,13 @@ for order, bdir, label, wbname, _sheet, _what in BATCH_INFO:
             k = (rid, col[:-6] if col.endswith(" [ref]") else col)
             src = d["proposed_value"] if d["kind"] == "ref" else "\n".join(urls.get((rid, col), []) or urls.get(k, []))
             verdict = "\n".join(dict.fromkeys(verdicts.get((rid, col), [])))
-        state = STATE.get(f"{bdir}::{d['id']}", "")
+        key = f"{bdir}::{d['id']}"
+        state = STATE.get(key, "")
         proposals.append(dict(zip(PROP_COLS, [
             order, label, d["kind"], context[0], rid, d["cluster_id"], context[1], context[2],
             context[3], context[4], context[5], col_label, cur, val, src, d["confidence"],
-            d["derivable"], d["decision"], IN_BACKEND[state], line_status(d["decision"], state), verdict,
-            d["note"]])))
+            d["derivable"], d["decision"], IN_BACKEND[state], line_status(d["decision"], state),
+            PROCESSED[_living.PROPOSALS_SHEET].get(key, ""), verdict, d["note"], key])))
 
 # ---- workbook ---------------------------------------------------------------
 wb = openpyxl.Workbook()
@@ -321,7 +328,7 @@ W = {"apply order": 7, "batch": 24, "kind": 9, "live sheet row": 9, "row_id": 8,
      "vessel name (backend)": 26, "IMO": 10, "status (backend)": 11, "shipbuilder": 24,
      "shipowner": 22, "column": 22, "current backend value": 22, "proposed value": 28,
      "source URL(s)": 45, "confidence": 10, "derivable": 9, "decision": 9, "in backend": 10, "status": 12,
-     "gate verdict": 24, "note": 70}
+     "processed": 24, "gate verdict": 24, "note": 70, "line id": 34}
 table_sheet("all_proposals", PROP_COLS, proposals, W, wrap_cols=("note",),
             conf_col="confidence", fill_col="proposed value", link_col="source URL(s)")
 NP = len(proposals) + 1
@@ -344,7 +351,7 @@ for order, bdir, label, *_ in BATCH_INFO:
         decision = dec.get(it["id"], "hold")
         if decision == "reject":
             continue
-        meta = {"batch": label, "decision": decision, "confidence": it["confidence"],
+        meta = {"batch": label, "dir": bdir, "decision": decision, "confidence": it["confidence"],
                 "note": it["note"], "landed": STATE.get(f"{bdir}::{it['id']}") == "in_backend"}
         if it["kind"] == "new_row":
             full, _rd = _discovery_full_row(it, be_header, yard_map)
@@ -393,8 +400,8 @@ for p in load_json(BATCHES / B3 / "proposed_review.json")["programmes"]:
             row_action[rid] = a["action"].replace("mark for deletion", "DELETE ROW")
             merged.setdefault(rid, list(be_rows[rid]) + [""] * (len(be_header) - len(be_rows[rid])))
 
-HELPERS = ["live sheet row", "row action", "batches", "cells changed", "cells on hold",
-           "columns on hold"]
+HELPERS = ["live sheet row", "row action", "processed", "batches", "cells changed",
+           "cells on hold", "columns on hold", "line key"]
 ws = wb.create_sheet("remaining_changes_backend_shape")
 for j, h in enumerate(be_header + HELPERS, 1):
     c = ws.cell(1, j, h)
@@ -438,8 +445,9 @@ for rid in sorted(merged, key=lambda k: BACKEND[k]["live_row"]):
     n_shape["rows"] += bool(metas)
     n_shape["hold"] += len(held)
     extra = [BACKEND[rid]["live_row"], row_action.get(rid, "edit existing row"),
+             PROCESSED[_living.SHAPE_SHEET].get(f"row:{rid}", ""),
              "; ".join(dict.fromkeys(m["batch"] for m in metas.values())), len(metas), len(held),
-             ", ".join(held)]
+             ", ".join(held), f"row:{rid}"]
     for j, v in enumerate(extra, len(be_header) + 1):
         ws.cell(i, j, v).font = FONT
 for cid, full, meta in new_full:
@@ -450,13 +458,16 @@ for cid, full, meta in new_full:
     on_hold = meta["decision"] != "accept"
     n_shape["cells"] += filled
     n_shape["hold"] += filled if on_hold else 0
-    extra = ["(new)", f"ADD NEW ROW (cluster {cid})", meta["batch"], filled, filled if on_hold else 0,
-             "(whole row)" if on_hold else ""]
+    key = f"cluster:{meta['dir']}:{cid}"
+    extra = ["(new)", f"ADD NEW ROW (cluster {cid})", PROCESSED[_living.SHAPE_SHEET].get(key, ""),
+             meta["batch"], filled, filled if on_hold else 0,
+             "(whole row)" if on_hold else "", key]
     for j, v in enumerate(extra, len(be_header) + 1):
         ws.cell(i, j, v).font = FONT
 for j, h in enumerate(be_header + HELPERS, 1):
     ws.column_dimensions[get_column_letter(j)].width = \
-        {"row action": 34, "batches": 40, "columns on hold": 50}.get(h, 30 if h.endswith("[ref]") else 16)
+        {"row action": 34, "batches": 40, "columns on hold": 50, "processed": 26,
+         "line key": 18}.get(h, 30 if h.endswith("[ref]") else 16)
 ws.freeze_panes = "E2"
 ws.auto_filter.ref = f"A1:{get_column_letter(len(be_header) + len(HELPERS))}{i}"
 
@@ -781,7 +792,9 @@ for name, desc in [
                    f"pushed, {n_open['hold']} on hold. Start here."),
     ("all_proposals", "EVERY proposed change from all fourteen proposal batches, one line per cell (or per new vessel): "
                       "current backend value, proposed value, source URL, confidence, decision, in-backend state, status, "
-                      "note. Filter on status."),
+                      "note. Filter on status. `processed` is written by the review app's living-workbook sync "
+                      "(processed - incorporated / processed - rejected; blank = still open) and `line id` is the "
+                      "key it writes by — leave both alone."),
     ("remaining_changes_backend_shape",
      f"only what is NOT yet in the backend, merged into the backend's own structure: columns A:AT are the backend "
      f"columns in backend order, one full row per vessel, sorted by live sheet row ({n_shape['rows']} rows still to "
@@ -789,7 +802,8 @@ for name, desc in [
      f"still to change, {n_shape['hold']} of them on hold; the {n_shape['landed']:,} cells already in the backend are "
      "shown gray as context). Open accepts AND holds are laid in: a cell is filled by confidence (peach where an "
      "existing [ref] is rewritten or appended to), a hold is in italics, and each cell's comment gives batch, "
-     "decision, the old value and the note. Helper columns (live sheet row, row action, holds) sit to the right. "
+     "decision, the old value and the note. Helper columns (live sheet row, row action, processed, holds, "
+     "line key) sit to the right; `processed` and `line key` belong to the living-workbook sync. "
      "flags_conflicts are not laid in (never auto-applied)."),
     ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows (still to add by hand)"),
     ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows / b10_former_names_rows / "

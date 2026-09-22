@@ -41,6 +41,7 @@ for p in (ROOT / "scripts", HERE):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
+import living  # noqa: E402
 import push  # noqa: E402
 import review_data  # noqa: E402
 import store  # noqa: E402
@@ -73,7 +74,8 @@ def ensure_loopback(host):
 class App:
     """Server state: the dataset, where its batch dirs live, who is reviewing."""
 
-    def __init__(self, data_path, reviewer, batches_root=None, backend_path=None, pull=None, write=None):
+    def __init__(self, data_path, reviewer, batches_root=None, backend_path=None, pull=None,
+                 write=None, living_wb=None):
         self.data_path = Path(data_path)
         self.reviewer = reviewer
         self.batches_root = Path(batches_root) if batches_root else ROOT / "batches"
@@ -83,6 +85,20 @@ class App:
         self.lock = threading.Lock()
         self.data = json.loads(self.data_path.read_text(encoding="utf-8"))
         self.dirs = {b["dir"]: self.batches_root / b["dir"] for b in self.data["batches"]}
+        # the living workbook on Drive, when one is configured for these batches (None = off)
+        self.living = None if living_wb is False else (living_wb or living.from_config(self.dirs))
+
+    def living_sync(self):
+        """Mirror the current decisions into the living workbook's `processed` columns
+        (AP §2c). Never fatal: it writes no backend cell, so a failure here is reported to
+        the reviewer and nothing else changes."""
+        if not self.living:
+            return None
+        try:
+            return self.living.sync(self.data, self.dirs)
+        except living.LivingError as e:
+            print(f"review app: living workbook sync failed: {e}", file=sys.stderr)
+            return {"error": str(e), "url": self.living.url, "written": 0}
 
     def current(self):
         with self.lock:
@@ -94,7 +110,9 @@ class App:
         """Re-pull, rebuild the dataset over the same batch dirs, settle what the backend
         settles. A failed pull or build leaves the served dataset as it was."""
         with self.lock:
-            return self._renew()
+            out = self._renew()
+            out["living"] = self.living_sync()
+            return out
 
     def _renew(self):
         self.pull()
@@ -132,6 +150,7 @@ class App:
             push.log(landed, self.dirs, self.reviewer)
             out = self._renew()
             out.update({"written": len(landed), "mismatches": bad, "error": failed})
+            out["living"] = self.living_sync()
             return out
 
     def decide(self, records):
@@ -247,6 +266,8 @@ def main(argv=None):
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--no-open", action="store_true")
+    ap.add_argument("--no-living", action="store_true",
+                    help="do not sync the living workbook on Drive (data/living_workbook.json)")
     args = ap.parse_args(argv)
     try:
         ensure_loopback(args.host)
@@ -257,7 +278,10 @@ def main(argv=None):
         review_data.main(["--batches", *args.batches, "--out", str(data_path)])
     elif not data_path.exists():
         raise SystemExit(f"{data_path} not found — pass --batches, or run review_app/review_data.py first")
-    app = App(data_path, args.reviewer or git_user())
+    app = App(data_path, args.reviewer or git_user(),
+              living_wb=False if args.no_living else None)
+    if app.living:
+        print(f"review app: living workbook → {app.living.url}", file=sys.stderr)
     httpd = make_server(app, args.host, args.port)
     url = f"http://{args.host}:{httpd.server_address[1]}/"
     print(f"review app: {url}  (reviewer: {app.reviewer}; Ctrl-C to stop)", file=sys.stderr)

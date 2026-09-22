@@ -6,7 +6,11 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-21 rev 6 (§2b: the review app's **push accepted** — a third apply
+**Last revised:** 2026-09-21 rev 8 (§2c: the living workbook — the reconciliation's copy on
+the work Drive, whose `processed` column every sync and push mirrors; §7 follows). Prior:
+2026-09-21 rev 7 (§2b: the button is **push changes** — it also writes the
+reviewer's suggestions, each ref §3.8c-gated against the suggested value at plan time; §3 / §7
+follow). Prior: 2026-09-21 rev 6 (§2b: the review app's **push accepted** — a third apply
 path, a listed and once-confirmed sheet write; §7 reworded). Prior: 2026-09-18 rev 5 (step 2 /
 §3: the review app, `review_app/`, is the
 recommended surface for deciding the holds; `decisions.csv` by hand stays valid). Prior:
@@ -60,8 +64,8 @@ python scripts/apply_batch.py --batch batches/<dir>
 #    (b) By-name applier: paste apply_patch.csv into the backend sheet's "apply_patch"
 #        tab and run tools/apply_patch.gs (DRY_RUN=true first to preview, then false).
 #        It writes each cell by row_id + header, so a column offset is impossible.
-#    (c) Review app push (§2b): the "push accepted" button — value / [ref] lines only;
-#        new rows and conflicts still go by (a) / (b).
+#    (c) Review app push (§2b): the "push changes" button — accepted value / [ref] lines and
+#        the reviewer's gated suggestions; new rows and conflicts still go by (a) / (b).
 
 # 4. Verify: re-pull the backend and confirm everything landed.
 python scripts/verify_apply.py --batch batches/<dir> --pull
@@ -92,12 +96,12 @@ batch's `set` lines.
 
 ## 2b. Push from the review app
 
-The review app's **push accepted** button (Baird 2026-09-21; `review_app/push.py`,
-`review_app/README.md`) writes accepted lines straight into the backend sheet. It is path (b)
-without the paste: the same cells `apply_patch.csv` carries, addressed by row_id + header
-against a fresh pull, with fix / ref-append semantics taken from each line (no
-`OVERWRITE_NONBLANK` switch) and every batch laid over the pull in apply order, so §2a's
-overlap problem does not arise.
+The review app's **push changes** button (Baird 2026-09-21, renamed from *push accepted* the
+same day; `review_app/push.py`, `review_app/README.md`) writes accepted lines and the reviewer's
+suggestions straight into the backend sheet. It is path (b) without the paste: the same cells
+`apply_patch.csv` carries, addressed by row_id + header against a fresh pull, with fix /
+ref-append semantics taken from each line (no `OVERWRITE_NONBLANK` switch) and every batch laid
+over the pull in apply order, so §2a's overlap problem does not arise.
 
 - **Listed, then confirmed once.** The dialog shows every cell that will change (live row,
   column, now → becomes). The confirmation is bound to that plan: the server re-pulls and
@@ -107,15 +111,52 @@ overlap problem does not arise.
   `review_log.jsonl` record is a reviewer's accept. An accept `apply_batch.py` pre-filled by
   confidence, one typed into `decisions.csv`, or one the backend sync set was never clicked:
   the dialog counts these and leaves them alone.
-- **Value / `[ref]` lines only.** Discovery new rows, conflicts and suggestions stay on paths
-  (a) / (b) and §4. A data-fill or ref-fill value is written only into a blank or `unknown`
-  cell; otherwise it is listed as not pushed (it is a conflict).
+- **Suggestions are pushed, gated** (Baird 2026-09-21). A line whose latest record is
+  `suggest` is written as the cell `review_app/suggestions.py` would put in a fix batch: the
+  suggested value, with the refs typed in the suggestion (prefilled from the proposal's) gated
+  one by one against that value by the §3.8c gate (`igu_refs.corroborates_cell`; an IGU
+  landing page → the PDF) at plan time — passing refs replace the paired `[ref]` (Rule F holds:
+  no value goes in without one); `cosmetic` with the refs unchanged keeps the cell's `[ref]`;
+  `Other names` appends. A suggestion no ref corroborates is listed as not pushed with each
+  ref's verdict, never written (§3.8c is a hard block); it takes the fix-batch path.
+- **Value / `[ref]` lines only.** Discovery new rows and conflicts stay on paths (a) / (b) and
+  §4. A data-fill or ref-fill value is written only into a blank or `unknown` cell; otherwise
+  it is listed as not pushed (it is a conflict).
 - **An applied batch is not re-pushed by default.** Where the sheet differs from an applied
   batch's accepted value, the likelier cause is a later hand edit; those cells are listed apart
   and need their own tick.
 - **Reject writes nothing** and never reverts a cell that is already in the sheet.
 - The push verifies its own cells and appends `<dir>/push_log.jsonl`. Step 4 still closes the
   batch: `verify_apply.py --batch <dir> --pull` writes `verify_report.csv` and runs §5a.
+
+## 2c. The living workbook (the reconciliation's copy on Drive)
+
+A pass that runs over weeks needs one place a reader can open to see what has landed. That is
+the **living workbook** (Baird 2026-09-21; `review_app/living.py`, `data/living_workbook.json`):
+one Google Sheet in the work Drive folder `claude-output`, converted from the pass's combined
+workbook, created once and updated in place so its URL stays shareable.
+
+- **It is a mirror, never a source.** Nothing is ever read back from it into a batch, a
+  decision or the backend. It is not a `[ref]`.
+- **Two tabs carry a `processed` column**, and those cells are the only ones the sync writes:
+  `all_proposals` (one line per proposed cell) and `remaining_changes_backend_shape` (one row
+  per vessel). `processed - incorporated` = the pulled backend holds it (the app's own `in the
+  backend` test — value *and* refs; for a suggestion, the suggested value);
+  `processed - rejected` = someone rejected it (`apply_batch.py` never pre-fills a reject, so
+  a reject is always a person's call); `partly processed - N of M` on a vessel with lines still
+  open; blank = still open, accepted-but-unwritten included.
+- **Every sync backend and every push changes updates it**, straight after the pull that
+  settles what the backend holds. A failure there is reported in the banner and nothing else
+  changes: it is not on the backend's write path.
+- **The join is by key, not by position.** `build_combined.py` writes `line id`
+  (`<batch dir>::<decision id>`) and `line key` (`row:<row_id>`, or `cluster:<batch>:<cluster_id>`)
+  columns, and the sync reads them live — so sorting or filtering the sheet cannot put a value
+  on the wrong line, and a key the current batch set does not know is left alone. Leave those
+  two columns and the `processed` column to the sync; anything else in the sheet is yours.
+- **Rebuild, don't re-create**, after rebuilding the combined workbook
+  (`python review_app/living.py --rebuild`): same file id, same URL. `--create` would leave a
+  second copy on the Drive. `--no-living` (server) or `LNGCT_LIVING_SYNC=0` switches the sync
+  off, and it runs only for the batch dirs the workbook was built from.
 
 ## 3. Decisions & acceptance tracking (`decisions.csv`)
 
@@ -137,9 +178,10 @@ is the record of what was accepted for a batch — commit it with the batch.
 `decisions.csv`. It rewrites only the `decision` cell of the line decided (every other byte
 kept) and appends each decision — who, when, how, note — to `<dir>/review_log.jsonl`, the
 audit log; commit it with the batch. A value suggested *instead of* a proposal is recorded
-as `reject` here and `suggest` in the log, and reaches the backend only as its own fix batch
-(`review_app/suggestions.py` → the QC-SOP fix path, re-gated). The app never touches the
-backend. Hand edits of `decisions.csv` remain valid; the app reads the csv as the truth.
+as `reject` here and `suggest` in the log (value, kind, note, `suggested_refs`), and reaches
+the backend through the §2b push (gated) or as its own fix batch (`review_app/suggestions.py`
+→ the QC-SOP fix path, re-gated). Deciding never touches the backend. Hand edits of
+`decisions.csv` remain valid; the app reads the csv as the truth.
 
 ## 4. Conflicts are not fills (`conflicts.csv`)
 
@@ -222,10 +264,12 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
 ## 7. Hard requirements
 
 - **The backend is still human-edited.** Every cell written is one the reviewer set to
-  `accept` in `decisions.csv`. No script writes to the backend without that ([ref]-Fill §4.7).
+  `accept` in `decisions.csv`, or a value the reviewer suggested themself with a ref that
+  passes §3.8c. No script writes to the backend without that ([ref]-Fill §4.7).
   The one script that writes the sheet at all is the review app's push (§2b), and only the
   listed cells, on the reviewer's confirmation in the app — never from a command line, a batch
-  build or an agent session.
+  build or an agent session. The living workbook's sync (§2c) is a separate outward write and
+  touches no backend cell: only the `processed` column of its own two tabs.
 - **Apply by name or by full row — never cherry-pick cells by hand.** Both supported paths
   address columns by header (applier) or paste full backend-width rows (apply_rows.csv);
   neither can land a value in the wrong column.
@@ -236,6 +280,15 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
 
 ## 8. Changelog
 
+- **rev 8** (2026-09-21): Added §2c: the living workbook — the pass's copy on the work Drive
+  (`review_app/living.py`), whose `processed` column every **sync backend** and **push changes**
+  mirrors from the current decisions, keyed by `line id` / `line key` rather than by row
+  position. A mirror only: never read back, never a `[ref]`, never a backend cell. §7 follows.
+- **rev 7** (2026-09-21): §2b: **push accepted** → **push changes**. The push also writes the
+  reviewer's suggestions — value + the refs typed in the suggestion (a box in the Suggest
+  dialog, prefilled with the proposal's refs; `suggested_refs` in the log), each gated against
+  the suggested value at plan time; a suggestion no ref corroborates is listed as not pushed.
+  Step 3(c), §3 and §7 follow.
 - **rev 6** (2026-09-21): Added §2b and step 3(c): the review app's **push accepted** button
   writes accepted value / `[ref]` lines into the sheet after listing every cell and one
   confirmation (plan token, re-pull before and after, `push_log.jsonl`). New rows, conflicts

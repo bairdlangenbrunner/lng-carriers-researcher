@@ -16,7 +16,7 @@
   </nav>
   <div class="who"><span id="whoami"></span> <span id="built" class="st-reject"></span>
     <button id="sync" class="ghost">↻ sync backend</button>
-    <button id="push" class="ghost" title="Write the accepted lines into the backend sheet — lists every cell first, one confirmation">⇪ push accepted</button>
+    <button id="push" class="ghost" title="Write the accepted lines and your suggestions into the backend sheet — lists every cell first, one confirmation">⇪ push changes</button>
     <button id="theme" class="ghost" title="Toggle light / dark">◐</button>
     <button id="help-btn" class="ghost" title="Keyboard shortcuts (?)">?</button>
   </div>
@@ -34,6 +34,7 @@
       <option value="suggest">suggest</option></select></label>
     <label>Batch <select id="f-batch"><option value="">any</option></select></label>
     <label class="grow">Search <input type="search" id="f-text" placeholder="name / IMO"></label>
+    <label title="live sheet rows: one, a range, or a list — 1130-1180, 1215">Row <input type="search" id="f-row" placeholder="1130-1180, 1215"></label>
     <button type="button" id="f-more" class="ghost" aria-expanded="false" aria-controls="more-filters">More filters</button>
     <button type="button" id="f-reset" class="ghost">reset</button>
     <div id="more-filters" class="more-filters" hidden>

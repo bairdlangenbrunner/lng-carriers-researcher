@@ -143,7 +143,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 415|Delivery year,fill,415,,Delivery year,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
 415|IMO number,fill,415,,IMO number,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
 415|Name,fill,415,,Name,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
-415|Shipbuilder,fill,415,,Shipbuilder,Y,False,hold,reject,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
+415|Shipbuilder,fill,415,,Shipbuilder,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
 415|Status,fill,415,,Status,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73086,live row 6: the cited shipvault page renders blank (site bug); companion unit re
 663|Contract date,fill,663,,Contract date,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085,live row 7: the cited shipvault page renders blank (site bug); companion unit re
 663|Delivery year,fill,663,,Delivery year,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/73085,live row 7: the cited shipvault page renders blank (site bug); companion unit re
@@ -162,7 +162,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 969|Shipbuilder,fill,969,,Shipbuilder,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
 969|Shipowner country/area,fill,969,,Shipowner country/area,Y,False,hold,reject,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
 969|Status,fill,969,,Status,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754,live row 61: the cited shipvault page renders blank (site bug); companion unit r
-995|Status,fill,995,,Status,Y,False,hold,reject,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926,live row 814: the cited shipvault page renders blank (site bug); companion unit 
+995|Status,fill,995,,Status,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926,live row 814: the cited shipvault page renders blank (site bug); companion unit 
 1044|Contract date,fill,1044,,Contract date,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877,live row 487: the cited shipvault page renders blank (site bug); companion unit 
 1044|Delivery year,fill,1044,,Delivery year,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877,live row 487: the cited shipvault page renders blank (site bug); companion unit 
 1044|IMO number,fill,1044,,IMO number,Y,False,hold,accept,https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/373877,live row 487: the cited shipvault page renders blank (site bug); companion unit 

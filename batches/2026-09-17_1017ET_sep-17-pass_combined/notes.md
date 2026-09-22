@@ -8,12 +8,12 @@ reject). Nothing is applied *from* here; apply still runs per batch through the 
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-21_2225ET.xlsx`) — the
+- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-21_2328ET.xlsx`) — the
   name carries the build date and US Eastern time; each rebuild writes a new name and removes
-  the previous file (git keeps it). 17 sheets. `all_proposals` is every proposed
+  the previous file (git keeps it). 26 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
   row**, current backend value, proposed value, source URL(s), confidence, decision and
-  gate verdict (since 2026-09-21 also `in backend` and `status`). `remaining_changes_backend_shape` (`all_changes_backend_shape`
+  gate verdict (since 2026-09-21 also `in backend`, `status`, `processed` and `line id`). `remaining_changes_backend_shape` (`all_changes_backend_shape`
   before 2026-09-21, when it held every accept and hold; it now shows only what the backend
   does not hold yet, landed cells gray as context) is the batches merged into the backend's own
   structure: columns A:AT are the backend columns in backend order, one full row per vessel,
@@ -23,8 +23,8 @@ reject). Nothing is applied *from* here; apply still runs per batch through the 
   holds are laid in — fill = confidence (peach = an existing `[ref]` rewritten/appended),
   italics = hold, cell comment = batch / decision / old value / note — so it is a review
   surface, not a blind paste: the per-batch `apply_rows.csv` files stay the accept-only
-  apply artifacts. Helper columns AU:AZ (live sheet row, row action, holds) sit right of
-  the backend columns. `flags_conflicts` are not laid in. `open_lines` (`open_decisions` before 2026-09-21, then a hand-written list of ten questions) is every line not yet in the backend. `b1_`–`b6_`
+  apply artifacts. Helper columns (live sheet row, row action, `processed`,
+  batches, holds, `line key`) sit right of the backend columns. `flags_conflicts` are not laid in. `open_lines` (`open_decisions` before 2026-09-21, then a hand-written list of ten questions) is every line not yet in the backend. `b1_`–`b6_`
   are each batch's wide paste-ready sheet with a live-row column prepended (data-fill
   filtered to rows with at least one proposal). Then `flags_conflicts` (155),
   `manual_review` (54), `proposed_bucket`, `shipvault_unmatched`, `documented_blanks`
@@ -160,3 +160,16 @@ reject). Nothing is applied *from* here; apply still runs per batch through the 
   live 915/916 `Name [ref]` swap), batch 13's 28 hull restylings, batch 14's 1. Includes the 8
   batch-4 lines Baird accepted in the review app at 21:24 ET (`apply_batch.py` re-run: 600 / 403).
   The report page (`build_report.py`) was **not** republished and still describes six batches.
+- **The living workbook on Drive (2026-09-21 23:28 ET).** This workbook now has a permanent copy
+  on the work Drive that keeps itself current: **living-workbook-for-update**
+  ([Sheet](https://docs.google.com/spreadsheets/d/1f1----zCM-qxND3jjf4wEZHfkGLN-TuwOgZq-lGcEec/edit),
+  folder `claude-output`), a native Google Sheet converted from `…_2026-09-21_2328ET.xlsx` so its
+  `processed` cells can be written one at a time; it still downloads as .xlsx. Every **sync
+  backend** and **push changes** in the review app mirrors the current decisions into it
+  (`review_app/living.py`, AP §2c): `processed - incorporated` / `processed - rejected` /
+  `partly processed - N of M` / blank, on `all_proposals` and `remaining_changes_backend_shape`.
+  The builder writes the same values, plus the `line id` / `line key` columns the sync joins on,
+  so a rebuild and a sync agree cell for cell. The sync writes those `processed` cells and
+  nothing else — not the backend, not another column — and the file id is recorded in
+  `data/living_workbook.json`. **Rebuild it (`python review_app/living.py --rebuild`), never
+  `--create`**, after the next combined rebuild: same URL, no second copy on the Drive.
