@@ -163,3 +163,34 @@ change: a blank IMO now fails the IGU check instead of falling back to the text 
 507 -> 497 proposals (462 accept / 35 hold); every other decision unchanged. Rebuilt paced:
 0 refs dropped, recalc zero errors. The other fix batches were audited offline against the same
 check: no other IGU ref fails.
+
+## Arc7 icebreaker cluster — evidence for the 24 held Status / Delivery year lines (2026-09-22)
+
+Baird raised `Ilya Mechnikov` (live row 797, IMO 9918030): MarineTraffic shows a Cyprus flag and
+an "Active" status, which reads as delivered and contradicts IGU 2026's orderbook placement.
+Researched — **IGU 2026 is right, the tracker is not**, and the same holds for all six Arc7 hulls
+this batch proposes against: live rows 797, 799, 805, 806, 812, 823.
+
+- A newbuild is assigned flag / MMSI / callsign **before** handover, for sea and gas trials. This
+  hull's MarineTraffic voyage record (`vesselDetails/voyageInfo/shipid:8334708`) reports
+  destination `HANWHA2517SEA TRIAL`, departing OKPO and arriving ANJEONG — `2517` is the Hanwha
+  Ocean yard number shipvault prints for IMO 9918030.
+- The registry service status, which marinetraffic.**org** exposes and marinetraffic.com does not,
+  is **`Launched`** — not `Active (Commissioned)`. marinetraffic.com's `status: Active` and
+  myshiptracking's `Status | Active` are AIS/ops labels and are not evidence of delivery.
+- Position is Korean coastal water, not a trading voyage: Maritime Optima has it at Tongyeong,
+  MarineTraffic arriving Anjeong 2026-08-20, myshiptracking at 35.007/128.801 (Anjeong Bay). The
+  Okpo ↔ Anjeong/Tongyeong shuttle is the stranded-newbuild pattern.
+- shipvault unit 439722: `status: ON ORDER`, delivery 2026-12. IGU lists all six in **Appendix 4
+  (orderbook)** in both the 2025 and 2026 editions — never in the Appendix 3 fleet table.
+- Korea Times 2026-06-17: all six Arc7s (3 ex-Sovcomflot, 3 MOL) complete but undelivered and
+  stranded at Geoje, run periodically to prevent mechanical degradation — which is the AIS
+  activity the trackers show. Arctic LNG 2 LLC filed a ~$1.02bn SIAC arbitration 2026-09-01.
+- **Not vessel-sanctioned.** Checked 2026-09-22 against the OFAC SDN enhanced XML (calibrated on
+  known-listed LNG carriers) and the UK OFSI consolidated list: none of the six is designated.
+  Sanctions bite through the counterparties (Sovcomflot, the Arctic LNG 2 project company),
+  blocking payment and transfer. Don't describe these hulls as "sanctioned vessels".
+
+The backend's `active` on all six traces to a tracker page used as the Status `[ref]`
+(marinetraffic.com on rows 797/799/805/812, vesselfinder on 806/823). This batch's fix replaces
+that ref with the IGU 2026 PDF, per the settled sole-source rule. Cluster decides together.
