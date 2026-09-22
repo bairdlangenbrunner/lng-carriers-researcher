@@ -3,6 +3,18 @@
   "mode": "fix",
   "accepted_cells": [
     {
+      "row_id": "6",
+      "column": "Other names",
+      "value": "Hull 045 (Zvezda)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "6",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
       "row_id": "25",
       "column": "Other names",
       "value": "Hull 2316 (SHI)",
@@ -387,6 +399,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "144",
+      "column": "Other names",
+      "value": "Hull 2697 (SHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "144",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/479142, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479142",
+      "confidence": "Y"
+    },
+    {
       "row_id": "181",
       "column": "Other names",
       "value": "Hull 3371 (HDHHI)",
@@ -639,6 +663,54 @@
       "confidence": "G"
     },
     {
+      "row_id": "517",
+      "column": "Other names",
+      "value": "Dalian No 1 G175K-7",
+      "confidence": "G"
+    },
+    {
+      "row_id": "517",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "26",
+      "column": "Other names",
+      "value": "Hull 2317 (SHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "26",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/432643, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432643",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "27",
+      "column": "Other names",
+      "value": "Hull 2318 (SHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "27",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/432644, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/432644",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Other names",
+      "value": "Hull 2582 (Hanwha)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "Y"
+    },
+    {
       "row_id": "135",
       "column": "Other names",
       "value": "Hull 2687 (SHI)",
@@ -649,6 +721,42 @@
       "column": "Other names [ref]",
       "value": "https://www.shipvault.com/ships/471277, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/471277",
       "confidence": "G"
+    },
+    {
+      "row_id": "147",
+      "column": "Other names",
+      "value": "Hull 2700 (SHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "147",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/479145, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479145",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "201",
+      "column": "Other names",
+      "value": "Hull 3452 (HDHHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "201",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/462869, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462869",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "202",
+      "column": "Other names",
+      "value": "Hull 3453 (HDHHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "202",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/462870, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462870",
+      "confidence": "Y"
     },
     {
       "row_id": "207",
@@ -831,6 +939,54 @@
       "confidence": "G"
     },
     {
+      "row_id": "239",
+      "column": "Other names",
+      "value": "Hull 8208 (HSHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "239",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "240",
+      "column": "Other names",
+      "value": "Hull 8209 (HSHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "240",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "242",
+      "column": "Other names",
+      "value": "Hull 8238 (HSHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "242",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "243",
+      "column": "Other names",
+      "value": "Hull 8239 (HSHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "243",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
       "row_id": "258",
       "column": "Other names",
       "value": "Hull H1794A (Hudong)",
@@ -841,6 +997,66 @@
       "column": "Other names [ref]",
       "value": "https://www.shipvault.com/ships/462933, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462933",
       "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Other names",
+      "value": "Hull H1795A (Hudong)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "259",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "507",
+      "column": "Other names",
+      "value": "Dalian No 1 G175K-10",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "507",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "510",
+      "column": "Other names",
+      "value": "Dalian No 1 G175K-13",
+      "confidence": "G"
+    },
+    {
+      "row_id": "510",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "519",
+      "column": "Other names",
+      "value": "Dalian No 1 G175K-9",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "519",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "639",
+      "column": "Other names",
+      "value": "Gdansk FSRU",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "639",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
     },
     {
       "row_id": "80",
@@ -939,6 +1155,30 @@
       "confidence": "G"
     },
     {
+      "row_id": "136",
+      "column": "Other names",
+      "value": "Hull 2693 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "136",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "138",
+      "column": "Other names",
+      "value": "Hull 2694 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "138",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
       "row_id": "139",
       "column": "Other names",
       "value": "Hull 2694 (SHI)",
@@ -948,6 +1188,30 @@
       "row_id": "139",
       "column": "Other names [ref]",
       "value": "https://www.shipvault.com/ships/479139, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479139",
+      "confidence": "G"
+    },
+    {
+      "row_id": "140",
+      "column": "Other names",
+      "value": "Hull 2695 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "140",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "142",
+      "column": "Other names",
+      "value": "Hull 2696 (Hanwha)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "142",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
       "confidence": "G"
     },
     {
@@ -973,6 +1237,18 @@
       "column": "Other names [ref]",
       "value": "https://www.shipvault.com/ships/479144, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/479144",
       "confidence": "G"
+    },
+    {
+      "row_id": "150",
+      "column": "Other names",
+      "value": "Hull 2702 (SHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "150",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
     },
     {
       "row_id": "154",
@@ -1009,6 +1285,42 @@
       "column": "Other names [ref]",
       "value": "https://www.shipvault.com/ships/478321, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/478321",
       "confidence": "G"
+    },
+    {
+      "row_id": "508",
+      "column": "Other names",
+      "value": "Dalian No 1 G175K-11",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "508",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "509",
+      "column": "Other names",
+      "value": "Dalian No 1 G175K-12",
+      "confidence": "G"
+    },
+    {
+      "row_id": "509",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "186",
+      "column": "Other names",
+      "value": "Hull 3387 (HDHHI)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "186",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
     },
     {
       "row_id": "721",
@@ -1083,6 +1395,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "1004",
+      "column": "Other names",
+      "value": "Seapeak Hispania; Seapeak Jupiter",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1004",
+      "column": "Other names [ref]",
+      "value": "https://www.shipvault.com/ships/115017, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115017, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
       "row_id": "562",
       "column": "Other names",
       "value": "Energy Frontier",
@@ -1143,6 +1467,30 @@
       "confidence": "G"
     },
     {
+      "row_id": "459",
+      "column": "Other names",
+      "value": "Condor LNG; CCH LNG; LNG Soars; Methane Lydon Volney",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "459",
+      "column": "Other names [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1062",
+      "column": "Other names",
+      "value": "Stena Blue Sky",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1062",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
       "row_id": "869",
       "column": "Other names",
       "value": "Methane Heather Sally",
@@ -1179,6 +1527,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "729",
+      "column": "Other names",
+      "value": "Cool Baltic; SCF Melampus",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "729",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
       "row_id": "993",
       "column": "Other names",
       "value": "SCF La Perouse",
@@ -1189,6 +1549,30 @@
       "column": "Other names [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
+    },
+    {
+      "row_id": "924",
+      "column": "Other names",
+      "value": "North Mountain",
+      "confidence": "G"
+    },
+    {
+      "row_id": "924",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "G"
+    },
+    {
+      "row_id": "263",
+      "column": "Other names",
+      "value": "Hull H1799A (Hudong); Fath Al Khair",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "263",
+      "column": "Other names [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
     },
     {
       "row_id": "385",
@@ -1537,14 +1921,26 @@
       "column": "Other names [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
+    },
+    {
+      "row_id": "686",
+      "column": "Other names",
+      "value": "Ergy",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "686",
+      "column": "Other names [ref]",
+      "value": "https://www.vesseltracker.com/en/Ships/Ergy-9250725.html, https://www.shipvault.com/ships/116466, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116466",
+      "confidence": "Y"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
     "items": 162,
-    "accepted": 128,
-    "hold": 34,
-    "reject": 0,
+    "accepted": 161,
+    "hold": 0,
+    "reject": 1,
     "conflicts": 0
   }
 }

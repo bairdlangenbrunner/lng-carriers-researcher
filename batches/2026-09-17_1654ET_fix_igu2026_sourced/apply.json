@@ -93,6 +93,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "1004",
+      "column": "Name",
+      "value": "Gas Polaris",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1004",
+      "column": "Name [ref]",
+      "value": "https://www.vesseltracker.com/en/Ships/Gas-Polaris-9230048.html, https://www.marinetraffic.org/ship-owner-manager-ism-data/GAS-POLARIS/9230048/525121118",
+      "confidence": "Y"
+    },
+    {
       "row_id": "562",
       "column": "Name",
       "value": "Arunika Jaya",
@@ -163,6 +175,18 @@
       "column": "Name [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
+    },
+    {
+      "row_id": "459",
+      "column": "Name",
+      "value": "LNG Scorpio",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "459",
+      "column": "Name [ref]",
+      "value": "https://www.vesseltracker.com/en/Ships/Lng-Scorpio-9307205.html, https://www.marinetraffic.org/ship-owner-manager-ism-data/LNG-SCORPIO/9307205/352006648",
+      "confidence": "Y"
     },
     {
       "row_id": "1062",
@@ -2221,6 +2245,48 @@
       "column": "Vessel type [ref]",
       "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
       "confidence": "G"
+    },
+    {
+      "row_id": "995",
+      "column": "Status",
+      "value": "on order",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "995",
+      "column": "Status [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "995",
+      "column": "Delivery year",
+      "value": "2026",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "995",
+      "column": "Delivery year [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "995",
+      "column": "Previous delivery year(s)",
+      "value": "2025",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "995",
+      "column": "Previous delivery year(s) [ref]",
+      "value": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "995",
+      "column": "Delivery delayed",
+      "value": "yes",
+      "confidence": "Y"
     },
     {
       "row_id": "996",
@@ -5454,8 +5520,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 497,
-    "accepted": 462,
-    "hold": 35,
+    "accepted": 468,
+    "hold": 29,
     "reject": 0,
     "conflicts": 0
   }

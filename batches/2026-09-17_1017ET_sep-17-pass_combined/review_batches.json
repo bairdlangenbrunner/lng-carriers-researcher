@@ -1,58 +1,72 @@
 {
  "2026-09-17_0421ET_fix_delivery_rollforward": {
-  "label": "1 \u00b7 delivery roll-forward",
-  "apply_order": 1
+  "label": "1 · delivery roll-forward",
+  "apply_order": 1,
+  "applied": true
  },
  "2026-09-17_0458ET_fix_delivery_confirmed": {
-  "label": "2 \u00b7 delivery confirmed by press",
-  "apply_order": 2
+  "label": "2 · delivery confirmed by press",
+  "apply_order": 2,
+  "applied": true
  },
  "2026-09-17_0431ET_discovery_since_jun_2026": {
-  "label": "3 \u00b7 discovery since Jun 2026",
-  "apply_order": 3
+  "label": "3 · discovery since Jun 2026",
+  "apply_order": 3,
+  "applied": false
  },
  "2026-09-17_0511ET_data_fill_on_order": {
-  "label": "4 \u00b7 data fill (on-order rows)",
-  "apply_order": 4
+  "label": "4 · data fill (on-order rows)",
+  "apply_order": 4,
+  "applied": false
  },
  "2026-09-17_0505ET_ref_fill_rule_f": {
-  "label": "5 \u00b7 Rule-F ref fill",
+  "label": "5 · Rule-F ref fill",
   "apply_order": 5,
   "applied": true
  },
  "2026-09-17_1114ET_shipvault_companion_refs": {
-  "label": "6 \u00b7 shipvault companion refs",
+  "label": "6 · shipvault companion refs",
   "apply_order": 6,
-  "applied": false
+  "applied": true
  },
  "2026-09-17_1654ET_fix_igu2026_sourced": {
-  "label": "8 \u00b7 IGU 2026-sourced fix",
-  "apply_order": 8
+  "label": "8 · IGU 2026-sourced fix",
+  "apply_order": 8,
+  "applied": false
  },
  "2026-09-17_1702ET_fix_scrapped_status": {
-  "label": "9 \u00b7 scrapped status + FSU",
+  "label": "9 · scrapped status + FSU",
   "apply_order": 9,
   "applied": true
  },
  "2026-09-17_1737ET_fix_other_names_former": {
-  "label": "10 \u00b7 former names -> Other names",
-  "apply_order": 10
+  "label": "10 · former names -> Other names",
+  "apply_order": 10,
+  "applied": true
  },
  "2026-09-17_1809ET_fix_qcmax_vessel_type": {
-  "label": "11 \u00b7 Vessel type qc-max",
-  "apply_order": 11
+  "label": "11 · Vessel type qc-max",
+  "apply_order": 11,
+  "applied": true
  },
  "2026-09-17_1810ET_fix_price_full_usd": {
-  "label": "12 \u00b7 Price in full USD",
+  "label": "12 · Price in full USD",
   "apply_order": 12,
   "applied": true
  },
  "2026-09-18_2005ET_fix_igu2026_hulls": {
-  "label": "13 \u00b7 IGU hull numbers",
-  "apply_order": 13
+  "label": "13 · IGU hull numbers",
+  "apply_order": 13,
+  "applied": false
  },
  "2026-09-21_1740ET_fix_review_suggestions": {
-  "label": "14 \u00b7 review-app suggestions (hand-built)",
-  "apply_order": 14
+  "label": "14 · review-app suggestions (hand-built)",
+  "apply_order": 14,
+  "applied": false
+ },
+ "2026-09-21_2003ET_fix_shipowner_country_refs": {
+  "label": "15 · shipowner country refs off shipvault",
+  "apply_order": 15,
+  "applied": true
  }
 }

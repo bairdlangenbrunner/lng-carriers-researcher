@@ -1,4 +1,4 @@
 id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
 186|Status,fill,186,,Status,Y,False,hold,hold,active,LNG Prime (25-Aug-2026): 'Knutsen's unit Knutsen LNG France announced the delive
-186|Name,fill,186,,Name,Y,False,hold,hold,Al Nigyan,named at delivery; replaces hull placeholder
+186|Name,fill,186,,Name,Y,False,hold,accept,Al Nigyan,named at delivery; replaces hull placeholder
 318|Status,fill,318,,Status,Y,False,hold,hold,active,LNG Prime (20-Aug-2026): 'Chinese private shipyard Yangzijiang Shipbuilding has 

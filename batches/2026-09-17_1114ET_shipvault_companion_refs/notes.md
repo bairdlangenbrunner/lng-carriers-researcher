@@ -60,3 +60,16 @@ backend before those land. Or apply this batch last and re-run `apply_batch.py` 
   on the same record as the page); ISO timestamps render as dates and `newprice` also in $m, so
   Contract date / Price cells corroborate against the record. Tests added (196 pass).
 - `scripts/shipvault_api_refs.py`: new (`--batch`, `--backend-batch`).
+
+## Reconciled — 2026-09-21 21:05 ET
+
+172 of 175 lines are in the backend (`verify_apply.py`: 172 landed, 0 mismatch, 0 missing; pushed
+2026-09-21 17:04 ET through the review app). Two accepted companion lines were **superseded by
+later pushes and set to `reject`** (logged in `review_log.jsonl`, `via: reconcile`):
+
+- live 61, `Shipowner country/area [ref]` — batch 15 (`2026-09-21_2003ET_fix_shipowner_country_refs`)
+  replaced the row's country ref with MISC sources; a shipvault page or unit record is never a
+  `Shipowner country/area` ref (Data-fill SOP §5), so the companion has nothing to accompany.
+- live 814, `Status [ref]` — batch 8 moved Status `active → on order` with the IGU 2026 PDF as
+  sole ref (19:35 ET); the shipvault page this companion sat beside is no longer a Status ref, and
+  the unit record itself says `active`.

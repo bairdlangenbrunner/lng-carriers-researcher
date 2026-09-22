@@ -964,20 +964,8 @@
     },
     {
       "row_id": "969",
-      "column": "Shipowner country/area [ref]",
-      "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "969",
       "column": "Status [ref]",
       "value": "https://www.shipvault.com/ships/113754, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113754",
-      "confidence": "Y"
-    },
-    {
-      "row_id": "995",
-      "column": "Status [ref]",
-      "value": "https://www.shipvault.com/ships/459926, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/459926",
       "confidence": "Y"
     },
     {
@@ -1050,9 +1038,9 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 175,
-    "accepted": 174,
+    "accepted": 172,
     "hold": 0,
-    "reject": 1,
+    "reject": 3,
     "conflicts": 0
   }
 }

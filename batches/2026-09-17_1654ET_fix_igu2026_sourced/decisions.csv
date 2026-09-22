@@ -7,7 +7,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 811|Name,fill,811,,Name,Y,False,hold,accept,KLNGTP Americas,"'LNGT Americas' -> 'KLNGTP Americas': vesseltracker.com (live AIS name, IMO 9045"
 971|Name,fill,971,,Name,G,False,accept,accept,American Energy,renamed / restyled since the load: 'Puteri Intan' -> IGU 2026 'American Energy (
 535|Name,fill,535,,Name,G,False,accept,accept,Arctic Vostok,renamed / restyled since the load: 'East Energy' -> IGU 2026 'Arctic Vostok' (IG
-1004|Name,fill,1004,,Name,Y,False,hold,hold,Gas Polaris,'Seapeak Hispania' -> 'Gas Polaris': marinetraffic.org and vesseltracker.com (IM
+1004|Name,fill,1004,,Name,Y,False,hold,accept,Gas Polaris,'Seapeak Hispania' -> 'Gas Polaris': marinetraffic.org and vesseltracker.com (IM
 562|Name,fill,562,,Name,G,False,accept,accept,Arunika Jaya,renamed / restyled since the load: 'Energy Frontier' -> IGU 2026 'Arunika Jaya' 
 648|Name,fill,648,,Name,G,False,accept,accept,SC Serenity,renamed / restyled since the load: 'Golar Arctic' -> IGU 2026 'SC SERENITY' (IGU
 866|Name,fill,866,,Name,G,False,accept,accept,Arctic Metagaz,"'Metagas Everest' -> 'Arctic Metagaz': shipvault, marinetraffic.org and vesseltr"
@@ -16,7 +16,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 686|Status,fill,686,,Status,Y,False,hold,hold,scrapped,'active' -> 'scrapped': shipvault (status SCRAPPED) and vesseltracker.com (heade
 801|Name,fill,801,,Name,G,False,accept,accept,Gas Garuda,renamed / restyled since the load: 'LNG River Orashi' -> IGU 2026 'Gas Garuda (e
 958|Name,fill,958,,Name,G,False,accept,accept,Arctic Pioneer,renamed / restyled since the load: 'Pioneer Spirit' -> IGU 2026 'Arctic Pioneer 
-459|Name,fill,459,,Name,Y,False,hold,hold,LNG Scorpio,'CCH LNG' -> 'LNG Scorpio': marinetraffic.org and vesseltracker.com (IMO 9307205
+459|Name,fill,459,,Name,Y,False,hold,accept,LNG Scorpio,'CCH LNG' -> 'LNG Scorpio': marinetraffic.org and vesseltracker.com (IMO 9307205
 1062|Name,fill,1062,,Name,G,False,accept,accept,Blue Dragon I,renamed / restyled since the load: 'Stena Blue Sky' -> IGU 2026 'Blue Dragon I' 
 869|Name,fill,869,,Name,G,False,accept,accept,Shandong Redwood,renamed / restyled since the load: 'Methane Heather Sally' -> IGU 2026 'Shandong
 377|Name,fill,377,,Name,G,False,accept,accept,LNGT Karadeniz,renamed / restyled since the load: 'Alto Acrux' -> IGU 2026 'LNGT Karadeniz' (IG
@@ -217,10 +217,10 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 994|Previous delivery year(s),fill,994,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
 994|Delivery delayed,fill,994,,Delivery delayed,G,False,accept,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 995|Vessel type,fill,995,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
-995|Status,fill,995,,Status,Y,False,hold,hold,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
-995|Delivery year,fill,995,,Delivery year,Y,False,hold,hold,2026,rides with the Status change: IGU orderbook delivery year 2026 (backend 2025) [I
-995|Previous delivery year(s),fill,995,,Previous delivery year(s),Y,False,hold,hold,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
-995|Delivery delayed,fill,995,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
+995|Status,fill,995,,Status,Y,False,hold,accept,on order,"backend `active`, IGU 2026 still lists the vessel in the orderbook (shipvault le"
+995|Delivery year,fill,995,,Delivery year,Y,False,hold,accept,2026,rides with the Status change: IGU orderbook delivery year 2026 (backend 2025) [I
+995|Previous delivery year(s),fill,995,,Previous delivery year(s),Y,False,hold,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
+995|Delivery delayed,fill,995,,Delivery delayed,Y,False,hold,accept,yes,derived: Delivery year 2025 -> 2026 — decide with the Delivery year line
 996|Vessel type,fill,996,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 996|Delivery year,fill,996,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
 996|Previous delivery year(s),fill,996,,Previous delivery year(s),G,False,accept,accept,2025,former Delivery year 2025 (now proposed 2026) — decide with the Delivery year li
