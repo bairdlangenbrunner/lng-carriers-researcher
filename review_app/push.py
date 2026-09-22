@@ -183,7 +183,7 @@ def plan(data, dirs, backend_path=None, batch=None):
                 suggested.add(key)
                 continue
             if not clicked(p):
-                if "in_backend" not in p["flags"] and (not batch or b["dir"] == batch):
+                if not {"in_backend", "value_in_backend"} & set(p["flags"]) and (not batch or b["dir"] == batch):
                     unclicked += 1
                 continue
             if it["kind"] == "new_row":

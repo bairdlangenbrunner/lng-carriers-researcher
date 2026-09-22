@@ -52,8 +52,9 @@ the app's one backend write: it lists every cell first and writes on one confirm
    the backend already holds, is grayed too. Gray never means "filtered out": a line the set
    filter does not match is not drawn at all (the card ends with `N more lines on this vessel are
    hidden by the filter — show all`); the one exception is a line decided on the open card, which
-   stays, grayed, until the vessel or the filter changes, so a misclick can be clicked back. A line `in the backend` (value and refs, as
-   of the last sync) leaves the queue altogether, unless someone rejected it or suggested
+   stays, grayed, until the vessel or the filter changes, so a misclick can be clicked back. A line whose value is in the backend as of
+   the last sync (`in the backend` or `value in the backend` — the value was the decision; a
+   missing proposed ref does not reopen it) leaves the queue altogether, unless someone rejected it or suggested
    another value (More filters → *show lines already in the backend* brings them back). The
    Decision filter follows `reviewed`; its default, *to decide*, is every bright card
    (*not reviewed* + hold). The pipeline still reads `decisions.csv`, pre-fills included —
@@ -85,7 +86,8 @@ the app's one backend write: it lists every cell first and writes on one confirm
    and takes it in place — filters and the session summary stay. Every line is compared with
    the fresh pull (whitespace- and number-normalised, as `verify_apply.py` does): value and
    proposed refs both there → flag `in the backend`; value there, a proposed ref missing →
-   `value in the backend` (shown, never auto-decided). A discovery row is in the backend when
+   `value in the backend` (out of the queue like `in the backend`, but never auto-decided — its
+   decisions.csv cell is left as it is). A discovery row is in the backend when
    its Name or Hull number is. Then what the backend already settles is settled: a **held**
    line that is `in the backend` becomes `accept`, an **open** conflict whose proposed value
    the backend now holds, or duplicate pair with a row gone, becomes `resolved` — through the
@@ -151,7 +153,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    *N to decide here* when a filter is set). The vessel list's badge counts the lines the filter matches
    (it sums to the status bar's count), not everything on the vessel. Under *to decide*, lines
    already in the backend or already applied stay out unless asked for by name — *show lines
-   already in the backend*, or Flag → *in the backend* / *already applied* — and then come
+   already in the backend*, or Flag → *in the backend* / *value in the backend* / *already applied* — and then come
    through unless a person settled them. A card link and an Items row link clear every filter,
    that checkbox included. The Items tab's Status / Type / Batch filters keep an item saved
    this session in view until one of them changes.
