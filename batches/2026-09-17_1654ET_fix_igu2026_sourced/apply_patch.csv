@@ -22,8 +22,12 @@ set,648,Name,SC Serenity
 set,648,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,866,Name,Arctic Metagaz
 set,866,Name [ref],"https://www.vesseltracker.com/en/Ships/Arctic-Metagaz-9243148.html, https://www.marinetraffic.org/ship-owner-manager-ism-data/ARCTIC-METAGAZ/9243148/1, https://www.shipvault.com/ships/115953, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115953"
+set,416,Vessel type,FSU
+set,416,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,686,Name,Hongkong Energy
 set,686,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,686,Status,scrapped
+set,686,Status [ref],"https://www.shipvault.com/ships/116466, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116466, https://www.vesseltracker.com/en/Ships/Ergy-9250725.html"
 set,801,Name,Gas Garuda
 set,801,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,958,Name,Arctic Pioneer
@@ -36,6 +40,8 @@ set,869,Name,Shandong Redwood
 set,869,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,377,Name,LNGT Karadeniz
 set,377,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,374,Vessel type,FSRU
+set,374,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,437,Name,BW ENN Crystal Sky
 set,437,Name [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,649,Name,Italis LNG
@@ -309,12 +315,26 @@ set,701,Cargo type,membrane
 set,701,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,703,Vessel type,icebreaker
 set,703,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,703,Status,on order
+set,703,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,703,Delivery year,2027
+set,703,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,703,Previous delivery year(s),2025
+set,703,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,703,Delivery delayed,yes
 set,749,Vessel type,conventional
 set,749,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,749,Cargo type,membrane
 set,749,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,752,Vessel type,icebreaker
 set,752,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,752,Status,on order
+set,752,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,752,Delivery year,2027
+set,752,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,752,Previous delivery year(s),2025
+set,752,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,752,Delivery delayed,yes
 set,797,Vessel type,conventional
 set,797,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,797,Delivery year,2026
@@ -340,8 +360,22 @@ set,915,Cargo type,membrane
 set,915,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,916,Vessel type,icebreaker
 set,916,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,916,Status,on order
+set,916,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,916,Delivery year,2027
+set,916,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,916,Previous delivery year(s),2025
+set,916,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,916,Delivery delayed,yes
 set,917,Vessel type,icebreaker
 set,917,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,917,Status,on order
+set,917,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,917,Delivery year,2027
+set,917,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,917,Previous delivery year(s),2025
+set,917,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,917,Delivery delayed,yes
 set,927,Vessel type,conventional
 set,927,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,927,Cargo type,membrane
@@ -364,6 +398,13 @@ set,972,Cargo type,membrane
 set,972,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,981,Vessel type,icebreaker
 set,981,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,981,Status,on order
+set,981,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,981,Delivery year,2027
+set,981,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,981,Previous delivery year(s),2025
+set,981,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,981,Delivery delayed,yes
 set,994,Vessel type,conventional
 set,994,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,994,Delivery year,2026
@@ -417,6 +458,13 @@ set,1132,Cargo type,membrane
 set,1132,Cargo type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,1143,Vessel type,icebreaker
 set,1143,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1143,Status,on order
+set,1143,Status [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1143,Delivery year,2027
+set,1143,Delivery year [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
+set,1143,Previous delivery year(s),2025
+set,1143,Previous delivery year(s) [ref],https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf
+set,1143,Delivery delayed,yes
 set,43,Vessel type,conventional
 set,43,Vessel type [ref],https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf
 set,43,Cargo type,membrane

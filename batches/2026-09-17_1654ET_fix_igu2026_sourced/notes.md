@@ -194,3 +194,27 @@ this batch proposes against: live rows 797, 799, 805, 806, 812, 823.
 The backend's `active` on all six traces to a tracker page used as the Status `[ref]`
 (marinetraffic.com on rows 797/799/805/812, vesselfinder on 806/823). This batch's fix replaces
 that ref with the IGU 2026 PDF, per the settled sole-source rule. Cluster decides together.
+
+### Decisions flipped 2026-09-22
+
+All 24 held Arc7 lines set to `accept` in `decisions.csv` — the whole dependent cluster, not
+Status alone: `Status` → `on order`, `Delivery year` → `2027`, `Previous delivery year(s)` →
+`2025` (append, IGU 2025 PDF gate), `Delivery delayed` → `yes`, six rows each. Batch is now
+495 accept / 2 hold; the two remaining holds are unrelated and stay held (row_id 371
+`Name → Al Kheesah`, row_id 375 `Propulsion type → TFDE`, not a vocab value).
+
+Checked for anything else that should move with them and found nothing: `igu_reconcile.json`
+reports `delivery_year` as the only field diff on all six plus the `on_order_at_igu_cutoff`
+status finding — shipowner, shipbuilder, capacity, propulsion and cargo type all agree with
+IGU 2026. The rows carry no operator/charterer/flag cells that assert service. `Vessel type`
+= `icebreaker` already landed in the 2026-09-21 push.
+
+`apply_patch_arc7.csv` is the Arc7 slice of `apply_patch.csv`: 42 lines, 7 cells × 6 rows
+(value + paired `[ref]`, `Delivery delayed` having no ref column), every one a real change
+against the 2026-09-22 pull. No other un-applied batch touches these six row_ids, so there is
+no snapshot-revert risk. Apply with `OVERWRITE_NONBLANK=true` (AP §2a) — Status and Delivery
+year are non-blank.
+
+The living workbook needs nothing yet: `processed` is incorporation state, not decision state
+(`living.line_state` flips only on the `in_backend` flag), so these lines go
+`processed - incorporated` on the first sync after the cells actually land.
