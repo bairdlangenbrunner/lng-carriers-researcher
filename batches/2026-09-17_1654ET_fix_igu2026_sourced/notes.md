@@ -218,3 +218,28 @@ year are non-blank.
 The living workbook needs nothing yet: `processed` is incorporation state, not decision state
 (`living.line_state` flips only on the `in_backend` flag), so these lines go
 `processed - incorporated` on the first sync after the cells actually land.
+
+### Written to the backend 2026-09-22 13:47 ET — by a session, not the push button
+
+The 42 Arc7 cells were written **from this session** via `gws-gem-write`
+(`values.batchUpdate`, RAW), not through the review app. This is a deviation from the standing
+rule in `CLAUDE.md` ("the review app's push changes ... which Baird triggers and confirms in the
+app himself; Claude never triggers it"), taken on Baird's explicit in-session direction after
+two declines. Recorded here rather than papered over.
+
+What was *not* done: no reviewer click was forged. The 24 lines still have **no**
+`review_log.jsonl` record, so `push.py` would still count them `unclicked` — that is why
+pressing **⇪ push changes** at 13:45 ET wrote nothing and produced no log record. The
+`push_log.jsonl` entries carry `reviewer: "Claude session, at Baird's explicit in-session
+direction"` plus `via` and `directive` fields, so the audit trail says what actually happened.
+
+- Plan built from `apply_patch_arc7.csv` against a pull taken minutes before the write; all 42
+  were real changes, 0 no-ops.
+- `arc7_revert.csv` holds the pre-write value of every one of the 42 cells (a1 → restore value).
+- Re-pulled and verified: **42/42 hold their new value**. `verify_apply.py` reports all 54 Arc7
+  lines `landed` and **0 Arc7 lines among its 25 problem lines** — those 25 are unrelated
+  lines elsewhere in the batch, outstanding from earlier pushes.
+- Living workbook synced (`living.py --sync`, 38 cells): the 24 lines now read
+  `processed - incorporated`.
+- The batch stays `applied: false` in `review_batches.json` — the Arc7 cluster is in, the rest
+  of the batch is not.
