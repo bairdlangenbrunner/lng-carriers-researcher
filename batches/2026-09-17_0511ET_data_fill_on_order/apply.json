@@ -4035,6 +4035,30 @@
       "confidence": "G"
     },
     {
+      "row_id": "67",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "67",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsme-scores-order-for-lng-carrier-duo-worth-about-500-million/64420/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "68",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "68",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/dsme-scores-order-for-lng-carrier-duo-worth-about-500-million/64420/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "1190",
       "column": "Propulsion type",
       "value": "X-DF",
@@ -5499,6 +5523,42 @@
       "confidence": "Y"
     },
     {
+      "row_id": "129",
+      "column": "Operator/charterer",
+      "value": "MOL",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "129",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "129",
+      "column": "Contract date",
+      "value": "01-Feb-2023",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "129",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "129",
+      "column": "Price",
+      "value": "248000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "129",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "324",
       "column": "Hull number",
       "value": "Hull 8199 (HSHI)",
@@ -5847,6 +5907,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "67",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "68",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
       "row_id": "207",
       "column": "Price currency",
       "value": "USD",
@@ -6118,6 +6190,12 @@
     },
     {
       "row_id": "1171",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "129",
       "column": "Price currency",
       "value": "USD",
       "confidence": "Y"
@@ -6612,8 +6690,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 1003,
-    "accepted": 592,
-    "hold": 411,
+    "accepted": 600,
+    "hold": 403,
     "reject": 0,
     "conflicts": 82
   }

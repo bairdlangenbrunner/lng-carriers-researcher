@@ -671,6 +671,10 @@ set,1219,Hull number,Hull 2628 (Hanwha)
 set,1219,Hull number [ref],"https://www.shipvault.com/ships/500549, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500549"
 set,1219,IMO number,1185144
 set,1219,IMO number [ref],"https://www.shipvault.com/ships/500549, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500549"
+set,67,Price,250000000
+set,67,Price [ref],https://lngprime.com/asia/dsme-scores-order-for-lng-carrier-duo-worth-about-500-million/64420/
+set,68,Price,250000000
+set,68,Price [ref],https://lngprime.com/asia/dsme-scores-order-for-lng-carrier-duo-worth-about-500-million/64420/
 set,1190,Propulsion type,X-DF
 set,1190,Propulsion type [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
 set,1190,Operator/charterer,Nigeria LNG
@@ -915,6 +919,12 @@ set,1170,Price,257000000
 set,1170,Price [ref],https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/
 set,1171,Price,257000000
 set,1171,Price [ref],https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/
+set,129,Operator/charterer,MOL
+set,129,Operator/charterer [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
+set,129,Contract date,01-Feb-2023
+set,129,Contract date [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
+set,129,Price,248000000
+set,129,Price [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
 set,324,Hull number,Hull 8199 (HSHI)
 set,324,Hull number [ref],"https://www.shipvault.com/ships/457557, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457557"
 set,372,Hull number,Hull 2560 (Hanwha)
@@ -973,6 +983,8 @@ set,511,Hull number,Hull G175K-14
 set,511,Hull number [ref],"https://www.shipvault.com/ships/485162, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/485162"
 set,512,Hull number,Hull G175K-15
 set,512,Hull number [ref],"https://www.shipvault.com/ships/485163, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/485163"
+set,67,Price currency,USD
+set,68,Price currency,USD
 set,207,Price currency,USD
 set,208,Price currency,USD
 set,209,Price currency,USD
@@ -1019,6 +1031,7 @@ set,1225,Price currency,USD
 set,1226,Price currency,USD
 set,1170,Price currency,USD
 set,1171,Price currency,USD
+set,129,Price currency,USD
 set,189,Price,214285714
 set,189,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
 set,189,Price currency,USD

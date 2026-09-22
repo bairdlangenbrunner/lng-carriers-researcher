@@ -346,8 +346,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1219|Hull number,fill,1219,,Hull number,G,False,accept,accept,Hull 2628 (Hanwha),"shipvault yardno 2628, IMO 1185144, delivery 2029-9 -- matches row 1219's delive"
 1219|IMO number,fill,1219,,IMO number,G,False,accept,accept,1185144,Paired with Hull number fill above; same shipvault record. [orderbook-lead match
 1205|Hull number,fill,1205,,Hull number,Y,False,hold,hold,Hull 2627 (Hanwha),By elimination: the only other un-hulled Knutsen/Hanwha Ocean on-order row is 12
-67|Price,fill,67,,Price,Y,False,hold,hold,250000000,LNG Prime: DSME duo for Venture Global worth about $500 million (2 ships -> $250
-68|Price,fill,68,,Price,Y,False,hold,hold,250000000,LNG Prime: DSME duo for Venture Global worth about $500 million (2 ships -> $250
+67|Price,fill,67,,Price,Y,False,hold,accept,250000000,LNG Prime: DSME duo for Venture Global worth about $500 million (2 ships -> $250
+68|Price,fill,68,,Price,Y,False,hold,accept,250000000,LNG Prime: DSME duo for Venture Global worth about $500 million (2 ships -> $250
 1190|Propulsion type,fill,1190,,Propulsion type,G,False,accept,accept,X-DF,Both ThisDayLive and BusinessDay NG report the BGT/Hudong-Zhonghua order vessels
 1190|Operator/charterer,fill,1190,,Operator/charterer,G,False,accept,accept,Nigeria LNG,"Vessels ""will be chartered by NLNG and managed by NLNG Shipping and Marine Servi"
 1190|Cargo type,fill,1190,,Cargo type,Y,False,hold,hold,membrane,Portnews: ships equipped with GTT NO96 Super+ membrane containment system.
@@ -731,9 +731,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 515|Price,fill,515,,Price,Y,False,hold,hold,200000000,'This contract for two LNG carriers had an option for two additional vessels wit
 516|Contract date,fill,516,,Contract date,Y,False,hold,hold,24-Sep-2022,Same option-exercise duo as row 515 (Hull G175K-06).
 516|Price,fill,516,,Price,Y,False,hold,hold,200000000,Same as row 515.
-129|Operator/charterer,fill,129,,Operator/charterer,Y,False,hold,hold,MOL,'Shipbuilding sources told LNG Prime that Japan's shipping giant MOL is likely b
-129|Contract date,fill,129,,Contract date,Y,False,hold,hold,01-Feb-2023,"'SHI said on Wednesday' -- article published 2023-02-01T07:02:02Z, a Wednesday; "
-129|Price,fill,129,,Price,Y,False,hold,hold,248000000,'609.7 billion won ($496 million) or about $248 million per vessel' -- literal p
+129|Operator/charterer,fill,129,,Operator/charterer,Y,False,hold,accept,MOL,'Shipbuilding sources told LNG Prime that Japan's shipping giant MOL is likely b
+129|Contract date,fill,129,,Contract date,Y,False,hold,accept,01-Feb-2023,"'SHI said on Wednesday' -- article published 2023-02-01T07:02:02Z, a Wednesday; "
+129|Price,fill,129,,Price,Y,False,hold,accept,248000000,'609.7 billion won ($496 million) or about $248 million per vessel' -- literal p
 130|Operator/charterer,fill,130,,Operator/charterer,Y,False,hold,hold,MOL,Same duo as row 129 (Hull 2663). [charterer = owner (self-operated); held for re
 130|Contract date,fill,130,,Contract date,Y,False,hold,hold,01-Feb-2023,Same as row 129.
 130|Price,fill,130,,Price,Y,False,hold,hold,248000000,Same as row 129.
@@ -811,8 +811,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 509|Hull number,fill,509,,Hull number,G,False,accept,accept,Hull G175K-12,shipvault record for IMO 1030557: yard DALIAN SHIPYARD no. G175K-12
 511|Hull number,fill,511,,Hull number,G,False,accept,accept,Hull G175K-14,shipvault record for IMO 1093896: yard DALIAN SHIPYARD no. G175K-14
 512|Hull number,fill,512,,Hull number,G,False,accept,accept,Hull G175K-15,shipvault record for IMO 1093901: yard DALIAN SHIPYARD no. G175K-15
-67|Price currency,fill,67,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-68|Price currency,fill,68,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+67|Price currency,fill,67,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+68|Price currency,fill,68,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 207|Price currency,fill,207,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 208|Price currency,fill,208,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 209|Price currency,fill,209,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
@@ -940,7 +940,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1171|Price currency,fill,1171,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 515|Price currency,fill,515,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 516|Price currency,fill,516,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-129|Price currency,fill,129,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+129|Price currency,fill,129,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 130|Price currency,fill,130,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 135|Price currency,fill,135,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 133|Price currency,fill,133,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
