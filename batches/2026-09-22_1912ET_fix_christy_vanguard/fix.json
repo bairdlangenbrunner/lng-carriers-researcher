@@ -1,0 +1,43 @@
+{
+ "batch_label": "Fix — Hull 2663 (SHI) named Christy Vanguard (2026-09-22)",
+ "reason": "Reviewer (Baird, 2026-09-22) spotted that IMO 1019670 now carries a name. Shipspotting's vessel page for the IMO titles it CHRISTY VANGUARD and is the only source carrying it: IGU 2025 and 2026 both print 'Hull 2663' for the IMO, shipvault unit 463995 still reads 'MT HULL 2663', and marinetraffic.org reads 'SAMSUNG 2663'. The name fits MOL's '<X>y Vanguard' series exactly, including the sister hull of this same duo (live row 875, IMO 1019668, Hull 2662 (SHI) -> Gamy Vanguard) plus live rows 847 (Archy Vanguard) and 960 (Barthy Vanguard) -- all three named off shipvault, which has simply not yet renamed unit 463995. Single non-primary source with the value verbatim and entity-level confirmation -> Yellow (SOP 5). Status stays 'on order': shipspotting categorises the vessel 'Ships Under Construction' and shipvault schedules delivery 2027-01, so this is a naming, not a delivery.",
+ "corrections": [
+  {
+   "row_id": "130",
+   "_live_row": 876,
+   "cells": [
+    {
+     "field": "Name",
+     "new_value": "Christy Vanguard",
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.shipspotting.com/photos/4013161",
+       "soft": false
+      }
+     ],
+     "note": "backend 'Hull 2663 (SHI)' (placeholder); shipspotting vessel page for IMO 1019670 titles it 'CHRISTY VANGUARD - IMO 1019670', flag Marshall Islands, category 'Ships Under Construction', manager MITSUI OSK LINES. Sole source -- IGU 2025/2026, shipvault 463995 and marinetraffic.org all still carry the hull placeholder. Corroborated at series level by MOL's '<X>y Vanguard' fleet and by the duo's sister hull 2662 (live row 875, Gamy Vanguard).",
+     "former_name": "proposed"
+    },
+    {
+     "field": "Other names",
+     "new_value": "Hull 2663 (SHI)",
+     "gate_value": "Hull 2663 (SHI)",
+     "append_ref": true,
+     "confidence": "Y",
+     "refs": [
+      {
+       "url": "https://www.datocms-assets.com/146580/1763396210-1747916410-igu-world-lng-report-2025.pdf",
+       "soft": false
+      },
+      {
+       "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+       "soft": false
+      }
+     ],
+     "note": "former Name 'Hull 2663 (SHI)'; the row is renamed 'Christy Vanguard'"
+    }
+   ]
+  }
+ ]
+}
