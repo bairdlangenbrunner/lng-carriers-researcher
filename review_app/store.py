@@ -8,6 +8,7 @@ touches the backend.
 import csv
 import io
 import json
+import re
 import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -16,7 +17,8 @@ ET = ZoneInfo("America/New_York")
 DECISIONS = ("accept", "hold", "reject", "suggest")
 SUGGEST_KINDS = ("value", "cosmetic")
 # suggest is stored as reject in decisions.csv: the value as proposed is not wanted; its
-# replacement arrives through a fix batch (suggestions.py)
+# replacement (the suggested value + the reviewer's refs) is written by the app's push
+# (push.py, gated) or built into a fix batch (suggestions.py)
 CSV_DECISION = {"accept": "accept", "hold": "hold", "reject": "reject", "suggest": "reject"}
 
 
@@ -93,7 +95,8 @@ def overlay(data, dirs):
         if rec and rec.get("decision") == "suggest" and q["decision"] == "reject":
             q["decision"] = "suggest"
             q["suggestion"] = {"value": rec.get("suggested_value", ""),
-                               "kind": rec.get("suggest_kind", "value"), "note": rec.get("note", "")}
+                               "kind": rec.get("suggest_kind", "value"), "note": rec.get("note", ""),
+                               "refs": list(rec.get("suggested_refs") or [])}
         counts.setdefault(b, {"accept": 0, "hold": 0, "reject": 0, "suggest": 0})
         counts[b][q["decision"]] = counts[b].get(q["decision"], 0) + 1
         proposals[key] = q
@@ -122,7 +125,7 @@ def validate(records, proposals):
             raise Invalid(f"record {i}: unknown key {key!r}")
         if decision not in DECISIONS:
             raise Invalid(f"record {i}: decision {decision!r} is not one of {', '.join(DECISIONS)}")
-        rec = {"key": key, "decision": decision, "suggested_value": "", "suggest_kind": "",
+        rec = {"key": key, "decision": decision, "suggested_value": "", "suggest_kind": "", "suggested_refs": [],
                "note": str(r.get("note") or ""), "via": str(r.get("via") or "single")[:500]}
         if decision == "suggest":
             kind = r.get("suggest_kind") or "value"
@@ -134,11 +137,33 @@ def validate(records, proposals):
                 raise Invalid(f"record {i}: a suggestion needs a note")
             rec["suggested_value"] = str(r["suggested_value"])
             rec["suggest_kind"] = kind
+            rec["suggested_refs"] = suggested_refs(r.get("suggested_refs"), i)
         elif r.get("undecided"):
             # back to a line nobody has decided (an undo, or a click on the pressed button): the
             # csv gets its pre-filled decision back and the line reads as undecided again
             rec["undecided"] = True
         out.append(rec)
+    return out
+
+
+def suggested_refs(raw, i=0):
+    """The refs typed with a suggestion — a list, or one string with a URL per line / comma —
+    as a deduplicated list of http(s) URLs; anything else is Invalid."""
+    if raw is None:
+        return []
+    if isinstance(raw, str):
+        raw = re.split(r"[\s,]+", raw)
+    if not isinstance(raw, list):
+        raise Invalid(f"record {i}: suggested_refs must be a list of URLs")
+    out = []
+    for u in raw:
+        u = str(u or "").strip()
+        if not u:
+            continue
+        if not re.match(r"https?://\S+$", u):
+            raise Invalid(f"record {i}: suggested ref {u!r} is not an http(s) URL")
+        if u not in out:
+            out.append(u)
     return out
 
 

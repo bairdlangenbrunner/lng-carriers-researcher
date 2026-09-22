@@ -12,7 +12,7 @@ The SOPs live in `docs/sops/`:
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.; RF rev 27 §4.16 amended 2026-09-21
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21; AP rev 8 §2c (the living workbook) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.; RF rev 27 §4.16 amended 2026-09-21
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -152,6 +152,7 @@ The offset-proof round-trip that gets a reviewed batch into the backend. Full SO
 | Apply artifacts | AP §2 | `apply_rows.csv` (full-row paste), `apply_patch.csv` (by-name applier), `apply.json` (record) |
 | Apply | AP §2/§7 | full-row paste OR `tools/apply_patch.gs` (by header — offset impossible); never hand cherry-pick |
 | Push from the review app | AP §2b | `⇪ push accepted` (`review_app/push.py`) — lists every cell, one confirmation, plan token, re-pull + verify, `push_log.jsonl`; value / `[ref]` lines only (new rows, conflicts, suggestions stay by hand); Baird triggers it, never a session |
+| The living workbook (Drive copy of a pass) | AP §2c | `review_app/living.py` — one Google Sheet in `claude-output`, created once, updated in place; every sync / push writes its `processed` column (`processed - incorporated` / `- rejected` / `partly processed - N of M` / blank) keyed by `line id` / `line key`. A mirror: never read back, never a `[ref]`, never a backend cell |
 | Conflicts | AP §4 | `conflicts.csv` — research vs a non-blank value; decided by hand, never auto-applied (RF §8 / DF §9); the app's Items tab records the call (`review_items.jsonl` is durable — `apply_batch.py` resets `conflicts.csv` calls to `hold`) |
 | Verify | AP §5 | `verify_apply.py --pull` → `verify_report.csv` (landed/mismatch/missing) + qc the touched rows |
 

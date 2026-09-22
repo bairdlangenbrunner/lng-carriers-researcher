@@ -391,7 +391,7 @@ def test_failed_pull_changes_nothing(running):
     assert snapshot(b.values()) == before
 
 
-# ---- push accepted (the one backend write) -------------------------------------------
+# ---- push changes (the one backend write) --------------------------------------------
 
 def post_json(base, path, body):
     req = urllib.request.Request(base + path, data=json.dumps(body).encode(),
@@ -530,3 +530,61 @@ def test_push_leaves_an_accept_nobody_clicked(running, tmp_path):
     assert set(cells(plan)) == {("10", "Name"), ("10", "Name [ref]")} and plan["unclicked"] == n - 1
     assert post(base, [{"key": f"{b['fix_a'].name}::10|Name", "decision": "hold"}])[0] == 200
     assert post_json(base, "/api/push/plan", {})[1]["writes"] == []
+
+
+@pytest.fixture
+def gated(monkeypatch):
+    """Stub the §3.8c gate: a ref passes when its host is 'ship'."""
+    import push
+
+    seen = []
+
+    def fake(url, value, field, imo):
+        seen.append((url, value, field, imo))
+        return ("ship/" in url, "ok" if "ship/" in url else "value not found on page")
+    monkeypatch.setattr(push, "GATE", fake)
+    push._GATE_CACHE.clear()
+    return seen
+
+
+def test_push_plan_includes_a_suggestion_with_gated_refs(pushing, gated):
+    base, app, b, backend, sent = pushing
+    k = f"{b['fix_a'].name}::10|Status"
+    assert post(base, [{"key": k, "decision": "suggest", "suggested_value": "laid up", "note": "idle since May",
+                        "suggested_refs": ["http://ship/10", "http://bad/x", "http://ship/10"]}])[0] == 200
+    plan = post_json(base, "/api/push/plan", {})[1]
+    c = cells(plan)
+    assert (c[("10", "Status")]["new"], c[("10", "Status")]["suggest"]) == ("laid up", True)
+    assert c[("10", "Status [ref]")]["new"] == "http://ship/10"        # the failing ref is dropped
+    assert c[("10", "Name")]["suggest"] is False and plan["skipped"] == []
+    assert [g[:3] for g in gated] == [("http://ship/10", "laid up", "Status"), ("http://bad/x", "laid up", "Status")]
+    out = post_json(base, "/api/push", {"token": plan["token"]})[1]
+    assert out["written"] == len(plan["writes"]) and out["mismatches"] == []
+    assert [(w["column"], w["new"]) for w in sent[0] if w["row_id"] == "10" and w["column"].startswith("Status")] == \
+        [("Status", "laid up"), ("Status [ref]", "http://ship/10")]
+    # the record keeps what the reviewer typed (deduped); the gate filters only at push time
+    assert app.current()["proposals"][k]["suggestion"]["refs"] == ["http://ship/10", "http://bad/x"]
+
+
+def test_push_plan_skips_a_suggestion_no_ref_corroborates(pushing, gated):
+    base, app, b, backend, sent = pushing
+    k = f"{b['fix_a'].name}::10|Status"
+    assert post(base, [{"key": k, "decision": "suggest", "suggested_value": "laid up", "note": "n",
+                        "suggested_refs": ["http://bad/x"]}])[0] == 200
+    plan = post_json(base, "/api/push/plan", {})[1]
+    assert ("10", "Status") not in cells(plan) and ("10", "Status [ref]") not in cells(plan)
+    s = [x for x in plan["skipped"] if x["column"] == "Status"]
+    assert len(s) == 1 and s[0]["decision"] == "suggest" and "§3.8c" in s[0]["why"] and "http://bad/x" in s[0]["why"]
+
+
+def test_suggested_refs_must_be_urls(running):
+    base, app, b = running
+    k = f"{b['fix_a'].name}::10|Status"
+    status, out = post(base, [{"key": k, "decision": "suggest", "suggested_value": "laid up", "note": "n",
+                               "suggested_refs": ["ship/10"]}])
+    assert status == 400 and "not an http(s) URL" in json.dumps(out)
+    status, _ = post(base, [{"key": k, "decision": "suggest", "suggested_value": "laid up", "note": "n",
+                             "suggested_refs": "http://ship/10, http://ship/11"}])
+    assert status == 200
+    assert app.current()["proposals"][k]["suggestion"]["refs"] == ["http://ship/10", "http://ship/11"]
+    assert store.suggested_refs(None) == [] and store.suggested_refs(["", " http://a/b "]) == ["http://a/b"]
