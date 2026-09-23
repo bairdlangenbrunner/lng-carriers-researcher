@@ -338,11 +338,11 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1224|Shipowner country/area,fill,1224,,Shipowner country/area,G,True,accept,accept,Japan,from data/shipowner_facts.csv for owner 'nyk'
 1225|Shipowner country/area,fill,1225,,Shipowner country/area,G,True,accept,accept,Japan,from data/shipowner_facts.csv for owner 'nyk'
 1226|Shipowner country/area,fill,1226,,Shipowner country/area,G,True,accept,accept,Japan,from data/shipowner_facts.csv for owner 'nyk'
-1218|Hull number,fill,1218,,Hull number,Y,False,hold,hold,Hull 2803 (SHI),"shipvault yardno 2803, IMO 1185077, ordered 2026-06, delivery 2028-11 -- matches"
-1218|IMO number,fill,1218,,IMO number,Y,False,hold,hold,1185077,Paired with Hull number fill above; same shipvault record. [orderbook-lead match
-1227|Shipowner,fill,1227,,Shipowner,Y,False,hold,hold,Purus Marine,LNG Prime article 188654 (already cited on this row for status/shipbuilder) is t
-1227|Hull number,fill,1227,,Hull number,Y,False,hold,hold,Hull 2808 (SHI),"shipvault yardno 2808, IMO 1187609, ordered 2026-06, delivery 2029-02 -- matches"
-1227|IMO number,fill,1227,,IMO number,Y,False,hold,hold,1187609,Paired with Hull number fill above; same shipvault record. [orderbook-lead match
+1218|Hull number,fill,1218,,Hull number,G,False,hold,accept,Hull 2803 (SHI),"shipvault yardno 2803, IMO 1185077, ordered 2026-06, delivery 2028-11 -- matches"
+1218|IMO number,fill,1218,,IMO number,G,False,hold,accept,1185077,Paired with Hull number fill above; same shipvault record. [orderbook-lead match
+1227|Shipowner,fill,1227,,Shipowner,G,False,hold,accept,Purus Marine,LNG Prime article 188654 (already cited on this row for status/shipbuilder) is t
+1227|Hull number,fill,1227,,Hull number,G,False,hold,accept,Hull 2808 (SHI),"shipvault yardno 2808, IMO 1187609, ordered 2026-06, delivery 2029-02 -- matches"
+1227|IMO number,fill,1227,,IMO number,G,False,hold,accept,1187609,Paired with Hull number fill above; same shipvault record. [orderbook-lead match
 1219|Hull number,fill,1219,,Hull number,G,False,accept,accept,Hull 2628 (Hanwha),"shipvault yardno 2628, IMO 1185144, delivery 2029-9 -- matches row 1219's delive"
 1219|IMO number,fill,1219,,IMO number,G,False,accept,accept,1185144,Paired with Hull number fill above; same shipvault record. [orderbook-lead match
 1205|Hull number,fill,1205,,Hull number,Y,False,hold,hold,Hull 2627 (Hanwha),By elimination: the only other un-hulled Knutsen/Hanwha Ocean on-order row is 12
@@ -408,18 +408,18 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 223|Contract date,fill,223,,Contract date,G,False,accept,accept,27-Sep-2023,QatarEnergy/HD Hyundai Heavy Industries 17-carrier deal announced/inked 27 Sep 2
 223|Price,fill,223,,Price,G,False,accept,accept,229000000,"LNG Prime: total deal $3.9 billion for 17 ships states literally ""the price tag "
 223|Operator/charterer,fill,223,,Operator/charterer,G,False,accept,accept,QatarEnergy,"Vessels owned by Nakilat, chartered to affiliates of QatarEnergy under time char"
-203|Price,fill,203,,Price,Y,False,hold,hold,260000000,"Splash247 (28-Jul-2023): Evalend penned a letter of intent for two 174,000cbm ca"
-204|Price,fill,204,,Price,Y,False,hold,hold,260000000,Same source as row 203 (sister hull from same 2-ship LOI).
-205|Contract date,fill,205,,Contract date,Y,False,hold,hold,20-Nov-2023,"Splash247: ""Evalend Shipping has doubled its orderbook ... with two more units a"
-206|Contract date,fill,206,,Contract date,Y,False,hold,hold,20-Nov-2023,Same source as row 205 (sister hull from same 2-ship order).
-158|Contract date,fill,158,,Contract date,Y,False,hold,hold,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
-158|Operator/charterer,fill,158,,Operator/charterer,Y,False,hold,hold,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
-159|Contract date,fill,159,,Contract date,Y,False,hold,hold,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
-159|Operator/charterer,fill,159,,Operator/charterer,Y,False,hold,hold,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
-160|Contract date,fill,160,,Contract date,Y,False,hold,hold,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
-160|Operator/charterer,fill,160,,Operator/charterer,Y,False,hold,hold,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
-161|Contract date,fill,161,,Contract date,Y,False,hold,hold,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
-161|Operator/charterer,fill,161,,Operator/charterer,Y,False,hold,hold,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
+203|Price,fill,203,,Price,G,False,hold,accept,260000000,"Splash247 (28-Jul-2023): Evalend penned a letter of intent for two 174,000cbm ca"
+204|Price,fill,204,,Price,G,False,hold,accept,260000000,Same source as row 203 (sister hull from same 2-ship LOI).
+205|Contract date,fill,205,,Contract date,G,False,hold,accept,20-Nov-2023,"Splash247: ""Evalend Shipping has doubled its orderbook ... with two more units a"
+206|Contract date,fill,206,,Contract date,G,False,hold,accept,20-Nov-2023,Same source as row 205 (sister hull from same 2-ship order).
+158|Contract date,fill,158,,Contract date,G,False,hold,accept,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
+158|Operator/charterer,fill,158,,Operator/charterer,G,False,hold,accept,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
+159|Contract date,fill,159,,Contract date,G,False,hold,accept,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
+159|Operator/charterer,fill,159,,Operator/charterer,G,False,hold,accept,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
+160|Contract date,fill,160,,Contract date,G,False,hold,accept,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
+160|Operator/charterer,fill,160,,Operator/charterer,G,False,hold,accept,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
+161|Contract date,fill,161,,Contract date,G,False,hold,accept,01-Jul-2024,Splash247 (published 01-Jul-2024): ADNOC L&S awarded Samsung Heavy Industries a 
+161|Operator/charterer,fill,161,,Operator/charterer,G,False,hold,accept,ADNOC,"Vessels ""will be time chartered to ADNOC subsidiaries for 20 years."" [charterer "
 507|Contract date,fill,507,,Contract date,G,False,accept,accept,31-Aug-2023,LNG Prime (31-Aug-2023): Cosco Shipping Energy Transportation said DSIC official
 507|Price,fill,507,,Price,G,False,accept,accept,233300000,"LNG Prime states deal worth ""about $700 million or some $233.3 million per vesse"
 507|Operator/charterer,fill,507,,Operator/charterer,G,False,accept,accept,Sinopec,"Article: vessels will ""serve Sinopec under long-term charters"" to ship US LNG (P"
@@ -471,128 +471,128 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 198|Operator/charterer,fill,198,,Operator/charterer,G,False,accept,accept,EnBW,Same as row 197.
 199|Operator/charterer,fill,199,,Operator/charterer,G,False,accept,accept,EnBW,Same as row 197.
 200|Operator/charterer,fill,200,,Operator/charterer,G,False,accept,accept,EnBW,Same as row 197.
-197|Contract date,fill,197,,Contract date,Y,False,hold,hold,16-May-2023,NYK press release dated 16-May-2023.
-198|Contract date,fill,198,,Contract date,Y,False,hold,hold,16-May-2023,Same as row 197.
-199|Contract date,fill,199,,Contract date,Y,False,hold,hold,16-May-2023,Same as row 197.
-200|Contract date,fill,200,,Contract date,Y,False,hold,hold,16-May-2023,Same as row 197.
-197|Price,fill,197,,Price,Y,False,hold,hold,262000000,Article states $262m literally per vessel for this NYK/EnBW batch (not a derived
-198|Price,fill,198,,Price,Y,False,hold,hold,262000000,Same as row 197.
-199|Price,fill,199,,Price,Y,False,hold,hold,262000000,Same as row 197.
-200|Price,fill,200,,Price,Y,False,hold,hold,262000000,Same as row 197.
+197|Contract date,fill,197,,Contract date,G,False,hold,accept,16-May-2023,NYK press release dated 16-May-2023.
+198|Contract date,fill,198,,Contract date,G,False,hold,accept,16-May-2023,Same as row 197.
+199|Contract date,fill,199,,Contract date,G,False,hold,accept,16-May-2023,Same as row 197.
+200|Contract date,fill,200,,Contract date,G,False,hold,accept,16-May-2023,Same as row 197.
+197|Price,fill,197,,Price,G,False,hold,accept,262000000,Article states $262m literally per vessel for this NYK/EnBW batch (not a derived
+198|Price,fill,198,,Price,G,False,hold,accept,262000000,Same as row 197.
+199|Price,fill,199,,Price,G,False,hold,accept,262000000,Same as row 197.
+200|Price,fill,200,,Price,G,False,hold,accept,262000000,Same as row 197.
 197|Cargo type,fill,197,,Cargo type,Y,False,hold,hold,membrane,NYK release states membrane containment.
 198|Cargo type,fill,198,,Cargo type,Y,False,hold,hold,membrane,Same as row 197.
 199|Cargo type,fill,199,,Cargo type,Y,False,hold,hold,membrane,Same as row 197.
 200|Cargo type,fill,200,,Cargo type,Y,False,hold,hold,membrane,Same as row 197.
-137|Operator/charterer,fill,137,,Operator/charterer,Y,False,hold,hold,SeaRiver Maritime,Single source names SeaRiver Maritime (ExxonMobil unit) as charterer for this MI
-144|Operator/charterer,fill,144,,Operator/charterer,Y,False,hold,hold,SeaRiver Maritime,Same duo order; see row 137 note.
-137|Contract date,fill,137,,Contract date,Y,False,hold,hold,30-Sep-2022,Article publication date treated as same-day disclosure per rule; no separate si
-144|Contract date,fill,144,,Contract date,Y,False,hold,hold,30-Sep-2022,Same as row 137.
+137|Operator/charterer,fill,137,,Operator/charterer,Y,False,hold,accept,SeaRiver Maritime,Single source names SeaRiver Maritime (ExxonMobil unit) as charterer for this MI
+144|Operator/charterer,fill,144,,Operator/charterer,Y,False,hold,accept,SeaRiver Maritime,Same duo order; see row 137 note.
+137|Contract date,fill,137,,Contract date,Y,False,hold,accept,30-Sep-2022,Article publication date treated as same-day disclosure per rule; no separate si
+144|Contract date,fill,144,,Contract date,Y,False,hold,accept,30-Sep-2022,Same as row 137.
 156|Operator/charterer,fill,156,,Operator/charterer,G,False,accept,accept,Petronas,Two domains confirm Petronas as charterer for this MISC/Samsung Heavy duo.
 157|Operator/charterer,fill,157,,Operator/charterer,G,False,accept,accept,Petronas,Same as row 156.
-156|Contract date,fill,156,,Contract date,Y,False,hold,hold,01-Oct-2024,Article (published Oct 1 2024) references a stock-exchange filing 'on Tuesday' (
-157|Contract date,fill,157,,Contract date,Y,False,hold,hold,01-Oct-2024,Same as row 156.
+156|Contract date,fill,156,,Contract date,G,False,hold,accept,01-Oct-2024,Article (published Oct 1 2024) references a stock-exchange filing 'on Tuesday' (
+157|Contract date,fill,157,,Contract date,G,False,hold,accept,01-Oct-2024,Same as row 156.
 1206|Cargo type,fill,1206,,Cargo type,Y,False,hold,hold,membrane,GTT order article states the FSRU's tanks use GTT's Mark III membrane containmen
 1156|Price,fill,1156,,Price,Y,False,hold,accept,251500000,Splash247 / Global Flow Control: $503m for the two-vessel order; per-vessel = 50
 1157|Price,fill,1157,,Price,Y,False,hold,accept,251500000,Splash247 / Global Flow Control: $503m for the two-vessel order; per-vessel = 50
 1156|Cargo type,fill,1156,,Cargo type,G,False,accept,accept,membrane,Both articles state GTT Mark III Flex membrane containment for these two vessels
 1157|Cargo type,fill,1157,,Cargo type,G,False,accept,accept,membrane,Same as row 1156.
-1174|Price,fill,1174,,Price,Y,False,hold,hold,252000000,Article states the single vessel is 'valued at just over US$252M' literally (not
-1186|Price,fill,1186,,Price,Y,False,hold,hold,245000000,"Splash247 (03-Feb-2026): HD Hyundai Samho contract for a 174,000 cu m unit for S"
+1174|Price,fill,1174,,Price,G,False,hold,accept,252000000,Article states the single vessel is 'valued at just over US$252M' literally (not
+1186|Price,fill,1186,,Price,G,False,hold,accept,245000000,"Splash247 (03-Feb-2026): HD Hyundai Samho contract for a 174,000 cu m unit for S"
 201|Contract date,fill,201,,Contract date,Y,False,hold,accept,17-Jan-2023,LNG Prime (published 17-Jan-2023): 'Parent KSOE said on Tuesday HHI would build 
 201|Price,fill,201,,Price,Y,False,hold,accept,261000000,Same article: 'contract has a price tag of 971.4 billion won ($783 million) or $
-202|Contract date,fill,202,,Contract date,Y,False,hold,hold,17-Jan-2023,"Same trio order as row 201 (yardno 3453, sister hull). See row 201 note for full"
-202|Price,fill,202,,Price,Y,False,hold,hold,261000000,"Same trio order as row 201 ($261m/vessel, shipvault newprice 261300000 corrobora"
-476|Contract date,fill,476,,Contract date,Y,False,hold,hold,02-May-2023,TradeWinds (2-May-2023): 'Korea Shipbuilding & Offshore Engineering said on Tues
-258|Contract date,fill,258,,Contract date,Y,False,hold,hold,07-Jan-2022,LNG Prime: 'The companies signed the shipbuilding deal worth about 7.5 billion y
-258|Price,fill,258,,Price,Y,False,hold,hold,196000000,Article states total ~$1.17bn for 6 ships and explicitly derives 'about $196 mil
-258|Operator/charterer,fill,258,,Operator/charterer,Y,False,hold,hold,CNOOC Gas & Power,Article: 'CNOOC's gas and power unit would charter the six new vessels and use t
-259|Contract date,fill,259,,Contract date,Y,False,hold,hold,07-Jan-2022,Same 6-vessel sextet order as row 258. See row 258 note.
-259|Price,fill,259,,Price,Y,False,hold,hold,196000000,Same sextet order as row 258.
-259|Operator/charterer,fill,259,,Operator/charterer,Y,False,hold,hold,CNOOC Gas & Power,Same sextet order as row 258.
-260|Contract date,fill,260,,Contract date,Y,False,hold,hold,07-Jan-2022,Same 6-vessel sextet order as row 258. See row 258 note.
-260|Price,fill,260,,Price,Y,False,hold,hold,196000000,Same sextet order as row 258.
-260|Operator/charterer,fill,260,,Operator/charterer,Y,False,hold,hold,CNOOC Gas & Power,Same sextet order as row 258.
-270|Operator/charterer,fill,270,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime (17-Jan-2023, on a different hull H1791A in the same MOL/Hudong-Zhongh"
-271|Operator/charterer,fill,271,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
-272|Operator/charterer,fill,272,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
-275|Operator/charterer,fill,275,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
-308|Price,fill,308,,Price,Y,False,hold,hold,333000000,"LNG Prime (9-Jun-2026): 'All of the QC-Max vessels, each worth approximately $33"
-308|Operator/charterer,fill,308,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Article: QC-Max vessels 'will serve state-owned LNG giant QatarEnergy under char
-309|Price,fill,309,,Price,Y,False,hold,hold,333000000,Same QC-Max class price as row 308.
-309|Operator/charterer,fill,309,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same QC-Max charterer as row 308.
-310|Price,fill,310,,Price,Y,False,hold,hold,333000000,Same QC-Max class price as row 308. NOTE: this row's shipvault owner is 'NAKILAT
-310|Operator/charterer,fill,310,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Article: 'Qatar's Nakilat previously signed charter agreements with QatarEnergy 
-311|Price,fill,311,,Price,Y,False,hold,hold,333000000,Same QC-Max class price as row 308.
-311|Operator/charterer,fill,311,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same QC-Max charterer as row 308.
-312|Price,fill,312,,Price,Y,False,hold,hold,333000000,Same QC-Max class price as row 308.
-312|Operator/charterer,fill,312,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same QC-Max charterer as row 308.
-313|Price,fill,313,,Price,Y,False,hold,hold,333000000,Same QC-Max class price as row 308.
-313|Operator/charterer,fill,313,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same QC-Max charterer as row 308.
-139|Price,fill,139,,Price,Y,False,hold,hold,230000000,LNG Prime (28-Mar-2024): 'QatarEnergy has also selected shipowners for the 15 ..
-139|Operator/charterer,fill,139,,Operator/charterer,Y,False,hold,hold,QatarEnergy,QatarEnergy is the party 'booking' the vessels and selecting shipowners (CMES = 
-143|Price,fill,143,,Price,Y,False,hold,hold,230000000,Same CMES/Samsung batch as row 139.
-143|Operator/charterer,fill,143,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 139.
-146|Price,fill,146,,Price,Y,False,hold,hold,230000000,Same CMES/Samsung batch as row 139.
-146|Operator/charterer,fill,146,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 139.
-150|Price,fill,150,,Price,Y,False,hold,hold,230000000,Same CMES/Samsung batch as row 139.
-150|Operator/charterer,fill,150,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 139.
-152|Price,fill,152,,Price,Y,False,hold,hold,230000000,Same CMES/Samsung batch as row 139.
-152|Operator/charterer,fill,152,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 139.
-154|Price,fill,154,,Price,Y,False,hold,hold,230000000,Same CMES/Samsung batch as row 139.
-154|Operator/charterer,fill,154,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 139.
-711|Price,fill,711,,Price,Y,False,hold,hold,235000000,LNG Prime (28-Mar-2023): 'China Taiping Insurance Holdings revealed this deal on
-711|Operator/charterer,fill,711,,Operator/charterer,Y,False,hold,hold,Shandong Marine Energy,Article: 'Taiping 26 and Taiping 27 entered into bareboat charter deals with Sha
-712|Price,fill,712,,Price,Y,False,hold,hold,235000000,Same Taiping/Jiangnan duo order as row 711. See row 711 note.
-712|Operator/charterer,fill,712,,Operator/charterer,Y,False,hold,hold,Shandong Marine Energy,Same as row 711.
-639|Operator/charterer,fill,639,,Operator/charterer,Y,False,hold,hold,Gaz-System,LNG Prime article metadata/description (article body itself is paywalled beyond 
+202|Contract date,fill,202,,Contract date,G,False,hold,accept,17-Jan-2023,"Same trio order as row 201 (yardno 3453, sister hull). See row 201 note for full"
+202|Price,fill,202,,Price,G,False,hold,accept,261000000,"Same trio order as row 201 ($261m/vessel, shipvault newprice 261300000 corrobora"
+476|Contract date,fill,476,,Contract date,G,False,hold,accept,02-May-2023,TradeWinds (2-May-2023): 'Korea Shipbuilding & Offshore Engineering said on Tues
+258|Contract date,fill,258,,Contract date,G,False,hold,accept,07-Jan-2022,LNG Prime: 'The companies signed the shipbuilding deal worth about 7.5 billion y
+258|Price,fill,258,,Price,G,False,hold,accept,196000000,Article states total ~$1.17bn for 6 ships and explicitly derives 'about $196 mil
+258|Operator/charterer,fill,258,,Operator/charterer,G,False,hold,accept,CNOOC Gas & Power,Article: 'CNOOC's gas and power unit would charter the six new vessels and use t
+259|Contract date,fill,259,,Contract date,G,False,hold,accept,07-Jan-2022,Same 6-vessel sextet order as row 258. See row 258 note.
+259|Price,fill,259,,Price,G,False,hold,accept,196000000,Same sextet order as row 258.
+259|Operator/charterer,fill,259,,Operator/charterer,G,False,hold,accept,CNOOC Gas & Power,Same sextet order as row 258.
+260|Contract date,fill,260,,Contract date,G,False,hold,accept,07-Jan-2022,Same 6-vessel sextet order as row 258. See row 258 note.
+260|Price,fill,260,,Price,G,False,hold,accept,196000000,Same sextet order as row 258.
+260|Operator/charterer,fill,260,,Operator/charterer,G,False,hold,accept,CNOOC Gas & Power,Same sextet order as row 258.
+270|Operator/charterer,fill,270,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime (17-Jan-2023, on a different hull H1791A in the same MOL/Hudong-Zhongh"
+271|Operator/charterer,fill,271,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
+272|Operator/charterer,fill,272,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
+275|Operator/charterer,fill,275,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same first-batch-of-four QatarEnergy charter as row 270. See row 270 note.
+308|Price,fill,308,,Price,G,False,hold,accept,333000000,"LNG Prime (9-Jun-2026): 'All of the QC-Max vessels, each worth approximately $33"
+308|Operator/charterer,fill,308,,Operator/charterer,G,False,hold,accept,QatarEnergy,Article: QC-Max vessels 'will serve state-owned LNG giant QatarEnergy under char
+309|Price,fill,309,,Price,G,False,hold,accept,333000000,Same QC-Max class price as row 308.
+309|Operator/charterer,fill,309,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same QC-Max charterer as row 308.
+310|Price,fill,310,,Price,G,False,hold,accept,333000000,Same QC-Max class price as row 308. NOTE: this row's shipvault owner is 'NAKILAT
+310|Operator/charterer,fill,310,,Operator/charterer,G,False,hold,accept,QatarEnergy,Article: 'Qatar's Nakilat previously signed charter agreements with QatarEnergy 
+311|Price,fill,311,,Price,G,False,hold,accept,333000000,Same QC-Max class price as row 308.
+311|Operator/charterer,fill,311,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same QC-Max charterer as row 308.
+312|Price,fill,312,,Price,G,False,hold,accept,333000000,Same QC-Max class price as row 308.
+312|Operator/charterer,fill,312,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same QC-Max charterer as row 308.
+313|Price,fill,313,,Price,G,False,hold,accept,333000000,Same QC-Max class price as row 308.
+313|Operator/charterer,fill,313,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same QC-Max charterer as row 308.
+139|Price,fill,139,,Price,G,False,hold,accept,230000000,LNG Prime (28-Mar-2024): 'QatarEnergy has also selected shipowners for the 15 ..
+139|Operator/charterer,fill,139,,Operator/charterer,G,False,hold,accept,QatarEnergy,QatarEnergy is the party 'booking' the vessels and selecting shipowners (CMES = 
+143|Price,fill,143,,Price,G,False,hold,accept,230000000,Same CMES/Samsung batch as row 139.
+143|Operator/charterer,fill,143,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 139.
+146|Price,fill,146,,Price,G,False,hold,accept,230000000,Same CMES/Samsung batch as row 139.
+146|Operator/charterer,fill,146,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 139.
+150|Price,fill,150,,Price,G,False,hold,accept,230000000,Same CMES/Samsung batch as row 139.
+150|Operator/charterer,fill,150,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 139.
+152|Price,fill,152,,Price,G,False,hold,accept,230000000,Same CMES/Samsung batch as row 139.
+152|Operator/charterer,fill,152,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 139.
+154|Price,fill,154,,Price,G,False,hold,accept,230000000,Same CMES/Samsung batch as row 139.
+154|Operator/charterer,fill,154,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 139.
+711|Price,fill,711,,Price,G,False,hold,accept,235000000,LNG Prime (28-Mar-2023): 'China Taiping Insurance Holdings revealed this deal on
+711|Operator/charterer,fill,711,,Operator/charterer,G,False,hold,accept,Shandong Marine Energy,Article: 'Taiping 26 and Taiping 27 entered into bareboat charter deals with Sha
+712|Price,fill,712,,Price,G,False,hold,accept,235000000,Same Taiping/Jiangnan duo order as row 711. See row 711 note.
+712|Operator/charterer,fill,712,,Operator/charterer,G,False,hold,accept,Shandong Marine Energy,Same as row 711.
+639|Operator/charterer,fill,639,,Operator/charterer,G,False,hold,accept,Gaz-System,LNG Prime article metadata/description (article body itself is paywalled beyond 
 639|Vessel type,fill,639,,Vessel type,Y,False,hold,hold,FSRU,Literally stated: '...MOL's floating storage and regasification unit (FSRU)...'.
-408|Capacity,fill,408,,Capacity,Y,False,hold,hold,174000,"shipvault record for MT Athlos (IMO 9999981, HD Hyundai Samho yard no. 8206) sta"
+408|Capacity,fill,408,,Capacity,Y,False,hold,accept,174000,"shipvault record for MT Athlos (IMO 9999981, HD Hyundai Samho yard no. 8206) sta"
 244|Contract date,fill,244,,Contract date,Y,False,hold,hold,26-Feb-2024,"LNG Prime, 26-Feb-2024: HD KSOE disclosed a 4-vessel, 174,000cbm order at Hyunda"
-244|Price,fill,244,,Price,Y,False,hold,hold,270000000,"Same article: en-bloc $1.08bn/4 vessels = $270m per vessel, stated literally in "
-245|Contract date,fill,245,,Contract date,Y,False,hold,hold,26-Feb-2024,Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
-245|Price,fill,245,,Price,Y,False,hold,hold,270000000,Same quartet order as Hull 8254.
-246|Contract date,fill,246,,Contract date,Y,False,hold,hold,26-Feb-2024,Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
-246|Price,fill,246,,Price,Y,False,hold,hold,270000000,Same quartet order as Hull 8254.
-247|Contract date,fill,247,,Contract date,Y,False,hold,hold,26-Feb-2024,Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
-247|Price,fill,247,,Price,Y,False,hold,hold,270000000,Same quartet order as Hull 8254.
-292|Contract date,fill,292,,Contract date,Y,False,hold,hold,29-Apr-2024,"QatarEnergy's 18-vessel, 271,000cbm QC-Max order at Hudong-Zhonghua, contract si"
-292|Price,fill,292,,Price,Y,False,hold,hold,333000000,Article states literally: 'the entire order is worth almost $6 billion. This put
-292|Operator/charterer,fill,292,,Operator/charterer,Y,False,hold,hold,QatarEnergy,QatarEnergy signed long-term time charter party (TCP) agreements with the shipow
-296|Contract date,fill,296,,Contract date,Y,False,hold,hold,29-Apr-2024,Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1914A).
-296|Price,fill,296,,Price,Y,False,hold,hold,333000000,Same order as row 292; $333m/vessel stated literally.
-296|Operator/charterer,fill,296,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 292.
-300|Contract date,fill,300,,Contract date,Y,False,hold,hold,29-Apr-2024,Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1922A).
-300|Price,fill,300,,Price,Y,False,hold,hold,333000000,Same order as row 292; $333m/vessel stated literally.
-300|Operator/charterer,fill,300,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 292.
-303|Contract date,fill,303,,Contract date,Y,False,hold,hold,29-Apr-2024,Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1925A).
-303|Price,fill,303,,Price,Y,False,hold,hold,333000000,Same order as row 292; $333m/vessel stated literally.
-303|Operator/charterer,fill,303,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 292.
-291|Contract date,fill,291,,Contract date,Y,False,hold,hold,29-Apr-2024,Same QatarEnergy 18-vessel order; Shandong Marine's 3 allocated hulls (rows 291/
-291|Price,fill,291,,Price,Y,False,hold,hold,333000000,$333m/vessel stated literally in the article.
-291|Operator/charterer,fill,291,,Operator/charterer,Y,False,hold,hold,QatarEnergy,QatarEnergy signed the TCP charter with Shandong Marine Group for its allocated 
-294|Contract date,fill,294,,Contract date,Y,False,hold,hold,29-Apr-2024,Same order as row 291 (H1916A).
-294|Price,fill,294,,Price,Y,False,hold,hold,333000000,Same as row 291.
-294|Operator/charterer,fill,294,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 291.
-297|Contract date,fill,297,,Contract date,Y,False,hold,hold,29-Apr-2024,Same order as row 291 (H1919A).
-297|Price,fill,297,,Price,Y,False,hold,hold,333000000,Same as row 291.
-297|Operator/charterer,fill,297,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same as row 291.
-314|Capacity,fill,314,,Capacity,Y,False,hold,hold,174000,"shipvault record for HULL 8327 (Capital Maritime & Trading Corp, HD Hyundai Samh"
-315|Capacity,fill,315,,Capacity,Y,False,hold,hold,174000,"shipvault record for HULL 8328, same order group as row 314. url_verifier --valu"
-316|Capacity,fill,316,,Capacity,Y,False,hold,hold,174000,"shipvault record for HULL 8329, same order group as row 314. url_verifier --valu"
-317|Capacity,fill,317,,Capacity,Y,False,hold,hold,174000,"shipvault record for HULL 4 (yardno NA), same order group as row 314. url_verifi"
-124|Contract date,fill,124,,Contract date,Y,False,hold,hold,22-Nov-2022,"Seapeak press release: 'November 22, 2022 - Seapeak LLC entered into shipbuildin"
-125|Contract date,fill,125,,Contract date,Y,False,hold,hold,22-Nov-2022,Same cluster order as row 124; see note there.
-126|Contract date,fill,126,,Contract date,Y,False,hold,hold,22-Nov-2022,Same cluster order as row 124; see note there.
-127|Contract date,fill,127,,Contract date,Y,False,hold,hold,22-Nov-2022,Same cluster order as row 124; see note there.
-128|Contract date,fill,128,,Contract date,Y,False,hold,hold,22-Nov-2022,Same cluster order as row 124; see note there.
+244|Price,fill,244,,Price,G,False,hold,accept,270000000,"Same article: en-bloc $1.08bn/4 vessels = $270m per vessel, stated literally in "
+245|Contract date,fill,245,,Contract date,G,False,hold,accept,26-Feb-2024,Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
+245|Price,fill,245,,Price,G,False,hold,accept,270000000,Same quartet order as Hull 8254.
+246|Contract date,fill,246,,Contract date,G,False,hold,accept,26-Feb-2024,Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
+246|Price,fill,246,,Price,G,False,hold,accept,270000000,Same quartet order as Hull 8254.
+247|Contract date,fill,247,,Contract date,G,False,hold,accept,26-Feb-2024,Same quartet order as Hull 8254; see note there re: owner-attribution hedge.
+247|Price,fill,247,,Price,G,False,hold,accept,270000000,Same quartet order as Hull 8254.
+292|Contract date,fill,292,,Contract date,G,False,hold,accept,29-Apr-2024,"QatarEnergy's 18-vessel, 271,000cbm QC-Max order at Hudong-Zhonghua, contract si"
+292|Price,fill,292,,Price,G,False,hold,accept,333000000,Article states literally: 'the entire order is worth almost $6 billion. This put
+292|Operator/charterer,fill,292,,Operator/charterer,G,False,hold,accept,QatarEnergy,QatarEnergy signed long-term time charter party (TCP) agreements with the shipow
+296|Contract date,fill,296,,Contract date,G,False,hold,accept,29-Apr-2024,Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1914A).
+296|Price,fill,296,,Price,G,False,hold,accept,333000000,Same order as row 292; $333m/vessel stated literally.
+296|Operator/charterer,fill,296,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 292.
+300|Contract date,fill,300,,Contract date,G,False,hold,accept,29-Apr-2024,Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1922A).
+300|Price,fill,300,,Price,G,False,hold,accept,333000000,Same order as row 292; $333m/vessel stated literally.
+300|Operator/charterer,fill,300,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 292.
+303|Contract date,fill,303,,Contract date,G,False,hold,accept,29-Apr-2024,Same QatarEnergy 18-vessel Hudong-Zhonghua order as row 292 (H1925A).
+303|Price,fill,303,,Price,G,False,hold,accept,333000000,Same order as row 292; $333m/vessel stated literally.
+303|Operator/charterer,fill,303,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 292.
+291|Contract date,fill,291,,Contract date,G,False,hold,accept,29-Apr-2024,Same QatarEnergy 18-vessel order; Shandong Marine's 3 allocated hulls (rows 291/
+291|Price,fill,291,,Price,G,False,hold,accept,333000000,$333m/vessel stated literally in the article.
+291|Operator/charterer,fill,291,,Operator/charterer,G,False,hold,accept,QatarEnergy,QatarEnergy signed the TCP charter with Shandong Marine Group for its allocated 
+294|Contract date,fill,294,,Contract date,G,False,hold,accept,29-Apr-2024,Same order as row 291 (H1916A).
+294|Price,fill,294,,Price,G,False,hold,accept,333000000,Same as row 291.
+294|Operator/charterer,fill,294,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 291.
+297|Contract date,fill,297,,Contract date,G,False,hold,accept,29-Apr-2024,Same order as row 291 (H1919A).
+297|Price,fill,297,,Price,G,False,hold,accept,333000000,Same as row 291.
+297|Operator/charterer,fill,297,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same as row 291.
+314|Capacity,fill,314,,Capacity,G,False,hold,accept,174000,"shipvault record for HULL 8327 (Capital Maritime & Trading Corp, HD Hyundai Samh"
+315|Capacity,fill,315,,Capacity,G,False,hold,accept,174000,"shipvault record for HULL 8328, same order group as row 314. url_verifier --valu"
+316|Capacity,fill,316,,Capacity,G,False,hold,accept,174000,"shipvault record for HULL 8329, same order group as row 314. url_verifier --valu"
+317|Capacity,fill,317,,Capacity,G,False,hold,accept,174000,"shipvault record for HULL 4 (yardno NA), same order group as row 314. url_verifi"
+124|Contract date,fill,124,,Contract date,G,False,hold,accept,22-Nov-2022,"Seapeak press release: 'November 22, 2022 - Seapeak LLC entered into shipbuildin"
+125|Contract date,fill,125,,Contract date,G,False,hold,accept,22-Nov-2022,Same cluster order as row 124; see note there.
+126|Contract date,fill,126,,Contract date,G,False,hold,accept,22-Nov-2022,Same cluster order as row 124; see note there.
+127|Contract date,fill,127,,Contract date,G,False,hold,accept,22-Nov-2022,Same cluster order as row 124; see note there.
+128|Contract date,fill,128,,Contract date,G,False,hold,accept,22-Nov-2022,Same cluster order as row 124; see note there.
 1150|Propulsion type,fill,1150,,Propulsion type,Y,False,hold,hold,X-DF,"Seapeak 6-K (SEC filing, hosted on StockTitan): 'During December 2025, the Compa"
 1151|Propulsion type,fill,1151,,Propulsion type,Y,False,hold,hold,X-DF,Same order as row 1150; see note there.
-375|Operator/charterer,fill,375,,Operator/charterer,Y,False,hold,hold,Arctic LNG 2 LLC,"gCaptain: Alexey Kosygin (pilot Arc7 vessel, Zvezda hull 041) was 'handed over ."
+375|Operator/charterer,fill,375,,Operator/charterer,G,False,hold,accept,Arctic LNG 2 LLC,"gCaptain: Alexey Kosygin (pilot Arc7 vessel, Zvezda hull 041) was 'handed over ."
 375|Cargo type,fill,375,,Cargo type,Y,False,hold,hold,membrane,Riviera: 'All 15 of ships being built by Zvezda will have GTT's Mark III membran
-166|Capacity,fill,166,,Capacity,Y,False,hold,hold,174000,"Splash247 (20-Aug-2025): Samsung Heavy order described as 'six 174,000 cu m vess"
-167|Capacity,fill,167,,Capacity,Y,False,hold,hold,174000,Same source/reasoning as row 166.
-168|Capacity,fill,168,,Capacity,Y,False,hold,hold,174000,Same source/reasoning as row 166.
-169|Capacity,fill,169,,Capacity,Y,False,hold,hold,174000,Same source/reasoning as row 166.
+166|Capacity,fill,166,,Capacity,G,False,hold,accept,174000,"Splash247 (20-Aug-2025): Samsung Heavy order described as 'six 174,000 cu m vess"
+167|Capacity,fill,167,,Capacity,G,False,hold,accept,174000,Same source/reasoning as row 166.
+168|Capacity,fill,168,,Capacity,G,False,hold,accept,174000,Same source/reasoning as row 166.
+169|Capacity,fill,169,,Capacity,G,False,hold,accept,174000,Same source/reasoning as row 166.
 509|Operator/charterer,fill,509,,Operator/charterer,G,False,accept,accept,China Gas Hongda Energy Trading,"This 4-row cluster (rows 509-512) is actually TWO DSIC 175,000-cbm JV orders for"
 510|Operator/charterer,fill,510,,Operator/charterer,G,False,accept,accept,China Gas Hongda Energy Trading,Same as row 509.
 511|Operator/charterer,fill,511,,Operator/charterer,G,False,accept,accept,China Gas Hongda Energy Trading,Same as row 509.
@@ -605,49 +605,49 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 510|Cargo type,fill,510,,Cargo type,G,False,accept,accept,membrane,Same as row 509.
 511|Cargo type,fill,511,,Cargo type,G,False,accept,accept,membrane,Same as row 509.
 512|Cargo type,fill,512,,Cargo type,G,False,accept,accept,membrane,Same as row 509.
-295|Contract date,fill,295,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-295|Price,fill,295,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-295|Operator/charterer,fill,295,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-298|Contract date,fill,298,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-298|Price,fill,298,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-298|Operator/charterer,fill,298,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-299|Contract date,fill,299,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-299|Price,fill,299,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-299|Operator/charterer,fill,299,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-301|Contract date,fill,301,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-301|Price,fill,301,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-301|Operator/charterer,fill,301,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-302|Contract date,fill,302,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-302|Price,fill,302,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-302|Operator/charterer,fill,302,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-304|Contract date,fill,304,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-304|Price,fill,304,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-304|Operator/charterer,fill,304,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-305|Contract date,fill,305,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-305|Price,fill,305,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-305|Operator/charterer,fill,305,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-306|Contract date,fill,306,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-306|Price,fill,306,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-306|Operator/charterer,fill,306,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-307|Contract date,fill,307,,Contract date,Y,False,hold,hold,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-307|Price,fill,307,,Price,Y,False,hold,hold,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
-307|Operator/charterer,fill,307,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
-72|Capacity,fill,72,,Capacity,Y,False,hold,hold,174000,"shipvault.com ship record (via imo_tracker.py) lists 174,000 cbm capacity for th"
-78|Capacity,fill,78,,Capacity,Y,False,hold,hold,174000,"shipvault.com ship record (via imo_tracker.py) lists 174,000 cbm capacity for th"
+295|Contract date,fill,295,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+295|Price,fill,295,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+295|Operator/charterer,fill,295,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+298|Contract date,fill,298,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+298|Price,fill,298,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+298|Operator/charterer,fill,298,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+299|Contract date,fill,299,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+299|Price,fill,299,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+299|Operator/charterer,fill,299,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+301|Contract date,fill,301,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+301|Price,fill,301,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+301|Operator/charterer,fill,301,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+302|Contract date,fill,302,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+302|Price,fill,302,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+302|Operator/charterer,fill,302,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+304|Contract date,fill,304,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+304|Price,fill,304,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+304|Operator/charterer,fill,304,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+305|Contract date,fill,305,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+305|Price,fill,305,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+305|Operator/charterer,fill,305,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+306|Contract date,fill,306,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+306|Price,fill,306,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+306|Operator/charterer,fill,306,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+307|Contract date,fill,307,,Contract date,G,False,hold,accept,29-Apr-2024,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+307|Price,fill,307,,Price,G,False,hold,accept,333000000,Per-vessel price from total: page states entire 18-vessel order worth almost $6b
+307|Operator/charterer,fill,307,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime 29-Apr-2024: QatarEnergy/CSSC signed $6bn contract for 18 271,000-cbm "
+72|Capacity,fill,72,,Capacity,G,False,hold,accept,174000,"shipvault.com ship record (via imo_tracker.py) lists 174,000 cbm capacity for th"
+78|Capacity,fill,78,,Capacity,G,False,hold,accept,174000,"shipvault.com ship record (via imo_tracker.py) lists 174,000 cbm capacity for th"
 52|Operator/charterer,fill,52,,Operator/charterer,G,False,accept,accept,Chevron,"Hull 2558 / IMO 9983176 = 'FUJIN SAILOR', MOL's first Wind Challenger-equipped L"
 1041|Price,fill,1041,,Price,G,False,accept,accept,413000000,"LNG Prime (02-Oct-2024, teaser text before paywall) states Hanwha Ocean secured "
 1041|Operator/charterer,fill,1041,,Operator/charterer,Y,False,hold,hold,MOL,Splash247: 'Japan's Mitsui OSK Lines (MOL) has confirmed a newbuilding deal for 
-1148|Price,fill,1148,,Price,Y,False,hold,hold,254000000,Riviera (27-Nov-2025): 'BRL's Week 48 newbuilding report logged two liquid natur
-1149|Price,fill,1149,,Price,Y,False,hold,hold,254000000,Riviera (27-Nov-2025): 'BRL's Week 48 newbuilding report logged two liquid natur
-1167|Operator/charterer,fill,1167,,Operator/charterer,Y,False,hold,hold,Tsakos Group,Riviera (26-Feb-2026): 'shipbroking sources have identified the buyer as Tsakos 
-1167|Price,fill,1167,,Price,Y,False,hold,hold,254000000,Riviera: 'HD Hyundai Heavy Industries announced an order for a single LNG carrie
-1175|Price,fill,1175,,Price,Y,False,hold,hold,250000000,iMarine: 'each vessel valued at approximately $250 million' for the 7-vessel Knu
-1176|Price,fill,1176,,Price,Y,False,hold,hold,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
-1177|Price,fill,1177,,Price,Y,False,hold,hold,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
-1178|Price,fill,1178,,Price,Y,False,hold,hold,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
-1179|Price,fill,1179,,Price,Y,False,hold,hold,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
-1180|Price,fill,1180,,Price,Y,False,hold,hold,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
-1181|Price,fill,1181,,Price,Y,False,hold,hold,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+1148|Price,fill,1148,,Price,G,False,hold,accept,254000000,Riviera (27-Nov-2025): 'BRL's Week 48 newbuilding report logged two liquid natur
+1149|Price,fill,1149,,Price,G,False,hold,accept,254000000,Riviera (27-Nov-2025): 'BRL's Week 48 newbuilding report logged two liquid natur
+1167|Operator/charterer,fill,1167,,Operator/charterer,G,False,hold,accept,Tsakos Group,Riviera (26-Feb-2026): 'shipbroking sources have identified the buyer as Tsakos 
+1167|Price,fill,1167,,Price,G,False,hold,accept,254000000,Riviera: 'HD Hyundai Heavy Industries announced an order for a single LNG carrie
+1175|Price,fill,1175,,Price,G,False,hold,accept,250000000,iMarine: 'each vessel valued at approximately $250 million' for the 7-vessel Knu
+1176|Price,fill,1176,,Price,G,False,hold,accept,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+1177|Price,fill,1177,,Price,G,False,hold,accept,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+1178|Price,fill,1178,,Price,G,False,hold,accept,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+1179|Price,fill,1179,,Price,G,False,hold,accept,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+1180|Price,fill,1180,,Price,G,False,hold,accept,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
+1181|Price,fill,1181,,Price,G,False,hold,accept,250000000,Same 7-vessel Knutsen/Hanwha Ocean order; iMarine states ~$250m per vessel.
 1175|Cargo type,fill,1175,,Cargo type,Y,False,hold,hold,membrane,GTT tank-design article: vessels fitted with 'NO96 Super+ membrane containment s
 1176|Cargo type,fill,1176,,Cargo type,Y,False,hold,hold,membrane,Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
 1177|Cargo type,fill,1177,,Cargo type,Y,False,hold,hold,membrane,Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
@@ -655,130 +655,130 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1179|Cargo type,fill,1179,,Cargo type,Y,False,hold,hold,membrane,Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
 1180|Cargo type,fill,1180,,Cargo type,Y,False,hold,hold,membrane,Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
 1181|Cargo type,fill,1181,,Cargo type,Y,False,hold,hold,membrane,Same GTT NO96 Super+ membrane containment article covering the 7-vessel order.
-1205|Price,fill,1205,,Price,Y,False,hold,hold,250300000,Splash247 (12-May-2026): Hanwha Ocean secured 'a contract worth KRW363.2bn ($250
-99|Contract date,fill,99,,Contract date,Y,False,hold,hold,11-Nov-2024,PortNews: Hanwha Ocean 'said Monday' (dateline 2024 November 11) it secured a 71
-100|Contract date,fill,100,,Contract date,Y,False,hold,hold,11-Nov-2024,"Same order as row 99 (hull 2602/2603 pair) - PortNews, 713.5bn won ($511.6m) for"
-74|Capacity,fill,74,,Capacity,Y,False,hold,hold,174000,"shipvault record for IMO 1022043 / MT MARAN GAS POLIEGOS (hull 2582, Hanwha Ocea"
+1205|Price,fill,1205,,Price,G,False,hold,accept,250300000,Splash247 (12-May-2026): Hanwha Ocean secured 'a contract worth KRW363.2bn ($250
+99|Contract date,fill,99,,Contract date,G,False,hold,accept,11-Nov-2024,PortNews: Hanwha Ocean 'said Monday' (dateline 2024 November 11) it secured a 71
+100|Contract date,fill,100,,Contract date,G,False,hold,accept,11-Nov-2024,"Same order as row 99 (hull 2602/2603 pair) - PortNews, 713.5bn won ($511.6m) for"
+74|Capacity,fill,74,,Capacity,G,False,hold,accept,174000,"shipvault record for IMO 1022043 / MT MARAN GAS POLIEGOS (hull 2582, Hanwha Ocea"
 1168|Cargo type,fill,1168,,Cargo type,Y,False,hold,hold,membrane,MarineLink (5-Feb-2026): GTT received the tank-design order from Jiangnan for th
 1169|Cargo type,fill,1169,,Cargo type,Y,False,hold,hold,membrane,Same GTT Mark III Flex membrane order covering both EPS vessels at Jiangnan.
-141|Operator/charterer,fill,141,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Splash247 (1-Apr-2024): QatarEnergy 'inked long-term contracts to charter six 17
-145|Operator/charterer,fill,145,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
-148|Operator/charterer,fill,148,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
-151|Operator/charterer,fill,151,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
-153|Operator/charterer,fill,153,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
-155|Operator/charterer,fill,155,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
-80|Operator/charterer,fill,80,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"LNG Prime (24-Mar-2024): '...vessels will have a capacity of 174,000 cubic meter"
-80|Contract date,fill,80,,Contract date,Y,False,hold,hold,24-Mar-2024,Article published 24-Mar-2024 ('QatarEnergy said on Sunday'; 24-Mar-2024 was a S
-80|Price,fill,80,,Price,Y,False,hold,hold,230000000,Article states directly: 'The vessels are each worth around $230 million.' Match
+141|Operator/charterer,fill,141,,Operator/charterer,G,False,hold,accept,QatarEnergy,Splash247 (1-Apr-2024): QatarEnergy 'inked long-term contracts to charter six 17
+145|Operator/charterer,fill,145,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+148|Operator/charterer,fill,148,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+151|Operator/charterer,fill,151,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+153|Operator/charterer,fill,153,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+155|Operator/charterer,fill,155,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same 6-vessel Shandong Marine/Samsung QatarEnergy charter award as row 141.
+80|Operator/charterer,fill,80,,Operator/charterer,G,False,hold,accept,QatarEnergy,"LNG Prime (24-Mar-2024): '...vessels will have a capacity of 174,000 cubic meter"
+80|Contract date,fill,80,,Contract date,G,False,hold,accept,24-Mar-2024,Article published 24-Mar-2024 ('QatarEnergy said on Sunday'; 24-Mar-2024 was a S
+80|Price,fill,80,,Price,G,False,hold,accept,230000000,Article states directly: 'The vessels are each worth around $230 million.' Match
 80|Vessel type,fill,80,,Vessel type,Y,False,hold,hold,conventional,Article: 'time charter agreements with ... Nakilat for 25 conventional-size LNG 
-81|Operator/charterer,fill,81,,Operator/charterer,Y,False,hold,hold,QatarEnergy,"Same 8-ship Hanwha Ocean/Nakilat tranche, see row 80."
-81|Contract date,fill,81,,Contract date,Y,False,hold,hold,24-Mar-2024,Same cluster announcement as row 80.
-81|Price,fill,81,,Price,Y,False,hold,hold,230000000,Same cluster announcement as row 80.
+81|Operator/charterer,fill,81,,Operator/charterer,G,False,hold,accept,QatarEnergy,"Same 8-ship Hanwha Ocean/Nakilat tranche, see row 80."
+81|Contract date,fill,81,,Contract date,G,False,hold,accept,24-Mar-2024,Same cluster announcement as row 80.
+81|Price,fill,81,,Price,G,False,hold,accept,230000000,Same cluster announcement as row 80.
 81|Vessel type,fill,81,,Vessel type,Y,False,hold,hold,conventional,Same cluster announcement as row 80.
-82|Operator/charterer,fill,82,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same cluster announcement as row 80.
-82|Contract date,fill,82,,Contract date,Y,False,hold,hold,24-Mar-2024,Same cluster announcement as row 80.
-82|Price,fill,82,,Price,Y,False,hold,hold,230000000,Same cluster announcement as row 80.
+82|Operator/charterer,fill,82,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same cluster announcement as row 80.
+82|Contract date,fill,82,,Contract date,G,False,hold,accept,24-Mar-2024,Same cluster announcement as row 80.
+82|Price,fill,82,,Price,G,False,hold,accept,230000000,Same cluster announcement as row 80.
 82|Vessel type,fill,82,,Vessel type,Y,False,hold,hold,conventional,Same cluster announcement as row 80.
-83|Operator/charterer,fill,83,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same cluster announcement as row 80.
-83|Contract date,fill,83,,Contract date,Y,False,hold,hold,24-Mar-2024,Same cluster announcement as row 80.
-83|Price,fill,83,,Price,Y,False,hold,hold,230000000,Same cluster announcement as row 80.
+83|Operator/charterer,fill,83,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same cluster announcement as row 80.
+83|Contract date,fill,83,,Contract date,G,False,hold,accept,24-Mar-2024,Same cluster announcement as row 80.
+83|Price,fill,83,,Price,G,False,hold,accept,230000000,Same cluster announcement as row 80.
 83|Vessel type,fill,83,,Vessel type,Y,False,hold,hold,conventional,Same cluster announcement as row 80.
-84|Operator/charterer,fill,84,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same cluster announcement as row 80.
-84|Contract date,fill,84,,Contract date,Y,False,hold,hold,24-Mar-2024,Same cluster announcement as row 80.
-84|Price,fill,84,,Price,Y,False,hold,hold,230000000,Same cluster announcement as row 80.
+84|Operator/charterer,fill,84,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same cluster announcement as row 80.
+84|Contract date,fill,84,,Contract date,G,False,hold,accept,24-Mar-2024,Same cluster announcement as row 80.
+84|Price,fill,84,,Price,G,False,hold,accept,230000000,Same cluster announcement as row 80.
 84|Vessel type,fill,84,,Vessel type,Y,False,hold,hold,conventional,Same cluster announcement as row 80.
-85|Operator/charterer,fill,85,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same cluster announcement as row 80.
-85|Contract date,fill,85,,Contract date,Y,False,hold,hold,24-Mar-2024,Same cluster announcement as row 80.
-85|Price,fill,85,,Price,Y,False,hold,hold,230000000,Same cluster announcement as row 80.
+85|Operator/charterer,fill,85,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same cluster announcement as row 80.
+85|Contract date,fill,85,,Contract date,G,False,hold,accept,24-Mar-2024,Same cluster announcement as row 80.
+85|Price,fill,85,,Price,G,False,hold,accept,230000000,Same cluster announcement as row 80.
 85|Vessel type,fill,85,,Vessel type,Y,False,hold,hold,conventional,Same cluster announcement as row 80.
-86|Operator/charterer,fill,86,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same cluster announcement as row 80.
-86|Contract date,fill,86,,Contract date,Y,False,hold,hold,24-Mar-2024,Same cluster announcement as row 80.
-86|Price,fill,86,,Price,Y,False,hold,hold,230000000,Same cluster announcement as row 80.
+86|Operator/charterer,fill,86,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same cluster announcement as row 80.
+86|Contract date,fill,86,,Contract date,G,False,hold,accept,24-Mar-2024,Same cluster announcement as row 80.
+86|Price,fill,86,,Price,G,False,hold,accept,230000000,Same cluster announcement as row 80.
 86|Vessel type,fill,86,,Vessel type,Y,False,hold,hold,conventional,Same cluster announcement as row 80.
-88|Operator/charterer,fill,88,,Operator/charterer,Y,False,hold,hold,QatarEnergy,Same cluster announcement as row 80.
-88|Contract date,fill,88,,Contract date,Y,False,hold,hold,24-Mar-2024,Same cluster announcement as row 80.
-88|Price,fill,88,,Price,Y,False,hold,hold,230000000,Same cluster announcement as row 80.
+88|Operator/charterer,fill,88,,Operator/charterer,G,False,hold,accept,QatarEnergy,Same cluster announcement as row 80.
+88|Contract date,fill,88,,Contract date,G,False,hold,accept,24-Mar-2024,Same cluster announcement as row 80.
+88|Price,fill,88,,Price,G,False,hold,accept,230000000,Same cluster announcement as row 80.
 88|Vessel type,fill,88,,Vessel type,Y,False,hold,hold,conventional,Same cluster announcement as row 80.
-273|Operator/charterer,fill,273,,Operator/charterer,Y,False,hold,hold,CNOOC,NYK release: 'concluded a long-term time-charter contract with CNOOC Gas and Pow
-273|Contract date,fill,273,,Contract date,Y,False,hold,hold,28-Apr-2022,NYK release: 'On April 28 ... NYK concluded a long-term time-charter contract ..
+273|Operator/charterer,fill,273,,Operator/charterer,G,False,hold,accept,CNOOC,NYK release: 'concluded a long-term time-charter contract with CNOOC Gas and Pow
+273|Contract date,fill,273,,Contract date,G,False,hold,accept,28-Apr-2022,NYK release: 'On April 28 ... NYK concluded a long-term time-charter contract ..
 273|Price,fill,273,,Price,Y,False,hold,accept,210000000,"Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260"
 273|Cargo type,fill,273,,Cargo type,Y,False,hold,hold,membrane,NYK release: 'a membrane-type tank that will make use of advanced insulating mat
-274|Operator/charterer,fill,274,,Operator/charterer,Y,False,hold,hold,CNOOC,Same six-ship order as row 273.
-274|Contract date,fill,274,,Contract date,Y,False,hold,hold,28-Apr-2022,Same six-ship order as row 273.
+274|Operator/charterer,fill,274,,Operator/charterer,G,False,hold,accept,CNOOC,Same six-ship order as row 273.
+274|Contract date,fill,274,,Contract date,G,False,hold,accept,28-Apr-2022,Same six-ship order as row 273.
 274|Price,fill,274,,Price,Y,False,hold,accept,210000000,"Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260"
 274|Cargo type,fill,274,,Cargo type,Y,False,hold,hold,membrane,Same six-ship order as row 273.
-1092|Operator/charterer,fill,1092,,Operator/charterer,Y,False,hold,hold,CNOOC,"3rd hull of the same six-ship NYK/CNOOC/CMES JV order as rows 273/274, 1224-1226"
-1092|Contract date,fill,1092,,Contract date,Y,False,hold,hold,28-Apr-2022,"Same six-ship order, see row 273."
+1092|Operator/charterer,fill,1092,,Operator/charterer,G,False,hold,accept,CNOOC,"3rd hull of the same six-ship NYK/CNOOC/CMES JV order as rows 273/274, 1224-1226"
+1092|Contract date,fill,1092,,Contract date,G,False,hold,accept,28-Apr-2022,"Same six-ship order, see row 273."
 1092|Price,fill,1092,,Price,Y,False,hold,accept,210000000,"Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260"
 1092|Cargo type,fill,1092,,Cargo type,Y,False,hold,hold,membrane,"Same six-ship order, see row 273."
-1224|Operator/charterer,fill,1224,,Operator/charterer,Y,False,hold,hold,CNOOC,4th hull of the same six-ship order; row already carried nyk.com/gcaptain as exi
-1224|Contract date,fill,1224,,Contract date,Y,False,hold,hold,28-Apr-2022,"Same six-ship order, see row 273."
+1224|Operator/charterer,fill,1224,,Operator/charterer,G,False,hold,accept,CNOOC,4th hull of the same six-ship order; row already carried nyk.com/gcaptain as exi
+1224|Contract date,fill,1224,,Contract date,G,False,hold,accept,28-Apr-2022,"Same six-ship order, see row 273."
 1224|Price,fill,1224,,Price,Y,False,hold,accept,210000000,"Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260"
 1224|Cargo type,fill,1224,,Cargo type,Y,False,hold,hold,membrane,"Same six-ship order, see row 273."
-1225|Operator/charterer,fill,1225,,Operator/charterer,Y,False,hold,hold,CNOOC,5th hull of the same six-ship order.
-1225|Contract date,fill,1225,,Contract date,Y,False,hold,hold,28-Apr-2022,"Same six-ship order, see row 273."
+1225|Operator/charterer,fill,1225,,Operator/charterer,G,False,hold,accept,CNOOC,5th hull of the same six-ship order.
+1225|Contract date,fill,1225,,Contract date,G,False,hold,accept,28-Apr-2022,"Same six-ship order, see row 273."
 1225|Price,fill,1225,,Price,Y,False,hold,accept,210000000,"Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260"
 1225|Cargo type,fill,1225,,Cargo type,Y,False,hold,hold,membrane,"Same six-ship order, see row 273."
-1226|Operator/charterer,fill,1226,,Operator/charterer,Y,False,hold,hold,CNOOC,6th hull of the same six-ship order.
-1226|Contract date,fill,1226,,Contract date,Y,False,hold,hold,28-Apr-2022,"Same six-ship order, see row 273."
+1226|Operator/charterer,fill,1226,,Operator/charterer,G,False,hold,accept,CNOOC,6th hull of the same six-ship order.
+1226|Contract date,fill,1226,,Contract date,G,False,hold,accept,28-Apr-2022,"Same six-ship order, see row 273."
 1226|Price,fill,1226,,Price,Y,False,hold,accept,210000000,"Splash247: six 174,000 cu m vessels worth a combined $1.26bn; per-vessel = 1,260"
 1226|Cargo type,fill,1226,,Cargo type,Y,False,hold,hold,membrane,"Same six-ship order, see row 273."
-164|Capacity,fill,164,,Capacity,Y,False,hold,hold,174000,shipvault record for Hull 2752 (IMO 1137238) via imo_tracker.py: cap=174000 CBM.
-1166|Price,fill,1166,,Price,Y,False,hold,hold,255000000,Splash247: 'Samsung Heavy Industries confirmed the contract in a regulatory fili
+164|Capacity,fill,164,,Capacity,G,False,hold,accept,174000,shipvault record for Hull 2752 (IMO 1137238) via imo_tracker.py: cap=174000 CBM.
+1166|Price,fill,1166,,Price,G,False,hold,accept,255000000,Splash247: 'Samsung Heavy Industries confirmed the contract in a regulatory fili
 1170|Price,fill,1170,,Price,Y,False,hold,accept,257000000,"Splash247: KRW 770bn ($514m) for two 180,000 cu m newbuilds; per-vessel = 514,00"
 1171|Price,fill,1171,,Price,Y,False,hold,accept,257000000,"Splash247: KRW 770bn ($514m) for two 180,000 cu m newbuilds; per-vessel = 514,00"
-515|Contract date,fill,515,,Contract date,Y,False,hold,hold,24-Sep-2022,"LNG Prime: 'The two firms signed the deal on September 24, CMES said in a statem"
-515|Price,fill,515,,Price,Y,False,hold,hold,200000000,'This contract for two LNG carriers had an option for two additional vessels wit
-516|Contract date,fill,516,,Contract date,Y,False,hold,hold,24-Sep-2022,Same option-exercise duo as row 515 (Hull G175K-06).
-516|Price,fill,516,,Price,Y,False,hold,hold,200000000,Same as row 515.
+515|Contract date,fill,515,,Contract date,G,False,hold,accept,24-Sep-2022,"LNG Prime: 'The two firms signed the deal on September 24, CMES said in a statem"
+515|Price,fill,515,,Price,G,False,hold,accept,200000000,'This contract for two LNG carriers had an option for two additional vessels wit
+516|Contract date,fill,516,,Contract date,G,False,hold,accept,24-Sep-2022,Same option-exercise duo as row 515 (Hull G175K-06).
+516|Price,fill,516,,Price,G,False,hold,accept,200000000,Same as row 515.
 129|Operator/charterer,fill,129,,Operator/charterer,Y,False,hold,accept,MOL,'Shipbuilding sources told LNG Prime that Japan's shipping giant MOL is likely b
 129|Contract date,fill,129,,Contract date,Y,False,hold,accept,01-Feb-2023,"'SHI said on Wednesday' -- article published 2023-02-01T07:02:02Z, a Wednesday; "
 129|Price,fill,129,,Price,Y,False,hold,accept,248000000,'609.7 billion won ($496 million) or about $248 million per vessel' -- literal p
-130|Operator/charterer,fill,130,,Operator/charterer,Y,False,hold,hold,MOL,Same duo as row 129 (Hull 2663). [charterer = owner (self-operated); held for re
-130|Contract date,fill,130,,Contract date,Y,False,hold,hold,01-Feb-2023,Same as row 129.
-130|Price,fill,130,,Price,Y,False,hold,hold,248000000,Same as row 129.
-135|Contract date,fill,135,,Contract date,Y,False,hold,hold,10-Oct-2023,"'Samsung Heavy said on Tuesday' -- published 2023-10-10T13:57:33Z, a Tuesday. Ma"
-135|Price,fill,135,,Price,Y,False,hold,hold,260000000,"'350.8 billion won ($260 million)' for one LNG carrier, delivery by September 20"
-133|Operator/charterer,fill,133,,Operator/charterer,Y,False,hold,hold,Chevron,'Shipbuilding sources told LNG Prime that US energy giant Chevron is behind this
-133|Contract date,fill,133,,Contract date,Y,False,hold,hold,13-Jun-2023,"'Samsung Heavy said on Tuesday' -- published 2023-06-13T06:57:33Z, a Tuesday. Ma"
-133|Price,fill,133,,Price,Y,False,hold,hold,254500000,'659.2 billion won ($509 million) or about $254.5 million per vessel' -- literal
-134|Operator/charterer,fill,134,,Operator/charterer,Y,False,hold,hold,Chevron,Same duo as row 133 (Hull 2669). [charterer = owner (self-operated); held for re
-134|Contract date,fill,134,,Contract date,Y,False,hold,hold,13-Jun-2023,Same as row 133.
-134|Price,fill,134,,Price,Y,False,hold,hold,254500000,Same as row 133.
-1209|IMO number,fill,1209,,IMO number,Y,False,hold,hold,1182348,"shipvault unit 500595: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
-1209|Hull number,fill,1209,,Hull number,Y,False,hold,hold,Hull 2798 (SHI),"shipvault unit 500595: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
-1210|IMO number,fill,1210,,IMO number,Y,False,hold,hold,1182350,"shipvault unit 500596: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
-1210|Hull number,fill,1210,,Hull number,Y,False,hold,hold,Hull 2799 (SHI),"shipvault unit 500596: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
-1211|IMO number,fill,1211,,IMO number,Y,False,hold,hold,1182362,"shipvault unit 500597: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
-1211|Hull number,fill,1211,,Hull number,Y,False,hold,hold,Hull 2800 (SHI),"shipvault unit 500597: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
-1220|IMO number,fill,1220,,IMO number,Y,False,hold,hold,1185027,"shipvault unit 501592: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1220|Hull number,fill,1220,,Hull number,Y,False,hold,hold,Hull H2954,"shipvault unit 501592: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1221|IMO number,fill,1221,,IMO number,Y,False,hold,hold,1185039,"shipvault unit 501593: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1221|Hull number,fill,1221,,Hull number,Y,False,hold,hold,Hull H2955,"shipvault unit 501593: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1222|IMO number,fill,1222,,IMO number,Y,False,hold,hold,1185041,"shipvault unit 501594: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1222|Hull number,fill,1222,,Hull number,Y,False,hold,hold,Hull H2956,"shipvault unit 501594: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1223|IMO number,fill,1223,,IMO number,Y,False,hold,hold,1185053,"shipvault unit 501595: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1223|Hull number,fill,1223,,Hull number,Y,False,hold,hold,Hull H2957,"shipvault unit 501595: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
-1201|IMO number,fill,1201,,IMO number,Y,False,hold,hold,1180778,"shipvault unit 502026: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1201|Hull number,fill,1201,,Hull number,Y,False,hold,hold,Hull 3639 (HDHHI),"shipvault unit 502026: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1202|IMO number,fill,1202,,IMO number,Y,False,hold,hold,1180780,"shipvault unit 502027: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1202|Hull number,fill,1202,,Hull number,Y,False,hold,hold,Hull 3640 (HDHHI),"shipvault unit 502027: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1203|IMO number,fill,1203,,IMO number,Y,False,hold,hold,1180792,"shipvault unit 502028: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1203|Hull number,fill,1203,,Hull number,Y,False,hold,hold,Hull 3641 (HDHHI),"shipvault unit 502028: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1204|IMO number,fill,1204,,IMO number,Y,False,hold,hold,1180807,"shipvault unit 502029: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1204|Hull number,fill,1204,,Hull number,Y,False,hold,hold,Hull 3642 (HDHHI),"shipvault unit 502029: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
-1214|IMO number,fill,1214,,IMO number,Y,False,hold,hold,1190125,"shipvault unit 501818: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
-1214|Hull number,fill,1214,,Hull number,Y,False,hold,hold,Hull 3659 (HDHHI),"shipvault unit 501818: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
-1215|IMO number,fill,1215,,IMO number,Y,False,hold,hold,1190137,"shipvault unit 501819: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
-1215|Hull number,fill,1215,,Hull number,Y,False,hold,hold,Hull 3660 (HDHHI),"shipvault unit 501819: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
-1212|IMO number,fill,1212,,IMO number,Y,False,hold,hold,1182013,"shipvault unit 500598: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
-1212|Hull number,fill,1212,,Hull number,Y,False,hold,hold,Hull 8358 (HSHI),"shipvault unit 500598: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
-1213|IMO number,fill,1213,,IMO number,Y,False,hold,hold,1182025,"shipvault unit 500599: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
-1213|Hull number,fill,1213,,Hull number,Y,False,hold,hold,Hull 8359 (HSHI),"shipvault unit 500599: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
-1189|IMO number,fill,1189,,IMO number,Y,False,hold,hold,1186837,"shipvault unit 502043: owner HMM GLOVIS, yard HYUNDAI SAMHO HEAVY INDUSTRIES no."
-1189|Hull number,fill,1189,,Hull number,Y,False,hold,hold,Hull 8360 (HSHI),"shipvault unit 502043: owner HMM GLOVIS, yard HYUNDAI SAMHO HEAVY INDUSTRIES no."
-1216|IMO number,fill,1216,,IMO number,Y,False,hold,hold,1066245,"shipvault unit 462722: owner CELSIUS SHIPPING APS, yard CM JIANGSU no. CMHI-282-"
-1217|IMO number,fill,1217,,IMO number,Y,False,hold,hold,1066257,"shipvault unit 462723: owner CELSIUS SHIPPING APS, yard CM JIANGSU no. CMHI-282-"
+130|Operator/charterer,fill,130,,Operator/charterer,Y,False,hold,accept,MOL,Same duo as row 129 (Hull 2663). [charterer = owner (self-operated); held for re
+130|Contract date,fill,130,,Contract date,Y,False,hold,accept,01-Feb-2023,Same as row 129.
+130|Price,fill,130,,Price,Y,False,hold,accept,248000000,Same as row 129.
+135|Contract date,fill,135,,Contract date,G,False,hold,accept,10-Oct-2023,"'Samsung Heavy said on Tuesday' -- published 2023-10-10T13:57:33Z, a Tuesday. Ma"
+135|Price,fill,135,,Price,G,False,hold,accept,260000000,"'350.8 billion won ($260 million)' for one LNG carrier, delivery by September 20"
+133|Operator/charterer,fill,133,,Operator/charterer,G,False,hold,accept,Chevron,'Shipbuilding sources told LNG Prime that US energy giant Chevron is behind this
+133|Contract date,fill,133,,Contract date,G,False,hold,accept,13-Jun-2023,"'Samsung Heavy said on Tuesday' -- published 2023-06-13T06:57:33Z, a Tuesday. Ma"
+133|Price,fill,133,,Price,G,False,hold,accept,254500000,'659.2 billion won ($509 million) or about $254.5 million per vessel' -- literal
+134|Operator/charterer,fill,134,,Operator/charterer,G,False,hold,accept,Chevron,Same duo as row 133 (Hull 2669). [charterer = owner (self-operated); held for re
+134|Contract date,fill,134,,Contract date,G,False,hold,accept,13-Jun-2023,Same as row 133.
+134|Price,fill,134,,Price,G,False,hold,accept,254500000,Same as row 133.
+1209|IMO number,fill,1209,,IMO number,G,False,hold,accept,1182348,"shipvault unit 500595: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
+1209|Hull number,fill,1209,,Hull number,G,False,hold,accept,Hull 2798 (SHI),"shipvault unit 500595: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
+1210|IMO number,fill,1210,,IMO number,G,False,hold,accept,1182350,"shipvault unit 500596: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
+1210|Hull number,fill,1210,,Hull number,G,False,hold,accept,Hull 2799 (SHI),"shipvault unit 500596: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
+1211|IMO number,fill,1211,,IMO number,G,False,hold,accept,1182362,"shipvault unit 500597: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
+1211|Hull number,fill,1211,,Hull number,G,False,hold,accept,Hull 2800 (SHI),"shipvault unit 500597: owner SEAPEAK MARITIME LTD, yard SAMSUNG SHIPBUILDING & H"
+1220|IMO number,fill,1220,,IMO number,G,False,hold,accept,1185027,"shipvault unit 501592: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1220|Hull number,fill,1220,,Hull number,G,False,hold,accept,Hull H2954,"shipvault unit 501592: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1221|IMO number,fill,1221,,IMO number,G,False,hold,accept,1185039,"shipvault unit 501593: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1221|Hull number,fill,1221,,Hull number,G,False,hold,accept,Hull H2955,"shipvault unit 501593: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1222|IMO number,fill,1222,,IMO number,G,False,hold,accept,1185041,"shipvault unit 501594: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1222|Hull number,fill,1222,,Hull number,G,False,hold,accept,Hull H2956,"shipvault unit 501594: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1223|IMO number,fill,1223,,IMO number,G,False,hold,accept,1185053,"shipvault unit 501595: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1223|Hull number,fill,1223,,Hull number,G,False,hold,accept,Hull H2957,"shipvault unit 501595: owner CHINA SHIPPING CO LTD, yard JIANGNAN SHIPYARD no. H"
+1201|IMO number,fill,1201,,IMO number,G,False,hold,accept,1180778,"shipvault unit 502026: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1201|Hull number,fill,1201,,Hull number,G,False,hold,accept,Hull 3639 (HDHHI),"shipvault unit 502026: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1202|IMO number,fill,1202,,IMO number,G,False,hold,accept,1180780,"shipvault unit 502027: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1202|Hull number,fill,1202,,Hull number,G,False,hold,accept,Hull 3640 (HDHHI),"shipvault unit 502027: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1203|IMO number,fill,1203,,IMO number,G,False,hold,accept,1180792,"shipvault unit 502028: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1203|Hull number,fill,1203,,Hull number,G,False,hold,accept,Hull 3641 (HDHHI),"shipvault unit 502028: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1204|IMO number,fill,1204,,IMO number,G,False,hold,accept,1180807,"shipvault unit 502029: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1204|Hull number,fill,1204,,Hull number,G,False,hold,accept,Hull 3642 (HDHHI),"shipvault unit 502029: owner NYK LNG SHIPMANAGEMENT LTD, yard HYUNDAI HEAVY INDU"
+1214|IMO number,fill,1214,,IMO number,G,False,hold,accept,1190125,"shipvault unit 501818: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
+1214|Hull number,fill,1214,,Hull number,G,False,hold,accept,Hull 3659 (HDHHI),"shipvault unit 501818: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
+1215|IMO number,fill,1215,,IMO number,G,False,hold,accept,1190137,"shipvault unit 501819: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
+1215|Hull number,fill,1215,,Hull number,G,False,hold,accept,Hull 3660 (HDHHI),"shipvault unit 501819: owner HAYFIN CAPITAL MANAGEMENT, yard HYUNDAI HEAVY INDUS"
+1212|IMO number,fill,1212,,IMO number,G,False,hold,accept,1182013,"shipvault unit 500598: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
+1212|Hull number,fill,1212,,Hull number,G,False,hold,accept,Hull 8358 (HSHI),"shipvault unit 500598: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
+1213|IMO number,fill,1213,,IMO number,G,False,hold,accept,1182025,"shipvault unit 500599: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
+1213|Hull number,fill,1213,,Hull number,G,False,hold,accept,Hull 8359 (HSHI),"shipvault unit 500599: owner BW LNG, yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 835"
+1189|IMO number,fill,1189,,IMO number,G,False,hold,accept,1186837,"shipvault unit 502043: owner HMM GLOVIS, yard HYUNDAI SAMHO HEAVY INDUSTRIES no."
+1189|Hull number,fill,1189,,Hull number,G,False,hold,accept,Hull 8360 (HSHI),"shipvault unit 502043: owner HMM GLOVIS, yard HYUNDAI SAMHO HEAVY INDUSTRIES no."
+1216|IMO number,fill,1216,,IMO number,G,False,hold,accept,1066245,"shipvault unit 462722: owner CELSIUS SHIPPING APS, yard CM JIANGSU no. CMHI-282-"
+1217|IMO number,fill,1217,,IMO number,G,False,hold,accept,1066257,"shipvault unit 462723: owner CELSIUS SHIPPING APS, yard CM JIANGSU no. CMHI-282-"
 324|Hull number,fill,324,,Hull number,G,False,accept,accept,Hull 8199 (HSHI),shipvault record for IMO 9975337: yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8199
 372|Hull number,fill,372,,Hull number,G,False,accept,accept,Hull 2560 (Hanwha),shipvault record for IMO 9986087: yard HANWHA OCEAN no. 2560
 373|Hull number,fill,373,,Hull number,G,False,accept,accept,Hull 8202 (HSHI),shipvault record for IMO 9995727: yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8202
@@ -792,9 +792,9 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 714|Hull number,fill,714,,Hull number,G,False,accept,accept,Hull 8179 (HDHHI),shipvault record for IMO 9969376: yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8179
 976|Hull number,fill,976,,Hull number,G,False,accept,accept,Hull 2632 (HSHI),shipvault record for IMO 9974151: yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD n
 978|Hull number,fill,978,,Hull number,G,False,accept,accept,Hull 2633 (SHI),shipvault record for IMO 9974163: yard SAMSUNG SHIPBUILDING & HEAVY IND CO LTD n
-102|Capacity,fill,102,,Capacity,Y,False,hold,hold,174000,shipvault record for IMO 1115072: cargo capacity 174000 cbm
-103|Capacity,fill,103,,Capacity,Y,False,hold,hold,174000,shipvault record for IMO 1115084: cargo capacity 174000 cbm
-250|Capacity,fill,250,,Capacity,Y,False,hold,hold,180000,shipvault record for IMO 1119078: cargo capacity 180000 cbm
+102|Capacity,fill,102,,Capacity,G,False,hold,accept,174000,shipvault record for IMO 1115072: cargo capacity 174000 cbm
+103|Capacity,fill,103,,Capacity,G,False,hold,accept,174000,shipvault record for IMO 1115084: cargo capacity 174000 cbm
+250|Capacity,fill,250,,Capacity,G,False,hold,accept,180000,shipvault record for IMO 1119078: cargo capacity 180000 cbm
 387|Hull number,fill,387,,Hull number,G,False,accept,accept,Hull 8207 (HSHI),shipvault record for IMO 9999993: yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8207
 408|Hull number,fill,408,,Hull number,G,False,accept,accept,Hull 8206 (HSHI),shipvault record for IMO 9999981: yard HYUNDAI SAMHO HEAVY INDUSTRIES no. 8206
 487|Hull number,fill,487,,Hull number,G,False,accept,accept,Hull 3434 (HDHHI),shipvault record for IMO 9994034: yard HYUNDAI HEAVY INDUSTRIES CO LTD no. 3434
@@ -830,8 +830,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 221|Price currency,fill,221,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 222|Price currency,fill,222,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 223|Price currency,fill,223,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-203|Price currency,fill,203,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-204|Price currency,fill,204,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+203|Price currency,fill,203,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+204|Price currency,fill,204,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 507|Price currency,fill,507,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 519|Price currency,fill,519,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1152|Price currency,fill,1152,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
@@ -845,109 +845,109 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 193|Price currency,fill,193,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 194|Price currency,fill,194,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 195|Price currency,fill,195,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-197|Price currency,fill,197,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-198|Price currency,fill,198,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-199|Price currency,fill,199,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-200|Price currency,fill,200,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+197|Price currency,fill,197,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+198|Price currency,fill,198,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+199|Price currency,fill,199,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+200|Price currency,fill,200,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1156|Price currency,fill,1156,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1157|Price currency,fill,1157,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1174|Price currency,fill,1174,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1186|Price currency,fill,1186,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1174|Price currency,fill,1174,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1186|Price currency,fill,1186,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 201|Price currency,fill,201,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-202|Price currency,fill,202,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-258|Price currency,fill,258,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-259|Price currency,fill,259,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-260|Price currency,fill,260,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-308|Price currency,fill,308,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-309|Price currency,fill,309,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-310|Price currency,fill,310,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-311|Price currency,fill,311,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-312|Price currency,fill,312,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-313|Price currency,fill,313,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-139|Price currency,fill,139,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-143|Price currency,fill,143,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-146|Price currency,fill,146,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-150|Price currency,fill,150,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-152|Price currency,fill,152,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-154|Price currency,fill,154,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-711|Price currency,fill,711,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-712|Price currency,fill,712,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-408|Capacity units,fill,408,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-244|Price currency,fill,244,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-245|Price currency,fill,245,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-246|Price currency,fill,246,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-247|Price currency,fill,247,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-292|Price currency,fill,292,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-296|Price currency,fill,296,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-300|Price currency,fill,300,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-303|Price currency,fill,303,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-291|Price currency,fill,291,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-294|Price currency,fill,294,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-297|Price currency,fill,297,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-314|Capacity units,fill,314,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-315|Capacity units,fill,315,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-316|Capacity units,fill,316,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-317|Capacity units,fill,317,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-166|Capacity units,fill,166,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-167|Capacity units,fill,167,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-168|Capacity units,fill,168,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-169|Capacity units,fill,169,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+202|Price currency,fill,202,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+258|Price currency,fill,258,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+259|Price currency,fill,259,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+260|Price currency,fill,260,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+308|Price currency,fill,308,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+309|Price currency,fill,309,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+310|Price currency,fill,310,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+311|Price currency,fill,311,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+312|Price currency,fill,312,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+313|Price currency,fill,313,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+139|Price currency,fill,139,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+143|Price currency,fill,143,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+146|Price currency,fill,146,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+150|Price currency,fill,150,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+152|Price currency,fill,152,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+154|Price currency,fill,154,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+711|Price currency,fill,711,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+712|Price currency,fill,712,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+408|Capacity units,fill,408,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+244|Price currency,fill,244,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+245|Price currency,fill,245,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+246|Price currency,fill,246,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+247|Price currency,fill,247,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+292|Price currency,fill,292,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+296|Price currency,fill,296,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+300|Price currency,fill,300,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+303|Price currency,fill,303,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+291|Price currency,fill,291,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+294|Price currency,fill,294,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+297|Price currency,fill,297,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+314|Capacity units,fill,314,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+315|Capacity units,fill,315,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+316|Capacity units,fill,316,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+317|Capacity units,fill,317,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+166|Capacity units,fill,166,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+167|Capacity units,fill,167,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+168|Capacity units,fill,168,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+169|Capacity units,fill,169,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
 509|Price currency,fill,509,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 510|Price currency,fill,510,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 511|Price currency,fill,511,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 512|Price currency,fill,512,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-295|Price currency,fill,295,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-298|Price currency,fill,298,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-299|Price currency,fill,299,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-301|Price currency,fill,301,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-302|Price currency,fill,302,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-304|Price currency,fill,304,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-305|Price currency,fill,305,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-306|Price currency,fill,306,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-307|Price currency,fill,307,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-72|Capacity units,fill,72,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-78|Capacity units,fill,78,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+295|Price currency,fill,295,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+298|Price currency,fill,298,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+299|Price currency,fill,299,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+301|Price currency,fill,301,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+302|Price currency,fill,302,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+304|Price currency,fill,304,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+305|Price currency,fill,305,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+306|Price currency,fill,306,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+307|Price currency,fill,307,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+72|Capacity units,fill,72,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+78|Capacity units,fill,78,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
 1041|Price currency,fill,1041,,Price currency,G,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1148|Price currency,fill,1148,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1149|Price currency,fill,1149,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1167|Price currency,fill,1167,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1175|Price currency,fill,1175,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1176|Price currency,fill,1176,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1177|Price currency,fill,1177,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1178|Price currency,fill,1178,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1179|Price currency,fill,1179,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1180|Price currency,fill,1180,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1181|Price currency,fill,1181,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-1205|Price currency,fill,1205,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-74|Capacity units,fill,74,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-80|Price currency,fill,80,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-81|Price currency,fill,81,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-82|Price currency,fill,82,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-83|Price currency,fill,83,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-84|Price currency,fill,84,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-85|Price currency,fill,85,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-86|Price currency,fill,86,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-88|Price currency,fill,88,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1148|Price currency,fill,1148,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1149|Price currency,fill,1149,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1167|Price currency,fill,1167,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1175|Price currency,fill,1175,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1176|Price currency,fill,1176,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1177|Price currency,fill,1177,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1178|Price currency,fill,1178,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1179|Price currency,fill,1179,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1180|Price currency,fill,1180,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1181|Price currency,fill,1181,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+1205|Price currency,fill,1205,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+74|Capacity units,fill,74,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+80|Price currency,fill,80,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+81|Price currency,fill,81,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+82|Price currency,fill,82,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+83|Price currency,fill,83,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+84|Price currency,fill,84,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+85|Price currency,fill,85,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+86|Price currency,fill,86,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+88|Price currency,fill,88,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 273|Price currency,fill,273,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 274|Price currency,fill,274,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1092|Price currency,fill,1092,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1224|Price currency,fill,1224,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1225|Price currency,fill,1225,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1226|Price currency,fill,1226,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-164|Capacity units,fill,164,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-1166|Price currency,fill,1166,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+164|Capacity units,fill,164,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+1166|Price currency,fill,1166,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1170|Price currency,fill,1170,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 1171|Price currency,fill,1171,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-515|Price currency,fill,515,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-516|Price currency,fill,516,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+515|Price currency,fill,515,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+516|Price currency,fill,516,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 129|Price currency,fill,129,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-130|Price currency,fill,130,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-135|Price currency,fill,135,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-133|Price currency,fill,133,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-134|Price currency,fill,134,,Price currency,Y,True,accept,hold,USD,companion to the proposed Price (apply only if the Price fill is accepted)
-102|Capacity units,fill,102,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-103|Capacity units,fill,103,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
-250|Capacity units,fill,250,,Capacity units,Y,True,accept,hold,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+130|Price currency,fill,130,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+135|Price currency,fill,135,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+133|Price currency,fill,133,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+134|Price currency,fill,134,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
+102|Capacity units,fill,102,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+103|Capacity units,fill,103,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
+250|Capacity units,fill,250,,Capacity units,Y,True,accept,accept,cbm,companion to the proposed Capacity (apply only if the Capacity fill is accepted)
 189|Price,fill,189,,Price,Y,False,hold,accept,214285714,Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401
 189|Price currency,fill,189,,Price currency,Y,True,accept,accept,USD,companion to the proposed Price (apply only if the Price fill is accepted)
 190|Price,fill,190,,Price,Y,False,hold,accept,214285714,Seatrade Maritime: $1.5bn for the seven-vessel consortium order (Hulls 3395-3401

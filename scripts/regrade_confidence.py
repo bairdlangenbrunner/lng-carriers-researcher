@@ -89,8 +89,9 @@ def person_decided(batch_dir):
             continue
         key = r.get("key", "")
         if "::" in key:
-            out[key.split("::", 1)[1]] = r.get("reviewer", "")
-    return {i for i, rev in out.items() if rev not in MACHINE_REVIEWERS}
+            # an undo back to undecided is no decision (store.reviewed reads it the same way)
+            out[key.split("::", 1)[1]] = None if r.get("undecided") else r.get("reviewer", "")
+    return {i for i, rev in out.items() if rev is not None and rev not in MACHINE_REVIEWERS}
 
 
 def payload_cells(mode, payload):

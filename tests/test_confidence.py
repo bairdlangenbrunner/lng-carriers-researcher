@@ -318,6 +318,17 @@ class TestRegrade:
         out = self._run(R, backend, batch, monkeypatch)
         assert out["10|Name"]["decision"] == "accept"
 
+    def test_an_undo_back_to_undecided_does_not_take_a_line_out_of_scope(self, tmp_path, monkeypatch):
+        R, backend, batch = self._setup(
+            tmp_path, monkeypatch, {"http://ship/10": (True, "OK")},
+            decisions={"10|Name": "hold"},
+            log=[{"key": "b1_fix::10|Name", "decision": "accept", "reviewer": "baird",
+                  "note": "", "ts": "2026-09-20T10:00:00-04:00"},
+                 {"key": "b1_fix::10|Name", "decision": "hold", "reviewer": "baird",
+                  "via": "undo", "undecided": True, "note": "", "ts": "2026-09-20T10:01:00-04:00"}])
+        out = self._run(R, backend, batch, monkeypatch)
+        assert out["10|Name"]["decision"] == "accept"
+
     def test_dry_run_writes_nothing(self, tmp_path, monkeypatch):
         R, backend, batch = self._setup(
             tmp_path, monkeypatch, {"http://ship/10": (True, "OK")},
