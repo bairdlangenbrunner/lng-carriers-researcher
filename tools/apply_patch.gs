@@ -106,7 +106,12 @@ function applyPatch() {
     var preview = [];
     for (var h2 in appendGroups[gk]) preview.push(h2 + "='" + appendGroups[gk][h2] + "'");
     log.push((DRY_RUN ? "would append " : "append ") + "row [" + gk + "]: " + preview.join(", "));
-    if (!DRY_RUN) backend.appendRow(newRow);
+    if (!DRY_RUN) {
+      // Plain text first, so "2026" / "1/2" / leading zeros are not coerced (parity with push.py).
+      var target = backend.getRange(backend.getLastRow() + 1, 1, 1, newRow.length);
+      target.setNumberFormat("@");
+      target.setValues([newRow]);
+    }
     appends++;
   }
 
