@@ -1,0 +1,369 @@
+{
+  "gap_window": "NOT date-bounded. This is a completeness pass, not a catch-up: every source's whole orderbook and fleet table was put next to the whole backend (1,172 IMO-bearing rows, 305 `on order`).",
+  "yards_swept": [
+    "S1 CSB: chinashipbuild.com orderbook, all 21 LNG-relevant yards, ALL pages (286 LNG/FSRU hulls) — not page 1 only",
+    "S1 CSB ship-detail pages: the IMO of every hull the hull-key could not match (orderbook_reconcile.py --resolve-imo)",
+    "S1 IGU: World LNG Report 2026 Appendix 3 (fleet, 804 rows) + Appendix 4 (orderbook, 301 rows), with the 2025 edition (742 + 337) layered on",
+    "S1 shipvault: full re-enumeration of unnamed newbuildings — 6,501 distinct units, 378 LNG CARRIER, 331 ON ORDER, 278 at >=100,000 GT",
+    "S1 GTT: gtt.fr/news, Feb-Sep 2026, 25 LNG-carrier tank-design announcements = 56 designs, compared per yard against the backend's 86 contracts since 2025-06",
+    "S2 2026 delivery cohort: 28 vessels enumerated, 25 matched, 0 candidates, 3 status findings",
+    "S3 FSRU completeness + terminals cross-check (incl. GIIGNL fleet table): 0 candidates, 1 Name defect, 4 small-scale scope questions",
+    "S4/S5 proposed-bucket sweep (expanded threshold: named charterer/owner + named program + approximate delivery window, no ship count required): 1 candidate, 4 backend findings"
+  ],
+  "candidates": [
+    {
+      "cluster_id": "C1.1",
+      "cluster_label": "Maran Gas Maritime — Maran Gas Efessos, 159,800 cbm DFDE membrane carrier, Hanwha Ocean (ex-DSME), delivered 2014",
+      "confidence": "G",
+      "discovery_notes": "Found by the IGU fleet-table completeness check, not by a date window: IMO 9627497 appears in BOTH IGU World LNG Report 2025 and 2026 Appendix 3 (fleet) and in no backend row — by IMO or by name. The backend was seeded from IGU 2025, so this is a seeding gap, not a new vessel: sister ships Maran Gas Delphi (sheet 343), Lindos (376), Mystras (377) and Troy (379) are all present, all 159,800 cbm / DFDE / membrane / Hanwha Ocean, and all cite the IGU 2025 landing page. Efessos's IMO (9627497) is adjacent to Lindos's (9627502). Every value here is what IGU 2026 prints for this IMO (igu_refs.corroborates_cell, keyed on the IMO, IG SOP §1), corroborated where shipvault's unit record agrees. Name: checked against the database first per the 2026-09-21 rule — shipvault's record for IMO 9627497 reads 'Maran Gas Efessos' too, so IGU's name is not in dispute and nothing goes to Other names. Shipbuilder cites IGU alone: the shipvault page says 'Daewoo'/'Okpo' (the pre-2023 yard name) and so cannot corroborate the backend's controlled value 'Hanwha Ocean'. Cargo type, Vessel type and Propulsion type likewise cite IGU alone — shipvault's record states none of them. Hull number 2291 is from shipvault; IGU prints no hull column, and the four sister rows leave the cell blank, so this one cell is additive beyond the sibling pattern. Contract date omitted: no source states one.",
+      "row_data": {
+        "Name": "Maran Gas Efessos",
+        "Name [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/141040",
+        "IMO number": "9627497",
+        "IMO number [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/141040",
+        "Status": "active",
+        "Status [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/141040",
+        "Shipowner": "Maran Gas Maritime",
+        "Shipowner [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/141040",
+        "Shipbuilder": "Hanwha Ocean",
+        "Shipbuilder [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+        "Hull number": "Hull 2291 (Hanwha)",
+        "Hull number [ref]": "https://www.shipvault.com/ships/141040",
+        "Capacity": "159800",
+        "Capacity units": "cbm",
+        "Capacity [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/141040",
+        "Cargo type": "membrane",
+        "Cargo type [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+        "Vessel type": "conventional",
+        "Vessel type [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+        "Propulsion type": "DFDE",
+        "Propulsion type [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+        "Delivery year": "2014",
+        "Delivery year [ref]": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/141040"
+      }
+    }
+  ],
+  "backend_status_flags": [
+    {
+      "row_id": "sheet 1160",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Samsung 2801 (LNG Tanker, 174,000 cbm, owner TMS Cardiff Gas Ltd, delivery 2029-02); backend row is 'Samsung HI (TMS Cardiff Gas 1)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgBanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1161",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Samsung 2802 (LNG Tanker, 174,000 cbm, owner TMS Cardiff Gas Ltd, delivery 2029-06); backend row is 'Samsung HI (TMS Cardiff Gas 2)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgbanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1224",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hyundai Ulsan 3644 (LNG Tanker, 174,000 cbm, owner Tsakos Group, delivery 2029-01); backend row is 'HD Hyundai HI (HDHHI) Ulsan (Tsakos 2)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCcJanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1225",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hyundai HI 23675 (FSRU, 174,000 cbm, owner BW LNG AS, delivery 2029-05); backend row is 'HD Hyundai HI (HDHHI) Ulsan (unknown shipowner)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JCSXJanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1151",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hudong Zhonghua H2017A (LNG Tanker, 174,000 cbm, owner MISC Berhad, delivery 2029); backend row is 'Hudong-Zhonghua (MISC 1)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgScsanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1174",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hudong Zhonghua H2018A (LNG Tanker, 174,000 cbm, owner MISC Berhad, delivery 2030); backend row is 'Hudong-Zhonghua (MISC 3)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgScCanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1152",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hudong Zhonghua H2014A (LNG Tanker, 174,000 cbm, owner MISC Berhad, delivery 2029-06); backend row is 'Hudong-Zhonghua (MISC 2)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgSJCanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1153",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hudong Zhonghua H2016A (LNG Tanker, 174,000 cbm, owner MISC Berhad, delivery 2029-10); backend row is 'Hudong-Zhonghua (MISC 4)' with a blank Hull number. Matched by owner+capacity+delivery match.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgSJbanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1035",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hanwha Ocean 2596 (LNG Tanker, 170,520 cbm, owner Unknown, delivery 2027-08); backend row is 'Al Wasmi' with a blank Hull number. Matched by CSB ship-page IMO 1069986.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFFScanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1034",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hanwha Ocean 2595 (LNG Tanker, 170,520 cbm, owner Unknown, delivery 2027-05); backend row is 'Ain Snan' with a blank Hull number. Matched by CSB ship-page IMO 1069974.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFbgganmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1032",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hanwha Ocean 2594 (LNG Tanker, 170,520 cbm, owner Unknown, delivery 2027-02); backend row is 'Al Sidriya' with a blank Hull number. Matched by CSB ship-page IMO 1069962.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFbgXanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 1031",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Hanwha Ocean 2593 (LNG Tanker, 170,520 cbm, owner Unknown, delivery 2027-02); backend row is 'Al Ghafat' with a blank Hull number. Matched by CSB ship-page IMO 1069950.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFbgCanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 888",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Qatar 9 (LNG Tanker, 170,520 cbm, owner Knutsen OAS Shipping A.S., delivery 2026-10); backend row is 'Hull 3393 (HDHHI)' with a blank Hull number. Matched by CSB ship-page IMO 9981439.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4sgCCganmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 889",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Qatar 10 (LNG Tanker, 170,520 cbm, owner Knutsen OAS Shipping A.S., delivery 2026-11); backend row is 'Hull 3394 (HDHHI)' with a blank Hull number. Matched by CSB ship-page IMO 9981441.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4sgCCJanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 814",
+      "issue_type": "hull number missing",
+      "details": "CSB lists Dalian G175K-5 (LNG Tanker, 171,500 cbm, owner China Merchants Shipping (招商局能源运输), delivery 2026-08); backend row is 'Sea Energy' with a blank Hull number. Matched by CSB ship-page IMO 1013494.",
+      "suggested_action": "fix batch: set Hull number from http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4sSSFCanmkhTk8Pl4EN"
+    },
+    {
+      "row_id": "sheet 939",
+      "issue_type": "status disagreement",
+      "details": "CSB still carries Jiangnan H2705 on the jiangnan orderbook; backend row 'Al Taweelah' is `active`.",
+      "suggested_action": "informational — CSB lags delivery; no change unless the backend is wrong"
+    },
+    {
+      "row_id": "sheet 921",
+      "issue_type": "status disagreement",
+      "details": "CSB still carries Hudong-Zhonghua H1895A on the hudong-zhonghua orderbook; backend row 'Puteri Kedah' is `active`.",
+      "suggested_action": "informational — CSB lags delivery; no change unless the backend is wrong"
+    },
+    {
+      "row_id": "sheet 920",
+      "issue_type": "status disagreement",
+      "details": "CSB still carries Hudong-Zhonghua H1894A on the hudong-zhonghua orderbook; backend row 'Puteri Johor' is `active`.",
+      "suggested_action": "informational — CSB lags delivery; no change unless the backend is wrong"
+    },
+    {
+      "row_id": "(no row)",
+      "issue_type": "CSB hull with no backend row",
+      "details": "Samsung 2797 — FSRU, LNG, 300,000 cbm, owner MISC Berhad, contract 2026-04, delivery 2029-02, IMO 1180364 (from the ship-detail page; not in the backend). Near: sheet 1159 'Samsung HI (MISC FSRU)' (capacity 170000 vs CSB 300000).",
+      "suggested_action": "NOT proposed as a new row — near-miss placeholder row at the same yard/owner/contract month; route to a fix batch as an IMO+Hull fill once the differing field is resolved"
+    },
+    {
+      "row_id": "(no row)",
+      "issue_type": "CSB hull with no backend row",
+      "details": "Hudong Zhonghua H2015A — LNG Tanker, 174,000 cbm, owner MISC Berhad, contract 2026-01, delivery 2029-08, IMO 1168914 (from the ship-detail page; not in the backend). Near: sheet 1174 'Hudong-Zhonghua (MISC 3)' (delivery 2030 vs CSB 2029); sheet 1175 'Hudong-Zhonghua (MISC 5)' (delivery 2030 vs CSB 2029).",
+      "suggested_action": "NOT proposed as a new row — near-miss placeholder row at the same yard/owner/contract month; route to a fix batch as an IMO+Hull fill once the differing field is resolved"
+    },
+    {
+      "row_id": "sheet 1004",
+      "issue_type": "IMO disagreement",
+      "details": "IGU 2025 Appendix 4 prints IMO 9315379 for 'Athlos' (HD Hyundai Samho, Capital Gas, 174,000, del 2027); backend row 1004 'Athlos' carries IMO 9999981. IGU 2026 drops the row.",
+      "suggested_action": "verify against a registry before changing either; not proposed here"
+    },
+    {
+      "row_id": "(no row)",
+      "issue_type": "IGU fleet vessel out of scope",
+      "details": "IGU 2025 + 2026 Appendix 3 print IMO 9696266 'Hai Yang Shi You 301' (Jiangnan, CNOOC, 30,000 cbm, del 2015). Absent from the backend. 30,000 cbm is small-scale/mid-scale.",
+      "suggested_action": "no action — out of scope per docs/inclusion_criteria.md; recorded so the next pass does not re-open it"
+    },
+    {
+      "row_id": "(no rows)",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "bw x hyundai-samho, delivery 2028, capacity 177000: IGU prints 2 rows, backend holds 0. IGU names: Hull 8340, Hull 8341",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "sheet 964, sheet 965",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "celsius x samsung, delivery 2027, capacity 180000: IGU prints 1 rows, backend holds 2. IGU names: Celsius- Jan 2025-1",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "sheet 1049, sheet 1099, sheet 1103, sheet 1104",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "celsius x samsung, delivery 2028, capacity 174000: IGU prints 2 rows, backend holds 4. IGU names: Celsius Shipping - Aug 2025 - 1, Celsius Shipping - Aug 2025 - 2",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "sheet 1054, sheet 1055, sheet 1056, sheet 1059",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "evalend shipping x hyundai-ulsan, delivery 2028, capacity 174000: IGU prints 2 rows, backend holds 4. IGU names: Unknown Hull No., Unknown Hull No.",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "(no rows)",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "glovis x hyundai-samho, delivery 2029, capacity 174000: IGU prints 2 rows, backend holds 0. IGU names: Hyundai Glovis - HHI - Nov 2025, Unknown Hull No.",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "(no rows)",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "hanwha shipping x hanwha-ocean, delivery 2027, capacity 174000: IGU prints 2 rows, backend holds 0. IGU names: Hanwha Ocean - Feb 2025 -1, Hanwha Ocean - Feb 2025 -2",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "sheet 1141, sheet 1142, sheet 1143, sheet 1158, sheet 1169",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "knutsen x hanwha-ocean, delivery 2029, capacity 174000: IGU prints 7 rows, backend holds 5. IGU names: Knutsen OAS - Hanwha - Dec 2025 - 1, Knutsen OAS - Hanwha - Dec 2025 - 2, Knutsen OAS - Hanwha - Dec 2025 - 3, Knutsen OAS - Hanwha - Dec 2025 - 4, Knutsen OAS - Hanwha - Dec 2025 - 5, Knutsen OAS - Hanwha - Dec 2025 - 6, Knutsen OAS - Hanwha - Dec 2025 - 7",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "sheet 1093, sheet 1094",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "nyk x hyundai-ulsan, delivery 2028, capacity 200000: IGU prints 4 rows, backend holds 2. IGU names: Ocean Yield NYK - Dec 2025 - 1, Ocean Yield NYK - Dec 2025 - 2, Ocean Yield NYK - Dec 2025 - 3, Ocean Yield NYK - Dec 2025 - 4",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    },
+    {
+      "row_id": "sheet 1132, sheet 1140, sheet 1170",
+      "issue_type": "IGU no-IMO count disagreement",
+      "details": "purus x samsung, delivery 2029, capacity 174000: IGU prints 2 rows, backend holds 3. IGU names: Purus - SHI - Dec 2025 - 1, Purus- SHI - Dec 2025 - 2",
+      "suggested_action": "count-level only — IGU gives no IMO, so no vessel-by-vessel claim; research the cluster if the delta persists"
+    }
+  ],
+  "verification_log": [
+    {
+      "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "IGU 2026 Appendix 3 prints IMO 9627497 with name, owner, builder, capacity, cargo type, vessel type, propulsion and delivery year",
+      "result": "pass (igu_refs.corroborates_cell, IMO-keyed)"
+    },
+    {
+      "url": "https://www.shipvault.com/ships/141040",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "shipvault unit record for IMO 9627497 — name, IMO, status, owner, capacity, delivery year, hull 2291",
+      "result": "pass for those cells; FAILS for Shipbuilder 'Hanwha Ocean' (page says Daewoo/Okpo), Cargo type, Vessel type, Propulsion type — not cited for them"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgBanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Samsung 2801 — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgbanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Samsung 2802 — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCcJanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hyundai Ulsan 3644 — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JCSXJanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hyundai HI 23675 — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgScsanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hudong Zhonghua H2017A — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgScCanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hudong Zhonghua H2018A — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgSJCanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hudong Zhonghua H2014A — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgSJbanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hudong Zhonghua H2016A — hull, type/capacity, owner, shipyard, built date, contract date, IMO (not read)",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFFScanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hanwha Ocean 2596 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 1069986",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFbgganmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hanwha Ocean 2595 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 1069974",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFbgXanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hanwha Ocean 2594 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 1069962",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4SFbgCanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hanwha Ocean 2593 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 1069950",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4sgCCganmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Qatar 9 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 9981439",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4sgCCJanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Qatar 10 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 9981441",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4sSSFCanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Dalian G175K-5 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 1013494",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JCScJanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Samsung 2797 — hull, type/capacity, owner, shipyard, built date, contract date, IMO 1180364",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    },
+    {
+      "url": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4cgSJBanmkhTk8Pl4EN",
+      "status": "200",
+      "soft_error": "no",
+      "content_match": "CSB ship-detail page for Hudong Zhonghua H2015A — hull, type/capacity, owner, shipyard, built date, contract date, IMO 1168914",
+      "result": "pass — used for backend_status_flags only, no candidate cites it"
+    }
+  ]
+}

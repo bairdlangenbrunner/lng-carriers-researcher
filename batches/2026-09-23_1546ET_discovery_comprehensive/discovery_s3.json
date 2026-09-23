@@ -1,0 +1,271 @@
+{
+  "stream": "S3",
+  "giignl": {
+    "source": "data/GIIGNL-2026-Annual-Report-0526b.pdf (fleet table edition_year 2025, PDF p.43)",
+    "note": "GIIGNL is a comparison artifact only, never a citable [ref].",
+    "buckets": {
+      "giignl_fleet_count": 54,
+      "backend_fsru_count": 52,
+      "matched": 49,
+      "reclassify": 0,
+      "manual": 1,
+      "candidates_small_scale": 4,
+      "backend_only": 3
+    },
+    "findings": [
+      {
+        "kind": "matched_no_disagreement",
+        "note": "All 49 name-matched pairs agree on capacity (within tolerance) and delivery year; builder differs only where GIIGNL prints the conversion yard rather than the original builder, which is expected/informational, not a data defect. Zero real (capacity/delivery) disagreements across the matched set."
+      },
+      {
+        "kind": "name_mismatch_manual_pairing",
+        "sheet_row": 20,
+        "name": "KLNGTP Americas",
+        "imo": "9045132",
+        "note": "GIIGNL lists this hull as 'KARMOL LNGT Powership Americas' (ex 'LNGT Americas'), converted 2025, storage 127,606 m3, owner KARMOL. Backend's 'KLNGTP Americas' (owner Karpowership, capacity 126,800 m3, delivery 1994) is clearly the same hull -- capacity and delivery year agree; owner overlaps (Karpowership/KARMOL); no name-token match, which is why the automated join could not pair it and it required a manual capacity+delivery+owner match. Independently corroborated by press coverage of the Karpowership FSRU conversion program naming IMO 9045132 in the same context. This looks like a genuine backend Name-column staleness (pre-conversion/placeholder-style name) worth a fix-batch Name update with 'KLNGTP Americas' -> 'Other names', per RF Section 4.16 -- flagging for the user rather than proposing the edit myself since Name changes route through a fix batch."
+      },
+      {
+        "kind": "backend_only_not_yet_in_giignl",
+        "sheet_row": 897,
+        "name": "Excelerate Acadia",
+        "imo": "9984209",
+        "note": "On order (IGU orderbook: Hull 3407, Excelerate Energy, 174,000 m3, delivery 2026). Not yet in GIIGNL's fleet table because not yet delivered/converted-and-deployed. Expected, not a defect."
+      },
+      {
+        "kind": "backend_only_not_yet_in_giignl",
+        "sheet_row": 1014,
+        "name": "Solidarity",
+        "imo": "1056410",
+        "note": "On order (IGU orderbook: Gdansk FSRU, MOL, 174,000 m3, delivery 2027). Not yet in GIIGNL's fleet table because not yet delivered. Expected, not a defect."
+      },
+      {
+        "kind": "backend_only_not_yet_in_giignl",
+        "sheet_row": 1159,
+        "name": "Samsung HI (MISC FSRU)",
+        "imo": null,
+        "note": "On order, still carrying a yard-placeholder name and no IMO yet. Not in GIIGNL's fleet table (undelivered) and not IMO-keyable against IGU either (see igu_fsru.backend_only below). Expected, not a defect."
+      },
+      {
+        "kind": "small_scale_review",
+        "giignl_name": "EDN 1",
+        "ex_names": ["Hua Xiang 8"],
+        "storage_m3": 14000,
+        "owner": "PT Sulawesi Regas",
+        "location": "Maleo, Indonesia",
+        "cap_reason": "storage < 60,000 m3 and CCS 'Other' -- below the SOP's small-scale cutoff",
+        "note": "GIIGNL lists this as a deployed FSRU; not currently in the backend under any name. Cross-referenced in Part 4 (terminals cross-check) against GEM's Gorontalo FSRU and Amurang FSRU terminal records, both of which name 'Hua Xiang 8' / 'EDN 1' as the assigned unit at different points in its deployment history. Whether this is in-scope (FSRU) or out-of-scope (small-scale) is a scope question for the user, not decided here."
+      },
+      {
+        "kind": "small_scale_review",
+        "giignl_name": "Eemshaven LNG",
+        "ex_names": ["S188"],
+        "storage_m3": 25000,
+        "owner": "Exmar Offshore",
+        "location": "Eemshaven, Netherlands",
+        "cap_reason": "storage < 60,000 m3 and CCS 'Other' -- below the SOP's small-scale cutoff",
+        "note": "GIIGNL lists this as a deployed FSRU; not currently in the backend under any name. Did not surface in the Part 4 terminals cross-check's unmatched list (GEM likely lists Eemshaven under a different facility_type/terminal name than the import-only filter caught, or already matched under a name my matcher accepted). Scope question, not decided here."
+      },
+      {
+        "kind": "small_scale_review",
+        "giignl_name": "Karunia Dewata",
+        "ex_names": [],
+        "storage_m3": 26000,
+        "owner": "Jaya Samudra",
+        "location": "Benoa, Indonesia",
+        "cap_reason": "storage < 60,000 m3 and CCS 'Other' -- below the SOP's small-scale cutoff",
+        "note": "GIIGNL lists this as a deployed FSRU; not currently in the backend under any name. Cross-referenced in Part 4 against GEM's Tanjung Benoa FSRU terminal record ('Karunia Dewata FSRU'). Scope question, not decided here."
+      },
+      {
+        "kind": "small_scale_review",
+        "giignl_name": "Torman",
+        "ex_names": [],
+        "storage_m3": 28000,
+        "owner": "Access LNG",
+        "location": "Tema LNG, Ghana",
+        "cap_reason": "storage < 60,000 m3 and CCS 'Other' -- below the SOP's small-scale cutoff",
+        "note": "GIIGNL lists this as a deployed FSRU; not currently in the backend under any name. Cross-referenced in Part 4 against GEM's Tema FSRU terminal record ('Torman LNG FRU'). Scope question, not decided here."
+      }
+    ]
+  },
+  "igu_fsru": {
+    "source": "work/igu_fleet_2026.json (fleet table, vessel_type == 'FSRU'), IMO-keyed against the 52 backend FSRU rows",
+    "matched": 51,
+    "igu_only": [],
+    "backend_only": [
+      {
+        "sheet_row": 1159,
+        "name": "Samsung HI (MISC FSRU)",
+        "imo": null,
+        "note": "No IMO assigned yet (on order, yard-placeholder name) -- cannot be IMO-keyed against IGU's table. Not a disagreement, just not yet joinable."
+      }
+    ],
+    "disagreements_with_giignl": [],
+    "historical_flags_checked": [
+      {
+        "sheet_row": 61,
+        "name": "Puteri Delima Satu",
+        "imo": "9211872",
+        "backend_vessel_type": "FSU",
+        "note": "Plan doc flagged this as a historical GIIGNL-vs-IGU FSRU/FSU boundary case. Checked directly against both work/giignl_fsru_fleet.json (not listed in the GIIGNL FSRU fleet table) and work/igu_fleet_2026.json (either silent on this IMO's vessel_type, or agrees with the backend's FSU typing). Result: no live disagreement currently exists for this row. Reporting the null result rather than manufacturing a finding that isn't there."
+      },
+      {
+        "sheet_row": 81,
+        "name": "Bilbao Knutsen",
+        "imo": "9236432",
+        "backend_vessel_type": "FSU",
+        "note": "Same check as above (plan doc's second flagged historical boundary case). No live GIIGNL-vs-IGU disagreement currently exists for this row either."
+      }
+    ]
+  },
+  "conversions": [
+    {
+      "name": "LNGT Karadeniz (Karpowership)",
+      "imo": "9045132",
+      "project": "Karpowership/KARMOL FSRU conversion program",
+      "announced": "completed conversion, 2025 (per GIIGNL 2025 edition)",
+      "evidence_url": "https://www.igu.org/igu-reports/2025-world-lng-report",
+      "in_backend": true,
+      "sheet_row": 20,
+      "note": "Same hull as the giignl.findings 'name_mismatch_manual_pairing' entry above -- backend's 'KLNGTP Americas' (IMO 9045132). Already in the backend as a conventional/active row; the conversion is complete per GIIGNL, so this is a Vessel-type/Name-fix candidate for a future fix batch, not a new discovery row."
+    },
+    {
+      "name": "Hoegh Gandria",
+      "imo": null,
+      "project": "Hoegh Evi FSRU conversion",
+      "announced": "2026",
+      "evidence_url": null,
+      "in_backend": true,
+      "sheet_row": null,
+      "note": "IMO/sheet_row not re-captured in this pass of the summary; confirmed earlier in the session (WebSearch) that the underlying vessel is already present in the backend as an active/conventional row under a name Hoegh Evi is converting. Flagging for the user to re-verify the exact row before any fix-batch action -- I did not re-run the search to re-derive the exact IMO/sheet_row before writing this file, since the WebSearch budget for this session is exhausted."
+    },
+    {
+      "name": "Methane Patricia Camila",
+      "imo": null,
+      "project": "Excelerate Energy FSRU conversion",
+      "announced": "2026",
+      "evidence_url": null,
+      "in_backend": true,
+      "sheet_row": null,
+      "note": "Same caveat as Hoegh Gandria above: confirmed earlier in this session that the underlying vessel is already an active/conventional backend row; exact IMO/sheet_row not re-derived here because the session's WebSearch budget is exhausted. Re-verify before acting."
+    },
+    {
+      "name": null,
+      "imo": null,
+      "project": "EXMAR/Eems Energy Terminal-linked conversion",
+      "announced": "pre-FID, no vessel named yet",
+      "evidence_url": null,
+      "in_backend": false,
+      "sheet_row": null,
+      "note": "Surfaced during the trade-press sweep as an early-stage project with no named hull or IMO yet assigned. Nothing to check against the backend and nothing citable to propose as a candidate row. Listed here for completeness only; see coverage below."
+    }
+  ],
+  "terminals_cross_check": {
+    "ran": "../lng-terminals-researcher/scripts/fsru_sync_check.py --carrier-export <translated backend csv> --gem-csv <sibling repo's existing gem_export.csv> --output work/fsru_sync.json (run from lng-terminals-researcher/scripts/ as cwd; see coverage for why a translated CSV was needed)",
+    "floating_units_total": 255,
+    "with_vessel_row": 88,
+    "without_vessel_row": [
+      {
+        "terminal": "Etki FSRU",
+        "unit_vessel_name_raw": "FSRU Turquoise",
+        "country": "Turkiye",
+        "status": "operating",
+        "assessment": "matched, not a gap",
+        "why": "Owner 'Pardus Energy' and vessel class match backend sheet_row 528 'Turquoise P' (IMO 9823883, active) exactly; name variant only ('FSRU Turquoise' vs 'Turquoise P') is why the automated matcher missed it."
+      },
+      {
+        "terminal": "Al-Faw FSRU Terminal",
+        "unit_vessel_name_raw": "Hull 3407",
+        "country": "Iraq",
+        "status": "proposed",
+        "assessment": "matched, not a gap",
+        "why": "Hull 3407 is Excelerate Acadia, backend sheet_row 897 (IMO 9984209), confirmed via the IGU 2026 orderbook record (Hull 3407, Excelerate Energy, 174,000 m3, delivery 2026) already in the backend under its post-rename name. GEM's terminal record still carries the pre-rename hull-number placeholder."
+      },
+      {
+        "terminal": "Polish Baltic Sea Coast FSRU",
+        "unit_vessel_name_raw": "Gdansk FSRU",
+        "country": "Poland",
+        "status": "construction",
+        "assessment": "matched, not a gap",
+        "why": "Gdansk FSRU is backend sheet_row 1014 'Solidarity' (IMO 1056410, on order), confirmed via the IGU 2026 orderbook record (Gdansk FSRU, MOL, 174,000 m3, delivery 2027). GEM's record uses the project/site name, the backend uses the assigned vessel name."
+      },
+      {
+        "terminal": "Portovesme FSRU",
+        "unit_vessel_name_raw": "Golar Arctic",
+        "country": "Italy",
+        "status": "cancelled",
+        "assessment": "matched, not a gap",
+        "why": "Golar Arctic is a former name of backend sheet_row 70 'SC Serenity' (IMO 9253105, active). GEM's own record is itself marked 'cancelled' / '[TO BE DELETED]' -- a stale project record on a vessel already correctly tracked here under its current name."
+      },
+      {
+        "terminal": "Polish Baltic Sea Coast FSRU",
+        "unit_vessel_name_raw": "Gdansk FSRU",
+        "unit_label": "Expansion (FSRU 2)",
+        "country": "Poland",
+        "status": "proposed",
+        "assessment": "scope question",
+        "why": "A second, later-stage train at the same site as the Solidarity-served base project above. GEM has not yet assigned a distinct vessel name or IMO to this expansion unit, so there is nothing to check against the backend -- not a discovery candidate yet (no name/IMO to add) and not clearly out of scope either. Flagging as a future-monitor item rather than deciding it."
+      },
+      {
+        "terminal": "Gorontalo FSRU",
+        "unit_vessel_name_raw": "Hua Xiang 8, EDN 1",
+        "country": "Indonesia",
+        "status": "operating",
+        "assessment": "scope question",
+        "why": "Same hull as the GIIGNL small_scale_review finding 'EDN 1 (ex Hua Xiang 8)' above (storage 14,000 m3, below the SOP's small-scale cutoff). Whether this is in-scope as an FSRU or out-of-scope as small-scale is exactly the open question already raised in the GIIGNL findings -- not re-decided here."
+      },
+      {
+        "terminal": "Amurang FSRU",
+        "unit_vessel_name_raw": "Hua Xiang 8m FSRU",
+        "country": "Indonesia",
+        "status": "retired",
+        "assessment": "scope question",
+        "why": "Same underlying small hull/family as the Gorontalo/EDN 1 entry above (Zhejiang Huaxiang Shipping is a small domestic Chinese/Indonesian operator consistent with the 14,000 m3 GIIGNL record's deployment history); GEM's record for this site is itself marked 'retired'. Bundled with the EDN 1 scope question above rather than treated as a second, separate gap."
+      },
+      {
+        "terminal": "Tanjung Benoa FSRU",
+        "unit_vessel_name_raw": "Karunia Dewata FSRU",
+        "country": "Indonesia",
+        "status": "operating",
+        "assessment": "scope question",
+        "why": "Matches the GIIGNL small_scale_review finding 'Karunia Dewata' above (storage 26,000 m3, below the SOP's small-scale cutoff). Same open in-scope/out-of-scope question, not re-decided here."
+      },
+      {
+        "terminal": "Tema FSRU",
+        "unit_vessel_name_raw": "Torman LNG FRU",
+        "country": "Ghana",
+        "status": "operating",
+        "assessment": "scope question",
+        "why": "Matches the GIIGNL small_scale_review finding 'Torman' above (storage 28,000 m3, below the SOP's small-scale cutoff). Same open in-scope/out-of-scope question, not re-decided here."
+      },
+      {
+        "terminal": "Tema FSRU",
+        "unit_vessel_name_raw": "Vasant FSU",
+        "country": "Ghana",
+        "status": "operating",
+        "assessment": "out of scope",
+        "why": "GEM's own unit name labels this an FSU (storage unit), and FSUs are explicitly excluded by docs/inclusion_criteria.md regardless of size."
+      },
+      {
+        "terminal": "Regasificadora del Pacifico LNG Terminal",
+        "unit_vessel_name_raw": "Tura/El Viche",
+        "country": "Colombia",
+        "status": "construction",
+        "assessment": "out of scope",
+        "why": "GEM's own project notes describe this as two separate units: a receiving/storage FSU at Buenaventura (this floating unit) and an onshore regasification facility at Buga. The floating unit is explicitly an FSU, not an FSRU, so it is excluded by docs/inclusion_criteria.md regardless of size."
+      }
+    ]
+  },
+  "candidates": [],
+  "scope_questions": [
+    "Four GIIGNL-listed FSRUs (EDN 1 ex Hua Xiang 8 / 14,000 m3; Eemshaven LNG ex S188 / 25,000 m3; Karunia Dewata / 26,000 m3; Torman / 28,000 m3) are all below the FSRU-reconciliation SOP's small-scale cutoff and not currently in the backend under any name. Per docs/sops/fsru_reconciliation.md Section 2.3, this needs the user's confirmation of FSRU-vs-small-scale status before any of the four is added -- not decided here. Three of the four are independently corroborated by GEM's own terminal records (Gorontalo/Amurang -> EDN 1, Tanjung Benoa -> Karunia Dewata, Tema -> Torman), which strengthens that they are real, currently-deployed units rather than research artifacts; the question is purely one of inclusion-criteria scope, not existence.",
+    "GEM's 'Polish Baltic Sea Coast FSRU Expansion (FSRU 2)' unit (proposed, no vessel name/IMO assigned yet) has no data to check against the backend. Not a discovery candidate today, but worth a future-pass check once GEM or IGU names a hull for it.",
+    "The backend Name for sheet_row 20 ('KLNGTP Americas', IMO 9045132) does not match GIIGNL's name for the same hull ('KARMOL LNGT Powership Americas', ex 'LNGT Americas'), though capacity, delivery year, and owner all agree. This looks like a genuine Name-column staleness worth a fix batch (with the former name appended to Other names per RF Section 4.16), but a Name change is a decision for the user/a dedicated fix batch, not something this reconciliation stream should propose directly.",
+    "Two FSRU conversions found in the trade-press sweep (Hoegh Gandria/Hoegh Evi, Methane Patricia Camila/Excelerate) are confirmed to already have active backend rows under their current names, but this session's WebSearch budget was exhausted before their exact IMO/sheet_row could be re-captured for this file. Someone should re-verify the exact rows before any Vessel-type fix-batch action."
+  ],
+  "coverage": {
+    "giignl": "Extracted fresh from data/GIIGNL-2026-Annual-Report-0526b.pdf (fleet_count 54, edition_year 2025) and reconciled against all 52 current backend FSRU rows by name (+ex-names) with capacity corroboration. This enumerates GIIGNL's full published FSRU fleet table -- it does not cover any FSRU GIIGNL itself omits, and GIIGNL's orderbook appendix was passed through but not independently investigated beyond the 3 backend_only on-order rows already known to the backend.",
+    "igu_fsru": "Enumerated every IMO-bearing backend FSRU row (51 of 52 -- one on-order row has no IMO yet) against IGU 2026's fleet table filtered to vessel_type == 'FSRU'. This is a closed, IMO-keyed comparison for the rows that have IMOs; it says nothing about the one no-IMO row until it is assigned one. The two historically-flagged boundary rows (61, 81) were checked directly and currently show no live GIIGNL/IGU disagreement -- this is a null result grounded in this session's fresh extractions, not an assumption that the historical concern was never valid.",
+    "conversions": "A targeted trade-press/owner-newsroom sweep (Excelerate, Hoegh Evi, Karpowership/KARMOL, BW, Golar, Dynagas, MOL, Mitsui, New Fortress Energy, Exmar/Deltamarin-adjacent yard announcements) for FSRU conversions announced or completed since June 2026, not an exhaustive scan of every possible conversion candidate worldwide. Three concrete, dated conversions were found and confirmed already present in the backend; a fourth (EXMAR/Eems-linked) surfaced with no named hull yet. A null result for any operator not explicitly searched does not mean no conversion is underway there -- only that this sweep did not surface one.",
+    "terminals_cross_check": "Ran the sibling repo's scripts/fsru_sync_check.py, read-only, from lng-terminals-researcher/scripts/ as cwd (its --gem-csv default only resolves from that directory). Two bugs in that read-only script were worked around, not fixed, per the 'read-only repo -> report, don't touch' rule: (1) load_carrier_vessels() in fsru_sync_check.py only recognizes CSV headers 'VesselName'/'Vessel Name'/'vessel_name', so it silently read zero records against our backend's actual 'Name' header -- worked around by writing a translated copy of the backend (VesselName/IMO/Status/Owner/Operator/VesselType columns) to my scratchpad and pointing --carrier-export at that, without editing the sibling script. (2) gather_gem_fsrus() in the same script does not filter on facility_type, so its raw output mixes true import-side FSRUs with export-side FLNG/liquefaction units; I filtered GEM's own gem_export.csv to facility_type == 'import' myself (255 rows) and built an independent name-matching pass (using this repo's normalize_vessel_name plus multi-name splitting and substring containment) rather than trusting the sibling script's bucket assignments. Both issues should be reported to whoever owns lng-terminals-researcher for a real fix -- I did not, and will not, edit that repo. The GEM-side data itself (gem_export.csv) is a static snapshot dated 2026-09-10, 13 days stale relative to this pass; any floating unit GEM has added, renamed, or reclassified since then would not appear here. Of the 255 import-facility floating units, 161 carry no assigned vessel name yet in GEM's own data (early-stage proposals) and were not meaningfully checkable; 88 matched an existing backend row (84 by the direct name/substring match, plus 4 more resolved by hand in this pass -- Excelerate Acadia, Solidarity, Turquoise P, SC Serenity); the remaining 6 real-named units are each classified above as scope question or out of scope. None of the 255 produced a genuine new discovery candidate not already covered by an existing backend row or by this stream's own GIIGNL small-scale findings."
+  }
+}

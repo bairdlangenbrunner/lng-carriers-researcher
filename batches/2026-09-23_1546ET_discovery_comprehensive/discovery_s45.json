@@ -1,0 +1,170 @@
+{
+  "streams": ["S4", "S5"],
+  "generated": "2026-09-23",
+  "backend_pull": "work/backend.csv fresh pull ~11:47 ET 2026-09-23 (shared with parallel S1-S3 streams)",
+  "tooling_note": "WebSearch exhausted mid-task (200/200 session budget, shared across parallel streams). Per user's global 'never trigger extra-usage billing without asking' rule, no budget increase was requested. All research after that point used python scripts/fetch.py (single URL, curl -> curl_cffi -> cf_clearance ladder) plus direct known trade-press/company URLs and Bash+grep parsing. Open web search engines (Bing, DuckDuckGo HTML) were tried as a substitute and returned bot-walled/empty results (Bing: captcha marker present, 0 result links; DuckDuckGo HTML: 0 result links) -- confirmed as a tooling dead end, not further retried. This materially limited S4's leading-edge sweep (no way to run open discovery queries) and S5's named-program sweep (company newsroom URLs guessed blind, several 404/522) for the remainder of the task.",
+
+  "leading_edge": {
+    "window": "2026-09-17 to 2026-09-23",
+    "rings_covered": "B and C only, per scope",
+    "sources_checked": [
+      "splash247.com/category/sector/gas/ (fetched via scripts/fetch.py, cf_impersonate route; 28 article links reviewed, dates checked via each article's JSON-LD datePublished)",
+      "lngprime.com/category/africa/ (fetched OK but the category page renders no crawlable article links via plain HTML -- likely JS-hydrated list; not usable without WebSearch)",
+      "offshore-energy.biz/tag/mozambique-lng/ (fetched OK; article list present but entries are all pre-window onshore/financing/legal stories, none about carrier orders)",
+      "en.sedaily.com, imarinenews.com (site-internal search endpoints tried; both returned no results for the queries attempted)",
+      "Bursa Malaysia / HKEX / DART / KIND / Riviera / Seatrade / TradeWinds: NOT swept -- ran out of viable fetch routes (TradeWinds redirects to SSO paywall login; the others need query-driven search, which requires WebSearch)"
+    ],
+    "findings": [
+      {
+        "headline": "Dynagas linked to $1bn Samsung LNG quartet",
+        "source": "https://splash247.com/dynagas-linked-to-1bn-samsung-lng-quartet/",
+        "published": "2026-09-16T07:15:00+00:00",
+        "in_window": false,
+        "note": "One day before the strict Sept 17 window start; included because it was surfaced by the in-window Ring C sweep and is a genuinely new, sizeable cluster with no existing backend match. Samsung Heavy Industries disclosed (per its own DART filing, relayed by Splash) a contract with an 'unidentified Oceania-based owner' on Monday 2026-09-14: four 200,000 cbm LNG carriers, ~KRW1.41trn (~$1.05bn), delivery by September 2029. Splash's headline links the order to Dynagas (George Procopiou) as an inference from Procopiou's wider group newbuilding push -- Dynagas is NOT named as the confirmed owner in the article body; the confirmed fact is only 'unidentified Oceania-based owner.' Backend already carries 16 Dynagas-owned vessels (Yamal LNG Arc7 icebreakers and 'Clean'-series US LNG carriers, all at HD Hyundai HI / Hanwha Ocean) but none at Samsung Heavy Industries, so a Samsung cluster would be new to Dynagas's backend footprint if confirmed. NOT added as a candidate -- owner is unconfirmed and Rule F / no-value-without-ref bars proposing 'Dynagas' as Shipowner on an inference. Flagged to backend_findings for a future pass once the owner is confirmed (DART original filing or a follow-up article naming the buyer)."
+      },
+      {
+        "headline": "Exmar lands 10-year Abidjan FSRU deal",
+        "source": "https://splash247.com/exmar-lands-10-year-abidjan-fsru-deal/",
+        "published": "2026-09-17T10:00:00+00:00",
+        "in_window": true,
+        "note": "Exmar signed a 10-year floating LNG infrastructure deal with Ivory Coast's CI-Energies and Petroci reviving a decade-old Abidjan import-terminal plan; covers lease of a 152,000 cbm FSRU. No specific vessel/hull is named in the article -- reads as a terminal/charter deployment story, not a newbuild order, and backend currently has zero Exmar-owned FSRU rows at all (checked: no Exmar + Vessel type=FSRU match). Not enough to build a candidate row (no vessel name/IMO/hull -- would violate 'never fabricate'). Flagged to backend_findings: watch for the specific FSRU Exmar assigns to Abidjan, and separately worth a look at why Exmar has zero FSRU rows in the backend at all (may be a genuine existing-fleet gap, better suited to the FSRU reconciliation SOP)."
+      },
+      {
+        "headline": "LR, KSOE and HD Hyundai HI develop hybrid-electric LNG carrier AiP",
+        "source": "https://splash247.com/lng-carriers-to-get-the-hybrid-electric-propulsion-treatment/",
+        "published": "2026-09-15T09:57:00+00:00",
+        "in_window": false,
+        "note": "Approval-in-principle for a 185,000 cbm hybrid-electric LNG carrier design signed at Gastech 2026. A design AiP, not a vessel order -- no ship to add. Excluded; noted only in case a follow-up order references this design."
+      },
+      {
+        "headline": "Procopiou/Dynacom lines up near-$1bn Hengli eight-ship package",
+        "source": "https://splash247.com/procopiou-lines-up-near-1bn-hengli-eight-ship-package/",
+        "published": "2026-09-14T06:30:01+00:00",
+        "in_window": false,
+        "note": "Out of scope on two counts: outside the window, and the eight vessels are VLCCs and 93,000 cbm VLACs (ammonia carriers), not LNG carriers or FSRUs."
+      }
+    ],
+    "null_result_note": "No new firm LNG carrier or FSRU order was confirmed as both (a) inside the strict 2026-09-17 to 2026-09-23 window and (b) meeting Rule F (a named owner/vessel with a citable source). This is a legitimate null result given the sources actually reachable without WebSearch -- Bursa Malaysia, HKEX, DART/KIND, Riviera, Seatrade and TradeWinds were not swept at all (see tooling_note and sources_checked), so 'nothing found in the window' should be read as 'nothing found in the sources this session could still reach,' not as a clean bill of health for the full six-day Ring B/C sweep the task specified."
+  },
+
+  "open_leads": [
+    {
+      "id": "misc_hudong_zhonghua",
+      "description": "MISC x Hudong-Zhonghua hulls -- shipvault lists 10 hulls (H2014A-H2023A range) for a newer MISC/Hudong-Zhonghua LNG carrier program; backend has 5 on-order placeholder rows for it.",
+      "current_backend_rows": {
+        "delivered_2025_cluster": "sheet rows 778, 779, 909, 910, 911 (Al Tuwar / Al Mashabiyyah / Fat'h Al Khair / Mihzem / Idd Al Shargi; hulls H1797A-H1801A; a DIFFERENT, earlier, already-fully-delivered MISC/Hudong program -- not the one shipvault's H20xxA hulls belong to)",
+        "on_order_2029_2030_cluster": "sheet rows 1151, 1152, 1153, 1174, 1175 (Hudong-Zhonghua (MISC 1/2/3/4/5); delivery 2029-2030; hull numbers not yet assigned in backend)"
+      },
+      "verdict": "NOT A GAP. Confirmed via primary trade press (imarinenews, read earlier in this session) that MISC's Hudong-Zhonghua order is structured as 5 firm + 5 optional vessels. The backend's 5 on-order placeholder rows correctly represent the 5 FIRM vessels; shipvault's 10-hull listing includes the 5 OPTIONAL slots, which have not been exercised into contracts and so are correctly absent from the backend. No new candidate rows proposed.",
+      "still_needed": "None. This lead is closed. (If MISC exercises the 5 options later, that is a future discovery/data-fill item, not part of this pass.)"
+    },
+    {
+      "id": "maran_gas_efessos",
+      "description": "Maran Gas Efessos, IMO 9627497 -- in IGU but reportedly missing from backend.",
+      "confirmed_missing": true,
+      "verdict": "CONFIRMED as a genuine gap and RESOLVED as a discovery candidate (see candidates[] below). shipvault (imo_tracker.py) returns a keyed unit record: built 2014 at Daewoo Shipbuilding & Marine Engineering (Okpo yard; DSME is Hanwha Ocean's pre-2023 name), yard no. 2291, ordered 2011-04-01, delivered 2014-06, capacity 159,800 cbm, owner 'Maran Gas', status active. marinetraffic.org's IMO search also resolves to this vessel (name match only, no field-level data extracted -- page is a static ISM/ownership listing, used as a second corroborating link, not a primary data source).",
+      "still_needed": "None for this pass; see candidates[] for the proposed row."
+    },
+    {
+      "id": "mozambique_lng_slots",
+      "description": "Mozambique LNG 17-vessel slot reservation, rows Status=proposed. TotalEnergies deadline reportedly extended to September 2026. Backend records 'MOL, NYK' as Shipowner on all 17 rows, with Shipbuilder split HD Hyundai Heavy Industries on the first 9 (sheet rows 1184-1192) and Samsung Heavy Industries on the remaining 8 (sheet rows 1193-1200).",
+      "verdict": "PARTIALLY CONFIRMED, STILL OPEN on two points. (1) The MOL/NYK ownership plus the 9/8 HD Hyundai-group / Samsung HI builder split matches what a July 2026 imarinenews article reported (read earlier in this session, before compaction; I was unable to relocate the exact URL afresh in this continuation -- imarinenews's own site search returned no results for repeated query attempts, and WebSearch is exhausted, so this citation needs to be re-sourced by a follow-on session rather than asserted from memory). (2) A real discrepancy worth flagging: the backend's builder vocabulary distinguishes 'HD Hyundai Samho' from 'HD Hyundai Heavy Industries' as separate controlled values elsewhere in the sheet (confirmed: both values are in active use), but rows 1184-1192 use the generic 'HD Hyundai Heavy Industries' label. If the underlying press specifically named the Samho yard (as the task brief states), the backend's builder value on those 9 rows may need correcting to 'HD Hyundai Samho' -- but this needs a fresh, re-verified source before proposing it as a fix, per the §3.8 gate. (3) No post-July, post-deadline (September 2026) update was found on whether the reservation converted to firm contracts, lapsed, or is still pending -- Woodside/Mozambique-specific newsroom and category-page fetches did not surface anything newer, and this is exactly the kind of query WebSearch would normally answer.",
+      "still_needed": "Re-locate/re-verify the July 2026 source for the owner/builder split (for a possible builder-label fix batch), and find a September-2026-dated update on the reservation's status. Both require WebSearch or a working search substitute -- not resolved this session."
+    },
+    {
+      "id": "woodside_placeholder_rows",
+      "description": "13 Woodside Energy placeholder rows (sheet rows 1204-1216, 'Woodside Energy 04' through '16'), Status=proposed, all fields blank except Name. A prior batch reportedly judged that some/all of this conversion resolved into a Seapeak x Samsung HI order.",
+      "verdict": "STILL BLOCKED / UNCONFIRMED. All 13 rows remain blank-fielded proposed placeholders in the fresh pull -- no evidence found this session that any converted to on-order or were confirmed as the Seapeak x Samsung HI cluster. Checked: 9 OTHER 'Woodside <name>' rows already exist as fully-identified ACTIVE vessels (sheet rows 267, 317, 318, 530, 531, 567, 723, 821, 822 -- owners include Seapeak/Marubeni, Maran Gas Maritime, Hyundai Glovis, GasLog -- confirming Woodside's LNG offtake program does span multiple owner/yard combinations, so a Seapeak/Samsung HI link for the 13 remaining placeholders is plausible but NOT verified). Attempted woodside.com/media-centre (fetched 200 but rendered as a JS-hydrated shell with no crawlable article text) and seapeak.com/news/ (404) -- neither yielded anything usable via fetch.py alone.",
+      "still_needed": "A WebSearch-capable pass on 'Woodside Louisiana LNG carrier order' / 'Seapeak Samsung Heavy Woodside' to confirm or refute the conversion. Not resolved this session."
+    },
+    {
+      "id": "hull_confirmations",
+      "description": "Four hull<->row confirmation leads: Hanwha Ocean hulls 2627/2628 (Knutsen), Samsung HI hull 2803 (J.P. Morgan), Samsung HI hull 2808 (Purus).",
+      "verdict": "THREE OF FOUR ALREADY RESOLVED IN THE BACKEND (by a prior session, after the plan document was written); ONE STILL OPEN.",
+      "detail": [
+        "Hull 2627 (sheet row 1158): Hanwha Ocean (Knutsen OAS 1) -- Shipowner = 'Knutsen OAS', sourced to lngprime.com/asia/knutsen-orders-lng-carrier-at-hanwha-ocean/186075/. RESOLVED, no action needed.",
+        "Hull 2628 (sheet row 1169): Hanwha Ocean (Knutsen) -- Shipowner = 'Knutsen OAS', sourced to imarinenews.com/35664.html. RESOLVED, no action needed.",
+        "Hull 2808 (sheet row 1170): Samsung HI (Purus) -- Shipowner = 'Purus Marine', sourced to lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/ and asiae.co.kr. RESOLVED, no action needed.",
+        "Hull 2803 (sheet row 1118, 'Samsung HI (unknown shipowner 1)'): Shipowner is STILL 'unknown'. Its two existing refs (cyprusshippingnews.com/2026/06/02/samsung-heavy-wins-five-vessel-order/ and indiashippingnews.com/samsung-heavy-wins-over-1-trillion-won-worth-of-orders-from-bermuda-based-company/) were re-fetched fresh this session and BOTH describe the counterparty only as an unnamed 'Bermuda-based shipping company' -- neither names J.P. Morgan. The task brief's framing ('Samsung HI hull 2803 (J.P. Morgan)') is therefore an unconfirmed lead, not a sourced fact: no article found this session ties J.P. Morgan to this hull. en.sedaily.com's search endpoint (a likely route to the original Korean DART filing, which sometimes names the SPV) returned 404 for the query attempted. STILL BLOCKED -- do not propose 'J.P. Morgan' as Shipowner without a source; 'unknown' remains the honest value."
+      ],
+      "still_needed": "A source (DART filing text, or a follow-up article) that actually names the Bermuda-based buyer of hull 2803. Not found this session."
+    }
+  ],
+
+  "proposed_review": {
+    "total_proposed_rows_reviewed": 31,
+    "clusters": [
+      {
+        "cluster": "Equinor 4",
+        "sheet_row": 1183,
+        "owner_field": "BW LNG, Knutsen, Maran Gas Maritime, Seapeak, NYK",
+        "builder": "Hanwha Ocean",
+        "charterer": "Equinor",
+        "verdict": "STALE-REVIEW: NO CHANGE FOUND. No fresh source checked this session confirms conversion to on-order or death of this cluster; multi-owner listing (5 names for what reads as a single 'Equinor 4' cluster label) is unusual and might itself be worth a QC look in a future pass, but that is out of S4/S5's scope. Left as proposed, unconfirmed either way."
+      },
+      {
+        "cluster": "Mozambique LNG 01-17",
+        "sheet_rows": "1184-1200",
+        "verdict": "See open_leads.mozambique_lng_slots above. Still proposed; owner/builder split matches what was sourced (subject to re-verification), no evidence of conversion to firm or of lapse found this session."
+      },
+      {
+        "cluster": "Woodside Energy 04-16",
+        "sheet_rows": "1204-1216",
+        "verdict": "See open_leads.woodside_placeholder_rows above. Still proposed, unconfirmed; no evidence of conversion or death found this session."
+      }
+    ],
+    "conversions_to_firm": [],
+    "deaths": [],
+    "note": "31/31 rows accounted for (1 Equinor + 17 Mozambique + 13 Woodside = 31). None could be affirmatively moved to on-order or flagged as dead this session -- all three clusters are 'no change, still pending' by default because no session found positive evidence either way, not because a check confirmed the status quo. This is a real limitation of the WebSearch-less pass, not a finding of stability."
+  },
+
+  "candidates": [
+    {
+      "cluster_id": "maran_gas_efessos",
+      "vessel_count": 1,
+      "row_data": {
+        "Name": {"value": "Maran Gas Efessos", "ref": ["https://www.shipvault.com/ships/141040"]},
+        "IMO": {"value": "9627497", "ref": ["https://www.shipvault.com/ships/141040"]},
+        "Status": {"value": "active", "ref": ["https://www.shipvault.com/ships/141040"]},
+        "Shipbuilder": {"value": "Hanwha Ocean", "ref": ["https://www.shipvault.com/ships/141040"], "discovery_notes": "Built as Daewoo Shipbuilding & Marine Engineering (DSME), Okpo yard, yard no. 2291 -- DSME was renamed Hanwha Ocean in 2023; cited per the backend's builder-naming convention used elsewhere for pre-rename Hanwha Ocean-built hulls."},
+        "Hull number": {"value": "2291", "ref": ["https://www.shipvault.com/ships/141040"]},
+        "Capacity": {"value": "159800", "unit": "cbm", "ref": ["https://www.shipvault.com/ships/141040"]},
+        "Delivery year": {"value": "2014", "ref": ["https://www.shipvault.com/ships/141040"]},
+        "Contract date": {"value": "2011-04-01", "ref": ["https://www.shipvault.com/ships/141040"]},
+        "Shipowner": {"value": "Maran Gas Maritime", "ref": ["https://www.shipvault.com/ships/141040"], "discovery_notes": "shipvault's owner field reads 'MARAN GAS' (abbreviated); backend's controlled owner vocabulary elsewhere uses 'Maran Gas Maritime' for this company -- flagged for the builder/data-fill step to confirm against existing Maran Gas Maritime rows rather than treating as a new owner variant."}
+      },
+      "confidence": "NOT ASSIGNED -- computed centrally per RF §5 rev 28 by confidence.py / the merge/build pipeline, not by this researcher.",
+      "second_source_status": "Single live source (shipvault, a keyed IMO unit record -- Tier 3). marinetraffic.org's IMO-search page also resolves to this vessel by name (https://www.marinetraffic.org/ship-owner-manager-ism-data/MARAN-GAS-EFESSOS/9627497/241291000, 200 OK) but was not used as a second ref here since it was not confirmed to expose field-level data through url_verifier's corroboration logic in this session -- left for the build step to gate."
+    }
+  ],
+
+  "backend_findings": [
+    {
+      "id": "dynagas_samsung_quartet_unconfirmed_owner",
+      "type": "watch_item",
+      "detail": "Samsung Heavy Industries disclosed a 4-vessel, 200,000 cbm, ~$1.05bn LNG carrier contract with an 'unidentified Oceania-based owner' (per DART filing, relayed 2026-09-16 by splash247.com/dynagas-linked-to-1bn-samsung-lng-quartet/), delivery by September 2029. Splash speculates the buyer is Dynagas (George Procopiou) based on his group's broader newbuilding pace, but does not confirm it. Backend has no matching cluster. Route to a future discovery/data-fill pass once the owner is confirmed by name."
+    },
+    {
+      "id": "exmar_abidjan_fsru_no_vessel_named",
+      "type": "watch_item",
+      "detail": "Exmar signed a 10-year Abidjan (Ivory Coast) FSRU deployment deal (152,000 cbm), reported 2026-09-17 (splash247.com/exmar-lands-10-year-abidjan-fsru-deal/). No specific vessel named. Separately, backend currently has zero Exmar-owned FSRU rows at all -- worth a look via the FSRU reconciliation SOP to confirm whether that's correct or a pre-existing gap."
+    },
+    {
+      "id": "hull_2803_owner_still_unknown",
+      "type": "watch_item",
+      "detail": "Sheet row 1118 ('Samsung HI (unknown shipowner 1)', hull 2803): Shipowner is 'unknown'. Both existing refs describe the buyer only as an unnamed Bermuda-based shipping company; no source found names 'J.P. Morgan' as the task brief's lead framing suggested. Needs a DART-filing-level or follow-up-press source before any Shipowner value can be proposed."
+    },
+    {
+      "id": "mozambique_builder_label_granularity",
+      "type": "possible_fix_candidate_needs_reverification",
+      "detail": "Backend rows 1184-1192 (Mozambique LNG 01-09) carry Shipbuilder = 'HD Hyundai Heavy Industries'. The backend's own controlled vocabulary elsewhere distinguishes 'HD Hyundai Samho' as a separate value from 'HD Hyundai Heavy Industries', and the task brief's July-2026-press framing specifically named HD Hyundai Samho as the yard for 9 of these 17 slots. If a fresh source confirms Samho specifically, these 9 rows' Shipbuilder value may need correcting in a future fix batch -- NOT proposed here because the original July source could not be re-located/re-verified this session (see open_leads.mozambique_lng_slots)."
+    }
+  ],
+
+  "coverage": {
+    "s4_leading_edge_rings_b_c": "Partial. Only splash247.com's gas category and a handful of Africa/Mozambique tag/category pages were reachable and readable via scripts/fetch.py without WebSearch. Bursa Malaysia, HKEX, DART, KIND, Riviera, Seatrade, and TradeWinds (paywalled/SSO-redirected) were not swept. Bing and DuckDuckGo HTML search were tried as WebSearch substitutes and both returned unusable/bot-walled results.",
+    "s4_open_leads": "5 of 5 leads investigated to a concrete conclusion. 2 fully resolved this pass (MISC/Hudong-Zhonghua: not a gap; Maran Gas Efessos: confirmed gap, candidate built). 3 of 4 hull confirmations turned out to already be resolved in the backend by an earlier session; the 4th (hull 2803 / J.P. Morgan) is confirmed STILL BLOCKED with a specific reason (sources name only 'Bermuda-based company', not J.P. Morgan). Mozambique and Woodside leads are honestly reported as unresolved with the specific blocker named (no WebSearch; company sites 404/522/JS-shell; imarinenews/sedaily site search returned no hits).",
+    "s5_proposed_bucket": "All 31 existing proposed rows accounted for and reviewed; none could be affirmatively moved or killed this session (reported as a limitation, not a stability finding).",
+    "s5_named_programs": "Backend coverage checked for all 7 named programs (QatarEnergy 69 rows, ADNOC 14, Venture Global 7, Cheniere 8 -- all already well represented, almost certainly not proposed-bucket gaps; NextDecade/Rio Grande, Commonwealth LNG, and Argent LNG all have ZERO backend rows). Attempted direct fetches of NextDecade, Commonwealth LNG, and Argent LNG newsroom URLs (all failed: 404/404/522) to check for a specific LNG-carrier-program announcement meeting the expanded S5 threshold (named charterer/program + approximate delivery window, no ship count required). NO WebSearch-free route was found to check these three programs properly. This is the single largest unresolved piece of the S5 assignment -- flagged explicitly rather than silently skipped."
+  }
+}
