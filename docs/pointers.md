@@ -12,7 +12,7 @@ The SOPs live in `docs/sops/`:
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21; AP rev 8 §2c (the living workbook) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.; RF rev 27 §4.16 amended 2026-09-21; RF rev 28 §5 (computed confidence, `scripts/confidence.py`) + DF rev 5 §10 2026-09-22; RF rev 29 §3.8c Vessel type rule 2026-09-23
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21; AP rev 8 §2c (the living workbook) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.; RF rev 27 §4.16 amended 2026-09-21; RF rev 28 §5 (computed confidence, `scripts/confidence.py`) + DF rev 5 §10 2026-09-22; RF rev 29 §3.8c Vessel type rule 2026-09-23; RF rev 30 §3.3b CSB cross-check 2026-09-23
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -45,6 +45,7 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); D
 | Cluster rows | RF §3.2 | Group rows by (yard, owner, contract month) |
 | CSB lookup | RF §3.3 | Canonical Hull [ref] source |
 | §6a fallback | RF §3.3a | MANDATORY when CSB doesn't list a hull |
+| CSB cross-check on every vessel checked | RF §3.3b | "Under Construction" = not delivered; match yard + hull or IMO |
 | Trade press | RF §3.4 | For each cluster, find order announcement |
 | Vessel db check | RF §3.5 | Active/near-active vessels only |
 | Build workbook | RF §3.6 | Encode citations into build script |
