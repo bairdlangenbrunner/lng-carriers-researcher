@@ -403,7 +403,9 @@
     value_in_backend: ["value in the backend", "the backend holds this value, but not every proposed ref"],
     applied: ["already applied", "this batch is in the backend — changing the decision does not unapply it"]
   };
-  var CONF_TEXT = {G: "green — auto-accept grade", Y: "yellow — held for a decision", R: "red — weak support"};
+  // RF §5 rev 28: the grade is computed from the §3.8c gate, not declared by a researcher.
+  var CONF_TEXT = {G: "green — a live page states this value for this vessel (auto-accept)",
+                   Y: "yellow — held for a decision", R: "red — no ref survived the gate"};
   var STATUS_TEXT = {verified: "✓ verified", failed: "✗ failed the gate", read: "read by hand", unchecked: "not checked"};
   function verdictHtml(r) {
     var t = STATUS_TEXT[r.status] || r.reason;
@@ -441,7 +443,8 @@
     var b = batchOf(p.batch);
     // one chip: the batch's pre-fill, coloured by the confidence grade it was derived from
     var chips = ['<span class="chip ' + esc(p.confidence) + '" title="confidence ' + esc(CONF_TEXT[p.confidence] || "not graded") +
-                 " — what the batch pre-filled in decisions.csv; a suggestion, " +
+                 (p.confidence_why ? "\n" + esc(p.confidence_why) : "") +
+                 "\nwhat the batch pre-filled in decisions.csv; a suggestion, " +
                  (p.reviewed ? "decided since" : "nobody has decided this line") + '">' +
                  (p.default ? "batch suggest" + (p.reviewed ? "ed " : "s ") + esc(p.default) : esc(p.confidence || "?")) + "</span>"];
     if (p.derivable) chips.push('<span class="chip" title="computed from other cells, not researched">derived</span>');
@@ -506,6 +509,8 @@
 
     // everything else: nothing is hidden for good, it is one click away
     var more = p.detail.map(function (t) { return "<div>" + esc(t) + "</div>"; });
+    if (p.confidence_why) more.push('<div><span class="k">grade:</span> ' + esc(p.confidence) + " — " +
+      esc(p.confidence_why) + "</div>");
     if (p.current_refs.length && p.kind !== "new_row")
       more.push('<div><span class="k">' + (p.kind === "fill" && !has(p, "preserve_ref") && !has(p, "append_ref") && p.refs.length
         ? "replaces " : "current ") + esc(p.ref_column || "[ref]") + ":</span> " + p.current_refs.map(link).join(", ") + "</div>");

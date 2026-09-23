@@ -86,6 +86,7 @@ def _items_and_conflicts(mode, payload, header, colmap):
                 "ref_column": f.get("ref_field", ""),
                 "ref_value": ", ".join(f.get("new_urls", []) or []),
                 "confidence": f.get("confidence", "R"), "derivable": bool(f.get("derivable")),
+                "confidence_why": f.get("confidence_why", ""),
                 "note": f.get("note", ""), "prev_state": f.get("prev_state", "blank"),
                 # §5 regrade inputs (confidence.py): what the gate must be told about the cell
                 "gate_value": f.get("proposed_value", ""),
@@ -105,6 +106,7 @@ def _items_and_conflicts(mode, payload, header, colmap):
                 "id": f"cluster:{cid}", "kind": "new_row", "row_id": "", "cluster_id": cid,
                 "column": "", "value": "", "ref_column": "", "ref_value": "",
                 "confidence": cand.get("confidence", "Y"), "derivable": False,
+                "confidence_why": cand.get("confidence_why", ""),
                 "note": cand.get("discovery_notes", ""), "prev_state": "blank",
                 "row_data": dict(cand.get("row_data", {})),
                 "cluster_label": cand.get("cluster_label", ""),
@@ -123,6 +125,7 @@ def _items_and_conflicts(mode, payload, header, colmap):
                 "id": f"{rid}|{col}", "kind": "ref", "row_id": rid, "cluster_id": "",
                 "column": col, "value": "", "ref_column": col,
                 "ref_value": c.get("url", ""), "confidence": c.get("confidence", "R"),
+                "confidence_why": c.get("confidence_why", ""),
                 "derivable": False, "note": c.get("note", ""), "prev_state": "blank",
                 "row_data": None,
             })
@@ -134,6 +137,7 @@ def _items_and_conflicts(mode, payload, header, colmap):
                 "ref_column": f.get("ref_field", ""),
                 "ref_value": ", ".join(f.get("new_urls", []) or []),
                 "confidence": f.get("confidence", "R"), "derivable": False,
+                "confidence_why": f.get("confidence_why", ""),
                 "note": f.get("note", ""), "prev_state": "blank", "row_data": None,
             })
         for c in payload.get("data_conflicts", []):
@@ -156,6 +160,7 @@ def _items_and_conflicts(mode, payload, header, colmap):
                     "ref_column": f"{col} [ref]" if urls else "",
                     "ref_value": ", ".join(urls),
                     "confidence": c.get("confidence", "Y"), "derivable": False,
+                    "confidence_why": c.get("confidence_why", ""),
                     "note": c.get("note", ""), "prev_state": "fix",
                     "replace_ref": not c.get("append_ref"),
                     # §5 regrade inputs (confidence.py)

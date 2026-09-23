@@ -486,6 +486,9 @@ def build(batch_dirs, backend_path=None, info_path=None):
                 "proposed": proposed,
                 "refs": refs, "ref_column": it["ref_column"], "current_refs": current_refs,
                 "confidence": it["confidence"], "derivable": it["derivable"],
+                # RF §5 rev 28: the grade is computed from what the §3.8c gate did, and
+                # `why` is the sentence that says which route it took (or what held it).
+                "confidence_why": it.get("confidence_why", ""),
                 "prev_state": it["prev_state"], "default": default, "decision": decision,
                 "note": it["note"], "links": [], "flags": flags,
                 # a ref line: the backend value the ref is meant to cite

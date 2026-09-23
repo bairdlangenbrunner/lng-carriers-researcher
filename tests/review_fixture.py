@@ -58,6 +58,7 @@ def make_batches(tmp_path):
     (fix_a / "fix.json").write_text(json.dumps({"corrections": [
         {"row_id": "10", "cells": [
             {"field": "Name", "new_value": "Atlantic Star", "confidence": "G",
+             "confidence_why": "a live record keyed to this vessel states the value",
              "refs": [{"url": "http://ship/10"}], "note": "named"},
             {"field": "Status", "new_value": "active", "confidence": "G",
              "refs": [{"url": "http://ship/10"}], "note": "delivered"},
@@ -87,6 +88,7 @@ def make_batches(tmp_path):
     (df / "data_fill.json").write_text(json.dumps({"fills": [
         {"row_id": "5", "field": "Capacity", "ref_field": "Capacity [ref]", "proposed_value": "174000",
          "new_urls": ["http://cap/5"], "confidence": "G", "derivable": False, "prev_state": "blank",
+         "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell",
          "note": "press"},
         {"row_id": "5", "field": "Capacity units", "ref_field": "", "proposed_value": "cbm",
          "new_urls": [], "confidence": "G", "derivable": True, "prev_state": "blank", "note": ""},

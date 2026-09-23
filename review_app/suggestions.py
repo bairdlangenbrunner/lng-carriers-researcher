@@ -11,8 +11,11 @@ reviewed batch of suggestions.
 A suggestion is a proposal whose latest review_log.jsonl record is `suggest` and whose
 decisions.csv line still says `reject` (suggest is stored as reject). Each becomes one cell:
 `new_value` = the suggested value, `refs` = the refs typed with the suggestion (else the original
-proposal's), `confidence` = the original's, `note` = reviewer + note. `cosmetic` -> `preserve_ref:
-true`, no refs — unless the reviewer changed the refs, which then gate as a value's.
+proposal's), `note` = reviewer + note. `cosmetic` -> `preserve_ref:
+true`, no refs — unless the reviewer changed the refs, which then gate as a value's. `confidence`
+carries the original's only as a placeholder: `build_workbook.py --mode fix` re-grades every gated
+cell from its own §3.8c verdict (RF §5 rev 28). A `preserve_ref` cell skips the gate, so there the
+carried label is what the batch ends up with.
 
 Not emitted, reported instead: discovery (new-row) and ref-only lines. Read-only over the
 batch dirs and the backend; writes only --out and the notes file beside it.
@@ -51,6 +54,8 @@ def cell_for(p, mode, rec):
         return None, ("not_emitted", "discovery new row: out of scope for a fix batch — decide it in the batch")
     if p["kind"] == "ref" or "ref_only" in p["flags"]:
         return None, ("not_emitted", "ref-only line: there is no value to replace")
+    # placeholder grade: build_workbook --mode fix re-grades from the gate (RF §5 rev 28);
+    # only a preserve_ref cell (gate skipped) keeps what is set here.
     cell = {"field": col, "new_value": value, "confidence": p["confidence"] or "Y",
             "note": f"review suggestion ({rec.get('reviewer', '')}, {rec.get('ts', '')[:16]}): "
                     f"{rec.get('note', '')} — instead of {p['proposed']!r} ({p['batch']}::{p['id']})",

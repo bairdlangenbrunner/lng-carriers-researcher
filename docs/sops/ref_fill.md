@@ -362,7 +362,8 @@ A researcher may argue a line **down** to Yellow with a `cap_reason`; a bare
 (`grade(passes, field, value, caps) -> (G|Y|R, why)`); `merge_fills.py` (data-fill) and
 `build_workbook.py --mode fix` call it after their gate loop and stamp `confidence` +
 `confidence_why` onto every proposal, so `apply_batch.py` pre-fills `accept` from the
-gate's own verdict. Cells that never ran the gate are left alone: a `preserve_ref`
+gate's own verdict and the review app shows the grade's `why` — on the chip and under
+**details** as `grade:` — so a held line says what it is still missing. Cells that never ran the gate are left alone: a `preserve_ref`
 cosmetic edit keeps its declared grade, and a derivable autofill (DF §5) stands on
 backend-internal consistency, not on a URL. A **companion line** is decided with its
 parent and takes the parent's grade — `Other names` with its `Name` (§4.16),
@@ -372,8 +373,9 @@ because the value it carries is the backend's own former value, not a new claim.
 **Retroactive.** `scripts/regrade_confidence.py` re-gates the held lines of already-built
 batches under this rule and promotes `hold -> accept` on a Green. It only ever promotes,
 only touches lines still at `hold`, skips any line a person has decided, and logs itself
-honestly as `reviewer: "§5 regrade"` — the app still shows those as un-clicked accepts,
-exactly like a batch's own Green pre-fills.
+honestly as `reviewer: "§5 regrade"` — a machine, not a person (`review_app/store.py`
+`MACHINE_REVIEWERS`), so the app still shows those as un-clicked accepts, exactly like a
+batch's own Green pre-fills, and **push changes** leaves them alone (AP §2b).
 
 **Note on URL count vs source quality.** Still true, and now the reason is mechanical:
 a third URL that repackages the second does not change the grade. Pick the URLs that do
