@@ -188,8 +188,6 @@ _BOT_BLOCK_TITLES_WB = ("sign in", "log in", "login", "signin", "blocked",
 _BOT_BLOCK_STATUSES = {"202", "401", "403", "406", "407", "409", "418", "421", "425",
                        "429", "451", "500", "502", "503", "504", "520", "521",
                        "522", "523", "524", "525", "526", "529", "530"}
-# Statuses that really do mean the resource is gone.
-_DEAD_STATUSES = {"404", "410", "000", "400", "405", "414"}
 
 # Body markers of a bot wall (checked when the visible body is short, so an
 # article that merely mentions Cloudflare doesn't trip it).
@@ -283,7 +281,7 @@ def _pace_host(host: str) -> None:
     """Sleep until `host`'s floor since its last live fetch has passed."""
     if not HOST_MIN_GAP:
         return
-    from sweep import host_delay          # late import: sweep.py imports fetch too
+    from sweep import host_delay  # late import: sweep.py imports fetch too
     key = _pace_key(host)
     gap, jitter = host_delay(key, HOST_MIN_GAP)
     last = _LAST_FETCH.get(key)
@@ -944,13 +942,12 @@ def verify_url(url: str, expected: list[str], strict: bool = False,
 
     if status != "200":
         if status in _BOT_BLOCK_STATUSES or status == "000":
-            ok, wb, n_snap = _check_wayback(url, expected, require_all, matcher)
+            ok, wb, _n_snap = _check_wayback(url, expected, require_all, matcher)
             if ok:
                 return _finish(url, True, wb, strict, page, expected)
-            if status == "000" and not n_snap:
-                # connection failed AND the archive never saw the page: dead.
-                # (With a snapshot it is a geo-block / outage — blocked.)
-                return _finish(url, False, f"HTTP 000 ({wb})", strict, page, expected)
+            # RF §3.8a: 000 (connection failure / IP ban) is always "blocked", never
+            # "dead" — bot-block ≠ dead, and the live URL stays the citation whether or
+            # not the archive ever saw the page.
             return _finish(url, False, f"blocked: HTTP {status} ({wb})", strict, page, expected)
         return _finish(url, False, f"HTTP {status}", strict, page, expected)
 

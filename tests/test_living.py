@@ -9,9 +9,8 @@ import re
 import threading
 import urllib.request
 
-import pytest
-
 import living
+import pytest
 import review_data
 import server
 import store
@@ -215,6 +214,32 @@ def test_from_config_is_off_without_a_config_or_with_the_kill_switch(tmp_path, m
     assert living.from_config(dirs={"other": tmp_path}, path=cfg) is None
     monkeypatch.setenv("LNGCT_LIVING_SYNC", "0")
     assert living.from_config(dirs={"b1_fix": tmp_path}, path=cfg) is None
+
+
+# ---- backend-id guard: the living workbook must never BE the backend sheet -------------
+
+def test_living_refuses_to_construct_on_the_backend_id():
+    config = {"spreadsheet_id": living.DEFAULT_SPREADSHEET_ID, "url": "https://sheet",
+             "name": "living", "batches": ["b1"]}
+    with pytest.raises(living.LivingError, match="BACKEND sheet's id"):
+        living.Living(config, read=lambda *a: (1, 0, []), write=lambda *a: 0)
+
+
+def test_living_refuses_the_backend_id_from_an_env_override(monkeypatch):
+    monkeypatch.setenv("LNGCT_BACKEND_SHEET_ID", "SID")
+    config = {"spreadsheet_id": "SID", "url": "https://sheet", "name": "living", "batches": ["b1"]}
+    with pytest.raises(living.LivingError, match="BACKEND sheet's id"):
+        living.Living(config, read=lambda *a: (1, 0, []), write=lambda *a: 0)
+
+
+def test_rebuild_refuses_the_backend_id_before_any_gws_call(tmp_path, monkeypatch):
+    def boom(*a, **k):
+        raise AssertionError("rebuild must not call _gws once the id matches the backend")
+    monkeypatch.setattr(living, "_gws", boom)
+    cfg = tmp_path / "living.json"
+    cfg.write_text(json.dumps({"spreadsheet_id": living.DEFAULT_SPREADSHEET_ID, "batches": ["b1"]}))
+    with pytest.raises(living.LivingError, match="BACKEND sheet's id"):
+        living.rebuild(config_path=cfg)
 
 
 # ---- the review app's side --------------------------------------------------------------

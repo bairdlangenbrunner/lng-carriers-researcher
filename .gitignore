@@ -41,6 +41,13 @@ Thumbs.db
 # Excel temp/lock files
 ~$*.xlsx
 
+# Secrets / local databases — never committed
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+
 # Cached CSB HTML — keep test fixtures under tests/fixtures/, but cache misc HTML
 # fetched at batch time goes in work/csb/ which is already ignored.
 

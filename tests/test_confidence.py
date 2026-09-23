@@ -180,7 +180,9 @@ class TestFixModeGrades:
         out.mkdir()
         build_workbook.build_fix(argparse.Namespace(
             fix=str(fix), backend=str(backend), base=None, out=str(out)))
-        return {c["field"]: c for c in json.loads(fix.read_text())["corrections"][0]["cells"]}
+        # build_fix writes the GATED payload to <out>/fix.json (Item 1) — the --fix source
+        # file itself is left untouched.
+        return {c["field"]: c for c in json.loads((out / "fix.json").read_text())["corrections"][0]["cells"]}
 
     def test_one_live_page_makes_a_name_green(self, tmp_path, monkeypatch):
         cells = self._build(tmp_path, monkeypatch, [

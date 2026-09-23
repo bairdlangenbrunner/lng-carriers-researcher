@@ -32,9 +32,9 @@ import sys
 from pathlib import Path
 
 from backend_io import load_backend
-from paths import backend_csv_path
+from build_workbook import YARD_LOCATION_COLS, _join_refs, _yard_location_map_table_first
 from normalize import normalize_builder
-from build_workbook import _join_refs, _yard_location_map_table_first, YARD_LOCATION_COLS
+from paths import backend_csv_path
 
 ACCEPT, HOLD, REJECT = "accept", "hold", "reject"
 
@@ -68,7 +68,18 @@ def _detect(batch_dir):
                         ("fix.json", "fix")):
         p = batch_dir / fname
         if p.exists():
-            return mode, json.loads(p.read_text())
+            payload = json.loads(p.read_text())
+            if mode == "fix" and not payload.get("gated"):
+                # Item 1: since build_workbook.py --mode fix started writing its OWN gated
+                # fix.json into the batch dir, a fix.json with no "gated" marker is either
+                # hand-copied from an ungated --fix source or predates that change — its
+                # `refs` may include URLs the §3.8c gate dropped, or an un-swapped IGU
+                # landing page. Old batches (regrade_confidence.py reruns) still work; warn
+                # rather than refuse.
+                print(f"  [warn] {p} has no 'gated' marker — its refs may be UNGATED "
+                      f"(rebuild with `build_workbook.py --mode fix` to gate them); "
+                      f"proceeding anyway", file=sys.stderr)
+            return mode, payload
     raise SystemExit(f"No batch input JSON found in {batch_dir} "
                      "(expected data_fill.json / candidates.json / citations.json / fix.json)")
 
