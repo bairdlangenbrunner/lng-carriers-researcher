@@ -20,3 +20,14 @@ cells are `preserve_ref` (no gate to run). Live rows 487–488 (SK Serenity, SK 
 
 Workbook built + recalced (zero errors, 0 refs dropped by the gate); `apply_batch.py`: 16 accept.
 Apply by `apply_patch.csv` with `OVERWRITE_NONBLANK=true` (every line overwrites a non-blank cell).
+
+## Applied — directed session write (2026-09-23, AP §2d)
+
+Baird directed the write in-session ("go ahead and make sure this batch is reflected in the backend
+directly now. edit the backend sheet."). Fresh pull → own plan (16 cells; the 7 `conventional`
+values already in the sheet dropped as no-ops) → live old values checked (0 mismatches) → revert file
+`directed_2026-09-23_revert.csv` → `gws-gem-write` `values.batchUpdate` (RAW) → re-pull: 16/16
+landed; `verify_apply.py`: 23 landed, 0 mismatch, 0 missing. `push_log.jsonl` records each cell as
+`claude session (directed)`; no `review_log.jsonl` entry was written.
+`verify_apply.py` fixed in this batch: a cleared cell (blank accepted value) counted as `missing`;
+it now counts as landed when the sheet cell is blank.
