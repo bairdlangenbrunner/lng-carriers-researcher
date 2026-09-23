@@ -458,6 +458,18 @@ def build_discovery(args):
             print(f"  [info] candidate {cand.get('cluster_id')}: shipbuilder "
                   f"{sb_name!r} not in backend; yard-location columns left blank "
                   f"(SOP §6.7).", file=sys.stderr)
+        # Every researched value carries a ref (RF §4.13 in reverse): a filled
+        # data cell whose [ref] column is blank is refused, never written.
+        # `unknown` and a placeholder Name (QC §2) stand without a ref.
+        from igu_reconcile import is_placeholder
+        unref = [k for k, v in cand.get("row_data", {}).items()
+                 if v and str(v).strip().lower() != "unknown"
+                 and not (k == "Name" and is_placeholder(str(v)))
+                 and f"{k} [ref]" in header_index
+                 and not str(cand["row_data"].get(f"{k} [ref]", "")).strip()]
+        if unref:
+            sys.exit(f"candidate {cand.get('cluster_id')}: value with no [ref] in "
+                     f"{unref} — cite a source that states it, or leave the cell blank")
         unknown = [k for k in row_data if k not in header_index]
         if unknown:
             print(f"  [warn] candidate {cand.get('cluster_id')}: row_data keys not in "
