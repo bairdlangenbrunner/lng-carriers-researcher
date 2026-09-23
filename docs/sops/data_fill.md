@@ -2,7 +2,7 @@
 
 **Document purpose:** Operating manual for the **data-fill** workflow — researching **blank** (and literal-`unknown`) backend data cells and proposing a value plus a corroborating `[ref]` URL for each, packaged as a candidate workbook for human review. It complements the [ref]-Fill SOP (which cites *existing* values) and the Discovery SOP (which finds *new vessels*). **Authoritative** for this workflow.
 
-**Last revised:** 2026-09-21 rev 4 (§5: a shipvault page or unit record is **never** a `Shipowner country/area` ref — it prints the owner string and the vessel's flag, never where the owner is based; and a pending batch's copy of a facts-table ref goes stale when the table is re-sourced — re-point `new_urls` at the table, re-gate, rebuild the artifacts before applying). Prior: 2026-09-17 rev 3 (added §5a — a per-vessel Price may be divided out of a reported order total: Yellow at most, `derived_from: {total, n}` on the fill, the note states the division, and the §3.8c gate corroborates the **total** so the total-stating URL stays in `Price [ref]`; `derivable: true` is now honoured by `merge_fills.py` only on the §5 autofill columns, and any research fill left with no URL is demoted. Surfaced by 21 sep-17-pass Price cells that reached the workbook with a value, no ref, and a default `accept`.). Prior: 2026-06-05 rev 2 (added §3 pointer to [ref]-Fill SOP §3.8c — the value↔ref corroboration gate (hard-block) now enforced centrally in `merge_fills.py`: a `[ref]` is dropped from any cell whose proposed value its live page does not contain, and the conflict is logged to `candidate_findings` rather than kept; includes the dual-figure capacity rule. No workflow-structure changes.). Prior: 2026-06-04 rev 1 (initial SOP, written alongside the first data-fill batch — rows with `Last updated >= 2026-05-18`. Inherits the [ref]-Fill SOP §4 rules wholesale; adds the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5), and the `data_fill` build mode + output structure (§7). Abbreviated **DF**.).
+**Last revised:** 2026-09-22 rev 5 (§10 rewritten to follow [ref]-Fill SOP §5 rev 28 — the confidence label is computed by `merge_fills.py` from the gate's verdict (`scripts/confidence.py`), not declared by the researcher; one live page stating the value is Green; §5a order-total Price is now an explicit cap rather than a hand-applied ceiling. No workflow-structure changes.). Prior: 2026-09-21 rev 4 (§5: a shipvault page or unit record is **never** a `Shipowner country/area` ref — it prints the owner string and the vessel's flag, never where the owner is based; and a pending batch's copy of a facts-table ref goes stale when the table is re-sourced — re-point `new_urls` at the table, re-gate, rebuild the artifacts before applying). Prior: 2026-09-17 rev 3 (added §5a — a per-vessel Price may be divided out of a reported order total: Yellow at most, `derived_from: {total, n}` on the fill, the note states the division, and the §3.8c gate corroborates the **total** so the total-stating URL stays in `Price [ref]`; `derivable: true` is now honoured by `merge_fills.py` only on the §5 autofill columns, and any research fill left with no URL is demoted. Surfaced by 21 sep-17-pass Price cells that reached the workbook with a value, no ref, and a default `accept`.). Prior: 2026-06-05 rev 2 (added §3 pointer to [ref]-Fill SOP §3.8c — the value↔ref corroboration gate (hard-block) now enforced centrally in `merge_fills.py`: a `[ref]` is dropped from any cell whose proposed value its live page does not contain, and the conflict is logged to `candidate_findings` rather than kept; includes the dual-figure capacity rule. No workflow-structure changes.). Prior: 2026-06-04 rev 1 (initial SOP, written alongside the first data-fill batch — rows with `Last updated >= 2026-05-18`. Inherits the [ref]-Fill SOP §4 rules wholesale; adds the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5), and the `data_fill` build mode + output structure (§7). Abbreviated **DF**.).
 
 ---
 
@@ -185,10 +185,19 @@ Data-fill is **fully consistent** with [ref]-Fill SOP §4.9 and Rule F, and is *
 
 ## 10. Confidence labels
 
-Defer to [ref]-Fill SOP §5 (Green / Yellow / Red). In practice for data-fill:
-- **Green** — value verbatim in a primary/regulatory source (DART, Bursa, yard PR, owner PR, class society) or 2 cross-checked sources; OR a derivable autofill (backend-internal consistency).
-- **Yellow** — entity-level confirmation, single non-primary source, an implied/inferred value (e.g. country inferred from "London"; a per-vessel Price divided out of an order total, §5a), or a paywalled body where only the public surface attests.
-- **Red** — avoid; prefer a documented blank.
+Defer to [ref]-Fill SOP §5 (rev 28) — **`merge_fills.py` computes the label from the
+§3.8c gate's own verdict** (`scripts/confidence.py`) and overwrites whatever the research
+output declared. Don't hand-grade; do write an honest `cap_reason` where the source is
+weaker than it looks. In practice for data-fill:
+- **Green** — a ref passed the gate on a live page that states the value for this vessel:
+  a keyed record (IGU by IMO, a shipvault / marinetraffic unit record), a distinctive
+  value (capacity, price, name, hull, IMO, date), or two independent live hosts. A
+  derivable autofill (§5) is Green on backend-internal consistency and is not re-graded.
+- **Yellow** — only an archived snapshot carries the value; or the value is generic (a
+  bare year, a country, a vocab token) and only one host carries it; or a carve-out: a
+  per-vessel Price divided out of an order total (§5a), a §3.8c conflict, a documented
+  `cap_reason` (e.g. a paywalled body where only the public surface attests).
+- **Red** — nothing survived the gate. Avoid; prefer a documented blank (§11).
 
 ---
 

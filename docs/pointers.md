@@ -12,7 +12,7 @@ The SOPs live in `docs/sops/`:
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21; AP rev 8 §2c (the living workbook) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.; RF rev 27 §4.16 amended 2026-09-21
+Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21; AP rev 8 §2c (the living workbook) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.; RF rev 27 §4.16 amended 2026-09-21; RF rev 28 §5 (computed confidence, `scripts/confidence.py`) + DF rev 5 §10 2026-09-22
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -54,11 +54,32 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); D
 | Archiving refs to Wayback | RF §7 | `wayback_save.py` (authenticated, resumable) is the only archiver; a snapshot goes in a `[ref]` only as a last resort when the live URL is dead |
 | Verifier grades / banned URL shapes | RF §3.8 (rev 19 table), RF §7 Forbidden | `classify(reason)`; shorteners, navigation URLs, `web.archive.org/save/` are banned in code; PDFs verified on extracted text; Wayback fallback for blocked pages |
 
-## Confidence labels (RF §5, current rev 12)
+## Confidence labels (RF §5, current rev 28 — computed, not declared)
 
-- **Green** — ideally 2 cross-checked URLs agree AND both contain value verbatim; OR 1 URL that's explicit (value verbatim + cluster-coherent) and/or primary/regulatory (DART, Bursa, yard PR, owner PR, class society). Rule F still requires the paired data cell to be populated.
-- **Yellow** — entity-level confirmation but value implied or contested
-- **Red** — single source, weak corroboration; prefer leaving blank with §6a.9 search log
+The grade is what the §3.8c gate did, not a judgment about source tier. `scripts/confidence.py`
+is the single implementation; `merge_fills.py` and `build_workbook.py --mode fix` stamp it onto
+every proposal, so `apply_batch.py` pre-fills `accept` from the gate's verdict.
+
+- **Green** — a ref passed the gate on a **live** page that states the value for this vessel:
+  a record keyed to the vessel (IGU by IMO, a shipvault / marinetraffic unit record), a
+  **distinctive** value (capacity, price, name, hull, IMO, date), or two independent live hosts.
+  Rule F still requires the paired data cell to be populated.
+- **Yellow** — only an archived snapshot carries the value (§3.8a); or the value is generic
+  (bare year, country, vocab token, 3-letter acronym) and one host carries it; or a carve-out.
+- **Red** — nothing survived the gate; prefer leaving blank with a §6a.9 search log.
+
+| Carve-out (caps at Y, never raises) | Section |
+|---|---|
+| delivery roll-forward — wants a source besides the vessel database | RF §4.18 |
+| per-vessel Price divided out of an order total | DF §5a |
+| another live source states a different value | RF §3.8c |
+| researcher `cap` / `cap_reason` (documented doubt, e.g. a paywalled tag) | RF §3.8b |
+
+| Also | Where |
+|---|---|
+| `preserve_ref` cosmetic cell / derivable autofill — no gate ran, grade left alone | RF §5, DF §5 |
+| a companion line takes its parent's grade (`Other names` ← `Name`; `Previous delivery year(s)` / `Delivery delayed` ← `Delivery year`) | RF §4.16, §4.19 |
+| retroactive re-grade of already-built batches (promote-only, skips person-decided lines) | `scripts/regrade_confidence.py` |
 
 ## Workbook structure
 

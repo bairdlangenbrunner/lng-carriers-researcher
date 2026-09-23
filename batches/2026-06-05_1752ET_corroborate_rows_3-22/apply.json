@@ -178,6 +178,24 @@
     },
     {
       "row_id": "3",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "3",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "3",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "3",
       "column": "Delivery year [ref]",
       "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.vesselfinder.com/vessels/details/9904675, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
       "confidence": "G"
@@ -190,16 +208,250 @@
     },
     {
       "row_id": "4",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "4",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "4",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "4",
       "column": "Delivery year [ref]",
       "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.vesselfinder.com/vessels/details/9904687, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
+      "confidence": "G"
+    },
+    {
+      "row_id": "5",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "5",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "5",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "6",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "6",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "6",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "7",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "7",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "7",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "8",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "8",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "8",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "9",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "9",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "9",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "10",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "10",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "10",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "11",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "11",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "11",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "12",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "12",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "12",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "13",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "13",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "13",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "14",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "14",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "14",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "15",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "15",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "15",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "16",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://en.highnorthnews.com/business/russias-zvezda-shipyard-launches-two-additional-arc7-lng-carriers-for-novateks-arctic-lng-2/224160, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
+      "confidence": "G"
+    },
+    {
+      "row_id": "16",
+      "column": "Shipowner [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227, https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482, https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "16",
+      "column": "Capacity [ref]",
+      "value": "https://www.igu.org/igu-reports/2025-world-lng-report, https://www.offshore-energy.biz/zvezda-launches-new-lng-carrier-for-novateks-arctic-lng-2-project/, https://lngprime.com/asia/zvezda-launches-arctic-lng-2-carrier/88281/, https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier, https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227",
       "confidence": "G"
     }
   ],
   "accepted_new_rows": [],
   "counts": {
     "items": 76,
-    "accepted": 32,
-    "hold": 44,
+    "accepted": 74,
+    "hold": 2,
     "reject": 0,
     "conflicts": 2
   }

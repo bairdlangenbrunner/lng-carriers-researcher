@@ -98,6 +98,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.comments import Comment
 from openpyxl.utils import get_column_letter
 
+import confidence
 from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
 from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, load_builder_facts,
@@ -900,7 +901,7 @@ def build_fix(args):
             gate_value = str(cell.get("gate_value") or new_value)
             drop_set = set() if preserve_ref else set(cell.get("drop_refs", []))
 
-            kept = []
+            kept, passes = [], []
             if preserve_ref:
                 qa_rows.append({"row_id": rid, "field": field, "value": new_value,
                                 "url": existing_ref,
@@ -919,6 +920,7 @@ def build_fix(args):
                 grade = classify(reason)
                 if ok:
                     kept.append(url)
+                    passes.append((url, reason))
                     verdict = "PASS (corroborates)" if reason == "OK" else f"PASS ({reason})"
                 elif soft and grade in ("dead", "blocked"):
                     kept.append(url)
@@ -939,6 +941,22 @@ def build_fix(args):
                                 "url": u, "verdict": "REMOVED (drop_refs: conflicts with value)",
                                 "note": cell.get("note", "")})
 
+            # §5 (RF rev 28): the grade is what the gate did. A preserve_ref cell is
+            # cosmetic — no gate ran, so its declared confidence stands.
+            if not preserve_ref:
+                caps = []
+                if field == "Delivery year" and confidence.rolls_forward(
+                        new_value, cell.get("former_year")) and len(confidence.live_hosts(passes)) < 2:
+                    caps.append(confidence.CAP_ROLL_FORWARD)
+                if cell.get("cap") or cell.get("cap_reason"):
+                    caps.append(cell.get("cap_reason") or "researcher capped this cell at Y")
+                caps.append(confidence.note_cap(cell.get("note")))
+                conf, why = confidence.grade(passes, field=field, value=gate_value, caps=caps)
+                if conf != cell.get("confidence"):
+                    print(f"  [conf {rid}/{field}] {cell.get('confidence', '-')} -> {conf}: {why}",
+                          file=sys.stderr)
+                cell["confidence"], cell["confidence_why"] = conf, why
+
             # write into the working backend row copy
             cur = list(row_by_id[rid])
             vi = header_index.get(field)
@@ -946,7 +964,7 @@ def build_fix(args):
                 while len(cur) <= vi:
                     cur.append("")
                 cur[vi] = new_value
-                changed[(rid, field)] = {"kind": "value", "conf": cell.get("confidence", "G")}
+                changed[(rid, field)] = {"kind": "value", "conf": cell.get("confidence", "Y")}
             if ref_field in header_index and not preserve_ref:
                 ri = header_index[ref_field]
                 while len(cur) <= ri:
@@ -955,6 +973,41 @@ def build_fix(args):
                 cur[ri] = joined
                 changed[(rid, ref_field)] = {"kind": "ref", "had_existing": bool(existing_ref)}
             row_by_id[rid] = cur
+
+    # RF §4.16 / §4.19 companion lines. `Other names`, `Previous delivery year(s)` and
+    # `Delivery delayed` restate a value the backend itself published, so an empty gate is
+    # not a red flag — they are decided with their parent line and never outrank it.
+    for corr in corrections:
+        rid = str(corr["row_id"])
+        by = {c.get("field", ""): c for c in corr.get("cells", [])}
+        for child, parent in (("Other names", "Name"),
+                              ("Previous delivery year(s)", "Delivery year"),
+                              ("Delivery delayed", "Delivery year")):
+            c, par = by.get(child), by.get(parent)
+            if not c or not par or c.get("preserve_ref"):
+                continue
+            par_conf = par.get("confidence") or confidence.YELLOW
+            own = c.get("confidence") or confidence.YELLOW
+            if own == confidence.RED:
+                # The former value is the backend's own — it needs no source of its
+                # own, so an empty gate does not hold the companion back. Its own
+                # refs can still cap it (an archived-only pass stays Y).
+                own = par_conf
+            conf = min(own, par_conf, key=lambda g: confidence.RANK.get(g, 0))
+            c["confidence"] = conf
+            c["confidence_why"] = (f"decided with its {parent} line (RF "
+                                   f"{'§4.16' if parent == 'Name' else '§4.19'}); "
+                                   f"{c.get('confidence_why', '')}".strip("; "))
+            if (rid, child) in changed:
+                changed[(rid, child)]["conf"] = conf
+
+    # The grades computed above belong to the batch, not to this workbook: stamp them
+    # back into the source JSON so apply_batch.py pre-fills decisions from what the gate
+    # actually did. Idempotent — re-running the build re-grades in place.
+    try:
+        Path(args.fix).write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    except OSError as e:
+        print(f"  [warn] could not stamp confidences back into {args.fix}: {e}", file=sys.stderr)
 
     if missing:
         print(f"  [warn] correction row_ids not in backend (skipped): {missing}", file=sys.stderr)

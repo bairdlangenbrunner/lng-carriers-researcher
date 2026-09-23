@@ -33,8 +33,8 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 72|Shipowner country/area,fill,72,,Shipowner country/area,G,False,accept,accept,Japan,replaces a shipvault.com [ref] that does not state the country (the page/unit re
 74|Shipowner country/area,fill,74,,Shipowner country/area,G,False,accept,accept,Greece,replaces a shipvault.com [ref] that does not state the country (the page/unit re
 78|Shipowner country/area,fill,78,,Shipowner country/area,G,False,accept,accept,Japan,replaces a shipvault.com [ref] that does not state the country (the page/unit re
-102|Shipowner country/area,fill,102,,Shipowner country/area,Y,False,hold,hold,South Korea,country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the
-103|Shipowner country/area,fill,103,,Shipowner country/area,Y,False,hold,hold,South Korea,country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the
+102|Shipowner country/area,fill,102,,Shipowner country/area,G,False,accept,accept,South Korea,country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the
+103|Shipowner country/area,fill,103,,Shipowner country/area,G,False,accept,accept,South Korea,country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the
 147|Shipowner country/area,fill,147,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
 156|Shipowner country/area,fill,156,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re
 157|Shipowner country/area,fill,157,,Shipowner country/area,G,False,accept,accept,Malaysia,replaces a shipvault.com [ref] that does not state the country (the page/unit re

@@ -846,7 +846,7 @@
         {
           "field": "Shipowner country/area",
           "new_value": "South Korea",
-          "confidence": "Y",
+          "confidence": "G",
           "refs": [
             {
               "url": "https://www.hanwha.com/companies/hanwha-ocean.do",
@@ -861,7 +861,8 @@
               "soft": false
             }
           ],
-          "note": "country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the South Korean shipbuilder (ex-DSME, Geoje), distinct from the US arm Hanwha Shipping LLC; the prior value came with a shipvault.com [ref] that states neither. HOLD: if the intended owner of this hull is Hanwha Shipping LLC, fix the Shipowner cell instead and leave the country as United States."
+          "note": "country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the South Korean shipbuilder (ex-DSME, Geoje), distinct from the US arm Hanwha Shipping LLC; the prior value came with a shipvault.com [ref] that states neither. HOLD: if the intended owner of this hull is Hanwha Shipping LLC, fix the Shipowner cell instead and leave the country as United States.",
+          "confidence_why": "3 independent live pages state the value"
         }
       ]
     },
@@ -871,7 +872,7 @@
         {
           "field": "Shipowner country/area",
           "new_value": "South Korea",
-          "confidence": "Y",
+          "confidence": "G",
           "refs": [
             {
               "url": "https://www.hanwha.com/companies/hanwha-ocean.do",
@@ -886,7 +887,8 @@
               "soft": false
             }
           ],
-          "note": "country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the South Korean shipbuilder (ex-DSME, Geoje), distinct from the US arm Hanwha Shipping LLC; the prior value came with a shipvault.com [ref] that states neither. HOLD: if the intended owner of this hull is Hanwha Shipping LLC, fix the Shipowner cell instead and leave the country as United States."
+          "note": "country corrected 'United States' -> 'South Korea': 'Hanwha Ocean Co Ltd' is the South Korean shipbuilder (ex-DSME, Geoje), distinct from the US arm Hanwha Shipping LLC; the prior value came with a shipvault.com [ref] that states neither. HOLD: if the intended owner of this hull is Hanwha Shipping LLC, fix the Shipowner cell instead and leave the country as United States.",
+          "confidence_why": "3 independent live pages state the value"
         }
       ]
     },

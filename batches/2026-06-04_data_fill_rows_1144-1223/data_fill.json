@@ -270,9 +270,10 @@
         "https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306"
       ],
       "prev_state": "blank",
-      "confidence": "Y",
+      "confidence": "G",
       "note": "Riviera 86306 reports the Hanwha Shipping LNG carrier orders from Hanwha Philly/Hanwha Ocean at 'US$252M' per vessel (the article covers the second of two single-ship orders in a month and references the first). Cluster-coherent (Hanwha Shipping affiliate + Hanwha Ocean/Philly). gCaptain/Maritime Executive corroborate at 'at least $250 million' (slightly lower phrasing), so Yellow rather than Green. Value present verbatim ('252') in the cited source.",
-      "derivable": false
+      "derivable": false,
+      "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
     },
     {
       "row_id": "1144",
@@ -323,9 +324,10 @@
         "https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306"
       ],
       "prev_state": "blank",
-      "confidence": "Y",
+      "confidence": "G",
       "note": "Riviera 86306 is specifically about the SECOND US$252M Hanwha Shipping order in a month (row 1145 = 26-Aug-2025 order), stating 'US$252M' per vessel. Cluster-coherent and value-present ('252'). Corroborated by gCaptain/Maritime Executive 'at least $250 million' -> Yellow.",
-      "derivable": false
+      "derivable": false,
+      "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
     },
     {
       "row_id": "1145",
@@ -611,9 +613,10 @@
         "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924"
       ],
       "prev_state": "blank",
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
-      "note": "Riviera ties US$254M to a SINGLE Tsakos LNG carrier at HD Hyundai, Q3-2028 delivery - cluster-coherent with this single hull (row 1167). Yellow: single non-primary source AND cross-source figures vary (LNG Prime 178882 reports a 2-ship ~$500M Tsakos deal plus a $254M 'Oceania' single ship; the per-ship $254M is consistent but not double-confirmed). If the user prefers $/ship vs total, note this is already a single-ship order so $254M = per ship."
+      "note": "Riviera ties US$254M to a SINGLE Tsakos LNG carrier at HD Hyundai, Q3-2028 delivery - cluster-coherent with this single hull (row 1167). Yellow: single non-primary source AND cross-source figures vary (LNG Prime 178882 reports a 2-ship ~$500M Tsakos deal plus a $254M 'Oceania' single ship; the per-ship $254M is consistent but not double-confirmed). If the user prefers $/ship vs total, note this is already a single-ship order so $254M = per ship.",
+      "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
     },
     {
       "row_id": "1167",
@@ -666,9 +669,10 @@
         "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
       ],
       "prev_state": "blank",
-      "confidence": "Y",
+      "confidence": "G",
       "note": "Shipowner = Minsheng Financial Leasing, a China-based lessor; Shandong (Ocean/Marine) Energy is the China-based commercial manager. Both URLs name 'China' and 'Minsheng' verbatim and are cluster-coherent to the 30-Jan-2026 Jiangnan quartet (Riviera pub 02-Feb-2026, ShipUniverse pub 30-Jan-2026). Country is the owner/financier's domicile (entity-level) -> Yellow.",
-      "derivable": false
+      "derivable": false,
+      "confidence_why": "2 independent live pages state the value"
     },
     {
       "row_id": "1158",
@@ -707,9 +711,10 @@
         "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
       ],
       "prev_state": "blank",
-      "confidence": "Y",
+      "confidence": "G",
       "note": "Sibling of row 1158 (same 30-Jan-2026 Minsheng/Shandong Jiangnan quartet). Minsheng Financial Leasing = China-based lessor; both URLs name 'China'+'Minsheng' verbatim. Entity-level (owner domicile) -> Yellow.",
-      "derivable": false
+      "derivable": false,
+      "confidence_why": "2 independent live pages state the value"
     },
     {
       "row_id": "1159",
@@ -748,9 +753,10 @@
         "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
       ],
       "prev_state": "blank",
-      "confidence": "Y",
+      "confidence": "G",
       "note": "Sibling of row 1158 (delivery 2029 in this row but same order). Minsheng = China-based lessor; both URLs name 'China'+'Minsheng' verbatim. Entity-level -> Yellow.",
-      "derivable": false
+      "derivable": false,
+      "confidence_why": "2 independent live pages state the value"
     },
     {
       "row_id": "1160",
@@ -789,9 +795,10 @@
         "https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
       ],
       "prev_state": "blank",
-      "confidence": "Y",
+      "confidence": "G",
       "note": "Sibling of row 1158 (delivery 2029). Minsheng = China-based lessor; both URLs name 'China'+'Minsheng' verbatim. Entity-level -> Yellow.",
-      "derivable": false
+      "derivable": false,
+      "confidence_why": "2 independent live pages state the value"
     },
     {
       "row_id": "1161",

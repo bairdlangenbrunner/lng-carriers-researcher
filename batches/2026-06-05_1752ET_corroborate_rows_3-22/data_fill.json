@@ -580,11 +580,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "3",
@@ -599,11 +600,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "3",
@@ -617,11 +619,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "3",
@@ -672,11 +675,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "4",
@@ -691,11 +695,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "4",
@@ -709,11 +714,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "4",
@@ -746,11 +752,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "5",
@@ -765,11 +772,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "5",
@@ -783,11 +791,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "6",
@@ -804,11 +813,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "6",
@@ -823,11 +833,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "6",
@@ -841,11 +852,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "7",
@@ -862,11 +874,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "7",
@@ -881,11 +894,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "7",
@@ -899,11 +913,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "8",
@@ -920,11 +935,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "8",
@@ -939,11 +955,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "8",
@@ -957,11 +974,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "9",
@@ -978,11 +996,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "9",
@@ -997,11 +1016,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "9",
@@ -1015,11 +1035,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "10",
@@ -1036,11 +1057,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "10",
@@ -1055,11 +1077,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "10",
@@ -1073,11 +1096,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "11",
@@ -1094,11 +1118,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "11",
@@ -1113,11 +1138,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "11",
@@ -1131,11 +1157,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "12",
@@ -1152,11 +1179,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "12",
@@ -1171,11 +1199,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "12",
@@ -1189,11 +1218,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "13",
@@ -1210,11 +1240,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "13",
@@ -1229,11 +1260,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "13",
@@ -1247,11 +1279,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "14",
@@ -1268,11 +1301,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "14",
@@ -1287,11 +1321,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "14",
@@ -1305,11 +1340,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "15",
@@ -1326,11 +1362,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "15",
@@ -1345,11 +1382,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "15",
@@ -1363,11 +1401,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "16",
@@ -1384,11 +1423,12 @@
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: all 15 Arctic LNG 2 Arc7 carriers built at Zvezda Shipbuilding Complex",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "16",
@@ -1403,11 +1443,12 @@
         "https://www.marinelink.com/news/arctic-lng-partners-charter-lng-carriers-481482",
         "https://www.lngindustry.com/lng-shipping/11022020/smart-lng-signs-agreement-for-financing-of-icebreaking-lng-carriers/"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: Smart LNG (Sovcomflot/NOVATEK JV) owns/time-charters the 14-vessel Arctic LNG 2 series",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     },
     {
       "row_id": "16",
@@ -1421,11 +1462,12 @@
         "https://maritime-executive.com/article/russia-delivers-first-domestically-built-arc7-lng-carrier",
         "https://www.rivieramm.com/news-content-hub/news-content-hub/new-generation-of-ice-breaking-lng-carriers-takes-shape-in-russia-65227"
       ],
-      "confidence": "Y",
+      "confidence": "G",
       "derivable": false,
       "prev_state": "corroborate",
       "note": "series-level: each carrier 172,600 cbm (GTT Mark III)",
-      "corroboration": "full"
+      "corroboration": "full",
+      "confidence_why": "a live record keyed to this vessel states the value"
     }
   ],
   "documented_blanks": [
