@@ -371,3 +371,61 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# --- Hull-core key (whole-orderbook reconciliation) ---------------------------
+# normalize_hull() strips a yard-name PREFIX, which canonicalizes the CSB form
+# ("Samsung 2808" -> "2808") but not the backend's ("Hull 2316 (SHI)" stays
+# whole), so the two can never key against each other. hull_core() reduces both
+# to the hull's own identity: the word "Hull", the yard name and the "(SHI)" /
+# "(Hudong)" tag all come off, a lone "H" before the digits goes ("H2701" and
+# "2701" are the same Jiangnan hull), and an all-digit part loses leading zeros
+# ("042" == "42", "G175K-04" == "G175K-4"). Additive — normalize_hull() is
+# unchanged and still used for the backend-internal indexes.
+_HULL_PREFIX_WORDS = (
+    "hull no.", "hull no", "hull",
+    "samsung hi geoje", "samsung hi", "samsung shi", "samsung", "shi",
+    "hanwha ocean", "hanwha", "daewoo", "dsme",
+    "hd hyundai samho", "hyundai samho", "samho",
+    "hd hyundai ulsan", "hyundai ulsan", "hd hyundai hi", "hyundai hi",
+    "hyundai", "ulsan", "hhi", "hdhhi", "hshi",
+    "hd hyundai mipo", "hyundai mipo", "mipo",
+    "jiangnan", "hudong zhonghua", "hudong-zhonghua", "hudong",
+    "dsic", "dalian", "cmhi", "zvezda", "yangzijiang",
+)
+
+
+def hull_core(hull_raw: str) -> str:
+    """The yard-independent identity of a hull string, for cross-source keying.
+
+    "Hull 2316 (SHI)" / "Samsung 2316" / "SHI 2316"  -> "2316"
+    "Hull H2701 (Jiangnan)" / "Jiangnan H2701"       -> "2701"
+    "Hudong Zhonghua H2017A" / "Hull 2017A (Hudong)" -> "2017a"
+    "Hull G175K-04" / "Dalian G175k-4"               -> "g175k-4"
+    Returns "" for a blank, or for a string with no hull identity left
+    (CSB prints the yard's own name until a hull number is indexed).
+    """
+    s = str(hull_raw or "").strip().lower()
+    if not s:
+        return ""
+    s = re.sub(r"\(.*?\)", " ", s)          # drop the "(SHI)" / "(Hudong)" tag
+    changed = True
+    while changed:                          # "Hull " then the yard name, in any order
+        changed = False
+        for p in _HULL_PREFIX_WORDS:
+            if s == p:
+                return ""
+            if s.startswith(p) and not s[len(p):len(p) + 1].isalnum():
+                s, changed = s[len(p):].strip(" .-_"), True
+                break
+    parts = []
+    for part in re.split(r"[^0-9a-z]+", s):
+        if not part:
+            continue
+        m = re.fullmatch(r"h(\d.*)", part)  # lone H before the digits
+        if m:
+            part = m.group(1)
+        if part.isdigit():
+            part = part.lstrip("0") or "0"
+        parts.append(part)
+    return "-".join(parts)
