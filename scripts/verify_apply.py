@@ -73,7 +73,11 @@ def main():
         row = row_by_id.get(rid)
         idx = H.get(col)
         got = row[idx] if row is not None and idx is not None and len(row) > idx else None
-        if got is None or not _norm(got):
+        if not _norm(want):
+            # a clearing (fix-mode empty new_value): landed when the cell is blank
+            (landed.append((rid, col)) if row is not None and not _norm(got or "")
+             else mismatch.append((rid, col, want, got or "")))
+        elif got is None or not _norm(got):
             missing.append((rid, col, want, got or ""))
         elif _same(got, want):
             landed.append((rid, col))
