@@ -1,0 +1,110 @@
+{
+  "batch": "2026-09-22_2208ET_fix_shipvault_hulls",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "178",
+      "column": "Name",
+      "value": "Hull 3501 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "178",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "G"
+    },
+    {
+      "row_id": "178",
+      "column": "Hull number",
+      "value": "Hull 3501 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "178",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/477422, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Name",
+      "value": "Hull 8327 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Hull number",
+      "value": "Hull 8327 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Name",
+      "value": "Hull 8328 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Hull number",
+      "value": "Hull 8328 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Name",
+      "value": "Hull 8329 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Name [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Hull number",
+      "value": "Hull 8329 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 14,
+    "accepted": 8,
+    "hold": 6,
+    "reject": 0,
+    "conflicts": 0
+  }
+}

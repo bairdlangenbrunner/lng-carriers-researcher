@@ -1,4 +1,4 @@
-"""Combine the sep-17-pass batches (2026-09-17 onward, fourteen so far) into one review workbook.
+"""Combine the sep-17-pass batches (2026-09-17 onward, fifteen so far) into one review workbook.
 
 Every line carries its current decision (each batch's decisions.csv, as decided in the review app)
 and whether the pulled backend already holds it (review_app.review_data.backend_state — the same
@@ -58,6 +58,9 @@ B12 = "2026-09-17_1810ET_fix_price_full_usd"
 B13 = "2026-09-18_2005ET_fix_igu2026_hulls"
 B14 = "2026-09-21_1740ET_fix_review_suggestions"
 B15 = "2026-09-21_2003ET_fix_shipowner_country_refs"
+# B16: the 2026-09-22 sweep of every backend row citing a shipvault page, each record compared
+# field by field against the row it is cited on
+B16 = "2026-09-22_2208ET_fix_shipvault_hulls"
 # (apply order, dir, short label, workbook, wide sheet, what)
 BATCH_INFO = [
     (1, B1, "delivery roll-forward", "lng_carrier_fix.xlsx", "fix",
@@ -96,6 +99,10 @@ BATCH_INFO = [
     (15, B15, "shipowner country refs off shipvault", "lng_carrier_fix.xlsx", "fix",
      "Shipowner country/area [ref] cells that cited a shipvault page (it never states the country) -> the owner's "
      "own site / annual report from data/shipowner_facts.csv; the values were already right and are unchanged"),
+    (16, B16, "shipvault hull numbers", "lng_carrier_fix.xlsx", "fix",
+     "the 2026-09-22 sweep of all 212 rows citing a shipvault page, every record re-read against the row: "
+     "three `Hull Unknown NN` placeholders retired to their yard hull numbers, one wrong hull number "
+     "(live row 1054 cites the record that contradicts it), and two delivery years a year later (RF 4.18 / 4.19)"),
 ]
 
 FONT = Font(name="Calibri", size=10)
@@ -518,6 +525,8 @@ n_wide[14] = copy_wide(BATCHES / B14 / "lng_carrier_fix.xlsx", "fix", "b14_sugge
                        add_live_row_from="original order in sheet")
 n_wide[15] = copy_wide(BATCHES / B15 / "lng_carrier_fix.xlsx", "fix", "b15_country_ref_rows",
                        add_live_row_from="original order in sheet")
+n_wide[16] = copy_wide(BATCHES / B16 / "lng_carrier_fix.xlsx", "fix", "b16_shipvault_hull_rows",
+                       add_live_row_from="original order in sheet")
 
 # flags + conflicts
 flags = []
@@ -762,7 +771,8 @@ wide_name = {1: "b1_rollforward_rows", 2: "b2_confirmed_rows", 3: "b3_new_vessel
              4: "b4_data_fill_rows", 5: "b5_ref_fill_rows", 6: "b6_shipvault_companions",
              8: "b8_igu_sourced_rows", 9: "b9_scrapped_rows",
              10: "b10_former_names_rows", 11: "b11_qcmax_rows", 12: "b12_price_usd_rows",
-             13: "b13_igu_hull_rows", 14: "b14_suggestion_rows", 15: "b15_country_ref_rows"}
+             13: "b13_igu_hull_rows", 14: "b14_suggestion_rows", 15: "b15_country_ref_rows",
+             16: "b16_shipvault_hull_rows"}
 for order, bdir, label, _w, _s, what in BATCH_INFO:
     r += 1
     mine = [p for p in proposals if p["apply order"] == order]
@@ -807,7 +817,8 @@ for name, desc in [
      "flags_conflicts are not laid in (never auto-applied)."),
     ("b3_new_vessels", "discovery: 12 new vessels in 5 clusters, full backend-shaped rows (still to add by hand)"),
     ("b1_rollforward_rows / b2_confirmed_rows / b8_igu_sourced_rows / b9_scrapped_rows / b10_former_names_rows / "
-     "b11_qcmax_rows / b12_price_usd_rows / b13_igu_hull_rows / b14_suggestion_rows / b15_country_ref_rows",
+     "b11_qcmax_rows / b12_price_usd_rows / b13_igu_hull_rows / b14_suggestion_rows / b15_country_ref_rows / "
+     "b16_shipvault_hull_rows",
      "fix batches: full corrected backend rows as each batch proposed them (paste-ready shape; most are in the "
      "backend already — see the status column on all_proposals)"),
     ("b4_data_fill_rows", f"data fill: the {n_wide[4]} backend rows that received at least one proposal"),

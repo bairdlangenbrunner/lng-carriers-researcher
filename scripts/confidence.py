@@ -87,9 +87,28 @@ def pass_kind(reason: str) -> str | None:
     return "live_text"
 
 
+# A companion ref is the same source as the ref it sits beside, on a different host:
+# the shipvault unit record (RF §6a.8 rev 21) is what the shipvault page itself loads.
+# Folding it back onto the page's host keeps it from reading as a second independent
+# source where a carve-out asks for one (RF §4.18).
+_HOST_ALIASES: dict[str, str] = {}
+
+
+def _host_aliases() -> dict:
+    if not _HOST_ALIASES:
+        api = "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/{id}"
+        try:
+            from url_verifier import SHIPVAULT_API as api
+        except Exception:
+            pass
+        _HOST_ALIASES[(urlsplit(api).hostname or "").lower()] = "shipvault.com"
+    return _HOST_ALIASES
+
+
 def _host(url: str) -> str:
     h = (urlsplit(str(url or "")).hostname or "").lower()
-    return h[4:] if h.startswith("www.") else h
+    h = h[4:] if h.startswith("www.") else h
+    return _host_aliases().get(h, h)
 
 
 def live_hosts(passes) -> set:

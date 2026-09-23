@@ -1,0 +1,15 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+178|Name,fill,178,,Name,G,False,accept,accept,Hull 3501 (HDHHI),"placeholder restyle: the cell's own cited record (unit 477422, IMO 1066568) carr"
+178|Hull number,fill,178,,Hull number,G,False,accept,accept,Hull 3501 (HDHHI),same record: yardno 3501
+314|Name,fill,314,,Name,G,False,accept,accept,Hull 8327 (HSHI),placeholder retired: unit 490164 carries yard no. 8327 at HD Hyundai Samho
+314|Hull number,fill,314,,Hull number,G,False,accept,accept,Hull 8327 (HSHI),same record: yardno 8327
+315|Name,fill,315,,Name,G,False,accept,accept,Hull 8328 (HSHI),placeholder retired: unit 490165 carries yard no. 8328 at HD Hyundai Samho
+315|Hull number,fill,315,,Hull number,G,False,accept,accept,Hull 8328 (HSHI),same record: yardno 8328
+315|Delivery year,fill,315,,Delivery year,Y,False,hold,hold,2029,unit 490165 gives built 2029-01; the backend carries 2028
+315|Previous delivery year(s),fill,315,,Previous delivery year(s),Y,False,hold,hold,2028,former Delivery year 2028 (now proposed 2029) — decide with the Delivery year li
+315|Delivery delayed,fill,315,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2028 -> 2029 — decide with the Delivery year line
+316|Name,fill,316,,Name,G,False,accept,accept,Hull 8329 (HSHI),placeholder retired: unit 490166 carries yard no. 8329 at HD Hyundai Samho
+316|Hull number,fill,316,,Hull number,G,False,accept,accept,Hull 8329 (HSHI),same record: yardno 8329
+316|Delivery year,fill,316,,Delivery year,Y,False,hold,hold,2029,unit 490166 gives built 2029-02; the backend carries 2028
+316|Previous delivery year(s),fill,316,,Previous delivery year(s),Y,False,hold,hold,2028,former Delivery year 2028 (now proposed 2029) — decide with the Delivery year li
+316|Delivery delayed,fill,316,,Delivery delayed,Y,False,hold,hold,yes,derived: Delivery year 2028 -> 2029 — decide with the Delivery year line
