@@ -7,11 +7,18 @@ review. It complements the [ref]-Fill / Discovery / Data-fill SOPs (which *add* 
 data) and the Apply SOP (which lands a reviewed batch). **Authoritative** for this
 workflow. Abbreviated **QC**.
 
-**Last revised:** 2026-06-05 rev 1 (initial SOP, written alongside the first Name-column
-normalization batch. Defines the placeholder-Name conventions (§2), the QC scan + triage
-(§3), the `fix`-mode correction batch with the `preserve_ref` escape hatch for
-cosmetic/derived edits (§4), and the release gate (§5). Leans on `scripts/qc_backend.py`
-and `build_workbook.py --mode fix`; routes corrections through the Apply SOP unchanged.).
+**Last revised:** 2026-09-23 rev 2 (documents changes since rev 1 that this file hadn't
+caught up to: §4 gained the `append_ref` cell kind (2026-09-17) — a Name change's former
+value moving to `Other names` per [ref]-Fill SOP §4.16, derived by
+`python scripts/other_names.py --batch <dir>` rather than written by hand; and the fix-mode
+`[ref]` gate now also sets each corrected cell's confidence from its own verdict
+([ref]-Fill SOP §5 rev 28 — `scripts/confidence.py`), not a flat grade. No change to the
+placeholder-Name conventions, the scan/triage table, or the release gate.). Prior: 2026-06-05
+rev 1 (initial SOP, written alongside the first Name-column normalization batch. Defines the
+placeholder-Name conventions (§2), the QC scan + triage (§3), the `fix`-mode correction batch
+with the `preserve_ref` escape hatch for cosmetic/derived edits (§4), and the release gate
+(§5). Leans on `scripts/qc_backend.py` and `build_workbook.py --mode fix`; routes corrections
+through the Apply SOP unchanged.).
 
 ---
 
@@ -132,8 +139,11 @@ python scripts/recalc.py batches/<date>_<HHMMET>_<label>/lng_carrier_fix.xlsx   
 # qc_backend.py on a copy with the fix applied drives the targeted findings to 0.
 ```
 
-Copy the `fix.json` into the batch dir, write `notes.md` (what/why, the rename table, ref
-handling, any tooling changes, verification), and commit the batch directory. Do **not** push
+`build_workbook.py --mode fix` writes the **gated** `fix.json` (surviving refs, `dropped_refs`,
+computed confidence, a `gated` stamp) into the batch dir itself and leaves the `work/` source
+untouched — that batch-dir copy is what `apply_batch.py` reads; never overwrite it with the source.
+Write `notes.md` (what/why, the rename table, ref handling, any tooling changes, verification),
+and commit the batch directory. Do **not** push
 without approval.
 
 ---
