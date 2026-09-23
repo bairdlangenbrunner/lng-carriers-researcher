@@ -46,6 +46,8 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    new rows** — added to the sheet by hand — **and batch 16's 6 delivery lines** (rows 1076/1077:
    `Delivery year` 2028 → 2029 + their `Previous delivery year(s)` / `Delivery delayed` companions,
    Y-capped by RF §4.18 on shipvault alone; its 8 Green Name / Hull number cells are already in).
+   **Batch 17** `2026-09-23_1230ET_fix_vessel_type_unsourced` (16 G lines): unsourced `conventional`
+   Vessel type — IGU 2026 PDF ref on 7 rows, value cleared on 9. Patch with `OVERWRITE_NONBLANK=true`.
 3. **Decisions that are not a hold line** (§1, §1b, §1c): Hanwha Philly duplicates 1083 ↔ 1085 and
    1203 ↔ 1086 (delete by hand if you agree — duplicates are yours to remove); the proposed
    bucket; batch 8's 8 owner / builder names; and the manual-review lists of batches 1 and 2.

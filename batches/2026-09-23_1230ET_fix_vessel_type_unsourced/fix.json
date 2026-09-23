@@ -1,0 +1,240 @@
+{
+  "batch_label": "fix — unsourced Vessel type",
+  "reason": "16 rows carried Vessel type 'conventional' with a blank or 'inferred' [ref]. Every value needs a ref that states it (Baird 2026-09-23). Where IGU 2026 prints 'Conventional' for the IMO its report PDF becomes the ref; elsewhere no source states it and the cell is cleared.",
+  "corrections": [
+    {
+      "row_id": "25",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "conventional",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+              "soft": false
+            }
+          ],
+          "note": "Atlantic Success: backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventional' in its Vessel Type column for this IMO (IG §5.4 sole source)",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "28",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "conventional",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+              "soft": false
+            }
+          ],
+          "note": "Hull 2393 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventional' in its Vessel Type column for this IMO (IG §5.4 sole source)",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "29",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "conventional",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+              "soft": false
+            }
+          ],
+          "note": "Hull 2394 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventional' in its Vessel Type column for this IMO (IG §5.4 sole source)",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "30",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "conventional",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+              "soft": false
+            }
+          ],
+          "note": "Hull 2395 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventional' in its Vessel Type column for this IMO (IG §5.4 sole source)",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "31",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "conventional",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+              "soft": false
+            }
+          ],
+          "note": "Hull 2396 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventional' in its Vessel Type column for this IMO (IG §5.4 sole source)",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "26",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "conventional",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+              "soft": false
+            }
+          ],
+          "note": "Mediterranean Success: backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventional' in its Vessel Type column for this IMO (IG §5.4 sole source)",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "27",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "conventional",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf",
+              "soft": false
+            }
+          ],
+          "note": "Caribbean Success: backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventional' in its Vessel Type column for this IMO (IG §5.4 sole source)",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "1044",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "SK Serenity: 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "1045",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "SK Spica: 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "250",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "Hull 8276 (Hanwha): 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "1218",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "Samsung HI (unknown shipowner 1): 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "1219",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "Hanwha Ocean (Knutsen): 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "1220",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "Jiangnan (COSCO 1): 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "1221",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "Jiangnan (COSCO 2): 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "1222",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "Jiangnan (COSCO 3): 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    },
+    {
+      "row_id": "1223",
+      "cells": [
+        {
+          "field": "Vessel type",
+          "new_value": "",
+          "confidence": "G",
+          "preserve_ref": true,
+          "note": "Jiangnan (COSCO 4): 'conventional' was written with no source; no page states it for this vessel (existing refs, shipvault record, trade press checked; IGU 2025/2026 do not list the IMO), so the cell is cleared. The paired [ref] is already blank."
+        }
+      ]
+    }
+  ]
+}
