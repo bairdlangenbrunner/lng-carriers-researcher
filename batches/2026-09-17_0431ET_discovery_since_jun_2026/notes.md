@@ -78,3 +78,13 @@ such a page now carries the unit-record URL
 `scripts/shipvault_api_refs.py`, workbook rebuilt + recalced (zero errors), apply artifacts
 regenerated; decisions unchanged, and the only diff in `apply.json` / `apply_rows.csv` /
 `apply_patch.csv` is the added URLs.
+
+## Unsourced Vessel type removed (2026-09-23, Baird)
+
+C1.1–C1.4 (`Samsung HI (Dynagas 1)`–`(Dynagas 4)`) and C2 (`HD Hyundai HI (HHI) Ulsan (Tsakos 2)`)
+carried `Vessel type` = `conventional` with a blank `[ref]` — a class call no source made. No page
+states it for these hulls (sedaily, Splash247 ×2, LNG Prime, new-ships, JoongAng, GlobeNewswire,
+Riviera checked; Hellenic Shipping News "passes" only on a sidebar headline), and IGU 2026 predates
+both orders. The cell is now blank on all five; workbook rebuilt + recalced (zero errors), apply
+artifacts regenerated, decisions unchanged. `build_workbook.py --mode discovery` now refuses any
+filled cell with a blank `[ref]` (except `unknown` and a placeholder Name).
