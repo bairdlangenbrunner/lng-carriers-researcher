@@ -411,6 +411,30 @@
       "confidence": "G"
     },
     {
+      "row_id": "102",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "102",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.hanwha.com/companies/hanwha-ocean.do, https://www.lr.org/en/shipyards/korea/hanwha-ocean-co-ltd/, https://www.cnbc.com/2025/10/14/china-sanctions-five-us-subsidiaries-of-south-koreas-hanwha-ocean-over-their-ties-with-washington.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "103",
+      "column": "Shipowner country/area",
+      "value": "South Korea",
+      "confidence": "G"
+    },
+    {
+      "row_id": "103",
+      "column": "Shipowner country/area [ref]",
+      "value": "https://www.hanwha.com/companies/hanwha-ocean.do, https://www.lr.org/en/shipyards/korea/hanwha-ocean-co-ltd/, https://www.cnbc.com/2025/10/14/china-sanctions-five-us-subsidiaries-of-south-koreas-hanwha-ocean-over-their-ties-with-washington.html",
+      "confidence": "G"
+    },
+    {
       "row_id": "147",
       "column": "Shipowner country/area",
       "value": "Malaysia",
@@ -642,8 +666,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 55,
-    "accepted": 53,
-    "hold": 2,
+    "accepted": 55,
+    "hold": 0,
     "reject": 0,
     "conflicts": 0
   }

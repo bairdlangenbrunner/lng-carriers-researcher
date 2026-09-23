@@ -87,6 +87,9 @@ def _items_and_conflicts(mode, payload, header, colmap):
                 "ref_value": ", ".join(f.get("new_urls", []) or []),
                 "confidence": f.get("confidence", "R"), "derivable": bool(f.get("derivable")),
                 "note": f.get("note", ""), "prev_state": f.get("prev_state", "blank"),
+                # §5 regrade inputs (confidence.py): what the gate must be told about the cell
+                "gate_value": f.get("proposed_value", ""),
+                "derived_from": f.get("derived_from"), "cap_reason": f.get("cap_reason", ""),
                 # corroborate fills append refs only — the data value is unchanged,
                 # so the value column must never be (re)written (see value-write guard).
                 "ref_only": f.get("prev_state") == "corroborate",
@@ -155,6 +158,10 @@ def _items_and_conflicts(mode, payload, header, colmap):
                     "confidence": c.get("confidence", "Y"), "derivable": False,
                     "note": c.get("note", ""), "prev_state": "fix",
                     "replace_ref": not c.get("append_ref"),
+                    # §5 regrade inputs (confidence.py)
+                    "gate_value": str(c.get("gate_value") or c.get("new_value", "")),
+                    "preserve_ref": bool(c.get("preserve_ref")),
+                    "former_year": c.get("former_year", ""), "cap_reason": c.get("cap_reason", ""),
                     "row_data": None,
                 })
 

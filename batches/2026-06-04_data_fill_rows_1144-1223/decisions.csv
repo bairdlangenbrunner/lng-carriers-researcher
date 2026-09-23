@@ -14,11 +14,11 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1208|Shipowner country/area,fill,1208,,Shipowner country/area,G,True,accept,accept,Greece,derived from backend sibling rows for owner 'tms-cardiff'
 1144|Cargo type,fill,1144,,Cargo type,Y,False,hold,hold,membrane,GTT.fr 'two new LNG carriers for the U.S. market' (pub Sep-2025) names the owner
 1144|Propulsion type,fill,1144,,Propulsion type,Y,False,hold,hold,ME-GI,gCaptain (pub 21-Jul-2025): the Hanwha Shipping / Hanwha Philly vessel 'will be 
-1144|Price,fill,1144,,Price,Y,False,hold,hold,252000000,Riviera 86306 reports the Hanwha Shipping LNG carrier orders from Hanwha Philly/
+1144|Price,fill,1144,,Price,G,False,accept,accept,252000000,Riviera 86306 reports the Hanwha Shipping LNG carrier orders from Hanwha Philly/
 1144|Price currency,fill,1144,,Price currency,Y,False,hold,hold,USD,Paired currency for the Price=252000000 fill; Riviera states the figure as 'US$2
 1145|Cargo type,fill,1145,,Cargo type,Y,False,hold,hold,membrane,Sibling of row 1144 (same Hanwha Shipping 2-ship Hanwha Philly/Ocean order; GTT 
 1145|Propulsion type,fill,1145,,Propulsion type,Y,False,hold,hold,ME-GI,Sibling of row 1144. gCaptain: Hanwha Shipping / Hanwha Philly vessel equipped w
-1145|Price,fill,1145,,Price,Y,False,hold,hold,252000000,Riviera 86306 is specifically about the SECOND US$252M Hanwha Shipping order in 
+1145|Price,fill,1145,,Price,G,False,accept,accept,252000000,Riviera 86306 is specifically about the SECOND US$252M Hanwha Shipping order in 
 1145|Price currency,fill,1145,,Price currency,Y,False,hold,hold,USD,Paired currency for Price=252000000 on row 1145; Riviera states 'US$252M'. Using
 1164|Shipowner country/area,fill,1164,,Shipowner country/area,G,False,accept,accept,Greece,LNG Prime 175775 visible (non-paywalled) lead: 'Greece's Alpha Gas placed the or
 1164|Price,fill,1164,,Price,G,False,accept,accept,250500000,LNG Prime 175775 visible lead states 'The contract is worth 738.3 billion won ($
@@ -39,20 +39,20 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 1155|Propulsion type,fill,1155,,Propulsion type,G,False,accept,accept,X-DF,Rule E sister hull of 1152. Verbatim 'X-DF2.1 iCER' -> 'X-DF'.
 1155|Operator/charterer,fill,1155,,Operator/charterer,G,False,accept,accept,Cheniere,Rule E sister hull of 1152. Cheniere Marketing International verbatim in both so
 1167|Shipowner country/area,fill,1167,,Shipowner country/area,G,False,accept,accept,Greece,Riviera headline 'Greek major Tsakos' + LNG Prime visible lead 'Greek shipowner 
-1167|Price,fill,1167,,Price,Y,False,hold,hold,254000000,"Riviera ties US$254M to a SINGLE Tsakos LNG carrier at HD Hyundai, Q3-2028 deliv"
+1167|Price,fill,1167,,Price,G,False,accept,accept,254000000,"Riviera ties US$254M to a SINGLE Tsakos LNG carrier at HD Hyundai, Q3-2028 deliv"
 1167|Price currency,fill,1167,,Price currency,Y,True,accept,accept,USD,Paired currency for the Tsakos Price fill. Riviera states 'US$254M' -> USD. Trav
 1214|Shipowner country/area,fill,1214,,Shipowner country/area,Y,True,accept,accept,United Kingdom,Both sources describe Hayfin Capital Management as 'London-headquartered' (Index
 1215|Shipowner country/area,fill,1215,,Shipowner country/area,Y,True,accept,accept,United Kingdom,Rule E sister hull of 1214 (same 14-May-2026 Hayfin 2x order). London-based per 
-1158|Shipowner country/area,fill,1158,,Shipowner country/area,Y,False,hold,hold,China,"Shipowner = Minsheng Financial Leasing, a China-based lessor; Shandong (Ocean/Ma"
+1158|Shipowner country/area,fill,1158,,Shipowner country/area,G,False,accept,accept,China,"Shipowner = Minsheng Financial Leasing, a China-based lessor; Shandong (Ocean/Ma"
 1158|Cargo type,fill,1158,,Cargo type,G,False,accept,accept,membrane,GTT tank-design order for THIS four-ship Shandong/Jiangnan quartet specifies GTT
 1158|Propulsion type,fill,1158,,Propulsion type,Y,False,hold,hold,X-DF,iMarine 31970 (pub 31-Jan-2026) body: vessels 'equipped with the latest WinGD XD
-1159|Shipowner country/area,fill,1159,,Shipowner country/area,Y,False,hold,hold,China,Sibling of row 1158 (same 30-Jan-2026 Minsheng/Shandong Jiangnan quartet). Minsh
+1159|Shipowner country/area,fill,1159,,Shipowner country/area,G,False,accept,accept,China,Sibling of row 1158 (same 30-Jan-2026 Minsheng/Shandong Jiangnan quartet). Minsh
 1159|Cargo type,fill,1159,,Cargo type,G,False,accept,accept,membrane,Sibling of row 1158. GTT Mark III Flex membrane for this Shandong/Jiangnan quart
 1159|Propulsion type,fill,1159,,Propulsion type,Y,False,hold,hold,X-DF,Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> controlled vo
-1160|Shipowner country/area,fill,1160,,Shipowner country/area,Y,False,hold,hold,China,Sibling of row 1158 (delivery 2029 in this row but same order). Minsheng = China
+1160|Shipowner country/area,fill,1160,,Shipowner country/area,G,False,accept,accept,China,Sibling of row 1158 (delivery 2029 in this row but same order). Minsheng = China
 1160|Cargo type,fill,1160,,Cargo type,G,False,accept,accept,membrane,Sibling of row 1158. GTT Mark III Flex membrane; two cross-checked non-paywalled
 1160|Propulsion type,fill,1160,,Propulsion type,Y,False,hold,hold,X-DF,Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> 'X-DF'. Singl
-1161|Shipowner country/area,fill,1161,,Shipowner country/area,Y,False,hold,hold,China,Sibling of row 1158 (delivery 2029). Minsheng = China-based lessor; both URLs na
+1161|Shipowner country/area,fill,1161,,Shipowner country/area,G,False,accept,accept,China,Sibling of row 1158 (delivery 2029). Minsheng = China-based lessor; both URLs na
 1161|Cargo type,fill,1161,,Cargo type,G,False,accept,accept,membrane,Sibling of row 1158. GTT Mark III Flex membrane; two cross-checked non-paywalled
 1161|Propulsion type,fill,1161,,Propulsion type,Y,False,hold,hold,X-DF,Sibling of row 1158. iMarine 31970: 'WinGD XDF 2.2 main engine' -> 'X-DF'. Singl
 1148|Shipowner country/area,fill,1148,,Shipowner country/area,Y,False,hold,hold,Singapore,"Entity-level: sources state 'BW LNG, a unit of Singapore-based gas giant BW' / '"

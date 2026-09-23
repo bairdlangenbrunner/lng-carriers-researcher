@@ -35,6 +35,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
+import confidence
 from paths import work_dir
 from igu_refs import corroborates_cell
 from url_verifier import citable_forms, classify
@@ -168,16 +169,15 @@ def main():
             f.pop("derived_from", None)
         if total:
             val = total
-            if f.get("confidence") == "G":
-                f["confidence"] = "Y"
 
-        kept, dropped_conflict, dropped_blocked = [], [], []
+        kept, passes, dropped_conflict, dropped_blocked = [], [], [], []
         for u in citable_forms(f.get("new_urls", [])):   # IGU landing page -> the edition's PDF
             # an IGU report PDF is held to what it prints for this row's IMO (igu_refs, IG §1)
             ok, reason = corroborates_cell(u, val, f.get("field", ""), imo_by_id.get(str(f["row_id"]), ""))
             grade = classify(reason)
             if ok:
                 kept.append(u)
+                passes.append((u, reason))
                 tag = "PASS" if reason == "OK" else f"PASS ({reason})"
             elif grade in ("dead", "banned"):
                 tag = f"DROP-{grade} ({reason})"
@@ -208,6 +208,23 @@ def main():
                             f"contradicted."),
                 "url": u, "action": "retry the gate later or confirm off-band and re-add",
             })
+
+        # §5 (RF rev 28): the grade is what the gate did, not the researcher's label.
+        # Derivable autofills stand on backend-internal consistency, not on a URL.
+        if not f.get("derivable"):
+            caps = []
+            if total:
+                caps.append(confidence.CAP_DERIVED)
+            if dropped_conflict:
+                caps.append(confidence.CAP_CONFLICT)
+            if f.get("cap") or f.get("cap_reason"):
+                caps.append(f.get("cap_reason") or "researcher capped this cell at Y")
+            caps.append(confidence.note_cap(f.get("note")))
+            conf, why = confidence.grade(passes, field=f.get("field", ""), value=val, caps=caps)
+            if conf != f.get("confidence"):
+                print(f"  [conf {f['row_id']}/{f.get('field','')}] "
+                      f"{f.get('confidence', '-')} -> {conf}: {why}", file=sys.stderr)
+            f["confidence"], f["confidence_why"] = conf, why
 
         # Corroborate batch: the grandfathered IGU ref is kept out of new_urls by the
         # selector, so the gate never tested it — re-prepend it (it stays FIRST) and

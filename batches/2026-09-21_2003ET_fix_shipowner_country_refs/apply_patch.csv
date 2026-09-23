@@ -67,6 +67,10 @@ set,74,Shipowner country/area,Greece
 set,74,Shipowner country/area [ref],"https://magicport.ai/owners-managers/greece/maran-gas-maritime-inc, https://lngprime.com/europe/greeces-maran-gas-welcomes-lng-carrier-john-a-angelicoussis-to-its-fleet/47566/"
 set,78,Shipowner country/area,Japan
 set,78,Shipowner country/area [ref],"https://en.wikipedia.org/wiki/Mitsui_O.S.K._Lines, https://magicport.ai/owners-managers/japan/mitsui-osk-lines-ltd, https://stockanalysis.com/quote/tyo/9104/company/"
+set,102,Shipowner country/area,South Korea
+set,102,Shipowner country/area [ref],"https://www.hanwha.com/companies/hanwha-ocean.do, https://www.lr.org/en/shipyards/korea/hanwha-ocean-co-ltd/, https://www.cnbc.com/2025/10/14/china-sanctions-five-us-subsidiaries-of-south-koreas-hanwha-ocean-over-their-ties-with-washington.html"
+set,103,Shipowner country/area,South Korea
+set,103,Shipowner country/area [ref],"https://www.hanwha.com/companies/hanwha-ocean.do, https://www.lr.org/en/shipyards/korea/hanwha-ocean-co-ltd/, https://www.cnbc.com/2025/10/14/china-sanctions-five-us-subsidiaries-of-south-koreas-hanwha-ocean-over-their-ties-with-washington.html"
 set,147,Shipowner country/area,Malaysia
 set,147,Shipowner country/area [ref],"https://www.misc.com.my/contact-us/, https://www.miscgroup.com/awcontent/Web/Documents/IntegratedAnnualReport/Integrated-Annual-Report-2025.pdf, https://en.wikipedia.org/wiki/MISC_Berhad"
 set,156,Shipowner country/area,Malaysia
