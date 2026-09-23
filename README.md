@@ -39,22 +39,39 @@ python scripts/pull_backend.py   # fetch the backend CSV -> work/
 - The **IGU reconciliation** workflow reads the IGU World LNG Report PDF from the same
   sibling repo (`../lng-terminals-researcher/data/IGU-World-LNG-Report-<year>.pdf`) and
   needs `pdfplumber`; the previous edition's PDF is passed by path.
-- No credentials are needed; every source is public. (The Cloudflare clearance cookie in `work/` is IP-bound and gitignored — treat it like a token, never commit it.)
+- Most sources are public and need no credentials, with three exceptions:
+  `pull_backend.py` reads the backend through the authenticated `gws` CLI
+  (read-only `gws-gem` profile, config at `~/.config/gws-gem`); `wayback_save.py`
+  needs an archive.org S3 key (`$IA_S3_AUTH` or the keychain item
+  `archive-org-s3`); and `ais_static.py` needs an aisstream.io key
+  (`$AISSTREAM_API_KEY` or the keychain item `aisstream-api-key`). (The
+  Cloudflare clearance cookie in `work/` is IP-bound and gitignored — treat it
+  like a token, never commit it.)
 
 ### The backend
 
-The tracker lives in a Google Sheet published as CSV. The default export URL is in
-`scripts/pull_backend.py` (`DEFAULT_BACKEND_CSV_URL`) and can be overridden with
-`--url` or the `LNGCT_BACKEND_URL` env var — that URL is the one thing you must
-repoint to run this pipeline against a different sheet. `pull_backend.py` writes
-`work/backend.csv` plus `work/backend.colmap.json` (the column-index map,
-re-derived from the header row on every pull because the schema drifts).
+The tracker lives in a Google Sheet, read via the authenticated `gws` CLI
+(read-only work profile) — anonymous CSV export URLs (gviz, `/export`, `/pub`,
+`/htmlview`) were deliberately disabled org-wide 2026-07-29 and now 401, so
+there is no public export URL to point at. `pull_backend.py` resolves the tab
+title from its gid via the Sheets API, pulls the tab's values, and writes
+`work/backend.csv` (padded to a uniform grid) plus `work/backend.colmap.json`
+(the column-index map, re-derived from the header row on every pull because
+the schema drifts). The spreadsheet ID and tab gid default to this project's
+sheet (`DEFAULT_SPREADSHEET_ID` / `DEFAULT_GID` in `pull_backend.py`) and can
+be overridden with `--spreadsheet-id` / `--gid` or the
+`LNGCT_BACKEND_SHEET_ID` / `LNGCT_BACKEND_GID` env vars.
 
 ### Script CLI conventions
 
 Every script: status/progress/warnings go to **stderr**; machine-readable payload
 (tables, CSV, JSON) goes to **stdout**. Exit codes: `0` ok, `1` findings under
-`--strict` or a hard failure, `2` usage error. All scripts take `--help`.
+`--strict` or a hard failure, `2` usage error. Nearly every script takes
+`--help`. Exceptions: `merge_fills.py` has no CLI at all — it takes its input
+from `work/` and starts the live research-merge pipeline the moment it's run,
+`--help` included, so only invoke it when you mean to run the full pass.
+`backend_io.py`, `confidence.py`, `igu_refs.py`, `lookups.py`, `normalize.py`,
+and `paths.py` are shared library modules, not standalone CLI entry points.
 
 ## Running the assistant
 
@@ -65,8 +82,8 @@ and routes from there.
 
 ## Workflows
 
-Seven workflows, one SOP each. `CLAUDE.md` is the router; `docs/sops/` holds the
-authoritative procedures.
+Nine workflows. Most map to one SOP each in `docs/sops/`; Review and Apply &
+verify both live in `apply.md`. `CLAUDE.md` is the router.
 
 | Workflow | When to use | Output |
 |---|---|---|
@@ -77,12 +94,15 @@ authoritative procedures.
 | **FSRU reconciliation** (`fsru_reconciliation.md`) | Compare backend FSRUs against the GIIGNL Annual Report fleet table (name-keyed; GIIGNL is not citable) | 10-sheet comparison workbook |
 | **IGU reconciliation** (`igu_reconciliation.md`) | Intercompare the whole backend against the IGU World LNG Report fleet + orderbook tables (IMO-keyed, edition-to-edition) | 11-sheet comparison workbook + decisions list |
 | **Pre-release QC** (`qc_release.md`) | Whole-backend consistency/corruption sweep before a data release | QC report + `fix`-mode correction batch |
+| **Review a batch's decisions** (`apply.md` step 2 / §3 / §2b) | Decide a batch's holds in the review app before applying | `decisions.csv` + `review_log.jsonl`; "push changes" is the app's one path to writing the backend, confirmed by the user in the browser |
 | **Apply & verify** (`apply.md`) | Get a reviewed batch's accepted proposals into the backend, offset-proof | decisions.csv + apply artifacts + verify report |
 
-There is also a **corroborate** batch variant of data-fill
-(`scripts/derive_corroborate.py`): it finds cells whose only `[ref]` is the IGU
-World LNG Report and appends ≥2 independent corroborators per cell, reusing the
-data-fill pipeline unchanged.
+A **corroborate** batch mode once appended ≥2 independent corroborators to
+cells whose only `[ref]` was the IGU World LNG Report
+(`scripts/derive_corroborate.py`, reusing the data-fill pipeline unchanged).
+It is superseded by the 2026-09-21 ruling that the IGU report PDF is a
+sufficient sole source on its own — the script still exists but this mode is
+no longer run.
 
 Every research batch follows the same shape: pull a fresh backend CSV, re-derive
 the column map, gather and verify sources, build a workbook, recalc it to confirm
@@ -104,7 +124,7 @@ README.md                  This file
 pyproject.toml             Python deps and tooling config (ruff, pytest)
 
 docs/
-  sops/                    The seven workflow procedures (authoritative)
+  sops/                    The eight workflow procedures (authoritative)
     ref_fill.md            [ref]-fill rules A–F, confidence labels, §3.8 verification gate
     discovery.md           Discovery workflow, four-ring source model, candidate workbook
     data_fill.md           Data-fill workflow, blank-vs-`unknown` preserve-ref contract, derivable autofill
@@ -115,6 +135,7 @@ docs/
     apply.md               Apply & verify round-trip — offset-proof batch incorporation + dedupe sweep
   inclusion_criteria.md    What's in scope vs out, status categories
   pointers.md              "Which SOP section governs X" cross-reference index
+  scripts.md               Per-script reference — what each script does and when to read its source
   plans/                   Dated plans and state files for multi-batch passes (e.g. the sep-17-pass
                            summary + worklist) — working notes, not authoritative rules
 
@@ -128,8 +149,11 @@ data/                      Reference data (committed)
   qc_allowlist.csv         Known-legit oddities silenced in qc_backend.py
   gem_export_*.csv         Snapshot of GEM's LNG-terminals export (FSRU-reconciliation
                            comparison input — internal only, never a citation source)
-  GIIGNL-*.pdf             GIIGNL Annual Report archive — committed (~48 MB) so a clone is
-                           self-contained; the FSRU workflow parses the fleet table from these
+  living_workbook.json     review_app living-workbook state (AP §2c) — Drive doc id + the
+                           per-line `processed` map; written by review_app/living.py
+  GIIGNL Annual Report PDFs (7 files, 2020–2026, ~48 MB, filenames vary by edition) — committed
+                           so a clone is self-contained; the FSRU workflow parses the fleet
+                           table from these; see data/README.md for the per-edition manifest
 
 scripts/                   Python tools called by the workflows
   paths.py                 Shared path helpers (work/ location, LNGCT_WORK_DIR)
@@ -137,22 +161,36 @@ scripts/                   Python tools called by the workflows
   cf_clearance.py          Earns / stores bot-wall cookies by driving real Chrome (work/cf_clearance.json)
   sweep.py                 Polite bulk fetch — per-host pacing + circuit breaker; the only way to sweep one host
   backend_io.py            Shared backend loading — CSV + colmap + date parsing + sheet-row map
-  pull_backend.py          Fetch backend CSV, derive the column-index map (--url / LNGCT_BACKEND_URL)
+  pull_backend.py          Fetch backend CSV via the gws CLI, derive the column-index map
+                           (--spreadsheet-id / --gid, or LNGCT_BACKEND_SHEET_ID / LNGCT_BACKEND_GID)
   qc_backend.py            Backend QC sanity check — column-offset / misplaced-value / Name checks
   normalize.py             Canonical builder/owner names + owner→country (imported by others)
   lookups.py               Data loaders — controlled vocab + builder/owner facts tables
   seed_lookups.py          Seed/refresh the builder/owner facts CSVs from the live backend
   dedup_index.py           Build the matching indexes for candidate dedup
   csb_fetch.py             Fetch + parse ChinaShipBuild orderbook tables
+  orderbook_reconcile.py   Whole-orderbook completeness reconciliation — CSB || backend || IGU
+                           Appendix 4 || shipvault, not date-bounded (unlike a gap-window discovery run)
   url_verifier.py          The §3.8 gate — graded verdicts (ok / banned / dead / blocked / uncorroborated), value↔ref corroboration
+  confidence.py            The §5 confidence grade (RF rev 28) — turns the gate's own verdicts
+                           into G/Y/R + why; a researcher's label can only argue a line down
+  igu_refs.py              IMO-keyed check of what an IGU report PDF actually prints for one
+                           vessel — the gate behind every IGU report-PDF ref (IG §1)
   citation_qc.py           §3.8a rot sweep — grades every existing backend [ref] URL (work/citation_qc.csv)
   wayback_save.py          Archive [ref] URLs to the Wayback Machine (authenticated Save Page Now; resumable)
   imo_tracker.py           §6a.8 IMO → vessel-tracker fallback (shipvault API first, marinetraffic.org second)
   shipvault_api_refs.py    Adds the shipvault unit-record URL as a companion ref where the page renders blank
+  other_names.py           Former Names → `Other names` companion cells (RF §4.16)
+  delivery_history.py      A later Delivery year → `Previous delivery year(s)` + `Delivery
+                           delayed` companion cells (RF §4.19)
+  igu_hulls.py             IGU `Name (hull)` entries → backend: fill/restyle Hull number cells,
+                           name hull-placeholder rows (RF §4.17)
   ais_static.py            aisstream static-data cross-check for on-order IMOs — a lead, never a [ref]
   derive_fills.py          Data-fill: scope rows, compute derivable autofills, list research targets
-  derive_corroborate.py    Corroborate batches: find IGU-only refs, queue independent corroboration
+  derive_corroborate.py    Corroborate batches (superseded — see Workflows above): find IGU-only
+                           refs, queue independent corroboration
   merge_fills.py           Data-fill: merge per-cluster research + run the central §3.8 gate
+                           (no CLI — running it starts the live pipeline immediately, --help included)
   fsru_reconcile.py        FSRU reconciliation: GIIGNL fleet JSON ↔ backend, five buckets
   igu_fleet.py             IGU World LNG Report extractor — fleet + orderbook tables from word coordinates
   igu_reconcile.py         IGU reconciliation: IGU fleet/orderbook JSON ↔ whole backend, edition diff, shipvault leads
@@ -160,11 +198,17 @@ scripts/                   Python tools called by the workflows
   recalc.py                Force recalc, return any formula errors (run before committing)
   batch_digest.py          Apply: triage a batch into auto-safe vs needs-a-decision
   apply_batch.py           Apply: reviewed batch → decisions.csv + offset-proof apply artifacts
+  regrade_confidence.py    Retroactive §5 re-grade of a batch's held lines (RF rev 28);
+                           promote-only, hold → accept on a Green, never demotes
   verify_apply.py          Apply: re-pull + diff backend vs apply.json, qc + dedupe the touched rows
   dedupe_check.py          Internal duplicate scan (tiered HIGH/MED/LOW; advisory)
 
 tools/
   apply_patch.gs           Apps Script by-name applier (writes each cell by row_id + header)
+
+review_app/                Local, loopback-only app for deciding a batch's holds (replaces the
+                           combined xlsx); entry points documented in review_app/README.md,
+                           not this table — imports from scripts/, never the reverse
 
 tests/                     pytest suite — see tests/README.md
 batches/                   Per-batch outputs (input JSON + xlsx + notes.md) — see batches/README.md
@@ -213,10 +257,14 @@ the contents contract, and the batch index.
   B = regulatory filings (DART/KIND/Bursa/HKEX), C = trade press, D = charterer programs.
 - **buckets** — the reconciliation outcome classes (e.g. FSRU: matched / reclassify /
   manual pairing / candidates to add / backend only).
-- **confidence colors** — green = high (2+ independent sources, or primary source with
-  the value verbatim), yellow = medium (entity-level, or a detail contested), red = low.
-  In workbooks additionally: **peach** = an existing backend `[ref]` preserved/overridden,
-  **gray** = pre-existing backend value, untouched.
+- **confidence colors** — computed from what the §3.8c gate actually did (RF rev 28), not
+  declared by the researcher: green = a ref survived the gate on a **live** page that
+  genuinely states the value for this vessel (one source is enough), yellow = only an
+  archived snapshot carries the value, the value is too generic for a bare text match to
+  mean anything alone, or a carve-out caps the cell, red = nothing survived the gate. A
+  researcher may argue a line down with a `cap_reason`, never up. In workbooks
+  additionally: **peach** = an existing backend `[ref]` preserved/overridden, **gray** =
+  pre-existing backend value, untouched.
 - **cluster** — rows grouped by (builder, owner, contract month); research and dedup
   operate per-cluster.
 - **derivable fill** — a data-fill proposal computed from the backend itself (yard-location
