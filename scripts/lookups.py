@@ -22,9 +22,8 @@ build_workbook — so there's no import cycle.
 import csv
 from pathlib import Path
 
-from paths import repo_root
 from normalize import normalize_builder, normalize_owner
-
+from paths import repo_root
 
 # --- 1. Controlled vocabularies (mirrors data/controlled_vocab.md) ----------
 # A proposal for these columns must use one of these exact canonical values, and

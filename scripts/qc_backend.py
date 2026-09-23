@@ -41,11 +41,10 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-from paths import backend_csv_path, work_dir
-from normalize import normalize_builder, normalize_owner
-from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, data_dir,
-                     load_builder_facts, load_owner_facts)
 from backend_io import load_backend, parse_date
+from lookups import AMBIGUOUS, CONTROLLED_VOCAB, data_dir, load_builder_facts, load_owner_facts
+from normalize import normalize_builder, normalize_owner
+from paths import backend_csv_path, work_dir
 
 HIGH, MED, LOW = "HIGH", "MED", "LOW"
 URL_RE = re.compile(r"https?://", re.I)

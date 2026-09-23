@@ -75,7 +75,8 @@ class TestWallDetection:
 
 class TestBodies:
     def test_zip_bundle_members_are_read(self, monkeypatch, tmp_path):
-        import io, zipfile
+        import io
+        import zipfile
         buf = io.BytesIO()
         with zipfile.ZipFile(buf, "w") as z:
             z.writestr("dossier/summary.txt", "Capacity 4.5 mtpa at Ravenna")

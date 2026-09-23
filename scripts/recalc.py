@@ -19,7 +19,6 @@ from pathlib import Path
 
 from openpyxl import load_workbook
 
-
 ERROR_TOKENS = ("#REF!", "#NAME?", "#VALUE!", "#DIV/0!", "#N/A", "#NULL!", "#NUM!")
 
 

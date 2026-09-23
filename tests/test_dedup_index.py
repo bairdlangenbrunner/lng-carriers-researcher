@@ -10,7 +10,6 @@ batch's candidates are already in the sheet. Pure logic, no network.
 import csv
 import json
 
-import pytest
 from dedup_index import build_indexes, match_pending, name_key
 
 HEADER = [

@@ -61,10 +61,9 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from normalize import normalize_builder, normalize_owner, normalize_hull
-from paths import backend_csv_path, work_dir
 from apply_batch import _load_backend, sheet_row_map
-
+from normalize import normalize_builder, normalize_hull, normalize_owner
+from paths import backend_csv_path, work_dir
 
 # A name that doesn't identify a specific delivered/named vessel — a slot, not a ship.
 _PLACEHOLDER_RE = re.compile(

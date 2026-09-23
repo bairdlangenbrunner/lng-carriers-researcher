@@ -174,7 +174,7 @@ class FakeSocket:
             return self.frames.pop(0)
         if self.then == "idle":
             self.clock.t += 60
-            raise asyncio.TimeoutError
+            raise TimeoutError
         raise ConnectionError("socket dropped")
 
 

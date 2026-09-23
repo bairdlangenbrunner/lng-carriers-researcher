@@ -278,8 +278,9 @@ class TestWorkbook:
     def test_igu_mode_builds_every_sheet(self, tmp_path):
         import json
         from types import SimpleNamespace
-        from openpyxl import load_workbook
+
         import build_workbook as bw
+        from openpyxl import load_workbook
         rec = TestReconcileBuckets()._run()
         rec["leads"] = {"9030814": {"name": "TT LIMA", "status": "SCRAPPED", "owner": "BREAKERS",
                                     "fate_date": "2026-03-08", "delivered": "", "url": "u"}}

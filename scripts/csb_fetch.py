@@ -43,7 +43,6 @@ from fetch import FetchError, download, fetch_page
 from paths import csb_dir, work_dir
 from sweep import Sweeper, host_key
 
-
 # Stable per-yard URLs (from [ref]-Fill SOP §6.2 / Discovery SOP §3.1)
 MAIN_YARDS = {
     "samsung": "http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbcbganmkhTk8Pl4EN",

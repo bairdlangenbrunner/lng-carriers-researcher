@@ -55,7 +55,7 @@ import json
 import re
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -452,7 +452,7 @@ def reconcile(csb_rows, all_rows, igu, edition, ship_imo=None) -> dict:
         })
 
     return {
-        "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "sources": {"csb_rows": len(csb_rows), "backend_rows": len(all_rows),
                     "stub_rows": sum(1 for r in all_rows if r.get("stub_from")),
                     "backend_on_order": len(be_rows),

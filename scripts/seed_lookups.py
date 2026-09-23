@@ -25,11 +25,17 @@ import sys
 from collections import defaultdict
 
 from backend_io import load_backend
-from paths import backend_csv_path
-from normalize import normalize_owner
 from build_workbook import _build_yard_location_map
-from lookups import (data_dir, YARD_FACT_COLS, OWNER_FACT_COLS, AMBIGUOUS,
-                     BUILDER_FACTS_CSV, OWNER_FACTS_CSV)
+from lookups import (
+    AMBIGUOUS,
+    BUILDER_FACTS_CSV,
+    OWNER_FACT_COLS,
+    OWNER_FACTS_CSV,
+    YARD_FACT_COLS,
+    data_dir,
+)
+from normalize import normalize_owner
+from paths import backend_csv_path
 
 
 def derive_owner_facts(data, H):

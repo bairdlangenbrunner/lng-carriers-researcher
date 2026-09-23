@@ -40,8 +40,8 @@ from collections import defaultdict
 from pathlib import Path
 
 import backend_io
+from normalize import fsru_owner_tags, normalize_builder, normalize_vessel_name
 from paths import backend_csv_path, work_dir
-from normalize import normalize_vessel_name, normalize_builder, fsru_owner_tags
 
 # storage m³ ↔ backend Capacity (cbm): agree if within EITHER band (handles both
 # big absolute caps and small-scale units). GIIGNL rounds (135000 vs 136967 etc.).

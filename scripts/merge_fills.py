@@ -36,8 +36,8 @@ from datetime import date
 from pathlib import Path
 
 import confidence
-from paths import work_dir
 from igu_refs import corroborates_cell
+from paths import work_dir
 from url_verifier import citable_forms, classify
 
 # Data-fill SOP §5 — the only columns a backend-internal autofill may fill.

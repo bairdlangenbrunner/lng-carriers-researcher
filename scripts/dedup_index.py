@@ -39,9 +39,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from backend_io import contract_month as _contract_month
 from backend_io import load_backend
-from normalize import normalize_builder, normalize_owner, normalize_hull
+from normalize import normalize_builder, normalize_hull, normalize_owner
 from paths import backend_csv_path, dedup_index_path
-
 
 # Yard abbreviations that vary between the candidate workbook and what gets
 # pasted into the sheet -- the 2026-09-17 batch wrote "HD Hyundai HI (HHI)

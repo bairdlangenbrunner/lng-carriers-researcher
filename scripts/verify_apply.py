@@ -19,10 +19,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-from paths import backend_csv_path, repo_root
-from apply_batch import _load_backend, sheet_row_map
-import qc_backend
 import dedupe_check
+import qc_backend
+from apply_batch import _load_backend, sheet_row_map
+from paths import backend_csv_path, repo_root
 
 
 def _norm(s):

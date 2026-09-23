@@ -39,7 +39,6 @@ from pathlib import Path
 from fetch import FetchError
 from paths import backend_csv_path
 
-
 DEFAULT_SPREADSHEET_ID = "1FjjeQD8AlQ_kQAMrohA3jAV3yZy7Lb61djt25D-4Fh8"
 DEFAULT_GID = 243795339  # "data - backend" tab (docs/sops/discovery.md, ref_fill.md)
 
@@ -247,8 +246,8 @@ def main():
         for k in missing:
             print(f"    {k}  (expected header text: {EXPECTED_COLUMNS[k]!r})",
                   file=sys.stderr)
-        print(f"\n  Schema may have changed — check the backend header row "
-              f"before proceeding with the batch.", file=sys.stderr)
+        print("\n  Schema may have changed — check the backend header row "
+              "before proceeding with the batch.", file=sys.stderr)
 
     # Also save the map next to the CSV for downstream scripts
     map_path = Path(args.out).with_suffix(".colmap.json")

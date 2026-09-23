@@ -17,8 +17,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from apply_batch import _detect, _items_and_conflicts, _load_backend
 from paths import backend_csv_path
-from apply_batch import _detect, _load_backend, _items_and_conflicts
 
 
 def _line(it):
