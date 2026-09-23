@@ -1188,6 +1188,25 @@ def corroborates(url: str, value, strict: bool = False, field: str = "") -> tupl
     if not ok and reason.startswith("none of expected"):
         v = str(value).strip()
         is_numeric = bool(re.match(r"^\$?\s*[\d,]", v))
+
+        # Comma-separated multi-value cell ("MOL, K Line"): corroborate each
+        # component on its own, through its own variants, so per-owner aliases
+        # apply. Without this the whole cell string is looked up in
+        # normalize._OWNER_ALIASES (which is keyed by single owner name), so a
+        # cell whose components each pass individually fails as a pair — the
+        # token fallback below then splits "K Line" to just "Line" and drops the
+        # abbreviation entirely. Every component must be present, so this is
+        # narrower than the token fallback, not a loosening of it.
+        parts = [x.strip() for x in v.split(",") if x.strip()] if not is_numeric else []
+        if len(parts) >= 2:
+            page = _fetch(url)
+            if page.status == "200" and all(
+                    any(_page_contains(page.text, var) for var in value_variants(part))
+                    for part in parts):
+                _log({"url": url, "kind": "corroborate", "ok": True,
+                      "reason": "OK (all components present)", "value": v})
+                return True, "OK (all components present)"
+
         tokens = [t for t in re.findall(r"[^\W_]+", v) if len(t) >= 3]
         if not is_numeric and len(tokens) >= 2:
             page = _fetch(url)

@@ -1,0 +1,404 @@
+{
+  "batch_label": "fix -- mozambique builder/owner + BW three-tank capacity",
+  "reason": "Three defects surfaced by the 2026-09-23 S4/S5 discovery completion sweep. (1) Nine Mozambique LNG rows named HD Hyundai Heavy Industries as builder; the source names HD Hyundai Samho. (2) All 17 Mozambique rows carried owner 'MOL, NYK'; the source splits them MOL+K Line (Samho nine) and NYK Line+Maran Gas Maritime (Samsung eight) -- Maran Gas was absent from the backend entirely. (3) Two BW LNG three-tank hulls carried 174000 cbm; CSB and trade press both state 177,000.",
+  "corrections": [
+    {
+      "row_id": "888",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 01 (sheet 1184): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 01 (sheet 1184): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "889",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 02 (sheet 1185): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 02 (sheet 1185): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "890",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 03 (sheet 1186): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 03 (sheet 1186): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "891",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 04 (sheet 1187): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 04 (sheet 1187): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "892",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 05 (sheet 1188): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 05 (sheet 1188): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "893",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 06 (sheet 1189): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 06 (sheet 1189): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "894",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 07 (sheet 1190): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 07 (sheet 1190): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "895",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 08 (sheet 1191): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 08 (sheet 1191): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "896",
+      "cells": [
+        {
+          "field": "Shipbuilder",
+          "new_value": "HD Hyundai Samho",
+          "confidence": "G",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 09 (sheet 1192): backend carried 'HD Hyundai Heavy Industries'. iMarine 2026-07-17 states the 2020 LOIs went to 'HD Hyundai Samho and Samsung Heavy Industries ... for nine and eight vessels, respectively'. Samho, not HHI, holds the nine. Prior ref (imarinenews/28729) supported the wrong builder and is replaced, not appended.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        },
+        {
+          "field": "Shipowner",
+          "new_value": "MOL, K Line",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 09 (sheet 1192): backend carried 'MOL, NYK' on all 17 rows. Source: \"HD Hyundai Samho's orders involve contracts with Mitsui O.S.K. Lines (five vessels) and Kawasaki Kisen Kaisha (four vessels)\" -- so the Samho nine are MOL+K Line, and NYK belongs to the Samsung eight. GROUP-LEVEL value: the source does not assign individual hulls, so MOL(5)/K Line(4) is not resolvable per row.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "897",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 10 (sheet 1193): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "898",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 11 (sheet 1194): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "899",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 12 (sheet 1195): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "900",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 13 (sheet 1196): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "901",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 14 (sheet 1197): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "902",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 15 (sheet 1198): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "903",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 16 (sheet 1199): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "904",
+      "cells": [
+        {
+          "field": "Shipowner",
+          "new_value": "NYK Line, Maran Gas Maritime",
+          "confidence": "Y",
+          "refs": [
+            "https://www.imarinenews.com/36960.html"
+          ],
+          "note": "Mozambique LNG 17 (sheet 1200): backend carried 'MOL, NYK'. Source: \"Samsung Heavy Industries' eight vessels are contracted to NYK Line (four vessels) and Greece's Maran Gas Maritime (four...)\". MOL is not an owner of the Samsung eight; Maran Gas was missing entirely. GROUP-LEVEL value; per-hull split unsourced. Shipbuilder 'Samsung Heavy Industries' is already correct and is not touched.",
+          "confidence_why": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it",
+          "cap_reason": "source states the group composition (five MOL / four K Line; four NYK / four Maran Gas) but does not assign individual hulls, so the per-row owner is not resolvable from it"
+        }
+      ]
+    },
+    {
+      "row_id": "1212",
+      "cells": [
+        {
+          "field": "Capacity",
+          "new_value": "177000",
+          "confidence": "G",
+          "refs": [
+            "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgcanmkhTk8Pl4EN",
+            "https://www.new-ships.com/ns/news/6441"
+          ],
+          "note": "HD Hyundai Samho hull 8358 (sheet 1165): backend carried 174000 cbm from the May-2026 order coverage. CSB's ship page for this hull states 'LNG Tanker, 177,000 cbm', and new-ships.com (2026-09-18) states the four BW three-tank ships carry ~176,800-177,000 cbm vs the standard 174,000 four-tank design. The backend's own Notes on sheet 1165 already flag these two as the 3-tank pair, so 174000 was the standard-design figure carried over in error.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        }
+      ]
+    },
+    {
+      "row_id": "1213",
+      "cells": [
+        {
+          "field": "Capacity",
+          "new_value": "177000",
+          "confidence": "G",
+          "refs": [
+            "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgJanmkhTk8Pl4EN",
+            "https://www.new-ships.com/ns/news/6441"
+          ],
+          "note": "HD Hyundai Samho hull 8359 (sheet 1166): backend carried 174000 cbm from the May-2026 order coverage. CSB's ship page for this hull states 'LNG Tanker, 177,000 cbm', and new-ships.com (2026-09-18) states the four BW three-tank ships carry ~176,800-177,000 cbm vs the standard 174,000 four-tank design. The backend's own Notes on sheet 1165 already flag these two as the 3-tank pair, so 174000 was the standard-design figure carried over in error.",
+          "confidence_why": "a live page states the value (§3.8c) and the value is specific to this cell"
+        }
+      ]
+    }
+  ],
+  "gated": {
+    "at": "2026-09-23T21:07:11+00:00",
+    "by": "build_workbook --mode fix"
+  }
+}

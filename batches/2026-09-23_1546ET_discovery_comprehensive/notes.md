@@ -158,14 +158,26 @@ Efessos row above) and 4 backend findings.
   1175), each with one field in conflict — resolve the conflict before filling.
 - The `Athlos` IMO disagreement and the sheet 20 GIIGNL Name defect.
 
-## Coverage gaps in this pass (stated, not papered over)
+## Coverage gaps in this pass — CLOSED 2026-09-23 by a re-run
+
+Both gaps below were real when this batch shipped. They were closed the same day by a
+re-run under a raised search budget; see
+[`2026-09-23_1707ET_fix_mozambique_bw`](../2026-09-23_1707ET_fix_mozambique_bw/notes.md) for the results.
 
 - **S4/S5**: WebSearch quota was exhausted before Bursa Malaysia, HKEX, DART/KIND,
   Riviera, Seatrade and TradeWinds could be swept for the six-day leading edge
   (2026-09-17 → 2026-09-23). The completeness streams (S1–S3) are unaffected — they
-  are source-enumerations, not searches.
+  are source-enumerations, not searches. **Re-swept: no new vessels.** Ring B's
+  regulatory portals turned out to be structurally unreachable through the GET-only
+  fetch ladder (JS/POST-driven), which is a reachability limit, not absence of data.
 - **S5**: NextDecade/Rio Grande, Commonwealth LNG and Argent LNG (zero backend rows
-  each) remain unswept for charterer-program vessels.
+  each) remain unswept for charterer-program vessels. **Re-swept: no candidates** —
+  the three vessels found are already in the backend (sheets 153, 304, 1005), and
+  Commonwealth (now "Caturus") and Argent do not meet the proposed threshold.
+
+Root cause of the exhaustion and the rule that now prevents it: Discovery SOP §4.1a
+(rev 9) — the WebSearch budget is one pool shared by the main loop and every subagent,
+and must be divided explicitly before any fan-out.
 
 ## Sibling-repo bug report (read-only — reported, not patched)
 
