@@ -2,7 +2,7 @@
 
 **Document purpose:** This SOP describes the workflow for discovering LNG carrier and FSRU vessels that are NOT yet in the backend Google Sheet. It complements the [ref]-Fill SOP (which covers citation work on rows that already exist). It is the operating manual for one-time gap analyses and (with adjustments) for recurring catch-up sweeps.
 
-**Last revised:** 2026-09-23 rev 8 (housekeeping and drift fixes against [ref]-Fill SOP rev 31: §4.6/§4.8/§6.3's confidence ladder replaced with RF §5 rev 28's gate-computed grade; §4.10's `web_fetch` fallback replaced with the real fetch ladder (`scripts/fetch.py`, `scripts/sweep.py`, IP-ban handling); reconciled the two conflicting Ring D definitions — §3.4 is now "charterer and owner program searches" (moved from §3.3, matching §4.7 and CLAUDE.md's router), and the former Ring D "cross-references and indexes" content is relabeled §3.5, supplementary validation rather than a fifth ring; "the May 2026 build script" pointers (§4.3, §4.4) replaced with `scripts/normalize.py` / `scripts/csb_fetch.py`; checked for live sandbox-era (`present_files`, `/mnt/user-data`) instructions — none found, only historical changelog text. Revision history now lives only in §9.). Prior revisions: §9.
+**Last revised:** 2026-09-23 rev 9 (search-budget discipline for parallel discovery runs: new §2 param 6 and §4.1a — the web-search budget is one per-session pool shared by the main loop and every subagent, so a fan-out divides it explicitly and a stream that exhausts its allotment stops and reports rather than degrading; new §7 trigger and §8 tip. Surfaced by the 2026-09-23 comprehensive pass, which burned its 200-call default cap across 11 parallel streams and left Rings B/C/D unswept.) Prior: rev 8 (housekeeping and drift fixes against [ref]-Fill SOP rev 31: §4.6/§4.8/§6.3's confidence ladder replaced with RF §5 rev 28's gate-computed grade; §4.10's `web_fetch` fallback replaced with the real fetch ladder (`scripts/fetch.py`, `scripts/sweep.py`, IP-ban handling); reconciled the two conflicting Ring D definitions — §3.4 is now "charterer and owner program searches" (moved from §3.3, matching §4.7 and CLAUDE.md's router), and the former Ring D "cross-references and indexes" content is relabeled §3.5, supplementary validation rather than a fifth ring; "the May 2026 build script" pointers (§4.3, §4.4) replaced with `scripts/normalize.py` / `scripts/csb_fetch.py`; checked for live sandbox-era (`present_files`, `/mnt/user-data`) instructions — none found, only historical changelog text. Revision history now lives only in §9.). Full revision history: §9.
 
 ---
 
@@ -36,6 +36,7 @@ Always confirm these before kicking off research:
 3. **Proposed-vessel threshold.** Default: named charterer/owner + specific ship count + approximate delivery window. Generic statements like "Cheniere will need more ships" or "Qatar will add 70-80 vessels" do NOT meet the threshold.
 4. **FSRU handling.** Default: batch with conventional LNGCs (same workflow, different vessel-type tag). Could split into a separate stream if FSRU volume justifies it.
 5. **Output naming.** Default: `batches/<batch-dir>/lng_carrier_candidate_vessels.xlsx` (one committed directory per discovery run — see repo `batches/README.md`).
+6. **Search budget and stream fan-out.** How many parallel research streams, and how many web searches each gets. Only worth confirming explicitly on a multi-stream or comprehensive pass — a single-cluster run never approaches the cap. See §4.1a for how to divide it.
 
 ---
 
@@ -161,6 +162,38 @@ These don't yield new candidates directly — they validate that the Ring A+B+C(
 ## 4. Workflow per discovery run
 
 ### 4.1 Confirm parameters with the user (§2)
+
+### 4.1a Allocate the search budget before fanning out
+
+**The web-search budget is a single per-session pool, shared by the main loop and every subagent.** It is not
+per-agent. The Claude Code default is **200 WebSearch calls per session**
+(`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`; raised to 600 in both `settings.json` profiles on 2026-09-23).
+Past the cap every further search returns "Web search was not performed" instead of results — the run does not
+fail, it silently degrades, which is the dangerous part.
+
+This is not hypothetical: the 2026-09-23 comprehensive pass fanned out ~11 streams, each making a locally
+reasonable 14-49 searches, and collectively hit exactly 200. The 31 refused calls landed on whichever streams
+happened to finish last — Rings B, C and D — so the pass shipped with its entire regulatory, trade-press and
+charterer-program sweep missing, and a null result that meant only "nothing in the sources still reachable."
+
+Before dispatching a fan-out:
+
+1. **Divide the pool explicitly.** Allotment per stream ≈ (cap − central reserve) ÷ streams. Keep roughly a
+   quarter of the cap in central reserve for the merge, gate re-checks and follow-up questions.
+2. **Put the number in each stream's prompt**, and require the stream to report `searches_used` in its output
+   JSON. A stream that does not know it is sharing a pool will spend as if it owns one.
+3. **A stream that exhausts its allotment STOPS and reports.** It does not continue by guessing at URL patterns
+   and fetching them blind — that is what produced the 404/404/522 newsroom fetches in the 2026-09-23 S5 stream.
+   An honest "not reached" is worth more than a fabricated sweep.
+4. **Searches are for discovery only.** A URL you already have goes through `scripts/fetch.py` (§4.10), which
+   costs nothing against the budget. Re-fetching a known page via WebSearch is the most common way a stream
+   burns its allotment on nothing.
+5. **Order the streams by search-dependence.** Rings B, C and D cannot fall back to anything local — no search
+   means no sweep. Enumeration and reconciliation streams (CSB orderbook, IGU comparison, backend
+   cross-checks) run off files already on disk and are unaffected by an exhausted pool. When a cap might bind,
+   run the search-dependent rings first.
+
+Budget exhaustion mid-sweep is a pause-and-ask trigger, not something to work around silently — see §7.
 
 ### 4.2 Pull the latest backend CSV
 
@@ -333,6 +366,7 @@ Stop and ask the user before proceeding when:
 - A finding suggests systemic backend issues (e.g. all candidates from one yard, or one whole owner's fleet appears missing — the May 2026 pilot did NOT find this but it's a possible scenario)
 - The CSB master directory paginated search times out or returns inconsistent results across multiple sessions
 - The gap window is unclear (no clear "latest contract date" in backend, multiple recent rows with blank contract dates)
+- The session's web-search budget is exhausted while any ring is still unswept (§4.1a). Report which streams were starved and stop — do not finish the pass on blind URL guesses, and do not write an unqualified null result for a ring that was never actually swept
 
 ---
 
@@ -348,6 +382,12 @@ Stop and ask the user before proceeding when:
 
 **Don't trust article-publication dates that seem off by years.** During the May 2026 pilot, a Splash247 article on the DSIC / Ocean Jade order initially looked like a May 2026 piece but on close reading was actually about an Apr 2024 deal that surfaced again in an aggregator. Always check publication date AND contract date in the article body before treating something as new.
 
+**A null result is only as good as the sources you actually reached.** "Nothing found in the window" and
+"nothing found in the sources this session could still reach" are different claims, and only the second one is
+usually true. Every ring's write-up states which sources were swept, which were unreachable and why, and which
+were never attempted. The 2026-09-23 pass got this right in its artifacts and it is the reason the gap was
+recoverable — a clean-looking null would have been read as a clean bill of health.
+
 **CMHI (China Merchants HI Jiangsu / Haimen) is a real LNGC yard.** First large LNGC ("Celsius Georgetown") delivered Apr 2026. Outside the seven main yards but worth keeping on the secondary-yard sweep going forward. May surface more candidates as the Chinese LNGC industry expands.
 
 ---
@@ -362,3 +402,4 @@ Stop and ask the user before proceeding when:
 - **rev 6** (2026-05-28): Repository migration. Output model changed from `/mnt/user-data/outputs/lng_carrier_candidate_vessels.xlsx` to one committed directory per discovery run under `batches/` (§2 param 5, §5). `present_files` reference in §4.11 replaced with "write notes.md and commit the batch directory." No research-rule changes — the four-ring source model, the §4.10 verification gate, and confidence labeling are unchanged from rev 5.
 - **rev 7** (2026-06-03): First production discovery batch (2026-06-03, since-May-1 window) surfaced three output conventions, now codified. §6.7 — the seven yard-location columns (`Shipbuilder yard country/area` + [ref]; `Yard location latitude` / `longitude` / `plus code` / `accuracy` + lat/lon [ref]) are autofilled by `build_workbook.py` from an existing backend row for the same (normalized) shipbuilder, and left blank when the shipbuilder is new; they are never researched and must not appear in `candidates.json` row_data. §6.8 / §5.2 — cross-reference the new [ref]-Fill SOP §4.14 (owner/charterer names use the backend's existing short stylization, e.g. `COSCO` not `Cosco Shipping Energy Transportation`) and §4.15 (multiple URLs in one `[ref]` cell join with `", "`, not a newline). The 2026-06-03 batch was rebuilt under these rules. No changes to the four-ring model, the §4.10 verification gate, or confidence labeling.
 - **rev 8** (2026-09-23): Audit/housekeeping pass. §4.6/§4.8/§6.3 — replaced the rev-12-era "2 cross-checked sources, or 1 explicit/primary" confidence ladder with [ref]-Fill SOP §5 rev 28's rule: the grade is computed from what the §3.8c gate actually verified (one live pass on a keyed record or distinctive value = Green), not declared from source count or tier. §4.10 — replaced the stale `web_fetch` fallback with the real fetch ladder (`scripts/fetch.py`, `scripts/sweep.py`, IP-ban vs. bot-wall handling). §3.3/§3.4/§3.5 — reconciled the two conflicting Ring D definitions: the "charterer-program searches for the proposed bucket" list moved out of §3.3 (Ring C) into a rewritten §3.4, so Ring D now consistently means charterer/owner program searches everywhere in this doc, matching §4.7 and CLAUDE.md's router; the old §3.4 ("cross-references and indexes" — IGU, brokers, vessel databases, GTT) is relabeled §3.5, supplementary validation rather than a fifth ring. §4.3/§4.4 — "the May 2026 build script" pointers replaced with `scripts/normalize.py` and `scripts/csb_fetch.py`. Checked for live sandbox-era (`present_files`, `/mnt/user-data`) instructions — none found outside historical changelog entries. No change to the inclusion criteria, the four rings' actual source lists, or Rule F.
+- **rev 9** (2026-09-23): Search-budget discipline for parallel runs. New **§2 param 6** (search budget and stream fan-out) and new **§4.1a** — the web-search budget is a single per-session pool shared by the main loop and every subagent (Claude Code default 200, `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, raised to 600 in both `settings.json` profiles 2026-09-23); a fan-out divides it explicitly with a central reserve, states each stream's allotment in its prompt, requires `searches_used` back, spends searches only on discovery (a known URL goes through `scripts/fetch.py` at no cost), and orders search-dependent rings (B/C/D) ahead of file-backed enumeration streams. A stream that exhausts its allotment stops and reports rather than degrading into blind URL guessing. New **§7** pause-and-ask trigger for budget exhaustion with a ring still unswept, and a new **§8** tip on qualifying null results. Surfaced by the 2026-09-23 comprehensive pass: ~11 parallel streams, each making a locally reasonable 14-49 searches, collectively hit exactly 200; the 31 refused calls fell on Rings B/C/D, which shipped unswept behind an unqualified null. No change to the four rings, the inclusion criteria, the §4.10 gate or Rule F.

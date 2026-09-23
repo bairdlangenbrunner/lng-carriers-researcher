@@ -98,8 +98,11 @@ Triggers: "find new vessels", "discovery run", "gap analysis", "what's missing f
 "catch-up sweep", "comprehensive discovery" / "whole-orderbook reconciliation". SOP: DC.
 
 1. Confirm parameters per DC §2 — gap window, yard coverage, proposed-bucket threshold, FSRU
-   handling, output naming. **Do not skip**; discovery is sensitive to scope choices. A
+   handling, output naming, search budget. **Do not skip**; discovery is sensitive to scope choices. A
    comprehensive pass is not date-bounded (plan `2026-09-23_comprehensive-discovery.md`).
+   Before any research fan-out, divide the **shared per-session web-search budget** across the streams
+   (DC §4.1a) — it is one pool for the main loop and every subagent, not one per agent. A starved
+   stream stops and reports; it never finishes a ring on blind URL guesses.
 2. `pull_backend.py`; `dedup_index.py --pending <un-applied discovery batch dirs>` (hull / cluster /
    IMO / name indexes + stub rows, so pending candidates are not re-reported).
 3. Ring A — `csb_fetch.py <yard>` per yard in scope (`--all-yards --all-pages` for a comprehensive

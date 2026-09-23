@@ -117,7 +117,8 @@ every proposal, so `apply_batch.py` pre-fills `accept` from the gate's verdict.
 
 | Phase | Section | What |
 |---|---|---|
-| Parameters | DC §2 | Confirm gap window, yard coverage, threshold, FSRU handling, output name |
+| Parameters | DC §2 | Confirm gap window, yard coverage, threshold, FSRU handling, output name, **search budget / stream fan-out** (param 6, rev 9) |
+| Search budget | DC §4.1a (rev 9) | The web-search budget is ONE per-session pool shared by the main loop and every subagent (default 200, `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`, set to 600 in both `settings.json` 2026-09-23). Divide it explicitly before a fan-out, keep a central reserve, state each stream's allotment and require `searches_used` back; a known URL goes through `scripts/fetch.py` at no cost. A starved stream stops and reports — it never degrades into blind URL guessing (§7 trigger) |
 | Backend pull + indexes | DC §4.2-4.3 | Same as RF §3.0 + build two indexes |
 | Ring A (CSB) | DC §4.4 | Authoritative for on-order |
 | Ring B (regulatory) | DC §4.5 | Post-CSB leading edge — DART, KIND, Bursa, HKEX |
