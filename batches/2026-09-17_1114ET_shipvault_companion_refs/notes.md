@@ -73,3 +73,8 @@ later pushes and set to `reject`** (logged in `review_log.jsonl`, `via: reconcil
 - live 814, `Status [ref]` — batch 8 moved Status `active → on order` with the IGU 2026 PDF as
   sole ref (19:35 ET); the shipvault page this companion sat beside is no longer a Status ref, and
   the unit record itself says `active`.
+
+
+## Directed session write 2026-09-23 (AP §2d)
+
+On Baird's direction ("change the backend for 2 (I approve those), and for 3, put the refs in the backend too"), a session wrote 1 cell(s) straight to the sheet: T6 (Shipbuilder [ref], row 6). Verified on re-pull. Revert file: `directed_2026-09-23_revert.csv`; logged in `push_log.jsonl` as `claude session (directed)`.

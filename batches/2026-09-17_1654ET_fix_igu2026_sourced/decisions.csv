@@ -129,7 +129,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 288|Cargo type,fill,288,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
 371|Vessel type,fill,371,,Vessel type,G,False,accept,accept,conventional,"blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 3 fleet table, PD"
 371|Cargo type,fill,371,,Cargo type,G,False,accept,accept,membrane,"blank in backend; IGU prints 'Membrane' [IGU 2026 Appendix 3 fleet table, PDF p."
-371|Name,fill,371,,Name,Y,False,hold,hold,Al Kheesah,'Al-Kheesha' -> 'Al Kheesah': spelling only (`Al-Kheesha` vs IGU `Al Kheesah`) —
+371|Name,fill,371,,Name,Y,False,hold,accept,Al Kheesah,'Al-Kheesha' -> 'Al Kheesah': spelling only (`Al-Kheesha` vs IGU `Al Kheesah`) —
 371|Propulsion type,fill,371,,Propulsion type,G,False,accept,accept,X-DF,'ME-GA' -> 'X-DF': IGU changed its own value this edition (IGU 2025: 'ME-GA') [I
 432|Vessel type,fill,432,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 432|Delivery year,fill,432,,Delivery year,G,False,accept,accept,2026,backend 2025 cannot be right — IGU 2026 (fleet at end-2025) still had the vessel
@@ -357,7 +357,7 @@ id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_
 373|Vessel type,fill,373,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table
 375|Vessel type,fill,375,,Vessel type,G,False,accept,accept,icebreaker,"blank in backend; IGU prints 'Icebreaker' [IGU 2026 Appendix 3 fleet table, PDF "
 375|Cargo type,fill,375,,Cargo type,G,False,accept,accept,membrane,blank in backend; IGU prints 'Membrane'; batch 4 (data-fill) proposes the same v
-375|Propulsion type,fill,375,,Propulsion type,Y,False,hold,hold,TFDE,'DFDE' -> 'TFDE' per IGU 2026 — TFDE is not a value the backend uses today (DFDE
+375|Propulsion type,fill,375,,Propulsion type,Y,False,hold,accept,TFDE,'DFDE' -> 'TFDE' per IGU 2026 — TFDE is not a value the backend uses today (DFDE
 375|Status,fill,375,,Status,G,False,accept,accept,active,backend `on order`; IGU 2026 lists the vessel in the active fleet table (deliver
 375|Delivery year,fill,375,,Delivery year,G,False,accept,accept,2025,backend 2026 -> 2025 (IGU fleet table delivery year) [IGU 2026 Appendix 3 fleet 
 384|Vessel type,fill,384,,Vessel type,G,False,accept,accept,conventional,blank in backend; IGU prints 'Conventional' [IGU 2026 Appendix 4 orderbook table

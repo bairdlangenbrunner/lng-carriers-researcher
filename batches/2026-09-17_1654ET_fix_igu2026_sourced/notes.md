@@ -243,3 +243,8 @@ direction"` plus `via` and `directive` fields, so the audit trail says what actu
   `processed - incorporated`.
 - The batch stays `applied: false` in `review_batches.json` — the Arc7 cluster is in, the rest
   of the batch is not.
+
+
+## Directed session write 2026-09-23 (AP §2d)
+
+On Baird's direction ("change the backend for 2 (I approve those), and for 3, put the refs in the backend too"), a session wrote 2 cell(s) straight to the sheet: E915 (Name [ref], row 915), E916 (Name [ref], row 916). Verified on re-pull. Revert file: `directed_2026-09-23_revert.csv`; logged in `push_log.jsonl` as `claude session (directed)` — `Name [ref]` appended to, not replaced, so the shipvault refs stay.
