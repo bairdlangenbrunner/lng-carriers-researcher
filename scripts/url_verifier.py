@@ -86,6 +86,7 @@ from urllib.parse import quote, urlsplit
 
 from fetch import CHROME_UA as _DEFAULT_UA
 from fetch import Page, fetch_page
+from normalize import owner_aliases
 
 
 class CitationError(Exception):
@@ -1099,6 +1100,13 @@ def value_variants(value) -> list[str]:
     # ("has ordered", "shipbuilding contract"), never the tracker's status word.
     if v.lower() == "on order":
         out.update(_ORDERED_PHRASES)
+        return [s for s in out if s]
+
+    # Owners the backend abbreviates: the page prints the full name
+    # ("ADNOC L&S" -> "ADNOC Logistics & Services"). normalize._OWNER_ALIASES.
+    aliases = owner_aliases(v)
+    if aliases:
+        out.update(aliases)
         return [s for s in out if s]
 
     # Backend dates are DD-Mon-YYYY ("08-Jun-2026", "02-June-2026"); pages write

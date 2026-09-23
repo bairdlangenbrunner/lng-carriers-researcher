@@ -492,6 +492,15 @@ class TestCorroborates:
         assert "Hull 2598" in got and "H2598" in got and "2598" in got
         assert "042" not in value_variants("Hull 042 (Zvezda)")
 
+    def test_abbreviated_owner_matches_spelled_out_name(self):
+        got = value_variants("ADNOC L&S")
+        assert "ADNOC L&S" in got and "ADNOC Logistics & Services" in got
+        # one way only: a long value never picks up the bare abbreviation
+        assert "ADNOC L&S" not in value_variants("ADNOC Logistics & Services")
+        url = "https://example.com/csb"
+        seed(url, "200", _page("t", "Owner: ADNOC Logistics &amp; Services (UAE)"))
+        assert corroborates(url, "ADNOC L&S")[0] is True
+
     def test_price_abbreviations(self):
         assert "$250m" in value_variants("250000000")
         assert "250 million" in value_variants("$250,000,000")

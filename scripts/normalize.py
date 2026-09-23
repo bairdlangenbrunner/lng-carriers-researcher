@@ -160,6 +160,23 @@ _OWNER_DISPLAY = {
 }
 
 
+# Spelled-out names a page may print for an owner the backend writes in its
+# short form (the §3.8c gate, via url_verifier.value_variants): "ADNOC L&S" on
+# the sheet is "ADNOC Logistics & Services" in press and on CSB. Keyed by the
+# backend display form, expanded one way only — a long cell value never picks
+# up the bare abbreviation, which would match unrelated text.
+_OWNER_ALIASES = {
+    "ADNOC L&S": ["ADNOC Logistics & Services", "ADNOC Logistics and Services", "ADNOC Logistics"],
+    "NYK Line": ["Nippon Yusen Kaisha", "Nippon Yusen"],
+    "NYK": ["Nippon Yusen Kaisha", "Nippon Yusen"],
+    "MOL": ["Mitsui O.S.K. Lines", "Mitsui OSK Lines"],
+    "K Line": ["Kawasaki Kisen Kaisha", "K-Line"],
+    "MISC": ["MISC Berhad", "MISC Bhd"],
+    "CMES": ["China Merchants Energy Shipping"],
+    "CoolCo": ["Cool Company"],
+    "BGT LTD": ["Bonny Gas Transport"],
+}
+
 # Seeded owner -> Shipowner country/area, for the data-fill derivable autofill
 # (Data-fill SOP §5) when an owner has NO sibling row in the backend to copy a
 # country from. Populated as owner countries settle (sourced), parallel to
@@ -210,6 +227,10 @@ def display_owner(s: str) -> str:
     """
     return _OWNER_DISPLAY.get(normalize_owner(s), s)
 
+
+def owner_aliases(s: str) -> list[str]:
+    """Spelled-out page forms of a backend owner display name (``_OWNER_ALIASES``)."""
+    return list(_OWNER_ALIASES.get(str(s or "").strip(), []))
 
 def owner_country(owner_raw, backend_data=None, owner_idx=None, country_idx=None):
     """Preferred Shipowner country/area for an owner (Data-fill SOP §5).
