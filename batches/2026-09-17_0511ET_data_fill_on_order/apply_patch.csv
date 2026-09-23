@@ -667,10 +667,22 @@ set,1225,Shipowner country/area,Japan
 set,1225,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
 set,1226,Shipowner country/area,Japan
 set,1226,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,1218,Hull number,Hull 2803 (SHI)
+set,1218,Hull number [ref],"https://www.shipvault.com/ships/501831, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501831"
+set,1218,IMO number,1185077
+set,1218,IMO number [ref],"https://www.shipvault.com/ships/501831, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501831"
+set,1227,Shipowner,Purus Marine
+set,1227,Shipowner [ref],"https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/, https://www.shipvault.com/ships/501596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501596"
+set,1227,Hull number,Hull 2808 (SHI)
+set,1227,Hull number [ref],"https://www.shipvault.com/ships/501596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501596"
+set,1227,IMO number,1187609
+set,1227,IMO number [ref],"https://www.shipvault.com/ships/501596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501596"
 set,1219,Hull number,Hull 2628 (Hanwha)
 set,1219,Hull number [ref],"https://www.shipvault.com/ships/500549, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500549"
 set,1219,IMO number,1185144
 set,1219,IMO number [ref],"https://www.shipvault.com/ships/500549, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500549"
+set,1205,Hull number,Hull 2627 (Hanwha)
+set,1205,Hull number [ref],"https://www.shipvault.com/ships/495837, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/495837"
 set,67,Price,250000000
 set,67,Price [ref],https://lngprime.com/asia/dsme-scores-order-for-lng-carrier-duo-worth-about-500-million/64420/
 set,68,Price,250000000
@@ -679,14 +691,20 @@ set,1190,Propulsion type,X-DF
 set,1190,Propulsion type [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
 set,1190,Operator/charterer,Nigeria LNG
 set,1190,Operator/charterer [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1190,Cargo type,membrane
+set,1190,Cargo type [ref],https://en.portnews.ru/news/386141/
 set,1191,Propulsion type,X-DF
 set,1191,Propulsion type [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
 set,1191,Operator/charterer,Nigeria LNG
 set,1191,Operator/charterer [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1191,Cargo type,membrane
+set,1191,Cargo type [ref],https://en.portnews.ru/news/386141/
 set,1192,Propulsion type,X-DF
 set,1192,Propulsion type [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
 set,1192,Operator/charterer,Nigeria LNG
 set,1192,Operator/charterer [ref],"https://www.thisdaylive.com/2026/06/02/nlng-subsidiary-awards-contracts-for-three-newbuild-lng-vessels/, https://businessday.ng/news/article/nlng-affiliate-contracts-chinese-shipbuilders-for-3-lng-vessels/"
+set,1192,Cargo type,membrane
+set,1192,Cargo type [ref],https://en.portnews.ru/news/386141/
 set,207,Contract date,27-Sep-2023
 set,207,Contract date [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
 set,207,Price,229000000
@@ -789,6 +807,30 @@ set,223,Price,229000000
 set,223,Price [ref],https://lngprime.com/asia/qatarenergy-hd-hyundai-heavy-ink-3-9-billion-deal-for-17-lng-carriers/93096/
 set,223,Operator/charterer,QatarEnergy
 set,223,Operator/charterer [ref],"https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599"
+set,203,Price,260000000
+set,203,Price [ref],https://splash247.com/evalend-poised-to-enter-lng-trades/
+set,204,Price,260000000
+set,204,Price [ref],https://splash247.com/evalend-poised-to-enter-lng-trades/
+set,205,Contract date,20-Nov-2023
+set,205,Contract date [ref],https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/
+set,206,Contract date,20-Nov-2023
+set,206,Contract date [ref],https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/
+set,158,Contract date,01-Jul-2024
+set,158,Contract date [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
+set,158,Operator/charterer,ADNOC
+set,158,Operator/charterer [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
+set,159,Contract date,01-Jul-2024
+set,159,Contract date [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
+set,159,Operator/charterer,ADNOC
+set,159,Operator/charterer [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
+set,160,Contract date,01-Jul-2024
+set,160,Contract date [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
+set,160,Operator/charterer,ADNOC
+set,160,Operator/charterer [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
+set,161,Contract date,01-Jul-2024
+set,161,Contract date [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
+set,161,Operator/charterer,ADNOC
+set,161,Operator/charterer [ref],https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/
 set,507,Contract date,31-Aug-2023
 set,507,Contract date [ref],https://lngprime.com/asia/dsic-seals-700-million-lng-shipbuilding-deal-with-cosco-and-sinopec/90380/
 set,507,Price,233300000
@@ -817,6 +859,22 @@ set,1154,Operator/charterer,Cheniere
 set,1154,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
 set,1155,Operator/charterer,Cheniere
 set,1155,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/"
+set,1152,Propulsion type,X-DF
+set,1152,Propulsion type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
+set,1153,Propulsion type,X-DF
+set,1153,Propulsion type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
+set,1154,Propulsion type,X-DF
+set,1154,Propulsion type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
+set,1155,Propulsion type,X-DF
+set,1155,Propulsion type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
+set,1152,Cargo type,membrane
+set,1152,Cargo type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
+set,1153,Cargo type,membrane
+set,1153,Cargo type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
+set,1154,Cargo type,membrane
+set,1154,Cargo type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
+set,1155,Cargo type,membrane
+set,1155,Cargo type [ref],https://www.nyk.com/english/news/2026/20260205_01.html
 set,1201,Price,255000000
 set,1201,Price [ref],https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/
 set,1202,Price,255000000
@@ -833,6 +891,22 @@ set,1203,Operator/charterer,Cheniere
 set,1203,Operator/charterer [ref],"https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/"
 set,1204,Operator/charterer,Cheniere
 set,1204,Operator/charterer [ref],"https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/"
+set,1201,Propulsion type,X-DF
+set,1201,Propulsion type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
+set,1202,Propulsion type,X-DF
+set,1202,Propulsion type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
+set,1203,Propulsion type,X-DF
+set,1203,Propulsion type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
+set,1204,Propulsion type,X-DF
+set,1204,Propulsion type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
+set,1201,Cargo type,membrane
+set,1201,Cargo type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
+set,1202,Cargo type,membrane
+set,1202,Cargo type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
+set,1203,Cargo type,membrane
+set,1203,Cargo type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
+set,1204,Cargo type,membrane
+set,1204,Cargo type [ref],https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/
 set,193,Contract date,10-Aug-2022
 set,193,Contract date [ref],https://www.nyk.com/english/news/2022/20220810_01.html
 set,194,Contract date,10-Aug-2022
@@ -859,10 +933,48 @@ set,199,Operator/charterer,EnBW
 set,199,Operator/charterer [ref],"https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/"
 set,200,Operator/charterer,EnBW
 set,200,Operator/charterer [ref],"https://www.nyk.com/english/news/2023/20230516_03.html, https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/"
+set,197,Contract date,16-May-2023
+set,197,Contract date [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,198,Contract date,16-May-2023
+set,198,Contract date [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,199,Contract date,16-May-2023
+set,199,Contract date [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,200,Contract date,16-May-2023
+set,200,Contract date [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,197,Price,262000000
+set,197,Price [ref],https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/
+set,198,Price,262000000
+set,198,Price [ref],https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/
+set,199,Price,262000000
+set,199,Price [ref],https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/
+set,200,Price,262000000
+set,200,Price [ref],https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/
+set,197,Cargo type,membrane
+set,197,Cargo type [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,198,Cargo type,membrane
+set,198,Cargo type [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,199,Cargo type,membrane
+set,199,Cargo type [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,200,Cargo type,membrane
+set,200,Cargo type [ref],https://www.nyk.com/english/news/2023/20230516_03.html
+set,137,Operator/charterer,SeaRiver Maritime
+set,137,Operator/charterer [ref],https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/
+set,144,Operator/charterer,SeaRiver Maritime
+set,144,Operator/charterer [ref],https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/
+set,137,Contract date,30-Sep-2022
+set,137,Contract date [ref],https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/
+set,144,Contract date,30-Sep-2022
+set,144,Contract date [ref],https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/
 set,156,Operator/charterer,Petronas
 set,156,Operator/charterer [ref],"https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/"
 set,157,Operator/charterer,Petronas
 set,157,Operator/charterer [ref],"https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/"
+set,156,Contract date,01-Oct-2024
+set,156,Contract date [ref],https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/
+set,157,Contract date,01-Oct-2024
+set,157,Contract date [ref],https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/
+set,1206,Cargo type,membrane
+set,1206,Cargo type [ref],https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/
 set,1156,Price,251500000
 set,1156,Price [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
 set,1157,Price,251500000
@@ -871,10 +983,196 @@ set,1156,Cargo type,membrane
 set,1156,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
 set,1157,Cargo type,membrane
 set,1157,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/"
+set,1174,Price,252000000
+set,1174,Price [ref],https://www.rivieramm.com/news-content-hub/news-content-hub/purus-said-to-expand-gas-platform-with-single-lng-carrier-order-at-shi-88206
+set,1186,Price,245000000
+set,1186,Price [ref],https://splash247.com/sonangol-books-lng-carrier-newbuild-in-south-korea/
 set,201,Contract date,17-Jan-2023
 set,201,Contract date [ref],https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/
 set,201,Price,261000000
 set,201,Price [ref],https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/
+set,202,Contract date,17-Jan-2023
+set,202,Contract date [ref],https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/
+set,202,Price,261000000
+set,202,Price [ref],https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/
+set,476,Contract date,02-May-2023
+set,476,Contract date [ref],https://www.tradewindsnews.com/shipyards/dynagas-bumps-up-raft-of-super-size-lng-carrier-orders-at-hyundai/2-1-1443720
+set,258,Contract date,07-Jan-2022
+set,258,Contract date [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,258,Price,196000000
+set,258,Price [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,258,Operator/charterer,CNOOC Gas & Power
+set,258,Operator/charterer [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,259,Contract date,07-Jan-2022
+set,259,Contract date [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,259,Price,196000000
+set,259,Price [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,259,Operator/charterer,CNOOC Gas & Power
+set,259,Operator/charterer [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,260,Contract date,07-Jan-2022
+set,260,Contract date [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,260,Price,196000000
+set,260,Price [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,260,Operator/charterer,CNOOC Gas & Power
+set,260,Operator/charterer [ref],https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/
+set,270,Operator/charterer,QatarEnergy
+set,270,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/
+set,271,Operator/charterer,QatarEnergy
+set,271,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/
+set,272,Operator/charterer,QatarEnergy
+set,272,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/
+set,275,Operator/charterer,QatarEnergy
+set,275,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/
+set,308,Price,333000000
+set,308,Price [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,308,Operator/charterer,QatarEnergy
+set,308,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,309,Price,333000000
+set,309,Price [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,309,Operator/charterer,QatarEnergy
+set,309,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,310,Price,333000000
+set,310,Price [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,310,Operator/charterer,QatarEnergy
+set,310,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,311,Price,333000000
+set,311,Price [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,311,Operator/charterer,QatarEnergy
+set,311,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,312,Price,333000000
+set,312,Price [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,312,Operator/charterer,QatarEnergy
+set,312,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,313,Price,333000000
+set,313,Price [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,313,Operator/charterer,QatarEnergy
+set,313,Operator/charterer [ref],https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/
+set,139,Price,230000000
+set,139,Price [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,139,Operator/charterer,QatarEnergy
+set,139,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,143,Price,230000000
+set,143,Price [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,143,Operator/charterer,QatarEnergy
+set,143,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,146,Price,230000000
+set,146,Price [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,146,Operator/charterer,QatarEnergy
+set,146,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,150,Price,230000000
+set,150,Price [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,150,Operator/charterer,QatarEnergy
+set,150,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,152,Price,230000000
+set,152,Price [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,152,Operator/charterer,QatarEnergy
+set,152,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,154,Price,230000000
+set,154,Price [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,154,Operator/charterer,QatarEnergy
+set,154,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/
+set,711,Price,235000000
+set,711,Price [ref],https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/
+set,711,Operator/charterer,Shandong Marine Energy
+set,711,Operator/charterer [ref],https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/
+set,712,Price,235000000
+set,712,Price [ref],https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/
+set,712,Operator/charterer,Shandong Marine Energy
+set,712,Operator/charterer [ref],https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/
+set,639,Operator/charterer,Gaz-System
+set,639,Operator/charterer [ref],https://lngprime.com/asia/hd-hyundai-heavy-lays-keel-for-gdansk-fsru/173245/
+set,408,Capacity,174000
+set,408,Capacity [ref],"https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070"
+set,244,Contract date,26-Feb-2024
+set,244,Contract date [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,244,Price,270000000
+set,244,Price [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,245,Contract date,26-Feb-2024
+set,245,Contract date [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,245,Price,270000000
+set,245,Price [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,246,Contract date,26-Feb-2024
+set,246,Contract date [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,246,Price,270000000
+set,246,Price [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,247,Contract date,26-Feb-2024
+set,247,Contract date [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,247,Price,270000000
+set,247,Price [ref],https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/
+set,292,Contract date,29-Apr-2024
+set,292,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,292,Price,333000000
+set,292,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,292,Operator/charterer,QatarEnergy
+set,292,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,296,Contract date,29-Apr-2024
+set,296,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,296,Price,333000000
+set,296,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,296,Operator/charterer,QatarEnergy
+set,296,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,300,Contract date,29-Apr-2024
+set,300,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,300,Price,333000000
+set,300,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,300,Operator/charterer,QatarEnergy
+set,300,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,303,Contract date,29-Apr-2024
+set,303,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,303,Price,333000000
+set,303,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,303,Operator/charterer,QatarEnergy
+set,303,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,291,Contract date,29-Apr-2024
+set,291,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,291,Price,333000000
+set,291,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,291,Operator/charterer,QatarEnergy
+set,291,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,294,Contract date,29-Apr-2024
+set,294,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,294,Price,333000000
+set,294,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,294,Operator/charterer,QatarEnergy
+set,294,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,297,Contract date,29-Apr-2024
+set,297,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,297,Price,333000000
+set,297,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,297,Operator/charterer,QatarEnergy
+set,297,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,314,Capacity,174000
+set,314,Capacity [ref],"https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164"
+set,315,Capacity,174000
+set,315,Capacity [ref],"https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165"
+set,316,Capacity,174000
+set,316,Capacity [ref],"https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166"
+set,317,Capacity,174000
+set,317,Capacity [ref],"https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167"
+set,124,Contract date,22-Nov-2022
+set,124,Contract date [ref],https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/
+set,125,Contract date,22-Nov-2022
+set,125,Contract date [ref],https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/
+set,126,Contract date,22-Nov-2022
+set,126,Contract date [ref],https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/
+set,127,Contract date,22-Nov-2022
+set,127,Contract date [ref],https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/
+set,128,Contract date,22-Nov-2022
+set,128,Contract date [ref],https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/
+set,1150,Propulsion type,X-DF
+set,1150,Propulsion type [ref],https://www.stocktitan.net/sec-filings/SEAL/6-k-seapeak-llc-current-report-foreign-issuer-ccd346d28dcb.html
+set,1151,Propulsion type,X-DF
+set,1151,Propulsion type [ref],https://www.stocktitan.net/sec-filings/SEAL/6-k-seapeak-llc-current-report-foreign-issuer-ccd346d28dcb.html
+set,375,Operator/charterer,Arctic LNG 2 LLC
+set,375,Operator/charterer [ref],https://gcaptain.com/russian-lng-carrier-alexey-kosygin-makes-first-delivery-amid-looming-arctic-fleet-crunch/
+set,166,Capacity,174000
+set,166,Capacity [ref],https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/
+set,167,Capacity,174000
+set,167,Capacity [ref],https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/
+set,168,Capacity,174000
+set,168,Capacity [ref],https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/
+set,169,Capacity,174000
+set,169,Capacity [ref],https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/
 set,509,Operator/charterer,China Gas Hongda Energy Trading
 set,509,Operator/charterer [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
 set,510,Operator/charterer,China Gas Hongda Energy Trading
@@ -899,32 +1197,338 @@ set,511,Cargo type,membrane
 set,511,Cargo type [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
 set,512,Cargo type,membrane
 set,512,Cargo type [ref],https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/
+set,295,Contract date,29-Apr-2024
+set,295,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,295,Price,333000000
+set,295,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,295,Operator/charterer,QatarEnergy
+set,295,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,298,Contract date,29-Apr-2024
+set,298,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,298,Price,333000000
+set,298,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,298,Operator/charterer,QatarEnergy
+set,298,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,299,Contract date,29-Apr-2024
+set,299,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,299,Price,333000000
+set,299,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,299,Operator/charterer,QatarEnergy
+set,299,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,301,Contract date,29-Apr-2024
+set,301,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,301,Price,333000000
+set,301,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,301,Operator/charterer,QatarEnergy
+set,301,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,302,Contract date,29-Apr-2024
+set,302,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,302,Price,333000000
+set,302,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,302,Operator/charterer,QatarEnergy
+set,302,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,304,Contract date,29-Apr-2024
+set,304,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,304,Price,333000000
+set,304,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,304,Operator/charterer,QatarEnergy
+set,304,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,305,Contract date,29-Apr-2024
+set,305,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,305,Price,333000000
+set,305,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,305,Operator/charterer,QatarEnergy
+set,305,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,306,Contract date,29-Apr-2024
+set,306,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,306,Price,333000000
+set,306,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,306,Operator/charterer,QatarEnergy
+set,306,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,307,Contract date,29-Apr-2024
+set,307,Contract date [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,307,Price,333000000
+set,307,Price [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,307,Operator/charterer,QatarEnergy
+set,307,Operator/charterer [ref],https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/
+set,72,Capacity,174000
+set,72,Capacity [ref],"https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056"
+set,78,Capacity,174000
+set,78,Capacity [ref],"https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431"
 set,52,Operator/charterer,Chevron
 set,52,Operator/charterer [ref],"https://www.mol.co.jp/en/pr/2026/26044.html, https://cyprusshippingnews.com/2026/09/14/mol-worlds-first-lng-carrier-equipped-with-wind-challenger/"
 set,1041,Price,413000000
 set,1041,Price [ref],"https://lngprime.com/asia/hanwha-ocean-to-build-fsru-for-413-million/127579/, https://splash247.com/mol-confirms-order-for-singapore-frsu/"
+set,1041,Operator/charterer,MOL
+set,1041,Operator/charterer [ref],https://splash247.com/mol-confirms-order-for-singapore-frsu/
+set,1148,Price,254000000
+set,1148,Price [ref],https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931
+set,1149,Price,254000000
+set,1149,Price [ref],https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931
+set,1167,Operator/charterer,Tsakos Group
+set,1167,Operator/charterer [ref],"https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924, https://lngprime.com/asia/greeces-tsakos-orders-lng-carriers-in-south-korea/178882/"
+set,1167,Price,254000000
+set,1167,Price [ref],https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924
+set,1175,Price,250000000
+set,1175,Price [ref],https://www.imarinenews.com/31040.html
+set,1176,Price,250000000
+set,1176,Price [ref],https://www.imarinenews.com/31040.html
+set,1177,Price,250000000
+set,1177,Price [ref],https://www.imarinenews.com/31040.html
+set,1178,Price,250000000
+set,1178,Price [ref],https://www.imarinenews.com/31040.html
+set,1179,Price,250000000
+set,1179,Price [ref],https://www.imarinenews.com/31040.html
+set,1180,Price,250000000
+set,1180,Price [ref],https://www.imarinenews.com/31040.html
+set,1181,Price,250000000
+set,1181,Price [ref],https://www.imarinenews.com/31040.html
+set,1175,Cargo type,membrane
+set,1175,Cargo type [ref],https://www.imarinenews.com/31040.html
+set,1176,Cargo type,membrane
+set,1176,Cargo type [ref],https://www.imarinenews.com/31040.html
+set,1177,Cargo type,membrane
+set,1177,Cargo type [ref],https://www.imarinenews.com/31040.html
+set,1178,Cargo type,membrane
+set,1178,Cargo type [ref],https://www.imarinenews.com/31040.html
+set,1179,Cargo type,membrane
+set,1179,Cargo type [ref],https://www.imarinenews.com/31040.html
+set,1180,Cargo type,membrane
+set,1180,Cargo type [ref],https://www.imarinenews.com/31040.html
+set,1181,Cargo type,membrane
+set,1181,Cargo type [ref],https://www.imarinenews.com/31040.html
+set,1205,Price,250300000
+set,1205,Price [ref],https://splash247.com/knutsen-stacks-lng-orderbook-higher-with-hanwha-ocean-deal/
+set,99,Contract date,11-Nov-2024
+set,99,Contract date [ref],https://en.portnews.ru/news/370159/
+set,100,Contract date,11-Nov-2024
+set,100,Contract date [ref],https://en.portnews.ru/news/370159/
+set,74,Capacity,174000
+set,74,Capacity [ref],"https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097"
+set,1168,Cargo type,membrane
+set,1168,Cargo type [ref],https://www.marinelink.com/news/gtt-receives-order-jiangnan-shipyard-lng-535364
+set,1169,Cargo type,membrane
+set,1169,Cargo type [ref],https://www.marinelink.com/news/gtt-receives-order-jiangnan-shipyard-lng-535364
+set,141,Operator/charterer,QatarEnergy
+set,141,Operator/charterer [ref],https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/
+set,145,Operator/charterer,QatarEnergy
+set,145,Operator/charterer [ref],https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/
+set,148,Operator/charterer,QatarEnergy
+set,148,Operator/charterer [ref],https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/
+set,151,Operator/charterer,QatarEnergy
+set,151,Operator/charterer [ref],https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/
+set,153,Operator/charterer,QatarEnergy
+set,153,Operator/charterer [ref],https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/
+set,155,Operator/charterer,QatarEnergy
+set,155,Operator/charterer [ref],https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/
+set,80,Operator/charterer,QatarEnergy
+set,80,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,80,Contract date,24-Mar-2024
+set,80,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,80,Price,230000000
+set,80,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,81,Operator/charterer,QatarEnergy
+set,81,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,81,Contract date,24-Mar-2024
+set,81,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,81,Price,230000000
+set,81,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,82,Operator/charterer,QatarEnergy
+set,82,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,82,Contract date,24-Mar-2024
+set,82,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,82,Price,230000000
+set,82,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,83,Operator/charterer,QatarEnergy
+set,83,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,83,Contract date,24-Mar-2024
+set,83,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,83,Price,230000000
+set,83,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,84,Operator/charterer,QatarEnergy
+set,84,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,84,Contract date,24-Mar-2024
+set,84,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,84,Price,230000000
+set,84,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,85,Operator/charterer,QatarEnergy
+set,85,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,85,Contract date,24-Mar-2024
+set,85,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,85,Price,230000000
+set,85,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,86,Operator/charterer,QatarEnergy
+set,86,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,86,Contract date,24-Mar-2024
+set,86,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,86,Price,230000000
+set,86,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,88,Operator/charterer,QatarEnergy
+set,88,Operator/charterer [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,88,Contract date,24-Mar-2024
+set,88,Contract date [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,88,Price,230000000
+set,88,Price [ref],https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/
+set,273,Operator/charterer,CNOOC
+set,273,Operator/charterer [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,273,Contract date,28-Apr-2022
+set,273,Contract date [ref],https://www.nyk.com/english/news/2022/20220502_01.html
 set,273,Price,210000000
 set,273,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,273,Cargo type,membrane
+set,273,Cargo type [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,274,Operator/charterer,CNOOC
+set,274,Operator/charterer [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,274,Contract date,28-Apr-2022
+set,274,Contract date [ref],https://www.nyk.com/english/news/2022/20220502_01.html
 set,274,Price,210000000
 set,274,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,274,Cargo type,membrane
+set,274,Cargo type [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1092,Operator/charterer,CNOOC
+set,1092,Operator/charterer [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1092,Contract date,28-Apr-2022
+set,1092,Contract date [ref],https://www.nyk.com/english/news/2022/20220502_01.html
 set,1092,Price,210000000
 set,1092,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1092,Cargo type,membrane
+set,1092,Cargo type [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1224,Operator/charterer,CNOOC
+set,1224,Operator/charterer [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1224,Contract date,28-Apr-2022
+set,1224,Contract date [ref],https://www.nyk.com/english/news/2022/20220502_01.html
 set,1224,Price,210000000
 set,1224,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1224,Cargo type,membrane
+set,1224,Cargo type [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1225,Operator/charterer,CNOOC
+set,1225,Operator/charterer [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1225,Contract date,28-Apr-2022
+set,1225,Contract date [ref],https://www.nyk.com/english/news/2022/20220502_01.html
 set,1225,Price,210000000
 set,1225,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1225,Cargo type,membrane
+set,1225,Cargo type [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1226,Operator/charterer,CNOOC
+set,1226,Operator/charterer [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,1226,Contract date,28-Apr-2022
+set,1226,Contract date [ref],https://www.nyk.com/english/news/2022/20220502_01.html
 set,1226,Price,210000000
 set,1226,Price [ref],https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/
+set,1226,Cargo type,membrane
+set,1226,Cargo type [ref],https://www.nyk.com/english/news/2022/20220502_01.html
+set,164,Capacity,174000
+set,164,Capacity [ref],"https://www.shipvault.com/ships/491555, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/491555"
+set,1166,Price,255000000
+set,1166,Price [ref],https://splash247.com/celsius-seals-samsung-heavy-lng-carrier-order-2/
 set,1170,Price,257000000
 set,1170,Price [ref],https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/
 set,1171,Price,257000000
 set,1171,Price [ref],https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/
+set,515,Contract date,24-Sep-2022
+set,515,Contract date [ref],https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/
+set,515,Price,200000000
+set,515,Price [ref],https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/
+set,516,Contract date,24-Sep-2022
+set,516,Contract date [ref],https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/
+set,516,Price,200000000
+set,516,Price [ref],https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/
 set,129,Operator/charterer,MOL
 set,129,Operator/charterer [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
 set,129,Contract date,01-Feb-2023
 set,129,Contract date [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
 set,129,Price,248000000
 set,129,Price [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
+set,130,Operator/charterer,MOL
+set,130,Operator/charterer [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
+set,130,Contract date,01-Feb-2023
+set,130,Contract date [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
+set,130,Price,248000000
+set,130,Price [ref],https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/
+set,135,Contract date,10-Oct-2023
+set,135,Contract date [ref],https://lngprime.com/asia/samsung-heavy-secures-order-for-one-lng-carrier/94197/
+set,135,Price,260000000
+set,135,Price [ref],https://lngprime.com/asia/samsung-heavy-secures-order-for-one-lng-carrier/94197/
+set,133,Operator/charterer,Chevron
+set,133,Operator/charterer [ref],https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/
+set,133,Contract date,13-Jun-2023
+set,133,Contract date [ref],https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/
+set,133,Price,254500000
+set,133,Price [ref],https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/
+set,134,Operator/charterer,Chevron
+set,134,Operator/charterer [ref],https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/
+set,134,Contract date,13-Jun-2023
+set,134,Contract date [ref],https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/
+set,134,Price,254500000
+set,134,Price [ref],https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/
+set,1209,IMO number,1182348
+set,1209,IMO number [ref],"https://www.shipvault.com/ships/500595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500595"
+set,1209,Hull number,Hull 2798 (SHI)
+set,1209,Hull number [ref],"https://www.shipvault.com/ships/500595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500595"
+set,1210,IMO number,1182350
+set,1210,IMO number [ref],"https://www.shipvault.com/ships/500596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500596"
+set,1210,Hull number,Hull 2799 (SHI)
+set,1210,Hull number [ref],"https://www.shipvault.com/ships/500596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500596"
+set,1211,IMO number,1182362
+set,1211,IMO number [ref],"https://www.shipvault.com/ships/500597, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500597"
+set,1211,Hull number,Hull 2800 (SHI)
+set,1211,Hull number [ref],"https://www.shipvault.com/ships/500597, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500597"
+set,1220,IMO number,1185027
+set,1220,IMO number [ref],"https://www.shipvault.com/ships/501592, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501592"
+set,1220,Hull number,Hull H2954
+set,1220,Hull number [ref],"https://www.shipvault.com/ships/501592, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501592"
+set,1221,IMO number,1185039
+set,1221,IMO number [ref],"https://www.shipvault.com/ships/501593, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501593"
+set,1221,Hull number,Hull H2955
+set,1221,Hull number [ref],"https://www.shipvault.com/ships/501593, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501593"
+set,1222,IMO number,1185041
+set,1222,IMO number [ref],"https://www.shipvault.com/ships/501594, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501594"
+set,1222,Hull number,Hull H2956
+set,1222,Hull number [ref],"https://www.shipvault.com/ships/501594, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501594"
+set,1223,IMO number,1185053
+set,1223,IMO number [ref],"https://www.shipvault.com/ships/501595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501595"
+set,1223,Hull number,Hull H2957
+set,1223,Hull number [ref],"https://www.shipvault.com/ships/501595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501595"
+set,1201,IMO number,1180778
+set,1201,IMO number [ref],"https://www.shipvault.com/ships/502026, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502026"
+set,1201,Hull number,Hull 3639 (HDHHI)
+set,1201,Hull number [ref],"https://www.shipvault.com/ships/502026, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502026"
+set,1202,IMO number,1180780
+set,1202,IMO number [ref],"https://www.shipvault.com/ships/502027, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502027"
+set,1202,Hull number,Hull 3640 (HDHHI)
+set,1202,Hull number [ref],"https://www.shipvault.com/ships/502027, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502027"
+set,1203,IMO number,1180792
+set,1203,IMO number [ref],"https://www.shipvault.com/ships/502028, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502028"
+set,1203,Hull number,Hull 3641 (HDHHI)
+set,1203,Hull number [ref],"https://www.shipvault.com/ships/502028, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502028"
+set,1204,IMO number,1180807
+set,1204,IMO number [ref],"https://www.shipvault.com/ships/502029, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502029"
+set,1204,Hull number,Hull 3642 (HDHHI)
+set,1204,Hull number [ref],"https://www.shipvault.com/ships/502029, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502029"
+set,1214,IMO number,1190125
+set,1214,IMO number [ref],"https://www.shipvault.com/ships/501818, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501818"
+set,1214,Hull number,Hull 3659 (HDHHI)
+set,1214,Hull number [ref],"https://www.shipvault.com/ships/501818, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501818"
+set,1215,IMO number,1190137
+set,1215,IMO number [ref],"https://www.shipvault.com/ships/501819, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501819"
+set,1215,Hull number,Hull 3660 (HDHHI)
+set,1215,Hull number [ref],"https://www.shipvault.com/ships/501819, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501819"
+set,1212,IMO number,1182013
+set,1212,IMO number [ref],"https://www.shipvault.com/ships/500598, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500598"
+set,1212,Hull number,Hull 8358 (HSHI)
+set,1212,Hull number [ref],"https://www.shipvault.com/ships/500598, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500598"
+set,1213,IMO number,1182025
+set,1213,IMO number [ref],"https://www.shipvault.com/ships/500599, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500599"
+set,1213,Hull number,Hull 8359 (HSHI)
+set,1213,Hull number [ref],"https://www.shipvault.com/ships/500599, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500599"
+set,1189,IMO number,1186837
+set,1189,IMO number [ref],"https://www.shipvault.com/ships/502043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502043"
+set,1189,Hull number,Hull 8360 (HSHI)
+set,1189,Hull number [ref],"https://www.shipvault.com/ships/502043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502043"
+set,1216,IMO number,1066245
+set,1216,IMO number [ref],"https://www.shipvault.com/ships/462722, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462722"
+set,1217,IMO number,1066257
+set,1217,IMO number [ref],"https://www.shipvault.com/ships/462723, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462723"
 set,324,Hull number,Hull 8199 (HSHI)
 set,324,Hull number [ref],"https://www.shipvault.com/ships/457557, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/457557"
 set,372,Hull number,Hull 2560 (Hanwha)
@@ -951,6 +1555,12 @@ set,976,Hull number,Hull 2632 (HSHI)
 set,976,Hull number [ref],"https://www.shipvault.com/ships/456918, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456918"
 set,978,Hull number,Hull 2633 (SHI)
 set,978,Hull number [ref],"https://www.shipvault.com/ships/456919, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456919"
+set,102,Capacity,174000
+set,102,Capacity [ref],"https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115"
+set,103,Capacity,174000
+set,103,Capacity [ref],"https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116"
+set,250,Capacity,180000
+set,250,Capacity [ref],"https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159"
 set,387,Hull number,Hull 8207 (HSHI)
 set,387,Hull number [ref],"https://www.shipvault.com/ships/465071, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465071"
 set,408,Hull number,Hull 8206 (HSHI)
@@ -1002,6 +1612,8 @@ set,220,Price currency,USD
 set,221,Price currency,USD
 set,222,Price currency,USD
 set,223,Price currency,USD
+set,203,Price currency,USD
+set,204,Price currency,USD
 set,507,Price currency,USD
 set,519,Price currency,USD
 set,1152,Price currency,USD
@@ -1015,23 +1627,109 @@ set,1204,Price currency,USD
 set,193,Price currency,USD
 set,194,Price currency,USD
 set,195,Price currency,USD
+set,197,Price currency,USD
+set,198,Price currency,USD
+set,199,Price currency,USD
+set,200,Price currency,USD
 set,1156,Price currency,USD
 set,1157,Price currency,USD
+set,1174,Price currency,USD
+set,1186,Price currency,USD
 set,201,Price currency,USD
+set,202,Price currency,USD
+set,258,Price currency,USD
+set,259,Price currency,USD
+set,260,Price currency,USD
+set,308,Price currency,USD
+set,309,Price currency,USD
+set,310,Price currency,USD
+set,311,Price currency,USD
+set,312,Price currency,USD
+set,313,Price currency,USD
+set,139,Price currency,USD
+set,143,Price currency,USD
+set,146,Price currency,USD
+set,150,Price currency,USD
+set,152,Price currency,USD
+set,154,Price currency,USD
+set,711,Price currency,USD
+set,712,Price currency,USD
+set,408,Capacity units,cbm
+set,244,Price currency,USD
+set,245,Price currency,USD
+set,246,Price currency,USD
+set,247,Price currency,USD
+set,292,Price currency,USD
+set,296,Price currency,USD
+set,300,Price currency,USD
+set,303,Price currency,USD
+set,291,Price currency,USD
+set,294,Price currency,USD
+set,297,Price currency,USD
+set,314,Capacity units,cbm
+set,315,Capacity units,cbm
+set,316,Capacity units,cbm
+set,317,Capacity units,cbm
+set,166,Capacity units,cbm
+set,167,Capacity units,cbm
+set,168,Capacity units,cbm
+set,169,Capacity units,cbm
 set,509,Price currency,USD
 set,510,Price currency,USD
 set,511,Price currency,USD
 set,512,Price currency,USD
+set,295,Price currency,USD
+set,298,Price currency,USD
+set,299,Price currency,USD
+set,301,Price currency,USD
+set,302,Price currency,USD
+set,304,Price currency,USD
+set,305,Price currency,USD
+set,306,Price currency,USD
+set,307,Price currency,USD
+set,72,Capacity units,cbm
+set,78,Capacity units,cbm
 set,1041,Price currency,USD
+set,1148,Price currency,USD
+set,1149,Price currency,USD
+set,1167,Price currency,USD
+set,1175,Price currency,USD
+set,1176,Price currency,USD
+set,1177,Price currency,USD
+set,1178,Price currency,USD
+set,1179,Price currency,USD
+set,1180,Price currency,USD
+set,1181,Price currency,USD
+set,1205,Price currency,USD
+set,74,Capacity units,cbm
+set,80,Price currency,USD
+set,81,Price currency,USD
+set,82,Price currency,USD
+set,83,Price currency,USD
+set,84,Price currency,USD
+set,85,Price currency,USD
+set,86,Price currency,USD
+set,88,Price currency,USD
 set,273,Price currency,USD
 set,274,Price currency,USD
 set,1092,Price currency,USD
 set,1224,Price currency,USD
 set,1225,Price currency,USD
 set,1226,Price currency,USD
+set,164,Capacity units,cbm
+set,1166,Price currency,USD
 set,1170,Price currency,USD
 set,1171,Price currency,USD
+set,515,Price currency,USD
+set,516,Price currency,USD
 set,129,Price currency,USD
+set,130,Price currency,USD
+set,135,Price currency,USD
+set,133,Price currency,USD
+set,134,Price currency,USD
+set,102,Capacity units,cbm
+set,103,Capacity units,cbm
+set,250,Capacity units,cbm
 set,189,Price,214285714
 set,189,Price [ref],https://www.seatrade-maritime.com/lng/asian-consortium-orders-7-lng-carriers-hyundai-qatar
 set,189,Price currency,USD

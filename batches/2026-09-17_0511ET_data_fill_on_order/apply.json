@@ -4011,6 +4011,66 @@
       "confidence": "G"
     },
     {
+      "row_id": "1218",
+      "column": "Hull number",
+      "value": "Hull 2803 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1218",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501831, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501831",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1218",
+      "column": "IMO number",
+      "value": "1185077",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1218",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501831, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501831",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "Shipowner",
+      "value": "Purus Marine",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "Shipowner [ref]",
+      "value": "https://lngprime.com/asia/south-koreas-samsung-heavy-clinches-another-lng-carrier-order/188654/, https://www.shipvault.com/ships/501596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501596",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "Hull number",
+      "value": "Hull 2808 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501596",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "IMO number",
+      "value": "1187609",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1227",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501596",
+      "confidence": "G"
+    },
+    {
       "row_id": "1219",
       "column": "Hull number",
       "value": "Hull 2628 (Hanwha)",
@@ -4035,6 +4095,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "1205",
+      "column": "Hull number",
+      "value": "Hull 2627 (Hanwha)",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1205",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/495837, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/495837",
+      "confidence": "Y"
+    },
+    {
       "row_id": "67",
       "column": "Price",
       "value": "250000000",
@@ -4083,6 +4155,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "1190",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1190",
+      "column": "Cargo type [ref]",
+      "value": "https://en.portnews.ru/news/386141/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "1191",
       "column": "Propulsion type",
       "value": "X-DF",
@@ -4107,6 +4191,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "1191",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1191",
+      "column": "Cargo type [ref]",
+      "value": "https://en.portnews.ru/news/386141/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "1192",
       "column": "Propulsion type",
       "value": "X-DF",
@@ -4131,6 +4227,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "1192",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1192",
+      "column": "Cargo type [ref]",
+      "value": "https://en.portnews.ru/news/386141/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "207",
       "column": "Contract date",
       "value": "27-Sep-2023",
@@ -4740,6 +4848,150 @@
       "row_id": "223",
       "column": "Operator/charterer [ref]",
       "value": "https://www.offshore-energy.biz/qatarenergy-chooses-nakilat-to-own-and-operate-up-to-25-newbuild-lng-carriers/, https://www.rivieramm.com/news-content-hub/news-content-hub/qatars-nakilat-to-order-up-to-25-lng-carriers-79599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "203",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "203",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/evalend-poised-to-enter-lng-trades/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "204",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "204",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/evalend-poised-to-enter-lng-trades/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "205",
+      "column": "Contract date",
+      "value": "20-Nov-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "205",
+      "column": "Contract date [ref]",
+      "value": "https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "206",
+      "column": "Contract date",
+      "value": "20-Nov-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "206",
+      "column": "Contract date [ref]",
+      "value": "https://splash247.com/evalend-shipping-doubles-up-on-lng-carrier-orders/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Contract date",
+      "value": "01-Jul-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Contract date [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Operator/charterer",
+      "value": "ADNOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "158",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Contract date",
+      "value": "01-Jul-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Contract date [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Operator/charterer",
+      "value": "ADNOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "159",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Contract date",
+      "value": "01-Jul-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Contract date [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Operator/charterer",
+      "value": "ADNOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "160",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Contract date",
+      "value": "01-Jul-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Contract date [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Operator/charterer",
+      "value": "ADNOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "161",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/adnoc-ls-orders-eight-lng-carriers-from-south-korean-shipyards/",
       "confidence": "G"
     },
     {
@@ -4911,6 +5163,102 @@
       "confidence": "G"
     },
     {
+      "row_id": "1152",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1152",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1152",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1152",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1153",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1154",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1155",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2026/20260205_01.html",
+      "confidence": "Y"
+    },
+    {
       "row_id": "1201",
       "column": "Price",
       "value": "255000000",
@@ -5005,6 +5353,102 @@
       "column": "Operator/charterer [ref]",
       "value": "https://lngprime.com/asia/hd-hyundai-heavy-clinches-1-billion-lng-carrier-order/179423/, https://splash247.com/nyk-and-ocean-yield-expand-lng-carrier-series-to-eight-ships/",
       "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1201",
+      "column": "Cargo type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1202",
+      "column": "Cargo type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1203",
+      "column": "Cargo type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1204",
+      "column": "Cargo type [ref]",
+      "value": "https://www.offshore-energy.biz/us-lng-giant-exercises-option-for-more-newbuild-vessel-charters-from-ocean-yield-and-nyk/",
+      "confidence": "Y"
     },
     {
       "row_id": "193",
@@ -5163,6 +5607,198 @@
       "confidence": "G"
     },
     {
+      "row_id": "197",
+      "column": "Contract date",
+      "value": "16-May-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Contract date",
+      "value": "16-May-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Contract date",
+      "value": "16-May-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Contract date",
+      "value": "16-May-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Price",
+      "value": "262000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Price",
+      "value": "262000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "198",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Price",
+      "value": "262000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "199",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Price",
+      "value": "262000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "200",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-clinches-contracts-for-six-lng-carriers-worth-about-1-6-billion/80510/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "197",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "197",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "198",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "198",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "199",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "199",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "200",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "200",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2023/20230516_03.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "137",
+      "column": "Operator/charterer",
+      "value": "SeaRiver Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "137",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "144",
+      "column": "Operator/charterer",
+      "value": "SeaRiver Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "144",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "137",
+      "column": "Contract date",
+      "value": "30-Sep-2022",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "137",
+      "column": "Contract date [ref]",
+      "value": "https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "144",
+      "column": "Contract date",
+      "value": "30-Sep-2022",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "144",
+      "column": "Contract date [ref]",
+      "value": "https://www.offshore-energy.biz/misc-orders-lng-carrier-duo-secures-long-term-charter-deals-with-exxonmobil-unit/",
+      "confidence": "Y"
+    },
+    {
       "row_id": "156",
       "column": "Operator/charterer",
       "value": "Petronas",
@@ -5185,6 +5821,42 @@
       "column": "Operator/charterer [ref]",
       "value": "https://splash247.com/misc-confirms-lng-carrier-orders-in-south-korea/, https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/",
       "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Contract date",
+      "value": "01-Oct-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "156",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Contract date",
+      "value": "01-Oct-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "157",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/misc-orders-lng-carrier-duo-at-samsung-heavy-inks-charter-deal-with-petronas/127468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1206",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1206",
+      "column": "Cargo type [ref]",
+      "value": "https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/",
+      "confidence": "Y"
     },
     {
       "row_id": "1156",
@@ -5232,6 +5904,30 @@
       "row_id": "1157",
       "column": "Cargo type [ref]",
       "value": "https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1174",
+      "column": "Price",
+      "value": "252000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1174",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/news-content-hub/purus-said-to-expand-gas-platform-with-single-lng-carrier-order-at-shi-88206",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1186",
+      "column": "Price",
+      "value": "245000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1186",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/sonangol-books-lng-carrier-newbuild-in-south-korea/",
       "confidence": "G"
     },
     {
@@ -5259,6 +5955,1098 @@
       "confidence": "Y"
     },
     {
+      "row_id": "202",
+      "column": "Contract date",
+      "value": "17-Jan-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "202",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "202",
+      "column": "Price",
+      "value": "261000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "202",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hyundai-heavy-to-build-lng-carrier-trio-worth-about-783-million/70995/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "476",
+      "column": "Contract date",
+      "value": "02-May-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "476",
+      "column": "Contract date [ref]",
+      "value": "https://www.tradewindsnews.com/shipyards/dynagas-bumps-up-raft-of-super-size-lng-carrier-orders-at-hyundai/2-1-1443720",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Contract date",
+      "value": "07-Jan-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Price",
+      "value": "196000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Operator/charterer",
+      "value": "CNOOC Gas & Power",
+      "confidence": "G"
+    },
+    {
+      "row_id": "258",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Contract date",
+      "value": "07-Jan-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Price",
+      "value": "196000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Operator/charterer",
+      "value": "CNOOC Gas & Power",
+      "confidence": "G"
+    },
+    {
+      "row_id": "259",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Contract date",
+      "value": "07-Jan-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Price",
+      "value": "196000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Operator/charterer",
+      "value": "CNOOC Gas & Power",
+      "confidence": "G"
+    },
+    {
+      "row_id": "260",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/chinas-hudong-clinches-contract-to-build-lng-carrier-sextet/38468/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "270",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "270",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "271",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "271",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "272",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "272",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "275",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-work-on-mols-lng-carrier-as-part-of-qatari-project/70973/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "308",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "308",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "308",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "308",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "309",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "309",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "309",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "309",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "310",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "310",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "310",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "310",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "311",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "311",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "311",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "311",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "312",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "312",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "312",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "312",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "313",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "313",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "313",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "313",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hudong-zhonghua-kicks-off-construction-on-first-qc-max-lng-carrier/188799/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "139",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "143",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "146",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "150",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "150",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "150",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "150",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "152",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "152",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "152",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "152",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "154",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-picks-shipowners-for-18-giant-lng-carriers/108605/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "711",
+      "column": "Price",
+      "value": "235000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "711",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "711",
+      "column": "Operator/charterer",
+      "value": "Shandong Marine Energy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "711",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "712",
+      "column": "Price",
+      "value": "235000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "712",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "712",
+      "column": "Operator/charterer",
+      "value": "Shandong Marine Energy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "712",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/chinas-jiangnan-to-build-lng-carrier-duo-for-470-million/77393/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "639",
+      "column": "Operator/charterer",
+      "value": "Gaz-System",
+      "confidence": "G"
+    },
+    {
+      "row_id": "639",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/hd-hyundai-heavy-lays-keel-for-gdansk-fsru/173245/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "408",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Capacity [ref]",
+      "value": "https://www.datocms-assets.com/146580/1783403747-igu-world-lng-report-2026.pdf, https://www.shipvault.com/ships/465070, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465070",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "244",
+      "column": "Contract date",
+      "value": "26-Feb-2024",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "244",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "244",
+      "column": "Price",
+      "value": "270000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "244",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Contract date",
+      "value": "26-Feb-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Price",
+      "value": "270000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "245",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "246",
+      "column": "Contract date",
+      "value": "26-Feb-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "246",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "246",
+      "column": "Price",
+      "value": "270000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "246",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Contract date",
+      "value": "26-Feb-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Price",
+      "value": "270000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "247",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/vessels/hyundai-samho-to-build-lng-carrier-quartet-for-1-08-billion/105722/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "292",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "292",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "292",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "292",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "292",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "292",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "296",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "296",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "296",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "296",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "296",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "296",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "300",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "300",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "300",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "300",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "300",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "300",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "303",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "303",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "303",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "303",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "303",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "303",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "291",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "291",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "291",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "291",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "291",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "291",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "294",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "294",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "294",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "294",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "294",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "294",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "297",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "297",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "297",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "297",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "297",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "297",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "314",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/490164, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "315",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/490165, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "316",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/490166, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+      "confidence": "G"
+    },
+    {
+      "row_id": "317",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "317",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/490167, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490167",
+      "confidence": "G"
+    },
+    {
+      "row_id": "124",
+      "column": "Contract date",
+      "value": "22-Nov-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "124",
+      "column": "Contract date [ref]",
+      "value": "https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "125",
+      "column": "Contract date",
+      "value": "22-Nov-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "125",
+      "column": "Contract date [ref]",
+      "value": "https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "126",
+      "column": "Contract date",
+      "value": "22-Nov-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "126",
+      "column": "Contract date [ref]",
+      "value": "https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "127",
+      "column": "Contract date",
+      "value": "22-Nov-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "127",
+      "column": "Contract date [ref]",
+      "value": "https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "128",
+      "column": "Contract date",
+      "value": "22-Nov-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "128",
+      "column": "Contract date [ref]",
+      "value": "https://www.seapeak.com/articles/seapeak-orders-five-lng-newbuilds-against-long-term-charters/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1150",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1150",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.stocktitan.net/sec-filings/SEAL/6-k-seapeak-llc-current-report-foreign-issuer-ccd346d28dcb.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1151",
+      "column": "Propulsion type",
+      "value": "X-DF",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1151",
+      "column": "Propulsion type [ref]",
+      "value": "https://www.stocktitan.net/sec-filings/SEAL/6-k-seapeak-llc-current-report-foreign-issuer-ccd346d28dcb.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "375",
+      "column": "Operator/charterer",
+      "value": "Arctic LNG 2 LLC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "375",
+      "column": "Operator/charterer [ref]",
+      "value": "https://gcaptain.com/russian-lng-carrier-alexey-kosygin-makes-first-delivery-amid-looming-arctic-fleet-crunch/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "166",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "166",
+      "column": "Capacity [ref]",
+      "value": "https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "167",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "167",
+      "column": "Capacity [ref]",
+      "value": "https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "168",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "168",
+      "column": "Capacity [ref]",
+      "value": "https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "169",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "169",
+      "column": "Capacity [ref]",
+      "value": "https://splash247.com/tms-cardiff-gas-and-celsius-tied-to-1-5bn-samsung-lng-orders/",
+      "confidence": "G"
+    },
+    {
       "row_id": "509",
       "column": "Operator/charterer",
       "value": "China Gas Hongda Energy Trading",
@@ -5400,6 +7188,354 @@
       "row_id": "512",
       "column": "Cargo type [ref]",
       "value": "https://lngprime.com/asia/dsic-to-build-two-lng-carriers-for-china-gas-jv/86496/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "295",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "295",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "295",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "295",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "295",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "295",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "298",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "298",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "298",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "298",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "298",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "298",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "299",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "299",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "299",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "299",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "299",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "299",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "301",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "301",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "301",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "301",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "301",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "301",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "302",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "302",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "302",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "302",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "302",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "302",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "304",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "304",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "304",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "304",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "304",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "304",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "305",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "305",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "305",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "305",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "305",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "305",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "306",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "306",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "306",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "306",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "306",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "306",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "307",
+      "column": "Contract date",
+      "value": "29-Apr-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "307",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "307",
+      "column": "Price",
+      "value": "333000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "307",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "307",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "307",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/qatarenergy-seals-6-billion-deal-with-chinese-shipbuilder-for-18-giant-lng-carriers/110901/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "72",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "72",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/465056, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/465056",
+      "confidence": "G"
+    },
+    {
+      "row_id": "78",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "78",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/469431, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/469431",
       "confidence": "G"
     },
     {
@@ -5427,6 +7563,690 @@
       "confidence": "G"
     },
     {
+      "row_id": "1041",
+      "column": "Operator/charterer",
+      "value": "MOL",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1041",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/mol-confirms-order-for-singapore-frsu/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1148",
+      "column": "Price",
+      "value": "254000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Price",
+      "value": "254000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1149",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1167",
+      "column": "Operator/charterer",
+      "value": "Tsakos Group",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1167",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924, https://lngprime.com/asia/greeces-tsakos-orders-lng-carriers-in-south-korea/178882/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1167",
+      "column": "Price",
+      "value": "254000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1167",
+      "column": "Price [ref]",
+      "value": "https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1175",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1175",
+      "column": "Price [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1176",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1176",
+      "column": "Price [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1177",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1177",
+      "column": "Price [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1178",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1178",
+      "column": "Price [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1179",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1179",
+      "column": "Price [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1180",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1180",
+      "column": "Price [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1181",
+      "column": "Price",
+      "value": "250000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1181",
+      "column": "Price [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1175",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1175",
+      "column": "Cargo type [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1176",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1176",
+      "column": "Cargo type [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1177",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1177",
+      "column": "Cargo type [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1178",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1178",
+      "column": "Cargo type [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1179",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1179",
+      "column": "Cargo type [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1180",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1180",
+      "column": "Cargo type [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1181",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1181",
+      "column": "Cargo type [ref]",
+      "value": "https://www.imarinenews.com/31040.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1205",
+      "column": "Price",
+      "value": "250300000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1205",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/knutsen-stacks-lng-orderbook-higher-with-hanwha-ocean-deal/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "99",
+      "column": "Contract date",
+      "value": "11-Nov-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "99",
+      "column": "Contract date [ref]",
+      "value": "https://en.portnews.ru/news/370159/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "100",
+      "column": "Contract date",
+      "value": "11-Nov-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "100",
+      "column": "Contract date [ref]",
+      "value": "https://en.portnews.ru/news/370159/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "74",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "74",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/470097, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/470097",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1168",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1168",
+      "column": "Cargo type [ref]",
+      "value": "https://www.marinelink.com/news/gtt-receives-order-jiangnan-shipyard-lng-535364",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1169",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1169",
+      "column": "Cargo type [ref]",
+      "value": "https://www.marinelink.com/news/gtt-receives-order-jiangnan-shipyard-lng-535364",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "141",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "141",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "145",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "148",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "148",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "151",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "151",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "153",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "153",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "155",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "155",
+      "column": "Operator/charterer [ref]",
+      "value": "https://splash247.com/shipowners-selected-for-19-qatarenergy-lng-newbuilds/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "80",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "81",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "82",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "83",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "84",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "85",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "86",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Operator/charterer",
+      "value": "QatarEnergy",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Contract date",
+      "value": "24-Mar-2024",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Price",
+      "value": "230000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "88",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/contracts-and-tenders/qatarenergy-nakilat-seal-charter-deals-for-25-lng-carriers/108165/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Operator/charterer",
+      "value": "CNOOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Contract date",
+      "value": "28-Apr-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "273",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
       "row_id": "273",
       "column": "Price",
       "value": "210000000",
@@ -5437,6 +8257,42 @@
       "column": "Price [ref]",
       "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
       "confidence": "Y"
+    },
+    {
+      "row_id": "273",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "273",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "274",
+      "column": "Operator/charterer",
+      "value": "CNOOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Contract date",
+      "value": "28-Apr-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "274",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
     },
     {
       "row_id": "274",
@@ -5451,6 +8307,42 @@
       "confidence": "Y"
     },
     {
+      "row_id": "274",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "274",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Operator/charterer",
+      "value": "CNOOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1092",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1092",
+      "column": "Contract date",
+      "value": "28-Apr-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1092",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
       "row_id": "1092",
       "column": "Price",
       "value": "210000000",
@@ -5461,6 +8353,42 @@
       "column": "Price [ref]",
       "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
       "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1092",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1224",
+      "column": "Operator/charterer",
+      "value": "CNOOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1224",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1224",
+      "column": "Contract date",
+      "value": "28-Apr-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1224",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
     },
     {
       "row_id": "1224",
@@ -5475,6 +8403,42 @@
       "confidence": "Y"
     },
     {
+      "row_id": "1224",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1224",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1225",
+      "column": "Operator/charterer",
+      "value": "CNOOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1225",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1225",
+      "column": "Contract date",
+      "value": "28-Apr-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1225",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
       "row_id": "1225",
       "column": "Price",
       "value": "210000000",
@@ -5487,6 +8451,42 @@
       "confidence": "Y"
     },
     {
+      "row_id": "1225",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1225",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Operator/charterer",
+      "value": "CNOOC",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1226",
+      "column": "Operator/charterer [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1226",
+      "column": "Contract date",
+      "value": "28-Apr-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1226",
+      "column": "Contract date [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "G"
+    },
+    {
       "row_id": "1226",
       "column": "Price",
       "value": "210000000",
@@ -5497,6 +8497,42 @@
       "column": "Price [ref]",
       "value": "https://splash247.com/nyk-orders-six-lng-carriers-at-hudong-zhonghua-for-cnooc-charter/",
       "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Cargo type",
+      "value": "membrane",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1226",
+      "column": "Cargo type [ref]",
+      "value": "https://www.nyk.com/english/news/2022/20220502_01.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "164",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "164",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/491555, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/491555",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1166",
+      "column": "Price",
+      "value": "255000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1166",
+      "column": "Price [ref]",
+      "value": "https://splash247.com/celsius-seals-samsung-heavy-lng-carrier-order-2/",
+      "confidence": "G"
     },
     {
       "row_id": "1170",
@@ -5521,6 +8557,54 @@
       "column": "Price [ref]",
       "value": "https://splash247.com/celsius-linked-to-fresh-lng-carrier-order-at-samsung-heavy/",
       "confidence": "Y"
+    },
+    {
+      "row_id": "515",
+      "column": "Contract date",
+      "value": "24-Sep-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "515",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "515",
+      "column": "Price",
+      "value": "200000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "515",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Contract date",
+      "value": "24-Sep-2022",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Price",
+      "value": "200000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "516",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/cmes-orders-another-lng-carrier-duo-at-dalian-shipbuilding-inks-deal-for-more-vessels/62263/",
+      "confidence": "G"
     },
     {
       "row_id": "129",
@@ -5557,6 +8641,546 @@
       "column": "Price [ref]",
       "value": "https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/",
       "confidence": "Y"
+    },
+    {
+      "row_id": "130",
+      "column": "Operator/charterer",
+      "value": "MOL",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "130",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "130",
+      "column": "Contract date",
+      "value": "01-Feb-2023",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "130",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "130",
+      "column": "Price",
+      "value": "248000000",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "130",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-to-build-lng-carrier-duo-for-about-496-million/72449/",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "135",
+      "column": "Contract date",
+      "value": "10-Oct-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-secures-order-for-one-lng-carrier/94197/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Price",
+      "value": "260000000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "135",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-secures-order-for-one-lng-carrier/94197/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Operator/charterer",
+      "value": "Chevron",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Contract date",
+      "value": "13-Jun-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Price",
+      "value": "254500000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "133",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Operator/charterer",
+      "value": "Chevron",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Operator/charterer [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Contract date",
+      "value": "13-Jun-2023",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Contract date [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Price",
+      "value": "254500000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "134",
+      "column": "Price [ref]",
+      "value": "https://lngprime.com/asia/samsung-heavy-clinches-order-for-lng-carrier-duo/83710/",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1209",
+      "column": "IMO number",
+      "value": "1182348",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1209",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/500595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500595",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1209",
+      "column": "Hull number",
+      "value": "Hull 2798 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1209",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/500595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500595",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1210",
+      "column": "IMO number",
+      "value": "1182350",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1210",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/500596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500596",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1210",
+      "column": "Hull number",
+      "value": "Hull 2799 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1210",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/500596, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500596",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1211",
+      "column": "IMO number",
+      "value": "1182362",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1211",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/500597, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500597",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1211",
+      "column": "Hull number",
+      "value": "Hull 2800 (SHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1211",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/500597, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500597",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1220",
+      "column": "IMO number",
+      "value": "1185027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1220",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501592, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501592",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1220",
+      "column": "Hull number",
+      "value": "Hull H2954",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1220",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501592, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501592",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1221",
+      "column": "IMO number",
+      "value": "1185039",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1221",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501593, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501593",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1221",
+      "column": "Hull number",
+      "value": "Hull H2955",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1221",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501593, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501593",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1222",
+      "column": "IMO number",
+      "value": "1185041",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1222",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501594, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501594",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1222",
+      "column": "Hull number",
+      "value": "Hull H2956",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1222",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501594, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501594",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1223",
+      "column": "IMO number",
+      "value": "1185053",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1223",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501595",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1223",
+      "column": "Hull number",
+      "value": "Hull H2957",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1223",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501595, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501595",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "IMO number",
+      "value": "1180778",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/502026, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "Hull number",
+      "value": "Hull 3639 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1201",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/502026, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502026",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "IMO number",
+      "value": "1180780",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/502027, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "Hull number",
+      "value": "Hull 3640 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1202",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/502027, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502027",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "IMO number",
+      "value": "1180792",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/502028, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502028",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "Hull number",
+      "value": "Hull 3641 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1203",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/502028, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502028",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "IMO number",
+      "value": "1180807",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/502029, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502029",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "Hull number",
+      "value": "Hull 3642 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1204",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/502029, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502029",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1214",
+      "column": "IMO number",
+      "value": "1190125",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1214",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501818, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501818",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1214",
+      "column": "Hull number",
+      "value": "Hull 3659 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1214",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501818, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501818",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1215",
+      "column": "IMO number",
+      "value": "1190137",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1215",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/501819, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501819",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1215",
+      "column": "Hull number",
+      "value": "Hull 3660 (HDHHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1215",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/501819, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/501819",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "IMO number",
+      "value": "1182013",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/500598, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500598",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "Hull number",
+      "value": "Hull 8358 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/500598, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500598",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "IMO number",
+      "value": "1182025",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/500599, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Hull number",
+      "value": "Hull 8359 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/500599, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/500599",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1189",
+      "column": "IMO number",
+      "value": "1186837",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1189",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/502043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502043",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1189",
+      "column": "Hull number",
+      "value": "Hull 8360 (HSHI)",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1189",
+      "column": "Hull number [ref]",
+      "value": "https://www.shipvault.com/ships/502043, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/502043",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "IMO number",
+      "value": "1066245",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1216",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/462722, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462722",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "IMO number",
+      "value": "1066257",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1217",
+      "column": "IMO number [ref]",
+      "value": "https://www.shipvault.com/ships/462723, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/462723",
+      "confidence": "G"
     },
     {
       "row_id": "324",
@@ -5712,6 +9336,42 @@
       "row_id": "978",
       "column": "Hull number [ref]",
       "value": "https://www.shipvault.com/ships/456919, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/456919",
+      "confidence": "G"
+    },
+    {
+      "row_id": "102",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "102",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/487115, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487115",
+      "confidence": "G"
+    },
+    {
+      "row_id": "103",
+      "column": "Capacity",
+      "value": "174000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "103",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/487116, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487116",
+      "confidence": "G"
+    },
+    {
+      "row_id": "250",
+      "column": "Capacity",
+      "value": "180000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "250",
+      "column": "Capacity [ref]",
+      "value": "https://www.shipvault.com/ships/487159, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/487159",
       "confidence": "G"
     },
     {
@@ -6021,6 +9681,18 @@
       "confidence": "G"
     },
     {
+      "row_id": "203",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "204",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
       "row_id": "507",
       "column": "Price currency",
       "value": "USD",
@@ -6099,6 +9771,30 @@
       "confidence": "Y"
     },
     {
+      "row_id": "197",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "198",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "199",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "200",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
       "row_id": "1156",
       "column": "Price currency",
       "value": "USD",
@@ -6111,9 +9807,249 @@
       "confidence": "G"
     },
     {
+      "row_id": "1174",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1186",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
       "row_id": "201",
       "column": "Price currency",
       "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "202",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "258",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "259",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "260",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "308",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "309",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "310",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "311",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "312",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "313",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "139",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "143",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "146",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "150",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "152",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "154",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "711",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "712",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "408",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "244",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "245",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "246",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "247",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "292",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "296",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "300",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "303",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "291",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "294",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "297",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "314",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "315",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "316",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "317",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "166",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "167",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "168",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "169",
+      "column": "Capacity units",
+      "value": "cbm",
       "confidence": "Y"
     },
     {
@@ -6141,10 +10077,196 @@
       "confidence": "G"
     },
     {
+      "row_id": "295",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "298",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "299",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "301",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "302",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "304",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "305",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "306",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "307",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "72",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "78",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
       "row_id": "1041",
       "column": "Price currency",
       "value": "USD",
       "confidence": "G"
+    },
+    {
+      "row_id": "1148",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1149",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1167",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1175",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1176",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1177",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1178",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1179",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1180",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1181",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1205",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "74",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "80",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "81",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "82",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "83",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "84",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "85",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "86",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "88",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
     },
     {
       "row_id": "273",
@@ -6183,6 +10305,18 @@
       "confidence": "Y"
     },
     {
+      "row_id": "164",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1166",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
       "row_id": "1170",
       "column": "Price currency",
       "value": "USD",
@@ -6195,9 +10329,63 @@
       "confidence": "Y"
     },
     {
+      "row_id": "515",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "516",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
       "row_id": "129",
       "column": "Price currency",
       "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "130",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "135",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "133",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "134",
+      "column": "Price currency",
+      "value": "USD",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "102",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "103",
+      "column": "Capacity units",
+      "value": "cbm",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "250",
+      "column": "Capacity units",
+      "value": "cbm",
       "confidence": "Y"
     },
     {
@@ -6690,8 +10878,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 1003,
-    "accepted": 600,
-    "hold": 403,
+    "accepted": 993,
+    "hold": 10,
     "reject": 0,
     "conflicts": 82
   }
