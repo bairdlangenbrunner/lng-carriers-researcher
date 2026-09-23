@@ -503,6 +503,22 @@ class TestCorroborates:
         seed(url, "200", _page("t", "Owner: ADNOC Logistics &amp; Services (UAE)"))
         assert corroborates(url, "ADNOC L&S")[0] is True
 
+    def test_multi_owner_cell_corroborates_per_component(self):
+        # "MOL, K Line" is two owners the backend abbreviates. _OWNER_ALIASES is
+        # keyed by single owner name, so the whole-cell lookup finds nothing and
+        # the token fallback drops "K" (len < 3) — the pair used to fail even
+        # though each component passes on its own.
+        url = "https://example.com/moz"
+        seed(url, "200", _page("t", "contracts with Mitsui O.S.K. Lines (five vessels) "
+                                    "and Kawasaki Kisen Kaisha (four vessels)"))
+        assert corroborates(url, "MOL")[0] is True
+        assert corroborates(url, "K Line")[0] is True
+        ok, reason = corroborates(url, "MOL, K Line")
+        assert ok is True and "components" in reason
+        # every component must be present — one absent owner still fails
+        assert corroborates(url, "MOL, K Line, Gazprom")[0] is False
+        assert corroborates(url, "MOL, Sovcomflot")[0] is False
+
     def test_price_abbreviations(self):
         assert "$250m" in value_variants("250000000")
         assert "250 million" in value_variants("$250,000,000")
