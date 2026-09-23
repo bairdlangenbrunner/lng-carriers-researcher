@@ -832,3 +832,51 @@ class TestHostPacing:
         assert slept == [30.0, 2.0]
         url_verifier._fetch("https://example.com/c")          # cached: no fetch, no wait
         assert slept == [30.0, 2.0]
+
+
+# --- Vessel type: article text, next to vessel wording (Baird 2026-09-23) ---
+
+_VT_FILLER = "<p>" + "The order was placed with the yard in Geoje this week. " * 6 + "</p>"
+
+
+def _vt_page(article, sidebar=""):
+    return (f"<html><head><title>t</title></head><body><nav><a href='/'>Home</a></nav>"
+            f"<article><h1>Order</h1>{_VT_FILLER}{article}</article>"
+            f"<div class='sidebar widget-area'>{sidebar}</div>"
+            f"<footer>conventional LNG carrier footer text</footer></body></html>")
+
+
+@pytest.mark.parametrize("article,sidebar,ok", [
+    ("<p>Two conventional 174,000 cbm LNG carriers.</p>", "", True),
+    ("<p>The LNG carriers are of conventional design.</p>", "", True),
+    ("<p>An 85% cut compared to conventional marine fuels on the new LNG carrier.</p>", "", False),
+    ("<p>Two 174,000 cbm LNG carriers.</p>",
+     "<ul><li><a href='/x'>Fuel switch: biofuel prices against conventionals</a></li>"
+     "<li>conventional LNG carriers see rates fall</li></ul>", False),
+    ("<p>Read <a href='/y'>conventional LNG carrier rates</a> here.</p>", "", False),
+])
+def test_vessel_type_counts_only_in_article_next_to_vessel_wording(article, sidebar, ok):
+    url = "https://news.example.com/vt"
+    seed(url, "200", _vt_page(article, sidebar))
+    got, reason = corroborates(url, "conventional", field="Vessel type")
+    assert got is ok, reason
+    if not ok:
+        assert reason.startswith("page does not contain")
+
+
+def test_vessel_type_self_noun_and_other_fields_unchanged():
+    url = "https://news.example.com/fsru"
+    seed(url, "200", _vt_page("<p>The FSRU arrived at the terminal.</p>"))
+    assert corroborates(url, "FSRU", field="Vessel type")[0]
+    # without the field the plain substring gate still applies (footer text counts)
+    url2 = "https://news.example.com/plain"
+    seed(url2, "200", _vt_page("<p>Two 174,000 cbm LNG carriers.</p>"))
+    assert corroborates(url2, "conventional")[0]
+    assert not corroborates(url2, "conventional", field="Vessel type")[0]
+
+
+def test_vessel_type_pdf_text_is_read_whole():
+    url = "https://example.com/report.pdf"
+    seed_page(url, "200", "Fleet overview: 12 conventional LNG carriers delivered in 2025.",
+              is_pdf=True)
+    assert corroborates(url, "conventional", field="Vessel type")[0]

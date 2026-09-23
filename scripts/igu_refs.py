@@ -147,7 +147,7 @@ def corroborates_cell(url: str, value, field: str = "", imo: str = "", table: Ig
     """`url_verifier.corroborates`, with an IGU report PDF held to what it prints for this
     row's IMO in this column. Any other URL: unchanged."""
     from url_verifier import corroborates
-    ok, reason = corroborates(url, value)
+    ok, reason = corroborates(url, value, field=field)
     ed = edition_of(url)
     if not ed or not field or not (ok or reason.startswith("page does not contain")):
         return ok, reason                                   # not IGU / dead / blocked / banned
