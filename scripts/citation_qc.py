@@ -8,11 +8,11 @@ the §3.8 verifier rather than a binary "200 or not":
 
     ok        live, not an error/interstitial page (health only — no content
               claim unless --corroborate)
-    blocked   401/403/429/5xx or a bot-wall / paywall interstitial with no
-              Wayback snapshot to confirm content. NOT dead (§3.8a) — an
-              environment block is not evidence about the page. Retry later,
-              or human-confirm off-band.
-    dead      404/410/transport failure, soft-error title, deep link that now
+    blocked   401/403/429/5xx, a bot-wall / paywall interstitial, or a
+              transport failure (HTTP 000) — with no Wayback snapshot to
+              confirm content. NOT dead (§3.8a) — an environment block is not
+              evidence about the page. Retry later, or human-confirm off-band.
+    dead      404/410, soft-error title, deep link that now
               redirects to the site root or to a different article. Candidate
               for replacement in a fix-mode batch.
     banned    a source the SOP forbids (GEM, abarrelfull, shorteners, search /
@@ -183,8 +183,9 @@ def main():
         results.append(row)
         print(f"  [{n}/{len(urls)}] {row['verdict']:<8} {row['status']:>3}  {u[:100]}", file=sys.stderr)
 
-    # Second look at every fresh `dead` verdict: HTTP 000 flaps and CDN
-    # hiccups flip on a retry, and `dead` is the grade that drops refs.
+    # Second look at every fresh `dead` verdict: CDN hiccups and soft-error
+    # pages flip on a retry, and `dead` is the grade that drops refs.
+    # (HTTP 000 grades `blocked`, never `dead` — url_verifier.classify.)
     recheck = [r for r in results if r["verdict"] == "dead" and r["url"] not in prior]
     if recheck:
         print(f"re-checking {len(recheck)} dead verdict(s) after a pause", file=sys.stderr)
