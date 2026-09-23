@@ -16,6 +16,8 @@ Per [ref]-Fill SOP §4.14, the display form must **match the backend's existing 
 |---|---|---|
 | `cosco-shipping-energy` | **`COSCO`** | Backend writes `COSCO` / `MOL, COSCO`; do NOT write `Cosco Shipping Energy Transportation`. |
 
+A short display form and the spelled-out name a page prints are the same owner for the §3.8c gate: `ADNOC L&S` on the sheet passes on a page that says `ADNOC Logistics & Services` (CSB, press). The pairs live in `_OWNER_ALIASES` in `scripts/normalize.py` (read by `url_verifier.value_variants`). They expand one way only (short → long), so a long cell value never matches a bare abbreviation. When a gate drops a ref only because the page spells the owner out, add the pair there. Don't drop the ref.
+
 ## Owner → country/area (data-fill derivable autofill)
 
 `Shipowner country/area` is a property of the owner, so the data-fill workflow (Data-fill SOP §5) fills a blank one by copying the **unambiguous** country shared by that owner's sibling rows in the backend — implemented as `owner_country()` in `scripts/normalize.py` (sibling-scan, with an `_OWNER_COUNTRY` seed for owners that have no sibling).
