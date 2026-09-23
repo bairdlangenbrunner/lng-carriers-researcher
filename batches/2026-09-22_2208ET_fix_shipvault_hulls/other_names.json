@@ -1,0 +1,38 @@
+{
+ "proposed": [],
+ "skipped": [
+  {
+   "row_id": "178",
+   "live_row": 1054,
+   "source": "",
+   "former": "Hull 3301 (HDHHI)",
+   "new": "Hull 3501 (HDHHI)",
+   "reason": "placeholder restyled as a placeholder"
+  },
+  {
+   "row_id": "314",
+   "live_row": 1075,
+   "source": "",
+   "former": "Hull Unknown 01 (HSHI)",
+   "new": "Hull 8327 (HSHI)",
+   "reason": "placeholder restyled as a placeholder"
+  },
+  {
+   "row_id": "315",
+   "live_row": 1076,
+   "source": "",
+   "former": "Hull Unknown 02 (HSHI)",
+   "new": "Hull 8328 (HSHI)",
+   "reason": "placeholder restyled as a placeholder"
+  },
+  {
+   "row_id": "316",
+   "live_row": 1077,
+   "source": "",
+   "former": "Hull Unknown 03 (HSHI)",
+   "new": "Hull 8329 (HSHI)",
+   "reason": "placeholder restyled as a placeholder"
+  }
+ ],
+ "gate": []
+}

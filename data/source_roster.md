@@ -41,7 +41,7 @@ Authoritative version: [ref]-Fill SOP §7. This file is for picking sources at q
 ## Tier 3 — Vessel databases (real IMOs and newbuilds pre-IMO)
 
 - VesselFinder
-- **shipvault.com** (`/ships/{id}` — the §6a.8 IMO tracker's first stop since 2026-09-16, see `scripts/imo_tracker.py`; open backend API, record carries hull / IMO / owner / yard / status / delivery / capacity and the verifier corroborates against it; indexes pre-delivery 1XXXXXX IMOs; **never a `Shipowner country/area` ref** — it carries the owner string and the vessel's *flag*, not the owner's base)
+- **shipvault.com** (`/ships/{id}` — the §6a.8 IMO tracker's first stop since 2026-09-16, see `scripts/imo_tracker.py`; open backend API, record carries hull / IMO / owner / yard / status / delivery / capacity and the verifier corroborates against it; indexes pre-delivery 1XXXXXX IMOs; **never a `Shipowner country/area` ref** — it carries the owner string and the vessel's *flag*, not the owner's base; **and never a `Shipowner` ref on a program fleet** — its `owner` is the commercial counterparty, so QatarEnergy, ADNOC, Novatek and K3 hulls come back as the charterer or manager (2026-09-22 sweep of all 212 shipvault-cited rows: Nakilat's own ships read `QATAR ENERGY`, MISC's three Samsung QatarEnergy hulls read `NAKILAT`, Smart LNG reads `NOVATEK`, scrapped rows read `BREAKERS`). A lead for Operator/charterer; the owner of such a hull comes from IGU or the charter-award press)
 - MarineTraffic / **marinetraffic.org** (the §6a.8 fallback for IMOs shipvault lacks; Cloudflare JS challenge cleared automatically by `scripts/fetch.py` + `cf_clearance.py`)
 - marinetraffic.com (delivered vessels with an AIS identity; verifier reads its `vesselInfo` JSON)
 - marinevesseltraffic.com

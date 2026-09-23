@@ -1,0 +1,242 @@
+{
+  "batch_label": "Fix — shipvault hull numbers and delivery years (2026-09-22 sweep leads)",
+  "reason": "The 2026-09-22 sweep of all 212 backend rows citing a shipvault page compared every shipvault-cited cell against the unit record the page loads. Five value defects survived triage: one wrong hull number on a row that cites the very record contradicting it (live row 1054, §3.8c), three 'Hull Unknown NN' placeholders whose hull numbers the record now carries (live rows 1075-1077), and two delivery years the record moves a year later (live rows 1076/1077, §4.18/§4.19). Live row 1078 keeps its placeholder (shipvault carries no hull number for it: name 'HULL 4', yardno 'NA'), and live row 937 (Al Sadaf) is left alone - shipvault's built=2026 is contradicted by its own delivered=2025-12-10 and by IGU 2026, which prints delivery 2025 for IMO 9972957, so the backend's 2025 stands.",
+  "corrections": [
+    {
+      "row_id": "178",
+      "_live_row": 1054,
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hull 3501 (HDHHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/477422",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+              "soft": false
+            }
+          ],
+          "note": "placeholder restyle: the cell's own cited record (unit 477422, IMO 1066568) carries yard no. 3501 at HD Hyundai Ulsan, not 3301",
+          "former_name": "skipped: placeholder restyled as a placeholder",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        },
+        {
+          "field": "Hull number",
+          "new_value": "Hull 3501 (HDHHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/477422",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/477422",
+              "soft": false
+            }
+          ],
+          "note": "same record: yardno 3501",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "314",
+      "_live_row": 1075,
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hull 8327 (HSHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490164",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+              "soft": false
+            }
+          ],
+          "note": "placeholder retired: unit 490164 carries yard no. 8327 at HD Hyundai Samho",
+          "former_name": "skipped: placeholder restyled as a placeholder",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        },
+        {
+          "field": "Hull number",
+          "new_value": "Hull 8327 (HSHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490164",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490164",
+              "soft": false
+            }
+          ],
+          "note": "same record: yardno 8327",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        }
+      ]
+    },
+    {
+      "row_id": "315",
+      "_live_row": 1076,
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hull 8328 (HSHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490165",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+              "soft": false
+            }
+          ],
+          "note": "placeholder retired: unit 490165 carries yard no. 8328 at HD Hyundai Samho",
+          "former_name": "skipped: placeholder restyled as a placeholder",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        },
+        {
+          "field": "Hull number",
+          "new_value": "Hull 8328 (HSHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490165",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+              "soft": false
+            }
+          ],
+          "note": "same record: yardno 8328",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        },
+        {
+          "field": "Delivery year",
+          "new_value": "2029",
+          "confidence": "Y",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490165",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490165",
+              "soft": false
+            }
+          ],
+          "note": "unit 490165 gives built 2029-01; the backend carries 2028",
+          "former_year": "2028",
+          "confidence_why": "RF §4.18: a delivery roll-forward wants a source besides the vessel database"
+        },
+        {
+          "field": "Previous delivery year(s)",
+          "new_value": "2028",
+          "gate_value": "2028",
+          "append_ref": true,
+          "confidence": "Y",
+          "refs": [],
+          "note": "former Delivery year 2028 (now proposed 2029) — decide with the Delivery year line; https://www.shipvault.com/ships/490165: page does not contain value '2028'; no ref prints the former year — [ref] left blank",
+          "confidence_why": "decided with its Delivery year line (RF §4.19); no ref survived the §3.8c gate"
+        },
+        {
+          "field": "Delivery delayed",
+          "new_value": "yes",
+          "confidence": "Y",
+          "refs": [],
+          "note": "derived: Delivery year 2028 -> 2029 — decide with the Delivery year line",
+          "confidence_why": "decided with its Delivery year line (RF §4.19); no ref survived the §3.8c gate"
+        }
+      ]
+    },
+    {
+      "row_id": "316",
+      "_live_row": 1077,
+      "cells": [
+        {
+          "field": "Name",
+          "new_value": "Hull 8329 (HSHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490166",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+              "soft": false
+            }
+          ],
+          "note": "placeholder retired: unit 490166 carries yard no. 8329 at HD Hyundai Samho",
+          "former_name": "skipped: placeholder restyled as a placeholder",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        },
+        {
+          "field": "Hull number",
+          "new_value": "Hull 8329 (HSHI)",
+          "confidence": "G",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490166",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+              "soft": false
+            }
+          ],
+          "note": "same record: yardno 8329",
+          "confidence_why": "a live record keyed to this vessel states the value"
+        },
+        {
+          "field": "Delivery year",
+          "new_value": "2029",
+          "confidence": "Y",
+          "refs": [
+            {
+              "url": "https://www.shipvault.com/ships/490166",
+              "soft": false
+            },
+            {
+              "url": "https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/490166",
+              "soft": false
+            }
+          ],
+          "note": "unit 490166 gives built 2029-02; the backend carries 2028",
+          "former_year": "2028",
+          "confidence_why": "RF §4.18: a delivery roll-forward wants a source besides the vessel database"
+        },
+        {
+          "field": "Previous delivery year(s)",
+          "new_value": "2028",
+          "gate_value": "2028",
+          "append_ref": true,
+          "confidence": "Y",
+          "refs": [],
+          "note": "former Delivery year 2028 (now proposed 2029) — decide with the Delivery year line; https://www.shipvault.com/ships/490166: page does not contain value '2028'; no ref prints the former year — [ref] left blank",
+          "confidence_why": "decided with its Delivery year line (RF §4.19); no ref survived the §3.8c gate"
+        },
+        {
+          "field": "Delivery delayed",
+          "new_value": "yes",
+          "confidence": "Y",
+          "refs": [],
+          "note": "derived: Delivery year 2028 -> 2029 — decide with the Delivery year line",
+          "confidence_why": "decided with its Delivery year line (RF §4.19); no ref survived the §3.8c gate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 2026-09-17 10:17 ET — sep-17-pass, combined results
 
-Not a research batch. A read-only roll-up of the sep-17-pass batches (fourteen as of 2026-09-21;
+Not a research batch. A read-only roll-up of the sep-17-pass batches (fifteen as of 2026-09-22;
 see `docs/plans/2026-09-17_sep-17-pass_summary.md`) into one workbook and one shareable report
 page. Since the 2026-09-21 rebuild every line also carries whether the pulled backend already
 holds it, so the workbook is a snapshot of where the pass stands (landed / open accept / hold /
@@ -8,7 +8,7 @@ reject). Nothing is applied *from* here; apply still runs per batch through the 
 
 ## Contents
 
-- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-21_2328ET.xlsx`) — the
+- `lng_carrier_sep-17-pass_results_<YYYY-MM-DD>_<HHMM>ET.xlsx` (current: `…_2026-09-22_2214ET.xlsx`) — the
   name carries the build date and US Eastern time; each rebuild writes a new name and removes
   the previous file (git keeps it). 26 sheets. `all_proposals` is every proposed
   change (1,425 lines: 861 accept / 564 hold by default; 688 G / 737 Y) with **live sheet
@@ -163,7 +163,7 @@ reject). Nothing is applied *from* here; apply still runs per batch through the 
 - **The living workbook on Drive (2026-09-21 23:28 ET).** This workbook now has a permanent copy
   on the work Drive that keeps itself current: **living-workbook-for-update**
   ([Sheet](https://docs.google.com/spreadsheets/d/1f1----zCM-qxND3jjf4wEZHfkGLN-TuwOgZq-lGcEec/edit),
-  folder `claude-output`), a native Google Sheet converted from `…_2026-09-21_2328ET.xlsx` so its
+  folder `claude-output`), a native Google Sheet converted from `…_2026-09-22_2214ET.xlsx` so its
   `processed` cells can be written one at a time; it still downloads as .xlsx. Every **sync
   backend** and **push changes** in the review app mirrors the current decisions into it
   (`review_app/living.py`, AP §2c): `processed - incorporated` / `processed - rejected` /
@@ -173,3 +173,10 @@ reject). Nothing is applied *from* here; apply still runs per batch through the 
   nothing else — not the backend, not another column — and the file id is recorded in
   `data/living_workbook.json`. **Rebuild it (`python review_app/living.py --rebuild`), never
   `--create`**, after the next combined rebuild: same URL, no second copy on the Drive.
+- **Batch 16 folded in (2026-09-22 22:14 ET).** `2026-09-22_2208ET_fix_shipvault_hulls` (tab
+  `b16_shipvault_hull_rows`, 14 lines: 8 accept / 6 hold) — the four shipvault sweep leads.
+  Workbook `…_2026-09-22_2214ET.xlsx`: **2,334 proposals**. Its 8 Green cells were written to the
+  backend the same evening under AP §2d and verified, so they come in already `landed` /
+  `processed - incorporated`; the 6 Yellow delivery lines (rows 1076/1077, §4.18-capped) stay on
+  hold for review. The living workbook was rebuilt from this file (same id/URL) and a following
+  `--sync` wrote 0 cells, as expected — the rebuild already carried the same `processed` values.

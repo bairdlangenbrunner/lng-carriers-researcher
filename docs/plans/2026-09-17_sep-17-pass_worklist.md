@@ -1,4 +1,4 @@
-# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-22 22:30 ET)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-22 22:45 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
@@ -42,8 +42,10 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    at Baird's directive (359 lines, `via: bulk:greens-rev28`), Baird decided the rest and pushed.
    `verify_apply.py`: 1,811 landed, 1 mismatch (live 1004 `Capacity [ref]` carries the IGU 2026 PDF
    alone, from batch 8 — value correct, left as is). Its 10 remaining holds (Vessel type / Cargo type)
-   are already in the backend via batch 8. **The review queue now holds only batch 3's 12 discovery
-   new rows** — added to the sheet by hand.
+   are already in the backend via batch 8. **The review queue now holds batch 3's 12 discovery
+   new rows** — added to the sheet by hand — **and batch 16's 6 delivery lines** (rows 1076/1077:
+   `Delivery year` 2028 → 2029 + their `Previous delivery year(s)` / `Delivery delayed` companions,
+   Y-capped by RF §4.18 on shipvault alone; its 8 Green Name / Hull number cells are already in).
 3. **Decisions that are not a hold line** (§1, §1b, §1c): Hanwha Philly duplicates 1083 ↔ 1085 and
    1203 ↔ 1086 (delete by hand if you agree — duplicates are yours to remove); the proposed
    bucket; batch 8's 8 owner / builder names; and the manual-review lists of batches 1 and 2.
@@ -117,9 +119,10 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
 - The research is done. Twelve batches are merged to main (PRs #11–#25); every one that gets
   applied (all but 7) has `digest.md`, `decisions.csv` and offset-proof apply artifacts.
 - Combined workbook (name = build date + ET time; newest file in the dir is current):
-  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-21_2328ET.xlsx`
-  — rebuilt 2026-09-21 23:28 ET from the reconciled state: 26 sheets, all fourteen proposal batches,
-  2,320 proposals (1,797 landed / 78 open accept / 441 hold / 4 reject), each line with its live
+  `batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-22_2214ET.xlsx`
+  — rebuilt 2026-09-22 22:14 ET: 26 sheets, all fifteen proposal batches (batch 16
+  `2026-09-22_2208ET_fix_shipvault_hulls` added, tab `b16_shipvault_hull_rows`),
+  2,334 proposals, each line with its live
   decision, `in backend`, `status` and `processed`; `open_lines` = the 519 lines not yet in the backend;
   `remaining_changes_backend_shape` = only what is still to change, over the backend rows. Keyed by
   live sheet row; the `igu_findings` tab carries the batch 7 comparison (291 lines, leads not proposals).

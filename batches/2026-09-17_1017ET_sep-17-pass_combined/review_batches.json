@@ -68,5 +68,10 @@
   "label": "15 · shipowner country refs off shipvault",
   "apply_order": 15,
   "applied": true
+ },
+ "2026-09-22_2208ET_fix_shipvault_hulls": {
+  "label": "16 · shipvault hull numbers",
+  "apply_order": 16,
+  "applied": true
  }
 }
