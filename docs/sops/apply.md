@@ -6,7 +6,10 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-22 rev 9 (§2d: the **directed session write** — Claude may write the
+**Last revised:** 2026-09-22 rev 10 (§2b / §3: the grade `decisions.csv` pre-fills from is
+computed by the §3.8c gate (RF §5 rev 28), and a machine's `review_log.jsonl` record — the
+backend sync, a `§5 regrade` — is never a click: the review app leaves the line undecided and
+the push leaves it alone). Prior: 2026-09-22 rev 9 (§2d: the **directed session write** — Claude may write the
 sheet when Baird directs it in-session, with a printed plan, a revert file, re-pull verification
 and honest `push_log` attribution; never automatic, never a forged reviewer click). Prior:
 2026-09-21 rev 8 (§2c: the living workbook — the reconciliation's copy on
@@ -112,8 +115,9 @@ over the pull in apply order, so §2a's overlap problem does not arise.
   edit of §7 — nothing is written on a click of `accept`.
 - **Clicked accepts only** (Baird 2026-09-21). A line is pushed only when its latest
   `review_log.jsonl` record is a reviewer's accept. An accept `apply_batch.py` pre-filled by
-  confidence, one typed into `decisions.csv`, or one the backend sync set was never clicked:
-  the dialog counts these and leaves them alone.
+  the computed grade, one typed into `decisions.csv`, or one a **machine** wrote — the backend
+  sync, a `§5 regrade` (`store.MACHINE_REVIEWERS`) — was never clicked: the dialog counts these
+  and leaves them alone.
 - **Suggestions are pushed, gated** (Baird 2026-09-21). A line whose latest record is
   `suggest` is written as the cell `review_app/suggestions.py` would put in a fix batch: the
   suggested value, with the refs typed in the suggestion (prefilled from the proposal's) gated
@@ -209,7 +213,7 @@ the same defaults for in-sheet reading). One row per proposal:
 | column | meaning |
 |---|---|
 | `id` | stable key — `row_id|column` (fills/refs) or `cluster:<id>` (discovery) |
-| `default` | confidence-based default (`accept` for Green/derivable, else `hold`) |
+| `default` | the computed grade's default (`accept` for Green/derivable, else `hold`; RF §5 rev 28 — the grade comes from what the §3.8c gate did, not from a researcher's label) |
 | `decision` | **what you edit** — `accept` / `hold` / `reject` |
 
 Re-running `apply_batch.py` preserves your edits (an existing `decisions.csv` is never
@@ -219,7 +223,9 @@ is the record of what was accepted for a batch — commit it with the batch.
 **The review app** (`review_app/`, recommended) is a local page over one or more batches'
 `decisions.csv`. It rewrites only the `decision` cell of the line decided (every other byte
 kept) and appends each decision — who, when, how, note — to `<dir>/review_log.jsonl`, the
-audit log; commit it with the batch. A value suggested *instead of* a proposal is recorded
+audit log; commit it with the batch. A record a **machine** wrote (`store.MACHINE_REVIEWERS`:
+the backend sync, `scripts/regrade_confidence.py`) says so and is not a reviewer's call — the
+app draws the line as an un-clicked pre-fill, and §2b will not push it. A value suggested *instead of* a proposal is recorded
 as `reject` here and `suggest` in the log (value, kind, note, `suggested_refs`), and reaches
 the backend through the §2b push (gated) or as its own fix batch (`review_app/suggestions.py`
 → the QC-SOP fix path, re-gated). Deciding never touches the backend. Hand edits of
@@ -322,6 +328,10 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
 
 ## 8. Changelog
 
+- **rev 10** (2026-09-22): §2b / §3 follow RF §5 rev 28: the `default` a batch pre-fills is the
+  grade `scripts/confidence.py` computes from the §3.8c gate, and a machine's log record (the
+  backend sync, `scripts/regrade_confidence.py`'s `§5 regrade`) leaves the line undecided in the
+  review app and unpushed by §2b — `store.MACHINE_REVIEWERS` is the list.
 - **rev 9** (2026-09-22): §2d **directed session write** — a second sanctioned path to the
   sheet, gated on an explicit per-write direction from Baird rather than a browser click.
 

@@ -159,6 +159,33 @@ def test_reviewed_is_the_researchers_call_not_the_prefill(running):
     assert prop()["decision"] == "accept" and prop()["reviewed"] is None
 
 
+def test_a_machine_record_is_not_a_click(running):
+    """What scripts/regrade_confidence.py writes (RF §5 rev 28): decisions.csv says accept and
+    the log says who did it, but it is not a reviewer's click — the card stays undecided and
+    push leaves the line alone (AP §2b)."""
+    import push
+    base, _, b = running
+    key = f"{b['fix_b'].name}::10|Status"
+    prop = lambda: json.loads(get(base + "/api/data")[1])["proposals"][key]
+    path = b["fix_b"] / "decisions.csv"
+    path.write_text(store.plan_csv(path, {"10|Status": "accept"}), encoding="utf-8", newline="")
+    with open(b["fix_b"] / "review_log.jsonl", "a", encoding="utf-8") as f:
+        f.write(json.dumps({"key": key, "decision": "accept", "via": "regrade:§5 rev 28",
+                            "reviewer": store.REGRADE_REVIEWER, "ts": "2026-09-22T09:00:00-04:00"}) + "\n")
+    p = prop()
+    assert p["decision"] == "accept" and p["reviewed"] is None
+    assert not push.clicked(p)
+    # and a person's accept on the same line still is one
+    post(base, [{"key": key, "decision": "accept"}])
+    assert prop()["reviewed"] == "accept" and push.clicked(prop())
+
+
+def test_machine_reviewers_match_the_regrade_script(running):
+    """scripts/ never imports review_app, so the two lists are mirrored by hand — pin them."""
+    import regrade_confidence
+    assert store.MACHINE_REVIEWERS == regrade_confidence.MACHINE_REVIEWERS
+
+
 def test_undo_appends(running):
     base, _, b = running
     key = f"{b['fix_a'].name}::10|Status"

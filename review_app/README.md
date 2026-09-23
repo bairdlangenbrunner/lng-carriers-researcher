@@ -38,12 +38,17 @@ the app's one backend write: it lists every cell first and writes on one confirm
    `o` open the first ref, `d` details, `/` search, `?` help.
 
    **Suggested vs decided.** A line carries two things. `decision` is what `decisions.csv`
-   holds — pre-filled by the batch (`apply_batch.py`, by confidence) until someone decides —
-   and `reviewed` is the researcher's own call (`store.reviewed`: the latest
-   `review_log.jsonl` record, when it is a person's, is not an undo back to undecided, and
-   still matches the csv; else `null`). The page is drawn from `reviewed` alone: every card
+   holds — pre-filled by the batch (`apply_batch.py`: accept iff the computed grade is G or the
+   cell is derivable) until someone decides — and `reviewed` is the researcher's own call
+   (`store.reviewed`: the latest `review_log.jsonl` record, when it is a person's — a machine's
+   is not, `store.MACHINE_REVIEWERS`: the backend sync and a `§5 regrade` — is not an undo back
+   to undecided, and still matches the csv; else `null`). The page is drawn from `reviewed` alone: every card
    starts undecided, with the pre-fill shown as a `batch suggests …` chip coloured by the
-   confidence grade (green G / yellow Y / red R — there is no separate letter chip). Accept, reject and
+   confidence grade (green G / yellow Y / red R — there is no separate letter chip). The grade is
+   computed from what the §3.8c gate did, never declared (RF §5 rev 28: a ref that passes on a
+   **live** page stating the value for this vessel is G, and G is what pre-fills an accept), and the
+   sentence saying which route it took — or what held it at Y — is on the chip's tooltip and under
+   **details** as `grade:`. Accept, reject and
    suggest gray the card out; hold keeps it bright. **Clicking the pressed button again clears
    the call** — the line is undecided again and `decisions.csv` gets the batch's pre-fill back
    (an `undecided` log record, the same one an undo writes; a linked partner is asked about as
@@ -59,7 +64,8 @@ the app's one backend write: it lists every cell first and writes on one confirm
    Decision filter follows `reviewed`; its default, *to decide*, is every bright card
    (*not reviewed* + hold). The pipeline still reads `decisions.csv`, pre-fills included —
    `apply_batch.py` is unchanged; only **push changes** asks for a clicked accept. A line
-   Baird directs a session to write instead (AP §2d) stays `unclicked` here — that is
+   Baird directs a session to write instead (AP §2d), and one `scripts/regrade_confidence.py`
+   promoted to accept under RF §5 rev 28, stay `unclicked` here — that is
    correct, and a fake `review_log.jsonl` accept must never be written to hide it.
 
    **What a line shows.** Column, `was → proposed`, then **Why** (the note's one reason) and
@@ -67,7 +73,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    shipvault page and its unit-record companion are one source, the record behind `(data ↗)`)
    with the §3.8 gate's result in words: `✓ verified`, `✗ failed the gate` (+ the gate's
    reason), `read by hand`, `not checked`. Everything else — the note's provenance tail, the
-   `[ref]` being replaced, the raw gate verdicts — is under **details** (`d`). `review_data.py`
+   `[ref]` being replaced, the raw gate verdicts, the `grade:` reason — is under **details** (`d`). `review_data.py`
    makes the split at build time (`why` / `detail` / `sources`, next to the untouched `note` /
    `refs`); nothing is dropped except a leading restatement of `'current' -> 'proposed'`.
 
@@ -211,7 +217,8 @@ the app's one backend write: it lists every cell first and writes on one confirm
    A suggestion = latest log record `suggest` while the csv line still says `reject` (a later
    decision or a hand edit supersedes it). Each cell carries the refs typed in the suggestion
    (`suggested_refs`; the original proposal's refs when none were) and the proposal's
-   confidence, and `build_workbook.py`'s §3.8c gate is the re-gate. `cosmetic` → `preserve_ref`
+   confidence, and `build_workbook.py`'s §3.8c gate is the re-gate — it also re-computes the grade
+   from its own verdict (RF §5 rev 28), so the carried label is a placeholder, not a ceiling. `cosmetic` → `preserve_ref`
    (gated as a value when the backend cell has no `[ref]`, or when the refs were changed);
    `Other names` → `append_ref` with
    the one added element as `gate_value`; a data-fill cell that already carries refs →

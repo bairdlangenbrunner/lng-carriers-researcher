@@ -10,9 +10,9 @@ server pulls again, recomputes, and refuses when the plan is no longer the one t
 every cell, as verify_apply.py does.
 
 Only a line a reviewer clicked accept on is pushed: its latest review_log.jsonl record is an
-accept by a person. An accept that apply_batch pre-filled by confidence, one typed into
-decisions.csv, or one the backend sync set was never clicked — it is counted (`unclicked`) and
-left alone.
+accept by a person. An accept that apply_batch pre-filled by the computed grade (RF §5 rev 28),
+one typed into decisions.csv, or one a machine set — the backend sync, a §5 regrade
+(store.MACHINE_REVIEWERS) — was never clicked: it is counted (`unclicked`) and left alone.
 
 What is pushed: clicked-accept value / [ref] lines, computed by apply_batch.cell_writes — the same
 cells apply_patch.csv would carry — laid over the pull in apply order, so a later batch's value

@@ -21,6 +21,15 @@ SUGGEST_KINDS = ("value", "cosmetic")
 # (push.py, gated) or built into a fix batch (suggestions.py)
 CSV_DECISION = {"accept": "accept", "hold": "hold", "reject": "reject", "suggest": "reject"}
 
+# Reviewers that are machines, not people. Their records are honest — they name what wrote
+# them — but a machine record is not a click: `reviewed()` leaves the line undecided, so the
+# app draws an un-clicked pre-fill and **push changes** counts it `unclicked` and writes
+# nothing (AP §2b — the sheet write needs a person). Mirrored in
+# scripts/regrade_confidence.py MACHINE_REVIEWERS (scripts/ never imports review_app).
+SYNC_REVIEWER = "backend sync"       # the ↻ sync backend button (below)
+REGRADE_REVIEWER = "§5 regrade"      # scripts/regrade_confidence.py (RF §5 rev 28)
+MACHINE_REVIEWERS = {SYNC_REVIEWER, REGRADE_REVIEWER}
+
 
 class Invalid(ValueError):
     """A request the store refuses before writing anything (HTTP 400)."""
@@ -62,11 +71,13 @@ def read_decisions(batch_dir):
 def reviewed(rec, csv_decision):
     """The researcher's own call on a line, or None while nobody has made one.
 
-    `decision` is what decisions.csv holds — pre-filled by the batch (apply_batch.py, by
-    confidence) until someone decides. A line is reviewed when its latest log record is a
-    person's: not the backend sync's, not an undo back to undecided, and still the decision
-    the csv carries (a regenerated or hand-edited csv makes the line undecided again)."""
-    if not rec or rec.get("reviewer") == SYNC_REVIEWER or rec.get("undecided"):
+    `decision` is what decisions.csv holds — pre-filled by the batch (apply_batch.py: accept
+    iff the computed grade is G or the cell is derivable, RF §5 rev 28) until someone
+    decides. A line is reviewed when its latest log record is a person's: not a machine's
+    (MACHINE_REVIEWERS — the backend sync, a §5 regrade), not an undo back to undecided, and
+    still the decision the csv carries (a regenerated or hand-edited csv makes the line
+    undecided again)."""
+    if not rec or rec.get("reviewer") in MACHINE_REVIEWERS or rec.get("undecided"):
         return None
     if CSV_DECISION.get(rec.get("decision")) != csv_decision:
         return None
@@ -407,8 +418,7 @@ def record_items(records, data, dirs, reviewer):
 
 # ---- backend sync (the refresh button) ---------------------------------------------
 
-SYNC_REVIEWER = "backend sync"
-SYNC_VIA = "sync:backend"
+SYNC_VIA = "sync:backend"        # SYNC_REVIEWER is at the top, with MACHINE_REVIEWERS
 
 
 def sync_backend(data, dirs):

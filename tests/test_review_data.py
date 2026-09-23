@@ -82,6 +82,18 @@ def test_decisions_counts_verdicts_and_items(tmp_path):
     assert total == len(P)
 
 
+def test_confidence_why_reaches_the_card(tmp_path):
+    """RF §5 rev 28: the grade's reason travels with it, so a held line says what it wants."""
+    data, b = _build(tmp_path)
+    P = data["proposals"]
+    assert P[f"{b['fix_a'].name}::10|Name"]["confidence_why"] == \
+        "a live record keyed to this vessel states the value"
+    assert P[f"{b['data_fill'].name}::5|Capacity"]["confidence_why"].startswith("a live page states")
+    # a batch built before rev 28 carries no reason — the key is still there, empty
+    assert P[f"{b['fix_b'].name}::10|Status"]["confidence_why"] == ""
+    assert P[f"{b['discovery'].name}::cluster:C1"]["confidence_why"] == ""
+
+
 def test_deterministic(tmp_path):
     backend, b = make_batches(tmp_path)
     one = review_data.build(list(b.values()), backend)

@@ -42,7 +42,9 @@ from url_verifier import citable_forms
 ET = ZoneInfo("America/New_York")
 REVIEWER = "§5 regrade"
 # Reviewers that are machines, not people: a record from one of these leaves the line
-# in scope. Mirrors review_app/store.py SYNC_REVIEWER (scripts/ never imports review_app).
+# in scope here, and leaves it undecided in the review app. Mirrors
+# review_app/store.py MACHINE_REVIEWERS (scripts/ never imports review_app; a test pins
+# the two together).
 MACHINE_REVIEWERS = {"backend sync", REVIEWER}
 
 
