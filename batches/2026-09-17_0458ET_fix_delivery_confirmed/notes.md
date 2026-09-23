@@ -22,3 +22,8 @@ Gate: every ref passed §3.8c at pre-gate and again at build (0 dropped). Recalc
 errors. One agent caught a gate false positive — the bare word "active" in page boilerplate can
 pass the Status gate; the agents overrode it by reading the page, and it is listed in the
 sep-17-pass summary as a verifier follow-up.
+
+
+## Directed session write 2026-09-23 (AP §2d)
+
+On Baird's direction ("change the backend for 2 (I approve those), and for 3, put the refs in the backend too"), a session wrote 4 cell(s) straight to the sheet: K887 (Status, row 887), N887 (Status [ref], row 887), K924 (Status, row 924), N924 (Status [ref], row 924). Verified on re-pull. Revert file: `directed_2026-09-23_revert.csv`; logged in `push_log.jsonl` as `claude session (directed)`.

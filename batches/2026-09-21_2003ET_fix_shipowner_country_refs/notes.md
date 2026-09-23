@@ -111,3 +111,8 @@ data-fill batch `2026-09-17_0511ET_data_fill_on_order` holds **329**
 `Shipowner country/area` lines, all `accept` but never clicked — 292 of them would
 fill a blank/`unknown` country cell (0 conflicts), 37 are already in the sheet.
 The 63 re-sourced in this pass are among them.
+
+
+## Directed session write 2026-09-23 (AP §2d)
+
+On Baird's direction ("change the backend for 2 (I approve those), and for 3, put the refs in the backend too"), a session wrote 2 cell(s) straight to the sheet: R953 (Shipowner country/area [ref], row 953), R954 (Shipowner country/area [ref], row 954). Verified on re-pull. Revert file: `directed_2026-09-23_revert.csv`; logged in `push_log.jsonl` as `claude session (directed)`.
