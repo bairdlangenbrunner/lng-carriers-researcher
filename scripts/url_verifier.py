@@ -81,6 +81,7 @@ import sys
 import time
 import unicodedata
 from datetime import UTC, datetime
+from html.parser import HTMLParser
 from urllib.parse import quote, urlsplit
 
 from fetch import CHROME_UA as _DEFAULT_UA
@@ -484,6 +485,128 @@ def _page_contains(body: str, needle: str) -> bool:
     return _contains(vis, needle) or _contains(raw, needle)
 
 
+# ---------------------------------------------------------------------------
+# Vessel type: the word must describe this ship, in the article's own text
+# ---------------------------------------------------------------------------
+# Baird 2026-09-23: "conventional" passed the plain substring gate on a Hellenic
+# Shipping News sidebar headline ("biofuel prices against conventionals") and on
+# Offshore Energy's "conventional marine fuels". A Vessel type value counts only
+# where the article body uses it of a vessel ("conventional LNG carrier").
+
+_CHROME_TAGS = {"nav", "aside", "footer", "form", "menu", "select", "button", "template",
+                "script", "style", "noscript", "a"}   # <a>: link text = headlines / menus
+_VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta",
+              "source", "track", "wbr"}
+_CHROME_CLASS_RE = re.compile(
+    r"(?:^|[-_])(?:sidebar|widgets?|related|menu|navbar|nav|navigation|breadcrumbs?|trending|"
+    r"popular|recommended|newsletter|share|sharing|social|comments?|tagcloud|ticker|footer)(?:$|[-_])")
+
+
+class _BodyText(HTMLParser):
+    """Text outside page chrome; the <article>/<main> text kept apart."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.all, self.article = [], []
+        self.skip = []            # [tag, depth] of the chrome element being skipped
+        self.in_article = 0
+
+    def handle_starttag(self, tag, attrs):
+        if self.skip:
+            if tag == self.skip[0]:
+                self.skip[1] += 1
+            return
+        if tag in ("article", "main"):
+            self.in_article += 1
+            return
+        if tag in _VOID_TAGS:
+            return
+        a = dict(attrs)
+        tokens = f"{a.get('class') or ''} {a.get('id') or ''}".lower().split()
+        if tag in _CHROME_TAGS or (tag == "header" and not self.in_article) or \
+                (tag not in ("html", "body") and any(_CHROME_CLASS_RE.search(t) for t in tokens)):
+            self.skip = [tag, 1]
+
+    def handle_endtag(self, tag):
+        if self.skip:
+            if tag == self.skip[0]:
+                self.skip[1] -= 1
+                if not self.skip[1]:
+                    self.skip = []
+            return
+        if tag in ("article", "main") and self.in_article:
+            self.in_article -= 1
+
+    def handle_data(self, data):
+        if self.skip:
+            return
+        self.all.append(data)
+        if self.in_article:
+            self.article.append(data)
+
+
+def article_text(body: str) -> str:
+    """Folded text of the page's own article: <article>/<main> when present, else the
+    whole page — minus nav / aside / footer / forms, sidebar- and widget-classed blocks
+    and all link text. A PDF or plain-text body is returned whole."""
+    b = body or ""
+    if not re.search(r"<(?:html|body|div|p|article)\b", b, re.I):
+        return _fold(b)
+    parser = _BodyText()
+    try:
+        parser.feed(b)
+        parser.close()
+    except Exception:                                        # malformed markup: be strict
+        return ""
+    art = _fold(" ".join(parser.article))
+    return art if len(art) >= 200 else _fold(" ".join(parser.all))
+
+
+# Values that are themselves a vessel noun need no second word; the others
+# ("conventional", "small-scale", "supporting") must sit next to one.
+_VT_SELF_NOUN = {"fsru", "fsu", "icebreaker", "q-flex", "q-max", "qc-max"}
+_VT_NOUN_RE = re.compile(r"(?:carriers?|lngcs?|vessels?|ships?|tankers?|newbuild(?:ing)?s?|fsrus?|fsus?|"
+                         r"units?|designs?|class|fleet|hulls?|icebreakers?)")
+# A qualifier that turns the word from the ship to something else ("conventional marine fuels").
+_VT_STOP_RE = re.compile(r"fuel|marine|bunker|oil|diesel|propulsion|engine|power|emission|energy")
+
+
+def _vt_tokens(s: str) -> list[str]:
+    return re.findall(r"[a-z0-9][a-z0-9,.\-/]*", s)
+
+
+def _vt_is_noun(tok: str) -> bool:
+    return any(_VT_NOUN_RE.fullmatch(x) for x in re.split(r"[-/]", tok.strip(".,")) if x)
+
+
+def vessel_type_statement(body: str, variants) -> str | None:
+    """The phrase in `body` that states a Vessel type value of a vessel, else None.
+
+    Counts only in `article_text`, never followed by a non-vessel qualifier (fuel,
+    marine, propulsion …), and — unless the value is itself a vessel noun (FSRU,
+    icebreaker, Q-Max) — with a vessel noun within five words after it or three
+    before it ("conventional 174,000 cbm LNG carrier", "LNG carriers of conventional
+    design")."""
+    text = article_text(body)
+    for v in {_fold(x) for x in variants if x}:
+        for m in re.finditer(r"(?<![a-z0-9])" + re.escape(v) + r"(?![a-z0-9])", text):
+            after = _vt_tokens(text[m.end():m.end() + 120])[:5]
+            before = _vt_tokens(text[max(0, m.start() - 60):m.start()])[-3:]
+            if after and _VT_STOP_RE.search(after[0]):
+                continue
+            phrase = text[max(0, m.start() - 40):m.end() + 60].strip()
+            if v in _VT_SELF_NOUN:
+                return phrase
+            for tok in after:
+                if _VT_STOP_RE.search(tok):
+                    break
+                if _vt_is_noun(tok):
+                    return phrase
+            if any(_vt_is_noun(t) for t in before):
+                return phrase
+    return None
+
+
 def _title(body: str) -> str:
     m = re.search(r"<title[^>]*>([^<]+)</title>", body or "", re.IGNORECASE)
     return m.group(1).strip() if m else ""
@@ -710,7 +833,8 @@ def _wayback_failure(p: Page) -> str:
     return f"Wayback unavailable (HTTP {p.status})"
 
 
-def _check_wayback(url: str, expected: list[str], require_all: bool) -> tuple[bool, str, int]:
+def _check_wayback(url: str, expected: list[str], require_all: bool,
+                   matcher=None) -> tuple[bool, str, int]:
     """Try snapshots. Returns (ok, reason, n_readable_snapshots).
 
     (True, "OK (via Wayback <ts>)") when a snapshot carries the content. With
@@ -734,7 +858,7 @@ def _check_wayback(url: str, expected: list[str], require_all: bool) -> tuple[bo
         readable.append(snap)
         if not expected:
             continue
-        ok, _ = _content_check(p.text, expected, require_all)
+        ok, _ = _content_check(p.text, expected, require_all, matcher)
         if ok:
             return True, f"OK (via Wayback {_snap_ts(snap)}; live URL blocked, snapshot carries content)", len(readable)
     if tried == 0:
@@ -755,9 +879,13 @@ def _snap_ts(snap: str) -> str:
 # The gate
 # ---------------------------------------------------------------------------
 
-def _content_check(body: str, expected: list[str], require_all: bool) -> tuple[bool, str]:
+def _content_check(body: str, expected: list[str], require_all: bool,
+                   matcher=None) -> tuple[bool, str]:
     if not expected:
         return True, "OK"
+    if matcher is not None:          # a field-specific test replaces the substring test
+        return (True, "OK") if matcher(body) else \
+            (False, f"none of expected content found: {expected}")
     found = [s for s in expected if _page_contains(body, s)]
     missing = [s for s in expected if s not in found]
     if require_all and missing:
@@ -780,7 +908,7 @@ def _finish(url, ok, reason, strict, page: Page | None, expected, kind="verify")
 
 
 def verify_url(url: str, expected: list[str], strict: bool = False,
-               require_all: bool = True) -> tuple[bool, str]:
+               require_all: bool = True, matcher=None) -> tuple[bool, str]:
     """
     Verify URL passes the gate:
       0. URL shape is citable (not banned / shortener / navigation / save-endpoint)
@@ -798,6 +926,8 @@ def verify_url(url: str, expected: list[str], strict: bool = False,
         require_all: every expected substring must be present (default). If
                      False, at least one must be (rarely correct outside the
                      corroboration gate's variant list).
+        matcher: optional body -> bool that replaces the substring test (on the
+                 live page and any Wayback snapshot) — the Vessel type gate.
 
     Returns:
         (ok: bool, reason: str) — see the module docstring for the reason
@@ -813,7 +943,7 @@ def verify_url(url: str, expected: list[str], strict: bool = False,
 
     if status != "200":
         if status in _BOT_BLOCK_STATUSES or status == "000":
-            ok, wb, n_snap = _check_wayback(url, expected, require_all)
+            ok, wb, n_snap = _check_wayback(url, expected, require_all, matcher)
             if ok:
                 return _finish(url, True, wb, strict, page, expected)
             if status == "000" and not n_snap:
@@ -836,7 +966,7 @@ def verify_url(url: str, expected: list[str], strict: bool = False,
         wall = (_title_hit(title, _BOT_BLOCK_TITLES, _BOT_BLOCK_TITLES_WB) if title else None) \
             or _bot_wall_body(text)
         if wall:
-            ok, wb, _ = _check_wayback(url, expected, require_all)
+            ok, wb, _ = _check_wayback(url, expected, require_all, matcher)
             if ok:
                 return _finish(url, True, wb, strict, page, expected)
             where = f"title: {title!r}" if title and _title_hit(title, _BOT_BLOCK_TITLES, _BOT_BLOCK_TITLES_WB) \
@@ -853,7 +983,7 @@ def verify_url(url: str, expected: list[str], strict: bool = False,
             if extra:
                 text = text + "\n" + extra
 
-    ok, reason = _content_check(text, expected, require_all)
+    ok, reason = _content_check(text, expected, require_all, matcher)
     if ok and page.notes:
         reason = "OK (" + ", ".join(page.notes) + ")"
     return _finish(url, ok, reason, strict, page, expected)
@@ -1012,7 +1142,7 @@ def value_variants(value) -> list[str]:
     return [s for s in out if s]
 
 
-def corroborates(url: str, value, strict: bool = False) -> tuple[bool, str]:
+def corroborates(url: str, value, strict: bool = False, field: str = "") -> tuple[bool, str]:
     """The value↔ref corroboration gate ([ref]-Fill SOP §3.8c / Rule D §4.11).
 
     A ref may only be cited on a cell whose VALUE the ref's live page actually
@@ -1023,11 +1153,25 @@ def corroborates(url: str, value, strict: bool = False) -> tuple[bool, str]:
     A blank value has nothing to corroborate -> passes (use ``verify_url`` for
     entity-only checks). On failure with ``strict``, raises CitationError.
 
+    ``field == "Vessel type"``: the value counts only where the article body states
+    it of a vessel (``vessel_type_statement``) — never in a sidebar, a link or a
+    phrase like "conventional marine fuels" — and the token fallback is off.
+
     Returns (ok, reason); grade with ``classify``.
     """
     variants = value_variants(value)
     if not variants:
         return True, "no value to corroborate"
+    if field == "Vessel type":
+        ok, reason = verify_url(url, variants, strict=False, require_all=False,
+                                matcher=lambda body: vessel_type_statement(body, variants) is not None)
+        if not ok and reason.startswith("none of expected"):
+            reason = (f"page does not contain value {str(value).strip()!r} as a vessel type "
+                      "(article text, next to vessel wording)")
+            _log({"url": url, "kind": "corroborate", "ok": False, "reason": reason, "value": str(value)})
+        if not ok and strict:
+            raise CitationError(f"ref does not corroborate value ({reason}): {url}")
+        return ok, reason
     ok, reason = verify_url(url, variants, strict=False, require_all=False)
 
     # Multi-word text fallback: an owner "Knutsen OAS" legitimately appears as
@@ -1092,6 +1236,9 @@ def main():
                    help="Corroboration-gate mode: pass iff the page contains "
                         "this cell VALUE in some plausible rendering "
                         "(ignores positional <expected> args)")
+    p.add_argument("--field", default="",
+                   help='With --value: the backend column (e.g. "Vessel type" = article '
+                        'text next to vessel wording only)')
     p.add_argument("--check", action="store_true",
                    help="Health-only: print the graded verdict (ok/blocked/dead/banned)")
     p.add_argument("--no-wayback", action="store_true",
@@ -1114,7 +1261,7 @@ def main():
         sys.exit(0 if info["verdict"] == "ok" else 1)
 
     if args.value is not None:
-        ok, reason = corroborates(args.url, args.value)
+        ok, reason = corroborates(args.url, args.value, field=args.field)
         print(f"  URL: {args.url}")
         print(f"  Value: {args.value!r}  (variants: {value_variants(args.value)})")
         print(f"  Corroborates: {'PASS' if ok else 'FAIL'}  ({reason}) [{classify(reason)}]")
