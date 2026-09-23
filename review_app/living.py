@@ -56,6 +56,7 @@ for _p in (ROOT / "scripts", ROOT / "review_app"):
         sys.path.insert(0, str(_p))
 
 import store  # noqa: E402
+from pull_backend import DEFAULT_SPREADSHEET_ID  # noqa: E402
 from review_data import _same  # noqa: E402
 
 ET = ZoneInfo("America/New_York")
@@ -90,6 +91,23 @@ HEADER_SCAN = 5      # rows searched for the header row of a tab
 
 class LivingError(RuntimeError):
     """The living workbook could not be read or written (never fatal to a push or a sync)."""
+
+
+def _backend_spreadsheet_id():
+    """The backend sheet's id, same resolution as review_app/push.py `write_sheet`."""
+    return os.environ.get("LNGCT_BACKEND_SHEET_ID", DEFAULT_SPREADSHEET_ID)
+
+
+def _refuse_if_backend(spreadsheet_id, where):
+    """Guard: the living workbook must never BE the backend sheet — `rebuild` overwrites a
+    file's entire content, and even `sync`'s narrower batchUpdate would be writing into the
+    live backend, not a copy of it. Checked before any write to `spreadsheet_id`."""
+    backend_id = _backend_spreadsheet_id()
+    if spreadsheet_id and backend_id and spreadsheet_id == backend_id:
+        raise LivingError(
+            f"refusing to {where}: the living-workbook spreadsheet id ({spreadsheet_id}) is "
+            f"the BACKEND sheet's id — this would write over the live backend, not a copy of "
+            f"it. Check data/living_workbook.json and LNGCT_BACKEND_SHEET_ID.")
 
 
 # ---- gws plumbing ------------------------------------------------------------------
@@ -261,6 +279,7 @@ class Living:
     def __init__(self, config, read=None, write=None):
         self.config = config
         self.id = config["spreadsheet_id"]
+        _refuse_if_backend(self.id, "sync the living workbook")
         self.url = config.get("url") or f"https://docs.google.com/spreadsheets/d/{self.id}/edit"
         self.tabs = [(PROPOSALS_SHEET, LINE_ID), (SHAPE_SHEET, LINE_KEY)]
         self._read = read or (lambda title, key: read_tab(self.id, title, key))
@@ -363,6 +382,7 @@ def rebuild(xlsx=None, config_path=None, env=None):
     cfg = load_config(config_path)
     if not cfg or not cfg.get("spreadsheet_id"):
         raise LivingError("no living workbook configured — run --create first")
+    _refuse_if_backend(cfg["spreadsheet_id"], "rebuild the living workbook")
     src = newest_combined(xlsx)
     got = _gws(["drive", "files", "update",
                 "--params", json.dumps({"fileId": cfg["spreadsheet_id"], "supportsAllDrives": True,
@@ -401,8 +421,8 @@ def main(argv=None):
         cfg = rebuild(args.xlsx)
         print(f"living workbook rebuilt from {cfg['source_workbook']}: {cfg['url']}")
     if args.sync:
-        from paths import work_dir
         import review_data
+        from paths import work_dir
         data_path = Path(args.data) if args.data else work_dir() / "review_data.json"
         if args.batches:
             dirs = {Path(d).name: Path(d) for d in review_data.resolve_dirs(args.batches)}

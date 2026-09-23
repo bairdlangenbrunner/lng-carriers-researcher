@@ -17,10 +17,10 @@ import sys
 from collections import defaultdict
 
 from backend_io import load_backend, parse_date  # noqa: F401 — parse_date re-exported
-from paths import backend_csv_path, work_dir
-from normalize import normalize_builder, normalize_owner, owner_country
 from build_workbook import _yard_location_map_table_first
-from lookups import owner_facts, load_owner_facts
+from lookups import load_owner_facts, owner_facts
+from normalize import normalize_builder, normalize_owner, owner_country
+from paths import backend_csv_path, work_dir
 
 # Primary researchable columns (exact backend headers) + their paired [ref].
 # Capacity units / Price currency are NOT listed here — they are dependent

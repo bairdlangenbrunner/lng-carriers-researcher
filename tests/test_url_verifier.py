@@ -267,13 +267,15 @@ class TestHttpStatus:
         assert classify(reason) == "dead"
 
     def test_curl_failure_000_fails(self):
+        # RF §3.8a: 000 (connection failure / IP ban) is always "blocked", never "dead" —
+        # bot-block ≠ dead, so the live URL stays the citation.
         url = "https://unreachable.invalid/x"
         seed(url, "000", "")
         seed_no_wayback(url)
         ok, reason = verify_url(url, ["anything"])
         assert ok is False
-        assert reason == "HTTP 000 (no Wayback snapshot)"
-        assert classify(reason) == "dead"
+        assert reason == "blocked: HTTP 000 (no Wayback snapshot)"
+        assert classify(reason) == "blocked"
 
     @pytest.mark.parametrize("status", ["401", "403", "429", "503"])
     def test_block_statuses_are_blocked_not_dead(self, status):
@@ -609,13 +611,15 @@ class TestWaybackAvailability:
         assert classify(reason) == "blocked"
         assert reason == "blocked: HTTP 202 (no Wayback snapshot)"
 
-    def test_000_without_snapshot_is_dead(self):
+    def test_000_without_snapshot_is_blocked(self):
+        # RF §3.8a: 000 is a connection failure / IP ban, not evidence the resource is
+        # gone — grades "blocked" whether or not the archive ever saw the page.
         url = "https://gone.example.cn/"
         seed(url, "000", "")
         seed_no_wayback(url)
         ok, reason = verify_url(url, ["yard"])
-        assert reason == "HTTP 000 (no Wayback snapshot)"
-        assert classify(reason) == "dead"
+        assert reason == "blocked: HTTP 000 (no Wayback snapshot)"
+        assert classify(reason) == "blocked"
 
     def test_000_with_snapshot_is_blocked_or_ok(self):
         url = "https://geo.example.cn/page"

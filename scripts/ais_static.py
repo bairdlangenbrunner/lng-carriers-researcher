@@ -185,7 +185,7 @@ async def listen(key: str, collector: Collector, seconds: float, *, connect=None
     MAX_RECONNECTS consecutive failures. `connect` / `clock` / `sleep` are
     injectable for tests."""
     if connect is None:
-        import websockets       # lazy: parsing and tests don't need the package
+        import websockets  # lazy: parsing and tests don't need the package
         connect = websockets.connect
     clock = clock or time.monotonic
     sleep = sleep or asyncio.sleep
@@ -198,7 +198,7 @@ async def listen(key: str, collector: Collector, seconds: float, *, connect=None
                 while (remaining := deadline - clock()) > 0 and not collector.complete():
                     try:
                         raw = await asyncio.wait_for(ws.recv(), timeout=min(remaining, RECV_TIMEOUT))
-                    except asyncio.TimeoutError:
+                    except TimeoutError:
                         continue
                     failures = 0
                     collector.handle(raw)

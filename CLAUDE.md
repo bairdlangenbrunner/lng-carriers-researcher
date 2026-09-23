@@ -1,470 +1,292 @@
 # LNG Carrier Tracker — Claude Code instructions
 
-This file is read automatically at the start of every Claude Code session in this repo. It's the workflow router. The actual rules live in `docs/sops/`.
+Read automatically at the start of every session. This file is the **workflow router**; the
+rules live in `docs/sops/`, the per-script reference in `docs/scripts.md`. Every command below
+runs from the repo root as `python scripts/<name>.py` (`paths.py` anchors `work/` to the repo
+root regardless of cwd).
 
 ## Repository orientation
 
-- `docs/sops/ref_fill.md` — the [ref]-fill workflow, hard rules (A through F), confidence labels, conflict handling, the §3.8 verification gate. **Authoritative.**
-- `docs/sops/discovery.md` — the discovery workflow, the four-ring source model, candidate workbook structure. **Authoritative.**
-- `docs/sops/data_fill.md` — the data-fill workflow (research blank/`unknown` data cells → candidate value+[ref] pairs; the blank-vs-`unknown` preserve-ref contract, derivable autofills, controlled vocab). **Authoritative.**
-- `docs/sops/sfoc_reconciliation.md` — the SFOC reconciliation workflow (less frequent).
-- `docs/sops/fsru_reconciliation.md` — the **FSRU reconciliation** workflow: name-keyed comparison of the backend's FSRUs against the GIIGNL Annual Report fleet table (GIIGNL has no IMO → join by name; comparison artifact, not a citable `[ref]`). **Authoritative.**
-- `docs/sops/igu_reconciliation.md` — the **IGU reconciliation** workflow: IMO-keyed intercomparison of the whole backend against the IGU World LNG Report fleet + orderbook tables (Appendix 3 / 4), with an edition-to-edition diff; extract every edition fresh (layout changes). IGU is citable, but its landing page cannot pass the §3.8c gate for a new proposal. **Authoritative.**
-- `docs/sops/qc_release.md` — the **pre-release QC** workflow: whole-backend consistency/corruption sweep before a data release, the authoritative Name-column placeholder conventions, and the `fix`-mode correction batch (incl. the `preserve_ref` escape hatch). **Authoritative.**
-- `docs/sops/apply.md` — the **apply & verify** workflow: getting a reviewed batch's accepted proposals back into the backend, offset-proof and verified (digest → decisions → apply_rows/apply_patch → verify). **Authoritative.**
-- `docs/pointers.md` — "which SOP section governs X" index.
-- `docs/plans/` — dated plans and state files for multi-batch passes (working notes, not rules). Current: `2026-09-17_sep-17-pass_worklist.md` (what is left to decide / apply / research) and `2026-09-17_sep-17-pass_summary.md`; `2026-09-18_review-app.md` (build spec for the review app; phase 1 built and in use, phase 2 — Apps Script — planned 2026-09-21, not started).
+- `docs/sops/` — the authoritative SOPs. Abbreviations used everywhere: **RF** `ref_fill.md`
+  ([ref]-fill; Rules A–F, confidence §5, the §3.8 / §3.8c verification gate), **DC** `discovery.md`
+  (four-ring source model, candidate workbook), **DF** `data_fill.md` (blank-vs-`unknown`
+  preserve-ref contract, derivable autofills, controlled vocab), **SR** `sfoc_reconciliation.md`,
+  **FR** `fsru_reconciliation.md` (name-keyed GIIGNL comparison; GIIGNL is not citable), **IG**
+  `igu_reconciliation.md` (IMO-keyed IGU World LNG Report comparison; IGU is citable via the report
+  PDF), **QC** `qc_release.md` (pre-release consistency sweep, Name placeholder conventions, the
+  `fix`-mode batch), **AP** `apply.md` (reviewed batch → backend, offset-proof). The current rev of
+  each is its `Last revised:` line.
+- `docs/pointers.md` — "which SOP section governs X" index. **Start here** for any rule question.
+- `docs/scripts.md` — what each script does, its flags, and when to read its source.
+- `docs/plans/` — dated plans and state files (working notes, not rules). Active: the sep-17 pass
+  (`2026-09-17_sep-17-pass_worklist.md` = what is left to decide / apply / research,
+  `…_summary.md`, `…_update.md`), the review app (`2026-09-18_review-app.md` phase 1, built and in
+  use; `2026-09-21_review-app-phase2_handoff.md` holds the binding phase-2 decisions — Apps Script,
+  not started), `2026-09-23_comprehensive-discovery.md` (whole-orderbook reconciliation pass, batch
+  built 2026-09-23), and two closed notes (`2026-09-16_cloudflare_access.md`,
+  `2026-09-16_full_research_pass.md`).
 - `docs/inclusion_criteria.md` — what's in scope vs out.
-- `review_app/` — the review app: the recommended surface for deciding a batch's holds (replaces the combined xlsx). Local, loopback-only; deciding writes only the `decision` column of `decisions.csv` + `review_log.jsonl`; its **push changes** button is the app's one path to the backend sheet (AP §2b — accepted lines + gated suggestions, listed cells, confirmed once in the app). Its **living workbook** (`living.py`, AP §2c) is the pass's copy on the work Drive: every sync and every push mirrors the current decisions into the `processed` column of its `all_proposals` / `remaining_changes_backend_shape` tabs, keyed by `line id` / `line key`, and writes nothing else. Entry points (`review_data.py`, `server.py`, `suggestions.py`, `living.py`) are documented in `review_app/README.md`, not in the Scripts table. Imports from `scripts/`, never the reverse.
-- `data/csb_yard_urls.md` — stable ChinaShipBuild yard URLs.
-- `data/owner_charterer_map.md` — canonical owner names and variants (human-readable companion to `scripts/normalize.py`).
-- `data/source_roster.md` — source tier list for picking corroboration URLs.
-- `scripts/` — the Python tooling.
-- `batches/` — per-batch outputs, one directory per batch.
-- `../lng-carriers-map` — sibling repo: live FSRU/FSU fleet map (aisstream.io AIS → GitHub Actions cron → GitHub Pages). Its `data/fleet.json` is exported from this repo's `work/backend.csv` via its `tools/export_fleet.py` — re-export after fleet changes.
+- `review_app/` — the review app (`review_app/README.md`): loopback-only surface for deciding a
+  batch's holds. Deciding writes only `decisions.csv` + `review_log.jsonl`; its **push changes**
+  button is the app's one path to the backend sheet (AP §2b); its **living workbook** (`living.py`,
+  AP §2c) mirrors decisions into the `processed` column of the pass's Drive copy and writes nothing
+  else. Imports from `scripts/`, never the reverse.
+- `data/` — `csb_yard_urls.md` (stable ChinaShipBuild yard URLs), `owner_charterer_map.md`
+  (canonical owner names; companion to `normalize.py`), `source_roster.md` (source tiers for
+  corroboration URLs), `controlled_vocab.md`, facts tables, the GIIGNL PDFs.
+- `batches/` — per-batch outputs, one directory per batch (`batches/README.md` is the index).
+- `../lng-carriers-map` — sibling repo: live FSRU/FSU fleet map. Its `data/fleet.json` is
+  exported from this repo's `work/backend.csv` via its `tools/export_fleet.py` — re-export after
+  fleet changes.
 
 ## Before any batch
 
-1. View both relevant SOPs end-to-end. Note the current rev numbers in the `Last revised:` line at the top of each.
-2. Check `docs/pointers.md` for the rule-to-section lookup map.
-3. If SOP cross-references look inconsistent (Discovery SOP citing a [ref]-Fill SOP rev older than the current one), flag to the user before proceeding.
-4. Pull a fresh backend CSV — **mandatory first step** ([ref]-Fill SOP §3.0). The user edits the backend between batches.
-5. Run the backend QC sanity check on the fresh pull — `python scripts/qc_backend.py`. It flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs). Advisory by default; review `work/qc_report.csv` and surface anything in the batch's scope to the user before building.
+1. Read `docs/pointers.md`, then the SOP **sections** it names for this batch type (not whole
+   SOPs — `ref_fill.md` alone is ~27k tokens). Read a whole SOP only when the task changes its rules.
+2. If a cross-reference cites a rev older than the SOP's current `Last revised:` rev, flag it to
+   the user before proceeding.
+3. `python scripts/pull_backend.py` — **mandatory first step** (RF §3.0). The user edits the
+   backend between batches; the column map is re-derived from the fresh header every run.
+4. `python scripts/qc_backend.py` — advisory sanity check on the fresh pull. Review
+   `work/qc_report.csv` and surface anything in the batch's scope before building.
 
 ## Workflow router
 
 ### A URL is blocked / 403 / "Just a moment..."
 
-Never conclude anything about a page from WebFetch or a hand-rolled curl. Run it
-through the repo's fetch ladder first — `python scripts/fetch.py <url> --head 2000`
-(curl → `curl_cffi` TLS impersonation → real-Chrome `cf_clearance` cookie; the notes
-line says which route worked). Only a wall the ladder cannot clear grades `blocked`.
+Never conclude anything about a page from WebFetch or a hand-rolled curl. Run it through the fetch
+ladder first — `python scripts/fetch.py <url> --head 2000` (curl → `curl_cffi` TLS impersonation →
+real-Chrome `cf_clearance` cookie; the notes line says which route worked). Only a wall the ladder
+cannot clear grades `blocked`, and bot-block ≠ dead (RF §3.8a).
 
-Status `000` with connection timeouts on every origin IP is an **IP ban, not a bot
-wall** — the host drops us before TLS, so the ladder cannot clear it (no UA,
-fingerprint, or cookie matters; this is how a 1 req/s vesselfinder loop ended on
-2026-09-17). Do not retry in a loop — that tends to extend the ban. Switch source or
-egress, and re-test later with a single request. Bulk sweeps of one host must go
-through `python scripts/sweep.py` (per-host pacing + a circuit breaker), never a bare
-loop over `fetch_page()`.
+Status `000` with connection timeouts on every origin IP is an **IP ban, not a bot wall** — no UA,
+fingerprint or cookie helps (this is how a 1 req/s vesselfinder loop ended on 2026-09-17). Do not
+retry in a loop. Switch source or egress and re-test later with one request. Bulk sweeps of one
+host go through `python scripts/sweep.py` (per-host pacing + circuit breaker), never a bare loop.
 
 ### Archiving URLs to the Wayback Machine
 
-Trigger phrases: "archive the refs", "archive all the URLs", "save to Wayback".
-
-Run `python scripts/wayback_save.py` (`--dry-run` first for the count and auth check), in the background. It is already authenticated with Baird's archive.org S3 key (env or keychain), so don't hand-roll `/save/` calls, don't fall back to anonymous Save Page Now, and don't ask for credentials. Budget ~N/6 minutes (≈75 min for the whole backend). Results land in `work/wayback_save.jsonl`; re-running resumes. Whether a snapshot goes into a `[ref]` cell is still ref_fill.md §7 (last resort, live URL dead).
+Triggers: "archive the refs", "save to Wayback". `python scripts/wayback_save.py` (`--dry-run`
+first), in the background. Already authenticated with Baird's archive.org S3 key (env or keychain):
+don't hand-roll `/save/` calls, don't go anonymous, don't ask for credentials. Budget ~N/6 minutes.
+Results in `work/wayback_save.jsonl`; re-running resumes. Whether a snapshot goes into a `[ref]`
+cell is RF §7 (last resort, live URL dead).
 
 ### [ref]-fill batch
 
-Trigger phrases: "fill refs for rows X to Y", "[ref]-fill batch", "next batch", "redo batch N", "rebuild rows X-Y".
+Triggers: "fill refs for rows X to Y", "next batch", "redo batch N", "rebuild rows X-Y". SOP: RF.
 
-```bash
-# Run from the repo root (paths.py anchors work/ to the repo root regardless of
-# cwd; the build/recalc paths below are root-relative). This also matches the
-# `Bash(python scripts/*)` allow rule in .claude/settings.json.
-
-# 1. Fresh backend CSV + column-index map
-python scripts/pull_backend.py
-# -> work/backend.csv + work/backend.colmap.json
-# Re-derive the column map EVERY run. Schema drifts.
-
-# 2. Identify fillable [ref] cells (Rule F: blank [ref] paired with FILLED data value).
-# 3. Cluster rows by (yard, owner, contract month) — [ref]-Fill SOP §3.2.
-#    Watch for cluster splits within the same owner/yard when contract dates
-#    or delivery years diverge ([ref]-Fill SOP §4.12 Rule E rev 6 extension).
-
-# 4. For each yard in batch:
-python scripts/csb_fetch.py <yard-slug>
-# -> work/csb/<yard>.json. Slugs are in data/csb_yard_urls.md.
-
-# 5. For hulls not on CSB: §6a fallback (targeted Google search ->
-#    DART/KIND -> class society -> vessel database -> §6a.8 IMO-tracker ->
-#    §6a.9 negative-result log).
-python scripts/imo_tracker.py <imo>  # only at §6a.8, the LAST step before negative result
-
-# 6. Trade press / regulatory searches per [ref]-Fill SOP §3.4.
-#    Pick sources via data/source_roster.md.
-
-# 7. URL verification gate — Rule D §4.11. EVERY url before it goes in the xlsx.
-python scripts/url_verifier.py <url> <expected1> <expected2> ...
-
-# 8. Build the workbook.
-python scripts/build_workbook.py --mode ref_fill --rows X-Y \
-  --citations citations.json \
-  --out batches/<date>_rows_X-Y/
-
-# 9. Recalc - zero formula errors required.
-python scripts/recalc.py batches/<date>_rows_X-Y/lng_carrier_backend_ref_fill.xlsx
-
-# 10. Write batches/<date>_rows_X-Y/notes.md
-#     (conflicts flagged, defects corrected, escalations, Drive link)
-
-# 11. Commit the batch directory. Do NOT push without user approval.
-```
+1. `pull_backend.py`. Fillable cells = blank `[ref]` paired with a FILLED value (Rule F).
+2. Cluster rows by (yard, owner, contract month) — RF §3.2; watch cluster splits within one
+   owner/yard when contract dates or delivery years diverge (RF §4.12 Rule E).
+3. `csb_fetch.py <yard-slug> --all-pages` per yard (slugs: `data/csb_yard_urls.md`) →
+   `work/csb/<yard>.json`. **Every vessel checked in any workflow is also looked up on CSB**
+   (RF §3.3b, Baird 2026-09-23): orderbook + `ship.aspx` page; report agreement / disagreement.
+   CSB's "Under Construction" = not yet delivered; hull digits repeat across yards (match yard +
+   hull, or IMO).
+4. Hulls not on CSB → RF §6a fallback (targeted search → DART/KIND → class society → vessel
+   database → `imo_tracker.py <imo>` **only at §6a.8, last before** the §6a.9 negative-result log).
+5. Trade press / regulatory per RF §3.4; pick sources via `data/source_roster.md`.
+6. `url_verifier.py <url> <expected…>` — the §3.8 gate, EVERY url before it goes in the xlsx.
+7. `build_workbook.py --mode ref_fill --rows X-Y --citations citations.json --out batches/<dir>/`,
+   then `recalc.py <xlsx>` (zero formula errors), then `batches/<dir>/notes.md` (conflicts,
+   defects corrected, escalations, Drive link). Commit the batch directory.
 
 ### Discovery batch
 
-Trigger phrases: "find new vessels", "discovery run", "gap analysis", "what's missing from the backend", "catch-up sweep".
+Triggers: "find new vessels", "discovery run", "gap analysis", "what's missing from the backend",
+"catch-up sweep", "comprehensive discovery" / "whole-orderbook reconciliation". SOP: DC.
 
-```bash
-# Run from the repo root (paths.py anchors work/ to the repo root regardless of
-# cwd; the build/recalc paths below are root-relative). This also matches the
-# `Bash(python scripts/*)` allow rule in .claude/settings.json.
-
-# 1. Confirm parameters per Discovery SOP §2:
-#    - Gap window (latest contract date in backend -> today)
-#    - Yard coverage (seven main / all-yards)
-#    - Proposed-bucket threshold
-#    - FSRU handling
-#    - Output naming
-#    DO NOT skip this. Discovery is sensitive to scope choices.
-
-# 2. Fresh backend CSV, extract rows in gap window as baseline coverage.
-python scripts/pull_backend.py
-
-# 3. Build the two dedup indexes.
-python scripts/dedup_index.py
-
-# 4. Ring A - CSB on each yard in scope.
-python scripts/csb_fetch.py <yard-slug>
-
-# 5. Ring B - regulatory sweep (DART / KIND / Bursa / HKEX).
-#    Use English proxies (en.sedaily.com etc.) by default.
-
-# 6. Ring C - trade press, source_roster.md for tier picks.
-
-# 7. Ring D - charterer programs (only if proposed threshold expanded).
-
-# 8. Cluster, dedup, confidence-label per [ref]-Fill SOP §5 (rev 12 standard).
-
-# 9. URL verification gate.
-python scripts/url_verifier.py <url> <expected>...
-
-# 10. Build the candidate workbook.
-python scripts/build_workbook.py --mode discovery \
-  --candidates candidates.json \
-  --out batches/<date>_discovery/
-
-python scripts/recalc.py batches/<date>_discovery/lng_carrier_candidate_vessels.xlsx
-
-# 11. Commit the batch directory.
-```
+1. Confirm parameters per DC §2 — gap window, yard coverage, proposed-bucket threshold, FSRU
+   handling, output naming. **Do not skip**; discovery is sensitive to scope choices. A
+   comprehensive pass is not date-bounded (plan `2026-09-23_comprehensive-discovery.md`).
+2. `pull_backend.py`; `dedup_index.py --pending <un-applied discovery batch dirs>` (hull / cluster /
+   IMO / name indexes + stub rows, so pending candidates are not re-reported).
+3. Ring A — `csb_fetch.py <yard>` per yard in scope (`--all-yards --all-pages` for a comprehensive
+   pass; page 1 is the leading edge only). Then `orderbook_reconcile.py` for the CSB ‖ backend ‖
+   IGU Appendix 4 ‖ shipvault balance.
+4. Ring B — regulatory sweep (DART / KIND / Bursa / HKEX; English proxies by default). Ring C —
+   trade press via `data/source_roster.md`. Ring D — charterer programmes, only if the proposed
+   threshold is expanded.
+5. Cluster, dedup, and let the gate grade confidence (RF §5). `url_verifier.py` on every URL.
+6. `build_workbook.py --mode discovery --candidates candidates.json --out batches/<dir>/`, `recalc.py`,
+   `dedupe_check.py` (AP §5a), `notes.md`, commit the batch directory.
 
 ### Data-fill batch
 
-Trigger phrases: "data fill", "fill blank data cells", "fill the blanks for rows X-Y", "propose values for missing cells", "fill missing <column>", "data-fill batch".
+Triggers: "data fill", "fill the blanks for rows X-Y", "fill missing <column>". SOP: DF.
 
-```bash
-# Run from the repo root (paths.py anchors work/ to the repo root regardless of
-# cwd; the build/recalc paths below are root-relative). This also matches the
-# `Bash(python scripts/*)` allow rule in .claude/settings.json.
+1. `pull_backend.py`; `dedup_index.py`.
+2. `derive_fills.py --since <YYYY-MM-DD>` → `work/data_fill.json` (derivable fills + scope) +
+   `work/research_tasks.json`.
+3. Research fan-out: one subagent per cluster (DC §3 four rings; controlled vocab in
+   `data/controlled_vocab.md`; owner stylization RF §4.14; PRESERVE existing refs on `unknown`
+   cells, DF §4). A price reported only as an order total → per-vessel Price with `derived_from`
+   (DF §5a: Y max, never `derivable`). Reuse prior batches + backend siblings first. Each writes
+   `work/research_<label>.json` — **clear stale `work/research_*.json` first**; the merge globs all.
+4. `merge_fills.py` (no flags; runs immediately) — merge + central §3.8c gate; sets confidence from
+   the gate (RF §5). Don't hand-grade in step 3.
+5. `build_workbook.py --mode data_fill --fills work/data_fill.json --out batches/<dir>/`, `recalc.py`,
+   copy `work/data_fill.json` into the batch dir, `notes.md`, commit the batch directory.
 
-# 1. Fresh backend CSV + colmap (MANDATORY — re-derives scope; schema drifts)
-python scripts/pull_backend.py
+### Fix batch (corrections, renames, status changes)
 
-# 2. Dedup index (cluster_index for the per-cluster fan-out)
-python scripts/dedup_index.py
+Triggers: "fix batch", "correct rows …", "move X to scrapped". SOPs: QC §4, RF §4.16–§4.19, AP.
 
-# 3. Derivable autofills + scope + per-cluster research task lists (Data-fill SOP §5-§6)
-python scripts/derive_fills.py --since <YYYY-MM-DD>
-# -> work/data_fill.json (derivable fills + scope) + work/research_tasks.json
+1. `pull_backend.py`. Write `work/<name>_fix.json` keyed by `row_id`; `preserve_ref:true` on a
+   cosmetic / derived edit keeps the paired `[ref]` and skips the gate (QC §4); sourced corrections
+   supply refs and pass the gate.
+2. Before building, on any batch with Name cells: `other_names.py --batch work/<name>_fix.json`
+   (RF §4.16); with Delivery year cells: `delivery_history.py --batch …` (RF §4.19); with shipvault
+   refs: `shipvault_api_refs.py --batch …` (RF §6a.8).
+3. `build_workbook.py --mode fix --fix work/<name>_fix.json --out batches/<date>_<HHMMET>_<label>/`
+   — gates every ref, computes the grade, and writes the **gated** `fix.json` into the batch dir
+   (that copy is what `apply_batch.py` reads; do not overwrite it with the source). `recalc.py`,
+   `notes.md`, commit. Apply via the Apply SOP.
 
-# 4. Research fan-out: one subagent per cluster (Discovery §3 four-ring model,
-#    controlled vocab in data/controlled_vocab.md, owner stylization §4.14,
-#    PRESERVE existing refs on `unknown` cells per Data-fill SOP §4). A price reported
-#    only as an order total -> per-vessel Price with `derived_from` (DF §5a: Y max,
-#    never `derivable`). Reuse prior
-#    batches + backend siblings first. Each writes work/research_<label>.json.
+### SFOC / FSRU / IGU reconciliation batches
 
-# 5. Merge + central §3.8 verification gate. Also sets each fill's confidence
-#    from what the gate did (RF §5 rev 28) — don't hand-grade in step 4.
-python scripts/merge_fills.py   # -> work/data_fill.json (merged, deduped, re-verified)
+Triggers: "SFOC pass" / "reconcile against SFOC" (SR); "FSRU reconciliation", "compare FSRUs to
+GIIGNL" (FR); "IGU reconciliation", "new IGU edition", "what did IGU drop / change" (IG). All are
+comparison passes: the backend is never auto-edited, findings promote through a `fix` / discovery
+batch, and the batch closes with `dedupe_check.py` (AP §5a).
 
-# 6. Build the candidate workbook.
-python scripts/build_workbook.py --mode data_fill \
-  --fills work/data_fill.json \
-  --out batches/<date>_data_fill_rows_X-Y/
-
-# 7. Recalc - zero formula errors required.
-python scripts/recalc.py batches/<date>_data_fill_rows_X-Y/lng_carrier_data_fill.xlsx
-
-# 8. Copy work/data_fill.json into the batch dir; write notes.md; commit the
-#    batch directory. Do NOT push without user approval.
-```
-
-### SFOC reconciliation batch
-
-Trigger phrases: "SFOC reconciliation", "reconcile against SFOC", "reconcile the backend against the new SFOC dataset", "SFOC pass".
-
-Less frequent and script-light — there's no fixed scriptchain here. Follow
-`docs/sops/sfoc_reconciliation.md` end-to-end (rev 5): stage the three input
-files in `work/`, run the four-bucket reconciliation (with the capacity cut and
-the normalization mapping), build the nine-sheet workbook, recalc to zero
-formula errors, and commit the batch directory under `batches/`. The SOP is
-authoritative. Close the pass with a full-backend dedupe scan
-(`python scripts/dedupe_check.py` -> `work/dedupe_report.csv`; apply.md §5a).
-
-### FSRU reconciliation batch
-
-Trigger phrases: "FSRU reconciliation", "compare FSRUs to GIIGNL", "reconcile FSRUs against the GIIGNL report", "how complete is our FSRU coverage", "FSRU gap analysis".
-
-Governed by `docs/sops/fsru_reconciliation.md` (FR rev 1). Name-keyed comparison of the
-backend's FSRUs against the GIIGNL Annual Report fleet table — GIIGNL has no IMO column, so
-the join is by vessel name ({current} ∪ {ex_names}, `normalize_vessel_name`) corroborated by
-storage capacity (builder is informational — conversion yard ≠ original builder). GIIGNL is a
-**comparison artifact, not a citable `[ref]`** (like SFOC). The backend is never auto-edited;
-vetted candidates promote through the Apply SOP.
-
-```bash
-# Run from the repo root.
-
-# 1. Fresh backend CSV + colmap (MANDATORY first step).
-python scripts/pull_backend.py
-
-# 2. Extract the GIIGNL fleet table — REUSE the terminals repo parser (don't rebuild).
-python ../lng-terminals-researcher/scripts/giignl_fsru_fleet.py \
-    data/GIIGNL-<year>-Annual-Report-<ver>.pdf --output work/giignl_fsru_fleet.json
-
-# 3. Reconcile (name join + capacity corroborator + five buckets).
-python scripts/fsru_reconcile.py        # -> work/fsru_reconcile.json
-
-# 4. Build the 10-sheet reconciliation workbook + recalc to zero errors.
-python scripts/build_workbook.py --mode fsru --reconcile work/fsru_reconcile.json \
-    --out batches/<date>_<HHMMET>_fsru_reconciliation_giignl<year>/
-python scripts/recalc.py batches/<dir>/lng_carrier_fsru_reconciliation.xlsx
-
-# 5. Advisory dedupe sweep; copy fsru_reconcile.json into the batch dir; write
-#    notes.md; commit the batch directory. Do NOT push without user approval.
-python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §5a)
-```
-
-### IGU reconciliation batch
-
-Trigger phrases: "IGU reconciliation", "compare the backend to the IGU report", "intercompare with the World LNG Report", "new IGU edition", "what did IGU drop / change".
-
-Governed by `docs/sops/igu_reconciliation.md` (IG rev 6). IMO-keyed join of the **whole
-backend** against the IGU World LNG Report's Appendix 3 (fleet) and Appendix 4 (orderbook),
-with the previous edition layered on top so each diff says which side moved (`igu_changed` /
-`new_to_igu` / `backend_differs` — never revert the last blindly). The backend was seeded from
-IGU 2025, so IGU **is** citable on bulk-loaded rows. Its landing page surfaces no per-vessel
-value, so cite the **report PDF** (2025 and 2026 both in `url_verifier.IGU_PDF`), which passes §3.8c —
-a landing-page ref is never skipped: `url_verifier.citable_form` swaps in the edition's PDF, and the PDF is a ref only for what it prints for the row's IMO in that column (`igu_refs.corroborates_cell`, IG §1).
-**Whenever an IGU landing page is the ref — `…/igu-reports/2025-world-lng-report`, or the 2026 landing page where the
-PDF is not the URL — confirm the data point in that edition's report PDF** (Baird 2026-09-21): look the row's IMO up
-in `work/igu_fleet_<edition>.json` (`igu_refs.IguTable.check`; extract the edition first if it is missing) or open the
-PDF at that IMO, and read the column. Never report such a value as unsourced / unverifiable because the landing page
-shows nothing. The backend's landing-page refs stay as they are — no bulk swap. Rule (Baird 2026-09-17, settled 2026-09-21; IG §5.4):
-what IGU 2026 prints is a sufficient sole source, Vessel type included — a cell citing IGU 2026 alone needs
-no second ref unless Baird has explicitly said otherwise. IGU's *silence* (a dropped
-vessel) is not a statement and still needs its own verified ref.
-**A Name is the exception** (Baird 2026-09-21, IG §5.4): look the IMO up in shipvault / marinetraffic.org /
-vesseltracker first; unless one explicitly agrees with IGU's name, the databases' name (or the backend's) is the
-`Name` and IGU's goes to `Other names`.
-The batch itself is never applied; findings promote through a `fix` / discovery batch.
-
-```bash
-# Run from the repo root.
-
-# 1. Fresh backend CSV + colmap (MANDATORY first step).
-python scripts/pull_backend.py
-
-# 2. Extract BOTH editions fresh — the table layout changes between editions
-#    (2026: two tables per landscape spread, Age + Vessel Type columns added).
-#    Read the warnings; the expected residue is IGU's own duplicate IMOs.
-python scripts/igu_fleet.py ../lng-terminals-researcher/data/IGU-World-LNG-Report-<year>.pdf
-python scripts/igu_fleet.py <path>/IGU-World-LNG-Report-<year-1>.pdf
-# -> work/igu_fleet_<year>.json, work/igu_fleet_<year-1>.json
-
-# 3. Reconcile. --pending cross-references un-applied batches (a finding one already
-#    proposes is green); --fetch-leads runs the paced shipvault lookup on the review
-#    buckets (leads, never refs; resumable work/igu_review_shipvault.json).
-python scripts/igu_reconcile.py --pending batches/<dir> [batches/<dir> ...] --fetch-leads
-# -> work/igu_reconcile.json
-
-# 4. Build the 11-sheet workbook + recalc to zero errors.
-python scripts/build_workbook.py --mode igu --reconcile work/igu_reconcile.json \
-    --out batches/<date>_<HHMMET>_igu_reconciliation_igu<year>/
-python scripts/recalc.py batches/<dir>/lng_carrier_igu_reconciliation.xlsx
-
-# 5. Advisory dedupe sweep; copy both igu_fleet JSONs, igu_reconcile.json and the leads
-#    file into the batch dir; write notes.md (decisions list); commit the batch directory.
-python scripts/dedupe_check.py          # -> work/dedupe_report.csv (apply.md §5a)
-```
-
-Dropped vessels (IG §5.2): **rows are never deleted from the backend.** A scrapped vessel keeps
-its row and moves to Status `scrapped` (vocabulary value added 2026-09-17) via a `fix` batch, with
-a verified ref for the demolition sale — whichever side of December 2025 the scrapping falls.
+- **SR** is script-light: follow `sfoc_reconciliation.md` end to end (stage inputs in `work/`,
+  four buckets, nine-sheet workbook, `recalc.py`, commit).
+- **FR**: `pull_backend.py` → extract with the terminals repo's parser
+  `python ../lng-terminals-researcher/scripts/giignl_fsru_fleet.py data/GIIGNL-<year>-Annual-Report-<ver>.pdf --output work/giignl_fsru_fleet.json`
+  → `fsru_reconcile.py` → `build_workbook.py --mode fsru --reconcile work/fsru_reconcile.json --out batches/<dir>/`
+  → `recalc.py`; copy `fsru_reconcile.json` into the batch dir. GIIGNL is a comparison artifact,
+  not a citable `[ref]`.
+- **IG**: `pull_backend.py` → `igu_fleet.py <IGU PDF>` for **both** editions, fresh every time
+  (layout changes; expected residue = IGU's own duplicate IMOs) → `igu_reconcile.py --pending
+  batches/<un-applied dirs> --fetch-leads` → `build_workbook.py --mode igu --reconcile
+  work/igu_reconcile.json --out batches/<dir>/` → `recalc.py`; copy both `igu_fleet_*.json`,
+  `igu_reconcile.json` and the leads file into the batch dir. IGU rules: IG §1 (PDF by IMO), §5.2
+  (dropped vessels → `scrapped`, never deleted), §5.4 (sole source; Names excepted — see Hard
+  requirements).
 
 ### Pre-release QC batch
 
-Trigger phrases: "qc pass", "pre-release qc", "qc the backend", "prep for data release", "check the names before release", "name consistency check".
+Triggers: "qc pass", "pre-release qc", "prep for data release", "name consistency check". SOP: QC.
 
-Governed by `docs/sops/qc_release.md` (QC rev 1). A whole-backend consistency/corruption
-sweep before a data release; mechanical defects get packaged as a `fix`-mode batch and
-routed through the Apply SOP.
-
-```bash
-# Run from the repo root.
-
-# 1. Fresh backend CSV + colmap (MANDATORY first step).
-python scripts/pull_backend.py
-
-# 2. Full-backend QC scan (no --rows — release pass is whole-sheet).
-python scripts/qc_backend.py          # -> work/qc_report.csv ; --strict to gate
-#   Triage by check (QC §3): column-offset / misplaced-vocab / url-in-value / bad-shape
-#   (corruption — escalate); orphan-ref / lookup-mismatch (MED); name-builder-drift /
-#   name-ordinal-gap (LOW — the Name-column consistency checks, QC §2). Confirm the
-#   canonical target form with the user before any mass rename.
-
-# 3. Mechanical corrections -> fix.json (keyed by row_id). For cosmetic / derived-value
-#    edits (e.g. placeholder Name normalization) set preserve_ref:true on the cell so the
-#    value is rewritten but the paired [ref] is preserved and the §3.8c gate is skipped
-#    (QC §4). Sourced value corrections supply refs and pass the gate as usual.
-python scripts/other_names.py --batch work/<name>_fix.json   # RF §4.16: former Names -> Other names
-python scripts/build_workbook.py --mode fix --fix work/<name>_fix.json \
-  --out batches/<date>_<HHMMET>_<label>/
-python scripts/recalc.py batches/<date>_<HHMMET>_<label>/lng_carrier_fix.xlsx
-
-# 4. Copy fix.json into the batch dir, write notes.md, commit the batch directory.
-#    Apply via the Apply SOP unchanged. Release gate: re-pull + re-run qc_backend.py;
-#    clear when HIGH/MED are resolved/allowlisted and the Name checks are at zero.
-```
+1. `pull_backend.py`; `qc_backend.py` whole-sheet (`--strict` to gate). Triage by check (QC §3):
+   column-offset / misplaced-vocab / url-in-value / bad-shape = corruption, escalate; orphan-ref /
+   lookup-mismatch MED; name-builder-drift / name-ordinal-gap LOW. Confirm the canonical Name form
+   with the user before any mass rename.
+2. Package mechanical corrections as a fix batch (above). Release gate: re-pull + re-run
+   `qc_backend.py`; clear when HIGH/MED are resolved or allowlisted and the Name checks are at zero.
 
 ### Review a batch's decisions
 
-Trigger phrases: "review app", "decide the holds", "open the review app".
-
-Governed by `docs/sops/apply.md` step 2 / §3 / §2b (AP rev 6); usage in `review_app/README.md`.
+Triggers: "review app", "decide the holds". SOP: AP step 2 / §2b / §3; usage in `review_app/README.md`.
 
 ```bash
-# Run from the repo root.
-python scripts/pull_backend.py                                  # fresh pull (review_data refuses without one)
-python review_app/server.py --batches batches/<dir> [<dir> ...]  # builds work/review_data.json, serves 127.0.0.1:8765
-# Suggested values (stored as reject + a `suggest` log record) are pushed by "push changes" once their refs
-# pass §3.8c; the ones it lists as not pushed -> a fix batch, QC-SOP path:
-python review_app/suggestions.py --batches batches/<dir> [<dir> ...]   # -> work/review_suggestions_fix.json
-# after rebuilding the pass's combined workbook, refresh its Drive copy — rebuild, never --create:
-python review_app/living.py --rebuild --xlsx batches/<combined dir>/<workbook>.xlsx
-#   also -> work/review_suggestions_fix_notes.md: the reviewer's notes as a to-do list. Nothing acts on
-#   a note by itself — read each one and follow it up before building the fix batch.
+python scripts/pull_backend.py                                   # review_data refuses without a fresh pull
+python review_app/server.py --batches batches/<dir> [<dir> ...]   # work/review_data.json, serves 127.0.0.1:8765
+python review_app/suggestions.py --batches batches/<dir> ...      # suggestions push could not gate -> work/review_suggestions_fix.json (+ _notes.md to-do list)
+python review_app/living.py --rebuild --xlsx batches/<combined dir>/<workbook>.xlsx   # refresh the Drive copy; rebuild, never --create
 ```
 
-Both buttons also update the living workbook on Drive (`data/living_workbook.json`, AP §2c) — its `processed` column only, never a backend cell; a failure there is reported and changes nothing else. The `↻ sync backend` button re-pulls the backend and rebuilds in place; a held line the backend
-already holds becomes `accept` and an open item it resolves becomes `resolved` (logged as
-`backend sync`). The `⇪ push changes` button (AP §2b, `review_app/push.py`) writes accepted
-value / `[ref]` lines and the reviewer's suggestions (value + the refs typed with it, each gated
-against the suggested value by `igu_refs.corroborates_cell` at plan time; no passing ref → listed
-as not pushed) into the sheet: it lists every cell (live row, column, old → new), and one
-confirmation in the app writes that plan through the `gws-gem-write` profile, verifies it and
-appends `<dir>/push_log.jsonl`. New rows and conflicts stay by hand; reject writes nothing. **That confirmation is Baird's, in the browser — never call `/api/push`, `push.write_sheet`
-or `App.push` from a session, a script or a test against the live sheet.** A session that Baird
-has directed to write the sheet does it the §2d way (its own plan + `gws-gem-write`), not by
-driving the app's endpoints, and never by writing a fake `review_log.jsonl` accept. Deciding itself never
-touches the backend: it writes the `decision` cell of `decisions.csv`, appends
-`<dir>/review_log.jsonl` (commit it with the batch), and on the Items tab `review_items.jsonl` +
-a conflict's call in `conflicts.csv`. After a session, re-run `apply_batch.py` for each batch
-the session summary lists, then continue with "Apply a reviewed batch".
+`↻ sync backend` re-pulls and rebuilds in place (a held line the backend already holds → `accept`;
+a resolved open item → `resolved`). `⇪ push changes` (AP §2b, `review_app/push.py`) lists every
+cell (live row, column, old → new) and, on **Baird's confirmation in the browser**, writes accepted
+value / `[ref]` lines and gated suggestions through `gws-gem-write`, verifies, and appends
+`<dir>/push_log.jsonl`. New rows and conflicts stay by hand; reject writes nothing. **Never call
+`/api/push`, `push.write_sheet` or `App.push` from a session, script or test**, and never write a
+fake `review_log.jsonl` accept — a directed session write is AP §2d, not the app's endpoints.
+After a session, re-run `apply_batch.py` for each batch the session summary lists.
 
 ### Apply a reviewed batch
 
-Trigger phrases: "apply batch", "incorporate batch X", "get this batch into the backend", "review and apply", "verify the apply".
+Triggers: "apply batch", "incorporate batch X", "verify the apply". SOP: AP (offset-proof; replaces
+the manual copy/paste that corrupted rows 1216/1217).
 
-Governed by `docs/sops/apply.md` (AP rev 6). This is the offset-proof round-trip that
-replaces manual copy/paste (which corrupted rows 1216/1217).
+1. `batch_digest.py --batch batches/<dir>` → `digest.md` (auto-safe vs needs-a-decision).
+2. `apply_batch.py --batch batches/<dir>` — first run pre-fills `decisions.csv` by confidence;
+   decide the holds (review app), re-run to finalise → `apply.json`, `apply_rows.csv`,
+   `apply_patch.csv`, `conflicts.csv`.
+3. Apply (pick one): paste `apply_rows.csv` full rows over matching backend rows, OR run
+   `tools/apply_patch.gs` on `apply_patch.csv` (by name, `DRY_RUN` first). Several un-applied batches
+   sharing rows → **patch path only** (full rows revert each other); `OVERWRITE_NONBLANK=true` for
+   fix / ref-append batches (AP §2a).
+4. `verify_apply.py --batch batches/<dir> --pull` → `verify_report.csv` + `dedupe_report.csv`
+   (AP §5a; review any HIGH/MED group — a new row may duplicate an existing vessel).
 
-```bash
-# 1. Triage — split auto-safe vs needs-a-decision.
-python scripts/batch_digest.py --batch batches/<dir>          # -> digest.md
+Conflicts (research vs a non-blank backend value) go to `conflicts.csv` and are decided by hand,
+never auto-applied.
 
-# 2. Decisions + apply artifacts. First run pre-fills decisions.csv by confidence;
-#    decide the holds (review app — see above — or edit decisions.csv), then re-run to finalize.
-python scripts/apply_batch.py --batch batches/<dir>
-#   -> decisions.csv, apply.json, apply_rows.csv, apply_patch.csv, conflicts.csv
+## Hard requirements (these override anything above)
 
-# 3. Apply (offset-proof, pick one): paste apply_rows.csv full rows over matching
-#    backend rows, OR run tools/apply_patch.gs on apply_patch.csv (by-name, DRY_RUN first).
-#    Several un-applied batches sharing rows -> patch path only: full rows are a snapshot and
-#    revert each other; OVERWRITE_NONBLANK=true for fix / ref-append batches (AP §2a).
-
-# 4. Verify — re-pull and confirm everything landed. Also runs the dedupe sweep
-#    (apply.md §5a) over touched/added rows -> <dir>/dedupe_report.csv (advisory).
-python scripts/verify_apply.py --batch batches/<dir> --pull   # -> verify_report.csv
-```
-
-Conflicts (research vs a non-blank backend value) go to `conflicts.csv` and are decided
-by hand — never auto-applied (additive-to-blanks holds). Review any HIGH/MED group in
-`dedupe_report.csv` before calling the batch done — a newly-added row may duplicate an
-existing vessel (apply.md §5a). Run standalone any time: `python scripts/dedupe_check.py`.
-
-## Hard requirements (these override anything below)
-
-- **Never modify the backend CSV directly.** Outputs are always candidate xlsx files for human review ([ref]-Fill SOP §4.7). The backend lives in Google Sheets and is human-edited. Two paths write it, both human-authorised: the review app's **push changes** (AP §2b), which Baird triggers and confirms in the app himself; and a **directed session write** (AP §2d, Baird 2026-09-22) — Claude may write the sheet itself, but **only when Baird directs that specific write in that session**. Never automatic, never inferred from a plan, a picker option or an earlier permission; permission is per write and does not carry to the next one. Preconditions every time (AP §2d): fresh pull, the plan printed cell by cell, a revert file, re-pull verification, scope exactly as named, and honest `push_log.jsonl` attribution — **never forge a reviewer click** to make a line look pushed.
-- **Never propose deleting the row of a vessel that leaves service.** It keeps its row and changes Status — a scrapped vessel moves to `scrapped` (Baird directive 2026-09-17; `docs/inclusion_criteria.md`, IG §5.2). The inclusion criteria govern what gets *added*. **The rule does not extend to duplicates** (Baird 2026-09-17): the same vessel entered twice is not a vessel leaving the fleet, and the duplicate row *is* removed — flag it (dedupe sweep, apply.md §5a), and Baird deletes it by hand in the sheet, carrying a placeholder name worth keeping into the surviving row's `Other names` (as with `Woodside Energy 01`–`03` → the Seapeak rows).
-- **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in prior batches — URLs decay.
-- **Never cite GEM as a data source** — this includes `gem.wiki` and any other GEM-published page or dataset, as a `[ref]` URL or as corroboration ([ref]-Fill SOP §4.2; Forbidden lists in `docs/sops/ref_fill.md` and `data/source_roster.md`). GEM is downstream of this tracker, so citing it would be circular.
-- **An IGU landing-page ref means: confirm it in that edition's report PDF** (Baird directive 2026-09-21; IG §1) — 2025 always, 2026 where the landing page rather than the PDF is the URL. Look the row's IMO up in the extraction (`work/igu_fleet_<edition>.json`, `igu_refs.IguTable.check`) or the PDF itself and read the column; never call the value unsourced because the landing page shows nothing, and never count a text hit elsewhere in the PDF (another vessel's row) as confirmation. The backend's landing-page refs are left as they are.
-- **Banned source: abarrelfull** (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — never use it as a reference, ever, even corroborated; it must not appear in any output or lane (Baird directive 2026-07-17, all GEM researcher projects). Chase the primary source it footnotes and cite that.
-- **A proposed Name change carries the former Name into `Other names`** ([ref]-Fill SOP §4.16, Baird directive 2026-09-17): appended with `"; "`, never replacing what is there; a hull placeholder counts as a former name; spelling / truncation corrections, a name that belongs to another row, and placeholder → placeholder restylings do not. Run `python scripts/other_names.py --batch <dir>` on any fix batch with Name cells before building it; the `Other names` line is decided together with its Name line.
-- **A proposed later Delivery year carries a second source and its history** ([ref]-Fill SOP §4.18–§4.19, Baird directive 2026-09-21): shipvault alone is Y / held — add the IGU PDF where IGU prints the same year, else press; and the former year is appended to `Previous delivery year(s)` (`"; "`, oldest first) with `Delivery delayed` = `yes`, decided together with the Delivery year line. Run `python scripts/delivery_history.py --batch <dir>` on any fix batch with Delivery year cells before building it.
-- **Confidence is computed, not declared** ([ref]-Fill SOP §5 rev 28, Baird 2026-09-22): a ref that survives §3.8c on a **live** page stating the value for this vessel is Green — one source is enough. `scripts/confidence.py` sets the grade in `merge_fills.py` and `build_workbook.py --mode fix`; a researcher's label is overwritten. A researcher may argue a line **down** with a `cap_reason`, never up. Carve-outs that cap at Y: §4.18 delivery roll-forward, DF §5a order-total Price, a §3.8c conflict.
-- **Rule F applies always** — no orphan `[ref]` cells with no paired data value ([ref]-Fill SOP §4.13).
-- **Data-fill is additive to blanks/`unknown`s only.** It proposes value + verified-`[ref]` pairs for human review, never a backend edit; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (Data-fill SOP §4, §9).
-- **Always pull fresh backend CSV at the start of a batch.**
-- **Re-derive the column-index map** from the fresh header row — don't assume schema is stable.
-- **Never `git push` without explicit user approval.** Local commits are fine; pushing to a public repo is irreversible.
-- **Never commit** files containing credentials, API keys, or anything in `work/` (gitignored).
+- **Never modify the backend directly.** Outputs are candidate xlsx files for human review (RF §4.7).
+  Two paths write the sheet, both human-authorised: the review app's **push changes** (AP §2b, Baird
+  confirms in the app) and a **directed session write** (AP §2d, Baird 2026-09-22) — Claude may
+  write the sheet **only when Baird directs that specific write in that session**; never automatic,
+  never inferred from a plan, a picker option or an earlier permission; per write, never carried
+  forward. Preconditions every time (AP §2d): fresh pull, plan printed cell by cell, a revert file,
+  re-pull verification, scope exactly as named, honest `push_log.jsonl` attribution — **never forge
+  a reviewer click**.
+- **Never propose deleting the row of a vessel that leaves service.** It keeps its row and moves to
+  Status `scrapped` (Baird 2026-09-17; `docs/inclusion_criteria.md`, IG §5.2). Duplicates are the
+  exception: the same vessel entered twice is flagged (`dedupe_check.py`, AP §5a) and Baird deletes
+  the duplicate by hand, carrying a placeholder name worth keeping into the survivor's `Other names`.
+- **Every URL passes §3.8 before going in the xlsx.** No exceptions, even for URLs that worked in
+  prior batches — URLs decay. **Confidence is computed, not declared** (RF §5 rev 28): a ref that
+  survives §3.8c on a **live** page stating the value for this vessel is Green — one source is
+  enough; `scripts/confidence.py` overwrites a researcher's label. A researcher may argue a line
+  **down** with a `cap_reason`, never up. Caps at Y: RF §4.18 delivery roll-forward, DF §5a
+  order-total Price, a §3.8c conflict.
+- **No value without a ref.** Never propose a value (even Vessel type `conventional`) with a blank
+  `[ref]`; leave the cell blank. **Rule F always**: no orphan `[ref]` with no paired value (RF §4.13).
+- **Never cite GEM** (`gem.wiki` or any GEM page or dataset) as a `[ref]` or corroboration — GEM is
+  downstream of this tracker (RF §4.2). **Banned source: abarrelfull** (`abarrelfull.wikidot.com`,
+  `abarrelfull.co.uk`) — never, in any output or lane (Baird 2026-07-17); chase the primary source
+  it footnotes.
+- **An IGU landing-page ref means: confirm the data point in that edition's report PDF, by IMO**
+  (Baird 2026-09-21; IG §1) — 2025 always, 2026 where the landing page rather than the PDF is the
+  URL. Look the row's IMO up in `work/igu_fleet_<edition>.json` (`igu_refs.IguTable.check`; extract
+  the edition if missing) or the PDF and read the column. Never call the value unsourced because
+  the landing page shows nothing; never count a text hit in another vessel's row. The backend's
+  landing-page refs stay as they are (no bulk swap). New proposals cite the **PDF** (`url_verifier.
+  citable_form` / `IGU_PDF`); the PDF is a ref only for what it prints for the row's IMO in that
+  column (`igu_refs.corroborates_cell`); a row with no IMO gets no IGU ref.
+- **IGU 2026 is a sufficient sole source** (Baird 2026-09-17, settled 2026-09-21; IG §5.4), Vessel
+  type included — no second ref unless Baird explicitly says otherwise. IGU's *silence* (a dropped
+  vessel) is not a statement and still needs its own verified ref. **A Name is the exception**: look
+  the IMO up in shipvault / marinetraffic.org / vesseltracker first; unless one explicitly agrees
+  with IGU's name, the databases' name (or the backend's) is the `Name` and IGU's goes to `Other
+  names`.
+- **A proposed Name change carries the former Name into `Other names`** (RF §4.16, Baird
+  2026-09-17): appended with `"; "`, never replacing; a hull placeholder counts as a former name;
+  spelling / truncation corrections, a name belonging to another row, and placeholder →
+  placeholder restylings do not. Hull numbers are always `Hull NNNN (Tag)` (RF §4.17).
+- **A proposed later Delivery year carries a second source and its history** (RF §4.18–§4.19, Baird
+  2026-09-21): shipvault alone is Y / held — add the IGU PDF where IGU prints the same year, else
+  press; the former year is appended to `Previous delivery year(s)` (`"; "`, oldest first) with
+  `Delivery delayed` = `yes`, decided together with the Delivery year line.
+- **Price is the full USD integer + `USD`** (`250000000`, never `250` + `$m`; `$m` retired 2026-09-18).
+- **Data-fill is additive to blanks / `unknown`s only** — value + verified-`[ref]` pairs for human
+  review; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (DF §4, §9).
+- **Always pull a fresh backend CSV at the start of a batch** and re-derive the column map.
+- **Report live sheet rows**, not the column-A `row_id`, wherever a row is named to Baird.
+- **Git:** branch → commit → push → PR → merge is pre-authorised for this repo (Baird 2026-06-07);
+  commits all-lowercase and succinct, scoped to the task, no Claude attribution. **Never commit**
+  credentials or anything in `work/` (gitignored).
 
 ## When to escalate
 
-Per [ref]-Fill SOP §11 and Discovery SOP §7, pause and ask the user when:
+Per RF §11 and DC §7, pause and ask the user when: CSB is broken AND the §6a fallback is exhausted
+on at least one cluster; a whole class of backend values looks systematically wrong; a new rule
+would invalidate prior batches; corroboration is too thin for even Yellow after §6a; discovery
+surfaces more than ~5 candidate clusters in one gap window; or the gap window is unclear.
 
-- CSB is broken AND §6a fallback exhausted without success on at least one cluster
-- A whole class of backend values looks systematically wrong
-- A new rule would invalidate prior batches
-- Source corroboration is too thin to support even yellow even after §6a fallback
-- Discovery surfaces more than ~5 candidate clusters in the same gap window (suggests systematic gap, not normal leading-edge lag)
-- The gap window is unclear (no clear "latest contract date" in backend, multiple recent rows with blank contract dates)
+## Scripts
 
-## Scripts — what each does and when to read its source
-
-| Script | Purpose | Read source when |
-|---|---|---|
-| `pull_backend.py` | curl + parse CSV, derive column-index map from header row | Schema changed; column indices look wrong |
-| `qc_backend.py` | backend QC sanity check — column-offset / misplaced-value detection + Name-column consistency (`name-builder-drift`, `name-ordinal-gap`; QC §2) (`work/qc_report.csv`; `--strict`, `--rows`) | New column-shape rule; a false positive/negative; new check |
-| `lookups.py` | data loaders: `CONTROLLED_VOCAB` (shared by build + QC) + builder/owner facts tables | Adding a vocab value; changing the facts-table schema |
-| `seed_lookups.py` | seed/refresh `data/shipbuilder_facts.csv` + `shipowner_facts.csv` from the live backend | New yard/owner to capture; re-deriving facts after backend edits |
-| `normalize.py` | canonical builder/owner names (module, imported by others) | Adding a new yard or owner; clusters over- or under-merging |
-| `dedup_index.py` | builds the two indexes used for matching candidates against backend | New batch type that needs a different index shape |
-| `fsru_reconcile.py` | FSRU reconciliation: name-keyed join of the GIIGNL fleet JSON ({current}∪{ex_names}, `normalize_vessel_name`) against backend FSRUs, capacity-corroborated; emits the five-bucket `work/fsru_reconcile.json` (matched / reclassify / manual / candidates / backend_only + FSU exclusions + orderbook). Advisory; never edits the backend | New bucket; changing the capacity tolerance or small-scale cutoff; manual-pairing guard tuning |
-| `igu_fleet.py` | IGU World LNG Report extractor — Appendix 3 (fleet) + Appendix 4 (orderbook) from pdfplumber **word coordinates**, assuming nothing about the column set (each `IMO Number` header starts a table; column edges come from the header labels; wrapped lines attach to the row above), so it survives the edition-to-edition layout changes (two tables per spread, added columns). Built-in validation (IMO check digit, numeric capacity, plausible year, per-page IMO-token cross-count) → `warnings`; `--strict` exits 1. Writes `work/igu_fleet_<edition>.json` | A new edition's header label is unmapped (`FIELD_BY_LABEL`); the acceptance check (IG §3) does not balance; a page's count cross-check warns |
-| `igu_reconcile.py` | IGU reconciliation: IMO-keyed join of the IGU fleet + orderbook JSON against the whole backend, previous edition layered on (`kind`: igu_changed / new_to_igu / backend_differs), builder labels compared through a learned co-occurrence map, capacity within max(6000, 3%). Buckets: matched (field diffs + status findings) / dropped / backend_not_in_igu / igu_only / igu_no_imo (cluster-level hints only) / igu_duplicates / edition_diff. `--pending <batch dirs>` marks findings an un-applied batch already proposes; `--fetch-leads` = paced, resumable shipvault lookup of the review buckets (`work/igu_review_shipvault.json`; leads, never refs). Advisory; never edits the backend | New bucket or diff kind; tuning the builder-pair threshold or capacity tolerance; a new review bucket for leads |
-| `csb_fetch.py` | curl chinashipbuild.com with the right UA, parse orderbook table | CSB layout changed; new yard added; parser returning fewer rows than expected |
-| `url_verifier.py` | the §3.8 verification gate — citable-shape check (GEM / abarrelfull / shorteners / navigation URLs banned in code), `citable_form()` / `IGU_PDF` (an IGU landing page → that edition's report PDF, gated and cited in its place by every gate caller — IG §1), HTTP status, soft-error + bot-wall detection with Wayback fallback (bot-block ≠ dead), redirect re-check, PDF text, normalised content match, host adapters that verify SPA pages (shipvault.com — and its citable unit-record URL `shipvaultapi-…/api/units/{id}`, the companion ref for a blank-rendering page — and marinetraffic.com) against the JSON they load; `value_variants` renders what a page actually says for a cell value (number/price/date forms, Status `active` ↔ delivery wording, `on order` ↔ order wording, hull numbers with or without the yard tag); a **Vessel type** value counts only in the article's own text, next to vessel wording (`corroborates(…, field="Vessel type")`, RF §3.8c rev 29 — never a sidebar, link or "conventional marine fuels"); per-host pacing on every live fetch (`HOST_MIN_GAP` 2 s, raised to the `sweep.HOST_DELAYS` floor for trackers and bloomberg.com — so every gate run through `build_workbook.py` / `merge_fills.py` / `citation_qc.py` is paced); graded reasons via `classify()` (ok / banned / dead / blocked / uncorroborated); `--check`, `--value`, `--log` | Verifier flagging false positives or negatives; new soft-error / bot-wall pattern; new banned host |
-| `confidence.py` | the §5 grade (RF rev 28) — `grade(passes, field, value, caps)` turns the gate's own verdicts into G/Y/R + a `why`: a **live** pass whose match is a keyed record (IGU by IMO, shipvault / marinetraffic unit record) or a **distinctive** value is G, two independent live hosts are G, archive-only or a generic value on one host is Y, nothing surviving is R; the carve-outs (`CAP_ROLL_FORWARD` §4.18, `CAP_DERIVED` DF §5a, `CAP_CONFLICT` §3.8c, a researcher `cap_reason`) cap at Y and never raise. Called by `merge_fills.py` and `build_workbook.py --mode fix` | A value class is graded generic that shouldn't be (`GENERIC_FIELDS` / `distinctive`); the gate gains a new reason marker (`_KEYED_MARKS`, `_ARCHIVE_MARK`) |
-| `citation_qc.py` | §3.8a rot sweep — grades every existing backend `[ref]` URL once (`work/citation_qc.csv`, live sheet rows); `--corroborate` runs the per-cell §3.8c gate; re-fetches every fresh `dead` verdict once; `--sheet-rows`, `--hosts`, `--delay`, `--resume`, `--regrade` | Changing the triage grades or output columns |
-| `wayback_save.py` | archive URLs to the Wayback Machine — **the only way this repo archives**. Save Page Now 2, always authenticated (IA S3 key from `$IA_S3_AUTH` or the keychain item `archive-org-s3`; exits rather than going anonymous), 6/min under the 7/min cap with the account's concurrent sessions, polls each job, retries SPN-side errors. Default = every distinct backend `[ref]` URL minus banned shapes; `--urls FILE`, `--sheet-rows`, `--within 30d`, `--retry-errors`, `--dry-run`. Resumable `work/wayback_save.jsonl` with citable `snapshot` URLs; never edits the backend | Changing SPN2 options, retry set, or rate |
-| `fetch.py` | shared curl layer — `fetch_page()` (compressed, charset-aware, PDF/ZIP→text with OCR, TLS/UA retries, empty-PDF re-fetch, extra headers) + `fetch_text()` / `download()`. Clears bot walls itself: Cloudflare firewall page → `curl_cffi` Chrome TLS impersonation (`cf_impersonate`); JS challenge (Cloudflare, AWS WAF, Imperva) → real-Chrome clearance cookies (`cf_clearance`), once per host per process. **Byte-identical copy in the terminals and pipelines repos — change it in all three** | A host needs a new fetch quirk; PDF extraction failing; a new kind of bot wall (add its cookie prefix to `cf_clearance.WALL_COOKIE_PREFIXES` and its body marker to `_WALL_MARKERS_ANY_STATUS`) |
-| `sweep.py` | polite bulk fetch — **the only way to sweep many URLs on one host** (wraps `fetch_page()`; `fetch.py` itself is untouched). Per-host pacing with jitter (6 s ± 2 s; tracker hosts vesselfinder.com / marinetraffic.com / marinetraffic.org 10 s ± 3 s, bloomberg.com 30 s ± 10 s after its 2026-09-21 "unusual activity" flag — `--delay` can raise a floor, not lower it); per-host circuit breaker (3 consecutive `000`/429/403, or 8 consecutive 404s after 200s — the soft-block pattern — stop the host for the run and record its remaining URLs as skipped, retried with the failures on re-run; a host that tripped in an earlier run re-trips on its first failure); `--urls FILE` or `--template '…{imo}' --imos FILE|LIST`, fetched in the order given; `--max` per host per run; resumable JSONL under `work/` (latest record per URL wins); exit 1 when a breaker tripped | Tuning delays / breaker thresholds; a new tracker host for `HOST_DELAYS`; a new failure status |
-| `ais_static.py` | AIS static-data cross-check for "has this on-order vessel been delivered and named" — **a lead, never a citable `[ref]`** (cited refs stay shipvault / marinetraffic / class / press through §3.8). Listens to aisstream.io `ShipStaticData` world-wide for a bounded time (`--minutes`, default 20) and keeps messages whose IMO is on the watch list (on-order backend rows; `--statuses`, `--imos FILE|LIST`) — the IMO filter is client-side because aisstream filters only by MMSI / bbox. Key from `$AISSTREAM_API_KEY` or the keychain item `aisstream-api-key` (exits rather than asking). Appends `work/ais_static.jsonl` (imo, name, mmsi, ship type, destination, callsign, position, ts; latest per IMO wins); the summary leads with live sheet rows. **"Not seen" is not evidence of anything** (static messages repeat every ~6 min, only for vessels transmitting near a terrestrial receiver) | aisstream message shape or subscription format changed; new watch-list rule; key storage changed |
-| `cf_clearance.py` | earns / stores bot-wall cookies (`cf_clearance`, `aws-waf-token`, Imperva `incap_ses_`/`visid_incap_`/`nlbi_`) by driving Google Chrome over DevTools (no automation flags, so Turnstile passes in ~5 s; a page is "cleared" when neither its title nor its rendered DOM looks like a challenge — a real 404 counts); store `work/cf_clearance.json` (gitignored, IP-bound; ~1 yr for Cloudflare, days for AWS WAF); `LNGCT_NO_BROWSER=1` forbids the launch; CLI `python scripts/cf_clearance.py <url>` / `--show` | Chrome path changed; challenge no longer clears; need a different CDP flow |
-| `shipvault_api_refs.py` | shipvault companion refs (RF §6a.8 rev 21): where a cited `shipvault.com/ships/{id}` page renders blank in a browser (double-encoded API answer), adds the unit-record URL as a second ref right after it, only where the record corroborates the cell (§3.8c). `--batch <dir>` patches a batch's source JSON in place (idempotent — run before `build_workbook.py`; writes `<dir>/shipvault_api_refs.json`); `--backend-batch <dir> [--skip-fix fix.json …]` writes a ref-only (`prev_state: "corroborate"`) `data_fill.json` for cells already in the backend | shipvault fixes its encoding (companions become unnecessary); a new batch source shape |
-| `other_names.py` | former Names → `Other names` (RF §4.16): derives an `append_ref` `Other names` cell from every `Name` cell in a fix batch — existing cell + `"; "` + former Name, gated on the former name alone (`gate_value`; exact name, never scattered tokens; candidates = the new Name's refs + the row's existing `Name [ref]` (an IGU landing page swapped for its PDF) + the IGU PDF of every edition whose extraction prints the former name for the IMO — an IGU PDF passes only on that IMO's name cell — then the shipvault record for the IMO as a last resort; an IGU PDF's wrapped `(ex-…)` names are checked against `work/igu_fleet_<edition>.json`; nothing is asked when the former name is part of the new one; trackers paced, not asked about hull placeholders, vesselfinder not asked), Y / blank ref when nothing passes. `--batch <dir or fix.json>` patches in place (idempotent, stamps each Name cell `former_name`; run before `build_workbook.py`); `--collect <dirs> --out fix.json` builds a standalone batch for batches already built; `--include <row_id>` overrides a skip. `--igu-ex <edition>` (RF §4.17) also adds every IGU `(ex-…)` name by IMO, hulls yard-tagged `Hull NNNN (Tag)`. Skips spelling / truncation fixes (similarity ≥ 0.85 or a prefix), names claimed by another row, placeholder → placeholder | A real rename classified as a spelling fix (or the reverse) — tune `SPELLING_RATIO` / `is_placeholder`; a new multi-valued column |
-| `igu_refs.py` | the IMO-keyed check behind every IGU report-PDF ref (IG §1): `IguTable.check(edition, imo, field, value)` reads `work/igu_fleet_<edition>.json` — True (IGU prints it for this IMO) / False (prints something else, IMO not listed, no such column, or the row has no IMO) / None (no extraction → the text gate stands). `corroborates_cell(url, value, field, imo)` = `url_verifier.corroborates` + that check; it is the gate in `build_workbook.py --mode fix`, `merge_fills.py`, `citation_qc.py --corroborate`. Hull forms (`Hull 3387 (HDHHI)` ↔ `Al Nigyan (3387)`, `Hull No.YZJ…`, ex-name hulls), builder labels through the learned pairs, Status by fleet / orderbook table | A real IGU value rejected (or a wrong one passed); a new backend column IGU prints (`FIELD_KEY`); a new hull form |
-| `delivery_history.py` | delivery history (RF §4.19): for every fix-batch `Delivery year` cell that moves the year **later** than the backend's, adds an `append_ref` `Previous delivery year(s)` cell (existing cell + `"; "` + former year, gated on the former year) and `Delivery delayed` = `yes`, both at the Delivery year cell's confidence. Ref candidates: the row's existing `Delivery year [ref]` URLs — kept only where the year shares a sentence with delivery wording (`states_delivery_year`; a bare year passes the plain gate on sidebar dates) — plus the IGU PDF of each edition whose extraction prints the former year for the IMO (`IGU_PDF` holds 2025 + 2026). `--batch <dir or fix.json>` patches in place (idempotent, stamps `former_year`); `--dry-run`, `--no-gate` | A real delivery statement rejected (or a sidebar date accepted) — tune `_DELIVERY_WORDS`; a new IGU edition's PDF URL |
-| `igu_hulls.py` | RF §4.17: IGU `Name (hull)` entries → a fix batch — by IMO, fill a blank `Hull number` (`Hull NNNN (Tag)`, IGU PDF ref) or restyle an untagged one with its yard tag (`preserve_ref`); by hull + builder family, name a row still carrying its hull placeholder (+ IMO). Yard conflicts (Samho vs Ulsan, SHI vs Hanwha overlapping series), different hulls and anything an un-applied batch already proposes (any `apply_patch.csv`) are flagged, not proposed. `--edition`, `--out <batch>/fix.json`; then `other_names.py --batch` | IGU prints a new hull form; a false yard match; a new yard needing a tag (`FALLBACK_YARD_TAGS` in `other_names.py`) |
-| `imo_tracker.py` | the §6a.8 IMO->vessel-tracker fallback — shipvault open API first (`shipsearch/{IMO}` → unit record → citable `shipvault.com/ships/{id}`), marinetraffic.org IMO search second | shipvault API / tenant header changed; marinetraffic.org URL pattern changed |
-| `build_workbook.py` | xlsx scaffolding — sheets, color fills, frozen panes, headers (modes: ref_fill / discovery / data_fill / fix / fsru / igu). `discovery` mode refuses a candidate with a filled data cell and a blank `[ref]` (only `unknown` and a placeholder Name stand without one). `fix` mode rebuilds corrected full rows from a `fix.json` (optionally `--base <corrected_rows.csv>`) and runs every ref through the §3.8c value↔ref corroboration gate (drops refs that don't contain the cell value); a cell may set `preserve_ref:true` for cosmetic/derived edits (rewrite value, keep the paired `[ref]`, skip the gate), or `append_ref:true` + `gate_value` for an addition to a multi-valued cell (`Other names`, RF §4.16 — gate the added element, append passing refs to the existing `[ref]`); warns when a Name change has had no former-name check. `fsru` mode renders the `work/fsru_reconcile.json` buckets into a 10-sheet GIIGNL↔backend comparison workbook (no `[ref]` cells — GIIGNL not citable). `igu` mode renders `work/igu_reconcile.json` into the 11-sheet IGU↔backend workbook, every table led by the live sheet row (no `[ref]` cells proposed) | Adding a new sheet section; changing color convention; changing fix-mode gating; changing the fsru or igu sheet set |
-| `derive_fills.py` | data-fill: select in-scope rows, compute derivable autofills, list per-cluster research targets | New derivable column; changing the row-selection filter |
-| `merge_fills.py` | data-fill: merge per-cluster research outputs + run the central §3.8 re-verify gate. Honours `derivable: true` only on the DF §5 autofill columns (`DERIVABLE_FIELDS`); gates a `derived_from: {total, n}` Price on the order **total** and caps it at Y (DF §5a); demotes any other fill left with no URL; sets each fill's `confidence` / `confidence_why` from the gate via `confidence.grade` (RF §5 rev 28) | Verifier behavior changes; new research-output key; a new derivable column |
-| `recalc.py` | open the xlsx, force recalc, return any formula errors | Always run before committing the batch |
-| `batch_digest.py` | triage a batch into auto-safe vs needs-a-decision (`digest.md`) | Changing the triage split or digest format |
-| `apply_batch.py` | reviewed batch → `decisions.csv` + offset-proof apply artifacts (`apply_rows.csv`, `apply_patch.csv`, `apply.json`, `conflicts.csv`); modes ref_fill / discovery / data_fill / fix (a fix cell's gated refs *replace* the paired `[ref]`; `preserve_ref` cells rewrite the value only; `append_ref` cells append to it) | New batch mode; changing the patch/decision schema |
-| `regrade_confidence.py` | retroactive §5 re-grade (RF rev 28) — re-runs the §3.8c gate live on every `hold` line of already-built batches and promotes `hold -> accept` on a G. **Promote-only**: never demotes, never rejects, skips any line a person decided (`review_log.jsonl`), skips `preserve_ref` / value-less ref lines; writes the new grade into the batch's source JSON + `decisions.csv` and appends an honest log record (`reviewer: "§5 regrade"` — read as undecided by the app, so it shows as an un-clicked accept, never a forged click). Dry run by default (`work/regrade_report.csv`); `--apply` writes; gate results cached in `work/regrade_gate.jsonl` | Adding a batch mode; changing what takes a line out of scope |
-| `verify_apply.py` | re-pull + diff backend vs `apply.json` (landed/mismatch/missing) + qc the touched rows + dedupe sweep over touched/added rows | Changing match logic; new verify check |
-| `dedupe_check.py` | internal duplicate scan — tiered (IMO/builder+hull → HIGH; placeholder↔identified on builder+owner+capacity+delivery → MED; distinct ordinals → LOW sister ships). Advisory; `work/dedupe_report.csv` (reports lead with **live sheet row**, not the column-A `row_id`); `--rows`, `--sheet-rows`, `--strict` (apply.md §5a) | New dup signal/tier; a false positive/negative; new disqualifier |
-
-Trust the scripts by default. They're versioned scaffolding, not throwaway code. If you fix one, commit the fix in the same batch with a note in `notes.md`.
+`docs/scripts.md` holds the per-script table (purpose, flags, when to read the source). Read the
+row for a script before changing it or when its output looks wrong; trust the scripts otherwise.
+If you fix one, commit the fix with the batch and note it in that batch's `notes.md`.
 
 ## Working directory convention
 
-Scratch artifacts (intermediate CSVs, cached CSB JSON, draft citation JSON) go in `work/`, which is gitignored. The only things that get committed from a batch are the contents of `batches/<date>_rows_X-Y/`.
+Scratch artifacts (intermediate CSVs, cached CSB JSON, draft citation JSON) go in `work/`, which is
+gitignored. The only things committed from a batch are the contents of `batches/<dir>/`.

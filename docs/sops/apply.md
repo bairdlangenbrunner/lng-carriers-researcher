@@ -6,7 +6,10 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-22 rev 10 (§2b / §3: the grade `decisions.csv` pre-fills from is
+**Last revised:** 2026-09-23 rev 11 (audit fixes: §7 reworded to agree with §2d — two
+sanctioned write paths, both human-authorised and never automatic, never from a batch build or
+a driven endpoint call; §6 drops "Anyone with the link" in favor of named reviewer accounts,
+per the work-Drive anonymous-access withdrawal). Prior: 2026-09-22 rev 10 (§2b / §3: the grade `decisions.csv` pre-fills from is
 computed by the §3.8c gate (RF §5 rev 28), and a machine's `review_log.jsonl` record — the
 backend sync, a `§5 regrade` — is never a click: the review app leaves the line undecided and
 the push leaves it alone). Prior: 2026-09-22 rev 9 (§2d: the **directed session write** — Claude may write the
@@ -306,18 +309,23 @@ only the human-facing presentation uses sheet rows.
 
 To share the xlsx for review (the digest + decisions.csv cover local review):
 1. Upload the batch xlsx to the project Google Drive folder.
-2. Share → "Anyone with the link" → Viewer; open once → "Open with → Google Sheets".
+2. Share with the named reviewer accounts (restricted) — never "Anyone with the link"; open
+   once → "Open with → Google Sheets".
 3. Put the Sheets URL in the `Drive` column of `batches/README.md` (prefer the Sheets URL).
 
 ## 7. Hard requirements
 
 - **The backend is still human-edited.** Every cell written is one the reviewer set to
   `accept` in `decisions.csv`, or a value the reviewer suggested themself with a ref that
-  passes §3.8c. No script writes to the backend without that ([ref]-Fill §4.7).
-  The one script that writes the sheet at all is the review app's push (§2b), and only the
-  listed cells, on the reviewer's confirmation in the app — never from a command line, a batch
-  build or an agent session. The living workbook's sync (§2c) is a separate outward write and
-  touches no backend cell: only the `processed` column of its own two tabs.
+  passes §3.8c — or, under §2d, a cell Baird directed a session to write, for that write only.
+  No script writes to the backend without one of those. Two paths reach the sheet: the review
+  app's push (§2b), the listed cells on the reviewer's confirmation in the app, and the §2d
+  directed session write, on Baird's explicit per-write direction with the §2d preconditions.
+  Neither is ever automatic, never inferred from a plan or a picker option, and never driven by
+  a session calling the app's endpoints or forging a reviewer click; absent an explicit §2d
+  direction, §2b is the only path and Baird confirms it in the browser. The living workbook's
+  sync (§2c) is a separate outward write and touches no backend cell: only the `processed`
+  column of its own two tabs.
 - **Apply by name or by full row — never cherry-pick cells by hand.** Both supported paths
   address columns by header (applier) or paste full backend-width rows (apply_rows.csv);
   neither can land a value in the wrong column.
@@ -328,6 +336,12 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
 
 ## 8. Changelog
 
+- **rev 11** (2026-09-23): §7 reworded — it had drifted from §2d (added rev 9) and still said
+  the sheet is written "never from a command line, a batch build or an agent session," which
+  §2d contradicts. Now states both sanctioned paths (§2b push, §2d directed write) and what
+  each rules out. §6 changed the Drive-sharing step from "Anyone with the link → Viewer" to
+  named reviewer accounts, consistent with the work-Drive rule that anonymous link access is
+  being withdrawn. Audit fixes; no workflow-behavior change.
 - **rev 10** (2026-09-22): §2b / §3 follow RF §5 rev 28: the `default` a batch pre-fills is the
   grade `scripts/confidence.py` computes from the §3.8c gate, and a machine's log record (the
   backend sync, `scripts/regrade_confidence.py`'s `§5 regrade`) leaves the line undecided in the

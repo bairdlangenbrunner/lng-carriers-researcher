@@ -6,13 +6,13 @@ The SOPs live in `docs/sops/`:
 - `ref_fill.md` — abbreviated below as **RF**
 - `discovery.md` — abbreviated below as **DC**
 - `data_fill.md` — abbreviated below as **DF**
-- `sfoc_reconciliation.md` — abbreviated below as **SR** (not yet indexed in detail below)
+- `sfoc_reconciliation.md` — abbreviated below as **SR** (the IMO-keyed SFOC/Clarkson bulk reconciliation)
 - `fsru_reconciliation.md` — abbreviated below as **FR** (the name-keyed GIIGNL-FSRU comparison)
 - `igu_reconciliation.md` — abbreviated below as **IG** (the IMO-keyed IGU World LNG Report intercomparison)
 - `qc_release.md` — abbreviated below as **QC** (the pre-release whole-backend QC pass)
 - `apply.md` — abbreviated below as **AP** (the review→apply→verify round-trip)
 
-Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); DF rev 3 §5a / RF rev 22 and RF rev 23 §4.16 added 2026-09-17; RF rev 24 §4.17 added 2026-09-18; RF rev 25 §4.18–§4.19 added 2026-09-21; RF rev 26 §3.8c fleet-table rule / IG rev 5 (IMO-keyed IGU gate, `igu_refs.py`) 2026-09-21; AP rev 5 (review app) 2026-09-18; AP rev 6 §2b (review app push) 2026-09-21; AP rev 8 §2c (the living workbook) 2026-09-21. Note: the rule/section numbers below were last content-reconciled at RF rev 12 / DC rev 2; the rev 13–16 and DC rev 3–6 changes were path/navigation/QA-note refinements that did not renumber the indexed rules. RF rev 17 added §4.14–§4.15 and a §4.8 carve-out; DC rev 7 added §6.7–§6.8; DF rev 1 is the new data-fill workflow (inherits RF §4 wholesale) — all indexed below.; RF rev 27 §4.16 amended 2026-09-21; RF rev 28 §5 (computed confidence, `scripts/confidence.py`) + DF rev 5 §10 2026-09-22; RF rev 29 §3.8c Vessel type rule 2026-09-23; RF rev 30 §3.3b CSB cross-check 2026-09-23
+Last reconciled against: RF 31, DC 8, DF 6, SR 6, FR 1, IG 7, QC 2, AP 11, reconciled 2026-09-23.
 
 ## Hard rules ([ref]-Fill SOP §4)
 
@@ -36,6 +36,9 @@ Last reconciled against: RF rev 17, DC rev 7, DF rev 1, SR rev 5 (2026-06-04); D
 | 4.17 | RF (rev 24) | IGU `(ex-…)` names → `Other names` (by IMO, IGU PDF ref); IGU `Name (NNNN)` = hull number; hull numbers always `Hull NNNN (Tag)` — `other_names.py --igu-ex` |
 | 4.18 | RF (rev 25) | A Delivery year rolled forward on an undelivered vessel needs a second source besides shipvault — IGU PDF where it prints the same year (→ G), else press; otherwise Y / hold; two different later years stay Y |
 | 4.19 | RF (rev 25) | A later Delivery year also proposes the former year as an addition to `Previous delivery year(s)` (`"; "`, oldest first, refs only where the former year is printed as a delivery year) and `Delivery delayed` = `yes`; decided with the Delivery year line — `delivery_history.py` |
+| — | RF §4.13 Rule F | No value without a ref, ever — even a defensible-looking `Vessel type` = `conventional` with no source is left blank, never written with a blank `[ref]`; `build_workbook.py --mode discovery` refuses a candidate with a filled data cell and a blank `[ref]` (only `unknown` and a placeholder Name stand without one) |
+| §3.8c | RF (rev 29) | A **Vessel type** value counts only in the article's own text, next to vessel wording — never a sidebar, nav, footer, link text, or a non-vessel qualifier ("conventional marine fuels"); `corroborates(…, field="Vessel type")` / `vessel_type_statement()` |
+| §5.2 | IG (rev 2) | A vessel leaving service is never removed from the backend — a scrapped vessel keeps its row and moves to Status `scrapped`, with a verified demolition-sale ref (`docs/inclusion_criteria.md`); duplicates are the one exception and are removed by hand (AP §5a) |
 
 ## Workflow steps
 
@@ -105,7 +108,7 @@ every proposal, so `apply_batch.py` pre-fills `accept` from the gate's verdict.
 | 6a.6 | RF | Owner / charterer press releases |
 | 6a.7 | RF | Vessel database newbuild entries |
 | 6a.8 | RF | **IMO → marine-vessel-tracker** (run this LAST before negative result) |
-| 6a.8 (shipvault companion ref) | RF (rev 21) | A `shipvault.com/ships/{id}` page that renders blank is cited with its unit-record URL as a second ref in the same cell (§4.15 join), gated on the same record — `shipvault_api_refs.py` before `build_workbook.py`. Shipvault is Y / single-source, never for owners |
+| 6a.8 (shipvault companion ref) | RF (rev 21) | A `shipvault.com/ships/{id}` page that renders blank is cited with its unit-record URL as a second ref in the same cell (§4.15 join), gated on the same record — `shipvault_api_refs.py` before `build_workbook.py`. Grade is computed (RF §5 rev 28): a live unit record keyed to the IMO is Green; shipvault alone caps at Yellow only under the §4.18 carve-out; never for owners |
 | 6a.8 (delivered yet?) | RF | `ais_static.py` — aisstream static-data cross-check for on-order IMOs; a lead only, never a `[ref]`; "not seen" is not evidence |
 | 6a.8 (bulk) | RF | Bulk per-IMO lookups on one host go through `sweep.py` (paced, circuit-broken); status `000` on every request = IP ban, not a bot wall — the fetch ladder can't clear it |
 | 6a.9 | RF | Document negative result in QA log |
@@ -135,7 +138,7 @@ every proposal, so `apply_batch.py` pre-fills `accept` from the gate's verdict.
 | Per-vessel Price from an order total | DF §5a | `round(total / N)`, uniform orders only; Yellow max; `derived_from: {total, n}`; note states the division; gate corroborates the total so the URL stays in `Price [ref]`; `derivable: true` is §5-columns-only |
 | Per-batch workflow | DF §6 | pull → dedup → `derive_fills.py` → per-cluster research fan-out → `merge_fills.py` → build → recalc |
 | Output | DF §7 | `backend_data_fill` sheet (gray=existing, color=proposed, peach=appended ref) + QA_review |
-| Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`data/controlled_vocab.md`) |
+| Controlled vocab | DF §8 | Cargo/Vessel/Propulsion exact value sets (`data/controlled_vocab.md`); Price is always the full USD integer (`250000000`) with currency `USD` — `$m` retired from the vocab 2026-09-18; Status gained `scrapped` (§5.2) |
 | Rule F / §4.9 consistency | DF §9 | proposals are paired candidate fills for review, never a backend edit; conflicts → RF §8 |
 | Documented blanks | DF §11 | §6a.9-style negative-result log for cells researched and not found |
 
@@ -162,7 +165,7 @@ The whole-backend consistency/corruption sweep before a data release. Full SOP: 
 
 Name-column QC checks (in `qc_backend.py`): `name-builder-drift` (same yard, different builder label across placeholders) and `name-ordinal-gap` (placeholder missing its sequence number while cluster siblings are numbered) — both LOW/advisory.
 
-## Apply & verify workflow (AP — 2026-06-05, rev 6 2026-09-21)
+## Apply & verify workflow (AP — 2026-06-05, rev 11 2026-09-23)
 
 The offset-proof round-trip that gets a reviewed batch into the backend. Full SOP: `docs/sops/apply.md`.
 
@@ -173,10 +176,13 @@ The offset-proof round-trip that gets a reviewed batch into the backend. Full SO
 | Decide the holds | AP §2 step 2, §3 | Review app (`review_app/README.md`; `python review_app/server.py --batches …`) — writes only the `decision` column + `review_log.jsonl`; a suggested value → `review_app/suggestions.py` → a fix batch (QC §4). Hand-editing `decisions.csv` stays valid |
 | Apply artifacts | AP §2 | `apply_rows.csv` (full-row paste), `apply_patch.csv` (by-name applier), `apply.json` (record) |
 | Apply | AP §2/§7 | full-row paste OR `tools/apply_patch.gs` (by header — offset impossible); never hand cherry-pick |
-| Push from the review app | AP §2b | `⇪ push accepted` (`review_app/push.py`) — lists every cell, one confirmation, plan token, re-pull + verify, `push_log.jsonl`; value / `[ref]` lines only (new rows, conflicts, suggestions stay by hand); Baird triggers it, never a session |
+| Overlapping un-applied batches | AP §2a | `apply_rows.csv` is a snapshot — pasting it after another batch touched the same row reverts that batch's cells. Go by `apply_patch.csv` (writes only its own cells), or re-pull + re-run `apply_batch.py` before each full-row paste. `tools/apply_patch.gs`'s `OVERWRITE_NONBLANK=true` for a `fix` / ref-append batch (replaces non-blank cells by design); `false` for data-fill / ref-fill (additive to blanks) |
+| Push from the review app | AP §2b | `⇪ push changes` (`review_app/push.py`, renamed from *push accepted* rev 7) — lists every cell, one confirmation bound to a re-pulled plan, `push_log.jsonl`; only a reviewer's clicked accept is pushed (a machine-written accept — backend sync, §5 regrade — is left alone); suggestions are pushed gated per-ref by §3.8c; value / `[ref]` lines only (new rows, conflicts stay by hand); Baird confirms it in the browser, never a session |
+| Directed session write | AP §2d | Claude may write the backend sheet itself **only when Baird directs that specific write, in that session** — never automatic, never inferred, never a shortcut. Preconditions: fresh pull, the plan printed cell by cell, a revert file, re-pull verification, scope exactly as named, honest `push_log.jsonl` attribution (never forge a reviewer click). Absent an explicit direction, §2b is the only path |
 | The living workbook (Drive copy of a pass) | AP §2c | `review_app/living.py` — one Google Sheet in `claude-output`, created once, updated in place; every sync / push writes its `processed` column (`processed - incorporated` / `- rejected` / `partly processed - N of M` / blank) keyed by `line id` / `line key`. A mirror: never read back, never a `[ref]`, never a backend cell |
 | Conflicts | AP §4 | `conflicts.csv` — research vs a non-blank value; decided by hand, never auto-applied (RF §8 / DF §9); the app's Items tab records the call (`review_items.jsonl` is durable — `apply_batch.py` resets `conflicts.csv` calls to `hold`) |
 | Verify | AP §5 | `verify_apply.py --pull` → `verify_report.csv` (landed/mismatch/missing) + qc the touched rows |
+| Dedupe sweep | AP §5a | `verify_apply.py` runs `dedupe_check.py` over the batch's touched/added rows after every apply (also runnable standalone); review any HIGH/MED group before calling the batch done |
 
 ## FSRU reconciliation workflow (FR — 2026-06-26)
 
@@ -208,6 +214,21 @@ IMO-keyed intercomparison of the whole backend against the IGU World LNG Report'
 | Dropped vessels | IG §5.2 | rows are never deleted; a scrapped vessel → Status `scrapped` via a `fix` batch with a verified demolition ref (rev 2) |
 | Workbook | IG §6 | `build_workbook.py --mode igu` — 11 sheets, live sheet row first, no `[ref]` cells |
 | Close-out | IG §7 | batch contents, dedupe sweep, follow-up `fix` / discovery batch; the IGU batch itself is never applied |
+
+## SFOC reconciliation workflow (SR — 2026-05-26, rev 6 2026-09-23)
+
+IMO-keyed bulk reconciliation of the backend against a fresh SFOC (Clarkson) export — the
+project's authoritative third-party orderbook reference and the upstream source of most
+candidate adds. Full SOP: `docs/sops/sfoc_reconciliation.md`.
+
+| Phase | Section | What |
+|---|---|---|
+| Scope / positioning | SR §1 | Three input files staged in `work/` (backend CSV via `pull_backend.py`, SFOC CSV, exclusions CSV); SFOC is a comparison artifact only — NOT a citable `[ref]` (like GIIGNL/SFOC in FR/IG) |
+| Parameters | SR §2 | SFOC snapshot date/cutoff, capacity cut (default 50,000 m³), field-diff scope, output naming |
+| Four-bucket model | SR §3 | Matched (Bucket 1) / only-in-SFOC (Bucket 2, split by capacity + IMO format) / only-in-backend (Bucket 3) / contradictions (Bucket 4, should be empty) — plus already-excluded (Bucket 5) and two IMO-less sheets (§3.6) |
+| Workflow | SR §4 | pull → stage the three inputs → build the buckets (set-based IMO comparison, §4.4) → optional Hull-number backfill into blank backend cells (§4.5) → name normalization before diffing (§4.6) → no auto-fuzzy-match on IMO-less rows (§4.7) → inclusion-criteria spot-checks on Bucket 3 (§4.8) → build workbook → recalc → commit |
+| Output | SR §5 | nine-sheet `LNG_carrier_reconciliation.xlsx` (Read_me, Summary, Candidates_to_add, Matched_with_diffs, Backend_only, Already_excluded, Contradictions, No_IMO_Backend, No_IMO_SFOC) |
+| Hard rules | SR §6 | Never cite SFOC as a `[ref]` (§6.1, RF §4.1); never overwrite the backend (RF §4.7); exclusions list wins a disagreement (§6.2); the capacity cut is a heuristic, not a rule (§6.3); backend's `Hull number` column and SFOC's hull field corroborate each other, blank-cell backfill only (§6.4); no silent fuzzy-matching on IMO-less rows (§6.6) |
 
 ## Pause-and-ask triggers
 

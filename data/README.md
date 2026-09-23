@@ -25,11 +25,12 @@ on 2025; its FSRU fleet table is "FSRU FLEET AT THE END OF 2025").
 and fragmented tables. Expect the parsers to need the most adjustment here.
 
 ‡ The 2026 edition is the one the current pipeline is tuned to. The section spans above bundle
-the narrative + the tables; the Reconciliation SOP Appendix A.2 carries the finer 2026 split
-(liquefaction **narrative** pp.28–31 / **tables** pp.32–37; regas **narrative** pp.48–52 /
-**tables** pp.53–62). The fleet page (p.43) is verified by the `FSRU FLEET AT THE END OF 2025`
-header. The filename varies because the user receives interim/dated cuts (`-0526b` = a
-2026-05-26 revision).
+the narrative + the tables; the finer 2026 page-level split (narrative vs. tables) lives in the
+sibling terminals repo's own reconciliation SOP, not this one — this repo's
+[`docs/sops/fsru_reconciliation.md`](../docs/sops/fsru_reconciliation.md) only consumes the
+fleet table (§1, "Two input files"). The fleet page (p.43) is verified by the
+`FSRU FLEET AT THE END OF 2025` header. The filename varies because the user receives
+interim/dated cuts (`-0526b` = a 2026-05-26 revision).
 
 Section page ranges above are **approximate and edition-specific** — they were derived by
 header-pattern detection and a couple include adjacent key-figures/TOC pages. **Always
@@ -42,8 +43,9 @@ before pointing an extractor at an older report.
 `(zip deflate encoded)` — that is just normal Flate stream compression inside a real PDF,
 **not** the legacy "zip-of-JPEGs" distribution form, which would report `Zip archive data`
 as the top-level type.) `pdftotext -layout` extracts a clean, column-positioned text layer
-from all seven, so the `giignl_extract.py` / `giignl_fsru_fleet.py` `pdftotext` pipeline is
-the right tool for every edition here — **none** of these need the vision-LLM pipeline.
+from all seven, so the `pdftotext` pipeline behind `../lng-terminals-researcher/scripts/giignl_extract.py`
+/ `giignl_fsru_fleet.py` (sibling repo — this repo reuses it, never rebuilds it) is the right
+tool for every edition here — **none** of these need the vision-LLM pipeline.
 
 This corrects an earlier blanket assumption in the project docs that "earlier editions
 shipped as zip-of-JPEGs+OCR." The zip-of-JPEGs form was a one-off distribution of *some*
@@ -53,24 +55,31 @@ vision-LLM fallback still lives in git history, and the standing rule remains: *
 
 ## What this archive is for
 
-- **Back-checking a GEM `capacity_ref` against the edition it cites.** Many GEM unit-rows
-  cite a specific GIIGNL edition for capacity (e.g. `GIIGNL2022_Annual_Report`). With every
-  edition on disk, the GEM-vs-GIIGNL verdict work can read what that *cited* edition actually
-  said — rather than only comparing against the current year — and confirm a real change vs a
-  superseded figure.
+- **The FSRU reconciliation workflow's input.** `docs/sops/fsru_reconciliation.md` (§1) reads
+  the current edition's fleet table, extracted by the sibling repo's parser, and compares it
+  name-keyed against the backend's FSRUs. GIIGNL is a comparison artifact, never a citable
+  `[ref]` (same status as SFOC).
 - **Year-over-year reconciliation / trend checks** — when a 2026 value looks off, the prior
   editions show whether a capacity, owner, or status genuinely moved or is a one-edition blip.
-- **Back-testing the extractors** — running `giignl_extract.py` / `giignl_fsru_fleet.py` on
-  older editions to validate (or harden) the parsing logic against layouts it wasn't tuned on.
+- **Back-testing the extractors** — running `giignl_extract.py` / `giignl_fsru_fleet.py`
+  (`../lng-terminals-researcher/scripts/`) on older editions to validate (or harden) the
+  parsing logic against layouts it wasn't tuned on.
 
 ## Caveat — the extractors are tuned to the 2026 layout
 
-`giignl_extract.py` (country tables) and `giignl_fsru_fleet.py` (fleet table) derive or hard-code
-**column character-offsets and page numbers from the 2026 edition**. Older editions move the
-tables to different pages, shift the column positions, and in some years carry different columns
-(e.g. the 2020 vessel fleet listing has a `Manager` column the 2026 fleet table doesn't). So a
-back-extraction on a pre-2026 edition is **not** turn-key — it needs per-edition page selection
-(`--page` for the fleet parser) and offset re-derivation from that edition's header row. Treat
-the table page-ranges above as a starting hint, not a guarantee.
+`../lng-terminals-researcher/scripts/giignl_extract.py` (country tables) and
+`giignl_fsru_fleet.py` (fleet table) derive or hard-code **column character-offsets and page
+numbers from the 2026 edition**. Older editions move the tables to different pages, shift the
+column positions, and in some years carry different columns (e.g. the 2020 vessel fleet
+listing has a `Manager` column the 2026 fleet table doesn't). So a back-extraction on a
+pre-2026 edition is **not** turn-key — it needs per-edition page selection (`--page` for the
+fleet parser) and offset re-derivation from that edition's header row. Treat the table
+page-ranges above as a starting hint, not a guarantee.
 
-See `docs/sops/reconciliation.md` (Appendix A) for the extraction rules and the 2026 page map.
+Both extractor scripts live in the sibling repo, `../lng-terminals-researcher`, and are reused
+here rather than duplicated — see `docs/sops/fsru_reconciliation.md` §1 ("Two input files") and
+§5 for how this repo calls them. This directory holds only the source PDFs and the other
+reference tables listed in the top-level [README.md](../README.md#repository-layout)
+(`controlled_vocab.md`, `csb_yard_urls.md`, `owner_charterer_map.md`, `source_roster.md`,
+`shipbuilder_facts.csv`, `shipowner_facts.csv`, `qc_allowlist.csv`, `gem_export_*.csv`,
+`living_workbook.json`) — this file documents the GIIGNL archive specifically.

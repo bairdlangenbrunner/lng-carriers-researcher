@@ -2,7 +2,6 @@
 import json
 
 import pytest
-
 import review_data
 import store
 import suggestions

@@ -91,19 +91,18 @@ import argparse
 import csv
 import json
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.comments import Comment
-from openpyxl.utils import get_column_letter
-
 import confidence
-from paths import backend_csv_path, work_dir
+from lookups import AMBIGUOUS, CONTROLLED_VOCAB, load_builder_facts
+from lookups import YARD_FACT_COLS as YARD_LOCATION_COLS
 from normalize import normalize_builder, normalize_owner
-from lookups import (CONTROLLED_VOCAB, AMBIGUOUS, load_builder_facts,
-                     YARD_FACT_COLS as YARD_LOCATION_COLS)
-
+from openpyxl import Workbook
+from openpyxl.comments import Comment
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.utils import get_column_letter
+from paths import backend_csv_path, work_dir
 
 # Color conventions
 FILL_GREEN = PatternFill("solid", fgColor="C6EFCE")    # high confidence
@@ -913,7 +912,7 @@ def build_fix(args):
             gate_value = str(cell.get("gate_value") or new_value)
             drop_set = set() if preserve_ref else set(cell.get("drop_refs", []))
 
-            kept, passes = [], []
+            kept, passes, dropped_urls = [], [], []
             if preserve_ref:
                 qa_rows.append({"row_id": rid, "field": field, "value": new_value,
                                 "url": existing_ref,
@@ -946,12 +945,25 @@ def build_fix(args):
                     verdict = f"DROPPED — unreachable, not §3.8a-flagged ({reason})"
                 else:
                     verdict = f"DROPPED — does NOT corroborate {ref_gate!r} ({reason})"
+                if verdict.startswith("DROPPED"):
+                    dropped_urls.append({"url": url, "reason": verdict})
                 qa_rows.append({"row_id": rid, "field": field, "value": new_value,
                                 "url": url, "verdict": verdict, "note": cell.get("note", "")})
             for u in drop_set:
                 qa_rows.append({"row_id": rid, "field": field, "value": new_value,
                                 "url": u, "verdict": "REMOVED (drop_refs: conflicts with value)",
                                 "note": cell.get("note", "")})
+
+            # Item 1: what apply_batch.py reads is `cell["refs"]` from this batch's fix.json —
+            # write GATE-SURVIVING, citable_form-swapped URLs back into it (never the raw
+            # source refs), and record what the gate dropped for the audit trail. A
+            # preserve_ref cell never ran the gate, so its `refs` (if any) is left alone.
+            if not preserve_ref:
+                cell["refs"] = list(kept)
+                if dropped_urls:
+                    cell["dropped_refs"] = dropped_urls
+                else:
+                    cell.pop("dropped_refs", None)
 
             # §5 (RF rev 28): the grade is what the gate did. A preserve_ref cell is
             # cosmetic — no gate ran, so its declared confidence stands.
@@ -1013,14 +1025,11 @@ def build_fix(args):
             if (rid, child) in changed:
                 changed[(rid, child)]["conf"] = conf
 
-    # The grades computed above belong to the batch, not to this workbook: stamp them
-    # back into the source JSON so apply_batch.py pre-fills decisions from what the gate
-    # actually did. Idempotent — re-running the build re-grades in place.
-    try:
-        Path(args.fix).write_text(json.dumps(payload, indent=2, ensure_ascii=False))
-    except OSError as e:
-        print(f"  [warn] could not stamp confidences back into {args.fix}: {e}", file=sys.stderr)
-
+    # The grades and gated refs computed above belong to the batch, not to the --fix
+    # source file (left byte-for-byte untouched — it may be reused / regraded later):
+    # they're written to <out>/fix.json below, once out_path is known, so that IS the
+    # file apply_batch.py reads. That also retires the old manual "copy fix.json into
+    # the batch dir" step (Item 1) — the gated copy lands there directly.
     if missing:
         print(f"  [warn] correction row_ids not in backend (skipped): {missing}", file=sys.stderr)
 
@@ -1108,6 +1117,19 @@ def build_fix(args):
     out_path = _resolve_out_path(args.out, "lng_carrier_fix.xlsx")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out_path)
+
+    # Write the GATED payload (kept refs, dropped_refs, computed confidence) as this
+    # batch's own fix.json — the file apply_batch.py reads (Item 1). Marked so a reader
+    # (or apply_batch.py, below) can tell it was built by a gate run and not hand-copied
+    # from an ungated source.
+    payload["gated"] = {"at": datetime.now(UTC).isoformat(timespec="seconds"),
+                        "by": "build_workbook --mode fix"}
+    fix_out = out_path.parent / "fix.json"
+    try:
+        fix_out.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    except OSError as e:
+        print(f"  [warn] could not write gated fix.json to {fix_out}: {e}", file=sys.stderr)
+
     print(f"  Wrote {out_path}  ({len(dropped)} ref(s) dropped by the gate)")
     return out_path
 

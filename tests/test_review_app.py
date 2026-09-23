@@ -5,7 +5,6 @@ import urllib.error
 import urllib.request
 
 import pytest
-
 import review_data
 import server
 import store
@@ -347,6 +346,7 @@ def test_conflict_call_reset_by_apply_batch_is_shown(running, tmp_path):
 
 def edit_backend(path, row_id, **cells):
     import csv
+
     from review_fixture import HEADER
     with open(path, newline="", encoding="utf-8") as f:
         grid = list(csv.reader(f))

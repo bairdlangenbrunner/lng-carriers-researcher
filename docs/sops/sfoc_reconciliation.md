@@ -2,7 +2,7 @@
 
 **Document purpose:** This SOP describes the workflow for periodically reconciling the backend Google Sheet against a fresh SFOC (Clarkson) export. It is distinct from both companion SOPs: the [ref]-Fill SOP covers citation work on existing backend rows, the Discovery SOP covers finding vessels missing from the backend in the post-SFOC-cutoff leading edge, and *this* SOP covers the quarterly bulk reconciliation against the SFOC snapshot itself — which is the project's authoritative third-party orderbook reference and the upstream source of most candidate adds.
 
-**Last revised:** 2026-06-04 rev 5 (completed the input-side migration left half-done at rev 4 — §4.2 and §2 now stage the three input files in the repo `work/` directory and the residual claude.ai-sandbox path `/mnt/user-data/uploads/` (and its `ls` check) is removed, since it doesn't exist on a cloned local repo. Path-only edit; no reconciliation-rule changes — the four-bucket model, capacity cut, normalization mapping, and nine-sheet structure are unchanged.). Prior: 2026-05-28 rev 4 (repository migration — output model changed to one committed directory per reconciliation run under `batches/`; input files may now be staged in the repo `work/` directory as well as `/mnt/user-data/uploads/`; `present_files` reference updated for the Git/Claude Code workflow. No reconciliation-rule changes from rev 3.). Prior: 2026-05-27 rev 3 (added §3.8b cross-reference to §6.1 — QA notes for reconciliation findings quote only publicly-visible content; LNG Prime editorial entity tags support yellow per §5, not green. Surfaced by the same 2026-05-27 F8 finding that drove [ref]-Fill SOP rev 15 and Discovery SOP rev 5.).
+**Last revised:** 2026-09-23 rev 6 (audit fixes, path/method currency only — no reconciliation-rule change. §1 and §4.2 replaced "pulled fresh from the public export URL" / `curl -A "Mozilla/5.0"` against it with `python scripts/pull_backend.py`, the `gws-gem` read-only profile — anonymous export URLs are withdrawn and must never be referenced as a method. §4.2's `ls -la ../work/` fixed to be repo-root-relative. §6.4 and §8 no longer claim the backend carries no hull numbers — it has a `Hull number` column (`Hull NNNN (Tag)`); SFOC's hull field is a corroborator / blank-cell backfill source, not a structural gap.). Prior: 2026-06-04 rev 5 (completed the input-side migration left half-done at rev 4 — §4.2 and §2 now stage the three input files in the repo `work/` directory and the residual claude.ai-sandbox path `/mnt/user-data/uploads/` (and its `ls` check) is removed, since it doesn't exist on a cloned local repo. Path-only edit; no reconciliation-rule changes — the four-bucket model, capacity cut, normalization mapping, and nine-sheet structure are unchanged.). Prior: 2026-05-28 rev 4 (repository migration — output model changed to one committed directory per reconciliation run under `batches/`; input files may now be staged in the repo `work/` directory as well as `/mnt/user-data/uploads/`; `present_files` reference updated for the Git/Claude Code workflow. No reconciliation-rule changes from rev 3.). Prior: 2026-05-27 rev 3 (added §3.8b cross-reference to §6.1 — QA notes for reconciliation findings quote only publicly-visible content; LNG Prime editorial entity tags support yellow per §5, not green. Surfaced by the same 2026-05-27 F8 finding that drove [ref]-Fill SOP rev 15 and Discovery SOP rev 5.).
 
 ---
 
@@ -21,7 +21,7 @@
 **Critical positioning of SFOC.** SFOC is the project's third-party data origin (alongside GEM and the annual IGU World LNG Report) and remains in the backend's `[Original source]` column for rows it seeded. It is **NOT** a citable URL for any `[ref]` cell — see [ref]-Fill SOP §4.1. SFOC reconciliation operates on the SFOC CSV as a comparison artifact only; nothing this workflow produces ends up cited as an SFOC URL in the backend or in any companion workbook.
 
 **Three input files.**
-- **Backend CSV** — the live `backend` tab, pulled fresh from the public export URL (see [ref]-Fill SOP §3.0). The user is actively editing it; always re-pull at the start of every reconciliation.
+- **Backend CSV** — the live `backend` tab, pulled fresh with `python scripts/pull_backend.py` (the `gws-gem` read-only profile; see [ref]-Fill SOP §3.0). The user is actively editing it; always re-pull at the start of every reconciliation.
 - **SFOC CSV** — the most recent SFOC distribution, supplied by the user and staged in `work/` (Clarkson distributions arrive roughly quarterly; the file name typically encodes the dist version and date, e.g. `..._dist_Q3__updated_may_26_...`).
 - **Exclusions CSV** — the deliberately-curated list of small/mid-scale/bunkering vessels that the tracker excludes by criteria. Supplied by the user; shares the backend schema. Without this file, the reconciliation cannot distinguish "SFOC vessel missing from backend" (a real candidate) from "SFOC vessel correctly excluded from backend" (a non-finding).
 
@@ -100,9 +100,9 @@ Two parallel sub-buckets, presented side-by-side for manual matching:
 
 ### 4.2 Verify all three input files are present
 
-Confirm the backend export, the SFOC distribution, and the exclusions CSV are all available. Stage the three input files in the repo's `work/` directory (gitignored — the right place for inputs you don't commit); `ls -la ../work/` to check. If any is missing, ask for it — don't proceed with a default. (If you're driving this from a claude.ai chat rather than a local checkout, an uploaded file lands in the session's upload area; copy it into `work/` before running the scripts.)
+Confirm the backend export, the SFOC distribution, and the exclusions CSV are all available. Stage the three input files in the repo's `work/` directory (gitignored — the right place for inputs you don't commit); `ls -la work/` from the repo root to check. If any is missing, ask for it — don't proceed with a default. (If you're driving this from a claude.ai chat rather than a local checkout, an uploaded file lands in the session's upload area; copy it into `work/` before running the scripts.)
 
-If the backend CSV is not in `work/` (e.g. user wants you to pull the live version), use `curl -A "Mozilla/5.0"` against the public export URL per [ref]-Fill SOP §3.0. Note in the workbook README which backend snapshot you used (staged-file timestamp vs. fresh pull date).
+If the backend CSV is not in `work/` (e.g. user wants you to pull the live version), run `python scripts/pull_backend.py` from the repo root (the `gws-gem` read-only profile) per [ref]-Fill SOP §3.0. Note in the workbook README which backend snapshot you used (staged-file timestamp vs. fresh pull date).
 
 ### 4.3 Load and inspect the schemas
 
@@ -148,7 +148,7 @@ If the user opts in (or if it's the standing quarterly workflow), populate Hull 
 - `Hull Unknown 01 (HSHI)` → None (explicitly unknown, don't parse)
 - `Dalian No 1 G175K-16` → `G175K-16`
 
-Insert the new columns right after `Name [ref]`. Leave `Hull number [ref]` **blank** in this workflow — the [ref] needs a publicly-citable URL per Rule A (4.4), and SFOC isn't one per Rule 4.1. The user's standard [ref]-Fill workflow will populate it from CSB or a §6a fallback source on a subsequent batch.
+Write into the backend's existing `Hull number` column (`Hull NNNN (Tag)` form) — blank cells only; a filled cell that disagrees with SFOC is a discrepancy for the user to verify, never an overwrite. Leave `Hull number [ref]` **blank** in this workflow — the [ref] needs a publicly-citable URL per Rule A (4.4), and SFOC isn't one per Rule 4.1. The user's standard [ref]-Fill workflow will populate it from CSB or a §6a fallback source on a subsequent batch.
 
 Output: a separate `LNG_carrier_backend_with_hull_numbers.csv` file alongside the reconciliation workbook. In the pilot this populated 1,055 of 1,143 backend rows (1,041 from SFOC, 14 parsed from names).
 
@@ -250,7 +250,7 @@ The 50,000 cu m cut for splitting Bucket 2 is a working heuristic to separate co
 ### 6.4 Backend wins on status by default
 For per-field reconciliation precedence (Bucket 1 `Matched_with_diffs`), the default convention is:
 - **Backend wins on status** (the project does active research; backend status reflects current information)
-- **SFOC wins on hull numbers** (backend doesn't carry them; SFOC is closer to shipyard records)
+- **SFOC wins on hull numbers where the backend's `Hull number` column is blank** (SFOC is closer to shipyard records); where both are filled and disagree, that's a discrepancy to verify, not an autofill — the name/IMO join stays primary
 - **SFOC wins on contract dates** (backend doesn't carry them; SFOC is closer to shipyard records)
 - **Most-recent `Last updated` wins for capacity and price** (either side may have updated specs)
 
@@ -291,16 +291,16 @@ Stop and ask the user before proceeding when:
 
 **Compose this SOP with Discovery.** A standard quarterly cycle is: (1) reconcile against fresh SFOC distribution, producing this workbook; (2) run Discovery against the post-SFOC-cutoff window to catch what landed after SFOC's snapshot. The two workbooks together represent the full update for the quarter. If only one is run, note in the README which gap is uncovered.
 
-**The backend has structural gaps SFOC fills.** Two columns the backend doesn't carry that SFOC does — and that are materially relevant to the tracker:
-- **Hull number** (covered by the optional §4.5 backfill)
+**The backend has a structural gap SFOC fills.** One column the backend doesn't carry that SFOC does, and that is materially relevant to the tracker:
 - **Contract date** (relevant to the on-order/proposed distinction in the inclusion criteria)
 
-Each quarterly reconciliation is an opportunity to surface these gaps. The §4.5 backfill addresses Hull; a similar Contract-date backfill could be added if the user wants it.
+The backend *does* carry a `Hull number` column (`Hull NNNN (Tag)` form, populated by [ref]-Fill research) — SFOC's `Hull No` is a corroborator against it, not a gap-fill: §4.5 backfills the backend's blank `Hull number` cells from SFOC where the name/IMO join already matched the row, and flags a disagreement between a filled backend hull and SFOC's for the user to verify rather than overwriting it. Each quarterly reconciliation is an opportunity to surface the Contract-date gap; a similar Contract-date backfill could be added if the user wants it.
 
 ---
 
 ## 9. Changelog
 
+- **rev 6** (2026-09-23): Audit fixes, path/method currency only. §1 and §4.2 no longer name the public export URL as a fetch method (anonymous link access to work Drive is withdrawn) — both now say `python scripts/pull_backend.py` (`gws-gem`). §4.2's `ls -la ../work/` fixed to `ls -la work/` (repo-root-relative). §6.4 and §8 corrected: the backend has a `Hull number` column, not a hull-number gap — SFOC's hull field backfills the backend's blank cells (§4.5) and corroborates the filled ones; the name/IMO join stays primary. No reconciliation-rule change.
 - **rev 1** (2026-05-26): Initial SOP, formalized from the 2026-05-22 pilot reconciliation that produced `LNG_carrier_reconciliation.xlsx` against the SFOC dist Q3 (updated 26-May) snapshot. Four-bucket model (Matched / Only-in-SFOC / Only-in-backend / Contradictions) plus Already-excluded plus the two IMO-less sheets, with the 50,000 cu m capacity cut as a working heuristic and the optional Hull-number backfill from §4.5. Pilot bucket counts captured throughout as anchor values for future runs to compare against.
 - **rev 2** (2026-05-27): Added CSB-sweep guardrail to §4.8 — before any specific hull lands in the workbook as a CSB discrepancy, sweep every page of the yard AND normalize fullwidth `－` (U+FF0D) and ASCII `-` (U+002D) hyphens. Surfaced by the 2026-05-27 false-positive on Hull CMHI-282-04 (Celsius Shipping at CMHI Haimen), which appeared missing from page 1 but was on page 2 rendered with a fullwidth hyphen. The authoritative CSB navigation rules now live in [ref]-Fill SOP §6.3 (pagination) and §6.4 (hyphen normalization) as of [ref]-Fill rev 14; this SOP cross-references them rather than restating. No structural changes to buckets or workbook.
 - **rev 3** (2026-05-27): Added §3.8b cross-reference to §6.1 — reconciliation QA findings (F-series entries) quote only publicly-visible content; paywalled body text is never quoted; LNG Prime editorial entity tags support yellow confidence per §5, not green. Surfaced by a 2026-05-27 F8 reconciliation finding that quoted paywalled LNG Prime body text where the verifier could only see the public lead and the tag list — the underlying Woodside attribution was correct, but the quoted body sentence was unverifiable and on its face indistinguishable from fabrication. Same finding drove [ref]-Fill SOP rev 15 (where §3.8b was added as the authoritative rule) and Discovery SOP rev 5.

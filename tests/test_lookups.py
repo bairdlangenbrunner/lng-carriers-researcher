@@ -5,8 +5,7 @@ raw names through normalize, drop blank/AMBIGUOUS facts so they're never
 auto-applied, and that the data table wins over the backend-sibling scan.
 Pure logic, no network — see tests/README.md.
 """
-import lookups
-from lookups import CONTROLLED_VOCAB, AMBIGUOUS, builder_facts, owner_facts, _usable
+from lookups import AMBIGUOUS, CONTROLLED_VOCAB, _usable, builder_facts, owner_facts
 
 
 class TestControlledVocab:

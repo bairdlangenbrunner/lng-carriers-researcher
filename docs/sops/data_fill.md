@@ -2,7 +2,7 @@
 
 **Document purpose:** Operating manual for the **data-fill** workflow — researching **blank** (and literal-`unknown`) backend data cells and proposing a value plus a corroborating `[ref]` URL for each, packaged as a candidate workbook for human review. It complements the [ref]-Fill SOP (which cites *existing* values) and the Discovery SOP (which finds *new vessels*). **Authoritative** for this workflow.
 
-**Last revised:** 2026-09-22 rev 5 (§10 rewritten to follow [ref]-Fill SOP §5 rev 28 — the confidence label is computed by `merge_fills.py` from the gate's verdict (`scripts/confidence.py`), not declared by the researcher; one live page stating the value is Green; §5a order-total Price is now an explicit cap rather than a hand-applied ceiling. No workflow-structure changes.). Prior: 2026-09-21 rev 4 (§5: a shipvault page or unit record is **never** a `Shipowner country/area` ref — it prints the owner string and the vessel's flag, never where the owner is based; and a pending batch's copy of a facts-table ref goes stale when the table is re-sourced — re-point `new_urls` at the table, re-gate, rebuild the artifacts before applying). Prior: 2026-09-17 rev 3 (added §5a — a per-vessel Price may be divided out of a reported order total: Yellow at most, `derived_from: {total, n}` on the fill, the note states the division, and the §3.8c gate corroborates the **total** so the total-stating URL stays in `Price [ref]`; `derivable: true` is now honoured by `merge_fills.py` only on the §5 autofill columns, and any research fill left with no URL is demoted. Surfaced by 21 sep-17-pass Price cells that reached the workbook with a value, no ref, and a default `accept`.). Prior: 2026-06-05 rev 2 (added §3 pointer to [ref]-Fill SOP §3.8c — the value↔ref corroboration gate (hard-block) now enforced centrally in `merge_fills.py`: a `[ref]` is dropped from any cell whose proposed value its live page does not contain, and the conflict is logged to `candidate_findings` rather than kept; includes the dual-figure capacity rule. No workflow-structure changes.). Prior: 2026-06-04 rev 1 (initial SOP, written alongside the first data-fill batch — rows with `Last updated >= 2026-05-18`. Inherits the [ref]-Fill SOP §4 rules wholesale; adds the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5), and the `data_fill` build mode + output structure (§7). Abbreviated **DF**.).
+**Last revised:** 2026-09-23 rev 6 (audit fixes — repointed the §3 §4.9 bullet from "§6 of [ref]-Fill" (CSB navigation) to [ref]-Fill SOP §4.9 / §4.13; corrected `$m`'s retirement date in §8; made §6's workflow block repo-root-relative. No workflow-structure change.). Prior revisions: §13.
 
 ---
 
@@ -35,7 +35,7 @@ Data-fill **inherits all [ref]-Fill SOP §4 rules**. The load-bearing ones:
 - **§3.8c value↔ref corroboration gate (hard-block)** — a `[ref]` may only be cited on a cell whose proposed value its live page actually contains; a live page that states a *different* figure is dropped from that cell and the conflict is logged to `candidate_findings`, never kept. `merge_fills.py` enforces this centrally (`corroborates()` / `value_variants()`). Includes the dual-figure rule (nominal vs 98%-fill capacity → carry the nominal).
 - **§4.7** — never edit the backend; output is a candidate workbook.
 - **§4.8** — never *research* geolocation (but see §5: the yard-location block is *mirrored* from a sibling row).
-- **§4.9** — don't fill empty cells without explicit source support; surface as candidate fills. **Data-fill is this path executed in batch** (see §6 of [ref]-Fill, and §9 below).
+- **§4.9** — don't fill empty cells without explicit source support; surface as candidate fills. **Data-fill is this path executed in batch** (see [ref]-Fill SOP §4.9 / §4.13 Rule F, and §9 below).
 - **§4.12 Rule E** — cluster coherence (owner + yard + ship-count/contract-date).
 - **§4.13 Rule F** — never an orphan `[ref]`; value and its `[ref]` are populated together.
 - **§4.14** — owner/charterer stylization (the backend's short form, e.g. `COSCO`).
@@ -92,16 +92,16 @@ Trade press usually reports a multi-ship order as one figure ("six 174,000-cbm c
 ## 6. Workflow per batch
 
 ```bash
-cd scripts/
+# Run from the repo root (paths.py anchors work/ to the repo root regardless of cwd).
 
 # 1. Fresh backend CSV + colmap (MANDATORY first step — re-derives scope; schema drifts)
-python pull_backend.py
+python scripts/pull_backend.py
 
 # 2. Dedup index — cluster_index for the per-cluster fan-out
-python dedup_index.py
+python scripts/dedup_index.py
 
 # 3. Derivable autofills + scope + per-cluster research task lists
-python derive_fills.py --since <YYYY-MM-DD>
+python scripts/derive_fills.py --since <YYYY-MM-DD>
 #   -> work/data_fill.json (derivable fills + scope.row_ids)
 #   -> work/research_tasks.json (per-cluster cells still needing research)
 
@@ -111,17 +111,17 @@ python derive_fills.py --since <YYYY-MM-DD>
 #    Reuse prior batches (e.g. the discovery candidates.json) and backend siblings first.
 
 # 5. Merge + central §3.8 gate
-python merge_fills.py
+python scripts/merge_fills.py
 #   -> merges derivable + all research_*.json into work/data_fill.json,
 #      dedups (row_id, field), re-verifies distinct fill URLs (drops dead/banned; logs blocked as a separate finding — bot-block ≠ dead;
 #      demotes a research fill that loses all URLs to a documented blank).
 
 # 6. Build the candidate workbook
-python build_workbook.py --mode data_fill --fills ../work/data_fill.json \
-  --out ../batches/<date>_data_fill_rows_X-Y/
+python scripts/build_workbook.py --mode data_fill --fills work/data_fill.json \
+  --out batches/<date>_data_fill_rows_X-Y/
 
 # 7. Recalc — zero formula errors required
-python recalc.py ../batches/<date>_data_fill_rows_X-Y/lng_carrier_data_fill.xlsx
+python scripts/recalc.py batches/<date>_data_fill_rows_X-Y/lng_carrier_data_fill.xlsx
 
 # 8. Copy work/data_fill.json into the batch dir; write notes.md; commit the batch
 #    directory. Do NOT push without user approval.
@@ -167,7 +167,7 @@ The type columns are a fixed value set (`build_workbook.py` writes verbatim — 
 - **Cargo type**: `membrane`, `spherical`, `self-supporting prismatic`, `type C`
 - **Vessel type**: `conventional`, `FSRU`, `q-flex`, `q-max`, `qc-max`, `icebreaker`, `FSU`, `Supporting`, `small-scale`, `mid-scale`
 - **Propulsion type**: `X-DF`, `DFDE`, `steam`, `ME-GA`, `ME-GI`, `SSD`, `steam reheat`, `STaGE`, `prismatic conventional DFDE`, `prismatic small-scale DFDE`
-- **Capacity units** `cbm`; **Price currency** `USD` — Price is always full US dollars (`250000000`); `$m` is legacy and being converted (2026-09-17).
+- **Capacity units** `cbm`; **Price currency** `USD` — Price is always full US dollars (`250000000`); `$m` was retired from the vocab 2026-09-18.
 
 Note (from the first batch): trade press almost never prints the literal token `conventional` for Vessel type — CSB says "LNG Tanker", press says "LNG carrier". A class call of `conventional` is defensible but unsourced, so it is left blank rather than written without a value-present source.
 
@@ -218,6 +218,9 @@ Every cell researched without a sourceable value gets a `documented_blanks` entr
 
 ## 13. Changelog
 
+- **rev 6** (2026-09-23): Audit fixes, no workflow-structure change. §3's §4.9 bullet pointed to "§6 of [ref]-Fill" (CSB navigation) for the blank-vs-`unknown` / Rule F material; repointed to [ref]-Fill SOP §4.9 / §4.13. §8: `$m` was recorded as "legacy and being converted (2026-09-17)"; it was retired outright 2026-09-18 — Price is always the full USD integer. §6's workflow block assumed a `scripts/` working directory (`cd scripts/`, bare script names, `../work`/`../batches` paths); rewritten repo-root-relative to match how every other SOP's command block runs. This entry backfills rev 4 and rev 5, previously recorded only in the `Last revised` line above, into this changelog.
+- **rev 5** (2026-09-22): §10 rewritten to follow [ref]-Fill SOP §5 rev 28 — the confidence label is computed by `merge_fills.py` from the gate's verdict (`scripts/confidence.py`), not declared by the researcher; one live page stating the value is Green; §5a order-total Price is now an explicit cap rather than a hand-applied ceiling. No workflow-structure changes.
+- **rev 4** (2026-09-21): §5: a shipvault page or unit record is **never** a `Shipowner country/area` ref — it prints the owner string and the vessel's flag, never where the owner is based; and a pending batch's copy of a facts-table ref goes stale when the table is re-sourced — re-point `new_urls` at the table, re-gate, rebuild the apply artifacts before applying.
 - **rev 3** (2026-09-17): Added §5a — per-vessel Price from a reported order total (Yellow max, `derived_from: {total, n}`, note states the division, §3.8c gate corroborates the total so the URL stays in `Price [ref]`; uniform orders only). `derivable: true` is now restricted in code to the §5 autofill columns, and a research fill with no surviving URL is always demoted. `citation_qc.py --corroborate` recognises an order-total Price cell. Surfaced by the sep-17-pass data-fill batch: research agents divided six order totals into 21 per-vessel prices, the gate rightly dropped the total-stating URLs, and a mis-set `derivable: true` kept the values (ref-less, default `accept`). Those 21 cells were re-gated under §5a (Yellow, with refs).
 - **rev 2** (2026-06-05): Added a §3 pointer to the new [ref]-Fill SOP §3.8c value↔ref corroboration gate (hard-block) — `merge_fills.py` now drops any `[ref]` whose live page does not contain the cell's proposed value and logs the conflict to `candidate_findings` instead of keeping it; includes the dual-figure capacity rule (carry the nominal). Surfaced by the 2026-06-05 rows 1216/1217 capacity defect. No data-fill workflow-structure changes.
 - **rev 1** (2026-06-04): Initial SOP, written with the first data-fill batch (rows `Last updated >= 2026-05-18`: 42 rows, 88 fills, 140 documented blanks, 1 `unknown` preserved at O1213). Establishes the blank-vs-`unknown` preserve-ref contract (§4), the derivable autofill layer (§5; `scripts/derive_fills.py`, `normalize.owner_country`), the per-cluster research fan-out + central §3.8 merge (`scripts/merge_fills.py`), the `data_fill` build mode + `backend_data_fill` output sheet (§7), and the controlled-vocab guard (§8; `data/controlled_vocab.md`). Inherits [ref]-Fill SOP §4 rules wholesale.

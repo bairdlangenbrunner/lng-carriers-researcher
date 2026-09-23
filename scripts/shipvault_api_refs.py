@@ -44,8 +44,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from backend_io import load_backend  # noqa: E402
-from url_verifier import (SHIPVAULT_API, SHIPVAULT_HEADERS, _fetch,  # noqa: E402
-                          corroborates)
+from url_verifier import SHIPVAULT_API, SHIPVAULT_HEADERS, _fetch, corroborates  # noqa: E402
 
 _PAGE_RE = re.compile(r"^https?://(?:www\.)?shipvault\.com/ships/(\d+)/?$")
 SOURCES = ("data_fill.json", "candidates.json", "citations.json", "fix.json")

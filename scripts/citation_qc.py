@@ -54,8 +54,8 @@ from urllib.parse import urlsplit
 
 import url_verifier
 from backend_io import load_backend
-from paths import backend_csv_path, work_dir
 from igu_refs import corroborates_cell
+from paths import backend_csv_path, work_dir
 from url_verifier import check_url, citable_form, classify, corroborates
 
 _URL_SPLIT = re.compile(r"[\s,;|]+")

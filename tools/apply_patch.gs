@@ -74,11 +74,21 @@ function applyPatch() {
       if (sr === undefined) { log.push("SKIP set: row_id " + key + " not found"); skips++; continue; }
       if (cc === undefined) { log.push("SKIP set: column '" + column + "' not in header"); skips++; continue; }
       var cur = backend.getRange(sr, cc + 1).getValue();
-      if (cur !== "" && cur !== null && !OVERWRITE_NONBLANK && String(cur).trim() !== String(value).trim()) {
+      var curStr = String(cur).trim();
+      // "unknown" is a placeholder, not a value — treat it as blank for overwrite
+      // purposes, same as review_app/push.py (_norm(cur).lower() != "unknown").
+      var curIsBlank = (cur === "" || cur === null || curStr.toLowerCase() === "unknown");
+      if (!curIsBlank && !OVERWRITE_NONBLANK && curStr !== String(value).trim()) {
         log.push("SKIP set (non-blank): row " + key + " · " + column + " has '" + cur + "'"); skips++; continue;
       }
       log.push((DRY_RUN ? "would set " : "set ") + "row " + key + " · " + column + " = '" + value + "'");
-      if (!DRY_RUN) backend.getRange(sr, cc + 1).setValue(value);
+      if (!DRY_RUN) {
+        var setRange = backend.getRange(sr, cc + 1);
+        // Write as literal text: a bare setValue lets Sheets coerce a string like
+        // '2026' or '1/2' into a number/date; push.py writes the value raw.
+        setRange.setNumberFormat("@");
+        setRange.setValue(value);
+      }
       sets++;
     } else if (op === "append") {
       if (!appendGroups[key]) appendGroups[key] = {};

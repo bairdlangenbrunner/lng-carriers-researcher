@@ -16,7 +16,6 @@ and stripped — so unknown entities still cluster against themselves.
 """
 import re
 
-
 # Builders / shipyards — canonical tags
 # Key: a substring that uniquely identifies the yard (case-insensitive)
 # Value: canonical short tag used in indexes and CSB short names

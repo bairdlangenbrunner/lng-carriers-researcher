@@ -25,11 +25,17 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from backend_io import load_backend                                   # noqa: E402
-from normalize import normalize_builder                               # noqa: E402
-from other_names import (FALLBACK_YARD_TAGS, IGU_PDF, fold, hull_only,  # noqa: E402
-                         same_hull, yard_tags)
-from paths import repo_root, work_dir                                 # noqa: E402
+from backend_io import load_backend  # noqa: E402
+from normalize import normalize_builder  # noqa: E402
+from other_names import (  # noqa: E402
+    FALLBACK_YARD_TAGS,
+    IGU_PDF,
+    fold,
+    hull_only,
+    same_hull,
+    yard_tags,
+)
+from paths import repo_root, work_dir  # noqa: E402
 
 # the same yard under the labels IGU and the backend use (normalize_builder output)
 FAMILY = {"hanwha-ocean": "hanwha", "samsung": "samsung", "hd hyundai": "hyundai",

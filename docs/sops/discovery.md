@@ -2,7 +2,7 @@
 
 **Document purpose:** This SOP describes the workflow for discovering LNG carrier and FSRU vessels that are NOT yet in the backend Google Sheet. It complements the [ref]-Fill SOP (which covers citation work on rows that already exist). It is the operating manual for one-time gap analyses and (with adjustments) for recurring catch-up sweeps.
 
-**Last revised:** 2026-06-03 rev 7 (first production discovery batch surfaced three output conventions, now codified: §6.7 — the seven yard-location columns are autofilled from an existing backend row for the same shipbuilder (blank if the shipbuilder is new), never researched and never carried in `candidates.json` row_data; §6.8 / §5.2 — cross-references to the new [ref]-Fill SOP §4.14 (owner/charterer use the backend's short stylization, e.g. `COSCO`) and §4.15 (multiple URLs in a `[ref]` cell join with `", "`). `build_workbook.py` enforces the autofill and the URL join. No four-ring / verification / confidence changes.). Prior: 2026-05-28 rev 6 (repository migration — output model changed to one committed directory per discovery run under `batches/`; `present_files` references updated for the Git/Claude Code workflow. No research-rule changes from rev 5.). Prior: 2026-05-27 rev 5 (added paywalled-source guidance to §4.6: per [ref]-Fill SOP §3.8b, QA notes quote only publicly-visible content; LNG Prime's editorial entity tags support yellow confidence as corroboration, not green. Surfaced by the same 2026-05-27 F8 finding that drove the [ref]-Fill SOP rev 15.).
+**Last revised:** 2026-09-23 rev 8 (housekeeping and drift fixes against [ref]-Fill SOP rev 31: §4.6/§4.8/§6.3's confidence ladder replaced with RF §5 rev 28's gate-computed grade; §4.10's `web_fetch` fallback replaced with the real fetch ladder (`scripts/fetch.py`, `scripts/sweep.py`, IP-ban handling); reconciled the two conflicting Ring D definitions — §3.4 is now "charterer and owner program searches" (moved from §3.3, matching §4.7 and CLAUDE.md's router), and the former Ring D "cross-references and indexes" content is relabeled §3.5, supplementary validation rather than a fifth ring; "the May 2026 build script" pointers (§4.3, §4.4) replaced with `scripts/normalize.py` / `scripts/csb_fetch.py`; checked for live sandbox-era (`present_files`, `/mnt/user-data`) instructions — none found, only historical changelog text. Revision history now lives only in §9.). Prior revisions: §9.
 
 ---
 
@@ -132,19 +132,24 @@ The on-order leading edge AND the proposed bucket both live here. The full sourc
 - `[Charterer name] LNG carrier program [year]`
 - `[Yard] [Owner] LNG newbuild` (combine when there's a known cluster shape)
 
-**Charterer-program searches for the proposed bucket** (only useful when the user has expanded the threshold):
+**Owner-press-release searches** — when a recent article names a charterer/owner you don't recognize, hit their newsroom directly:
+- Knutsen, Capital Gas, MISC, Maran Gas, Cool Co, Celsius, EPS, Sonangol, TMS Cardiff, Purus, Dynagas, Nakilat, BW LNG, Seapeak, Hayfin Capital Management, Cosco Shipping Energy, China Merchants Energy Shipping, Mitsui OSK, NYK, K-Line
+
+### 3.4 Ring D — Charterer and owner program searches (proposed bucket)
+
+Searched only when the user has expanded the proposed-vessel threshold (§2 param 3) — a default run doesn't need this ring, since a converted, binding order already surfaces through Ring A/B/C. Ring D looks for named-charterer programs that haven't yet converted to a binding shipyard contract:
+
 - QatarEnergy fleet expansion, Q-Max additions
 - Cheniere shipping requirements
 - Venture Global LNG newbuild
 - ADNOC LNG, Woodside, Shell, BP, TotalEnergies LNG carriers
 - NextDecade Rio Grande LNG shipping
 
-**Owner-press-release searches** — when a recent article names a charterer/owner you don't recognize, hit their newsroom directly:
-- Knutsen, Capital Gas, MISC, Maran Gas, Cool Co, Celsius, EPS, Sonangol, TMS Cardiff, Purus, Dynagas, Nakilat, BW LNG, Seapeak, Hayfin Capital Management, Cosco Shipping Energy, China Merchants Energy Shipping, Mitsui OSK, NYK, K-Line
+A hit only makes the proposed bucket once it clears the §6.4 three-part threshold (named charterer/owner + specific ship count + approximate delivery window) — most Ring D searches turn up nothing that clears it, because the program has either already converted to a binding order (captured upstream in Ring A/B/C) or is still too vague ("we'll need more ships"). Workflow step: §4.7.
 
-### 3.4 Ring D — Cross-references and indexes
+### 3.5 Supplementary cross-references (validation, not a discovery ring)
 
-These don't usually yield new vessels directly but they validate that the Ring A+B+C sweep is comprehensive:
+These don't yield new candidates directly — they validate that the Ring A+B+C(+D) sweep is comprehensive:
 
 - **IGU World LNG Report** — the project's spine; annual orderbook reconciliation
 - **Clarksons Research, Drewry, Poten & Partners, Affinity Shipping, Banchero Costa** — broker market commentary; their public summary pieces sometimes name specific newbuilds and (more usefully) state quarterly LNGC contract counts so the Ring A count can be reconciled against the industry total
@@ -169,7 +174,7 @@ Build two indexes:
 - `(builder_norm, hull_norm)` → backend row — for matching CSB hulls
 - `(builder_norm, owner_norm, contract_month)` → backend rows — for matching cluster-level signals from trade press and DART when hull numbers aren't yet assigned
 
-Builder and owner normalization is project-specific (see the May 2026 build script for canonical mappings: Samsung HI / Samsung Heavy Industries → `samsung`; Daewoo / DSME / Hanwha Ocean → `hanwha-ocean`; etc.).
+Builder and owner normalization is project-specific — see `scripts/normalize.py` for canonical mappings: Samsung HI / Samsung Heavy Industries → `samsung`; Daewoo / DSME / Hanwha Ocean → `hanwha-ocean`; etc.
 
 Also extract the subset of backend rows whose contract date is within the gap window — this is the "existing coverage" to compare against.
 
@@ -177,7 +182,7 @@ Also extract the subset of backend rows whose contract date is within the gap wi
 
 For each yard in scope:
 1. Fetch page 1 (covers ~25 rows, typically reaches back ~6-12 months which is enough for most gap windows)
-2. Parse the orderbook table using the `<tr><td>` pattern (see [ref]-Fill SOP §6.3 or the May 2026 build script for the parser)
+2. Parse the orderbook table using the `<tr><td>` pattern (see [ref]-Fill SOP §6.3, or `scripts/csb_fetch.py` for the parser)
 3. Filter to LNG/FSRU vessel types — `is_lng_relevant(typecap)` returns true for "LNG Tanker" and "FSRU"; false for "LNG bunkering"
 4. Filter to contracts in the gap window
 5. Compare each (yard, owner, contract month) tuple against the backend dedup index; flag anything that doesn't match
@@ -198,7 +203,7 @@ The DART originals can be parsed directly when needed, but English-language trad
 ### 4.6 Trade press sweep (Ring C)
 
 For each post-cutoff signal found, expand into trade press:
-- Verify the contract event in cross-checked sources where possible (ideally 2 agreeing URLs both containing the key facts); 1 URL is sufficient when it's explicit and contains the data value verbatim or comes from a primary/regulatory source (DART, Bursa, yard PR, owner PR). See [ref]-Fill SOP §5 for the full sourcing standard.
+- Verify the contract event in cross-checked sources; the confidence that verification earns is computed by [ref]-Fill SOP §5 (rev 28) from what the §3.8c gate actually passed — see §4.8 below.
 - Identify the actual buyer (DART discloses regional euphemisms; trade press names the company)
 - Capture: vessel count, capacity, propulsion type, contract value, delivery timing, charterer if applicable
 
@@ -208,22 +213,23 @@ Watch for cluster identity collisions: orders that look like the same cluster ac
 
 ### 4.7 Charterer program sweep (Ring D)
 
-Search for proposed-but-uncontracted programs that meet the threshold. The May 2026 pilot returned zero candidates because all named-charterer programs had already converted to confirmed orders captured in earlier rings. Expect the proposed bucket to be small or empty in most catch-up runs.
+Search for proposed-but-uncontracted programs that meet the threshold — see §3.4 for the search list and the threshold itself. The May 2026 pilot returned zero candidates because all named-charterer programs had already converted to confirmed orders captured in earlier rings. Expect the proposed bucket to be small or empty in most catch-up runs.
 
 ### 4.8 Dedup, enrich, classify by confidence
 
 For each candidate:
 1. Cluster duplicates that surfaced from multiple rings into a single cluster entry
-2. Decide on a confidence label per [ref]-Fill SOP §5:
-   - **Green** = ideally 2 cross-checked sources agree on the cluster and both contain the data value verbatim, OR 1 source that's explicit (value verbatim + cluster-coherent) and/or primary/regulatory (DART, Bursa, yard PR, owner PR). See [ref]-Fill SOP §5 for full criteria.
-   - **Yellow** = entity-level confirmation but some material data point (owner identity, capacity, delivery year) is implied or contested across sources
-   - **Red** = single source, weak corroboration, or sourcing chain that depends on a broker attribution that isn't yet corroborated — recommend leaving for the next round
+2. Decide on a confidence label per [ref]-Fill SOP §5 (rev 28) — the grade is computed from the §3.8c gate's own verdict, not from source count or tier: one ref that passes on a **live** page stating the value for this cluster is **Green**. Run each candidate's refs through `scripts/url_verifier.py` / `scripts/confidence.py` rather than hand-grading:
+   - **Green** = a live pass on a page that actually states the value, for a keyed record (DART, Bursa, yard PR, owner PR, an IGU-report PDF row) or a distinctive value — one such source is enough.
+   - **Yellow** = the gate passed but weakly (archive-only, or a generic value on one host), or a carve-out applies (a researcher's `cap_reason`, or a genuine cross-source conflict on a material data point).
+   - **Red** = nothing survives the gate, or the sourcing chain depends on a broker attribution that isn't yet corroborated — recommend leaving for the next round.
+   A researcher may argue a grade **down** with a `cap_reason`, never up.
 
 ### 4.9 Build the workbook (see §5)
 
 ### 4.10 URL verification gate (per [ref]-Fill SOP §3.8)
 
-Every URL in the workbook must pass HTTP 200 + content match. In environments where headless curl is rate-limited or geo-blocked, `web_fetch` is the fallback. Per [ref]-Fill SOP §3.8a, environment-blocked URLs are kept and flagged, not deleted.
+Every URL in the workbook must pass `python scripts/url_verifier.py <url> <expected>...` before it goes in the workbook — never conclude a URL is dead from a bare curl or WebFetch. A blocked URL is run through the fetch ladder first (`python scripts/fetch.py <url> --head 2000`: curl → `curl_cffi` TLS impersonation → real-Chrome `cf_clearance` cookie); only a wall the ladder cannot clear grades `blocked`. Per [ref]-Fill SOP §3.8a, `blocked` is graded, not dead — the verifier falls back to a Wayback snapshot check and the URL is kept and flagged, never deleted. A status `000` with connection timeouts on every origin IP is an IP ban, not a bot wall — stop and switch source/egress rather than retrying; a bulk sweep of one host goes through `scripts/sweep.py` (per-host pacing + circuit breaker), never a bare loop.
 
 ### 4.11 Run recalc.py, then write notes.md and commit the batch directory
 
@@ -281,8 +287,8 @@ All rules in the [ref]-Fill SOP §4 apply to the candidate workbook, especially:
 ### 6.2 Candidate rows are NOT backend additions
 The workbook produces CANDIDATES for human review, not direct backend edits. Per [ref]-Fill SOP §4.7, the user reviews and decides what to promote into the backend. The candidate-vessels sheet is structured to support copy-paste into backend rows once approved.
 
-### 6.3 Confidence labels are conservative by default
-Default to yellow when there's any doubt. Green requires either (a) 2 cross-checked sources that agree and both contain the data value verbatim, or (b) 1 source that's explicit (data value verbatim + cluster-coherent) and/or primary/regulatory (DART, Bursa, yard PR, owner PR, class society). Red candidates should be rare — if a signal is too thin to support yellow, consider holding it for the next run rather than including it as red.
+### 6.3 Confidence is computed, not declared
+Per [ref]-Fill SOP §5 (rev 28), a candidate's grade comes from what the §3.8c gate actually verified, not from a researcher's judgment call or a source-count tally — see §4.8. Default to yellow when there's any doubt about what the gate found. Red candidates should be rare — if a signal is too thin to support yellow, consider holding it for the next run rather than including it as red.
 
 ### 6.4 Proposed-vessel threshold (default)
 A vessel makes the proposed bucket only when ALL three are true:
@@ -355,3 +361,4 @@ Stop and ask the user before proceeding when:
 - **rev 5** (2026-05-27): Added paywalled-source guidance to §4.6 — QA notes quote only publicly-visible content (cross-references [ref]-Fill SOP §3.8b); LNG Prime's editorial entity tag list is a real corroboration signal supporting yellow confidence per §5, not green. Surfaced by a 2026-05-27 F8 finding that quoted paywalled LNG Prime body text in a QA note (same finding that drove [ref]-Fill SOP rev 15). Same workflow guidance applies to TradeWinds and other paywalled trade-press sources.
 - **rev 6** (2026-05-28): Repository migration. Output model changed from `/mnt/user-data/outputs/lng_carrier_candidate_vessels.xlsx` to one committed directory per discovery run under `batches/` (§2 param 5, §5). `present_files` reference in §4.11 replaced with "write notes.md and commit the batch directory." No research-rule changes — the four-ring source model, the §4.10 verification gate, and confidence labeling are unchanged from rev 5.
 - **rev 7** (2026-06-03): First production discovery batch (2026-06-03, since-May-1 window) surfaced three output conventions, now codified. §6.7 — the seven yard-location columns (`Shipbuilder yard country/area` + [ref]; `Yard location latitude` / `longitude` / `plus code` / `accuracy` + lat/lon [ref]) are autofilled by `build_workbook.py` from an existing backend row for the same (normalized) shipbuilder, and left blank when the shipbuilder is new; they are never researched and must not appear in `candidates.json` row_data. §6.8 / §5.2 — cross-reference the new [ref]-Fill SOP §4.14 (owner/charterer names use the backend's existing short stylization, e.g. `COSCO` not `Cosco Shipping Energy Transportation`) and §4.15 (multiple URLs in one `[ref]` cell join with `", "`, not a newline). The 2026-06-03 batch was rebuilt under these rules. No changes to the four-ring model, the §4.10 verification gate, or confidence labeling.
+- **rev 8** (2026-09-23): Audit/housekeeping pass. §4.6/§4.8/§6.3 — replaced the rev-12-era "2 cross-checked sources, or 1 explicit/primary" confidence ladder with [ref]-Fill SOP §5 rev 28's rule: the grade is computed from what the §3.8c gate actually verified (one live pass on a keyed record or distinctive value = Green), not declared from source count or tier. §4.10 — replaced the stale `web_fetch` fallback with the real fetch ladder (`scripts/fetch.py`, `scripts/sweep.py`, IP-ban vs. bot-wall handling). §3.3/§3.4/§3.5 — reconciled the two conflicting Ring D definitions: the "charterer-program searches for the proposed bucket" list moved out of §3.3 (Ring C) into a rewritten §3.4, so Ring D now consistently means charterer/owner program searches everywhere in this doc, matching §4.7 and CLAUDE.md's router; the old §3.4 ("cross-references and indexes" — IGU, brokers, vessel databases, GTT) is relabeled §3.5, supplementary validation rather than a fifth ring. §4.3/§4.4 — "the May 2026 build script" pointers replaced with `scripts/normalize.py` and `scripts/csb_fetch.py`. Checked for live sandbox-era (`present_files`, `/mnt/user-data`) instructions — none found outside historical changelog entries. No change to the inclusion criteria, the four rings' actual source lists, or Rule F.

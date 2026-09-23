@@ -20,6 +20,7 @@ from csb_fetch import (
     sweep_all_pages,
 )
 
+
 def _row_html(n, token, hull, typecap="LNG Tanker 174000cbm", owner="MOL",
               delivery="2028 - 05", contract="2026 - 02"):
     return (f"<tr><td>{n}</td>"

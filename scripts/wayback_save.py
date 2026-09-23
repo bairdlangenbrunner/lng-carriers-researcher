@@ -44,7 +44,7 @@ import subprocess
 import sys
 import time
 from collections import Counter, deque
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from urllib.parse import urlencode
 
 from paths import backend_csv_path, work_dir
@@ -193,7 +193,7 @@ def main():
     out = open(args.out, "a", encoding="utf-8")
 
     def finish(url, attempt, rec):
-        rec = {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        rec = {"ts": datetime.now(UTC).isoformat(timespec="seconds"),
                "url": url, "attempts": attempt, **rec}
         if rec["status"] == "error" and rec.get("status_ext") in RETRYABLE and attempt < MAX_ATTEMPTS:
             queue.append((url, attempt + 1))

@@ -30,8 +30,8 @@ import sys
 from collections import defaultdict
 
 from backend_io import load_backend
-from paths import backend_csv_path, work_dir
 from normalize import normalize_builder, normalize_owner
+from paths import backend_csv_path, work_dir
 from url_verifier import citable_form, citable_forms
 
 IGU_URL = "https://www.igu.org/igu-reports/2025-world-lng-report"

@@ -4,7 +4,7 @@ These guard the GIIGNL↔backend join keys: diacritic folding (GIIGNL 'Höegh' v
 backend 'Hoegh'), parenthetical stripping, and multi-owner tag-set resolution.
 Pure logic, no network.
 """
-from normalize import normalize_vessel_name, fsru_owner_tags, _strip_diacritics
+from normalize import _strip_diacritics, fsru_owner_tags, normalize_vessel_name
 
 
 class TestNormalizeVesselName:
