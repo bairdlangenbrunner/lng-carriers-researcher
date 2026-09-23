@@ -1,0 +1,17 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+25|Vessel type,fill,25,,Vessel type,G,False,accept,accept,conventional,Atlantic Success: backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventio
+28|Vessel type,fill,28,,Vessel type,G,False,accept,accept,conventional,Hull 2393 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Convention
+29|Vessel type,fill,29,,Vessel type,G,False,accept,accept,conventional,Hull 2394 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Convention
+30|Vessel type,fill,30,,Vessel type,G,False,accept,accept,conventional,Hull 2395 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Convention
+31|Vessel type,fill,31,,Vessel type,G,False,accept,accept,conventional,Hull 2396 (SHI): backend [ref] was blank/'inferred'; IGU 2026 prints 'Convention
+26|Vessel type,fill,26,,Vessel type,G,False,accept,accept,conventional,Mediterranean Success: backend [ref] was blank/'inferred'; IGU 2026 prints 'Conv
+27|Vessel type,fill,27,,Vessel type,G,False,accept,accept,conventional,Caribbean Success: backend [ref] was blank/'inferred'; IGU 2026 prints 'Conventi
+1044|Vessel type,fill,1044,,Vessel type,G,False,accept,accept,,SK Serenity: 'conventional' was written with no source; no page states it for th
+1045|Vessel type,fill,1045,,Vessel type,G,False,accept,accept,,SK Spica: 'conventional' was written with no source; no page states it for this 
+250|Vessel type,fill,250,,Vessel type,G,False,accept,accept,,Hull 8276 (Hanwha): 'conventional' was written with no source; no page states it
+1218|Vessel type,fill,1218,,Vessel type,G,False,accept,accept,,Samsung HI (unknown shipowner 1): 'conventional' was written with no source; no 
+1219|Vessel type,fill,1219,,Vessel type,G,False,accept,accept,,Hanwha Ocean (Knutsen): 'conventional' was written with no source; no page state
+1220|Vessel type,fill,1220,,Vessel type,G,False,accept,accept,,Jiangnan (COSCO 1): 'conventional' was written with no source; no page states it
+1221|Vessel type,fill,1221,,Vessel type,G,False,accept,accept,,Jiangnan (COSCO 2): 'conventional' was written with no source; no page states it
+1222|Vessel type,fill,1222,,Vessel type,G,False,accept,accept,,Jiangnan (COSCO 3): 'conventional' was written with no source; no page states it
+1223|Vessel type,fill,1223,,Vessel type,G,False,accept,accept,,Jiangnan (COSCO 4): 'conventional' was written with no source; no page states it
