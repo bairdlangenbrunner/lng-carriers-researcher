@@ -17,7 +17,7 @@
  "2026-09-17_0511ET_data_fill_on_order": {
   "label": "4 · data fill (on-order rows)",
   "apply_order": 4,
-  "applied": false
+  "applied": true
  },
  "2026-09-17_0505ET_ref_fill_rule_f": {
   "label": "5 · Rule-F ref fill",

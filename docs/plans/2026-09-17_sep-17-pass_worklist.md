@@ -1,4 +1,4 @@
-# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-21 17:10 ET)
+# sep-17-pass — worklist (written 2026-09-17 evening; last updated 2026-09-22 22:30 ET)
 
 Working checklist for getting the sep-17-pass into the backend and closing out the
 research pass. Tick items as you go. Detail behind every item is in
@@ -36,11 +36,14 @@ sheet or in a `decisions.csv`; nothing here needs new research before the apply.
    686 (live 88) are still Y. Batch 5's three Hull number refs (row_ids 121, 226, 230; live 771, 775, 776)
    were G since 2026-09-21 and held only from the pre-fill — **pushed 2026-09-21 18:29 ET** with the
    other held ref-only lines (Baird: push every "value unchanged; adds N refs" hold).
-   Batch 4's 414 are all Y (single-source): 76 Price + 76 Price currency, 71 Operator/charterer,
-   68 Contract date, 32 Cargo type, 20 IMO, 19 Hull number, 16 Capacity + 16 units, 10 Propulsion,
-   9 Vessel type, 1 Shipowner. A blanket call ("accept Y contract dates", "leave Y prices") is
-   fine — say it and the flips get scripted. Leaving a hold as a hold is also a decision: it just
-   does not get applied.
+   **Batch 4 is done (2026-09-22):** the RF rev 28 regrade promoted 253 of its Y holds to G
+   (`regrade_confidence.py --apply`; an undo back to undecided no longer takes a line out of its
+   scope), Claude clicked accept on every G line + its `Price currency` / `Capacity units` companion
+   at Baird's directive (359 lines, `via: bulk:greens-rev28`), Baird decided the rest and pushed.
+   `verify_apply.py`: 1,811 landed, 1 mismatch (live 1004 `Capacity [ref]` carries the IGU 2026 PDF
+   alone, from batch 8 — value correct, left as is). Its 10 remaining holds (Vessel type / Cargo type)
+   are already in the backend via batch 8. **The review queue now holds only batch 3's 12 discovery
+   new rows** — added to the sheet by hand.
 3. **Decisions that are not a hold line** (§1, §1b, §1c): Hanwha Philly duplicates 1083 ↔ 1085 and
    1203 ↔ 1086 (delete by hand if you agree — duplicates are yours to remove); the proposed
    bucket; batch 8's 8 owner / builder names; and the manual-review lists of batches 1 and 2.
@@ -206,7 +209,7 @@ Edit the `hold` rows in each batch's `decisions.csv`, then re-run
       `…data_fill_on_order/notes.md` (rows 1179–1182; row_ids 1162/1163, 1212/1213, 1218,
       1207/1208, 197, 375, 255/256, 318/319, 515/516; Samsung × CMES and Jiangnan × Taiping
       capacity).
-- [ ] **Batch 4 companion cells**: 92 `Price currency` / `Capacity units` cells are
+- [x] **Batch 4 companion cells** (accepted with their parents 2026-09-22): 92 `Price currency` / `Capacity units` cells are
       derivable but sit on `hold` because they follow their parent Price / Capacity fill —
       flip each with its parent. (`digest.md` still shows the first-run triage, 633 auto-safe;
       `decisions.csv` carries 589 accept / 414 hold.)
@@ -324,7 +327,7 @@ In the DRY_RUN log, `would set` must equal the `set` count and there should be n
 - [ ] Batch 1 — apply, then `python scripts/verify_apply.py --batch batches/<dir> --pull`
 - [ ] Batch 2 — apply + verify
 - [ ] Batch 3 — apply + verify
-- [ ] Batch 4 — apply + verify
+- [x] Batch 4 — pushed + verified 2026-09-22 (1,811 landed, 1 benign ref mismatch on live 1004)
 - [ ] Batch 5 — 2 of 8 cells applied 2026-09-18 (`verify_report.csv`: 2 landed); the rest wait on the holds.
 - [ ] Batch 6 — apply via `apply_patch.csv` (not full rows) + verify
 - [ ] Batch 8 — apply via `apply_patch.csv` (its 328 rows overlap batches 1 and 4; shared cells
