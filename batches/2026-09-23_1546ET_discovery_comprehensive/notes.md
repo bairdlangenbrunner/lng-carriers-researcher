@@ -212,4 +212,24 @@ Not this repo — for the owner to fix.
 `discovery_s3.json`, `discovery_s45.json`, `dedupe_report.csv`,
 `lng_carrier_candidate_vessels.xlsx`.
 
-Not applied. Nothing here was written to the backend.
+## Applied — C1.1 Maran Gas Efessos → sheet row 1232 (2026-09-23, AP §2d)
+
+Baird directed: "can you go ahead and add Maran Gas Efessos (doing resaerch for the columns) in a
+new row". Fresh pull → 37-cell plan → `directed_2026-09-23_efessos_revert.csv` → `gws-gem-write`
+`values.batchUpdate` (RAW) → re-pull: **37/37 hold**. Written into the first spare UUID row
+(1232); its pre-generated UUID was kept and column B `row_id` left blank. Recorded in
+`push_log.jsonl` as `claude session (directed)`. `dedupe_check` and `qc_backend` flag nothing on 1232.
+
+Differences from the candidate row above, all re-gated (§3.8c) on the day:
+
+- **Added:** `marangas.com/fleet/maran-gas-efessos/` (owner fleet page) on Name, Shipowner and
+  Delivery year; shipvault unit-record companion ref wherever the shipvault page is cited;
+  Shipowner country `Greece` (the sigtto + magicport refs the other Maran rows carry);
+  Contract date `1-Apr-2011` from shipvault's `ordered` field (month precision, the `1-` day is
+  shipvault's convention, as on the other 22 shipvault-sourced contract dates); the Hanwha Ocean
+  yard columns copied from sister rows 343/376; Researcher `GEM`, Last updated, `[Original source]`
+  `IGU`.
+- **Capacity kept at 159800** (IGU + shipvault). The owner's page prints 159,903 cbm; not used.
+- **Not written:** Operator/charterer and Price (no source), Other names (none), Notes.
+- **CSB:** not on the Hanwha Ocean orderbook (all pages) — expected for a 2014 delivery; the
+  orderbook lists only undelivered hulls.
