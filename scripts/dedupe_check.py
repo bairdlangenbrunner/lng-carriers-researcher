@@ -298,7 +298,7 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
         focus = {str(x) for x in focus_rows}
         groups = [g for g in groups if focus & {str(r) for r in g["row_ids"]}]
 
-    # Resolve live sheet rows for every group (row_id is the column-B stamp, not
+    # Resolve live sheet rows for every group (row_id is the row key, not
     # the tab row) — always present the live rows to humans.
     for g in groups:
         g["sheet_rows"] = ([sheet_rows.get(str(r)) for r in g["row_ids"]]

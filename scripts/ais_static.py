@@ -215,7 +215,7 @@ async def listen(key: str, collector: Collector, seconds: float, *, connect=None
 
 def backend_watchlist(backend, statuses=DEFAULT_STATUSES) -> dict:
     """IMO -> {name, sheet_row} for backend rows in `statuses` that carry an IMO.
-    sheet_row is the LIVE tab row (report-live-rows rule), not the column-B id."""
+    sheet_row is the LIVE tab row (report-live-rows rule), not the row key."""
     cm = backend.colmap
     statuses = {s.strip().lower() for s in statuses}
     out = {}

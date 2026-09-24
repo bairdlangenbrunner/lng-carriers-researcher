@@ -166,7 +166,7 @@ The whole-backend consistency/corruption sweep before a data release. Full SOP: 
 
 Name-column QC checks (in `qc_backend.py`): `name-builder-drift` (same yard, different builder label across placeholders) and `name-ordinal-gap` (placeholder missing its sequence number while cluster siblings are numbered) — both LOW/advisory.
 
-## Apply & verify workflow (AP — 2026-06-05, rev 12 2026-09-23)
+## Apply & verify workflow (AP — 2026-06-05, rev 13 2026-09-24)
 
 The offset-proof round-trip that gets a reviewed batch into the backend. Full SOP: `docs/sops/apply.md`.
 

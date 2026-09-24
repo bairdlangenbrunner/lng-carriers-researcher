@@ -1,39 +1,39 @@
 op,key,column,value
-set,347,Status,scrapped
-set,347,Status [ref],"https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/, https://www.shipvault.com/ships/103443, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103443"
-set,642,Status,scrapped
-set,642,Status [ref],"https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/, https://www.shipvault.com/ships/103444, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103444"
-set,968,Status,scrapped
-set,968,Status [ref],"https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848, https://www.shipvault.com/ships/103038, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103038"
-set,974,Status,scrapped
-set,974,Status [ref],"https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848, https://www.shipvault.com/ships/103039, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103039"
-set,696,Status,scrapped
-set,696,Status [ref],"https://lngprime.com/asia/south-korean-owners-sell-four-lng-carriers-for-scrap/152488/, https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/, https://www.shipvault.com/ships/110052, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/110052"
-set,675,Status,scrapped
-set,675,Status [ref],"https://gcaptain.com/nine-workers-killed-at-hong-kong-convention-certified-shipbreaking-yard-in-bangladesh/, https://www.hellenicshippingnews.com/nine-shipbreaking-workers-killed-in-bangladesh/, https://www.shipvault.com/ships/111478, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111478"
-set,677,Status,scrapped
-set,677,Status [ref],"https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/, https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21, https://www.shipvault.com/ships/111479, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111479"
-set,688,Status,scrapped
-set,688,Status [ref],"https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/, https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21, https://www.shipvault.com/ships/111681, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111681"
-set,689,Status,scrapped
-set,689,Status [ref],"https://lloydslist.com/LL1154206, https://www.shipvault.com/ships/110053, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/110053"
-set,780,Status,scrapped
-set,780,Status [ref],"https://lloydslist.com/LL1154822, https://www.shipvault.com/ships/113071, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113071"
-set,1082,Status,scrapped
-set,1082,Status [ref],"https://www.shippingherald.com/capital-gas-scraps-lng-carrier/, https://www.tradewindsnews.com/gas/2-1-1864945, https://www.shipvault.com/ships/115653, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115653"
-set,1083,Status,scrapped
-set,1083,Status [ref],"https://www.tradewindsnews.com/gas/2-1-1791058, https://shipbreakingplatform.org/marinakis-beaching-vessel/, https://www.shipvault.com/ships/113852, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113852"
-set,1000,Status,scrapped
-set,1000,Status [ref],"https://www.tradewindsnews.com/gas/seapeak-ups-2025-lng-demolition-tally-to-15-as-another-steamship-is-sold/2-1-1908979, https://www.shipvault.com/ships/115518, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115518"
-set,534,Status,scrapped
-set,534,Status [ref],"https://www.lloydslist.com/LL1153032/Turbine-powered-LNG-tanker-and-panamax-bulker-sold-for-scrap, https://splash247.com/mol-sends-ageing-lng-carrier-for-demo/"
-set,970,Status,scrapped
-set,970,Status [ref],"https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030, https://www.shipvault.com/ships/116306, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116306"
-set,980,Status,scrapped
-set,980,Status [ref],"https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030, https://www.shipvault.com/ships/116092, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116092"
-set,1005,Status,scrapped
-set,1005,Status [ref],"https://www.tradewindsnews.com/gas/first-lng-carrier-of-2026-sold-for-demolition/2-1-1933696, https://splash247.com/seaspeak-mars-becomes-first-lng-vessel-to-be-scrapped-this-year/, https://www.shipvault.com/ships/117073, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/117073"
-set,973,Status,scrapped
-set,973,Status [ref],"https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030, https://www.shipvault.com/ships/117205, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/117205"
-set,969,Vessel type,FSU
-set,969,Vessel type [ref],"https://www.miscgroup.com/media/media-releases/misc-partners-with-pengerang-lng-two-sdn-bhd-for-lng-floating-storage-unit-project-d7503fdd178dc071ee535d98beb9e62e, https://www.insage.com.my/BursaNews/Attachment/202604/20260414/MISC-AN20260414A1-2.pdf"
+set,79e598bd-e908-4192-bbea-db2858f4f4c8,Status,scrapped
+set,79e598bd-e908-4192-bbea-db2858f4f4c8,Status [ref],"https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/, https://www.shipvault.com/ships/103443, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103443"
+set,5f69ce88-d333-4a16-b19c-b2b681556a33,Status,scrapped
+set,5f69ce88-d333-4a16-b19c-b2b681556a33,Status [ref],"https://splash247.com/2025-becomes-record-year-for-lng-carrier-scrapping/, https://www.shipvault.com/ships/103444, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103444"
+set,d5801252-b994-471d-a832-c74a38a7d949,Status,scrapped
+set,d5801252-b994-471d-a832-c74a38a7d949,Status [ref],"https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848, https://www.shipvault.com/ships/103038, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103038"
+set,c0ac6f78-c1ad-4b5a-a39f-3e10568db864,Status,scrapped
+set,c0ac6f78-c1ad-4b5a-a39f-3e10568db864,Status [ref],"https://www.tradewindsnews.com/gas/misc-bites-breaking-bullet-on-30-year-old-lng-carrier-steamship-duo/2-1-1886848, https://www.shipvault.com/ships/103039, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/103039"
+set,0b98f1c7-ea21-4bf8-b3cf-c840b7e7ca86,Status,scrapped
+set,0b98f1c7-ea21-4bf8-b3cf-c840b7e7ca86,Status [ref],"https://lngprime.com/asia/south-korean-owners-sell-four-lng-carriers-for-scrap/152488/, https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/, https://www.shipvault.com/ships/110052, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/110052"
+set,9750a05e-d0ce-4916-be48-fdb8f7bda7b8,Status,scrapped
+set,9750a05e-d0ce-4916-be48-fdb8f7bda7b8,Status [ref],"https://gcaptain.com/nine-workers-killed-at-hong-kong-convention-certified-shipbreaking-yard-in-bangladesh/, https://www.hellenicshippingnews.com/nine-shipbreaking-workers-killed-in-bangladesh/, https://www.shipvault.com/ships/111478, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111478"
+set,5dab1c1b-c544-40e5-b77d-7479ff84a092,Status,scrapped
+set,5dab1c1b-c544-40e5-b77d-7479ff84a092,Status [ref],"https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/, https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21, https://www.shipvault.com/ships/111479, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111479"
+set,ffc06f8d-7b6e-4d07-8513-abe41e352241,Status,scrapped
+set,ffc06f8d-7b6e-4d07-8513-abe41e352241,Status [ref],"https://www.marineinsight.com/lng-market-downturn-forces-owners-to-scrap-aging-fleet-60-carriers-remain-idle/, https://shipandbunker.com/news/features/risk-management/327949-weekly-vessel-scrapping-report-2025-week-21, https://www.shipvault.com/ships/111681, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/111681"
+set,59a2bcde-efe7-4b76-9159-44ba1be03e72,Status,scrapped
+set,59a2bcde-efe7-4b76-9159-44ba1be03e72,Status [ref],"https://lloydslist.com/LL1154206, https://www.shipvault.com/ships/110053, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/110053"
+set,0c9980c2-76ca-48f6-b226-b5c00a91e57c,Status,scrapped
+set,0c9980c2-76ca-48f6-b226-b5c00a91e57c,Status [ref],"https://lloydslist.com/LL1154822, https://www.shipvault.com/ships/113071, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113071"
+set,bc2b7e02-78cd-49dd-8b36-b4bda01548fe,Status,scrapped
+set,bc2b7e02-78cd-49dd-8b36-b4bda01548fe,Status [ref],"https://www.shippingherald.com/capital-gas-scraps-lng-carrier/, https://www.tradewindsnews.com/gas/2-1-1864945, https://www.shipvault.com/ships/115653, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115653"
+set,16d85cc7-dc5e-4af5-968a-dd46fc515241,Status,scrapped
+set,16d85cc7-dc5e-4af5-968a-dd46fc515241,Status [ref],"https://www.tradewindsnews.com/gas/2-1-1791058, https://shipbreakingplatform.org/marinakis-beaching-vessel/, https://www.shipvault.com/ships/113852, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/113852"
+set,b99131f4-ea1a-4f3f-bbb2-f069ab5e8297,Status,scrapped
+set,b99131f4-ea1a-4f3f-bbb2-f069ab5e8297,Status [ref],"https://www.tradewindsnews.com/gas/seapeak-ups-2025-lng-demolition-tally-to-15-as-another-steamship-is-sold/2-1-1908979, https://www.shipvault.com/ships/115518, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/115518"
+set,861f5ea6-637c-4d4a-95d7-cdf608c38d6f,Status,scrapped
+set,861f5ea6-637c-4d4a-95d7-cdf608c38d6f,Status [ref],"https://www.lloydslist.com/LL1153032/Turbine-powered-LNG-tanker-and-panamax-bulker-sold-for-scrap, https://splash247.com/mol-sends-ageing-lng-carrier-for-demo/"
+set,03f5d735-d4d8-492c-8ae1-d80407195718,Status,scrapped
+set,03f5d735-d4d8-492c-8ae1-d80407195718,Status [ref],"https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030, https://www.shipvault.com/ships/116306, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116306"
+set,cb1ac1f4-f521-4fbe-9909-b20c662bc7cc,Status,scrapped
+set,cb1ac1f4-f521-4fbe-9909-b20c662bc7cc,Status [ref],"https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030, https://www.shipvault.com/ships/116092, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/116092"
+set,385c7106-ec5b-4c1e-9f64-e1d9a6e58117,Status,scrapped
+set,385c7106-ec5b-4c1e-9f64-e1d9a6e58117,Status [ref],"https://www.tradewindsnews.com/gas/first-lng-carrier-of-2026-sold-for-demolition/2-1-1933696, https://splash247.com/seaspeak-mars-becomes-first-lng-vessel-to-be-scrapped-this-year/, https://www.shipvault.com/ships/117073, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/117073"
+set,6ac3d550-3979-44ff-baa9-901a38621974,Status,scrapped
+set,6ac3d550-3979-44ff-baa9-901a38621974,Status [ref],"https://www.tradewindsnews.com/gas/misc-opts-to-scrap-trio-of-steam-turbine-lng-carriers/2-1-1949030, https://www.shipvault.com/ships/117205, https://shipvaultapi-gjb8c.ondigitalocean.app/api/units/117205"
+set,0c8568c9-304b-4164-8942-70eedb196ff9,Vessel type,FSU
+set,0c8568c9-304b-4164-8942-70eedb196ff9,Vessel type [ref],"https://www.miscgroup.com/media/media-releases/misc-partners-with-pengerang-lng-two-sdn-bhd-for-lng-floating-storage-unit-project-d7503fdd178dc071ee535d98beb9e62e, https://www.insage.com.my/BursaNews/Attachment/202604/20260414/MISC-AN20260414A1-2.pdf"

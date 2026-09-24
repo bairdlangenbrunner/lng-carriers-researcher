@@ -1,138 +1,138 @@
 op,key,column,value
-set,1144,Shipowner country/area,United States
-set,1144,Shipowner country/area [ref],https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html
-set,1145,Shipowner country/area,United States
-set,1145,Shipowner country/area [ref],https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html
-set,1146,Shipowner country/area,Greece
-set,1146,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
-set,1147,Shipowner country/area,Greece
-set,1147,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
-set,1152,Shipowner country/area,Japan
-set,1152,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
-set,1153,Shipowner country/area,Japan
-set,1153,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
-set,1154,Shipowner country/area,Japan
-set,1154,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
-set,1155,Shipowner country/area,Japan
-set,1155,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
-set,1156,Shipowner country/area,United Kingdom
-set,1156,Shipowner country/area [ref],https://www.purus.com/our-services/gas
-set,1157,Shipowner country/area,United Kingdom
-set,1157,Shipowner country/area [ref],https://www.purus.com/our-services/gas
-set,1166,Shipowner country/area,Denmark
-set,1207,Shipowner country/area,Greece
-set,1207,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
-set,1208,Shipowner country/area,Greece
-set,1208,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
-set,1144,Price,252000000
-set,1144,Price [ref],https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306
-set,1145,Price,252000000
-set,1145,Price [ref],https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306
-set,1164,Shipowner country/area,Greece
-set,1164,Shipowner country/area [ref],"https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/, https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/"
-set,1164,Price,250500000
-set,1164,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
-set,1164,Price currency,USD
-set,1164,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
-set,1165,Shipowner country/area,Greece
-set,1165,Shipowner country/area [ref],"https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/, https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/"
-set,1165,Price,250500000
-set,1165,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
-set,1165,Price currency,USD
-set,1165,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
-set,1152,Cargo type,membrane
-set,1152,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1152,Propulsion type,X-DF
-set,1152,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1152,Operator/charterer,Cheniere
-set,1152,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
-set,1153,Cargo type,membrane
-set,1153,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1153,Propulsion type,X-DF
-set,1153,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1153,Operator/charterer,Cheniere
-set,1153,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
-set,1154,Cargo type,membrane
-set,1154,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1154,Propulsion type,X-DF
-set,1154,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1154,Operator/charterer,Cheniere
-set,1154,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
-set,1155,Cargo type,membrane
-set,1155,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1155,Propulsion type,X-DF
-set,1155,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
-set,1155,Operator/charterer,Cheniere
-set,1155,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
-set,1167,Shipowner country/area,Greece
-set,1167,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924, https://lngprime.com/asia/greeces-tsakos-orders-lng-carriers-in-south-korea/178882/"
-set,1167,Price,254000000
-set,1167,Price [ref],https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924
-set,1167,Price currency,USD
-set,1167,Price [ref],https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924
-set,1214,Shipowner country/area,United Kingdom
-set,1214,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768, https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/"
-set,1215,Shipowner country/area,United Kingdom
-set,1215,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768, https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/"
-set,1158,Shipowner country/area,China
-set,1158,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
-set,1158,Cargo type,membrane
-set,1158,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
-set,1159,Shipowner country/area,China
-set,1159,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
-set,1159,Cargo type,membrane
-set,1159,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
-set,1160,Shipowner country/area,China
-set,1160,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
-set,1160,Cargo type,membrane
-set,1160,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
-set,1161,Shipowner country/area,China
-set,1161,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
-set,1161,Cargo type,membrane
-set,1161,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
-set,1148,Cargo type,membrane
-set,1148,Cargo type [ref],https://en.portnews.ru/news/391499/
-set,1148,Vessel type,conventional
-set,1148,Vessel type [ref],http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN
-set,1148,Propulsion type,X-DF
-set,1148,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/, https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
-set,1148,Price,254
-set,1148,Price [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931, https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
-set,1148,Price currency,$m
-set,1148,Price [ref],https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931
-set,1149,Cargo type,membrane
-set,1149,Cargo type [ref],https://en.portnews.ru/news/391499/
-set,1149,Vessel type,conventional
-set,1149,Vessel type [ref],http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN
-set,1149,Propulsion type,X-DF
-set,1149,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/, https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
-set,1149,Price,254
-set,1149,Price [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931, https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
-set,1149,Price currency,$m
-set,1149,Price [ref],https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931
-set,1212,Cargo type,membrane
-set,1212,Cargo type [ref],https://en.portnews.ru/news/391499/
-set,1212,Propulsion type,X-DF
-set,1212,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/, https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/"
-set,1213,Cargo type,membrane
-set,1213,Cargo type [ref],https://en.portnews.ru/news/391499/
-set,1213,Propulsion type,X-DF
-set,1213,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/, https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/"
-set,1216,Cargo type,membrane
-set,1216,Cargo type [ref],"https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://www.imarinenews.com/4851.html, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/"
-set,1216,Capacity,180000
-set,1216,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
-set,1216,Capacity units,cbm
-set,1216,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
-set,1217,Cargo type,membrane
-set,1217,Cargo type [ref],"https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://www.imarinenews.com/4851.html, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/"
-set,1217,Capacity,180000
-set,1217,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
-set,1217,Capacity units,cbm
-set,1217,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
-set,1206,Cargo type,membrane
-set,1206,Cargo type [ref],"https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-new-floating-storage-and, https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/"
-set,1156,Cargo type,membrane
-set,1156,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/, https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/, https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3"
-set,1157,Cargo type,membrane
-set,1157,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/, https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/, https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3"
+set,013fccc8-7e80-421c-b3d0-44e1c8d56196,Shipowner country/area,United States
+set,013fccc8-7e80-421c-b3d0-44e1c8d56196,Shipowner country/area [ref],https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html
+set,141df60d-519c-4b8e-9c96-c1f689b1cfbc,Shipowner country/area,United States
+set,141df60d-519c-4b8e-9c96-c1f689b1cfbc,Shipowner country/area [ref],https://system.new-vessels.com/groupowner-27274671-Hanwha_Shipping_LLC.html
+set,e0918da7-c90e-4151-9a5c-567d469c255a,Shipowner country/area,Greece
+set,e0918da7-c90e-4151-9a5c-567d469c255a,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,317aa023-4f59-4e2a-a852-334457777bff,Shipowner country/area,Greece
+set,317aa023-4f59-4e2a-a852-334457777bff,Shipowner country/area [ref],"https://www.gaslogltd.com/contact-us/, https://www.gaslogltd.com/content/uploads/GasLog-Ltd-2022-annual-report-form-20-F.pdf"
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Shipowner country/area,Japan
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Shipowner country/area,Japan
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Shipowner country/area,Japan
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Shipowner country/area,Japan
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Shipowner country/area [ref],"https://www.nyk.com/english/profile/profile/, https://en.wikipedia.org/wiki/Nippon_Yusen"
+set,cd8b6ce0-0b5f-4af3-9072-8b00b4947f93,Shipowner country/area,United Kingdom
+set,cd8b6ce0-0b5f-4af3-9072-8b00b4947f93,Shipowner country/area [ref],https://www.purus.com/our-services/gas
+set,d26e6f42-ff89-4ae3-b92a-0a684096add7,Shipowner country/area,United Kingdom
+set,d26e6f42-ff89-4ae3-b92a-0a684096add7,Shipowner country/area [ref],https://www.purus.com/our-services/gas
+set,0f87769b-2b50-4d08-b669-31b00fb422ff,Shipowner country/area,Denmark
+set,4f55879c-5f54-45dc-9e85-ddd802273262,Shipowner country/area,Greece
+set,4f55879c-5f54-45dc-9e85-ddd802273262,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,ec147acf-d253-4e38-9620-f93599aa855f,Shipowner country/area,Greece
+set,ec147acf-d253-4e38-9620-f93599aa855f,Shipowner country/area [ref],https://system.new-vessels.com/orderer-45411-TMS_Cardiff_Gas_Ltd.html
+set,013fccc8-7e80-421c-b3d0-44e1c8d56196,Price,252000000
+set,013fccc8-7e80-421c-b3d0-44e1c8d56196,Price [ref],https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306
+set,141df60d-519c-4b8e-9c96-c1f689b1cfbc,Price,252000000
+set,141df60d-519c-4b8e-9c96-c1f689b1cfbc,Price [ref],https://www.rivieramm.com/news-content-hub/hanwha-ocean-secures-second-us252m-lng-carrier-order-from-affiliate-in-a-month-86306
+set,f013ec6c-23e0-44cf-91fd-8adcacb64b0c,Shipowner country/area,Greece
+set,f013ec6c-23e0-44cf-91fd-8adcacb64b0c,Shipowner country/area [ref],"https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/, https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/"
+set,f013ec6c-23e0-44cf-91fd-8adcacb64b0c,Price,250500000
+set,f013ec6c-23e0-44cf-91fd-8adcacb64b0c,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+set,f013ec6c-23e0-44cf-91fd-8adcacb64b0c,Price currency,USD
+set,f013ec6c-23e0-44cf-91fd-8adcacb64b0c,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+set,8301dd30-f081-4932-a8db-f2e71a6abb31,Shipowner country/area,Greece
+set,8301dd30-f081-4932-a8db-f2e71a6abb31,Shipowner country/area [ref],"https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/, https://shippingtelegraph.com/hellenic-shipping-news/greek-shipowner-alpha-gas-confirms-order-for-lng-carrier-pair-in-korea/"
+set,8301dd30-f081-4932-a8db-f2e71a6abb31,Price,250500000
+set,8301dd30-f081-4932-a8db-f2e71a6abb31,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+set,8301dd30-f081-4932-a8db-f2e71a6abb31,Price currency,USD
+set,8301dd30-f081-4932-a8db-f2e71a6abb31,Price [ref],"https://splash247.com/alpha-gas-inks-500m-lng-carrier-order-at-hanwha-ocean/, https://lngprime.com/asia/hanwha-ocean-secures-order-for-lng-carrier-duo/175775/"
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Cargo type,membrane
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Propulsion type,X-DF
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Operator/charterer,Cheniere
+set,41e766cb-a80d-4c8b-ac84-d50cb5b725e8,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Cargo type,membrane
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Propulsion type,X-DF
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Operator/charterer,Cheniere
+set,fb7483aa-7360-4552-aced-3c51bd3ff1c3,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Cargo type,membrane
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Propulsion type,X-DF
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Operator/charterer,Cheniere
+set,c4fbd181-e3c6-4042-89e1-8b92e89152f0,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Cargo type,membrane
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Cargo type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Propulsion type,X-DF
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Propulsion type [ref],"https://www.nyk.com/english/news/2026/20260205_01.html, https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/"
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Operator/charterer,Cheniere
+set,51db193f-5dc9-45f4-b08f-c90d5d363eaa,Operator/charterer [ref],"https://lngprime.com/contracts-and-tenders/nyk-ocean-yield-seal-lng-carrier-charter-deals-with-cheniere/176824/, https://splash247.com/nyk-and-ocean-yield-team-up-on-lng-carrier-quartet/, https://www.nyk.com/english/news/2026/20260205_01.html"
+set,650ddaa7-f439-4d61-b09f-d4f261627307,Shipowner country/area,Greece
+set,650ddaa7-f439-4d61-b09f-d4f261627307,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924, https://lngprime.com/asia/greeces-tsakos-orders-lng-carriers-in-south-korea/178882/"
+set,650ddaa7-f439-4d61-b09f-d4f261627307,Price,254000000
+set,650ddaa7-f439-4d61-b09f-d4f261627307,Price [ref],https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924
+set,650ddaa7-f439-4d61-b09f-d4f261627307,Price currency,USD
+set,650ddaa7-f439-4d61-b09f-d4f261627307,Price [ref],https://www.rivieramm.com/news-content-hub/greek-major-tsakos-tied-to-us254m-single-lng-carrier-order-87924
+set,2e16e336-c052-4788-bd22-36b435d10f9e,Shipowner country/area,United Kingdom
+set,2e16e336-c052-4788-bd22-36b435d10f9e,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768, https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/"
+set,e69f224d-abb9-45ee-b443-46b5dbaf3423,Shipowner country/area,United Kingdom
+set,e69f224d-abb9-45ee-b443-46b5dbaf3423,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/hayfin-capital-re-enters-lng-carrier-market-with-two-vessel-order-at-hd-hyundai-88768, https://www.indexbox.io/blog/hayfin-returns-to-lng-carrier-market-with-new-order-at-hd-hyundai/"
+set,ab22511a-9f7e-44f2-8ff3-8095ce5ee4e4,Shipowner country/area,China
+set,ab22511a-9f7e-44f2-8ff3-8095ce5ee4e4,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+set,ab22511a-9f7e-44f2-8ff3-8095ce5ee4e4,Cargo type,membrane
+set,ab22511a-9f7e-44f2-8ff3-8095ce5ee4e4,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+set,72ff5fd7-40c9-49ce-9d85-d6d036a790d0,Shipowner country/area,China
+set,72ff5fd7-40c9-49ce-9d85-d6d036a790d0,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+set,72ff5fd7-40c9-49ce-9d85-d6d036a790d0,Cargo type,membrane
+set,72ff5fd7-40c9-49ce-9d85-d6d036a790d0,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+set,92849f58-6403-440b-bb5b-827e85fcd2e5,Shipowner country/area,China
+set,92849f58-6403-440b-bb5b-827e85fcd2e5,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+set,92849f58-6403-440b-bb5b-827e85fcd2e5,Cargo type,membrane
+set,92849f58-6403-440b-bb5b-827e85fcd2e5,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+set,ddaa2b2d-1384-4302-bf88-486c12ed5a40,Shipowner country/area,China
+set,ddaa2b2d-1384-4302-bf88-486c12ed5a40,Shipowner country/area [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/chinese-owner-orders-four-shell-backed-lng-carriers-at-cssc-jiangnan-87617, https://www.shipuniverse.com/news/shandong-marine-orders-four-175000-cbm-lng-carriers-at-jiangnan-with-shell-charter-cover/"
+set,ddaa2b2d-1384-4302-bf88-486c12ed5a40,Cargo type,membrane
+set,ddaa2b2d-1384-4302-bf88-486c12ed5a40,Cargo type [ref],"https://lngprime.com/contracts-and-tenders/gtt-scores-new-lng-tank-gig-in-china/177764/, https://www.indexbox.io/blog/gtt-wins-tank-design-order-for-four-lng-carriers-from-jiangnan-shipyard/"
+set,c466b099-8756-4f16-b399-49ff21daeda7,Cargo type,membrane
+set,c466b099-8756-4f16-b399-49ff21daeda7,Cargo type [ref],https://en.portnews.ru/news/391499/
+set,c466b099-8756-4f16-b399-49ff21daeda7,Vessel type,conventional
+set,c466b099-8756-4f16-b399-49ff21daeda7,Vessel type [ref],http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN
+set,c466b099-8756-4f16-b399-49ff21daeda7,Propulsion type,X-DF
+set,c466b099-8756-4f16-b399-49ff21daeda7,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/, https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
+set,c466b099-8756-4f16-b399-49ff21daeda7,Price,254
+set,c466b099-8756-4f16-b399-49ff21daeda7,Price [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931, https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
+set,c466b099-8756-4f16-b399-49ff21daeda7,Price currency,$m
+set,c466b099-8756-4f16-b399-49ff21daeda7,Price [ref],https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Cargo type,membrane
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Cargo type [ref],https://en.portnews.ru/news/391499/
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Vessel type,conventional
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Vessel type [ref],http://www.chinashipbuild.com/shipyard.aspx?pklujyukkpp4BbccCanmkhTk8Pl4EN
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Propulsion type,X-DF
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/, https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931"
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Price,254
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Price [ref],"https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931, https://lngprime.com/asia/bw-orders-lng-carrier-duo-in-south-korea/169960/"
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Price currency,$m
+set,603b9645-ab96-4c5b-b908-3efc5ca195d1,Price [ref],https://www.rivieramm.com/news-content-hub/news-content-hub/bw-lng-confirms-order-for-two-high-spec-lng-carriers-86931
+set,4b183f99-2b6b-4e7b-9b24-449b2cb6aa17,Cargo type,membrane
+set,4b183f99-2b6b-4e7b-9b24-449b2cb6aa17,Cargo type [ref],https://en.portnews.ru/news/391499/
+set,4b183f99-2b6b-4e7b-9b24-449b2cb6aa17,Propulsion type,X-DF
+set,4b183f99-2b6b-4e7b-9b24-449b2cb6aa17,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/, https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/"
+set,47f70cda-f6d4-4efc-b4b2-4f26b417b3ca,Cargo type,membrane
+set,47f70cda-f6d4-4efc-b4b2-4f26b417b3ca,Cargo type [ref],https://en.portnews.ru/news/391499/
+set,47f70cda-f6d4-4efc-b4b2-4f26b417b3ca,Propulsion type,X-DF
+set,47f70cda-f6d4-4efc-b4b2-4f26b417b3ca,Propulsion type [ref],"https://lngprime.com/asia/bw-orders-lng-carrier-duo-at-hd-hyundai-samho/186420/, https://safety4sea.com/bw-lng-orders-two-three-tank-lng-carriers-from-hd-hyundai-samho/"
+set,5b07c3e9-6659-4cce-9cdd-932fc3f144c7,Cargo type,membrane
+set,5b07c3e9-6659-4cce-9cdd-932fc3f144c7,Cargo type [ref],"https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://www.imarinenews.com/4851.html, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/"
+set,5b07c3e9-6659-4cce-9cdd-932fc3f144c7,Capacity,180000
+set,5b07c3e9-6659-4cce-9cdd-932fc3f144c7,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+set,5b07c3e9-6659-4cce-9cdd-932fc3f144c7,Capacity units,cbm
+set,5b07c3e9-6659-4cce-9cdd-932fc3f144c7,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+set,c8602564-cb70-4807-b2df-5276cde8265a,Cargo type,membrane
+set,c8602564-cb70-4807-b2df-5276cde8265a,Cargo type [ref],"https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/, https://www.imarinenews.com/4851.html, https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/"
+set,c8602564-cb70-4807-b2df-5276cde8265a,Capacity,180000
+set,c8602564-cb70-4807-b2df-5276cde8265a,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+set,c8602564-cb70-4807-b2df-5276cde8265a,Capacity units,cbm
+set,c8602564-cb70-4807-b2df-5276cde8265a,Capacity [ref],"https://lngprime.com/vessels/denmarks-celsius-orders-four-lng-carriers-in-china/69940/, https://www.offshore-energy.biz/celsius-orders-lng-carrier-quartet-at-cmhi/, https://deltamarin.com/references/lng-carrier/celsius-lngcs-cmhi/"
+set,d4a2d2e9-c424-40e0-a60c-6c6c73174178,Cargo type,membrane
+set,d4a2d2e9-c424-40e0-a60c-6c6c73174178,Cargo type [ref],"https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-new-floating-storage-and, https://www.lngindustry.com/floating-lng/18052026/gtt-to-design-fsru-tank-for-samsung-heavy-industries/"
+set,cd8b6ce0-0b5f-4af3-9072-8b00b4947f93,Cargo type,membrane
+set,cd8b6ce0-0b5f-4af3-9072-8b00b4947f93,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/, https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/, https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3"
+set,d26e6f42-ff89-4ae3-b92a-0a684096add7,Cargo type,membrane
+set,d26e6f42-ff89-4ae3-b92a-0a684096add7,Cargo type [ref],"https://splash247.com/purus-adds-samsung-lng-newbuilds-to-expanding-gas-fleet/, https://globalflowcontrol.com/newsroom/purus-lng-carrier-newbuilding-samsung-heavy-industries/, https://lngprime.com/asia/gtt-scores-tank-gig-for-purus-lng-carrier-duo/173884/, https://www.gtt.fr/news/gtt-receives-order-samsung-heavy-industries-tank-design-two-new-lng-carriers-3"

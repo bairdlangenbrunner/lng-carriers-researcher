@@ -247,7 +247,7 @@ def main():
     for k, v in col_map.items():
         if k.startswith("_"):
             continue
-        status = "OK" if v is not None else "MISSING"
+        status = "OK" if v is not None else ("absent, optional" if k in OPTIONAL_COLUMNS else "MISSING")
         print(f"  {k:25} = {v!s:5} [{status}]")
 
     missing = [k for k, v in col_map.items()
