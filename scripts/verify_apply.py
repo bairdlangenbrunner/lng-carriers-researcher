@@ -22,6 +22,7 @@ from pathlib import Path
 import dedupe_check
 import qc_backend
 from apply_batch import _load_backend, sheet_row_map
+from backend_io import load_backend
 from paths import backend_csv_path, repo_root
 
 
@@ -84,19 +85,24 @@ def main():
         else:
             mismatch.append((rid, col, want, got))
 
-    # discovery: each accepted new row should now exist (match by Name or Hull number)
+    # discovery: each accepted new row should now exist (match by IMO, Name or Hull number —
+    # IMO survives a placeholder restyle, and every row counts, a stub with no row_id included;
+    # the row must hold every column the candidate fills — a pasted stub is still missing)
     new_missing, new_present, new_row_ids = [], [], set()
     rid_i = colmap["row_id"]
+    all_rows = load_backend(args.backend).data
     for nr in apply_doc.get("accepted_new_rows", []):
         rd = nr.get("row_data", {})
-        keys = {h: rd.get(h, "") for h in ("Name", "Hull number") if rd.get(h)}
+        keys = {h: rd.get(h, "") for h in ("IMO number", "Name", "Hull number") if rd.get(h)}
         if not keys:
-            new_present.append(("(unverifiable — no Name/Hull)", nr.get("cluster_id", "")))
+            new_present.append(("(unverifiable — no IMO/Name/Hull)", nr.get("cluster_id", "")))
             continue
+        filled = [h for h, v in rd.items() if _norm(v) and h in H]
         match = next(
-            (r for r in row_by_id.values()
+            (r for r in all_rows
              if any(_norm(r[H[h]]) == _norm(v) for h, v in keys.items()
-                    if h in H and len(r) > H[h])),
+                    if h in H and len(r) > H[h])
+             and all(len(r) > H[h] and _norm(r[H[h]]) for h in filled)),   # a stub is not the row
             None)
         if match is not None:
             new_present.append((nr.get("cluster_id", ""), keys))

@@ -412,9 +412,20 @@ def build(batch_dirs, backend_path=None, info_path=None):
         r = rows.get(rid)
         return r[H[col]].strip() if r is not None and col in H and len(r) > H[col] else ""
 
-    # a discovery row is in the backend when its Name or Hull number is (verify_apply.py's match)
-    present = {h: {_norm(r[H[h]]) for r in rows.values() if len(r) > H[h] and _norm(r[H[h]])}
-               for h in ("Name", "Hull number") if h in H}
+    # a discovery row is in the backend when a row with its IMO, Name or Hull number holds every
+    # column the candidate fills (verify_apply.py's match) — over every row, since a stub pasted
+    # without a column-A row_id is still the vessel, and a stub is not yet the row
+    present = defaultdict(list)
+    for r in be.data:
+        for h in ("IMO number", "Name", "Hull number"):
+            if h in H and len(r) > H[h] and _norm(r[H[h]]):
+                present[(h, _norm(r[H[h]]))].append(r)
+
+    def new_row_in_backend(rd):
+        cols = [h for h, v in rd.items() if _norm(v) and h in H]
+        return any(all(len(r) > H[h] and _norm(r[H[h]]) for h in cols)
+                   for h in ("IMO number", "Name", "Hull number") if _norm(rd.get(h))
+                   for r in present.get((h, _norm(rd.get(h))), []))
 
     batches, proposals, all_items = [], {}, []
     labels = {d: m["label"] for d, m in info.items() if m["label"] != d}
@@ -469,8 +480,7 @@ def build(batch_dirs, backend_path=None, info_path=None):
             proposed = it["value"] or it["ref_value"] if it["kind"] != "new_row" else ""
             if it["kind"] == "new_row":
                 rd = it["row_data"] or {}
-                state = "in_backend" if any(_norm(rd.get(h)) in names for h, names in present.items()
-                                            if _norm(rd.get(h))) else ""
+                state = "in_backend" if new_row_in_backend(rd) else ""
             else:
                 state = backend_state(it["kind"], cell(rid, col), proposed, ref_urls, current_refs,
                                       append="append_ref" in flags, keep_ref="preserve_ref" in flags,

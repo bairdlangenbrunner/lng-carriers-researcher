@@ -129,3 +129,32 @@ class TestVerifyApply:
         assert status[("1", "Shipowner country/area")] == "landed"
         assert status[("2", "Cargo type")] == "MISMATCH"
         assert status[("1", "Cargo type")] == "MISSING"
+
+    def test_new_row_found_by_imo_and_stub_missing(self, tmp_path, monkeypatch, capsys):
+        # a stub pasted with no column-A row_id and a restyled placeholder Name is still
+        # the accepted new row: IMO matches, and every backend row is searched
+        header = HEADER + ["IMO number"]
+        csv_path = tmp_path / "backend.csv"
+        with open(csv_path, "w", encoding="utf-8", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(header)
+            w.writerow(["", "ADNOC L&S", "", "", "Jiangnan Shipyard", "", "", "Hull H2706 (Jiangnan)",
+                        "Hull H2706 (Jiangnan)", "1193579"])
+            w.writerow(["", "", "", "", "", "", "", "Hull H2858", "", "1194000"])  # stub: A-E only
+        (tmp_path / "backend.colmap.json").write_text(json.dumps(COLMAP))
+        batch = tmp_path / "batch"
+        batch.mkdir()
+        (batch / "apply.json").write_text(json.dumps({
+            "batch": "t", "mode": "discovery", "accepted_cells": [], "counts": {},
+            "accepted_new_rows": [
+                {"cluster_id": "C4.1", "row_data": {"Name": "Hull H2706", "Hull number": "Hull H2706",
+                                                    "IMO number": "1193579", "Shipowner": "ADNOC L&S"}},
+                {"cluster_id": "C5.1", "row_data": {"Name": "Hull H2858", "IMO number": "1194000",
+                                                    "Shipbuilder": "Jiangnan Shipyard"}}],
+        }))
+        monkeypatch.setattr(sys, "argv",
+                            ["verify_apply", "--batch", str(batch), "--backend", str(csv_path)])
+        verify_apply.main()
+        out = capsys.readouterr()
+        assert "1 present, 1 missing" in out.out + out.err       # the stub is not yet the row
+        assert "C5.1" in out.err

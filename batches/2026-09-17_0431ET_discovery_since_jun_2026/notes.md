@@ -88,3 +88,31 @@ Riviera checked; Hellenic Shipping News "passes" only on a sidebar headline), an
 both orders. The cell is now blank on all five; workbook rebuilt + recalced (zero errors), apply
 artifacts regenerated, decisions unchanged. `build_workbook.py --mode discovery` now refuses any
 filled cell with a blank `[ref]` (except `unknown` and a placeholder Name).
+
+## Applied — C4.1–C4.4 directed session write (2026-09-23, AP §2d)
+
+Live rows 1226–1229 (Jiangnan H2706–H2709, ADNOC L&S) had only the A–E stub in the sheet. Baird
+directed the write in-session ("go ahead and write those rows directly to the backend and make sure
+it's all reflected in the living-workbook-for-update"). Fresh pull → 100-cell plan (25 per row, all
+old values blank except the placeholder Name) → `directed_2026-09-23_revert.csv` → `gws-gem-write`
+`values.batchUpdate` (RAW) → re-pull: **100/100 hold**. `push_log.jsonl` attributes each cell to
+`claude session (directed)`; no `review_log.jsonl` entry was written.
+
+Differences from the batch's proposal, all re-gated on the fresh pull:
+- Name and Hull number yard-tagged, `Hull H2706 (Jiangnan)` (RF §4.17): a placeholder restyle, so
+  the Name ref was kept and no former name went to `Other names`.
+- Each hull's CSB `ship.aspx` page was added as a ref on Hull number, Shipowner, Shipbuilder,
+  Capacity and Delivery year (RF §3.3b). For Shipowner it passes now that the gate reads
+  `ADNOC L&S` = `ADNOC Logistics & Services` (`normalize._OWNER_ALIASES`, PR #72).
+- The yard columns (country, lat/lon, plus code, accuracy, refs) were copied from the other
+  Jiangnan rows (RF §4.8 / DC §6.7). The yard-country ref `jnshipyard.com.cn` timed out (000) on
+  the gate; it is the ref all 20 Jiangnan rows already carry.
+
+Still stubs (A–E only), not written: C1.1–C1.4 (rows 1220–1223), C5.1–C5.2 (rows 1230–1231).
+C2 (Tsakos 2) is not in the sheet. The four stubs' column-A `row_id` is blank.
+
+Script fix riding with this: `review_data.py` and `verify_apply.py` matched a new row only against
+rows with a column-A `row_id` and only by Name / Hull number, so these stubs read as missing, and the
+tag restyle would have hidden them anyway. They now search every row, match by IMO too, and count a
+new row as present only when that row holds every column the candidate fills (a pasted stub stays
+open). The living workbook's `processed` column now shows C4.1–C4.4 as incorporated.
