@@ -1,0 +1,242 @@
+{
+  "batch": "2026-09-23_1707ET_fix_mozambique_bw",
+  "mode": "fix",
+  "accepted_cells": [
+    {
+      "row_id": "888",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "888",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "889",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "889",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "890",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "890",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "891",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "891",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "892",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "892",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "893",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "893",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "894",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "894",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "895",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "895",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "896",
+      "column": "Shipowner",
+      "value": "MOL, K Line",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "896",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "897",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "897",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "898",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "898",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "899",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "899",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "900",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "900",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "901",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "901",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "902",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "902",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "903",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "903",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "904",
+      "column": "Shipowner",
+      "value": "NYK Line, Maran Gas Maritime",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "904",
+      "column": "Shipowner [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "Y"
+    },
+    {
+      "row_id": "1212",
+      "column": "Capacity",
+      "value": "177000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1212",
+      "column": "Capacity [ref]",
+      "value": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgcanmkhTk8Pl4EN, https://www.new-ships.com/ns/news/6441",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Capacity",
+      "value": "177000",
+      "confidence": "G"
+    },
+    {
+      "row_id": "1213",
+      "column": "Capacity [ref]",
+      "value": "http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgJanmkhTk8Pl4EN, https://www.new-ships.com/ns/news/6441",
+      "confidence": "G"
+    }
+  ],
+  "accepted_new_rows": [],
+  "counts": {
+    "items": 28,
+    "accepted": 19,
+    "hold": 9,
+    "reject": 0,
+    "conflicts": 0
+  }
+}

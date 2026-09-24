@@ -3,7 +3,7 @@
   "name": "living-workbook-for-update",
   "url": "https://docs.google.com/spreadsheets/d/1f1----zCM-qxND3jjf4wEZHfkGLN-TuwOgZq-lGcEec/edit?usp=drivesdk",
   "folder_id": "1DnF6niKeRnbRyhVcmJDy7UkeZLjNGc4r",
-  "source_workbook": "batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-22_2214ET.xlsx",
+  "source_workbook": "batches/2026-09-17_1017ET_sep-17-pass_combined/lng_carrier_sep-17-pass_results_2026-09-23_2158ET.xlsx",
   "batches": [
     "2026-09-17_0421ET_fix_delivery_rollforward",
     "2026-09-17_0431ET_discovery_since_jun_2026",
@@ -19,12 +19,13 @@
     "2026-09-18_2005ET_fix_igu2026_hulls",
     "2026-09-21_1740ET_fix_review_suggestions",
     "2026-09-21_2003ET_fix_shipowner_country_refs",
-    "2026-09-22_2208ET_fix_shipvault_hulls"
+    "2026-09-22_2208ET_fix_shipvault_hulls",
+    "2026-09-23_1707ET_fix_mozambique_bw"
   ],
   "tabs": {
     "all_proposals": "line id",
     "remaining_changes_backend_shape": "line key"
   },
   "created": "2026-09-21T23:28:33-04:00",
-  "rebuilt": "2026-09-22T22:14:27-04:00"
+  "rebuilt": "2026-09-23T21:59:28-04:00"
 }

@@ -1,0 +1,39 @@
+op,key,column,value
+set,888,Shipowner,"MOL, K Line"
+set,888,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,889,Shipowner,"MOL, K Line"
+set,889,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,890,Shipowner,"MOL, K Line"
+set,890,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,891,Shipowner,"MOL, K Line"
+set,891,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,892,Shipowner,"MOL, K Line"
+set,892,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,893,Shipowner,"MOL, K Line"
+set,893,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,894,Shipowner,"MOL, K Line"
+set,894,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,895,Shipowner,"MOL, K Line"
+set,895,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,896,Shipowner,"MOL, K Line"
+set,896,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,897,Shipowner,"NYK Line, Maran Gas Maritime"
+set,897,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,898,Shipowner,"NYK Line, Maran Gas Maritime"
+set,898,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,899,Shipowner,"NYK Line, Maran Gas Maritime"
+set,899,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,900,Shipowner,"NYK Line, Maran Gas Maritime"
+set,900,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,901,Shipowner,"NYK Line, Maran Gas Maritime"
+set,901,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,902,Shipowner,"NYK Line, Maran Gas Maritime"
+set,902,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,903,Shipowner,"NYK Line, Maran Gas Maritime"
+set,903,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,904,Shipowner,"NYK Line, Maran Gas Maritime"
+set,904,Shipowner [ref],https://www.imarinenews.com/36960.html
+set,1212,Capacity,177000
+set,1212,Capacity [ref],"http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgcanmkhTk8Pl4EN, https://www.new-ships.com/ns/news/6441"
+set,1213,Capacity,177000
+set,1213,Capacity [ref],"http://www.chinashipbuild.com/ship.aspx?pklujyukkpp4JsCgJanmkhTk8Pl4EN, https://www.new-ships.com/ns/news/6441"

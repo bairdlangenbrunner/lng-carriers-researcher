@@ -1,0 +1,29 @@
+id,kind,row_id,cluster_id,column,confidence,derivable,default,decision,proposed_value,note
+888|Shipbuilder,fill,888,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 01 (sheet 1184): backend carried 'HD Hyundai Heavy Industries'. i
+888|Shipowner,fill,888,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 01 (sheet 1184): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+889|Shipbuilder,fill,889,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 02 (sheet 1185): backend carried 'HD Hyundai Heavy Industries'. i
+889|Shipowner,fill,889,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 02 (sheet 1185): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+890|Shipbuilder,fill,890,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 03 (sheet 1186): backend carried 'HD Hyundai Heavy Industries'. i
+890|Shipowner,fill,890,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 03 (sheet 1186): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+891|Shipbuilder,fill,891,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 04 (sheet 1187): backend carried 'HD Hyundai Heavy Industries'. i
+891|Shipowner,fill,891,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 04 (sheet 1187): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+892|Shipbuilder,fill,892,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 05 (sheet 1188): backend carried 'HD Hyundai Heavy Industries'. i
+892|Shipowner,fill,892,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 05 (sheet 1188): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+893|Shipbuilder,fill,893,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 06 (sheet 1189): backend carried 'HD Hyundai Heavy Industries'. i
+893|Shipowner,fill,893,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 06 (sheet 1189): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+894|Shipbuilder,fill,894,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 07 (sheet 1190): backend carried 'HD Hyundai Heavy Industries'. i
+894|Shipowner,fill,894,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 07 (sheet 1190): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+895|Shipbuilder,fill,895,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 08 (sheet 1191): backend carried 'HD Hyundai Heavy Industries'. i
+895|Shipowner,fill,895,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 08 (sheet 1191): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+896|Shipbuilder,fill,896,,Shipbuilder,G,False,accept,hold,HD Hyundai Samho,Mozambique LNG 09 (sheet 1192): backend carried 'HD Hyundai Heavy Industries'. i
+896|Shipowner,fill,896,,Shipowner,Y,False,hold,accept,"MOL, K Line","Mozambique LNG 09 (sheet 1192): backend carried 'MOL, NYK' on all 17 rows. Sourc"
+897|Shipowner,fill,897,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 10 (sheet 1193): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+898|Shipowner,fill,898,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 11 (sheet 1194): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+899|Shipowner,fill,899,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 12 (sheet 1195): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+900|Shipowner,fill,900,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 13 (sheet 1196): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+901|Shipowner,fill,901,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 14 (sheet 1197): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+902|Shipowner,fill,902,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 15 (sheet 1198): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+903|Shipowner,fill,903,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 16 (sheet 1199): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+904|Shipowner,fill,904,,Shipowner,Y,False,hold,accept,"NYK Line, Maran Gas Maritime","Mozambique LNG 17 (sheet 1200): backend carried 'MOL, NYK'. Source: ""Samsung Hea"
+1212|Capacity,fill,1212,,Capacity,G,False,accept,accept,177000,HD Hyundai Samho hull 8358 (sheet 1165): backend carried 174000 cbm from the May
+1213|Capacity,fill,1213,,Capacity,G,False,accept,accept,177000,HD Hyundai Samho hull 8359 (sheet 1166): backend carried 174000 cbm from the May
