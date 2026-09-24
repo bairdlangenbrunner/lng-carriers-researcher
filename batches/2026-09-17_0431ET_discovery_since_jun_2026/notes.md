@@ -108,11 +108,44 @@ Differences from the batch's proposal, all re-gated on the fresh pull:
   Jiangnan rows (RF §4.8 / DC §6.7). The yard-country ref `jnshipyard.com.cn` timed out (000) on
   the gate; it is the ref all 20 Jiangnan rows already carry.
 
-Still stubs (A–E only), not written: C1.1–C1.4 (rows 1220–1223), C5.1–C5.2 (rows 1230–1231).
-C2 (Tsakos 2) is not in the sheet. The four stubs' column-A `row_id` is blank.
+C1.1–C1.4 and C5.1–C5.2 were written separately (next section). C2 (Tsakos 2) is not in the sheet.
+Rows 1226–1229 have a blank column-A `row_id`.
 
 Script fix riding with this: `review_data.py` and `verify_apply.py` matched a new row only against
 rows with a column-A `row_id` and only by Name / Hull number, so these stubs read as missing, and the
 tag restyle would have hidden them anyway. They now search every row, match by IMO too, and count a
 new row as present only when that row holds every column the candidate fills (a pasted stub stays
 open). The living workbook's `processed` column now shows C4.1–C4.4 as incorporated.
+
+## Applied — C1.1–C1.4, C5.1–C5.2 + row 1170 owner country (2026-09-23, AP §2d)
+
+Baird directed: "go ahead and add in the rest of the data for rows 1230-1231 and for the dynagas 1–4
+rows … and you can make a decision on the Bermuda/United States". Fresh pull → 140-cell plan →
+`directed_2026-09-23b_revert.csv` → `gws-gem-write` `values.batchUpdate` (RAW) → re-pull:
+**140/140 hold**. Recorded in `push_log.jsonl` as `claude session (directed)`.
+
+- **C1.1–C1.4, rows 1220–1223 (Samsung HI, Dynagas):** Status, Shipowner `Dynagas`, Shipowner
+  country `Greece`, Shipbuilder, Capacity 200000 cbm, Delivery year 2029, Contract date 14-Sep-2026,
+  plus the Samsung yard columns copied from sibling rows. Splash247 is the owner-country ref; it
+  calls Dynagas "the Greek shipowner". dynagas.com and dynagaspartners.com return 000 even through
+  the fetch ladder. Name stays `Samsung HI (Dynagas N)` (no hull numbers or IMOs are public yet).
+- **C5.1–C5.2, rows 1230–1231 (Jiangnan H2858/H2859, ADNOC L&S):** Name restyled and Hull number
+  filled as `Hull H2858 (Jiangnan)` (the Name ref is kept, shipvault refs on the Hull number), then
+  Status, Shipowner, owner country, Shipbuilder, Capacity 175000 cbm, Delivery 2029, Contract date
+  25-Aug-2026, and the Jiangnan yard columns. Seatrade failed the gate on Contract date, so that
+  cell carries only the aletihad ref.
+- **Not written:** Vessel type (no ref for either order). Price, because the Dynagas order is
+  reported as $1.01bn by sedaily and $1.05bn by splash, and ADNOC's $444m covers the pair; a
+  DF §5a per-vessel derivation would be Y at most. CSB lists none of the six yet: the Jiangnan
+  orderbook stops at H2857 and the Samsung orderbook has no Dynagas entry (`--all-pages`,
+  2026-09-23).
+- **Row 1170 (row_id 1227, Samsung 2808, Purus Marine), outside this batch:** Shipowner
+  country/area changed from `Bermuda` to `United Kingdom`, with the ref replaced by
+  `purus.com/our-services/gas` (London HQ, and the value on Purus's other four rows). The
+  Bermuda ref (cyprusshippingnews, 2026-06-02) covers the May 27 "Bermuda-based" five-vessel
+  order, which is CSB hulls 2803–2805, not Purus's June hull 2808. As a result the data-fill
+  line `2026-09-17_0511ET_data_fill_on_order::1227|Shipowner country/area` is no longer marked
+  incorporated in the living workbook. Its push_log key is `…::row1170|<column>`.
+- The living workbook shows C1.1–C1.4 and C5.1–C5.2 as incorporated. verify_apply: only C2 is
+  missing.
+
