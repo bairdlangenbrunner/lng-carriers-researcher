@@ -155,8 +155,9 @@ def backend_entries(be) -> list:
     return out
 
 
-def load_pending(batch_dirs) -> dict:
-    """row_id -> column -> [{batch, value, decision, confidence}] from decisions.csv."""
+def load_pending(batch_dirs, canon=lambda k: k) -> dict:
+    """row_id -> column -> [{batch, value, decision, confidence}] from decisions.csv.
+    `canon` (Backend.canonical_key) folds a batch's legacy row_id onto the UUID."""
     out = defaultdict(lambda: defaultdict(list))
     for d in batch_dirs:
         p = Path(d) / "decisions.csv"
@@ -164,7 +165,7 @@ def load_pending(batch_dirs) -> dict:
             continue
         for r in csv.DictReader(p.open(encoding="utf-8")):
             if r.get("row_id") and r.get("column") and "[ref]" not in r["column"]:
-                out[r["row_id"]][r["column"]].append({
+                out[canon(r["row_id"])][r["column"]].append({
                     "batch": Path(d).name, "value": r.get("proposed_value", ""),
                     "decision": r.get("decision", ""), "confidence": r.get("confidence", "")})
     return out
@@ -537,7 +538,7 @@ def main(argv=None):
     igu = json.loads(igu_path.read_text())
     prev = json.loads(prev_path.read_text()) if prev_path else None
     be = load_backend(args.backend)
-    rec = reconcile(igu, prev, backend_entries(be), load_pending(args.pending))
+    rec = reconcile(igu, prev, backend_entries(be), load_pending(args.pending, be.canonical_key))
     rec["pending_batches"] = [Path(d).name for d in args.pending]
     leads_path = Path(args.leads) if args.leads else work_dir() / "igu_review_shipvault.json"
     if args.fetch_leads:

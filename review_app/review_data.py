@@ -512,21 +512,24 @@ def build(batch_dirs, backend_path=None, info_path=None):
         all_items.extend(collect_items(bdir, mode, srm, cell))
 
     # links: linked-column partners on the same row (any batch) + same id in another batch
+    # keys compared canonically: an older batch keyed by legacy row_id and a newer one keyed by
+    # UUID name the same vessel
+    ck = be.canonical_key
     by_cell_key = defaultdict(list)
     for k, p in proposals.items():
         if p["row_id"]:
-            by_cell_key[(p["row_id"], p["column"])].append(k)
+            by_cell_key[(ck(p["row_id"]), p["column"])].append(k)
     for k, p in proposals.items():
         if not p["row_id"]:
             continue
         links = []
-        for other in by_cell_key[(p["row_id"], p["column"])]:
+        for other in by_cell_key[(ck(p["row_id"]), p["column"])]:
             if other != k:
                 links.append(other)
                 if "overlaps_batch" not in p["flags"]:
                     p["flags"].append("overlaps_batch")
         for pc in partner_columns(p["column"], header):
-            links.extend(by_cell_key.get((p["row_id"], pc), []))
+            links.extend(by_cell_key.get((ck(p["row_id"]), pc), []))
         if any(proposals[o]["column"] != p["column"] and {p["column"], proposals[o]["column"]} == STRICT_PAIR
                for o in links):
             p["flags"].append("strict_pair")
@@ -536,14 +539,14 @@ def build(batch_dirs, backend_path=None, info_path=None):
     order = {b["dir"]: (b["apply_order"], b["dir"]) for b in batches}
     grouped = defaultdict(list)
     for k, p in proposals.items():
-        grouped[p["row_id"] or f"cluster:{p['batch']}:{p['cluster_id']}"].append(k)
+        grouped[ck(p["row_id"]) if p["row_id"] else f"cluster:{p['batch']}:{p['cluster_id']}"].append(k)
     vessels = []
     for vid, keys in grouped.items():
         keys.sort(key=lambda k: (order[proposals[k]["batch"]], H.get(proposals[k]["column"], 999),
                                  proposals[k]["column"]))
         p0 = proposals[keys[0]]
         if p0["row_id"]:
-            rid = p0["row_id"]
+            rid = ck(p0["row_id"])
             vessels.append({"row_id": rid, "live_row": srm.get(rid), "new": False,
                             "in_backend": rid in rows,
                             "name": cell(rid, "Name"), "imo": cell(rid, "IMO number"),

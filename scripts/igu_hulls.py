@@ -77,8 +77,9 @@ def igu_hull(printed: str) -> tuple[str, str, str]:
     return m.group(1).strip(), toks[0], raw
 
 
-def pending_cells(fields=("Name", "IMO number", "Hull number"), skip=()) -> dict:
-    """(row_id, field) -> [(batch, value)] over every batch's apply_patch.csv (all modes)."""
+def pending_cells(fields=("Name", "IMO number", "Hull number"), skip=(), canon=lambda k: k) -> dict:
+    """(row_id, field) -> [(batch, value)] over every batch's apply_patch.csv (all modes).
+    `canon` (Backend.canonical_key) folds an older patch file's legacy key onto the UUID."""
     import csv
     out = {}
     for f in sorted((repo_root() / "batches").glob("*/apply_patch.csv")):
@@ -87,7 +88,7 @@ def pending_cells(fields=("Name", "IMO number", "Hull number"), skip=()) -> dict
         with open(f, encoding="utf-8", newline="") as fh:
             for r in csv.DictReader(fh):
                 if r.get("column") in fields:
-                    out.setdefault((str(r["key"]), r["column"]), []).append((f.parent.name, r.get("value", "")))
+                    out.setdefault((canon(r["key"]), r["column"]), []).append((f.parent.name, r.get("value", "")))
     return out
 
 
@@ -96,7 +97,7 @@ def build(edition: str, out_dir: str = ""):
     rows, live, hi = be.row_by_id(), be.sheet_row_map(), be.header_index
     cell = lambda rid, col: be.cell(rows[rid], hi.get(col)).strip()
     ext = json.loads((work_dir() / f"igu_fleet_{edition}.json").read_text())
-    pdf, tags, pend = IGU_PDF[edition], yard_tags(be), pending_cells(skip={out_dir})
+    pdf, tags, pend = IGU_PDF[edition], yard_tags(be), pending_cells(skip={out_dir}, canon=be.canonical_key)
     tag_of = lambda b: tags.get(b) or FALLBACK_YARD_TAGS.get(b) or b
     by_imo = {}
     for rid in rows:

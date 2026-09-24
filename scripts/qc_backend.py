@@ -384,7 +384,7 @@ def scan_names(header, data, rid_idx, row_filter=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", default=str(backend_csv_path()))
-    ap.add_argument("--rows", help="Limit to a row-id range, e.g. 1216-1217")
+    ap.add_argument("--rows", help="Limit to a LIVE sheet-row range, e.g. 1116-1117")
     ap.add_argument("--strict", action="store_true",
                     help="Exit 1 if any non-allowlisted HIGH/MED finding remains")
     ap.add_argument("--out", default=str(work_dir() / "qc_report.csv"))
@@ -398,14 +398,15 @@ def main():
     if args.rows:
         m = re.fullmatch(r"(\d+)-(\d+)", args.rows.strip())
         if not m:
-            ap.error(f"--rows expects a row-id range like 1216-1217 (got {args.rows!r})")
+            ap.error(f"--rows expects a live sheet-row range like 1116-1117 (got {args.rows!r})")
         lo, hi = sorted((int(m.group(1)), int(m.group(2))))
-        row_filter = lambda rid: rid.isdigit() and lo <= int(rid) <= hi
+        srm = be.sheet_row_map()
+        row_filter = lambda rid: lo <= srm.get(rid, 0) <= hi
 
     findings, builders_missing, owners_missing = scan(header, data, rid_idx, row_filter)
     findings += scan_names(header, data, rid_idx, row_filter)
 
-    allow = load_allowlist()
+    allow = {(be.canonical_key(rid), col) for rid, col in load_allowlist()}  # legacy ids ok
     kept = [f for f in findings if (f["row_id"], f["column"]) not in allow]
     silenced = len(findings) - len(kept)
 

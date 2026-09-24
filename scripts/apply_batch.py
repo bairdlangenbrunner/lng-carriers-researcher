@@ -29,6 +29,7 @@ import argparse
 import csv
 import json
 import sys
+import uuid
 from pathlib import Path
 
 from backend_io import load_backend
@@ -53,8 +54,8 @@ def _load_backend(backend_path):
 def sheet_row_map(backend_path, colmap=None):
     """Map ``row_id`` -> live Google Sheet tab row (1-based).
 
-    ``row_id`` is column A ("original order in sheet") — a static stamp that drifts
-    from the live row as rows are deleted, so it is NOT the tab row. Use this
+    Keys are UUIDs (or legacy "original order in sheet" ids, aliased). The old
+    stamp drifts from the live row as rows are deleted, so it is NOT the tab row. Use this
     whenever a row is reported to a human (they navigate the actual sheet).
     Delegates to backend_io.Backend.sheet_row_map.
     """
@@ -263,6 +264,8 @@ def main():
 
     mode, payload = _detect(batch_dir)
     header, row_by_id, colmap = _load_backend(args.backend)
+    be = load_backend(args.backend)
+    srm = be.sheet_row_map()
     items, conflicts = _items_and_conflicts(mode, payload, header, colmap)
     yard_map = _yard_location_map_table_first(list(row_by_id.values()), header)
 
@@ -286,6 +289,10 @@ def main():
             full, row_data = _discovery_full_row(it, header, yard_map)
             new_rows.append({"cluster_id": it["cluster_id"], "confidence": it["confidence"],
                              "row_data": row_data})
+            ki = colmap.get("row_id")
+            if ki is not None and ki < len(full) and not str(full[ki]).strip() \
+                    and header[ki].strip().lower() == "uuid":
+                full[ki] = str(uuid.uuid4())   # a new vessel gets its key at birth
             new_rows[-1]["_full"] = full
             for h, v in row_data.items():
                 if v:
@@ -298,14 +305,14 @@ def main():
         H = {h: i for i, h in enumerate(header)}
         for column, value in cell_writes(it, H, row_by_id.get(rid)):
             base[H[column]] = value
-            patch.append(["set", rid, column, value])
+            patch.append(["set", be.canonical_key(rid), column, value])  # the sheet matches on UUID
             cells.append({"row_id": rid, "column": column, "value": value,
                           "confidence": it["confidence"]})
 
     with open(batch_dir / "apply_rows.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(header)
-        for rid in sorted(touched, key=lambda s: int(s) if s.isdigit() else 0):
+        for rid in sorted(touched, key=lambda k: srm.get(k, 0)):
             w.writerow(touched[rid][:len(header)])
         for nr in new_rows:
             w.writerow(nr["_full"][:len(header)])

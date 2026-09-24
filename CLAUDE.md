@@ -32,7 +32,8 @@ root regardless of cwd).
   AP §2c) mirrors decisions into the `processed` column of the pass's Drive copy and writes nothing
   else. Imports from `scripts/`, never the reverse.
 - `data/` — `csb_yard_urls.md` (stable ChinaShipBuild yard URLs), `owner_charterer_map.md`
-  (canonical owner names; companion to `normalize.py`), `source_roster.md` (source tiers for
+  (canonical owner names; companion to `normalize.py`), `legacy_row_ids.csv` (frozen legacy
+  "original order in sheet" id → row UUID, so pre-UUID batches resolve), `source_roster.md` (source tiers for
   corroboration URLs), `controlled_vocab.md`, facts tables, the GIIGNL PDFs.
 - `batches/` — per-batch outputs, one directory per batch (`batches/README.md` is the index).
 - `../lng-carriers-map` — sibling repo: live FSRU/FSU fleet map. Its `data/fleet.json` is
@@ -88,7 +89,7 @@ Triggers: "fill refs for rows X to Y", "next batch", "redo batch N", "rebuild ro
    database → `imo_tracker.py <imo>` **only at §6a.8, last before** the §6a.9 negative-result log).
 5. Trade press / regulatory per RF §3.4; pick sources via `data/source_roster.md`.
 6. `url_verifier.py <url> <expected…>` — the §3.8 gate, EVERY url before it goes in the xlsx.
-7. `build_workbook.py --mode ref_fill --rows X-Y --citations citations.json --out batches/<dir>/`,
+7. `build_workbook.py --mode ref_fill --rows X-Y` (live sheet rows) `--citations citations.json --out batches/<dir>/`,
    then `recalc.py <xlsx>` (zero formula errors), then `batches/<dir>/notes.md` (conflicts,
    defects corrected, escalations, Drive link). Commit the batch directory.
 
@@ -271,7 +272,8 @@ never auto-applied.
 - **Data-fill is additive to blanks / `unknown`s only** — value + verified-`[ref]` pairs for human
   review; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (DF §4, §9).
 - **Always pull a fresh backend CSV at the start of a batch** and re-derive the column map.
-- **Report live sheet rows**, not the column-B `row_id`, wherever a row is named to Baird.
+- **Report live sheet rows**, never a row key (the column-A `UUID`, or a legacy "original order"
+  id), wherever a row is named to Baird.
 - **Git:** branch → commit → push → PR → merge is pre-authorised for this repo (Baird 2026-06-07);
   commits all-lowercase and succinct, scoped to the task, no Claude attribution. **Never commit**
   credentials or anything in `work/` (gitignored).

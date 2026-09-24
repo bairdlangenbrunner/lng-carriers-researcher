@@ -133,7 +133,7 @@ def load_done(path, retry_errors: bool) -> dict:
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--backend", default=str(backend_csv_path()))
-    ap.add_argument("--rows", default="", help="row_id range/list")
+    ap.add_argument("--rows", default="", help="legacy 'original order' id range/list (prefer --sheet-rows)")
     ap.add_argument("--sheet-rows", default="", help="LIVE sheet tab rows")
     ap.add_argument("--urls", default="", help="file of URLs (one per line) instead of the backend")
     ap.add_argument("--within", default="30d",

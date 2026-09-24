@@ -225,7 +225,7 @@ def main():
     except (BackendNotPulled, FileNotFoundError):
         sys.exit("error: no fresh backend pull — run `python scripts/pull_backend.py` first")
     i = backend.header_index.get("IMO number")
-    imo_by_id = {rid: backend.cell(r, i).strip() for rid, r in backend.row_by_id().items()} \
+    imo_by_id = backend.map_rows(lambda r: backend.cell(r, i).strip()) \
         if i is not None else {}
     srm = sheet_row_map(args.backend)
 

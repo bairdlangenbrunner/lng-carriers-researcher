@@ -21,14 +21,16 @@
  *
  * The patch format (apply_patch.csv, produced by scripts/apply_batch.py):
  *   op,key,column,value
- *   set,1144,Shipowner country/area,United States      // set a cell on an existing row
+ *   set,<uuid>,Shipowner country/area,United States    // set a cell on an existing row (key = UUID;
+ *                                                     // a legacy "original order" id works while that column exists)
  *   append,C1,Shipowner,MISC Berhad                     // build+append a new row (grouped by key)
  */
 
 // ---- config -----------------------------------------------------------------
 var BACKEND_SHEET_NAME = "backend";   // <-- the backend tab's name
 var PATCH_SHEET_NAME = "apply_patch"; // tab holding the pasted apply_patch.csv
-var ROWID_HEADER = "original order in sheet"; // the column that holds the row_id
+var ROWID_HEADER = "UUID";           // the column that holds the row key
+var LEGACY_ROWID_HEADER = "original order in sheet"; // old key; matched too while the column exists
 var DRY_RUN = true;                   // true = preview only; false = actually write
 var OVERWRITE_NONBLANK = false;       // set true to allow 'set' to overwrite a non-blank cell
 
@@ -47,12 +49,22 @@ function applyPatch() {
   var colOf = {};                     // header string -> 0-based column
   for (var c = 0; c < header.length; c++) if (header[c]) colOf[String(header[c]).trim()] = c;
   var ridCol = colOf[ROWID_HEADER];
-  if (ridCol === undefined) ridCol = 0;
+  if (ridCol === undefined) throw new Error("No '" + ROWID_HEADER + "' column in the backend header");
+  var legacyCol = colOf[LEGACY_ROWID_HEADER];
 
-  var rowOf = {};                     // row_id -> 1-based sheet row
+  var rowOf = {};                     // key (UUID, or legacy id) -> 1-based sheet row
+  var spare = [];                     // pre-generated rows: a UUID and nothing else (filled by 'append')
   for (var r = headerRow + 1; r < grid.length; r++) {
     var rid = String(grid[r][ridCol]).trim();
     if (rid) rowOf[rid] = r + 1;
+    if (legacyCol !== undefined) {
+      var lid = String(grid[r][legacyCol]).trim();
+      if (lid && rowOf[lid] === undefined) rowOf[lid] = r + 1;
+    }
+    var blankRest = true;
+    for (var cc0 = 0; cc0 < grid[r].length && blankRest; cc0++)
+      if (cc0 !== ridCol && String(grid[r][cc0]).trim() !== "") blankRest = false;
+    if (rid && blankRest) spare.push({row: r + 1, uuid: rid});
   }
 
   var patch = patchSheet.getDataRange().getValues();
@@ -98,17 +110,22 @@ function applyPatch() {
 
   // build + append new rows (one per append-group)
   for (var gk in appendGroups) {
+    // A new vessel takes the first spare pre-generated UUID row; with none left it
+    // appends below the last row with a fresh UUID.
+    var slot = spare.length ? spare.shift() : null;
     var newRow = [];
     for (var c2 = 0; c2 < header.length; c2++) {
       var h = String(header[c2]).trim();
       newRow.push(appendGroups[gk].hasOwnProperty(h) ? appendGroups[gk][h] : "");
     }
+    newRow[ridCol] = slot ? slot.uuid : Utilities.getUuid();
     var preview = [];
     for (var h2 in appendGroups[gk]) preview.push(h2 + "='" + appendGroups[gk][h2] + "'");
-    log.push((DRY_RUN ? "would append " : "append ") + "row [" + gk + "]: " + preview.join(", "));
+    log.push((DRY_RUN ? "would " : "") + (slot ? "fill spare row " + slot.row : "append a row") +
+             " [" + gk + "] UUID " + newRow[ridCol] + ": " + preview.join(", "));
     if (!DRY_RUN) {
       // Plain text first, so "2026" / "1/2" / leading zeros are not coerced (parity with push.py).
-      var target = backend.getRange(backend.getLastRow() + 1, 1, 1, newRow.length);
+      var target = backend.getRange(slot ? slot.row : backend.getLastRow() + 1, 1, 1, newRow.length);
       target.setNumberFormat("@");
       target.setValues([newRow]);
     }

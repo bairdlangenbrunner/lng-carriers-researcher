@@ -19,7 +19,7 @@ build_workbook --mode data_fill -> apply_batch) is reused unchanged:
 
 Scope = the five priority fields whose [ref] equals EXACTLY the IGU url (after
 splitting on ", "/newline) and whose data value is non-blank/non-`unknown`,
-within a --rows X-Y row_id range. Identity (IMO/hull) and soft fields (status,
+within a --rows X-Y live sheet-row range. Identity (IMO/hull) and soft fields (status,
 propulsion, cargo/vessel type) are out of scope by design.
 
     python scripts/derive_corroborate.py --rows 3-22
@@ -61,7 +61,7 @@ def main():
     from derive_fills import _check_stale_research
 
     ap = argparse.ArgumentParser()
-    ap.add_argument("--rows", required=True, help="row_id range, inclusive (e.g. 3-22)")
+    ap.add_argument("--rows", required=True, help="LIVE sheet-row range, inclusive (e.g. 3-22)")
     ap.add_argument("--igu-url", default=IGU_URL, help="the sole-source URL to corroborate")
     ap.add_argument("--backend", default=str(backend_csv_path()))
     ap.add_argument("--force", action="store_true",
@@ -75,17 +75,13 @@ def main():
 
     be = load_backend(args.backend)
     H, data = be.header_index, be.data
-    RID = be.colmap["row_id"]
-
     scope_ids = []
     research = defaultdict(list)
     n_cells = 0
 
-    for r in data:
-        if len(r) <= RID:
-            continue
-        rid = r[RID].strip()
-        if not (rid.isdigit() and lo <= int(rid) <= hi):
+    for idx, r in enumerate(data, start=be.data_start + 1):   # idx = live sheet row
+        rid = be.key_of(r)
+        if not rid or not (lo <= idx <= hi):
             continue
 
         def val(h):

@@ -34,15 +34,14 @@ Four tiers, highest-confidence first:
            Knutsen 8th-vs-9th lesson. Same/no ordinals → stays MED.
 
 Row identity: every group is reported by its **live Google Sheet tab row** as well
-as its `row_id`. `row_id` is column A ("original order in sheet") — a static stamp
-that drifts from the live row as rows are deleted — so it is NOT the tab row. The
-report's `sheet_rows` column and the stderr lines lead with the live row; matching
-is still keyed on `row_id` (the stable, offset-proof identifier across pulls).
+as its `row_id` key — the row's UUID (a legacy "original order in sheet" id resolves
+to it). The live row drifts as rows are deleted, so the key is what matching uses;
+the report's `sheet_rows` column and the stderr lines lead with the live row.
 
 CLI:
     python scripts/dedupe_check.py [--backend <csv>] [--rows ...] [--sheet-rows ...] [--strict]
     # writes work/dedupe_report.csv (with a sheet_rows column).
-    # --rows N,...        focus by row_id (column-B "original order")
+    # --rows K,...        focus by row key (UUID, or a legacy "original order" id)
     # --sheet-rows N,...  focus by LIVE sheet tab row (what you see in the sheet)
     # --strict            exit 1 if any HIGH/MED group is found
     # (the end-of-update "did my new rows duplicate anything?" sweep)
@@ -62,6 +61,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from apply_batch import _load_backend, sheet_row_map
+from backend_io import load_backend
 from normalize import normalize_builder, normalize_hull, normalize_owner
 from paths import backend_csv_path, work_dir
 
@@ -157,7 +157,7 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
     """Return a list of candidate-duplicate groups.
 
     Each group: dict(tier, severity, row_ids, sheet_rows, builder, owner, key,
-    reason, recommendation). `row_ids` are column-B "original order in sheet"
+    reason, recommendation). `row_ids` are row keys (UUIDs)
     stamps; `sheet_rows` are the live tab rows resolved via `sheet_rows` (a
     {row_id: sheet_row} map) — always report the live rows to humans. `focus_rows`
     (a set of row_id strings) limits the result to groups that include at least
@@ -335,7 +335,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", default=str(backend_csv_path()))
     ap.add_argument("--rows", default="",
-                    help="comma-separated row_ids (column-B 'original order') to focus on")
+                    help="comma-separated row keys (UUID or legacy 'original order' id) to focus on")
     ap.add_argument("--sheet-rows", default="",
                     help="comma-separated LIVE sheet tab rows to focus on")
     ap.add_argument("--strict", action="store_true",
@@ -346,7 +346,8 @@ def main():
     data = list(row_by_id.values())
     srmap = sheet_row_map(args.backend, colmap)
 
-    focus = {x.strip() for x in args.rows.split(",") if x.strip()}
+    be = load_backend(args.backend)
+    focus = {be.canonical_key(x) for x in args.rows.split(",") if x.strip()}  # UUID or legacy id
     if args.sheet_rows:  # translate live sheet rows -> row_id for matching
         want = {x.strip() for x in args.sheet_rows.split(",") if x.strip()}
         inv = {str(sr): rid for rid, sr in srmap.items()}

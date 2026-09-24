@@ -6,7 +6,8 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-23 rev 11 (audit fixes: §7 reworded to agree with §2d — two
+**Last revised:** 2026-09-23 rev 12 (row key is now the column-A `UUID`; legacy "original order"
+ids still resolve — §5 row identity). Prior: 2026-09-23 rev 11 (audit fixes: §7 reworded to agree with §2d — two
 sanctioned write paths, both human-authorised and never automatic, never from a batch build or
 a driven endpoint call; §6 drops "Anyone with the link" in favor of named reviewer accounts,
 per the work-Drive anonymous-access withdrawal). Prior: 2026-09-22 rev 10 (§2b / §3: the grade `decisions.csv` pre-fills from is
@@ -68,11 +69,12 @@ python scripts/apply_batch.py --batch batches/<dir>
 
 # 3. Apply — pick ONE path (both are offset-proof):
 #    (a) Full-row paste: open apply_rows.csv, paste each row over the matching backend
-#        row (matched by the row_id in column B) — or, for discovery rows (blank row_id),
-#        into a new backend row. Full-width paste can't shift a column.
+#        row (matched by the UUID in column A) — or, for discovery rows (a fresh UUID),
+#        into a spare UUID row / a new backend row. Full-width paste can't shift a column.
 #    (b) By-name applier: paste apply_patch.csv into the backend sheet's "apply_patch"
 #        tab and run tools/apply_patch.gs (DRY_RUN=true first to preview, then false).
-#        It writes each cell by row_id + header, so a column offset is impossible.
+#        It writes each cell by UUID + header, so a column offset is impossible; a new
+#        row fills the first spare UUID row (else appends one with a fresh UUID).
 #    (c) Review app push (§2b): the "push changes" button — accepted value / [ref] lines and
 #        the reviewer's gated suggestions; new rows and conflicts still go by (a) / (b).
 
@@ -292,20 +294,24 @@ python scripts/dedupe_check.py [--rows 1216,1217] [--sheet-rows 1211,1212] [--st
 #   -> work/dedupe_report.csv
 ```
 
-`--rows` focuses by `row_id`; `--sheet-rows` focuses by live tab row; `--strict` exits
+`--rows` focuses by row key (UUID, or a legacy id); `--sheet-rows` focuses by live tab row; `--strict` exits
 non-zero if any HIGH/MED group exists. The SFOC reconciliation pass should run the
 standalone full-backend scan as its closing step too.
 
-**Row identity — always read the live sheet row.** Column A is `UUID` (added 2026-09-23 by a
-directed write: one v4 UUID per row, 20 spare pre-generated rows at the bottom; not yet used as a
-key by any script). `row_id` (colmap `row_id`) is column B,
-*"original order in sheet"* — a static stamp that drifts from the live tab row as rows are
-deleted (on the 2026-06-05 pull, row_id 1216 sat at sheet row 1211). Every report
-(`verify_report.csv`, `dedupe_report.csv`) carries a `sheet_row`/`sheet_rows` column and the
-stderr lines lead with the live row (`sheet row 1211 (id 1216)`), resolved by
-`apply_batch.sheet_row_map` (live row = CSV line index + 1). Matching and pasting still key
-on `row_id` — it's the stable, offset-proof identifier — so the apply itself is unaffected;
-only the human-facing presentation uses sheet rows.
+**Row identity — always read the live sheet row.** The row key (colmap `row_id`) is column A,
+`UUID` (added 2026-09-23 by a directed write): one v4 UUID per row that never changes. Rows
+holding a UUID and nothing else are **spare** pre-generated rows — not vessels; every script
+skips them, and a new vessel (apply_patch.gs `append`, `apply_batch` discovery rows) takes one.
+The old key, column B *"original order in sheet"* (colmap `legacy_row_id`), was a static stamp
+that drifted from the live tab row as rows were deleted. Batches built before the switch are keyed
+by it and still resolve: `backend_io` maps legacy id → UUID from the live column while it exists
+and from the frozen `data/legacy_row_ids.csv` after, and `row_by_id` / `sheet_row_map` /
+`canonical_key` accept either form (a legacy id never lists a row twice). Decision ids keep the
+key form their batch was built with, so existing `decisions.csv` / `review_log.jsonl` stay valid;
+`apply_patch.csv` is written with UUID keys — an older file with numeric keys still applies while
+column B exists, else re-run `apply_batch.py` to regenerate it. Every report
+(`verify_report.csv`, `dedupe_report.csv`) carries a `sheet_row`/`sheet_rows` column and leads
+with the live row (live row = CSV line index + 1); a key is never shown to a human as a row.
 
 ## 6. Publishing the candidate workbook (optional, for shared review)
 
@@ -337,6 +343,11 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   the apply), but a HIGH/MED group means a row may duplicate an existing vessel — resolve it.
 
 ## 8. Changelog
+
+- **rev 12** (2026-09-23): the row key moved from column B "original order in sheet" to the
+  column-A `UUID` (§5 row identity). Legacy ids keep resolving through `data/legacy_row_ids.csv`,
+  so un-applied batches carry across unchanged; `apply_patch.csv` keys are UUIDs; apply_patch.gs
+  fills spare UUID rows for new vessels. Column B can be deleted later by a separate directed write.
 
 - **rev 11** (2026-09-23): §7 reworded — it had drifted from §2d (added rev 9) and still said
   the sheet is written "never from a command line, a batch build or an agent session," which

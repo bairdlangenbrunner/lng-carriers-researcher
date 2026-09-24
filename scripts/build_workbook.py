@@ -102,6 +102,7 @@ from openpyxl import Workbook
 from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
+from backend_io import load_backend
 from paths import backend_csv_path, work_dir
 
 # Color conventions
@@ -207,20 +208,19 @@ def build_ref_fill(args):
     data_start = colmap["_data_starts_at"]
     data = backend_rows[data_start:]
 
-    # Parse row range
-    if args.rows:
-        lo, hi = args.rows.split("-")
-        lo, hi = int(lo), int(hi)
-    else:
-        # Infer from citations
-        row_ids = [int(c["row_id"]) for c in citations.get("cells", [])
-                   if c["row_id"].isdigit()]
-        lo, hi = (min(row_ids), max(row_ids)) if row_ids else (1, len(data))
-
-    # Filter to batch rows. row_id is at column colmap["row_id"].
+    # Batch rows: --rows is a LIVE sheet-row range; otherwise the rows the
+    # citations name (UUID or legacy row_id keys).
+    be = load_backend(args.backend)
     ci_row = colmap["row_id"]
-    batch = [r for r in data if ci_row is not None and len(r) > ci_row
-             and r[ci_row].isdigit() and lo <= int(r[ci_row]) <= hi]
+    if args.rows:
+        batch = be.rows_by_sheet_row(args.rows)
+        lo, hi = args.rows.split("-") if "-" in args.rows else (args.rows, args.rows)
+    else:
+        want = {be.canonical_key(c["row_id"]) for c in citations.get("cells", [])}
+        batch = [r for r in data if be.key_of(r) in want]
+        srm = be.sheet_row_map()
+        live = sorted(srm[k] for k in want if k in srm) or [0]
+        lo, hi = live[0], live[-1]
 
     wb = Workbook()
 
@@ -250,12 +250,12 @@ def build_ref_fill(args):
     # Build a citation lookup: (row_id, field) -> citation cell
     cite_lookup = {}
     for c in citations.get("cells", []):
-        key = (str(c["row_id"]), c["field"])
+        key = (be.canonical_key(c["row_id"]), c["field"])
         cite_lookup.setdefault(key, []).append(c)
 
     # Render batch rows
     for r_offset, row in enumerate(batch, start=2):
-        row_id = row[ci_row] if len(row) > ci_row else ""
+        row_id = be.key_of(row)
         for col_i, val in enumerate(row, start=1):
             cell = ws.cell(row=r_offset, column=col_i, value=val)
             cell.alignment = WRAP_ALIGN
@@ -637,15 +637,15 @@ def build_data_fill(args):
     backend_header = backend_rows[colmap["_header_row_idx"]]
     header_index = {h: i for i, h in enumerate(backend_header)}
     data_start = colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1)
-    ci_row = colmap["row_id"]
-    row_by_id = {r[ci_row].strip(): r for r in backend_rows[data_start:]
-                 if len(r) > ci_row and r[ci_row].strip()}
+    be = load_backend(args.backend)
+    row_by_id = be.row_by_id()
+    srm = be.sheet_row_map()
 
     fills = payload.get("fills", [])
     scope_ids = [str(x) for x in payload.get("scope", {}).get("row_ids", [])]
     if not scope_ids:
         scope_ids = sorted({str(f["row_id"]) for f in fills},
-                           key=lambda s: int(s) if s.isdigit() else 1 << 30)
+                           key=lambda k: srm.get(k, 1 << 30))
 
     CONF_RANK = {"G": 3, "green": 3, "Y": 2, "yellow": 2, "R": 1, "red": 1}
     # corroborate fills leave the data value untouched (they only append [ref]s), so
@@ -857,8 +857,8 @@ def build_fix(args):
     header_index = {h: i for i, h in enumerate(backend_header)}
     data_start = colmap.get("_data_starts_at", colmap["_header_row_idx"] + 1)
     ci_row = colmap["row_id"]
-    row_by_id = {r[ci_row].strip(): r for r in backend_rows[data_start:]
-                 if len(r) > ci_row and r[ci_row].strip()}
+    be = load_backend(args.backend)
+    row_by_id = be.row_by_id()
 
     # --base: build on an already-reviewed corrected-rows CSV instead of the live
     # backend row. Use this when the live row is still corrupted (e.g. a prior
@@ -875,7 +875,8 @@ def build_fix(args):
                 continue
             d = {base_header[i]: (br[i] if i < len(br) else "")
                  for i in range(len(base_header))}
-            rid = d.get(backend_header[ci_row], "").strip()
+            rid = (d.get(backend_header[ci_row], "")
+                   or d.get("original order in sheet", "")).strip()
             if not rid:
                 continue
             row_by_id[rid] = [d.get(h, "") if h else "" for h in backend_header]
@@ -1736,7 +1737,7 @@ def build_igu(args):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--mode", choices=["ref_fill", "discovery", "data_fill", "fix", "fsru", "igu"], required=True)
-    p.add_argument("--rows", help="Row range for ref_fill, e.g. '1170-1190'")
+    p.add_argument("--rows", help="LIVE sheet-row range for ref_fill, e.g. '1170-1190'")
     p.add_argument("--citations", help="Path to citations JSON (ref_fill mode)")
     p.add_argument("--candidates", help="Path to candidates JSON (discovery mode)")
     p.add_argument("--fills", help="Path to fills JSON (data_fill mode)")

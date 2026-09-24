@@ -91,6 +91,8 @@ def build_indexes(csv_path: str) -> dict:
     ci_status = colmap["status"]
 
     for i, row in enumerate(data):
+        if be.is_spare(row):   # a pre-generated UUID row, not a vessel (and not a stub)
+            continue
         cell = lambda ci: be.cell(row, ci)  # noqa: E731
         builder_raw = cell(ci_builder)
         owner_raw = cell(ci_owner)

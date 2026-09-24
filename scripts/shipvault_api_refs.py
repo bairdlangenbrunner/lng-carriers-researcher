@@ -142,7 +142,7 @@ def backend_batch(out_dir: Path, skip_fix: list[str]) -> None:
     pending = set()                      # (row_id, ref header) a fix batch will replace
     for fx in skip_fix:
         for corr in json.loads(Path(fx).read_text()).get("corrections", []):
-            pending |= {(str(corr.get("row_id")), f"{c.get('field')} [ref]")
+            pending |= {(be.canonical_key(corr.get("row_id")), f"{c.get('field')} [ref]")
                         for c in corr.get("cells", []) if not c.get("preserve_ref")}
     fills, skipped, added = [], [], []
     for rid, row in be.row_by_id().items():
@@ -176,14 +176,14 @@ def backend_batch(out_dir: Path, skip_fix: list[str]) -> None:
                     "note": (f"live row {sheet_row.get(rid, '?')}: the cited shipvault page renders "
                              f"blank (site bug); companion unit record shows {field} = {value!r}"),
                 })
-    order = lambda f: (int(f["row_id"]) if f["row_id"].isdigit() else 1 << 30, f["field"])
+    order = lambda f: (sheet_row.get(f["row_id"], 1 << 30), f["field"])
     fills.sort(key=order)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "data_fill.json").write_text(json.dumps({
         "batch_label": "Shipvault companion refs - existing backend cells citing a "
                        "blank-rendering shipvault page",
         "scope": {"filter": "backend [ref] cells citing shipvault.com/ships/{id}",
-                  "row_ids": sorted({f["row_id"] for f in fills}, key=int)},
+                  "row_ids": sorted({f["row_id"] for f in fills}, key=lambda k: sheet_row.get(k, 1 << 30))},
         "fills": fills, "documented_blanks": [], "verification_log": [],
         "candidate_findings": [],
     }, indent=2, ensure_ascii=False) + "\n")
