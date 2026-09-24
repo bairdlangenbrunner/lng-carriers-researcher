@@ -6,8 +6,9 @@ backend, safely and trackably, then verifying they landed. Complements the [ref]
 Discovery, and Data-fill SOPs (which *produce* candidate batches). **Authoritative** for
 the review→apply→verify round-trip. Abbreviated **AP**.
 
-**Last revised:** 2026-09-23 rev 12 (row key is now the column-A `UUID`; legacy "original order"
-ids still resolve — §5 row identity). Prior: 2026-09-23 rev 11 (audit fixes: §7 reworded to agree with §2d — two
+**Last revised:** 2026-09-24 rev 13 (the "original order in sheet" column is deleted; legacy ids
+resolve from `data/legacy_row_ids.csv` — §5 row identity). Prior: 2026-09-23 rev 12 (row key is
+now the column-A `UUID`; legacy "original order" ids still resolve). Prior: 2026-09-23 rev 11 (audit fixes: §7 reworded to agree with §2d — two
 sanctioned write paths, both human-authorised and never automatic, never from a batch build or
 a driven endpoint call; §6 drops "Anyone with the link" in favor of named reviewer accounts,
 per the work-Drive anonymous-access withdrawal). Prior: 2026-09-22 rev 10 (§2b / §3: the grade `decisions.csv` pre-fills from is
@@ -302,14 +303,15 @@ standalone full-backend scan as its closing step too.
 `UUID` (added 2026-09-23 by a directed write): one v4 UUID per row that never changes. Rows
 holding a UUID and nothing else are **spare** pre-generated rows — not vessels; every script
 skips them, and a new vessel (apply_patch.gs `append`, `apply_batch` discovery rows) takes one.
-The old key, column B *"original order in sheet"* (colmap `legacy_row_id`), was a static stamp
-that drifted from the live tab row as rows were deleted. Batches built before the switch are keyed
-by it and still resolve: `backend_io` maps legacy id → UUID from the live column while it exists
-and from the frozen `data/legacy_row_ids.csv` after, and `row_by_id` / `sheet_row_map` /
+The old key, *"original order in sheet"* (colmap `legacy_row_id`; column B until Baird deleted it
+2026-09-24), was a static stamp that drifted from the live tab row as rows were deleted. Batches
+built before the switch are keyed by it and still resolve: `backend_io` maps legacy id → UUID from
+the frozen `data/legacy_row_ids.csv`, and `row_by_id` / `sheet_row_map` /
 `canonical_key` accept either form (a legacy id never lists a row twice). Decision ids keep the
 key form their batch was built with, so existing `decisions.csv` / `review_log.jsonl` stay valid;
-`apply_patch.csv` is written with UUID keys — an older file with numeric keys still applies while
-column B exists, else re-run `apply_batch.py` to regenerate it. Every report
+`apply_patch.csv` is written with UUID keys (every committed patch file was re-keyed 2026-09-24;
+`apply_patch.gs` cannot match a numeric key). An `apply_rows.csv` built before 2026-09-24 has the
+old column layout — re-run `apply_batch.py` before any full-row paste. Every report
 (`verify_report.csv`, `dedupe_report.csv`) carries a `sheet_row`/`sheet_rows` column and leads
 with the live row (live row = CSV line index + 1); a key is never shown to a human as a row.
 
@@ -343,6 +345,10 @@ To share the xlsx for review (the digest + decisions.csv cover local review):
   the apply), but a HIGH/MED group means a row may duplicate an existing vessel — resolve it.
 
 ## 8. Changelog
+
+- **rev 13** (2026-09-24): column B "original order in sheet" deleted from the backend (by Baird).
+  Legacy ids resolve from `data/legacy_row_ids.csv` alone; the 18 committed `apply_patch.csv`
+  files were re-keyed to UUIDs (keys only); pre-2026-09-24 `apply_rows.csv` files are stale-width.
 
 - **rev 12** (2026-09-23): the row key moved from column B "original order in sheet" to the
   column-A `UUID` (§5 row identity). Legacy ids keep resolving through `data/legacy_row_ids.csv`,

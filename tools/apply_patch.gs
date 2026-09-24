@@ -22,7 +22,7 @@
  * The patch format (apply_patch.csv, produced by scripts/apply_batch.py):
  *   op,key,column,value
  *   set,<uuid>,Shipowner country/area,United States    // set a cell on an existing row (key = UUID;
- *                                                     // a legacy "original order" id works while that column exists)
+ *                                                     // legacy numeric keys no longer match: re-run apply_batch.py)
  *   append,C1,Shipowner,MISC Berhad                     // build+append a new row (grouped by key)
  */
 
@@ -30,7 +30,7 @@
 var BACKEND_SHEET_NAME = "backend";   // <-- the backend tab's name
 var PATCH_SHEET_NAME = "apply_patch"; // tab holding the pasted apply_patch.csv
 var ROWID_HEADER = "UUID";           // the column that holds the row key
-var LEGACY_ROWID_HEADER = "original order in sheet"; // old key; matched too while the column exists
+var LEGACY_ROWID_HEADER = "original order in sheet"; // old key (column deleted 2026-09-24); matched only if present
 var DRY_RUN = true;                   // true = preview only; false = actually write
 var OVERWRITE_NONBLANK = false;       // set true to allow 'set' to overwrite a non-blank cell
 

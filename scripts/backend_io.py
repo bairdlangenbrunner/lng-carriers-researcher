@@ -93,8 +93,9 @@ class Backend:
 
     @cached_property
     def legacy_to_uuid(self) -> dict:
-        """legacy "original order in sheet" id -> UUID: the live column while it exists
-        (it wins), the frozen data/legacy_row_ids.csv for ids it no longer shows."""
+        """legacy "original order in sheet" id -> UUID: the frozen data/legacy_row_ids.csv
+        (the column was deleted from the sheet 2026-09-24), overridden by a live legacy column if a
+        snapshot still has one."""
         out = load_legacy_map()
         li = self.colmap.get("legacy_row_id")
         if li is not None and li != self.colmap["row_id"]:
