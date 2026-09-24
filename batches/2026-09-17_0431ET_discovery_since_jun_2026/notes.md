@@ -108,7 +108,7 @@ Differences from the batch's proposal, all re-gated on the fresh pull:
   Jiangnan rows (RF §4.8 / DC §6.7). The yard-country ref `jnshipyard.com.cn` timed out (000) on
   the gate; it is the ref all 20 Jiangnan rows already carry.
 
-C1.1–C1.4 and C5.1–C5.2 were written separately (next section). C2 (Tsakos 2) is not in the sheet.
+C1.1–C1.4 and C5.1–C5.2 were written separately (next section), and so was C2 (the section after).
 Rows 1226–1229 have a blank column-A `row_id`.
 
 Script fix riding with this: `review_data.py` and `verify_apply.py` matched a new row only against
@@ -146,6 +146,33 @@ rows … and you can make a decision on the Bermuda/United States". Fresh pull �
   order, which is CSB hulls 2803–2805, not Purus's June hull 2808. As a result the data-fill
   line `2026-09-17_0511ET_data_fill_on_order::1227|Shipowner country/area` is no longer marked
   incorporated in the living workbook. Its push_log key is `…::row1170|<column>`.
-- The living workbook shows C1.1–C1.4 and C5.1–C5.2 as incorporated. verify_apply: only C2 is
-  missing.
+- The living workbook shows C1.1–C1.4 and C5.1–C5.2 as incorporated.
+
+## Applied — C2 (Tsakos 2) + row 1170 Name (2026-09-23, AP §2d)
+
+Baird directed: "I think HD Hyundai HI (HDHHI) Ulsan (Tsakos 2) is in the sheet ? go ahead and fill
+that out. and go ahead and fix the Samsun HI (unknown shipowner 2)". C2 had been in the sheet all
+along, as a Name-only row at live row 1224. It was missed because the candidate's Name spells the yard
+`HHI` and the sheet's spells it `HDHHI`. Fresh pull → 31-cell plan → `directed_2026-09-23c_revert.csv`
+→ `gws-gem-write` → re-pull: 31/31 hold. Price reads back as `254000000.00`, which is the column's
+number format.
+
+- **Row 1224 (C2):** CSB lists the vessel as `Hyundai Ulsan 3644` (IMO 1192123, Tsakos Group, LNG
+  174,000 cbm, contract 2026-06, delivery 2029-01). marinetraffic.org lists `HD HYUNDAI HI 3644`
+  under the same IMO. shipvault has no entry.
+  - Written: IMO, Name and Hull number `Hull 3644 (HDHHI)` (RF §4.17, a placeholder restyle, so no
+    Other names), Status, Shipowner `Tsakos`, Shipbuilder, Capacity 174000 cbm (CSB is the only
+    source), Delivery year 2029, Contract date 01-Jul-2026, Price 254000000 USD (Riviera), and the
+    HDHHI Ulsan yard columns copied from row 1100.
+  - Contract date is the day TEN announced the order and HD KSOE filed its disclosure. CSB gives
+    2026-06, which points to a 30 June signing, but no reachable source gives that day.
+  - The CSB ship page failed the gate on Shipbuilder, because CSB writes "Hyundai HI, Ulsan".
+  - Not written: Operator/charterer (no charter has been reported), Shipowner country (the sibling
+    Tsakos rows have none), and Vessel type.
+  - verify_apply and the living workbook still show C2 as not found. The candidate matches on its
+    Name, which was proposed as `HD Hyundai HI (HHI) Ulsan (Tsakos 2)` and is now `Hull 3644 (HDHHI)`,
+    and the candidate has no IMO or hull to match on.
+- **Row 1170:** Name changed from `Samsung HI (unknown shipowner 2)` to `Hull 2808 (SHI)`. This is a
+  placeholder restyle, so nothing was added to Other names. The Name ref is now the shipvault
+  page + API (unit 501596), replacing the asiae / lngprime articles, which do not name the hull.
 
