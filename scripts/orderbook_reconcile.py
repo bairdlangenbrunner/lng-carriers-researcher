@@ -279,7 +279,7 @@ def reconcile(csb_rows, all_rows, igu, edition, ship_imo=None) -> dict:
         if r["builder_tag"] and r["hull_core"]:
             by_hull[f"{r['builder_tag']}|{r['hull_core']}"].append(r)
 
-    # Identity is the SHEET ROW, not the column-A row_id: a stub row (columns
+    # Identity is the SHEET ROW, not the column-B row_id: a stub row (columns
     # A-E pasted by hand) has no row_id at all, so keying on it collapses every
     # stub onto one identity and the first match claims all of them.
     matched_rows = set()      # sheet row of every backend row some source reached

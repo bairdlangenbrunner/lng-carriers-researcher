@@ -68,7 +68,7 @@ python scripts/apply_batch.py --batch batches/<dir>
 
 # 3. Apply — pick ONE path (both are offset-proof):
 #    (a) Full-row paste: open apply_rows.csv, paste each row over the matching backend
-#        row (matched by the row_id in column A) — or, for discovery rows (blank row_id),
+#        row (matched by the row_id in column B) — or, for discovery rows (blank row_id),
 #        into a new backend row. Full-width paste can't shift a column.
 #    (b) By-name applier: paste apply_patch.csv into the backend sheet's "apply_patch"
 #        tab and run tools/apply_patch.gs (DRY_RUN=true first to preview, then false).
@@ -296,7 +296,9 @@ python scripts/dedupe_check.py [--rows 1216,1217] [--sheet-rows 1211,1212] [--st
 non-zero if any HIGH/MED group exists. The SFOC reconciliation pass should run the
 standalone full-backend scan as its closing step too.
 
-**Row identity — always read the live sheet row.** `row_id` (colmap `row_id`) is column A,
+**Row identity — always read the live sheet row.** Column A is `UUID` (added 2026-09-23 by a
+directed write: one v4 UUID per row, 20 spare pre-generated rows at the bottom; not yet used as a
+key by any script). `row_id` (colmap `row_id`) is column B,
 *"original order in sheet"* — a static stamp that drifts from the live tab row as rows are
 deleted (on the 2026-06-05 pull, row_id 1216 sat at sheet row 1211). Every report
 (`verify_report.csv`, `dedupe_report.csv`) carries a `sheet_row`/`sheet_rows` column and the

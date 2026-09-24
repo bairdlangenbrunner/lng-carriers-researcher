@@ -35,7 +35,7 @@ Outputs (work/, gitignored):
 Usage:
     python scripts/citation_qc.py                       # whole backend, health only
     python scripts/citation_qc.py --sheet-rows 900-1220 # live tab rows
-    python scripts/citation_qc.py --rows 1100-1220      # by column-A row_id
+    python scripts/citation_qc.py --rows 1100-1220      # by column-B row_id
     python scripts/citation_qc.py --corroborate         # + value↔ref gate per cell
     python scripts/citation_qc.py --delay 1.5 --resume  # polite; skip URLs already graded
     python scripts/citation_qc.py --resume --regrade dead,blocked  # re-fetch only those grades

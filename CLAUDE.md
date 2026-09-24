@@ -271,7 +271,7 @@ never auto-applied.
 - **Data-fill is additive to blanks / `unknown`s only** — value + verified-`[ref]` pairs for human
   review; existing `[ref]` URLs on `unknown` cells are appended to, never replaced (DF §4, §9).
 - **Always pull a fresh backend CSV at the start of a batch** and re-derive the column map.
-- **Report live sheet rows**, not the column-A `row_id`, wherever a row is named to Baird.
+- **Report live sheet rows**, not the column-B `row_id`, wherever a row is named to Baird.
 - **Git:** branch → commit → push → PR → merge is pre-authorised for this repo (Baird 2026-06-07);
   commits all-lowercase and succinct, scoped to the task, no Claude attribution. **Never commit**
   credentials or anything in `work/` (gitignored).
