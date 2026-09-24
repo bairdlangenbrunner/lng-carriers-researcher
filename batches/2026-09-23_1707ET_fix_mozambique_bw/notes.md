@@ -101,7 +101,7 @@ the positive case and two negative controls. Full suite: 580 → 581 passing.
    returns an HTTP 200 shell behind a Zephr subscriber wall — a genuine subscription wall, not a
    clearable bot-block.
 
-## Apply — done 2026-09-23 22:0x ET, directed session write (AP §2d)
+## Apply — done 2026-09-23, two directed session writes (AP §2d)
 
 Baird, in session: *"go ahead and replae the proposed owner changes in the backend and make sure it
 lines up with the living-workbook-for-update. and replace those capacities for 1165 and 1166 too."*
@@ -109,7 +109,7 @@ Claude wrote the sheet itself under AP §2d — not a review-app push, and `push
 every line to `claude session (directed)` with the directive quoted. There is no `review_log.jsonl`
 record and §2b will count these lines `unclicked`; that is correct and was not papered over.
 
-**Written: 38 cells / 19 rows** — the 17 Shipowner values (sheets 1184–1200) and the 2 Capacity
+**First write: 38 cells / 19 rows** — the 17 Shipowner values (sheets 1184–1200) and the 2 Capacity
 values (sheets 1165/1166), each with its paired `[ref]` cell. Fresh pull immediately before the
 plan; plan printed cell by cell; revert file `directed_2026-09-23_revert.csv` holds every
 pre-write value keyed by A1. `verify_apply.py --pull`: **38 landed, 0 mismatch, 0 missing.**
@@ -118,18 +118,22 @@ The Shipowner `[ref]` moves off `imarinenews.com/28729.html` (which never names 
 Capacity `[ref]` off the sedaily May-2026 order story (which carries the 174,000 four-tank figure)
 — both are replacements, not appends, because the outgoing ref does not support the new value.
 
-**The 9 Shipbuilder cells were NOT written.** Baird named the owner and capacity changes; scope
-under §2d is exactly what he named, so `HD Hyundai Heavy Industries → HD Hyundai Samho` on sheets
-1184–1192 stays a hold in `decisions.csv`. Note the standing oddity this leaves: the owner split
-written above is derived from those nine being the *Samho* nine, while the Shipbuilder cell still
-says HHI. One word from Baird applies it.
+**The 9 Shipbuilder cells followed in a second directed write**, same session, on Baird's
+*"ok go ahead and fix this"*: `HD Hyundai Heavy Industries` → `HD Hyundai Samho` on sheets
+1184–1192, **18 cells** with the paired `[ref]` (same replacement off `28729.html`). Own fresh
+pull, own plan, own revert file `directed_2026-09-23_shipbuilder_revert.csv`, own `push_log.jsonl`
+lines quoting that direction. They were deliberately excluded from the first write because §2d
+scope is exactly what Baird names, and he had named only the owner and capacity changes.
+
+**Batch total: 56 cells / 19 rows, all 28 proposal lines accepted and landed.**
+`verify_apply.py --pull`: 56 landed, 0 mismatch, 0 missing.
 
 Living workbook aligned the same session: this batch registered as **B17 / apply order 17** in
 `build_combined.py` + `review_batches.json`, combined workbook rebuilt
-(`lng_carrier_sep-17-pass_results_2026-09-23_2158ET.xlsx`, 2,362 proposals, new `b17_mozambique_bw_rows`
-sheet), `living.py --rebuild` in place (same file id / URL). The live sheet now reads
-`processed - incorporated` on all 19 written lines, blank on the 9 held Shipbuilder lines, and
-`partly processed - 1 of 2` on sheets 1184–1192.
+(`lng_carrier_sep-17-pass_results_2026-09-23_2208ET.xlsx`, 2,362 proposals, new `b17_mozambique_bw_rows`
+sheet), `living.py --rebuild` in place (same file id / URL). The live sheet reads
+`processed - incorporated` on **all 28** lines, and no Mozambique or BW row is left in
+`remaining_changes_backend_shape`.
 
 Gotcha found: `living.py --rebuild --xlsx <relative path>` crashes on `Path.relative_to` *after*
 the Drive upload has already gone through. Pass an absolute path.

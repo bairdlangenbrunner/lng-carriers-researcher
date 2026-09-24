@@ -4,6 +4,18 @@
   "accepted_cells": [
     {
       "row_id": "888",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "888",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "888",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -16,6 +28,18 @@
     },
     {
       "row_id": "889",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "889",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "889",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -28,6 +52,18 @@
     },
     {
       "row_id": "890",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "890",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "890",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -40,6 +76,18 @@
     },
     {
       "row_id": "891",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "891",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "891",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -52,6 +100,18 @@
     },
     {
       "row_id": "892",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "892",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "892",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -64,6 +124,18 @@
     },
     {
       "row_id": "893",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "893",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "893",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -76,6 +148,18 @@
     },
     {
       "row_id": "894",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "894",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "894",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -88,6 +172,18 @@
     },
     {
       "row_id": "895",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "895",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
+    },
+    {
+      "row_id": "895",
       "column": "Shipowner",
       "value": "MOL, K Line",
       "confidence": "Y"
@@ -97,6 +193,18 @@
       "column": "Shipowner [ref]",
       "value": "https://www.imarinenews.com/36960.html",
       "confidence": "Y"
+    },
+    {
+      "row_id": "896",
+      "column": "Shipbuilder",
+      "value": "HD Hyundai Samho",
+      "confidence": "G"
+    },
+    {
+      "row_id": "896",
+      "column": "Shipbuilder [ref]",
+      "value": "https://www.imarinenews.com/36960.html",
+      "confidence": "G"
     },
     {
       "row_id": "896",
@@ -234,8 +342,8 @@
   "accepted_new_rows": [],
   "counts": {
     "items": 28,
-    "accepted": 19,
-    "hold": 9,
+    "accepted": 28,
+    "hold": 0,
     "reject": 0,
     "conflicts": 0
   }
