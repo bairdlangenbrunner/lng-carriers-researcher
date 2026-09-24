@@ -63,7 +63,7 @@ def main():
 
     header, row_by_id, colmap = _load_backend(args.backend)
     H = {h: i for i, h in enumerate(header)}
-    # row_id is column-A "original order in sheet"; report the LIVE tab row to humans.
+    # row_id is column-B "original order in sheet"; report the LIVE tab row to humans.
     srmap = sheet_row_map(args.backend, colmap)
     def sr(rid):
         return srmap.get(str(rid), "?")

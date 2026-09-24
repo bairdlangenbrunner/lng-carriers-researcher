@@ -42,7 +42,7 @@ is still keyed on `row_id` (the stable, offset-proof identifier across pulls).
 CLI:
     python scripts/dedupe_check.py [--backend <csv>] [--rows ...] [--sheet-rows ...] [--strict]
     # writes work/dedupe_report.csv (with a sheet_rows column).
-    # --rows N,...        focus by row_id (column-A "original order")
+    # --rows N,...        focus by row_id (column-B "original order")
     # --sheet-rows N,...  focus by LIVE sheet tab row (what you see in the sheet)
     # --strict            exit 1 if any HIGH/MED group is found
     # (the end-of-update "did my new rows duplicate anything?" sweep)
@@ -157,7 +157,7 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
     """Return a list of candidate-duplicate groups.
 
     Each group: dict(tier, severity, row_ids, sheet_rows, builder, owner, key,
-    reason, recommendation). `row_ids` are column-A "original order in sheet"
+    reason, recommendation). `row_ids` are column-B "original order in sheet"
     stamps; `sheet_rows` are the live tab rows resolved via `sheet_rows` (a
     {row_id: sheet_row} map) — always report the live rows to humans. `focus_rows`
     (a set of row_id strings) limits the result to groups that include at least
@@ -298,7 +298,7 @@ def scan_duplicates(header, data, colmap, focus_rows=None, sheet_rows=None):
         focus = {str(x) for x in focus_rows}
         groups = [g for g in groups if focus & {str(r) for r in g["row_ids"]}]
 
-    # Resolve live sheet rows for every group (row_id is the column-A stamp, not
+    # Resolve live sheet rows for every group (row_id is the column-B stamp, not
     # the tab row) — always present the live rows to humans.
     for g in groups:
         g["sheet_rows"] = ([sheet_rows.get(str(r)) for r in g["row_ids"]]
@@ -335,7 +335,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", default=str(backend_csv_path()))
     ap.add_argument("--rows", default="",
-                    help="comma-separated row_ids (column-A 'original order') to focus on")
+                    help="comma-separated row_ids (column-B 'original order') to focus on")
     ap.add_argument("--sheet-rows", default="",
                     help="comma-separated LIVE sheet tab rows to focus on")
     ap.add_argument("--strict", action="store_true",

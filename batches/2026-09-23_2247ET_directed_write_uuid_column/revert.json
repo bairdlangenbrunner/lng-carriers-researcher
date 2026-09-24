@@ -1,0 +1,36 @@
+{
+ "note": "run as spreadsheets.batchUpdate on 1FjjeQD8AlQ_kQAMrohA3jAV3yZy7Lb61djt25D-4Fh8 to undo; no pre-existing cell values were overwritten",
+ "requests": [
+  {
+   "deleteDimension": {
+    "range": {
+     "sheetId": 243795339,
+     "dimension": "ROWS",
+     "startIndex": 1231,
+     "endIndex": 1251
+    }
+   }
+  },
+  {
+   "deleteDimension": {
+    "range": {
+     "sheetId": 243795339,
+     "dimension": "COLUMNS",
+     "startIndex": 0,
+     "endIndex": 1
+    }
+   }
+  },
+  {
+   "updateSheetProperties": {
+    "properties": {
+     "sheetId": 243795339,
+     "gridProperties": {
+      "frozenColumnCount": 5
+     }
+    },
+    "fields": "gridProperties.frozenColumnCount"
+   }
+  }
+ ]
+}

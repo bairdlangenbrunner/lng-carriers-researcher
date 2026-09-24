@@ -22,7 +22,7 @@ Library usage:
 Row identity note (report-live-rows rule): ``row_id`` is column A ("original
 order in sheet") — a static stamp that drifts from the live tab row as rows
 are deleted. Humans navigate the live sheet, so anything reported to a human
-uses ``sheet_row_map()`` / the CSV line position, never the column-A id.
+uses ``sheet_row_map()`` / the CSV line position, never the column-B id.
 
 Date parsing: ``parse_date`` and ``contract_month`` are the single home for
 the backend's mixed date formats ("2026-03-15", "3/15/2026", "16-Dec-2025",
@@ -78,7 +78,7 @@ class Backend:
         return row[col].strip() if col is not None and len(row) > col else ""
 
     def row_by_id(self) -> dict:
-        """row_id (column A stamp) -> raw row."""
+        """row_id (column B stamp) -> raw row."""
         ri = self.colmap["row_id"]
         return {r[ri].strip(): r for r in self.data
                 if len(r) > ri and r[ri].strip()}

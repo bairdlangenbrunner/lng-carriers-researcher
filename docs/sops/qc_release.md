@@ -127,7 +127,7 @@ For mechanical corrections, build a `fix`-mode candidate workbook. Three kinds o
   was never a name); a placeholder → real name does.
 
 ```bash
-# fix.json keyed by row_id (the column-A stamp), Name cells with preserve_ref:true for
+# fix.json keyed by row_id (the column-B stamp), Name cells with preserve_ref:true for
 # placeholder normalization. Schema: see build_workbook.py build_fix docstring.
 python scripts/other_names.py --batch work/<name>_fix.json   # RF §4.16 — former Names -> Other names
 python scripts/build_workbook.py --mode fix --fix work/<name>_fix.json \

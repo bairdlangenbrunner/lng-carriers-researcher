@@ -94,7 +94,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    proposed refs both there → flag `in the backend`; value there, a proposed ref missing →
    `value in the backend` (out of the queue like `in the backend`, but never auto-decided — its
    decisions.csv cell is left as it is). A discovery row is in the backend when
-   a row with its IMO, Name or Hull number (any row, a stub with no column-A `row_id` included)
+   a row with its IMO, Name or Hull number (any row, a stub with no column-B `row_id` included)
    holds every column the candidate fills — a pasted A–E stub is still open. Then what the backend already settles is settled: a **held**
    line that is `in the backend` becomes `accept`, an **open** conflict whose proposed value
    the backend now holds, or duplicate pair with a row gone, becomes `resolved` — through the

@@ -414,7 +414,7 @@ def build(batch_dirs, backend_path=None, info_path=None):
 
     # a discovery row is in the backend when a row with its IMO, Name or Hull number holds every
     # column the candidate fills (verify_apply.py's match) — over every row, since a stub pasted
-    # without a column-A row_id is still the vessel, and a stub is not yet the row
+    # without a column-B row_id is still the vessel, and a stub is not yet the row
     present = defaultdict(list)
     for r in be.data:
         for h in ("IMO number", "Name", "Hull number"):

@@ -75,7 +75,7 @@ def _idx(cm, hdr, key, header_name):
 def backend_entries(hdr, data, cm, ds):
     """One dict per backend row, with the fields the reconciliation needs.
     sheet_row is the 1-based LIVE sheet row (data_start + offset + 1) — reports
-    quote this, never the column-A 'original order' id."""
+    quote this, never the column-B 'original order' id."""
     NAME = _idx(cm, hdr, "name", "Name")
     IMO = _idx(cm, hdr, "imo", "IMO number")
     CAP = _idx(cm, hdr, "capacity", "Capacity")
