@@ -106,12 +106,12 @@ BATCH_INFO = [
      "the 2026-09-22 sweep of all 212 rows citing a shipvault page, every record re-read against the row: "
      "three `Hull Unknown NN` placeholders retired to their yard hull numbers, one wrong hull number "
      "(live row 1054 cites the record that contradicts it), and two delivery years a year later (RF 4.18 / 4.19)"),
-    (17, B17, "Mozambique owner + BW capacity", "lng_carrier_fix.xlsx", "fix",
+    (17, B17, "Mozambique builder/owner + BW capacity", "lng_carrier_fix.xlsx", "fix",
      "the 2026-09-23 comprehensive-discovery re-run's corrections: the 17 Mozambique slot rows carried "
      "`MOL, NYK` on a ref that never names NYK -> MOL / K Line (the Samho nine) and NYK Line / Maran Gas "
      "Maritime (the Samsung eight), capped at Y because the source gives the group split and not the hulls; "
-     "the BW three-tank pair's Capacity 174,000 -> 177,000 cbm. The nine Shipbuilder lines "
-     "(HD Hyundai Heavy Industries -> HD Hyundai Samho) are held, not written"),
+     "the BW three-tank pair's Capacity 174,000 -> 177,000 cbm; and the nine Shipbuilder lines "
+     "HD Hyundai Heavy Industries (the parent) -> HD Hyundai Samho (the yard that holds the slots)"),
 ]
 
 FONT = Font(name="Calibri", size=10)
