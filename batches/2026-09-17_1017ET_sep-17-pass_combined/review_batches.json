@@ -73,5 +73,10 @@
   "label": "16 · shipvault hull numbers",
   "apply_order": 16,
   "applied": true
+ },
+ "2026-09-23_1707ET_fix_mozambique_bw": {
+  "label": "17 · Mozambique owner + BW capacity",
+  "apply_order": 17,
+  "applied": true
  }
 }
