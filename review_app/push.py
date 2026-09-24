@@ -139,6 +139,7 @@ def plan(data, dirs, backend_path=None, batch=None):
     orig = be.row_by_id()
     work = {rid: list(r) + [""] * (len(be.header) - len(r)) for rid, r in orig.items()}
     srm = be.sheet_row_map()
+    ck = be.canonical_key         # a batch may key rows by legacy row_id; `work` / `source` use the UUID
     current = store.overlay(data, dirs)["proposals"]
     name_i = H.get("Name")
 
@@ -166,7 +167,7 @@ def plan(data, dirs, backend_path=None, batch=None):
                 if it["kind"] == "new_row":
                     skip(key, p, "new row — a suggestion on it is decided by hand (Apply SOP)")
                     continue
-                row = work.get(it["row_id"])
+                row = work.get(ck(it["row_id"]))
                 if row is None:
                     skip(key, p, "row is no longer in the backend")
                     continue
@@ -179,7 +180,7 @@ def plan(data, dirs, backend_path=None, batch=None):
                     continue
                 for column, value in cell_writes(it, H, row):
                     row[H[column]] = value
-                    source[(it["row_id"], column)] = (key, b)
+                    source[(ck(it["row_id"]), column)] = (key, b)
                 suggested.add(key)
                 continue
             if not clicked(p):
@@ -190,7 +191,7 @@ def plan(data, dirs, backend_path=None, batch=None):
                 if "in_backend" not in p["flags"]:
                     skip(key, p, "new row — added by hand (Apply SOP)")
                 continue
-            row = work.get(it["row_id"])
+            row = work.get(ck(it["row_id"]))
             if row is None:
                 skip(key, p, "row is no longer in the backend")
                 continue
@@ -205,7 +206,7 @@ def plan(data, dirs, backend_path=None, batch=None):
                     continue
             for column, value in cell_writes(it, H, row):
                 row[H[column]] = value
-                source[(it["row_id"], column)] = (key, b)
+                source[(ck(it["row_id"]), column)] = (key, b)
 
     writes, applied_writes = [], []
     for (rid, column), (key, b) in source.items():

@@ -80,7 +80,7 @@ def _imo_by_row_id() -> dict:
     except (BackendNotPulled, FileNotFoundError):
         return {}
     i = be.header_index.get("IMO number")
-    return {rid: be.cell(row, i).strip() for rid, row in be.row_by_id().items()} if i is not None else {}
+    return be.map_rows(lambda row: be.cell(row, i).strip()) if i is not None else {}
 
 
 def main():

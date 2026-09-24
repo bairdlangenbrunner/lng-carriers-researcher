@@ -105,7 +105,7 @@ def backend_rows(be) -> list:
     cm, rows = be.colmap, []
     srm = be.sheet_row_map()
     for i, row in enumerate(be.data):
-        rid = be.cell(row, cm["row_id"])
+        rid = be.key_of(row)
         builder = be.cell(row, cm["shipbuilder"])
         tag = normalize_builder(builder)
         hull_raw = be.cell(row, cm["hull"])

@@ -29,6 +29,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import backend_io  # noqa: E402
 from other_names import IGU_PDF, UNGATEABLE, _split_refs  # noqa: E402
 from paths import work_dir  # noqa: E402
 
@@ -68,7 +69,7 @@ def load_backend():
     missing = [c for c in (PREV, PREV + " [ref]", FLAG) if c not in hi]
     if missing:
         sys.exit(f"backend has no column(s) {missing} — pull a fresh backend (python scripts/pull_backend.py)")
-    by_id = {r[cm["row_id"]].strip(): r for r in rows[cm["_data_starts_at"]:] if r[cm["row_id"]].strip()}
+    by_id = backend_io.load_backend(work / "backend.csv").row_by_id()   # legacy ids resolve too
     get = lambda r, h: r[hi[h]].strip() if len(r) > hi[h] else ""
     return by_id, get, cm
 

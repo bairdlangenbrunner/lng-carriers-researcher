@@ -328,7 +328,7 @@ def igu_ex_cells(be, gate: Gate, edition: str, proposals: list) -> tuple[list, l
         imo = be.cell(row, hi.get("IMO number")).strip()
         if imo:
             by_imo.setdefault(imo, []).append(rid)
-    tags, pending = yard_tags(be), {p["row_id"]: p for p in proposals}
+    tags, pending = yard_tags(be), {be.canonical_key(p["row_id"]): p for p in proposals}
     new, skipped, added = [], [], {}
     for rec in ext.get("fleet", []) + ext.get("orderbook", []):
         exes = igu_ex_names(rec.get("name", ""))
@@ -394,7 +394,7 @@ def igu_ex_cells(be, gate: Gate, edition: str, proposals: list) -> tuple[list, l
                     c["note"] += "; plus " + note
                     p.setdefault("igu_ex", []).append(value)
                     continue
-                q = next((x for x in new if x["row_id"] == rid), None)
+                q = next((x for x in new if be.canonical_key(x["row_id"]) == rid), None)
                 if q:
                     q["cell"]["new_value"] += SEP + value
                     q["cell"]["refs"] += refs
@@ -423,17 +423,17 @@ def build_cells(payloads: list[tuple[str, dict]], be, gate: Gate, include=()) ->
     """-> (proposals, skipped). A proposal = {row_id, source, name_cell, cell}."""
     rows, live = be.row_by_id(), be.sheet_row_map()
     hi = be.header_index
-    include = {str(x) for x in include}
+    include = {be.canonical_key(x) for x in include}
     # who is being given which name, to catch a name that was parked on the wrong row
     claimed = {}
     for _src, payload in payloads:
         for corr, c in name_cells(payload):
-            claimed.setdefault(fold(c.get("new_value", "")), str(corr["row_id"]))
+            claimed.setdefault(fold(c.get("new_value", "")), be.canonical_key(corr["row_id"]))
 
     proposals, skipped, done, tags = [], [], set(), yard_tags(be)
     for src, payload in payloads:
         for corr, c in name_cells(payload):
-            rid, new = str(corr["row_id"]), str(c.get("new_value", "")).strip()
+            rid, new = be.canonical_key(corr["row_id"]), str(c.get("new_value", "")).strip()
             row = rows.get(rid)
             if row is None:
                 continue
@@ -490,7 +490,8 @@ def patch_batch(batch: Path, be, gate: Gate, include=(), dry_run=False, igu_ex=N
         proposals, skipped = proposals + extra, skipped + skipped_ex
     for p in proposals:
         if p["corr"] is None:                        # an ex-name row the batch does not touch
-            corr = next((c for c in payload["corrections"] if str(c["row_id"]) == p["row_id"]), None)
+            corr = next((c for c in payload["corrections"]
+                         if be.canonical_key(c["row_id"]) == be.canonical_key(p["row_id"])), None)
             if corr is None:
                 payload["corrections"].append({"row_id": p["row_id"], "cells": [p["cell"]]})
             else:
@@ -518,8 +519,8 @@ def collect(batch_dirs: list[Path], be, gate: Gate, include=(), igu_ex=None):
         dpath = next((d for d in batch_dirs if d.name == p["source"]), None)
         if dpath and (dpath / "decisions.csv").exists():
             with open(dpath / "decisions.csv", newline="", encoding="utf-8") as f:
-                dec = {r["id"]: r["decision"] for r in csv.DictReader(f)}
-        p["name_decision"] = dec.get(f"{p['row_id']}|Name", "")
+                dec = {be.canonical_item_id(r["id"]): r["decision"] for r in csv.DictReader(f)}
+        p["name_decision"] = dec.get(be.canonical_item_id(f"{p['row_id']}|Name"), "")
     fix = {
         "batch_label": "Former names -> Other names (RF §4.16" + (", §4.17" if igu_ex else "") + ")",
         "reason": "Every Name change proposed by " + ", ".join(d.name for d in batch_dirs) +
@@ -537,8 +538,8 @@ def main():
     ap.add_argument("--batch", help="fix batch dir (or a fix.json path): patch the fix.json in place")
     ap.add_argument("--collect", nargs="+", help="built fix batch dirs -> standalone fix.json")
     ap.add_argument("--out", help="with --collect: output fix.json path")
-    ap.add_argument("--include", nargs="*", default=[], metavar="ROW_ID",
-                    help="row_ids to propose even though classified as a spelling fix etc.")
+    ap.add_argument("--include", nargs="*", default=[], metavar="ROW_KEY",
+                    help="row keys (UUID or legacy id) to propose even though classified as a spelling fix etc.")
     ap.add_argument("--no-gate", action="store_true", help="offline: propose with no refs")
     ap.add_argument("--ask-vesselfinder", action="store_true")
     ap.add_argument("--igu-ex", metavar="EDITION",

@@ -16,13 +16,17 @@ Library usage:
     be.data                            # data rows (below the header)
     be.colmap                          # canonical-name -> column index
     be.header_index                    # exact header text -> column index
-    be.row_by_id()                     # row_id -> raw row
-    be.sheet_row_map()                 # row_id -> live 1-based sheet row
+    be.row_by_id()                     # key (UUID or legacy id) -> raw row
+    be.sheet_row_map()                 # key -> live 1-based sheet row
+    be.canonical_key(k)                # legacy id or UUID -> UUID
 
-Row identity note (report-live-rows rule): ``row_id`` is column A ("original
-order in sheet") — a static stamp that drifts from the live tab row as rows
-are deleted. Humans navigate the live sheet, so anything reported to a human
-uses ``sheet_row_map()`` / the CSV line position, never the column-B id.
+Row identity note (report-live-rows rule): ``row_id`` is the row KEY — the
+``UUID`` column (column A since 2026-09-23), one random v4 UUID per row that
+never changes. The old "original order in sheet" stamp is ``legacy_row_id``;
+``data/legacy_row_ids.csv`` maps every legacy id to its UUID, so a batch keyed
+by the old numeric id still resolves (``row_by_id`` / ``sheet_row_map`` /
+``canonical_key`` accept either). Humans navigate the live sheet, so anything
+reported to a human uses ``sheet_row_map()`` / the CSV line position, never a key.
 
 Date parsing: ``parse_date`` and ``contract_month`` are the single home for
 the backend's mixed date formats ("2026-03-15", "3/15/2026", "16-Dec-2025",
@@ -77,25 +81,136 @@ class Backend:
         """row[col] stripped, or "" when the column is absent/short."""
         return row[col].strip() if col is not None and len(row) > col else ""
 
-    def row_by_id(self) -> dict:
-        """row_id (column B stamp) -> raw row."""
-        ri = self.colmap["row_id"]
-        return {r[ri].strip(): r for r in self.data
-                if len(r) > ri and r[ri].strip()}
+    def key_of(self, row: list) -> str:
+        """The row's key (its UUID), or "" for a row without one or a spare row."""
+        k = self.cell(row, self.colmap["row_id"])
+        return "" if k and self.is_spare(row) else k
 
-    def sheet_row_map(self) -> dict:
-        """row_id -> live Google Sheet tab row (1-based).
+    def is_spare(self, row: list) -> bool:
+        """A pre-generated key row: a UUID and nothing else — not a vessel yet."""
+        ki = self.colmap["row_id"]
+        return all(not c.strip() for i, c in enumerate(row) if i != ki)
+
+    @cached_property
+    def legacy_to_uuid(self) -> dict:
+        """legacy "original order in sheet" id -> UUID: the live column while it exists
+        (it wins), the frozen data/legacy_row_ids.csv for ids it no longer shows."""
+        out = load_legacy_map()
+        li = self.colmap.get("legacy_row_id")
+        if li is not None and li != self.colmap["row_id"]:
+            for r in self.data:
+                lid, key = self.cell(r, li), self.key_of(r)
+                if lid and key:
+                    out[lid] = key
+        return out
+
+    def canonical_key(self, key) -> str:
+        """Any accepted key (UUID or legacy numeric id) -> the UUID (unchanged if it names no live row)."""
+        k = str(key).strip()
+        u = self.legacy_to_uuid.get(k)
+        return u if u and u in self._keys else k
+
+    def canonical_item_id(self, item_id: str) -> str:
+        """A proposal id "<key>|<column>" with its key made canonical (legacy -> UUID)."""
+        key, sep, rest = str(item_id).partition("|")
+        return self.canonical_key(key) + sep + rest if sep else str(item_id)
+
+    @cached_property
+    def _keys(self) -> set:
+        return {self.key_of(r) for r in self.data} - {""}
+
+    def row_by_id(self) -> "KeyedMap":
+        """key -> raw row. Keyed by UUID; a legacy id resolves on lookup (get / [] / in)
+        but is never listed, so keys() / values() / items() hold each row once."""
+        return KeyedMap(((self.key_of(r), r) for r in self.data if self.key_of(r)),
+                        alias=self.legacy_to_uuid)
+
+    def sheet_row_map(self) -> "KeyedMap":
+        """key -> live Google Sheet tab row (1-based); legacy ids resolve like row_by_id.
 
         The backend pull is 1:1 with the sheet, so live row = CSV line
         index + 1. Use this whenever a row is reported to a human.
         """
-        ri = self.colmap["row_id"]
-        out = {}
-        for idx in range(self.data_start, len(self.rows)):
-            r = self.rows[idx]
-            if len(r) > ri and r[ri].strip():
-                out[r[ri].strip()] = idx + 1
-        return out
+        return KeyedMap(((self.key_of(self.rows[i]), i + 1)
+                         for i in range(self.data_start, len(self.rows))
+                         if self.key_of(self.rows[i])),
+                        alias=self.legacy_to_uuid)
+
+    def map_rows(self, fn) -> "KeyedMap":
+        """{key: fn(row)} over keyed rows, as a KeyedMap (legacy ids resolve on lookup)."""
+        return KeyedMap(((k, fn(r)) for k, r in dict.items(self.row_by_id())),
+                        alias=self.legacy_to_uuid)
+
+    @cached_property
+    def _uuid_to_legacy(self) -> dict:
+        return {u: lid for lid, u in self.legacy_to_uuid.items()}
+
+    def legacy_of(self, row: list) -> str:
+        """The row's old "original order in sheet" id, or "" (rows added since have none)."""
+        return self._uuid_to_legacy.get(self.key_of(row), "") or self.cell(row, self.colmap.get("legacy_row_id"))
+
+    def rows_by_sheet_row(self, spec: str) -> list:
+        """Data rows whose LIVE sheet row falls in a range/list spec ("1100-1220,5")."""
+        want = parse_row_spec(spec)
+        return [r for i, r in enumerate(self.data, start=self.data_start + 1) if i in want]
+
+
+class KeyedMap(dict):
+    """A UUID-keyed dict that also answers to legacy "original order" ids.
+
+    Lookups (``m[k]``, ``m.get(k)``, ``k in m``) translate a legacy id through
+    ``alias`` when it is not itself a key; iteration and len() see only the real
+    keys, so no row is ever counted twice. Plain assignment adds real keys.
+    """
+
+    def __init__(self, items=(), alias=None):
+        super().__init__(items)
+        self._alias = alias or {}
+
+    def _k(self, key):
+        k = str(key).strip() if key is not None else key
+        if dict.__contains__(self, k):
+            return k
+        a = self._alias.get(k)
+        return a if a is not None and dict.__contains__(self, a) else k
+
+    def __getitem__(self, key):
+        return dict.__getitem__(self, self._k(key))
+
+    def __contains__(self, key):
+        return dict.__contains__(self, self._k(key))
+
+    def get(self, key, default=None):
+        return dict.get(self, self._k(key), default)
+
+    def __setitem__(self, key, value):
+        dict.__setitem__(self, self._k(key), value)
+
+
+LEGACY_MAP = Path(__file__).resolve().parent.parent / "data" / "legacy_row_ids.csv"
+
+
+def load_legacy_map(path: Path = LEGACY_MAP) -> dict:
+    """data/legacy_row_ids.csv -> {legacy_row_id: uuid}; {} if the file is absent."""
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8", newline="") as f:
+        return {r["legacy_row_id"].strip(): r["uuid"].strip() for r in csv.DictReader(f)}
+
+
+def parse_row_spec(spec: str) -> set:
+    """"1100-1220,5" -> {1100..1220, 5}; "" -> empty set."""
+    out = set()
+    for part in (spec or "").split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            a, b = part.split("-", 1)
+            out.update(range(int(a), int(b) + 1))
+        else:
+            out.add(int(part))
+    return out
 
 
 def load_colmap(csv_path: str | Path) -> dict:

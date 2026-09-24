@@ -52,7 +52,12 @@ GWS_ENV = {
 # expected header text (case-insensitive substring match). The actual
 # column index is derived from the header row at runtime.
 EXPECTED_COLUMNS = {
-    "row_id": "original order in sheet",
+    # row_id is the row KEY: the UUID column (column A since 2026-09-23).
+    # legacy_row_id is the old "original order in sheet" stamp, kept only while
+    # the column exists (optional); data/legacy_row_ids.csv maps it to the UUID
+    # forever, so batches keyed by the old numeric id still resolve.
+    "row_id": "uuid",
+    "legacy_row_id": "original order in sheet",
     "name": "name",
     "imo": "imo number",
     "imo_ref": "imo number [ref]",
@@ -83,6 +88,9 @@ EXPECTED_COLUMNS = {
     "price_ref": "price [ref]",
     "original_source": "[original source]",
 }
+
+# Expected columns whose absence is not a schema problem.
+OPTIONAL_COLUMNS = {"legacy_row_id"}
 
 
 def require_gws() -> None:
@@ -203,6 +211,10 @@ def derive_column_map(csv_path: str) -> dict:
                     break
         col_map[canonical] = idx
 
+    # A CSV without a UUID column (a pre-2026-09-23 snapshot, a test fixture)
+    # keys rows by the legacy stamp instead.
+    if col_map.get("row_id") is None:
+        col_map["row_id"] = col_map.get("legacy_row_id")
     return col_map
 
 
@@ -239,7 +251,7 @@ def main():
         print(f"  {k:25} = {v!s:5} [{status}]")
 
     missing = [k for k, v in col_map.items()
-               if not k.startswith("_") and v is None]
+               if not k.startswith("_") and v is None and k not in OPTIONAL_COLUMNS]
     if missing:
         print(f"\n  WARNING: {len(missing)} expected columns not found:",
               file=sys.stderr)

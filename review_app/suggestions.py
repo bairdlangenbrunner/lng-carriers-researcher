@@ -37,6 +37,7 @@ sys.path.insert(0, str(HERE))
 
 import review_data  # noqa: E402  (puts scripts/ on sys.path)
 import store  # noqa: E402
+from backend_io import load_backend  # noqa: E402
 from paths import work_dir  # noqa: E402
 
 LIST_SEP = "; "   # multi-valued cells (Other names)
@@ -91,6 +92,7 @@ def collect(batch_dirs, backend_path=None, info_path=None):
     cur = store.overlay(data, dirs)
     modes = {b["dir"]: b["mode"] for b in data["batches"]}
     order = {b["dir"]: b["apply_order"] for b in data["batches"]}
+    ck = load_backend(backend_path).canonical_key   # vessels are keyed by UUID; a batch may use legacy ids
     live = {v["row_id"]: v for v in data["vessels"] if v.get("row_id")}
     reports = []
     # a suggest record whose decisions.csv line no longer says reject was overridden by hand
@@ -108,7 +110,7 @@ def collect(batch_dirs, backend_path=None, info_path=None):
         rec = p["last"]
         cell, rep = cell_for(p, modes[p["batch"]], rec)
         if (rec.get("note") or "").strip():
-            v = live.get(p["row_id"], {})
+            v = live.get(ck(p["row_id"]), {})
             notes.append({"key": key, "batch": p["batch"], "row_id": p["row_id"],
                           "live_row": v.get("live_row"), "name": v.get("name", ""),
                           "column": p["column"] or "new row", "proposed": p["proposed"],
@@ -120,7 +122,7 @@ def collect(batch_dirs, backend_path=None, info_path=None):
             reports.append((rep[0], p, rep[1]))
         if not cell:
             continue
-        slot = (p["row_id"], p["column"])
+        slot = (ck(p["row_id"]), p["column"])
         if slot in cells:
             prev = cells[slot]
             loser, winner = (prev, (order[p["batch"]], p, cell)) if order[p["batch"]] >= prev[0] \

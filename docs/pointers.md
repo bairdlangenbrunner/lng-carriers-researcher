@@ -147,7 +147,7 @@ every proposal, so `apply_batch.py` pre-fills `accept` from the gate's verdict.
 
 | Thing | Where | What |
 |---|---|---|
-| Backend QC scan | `scripts/qc_backend.py` | Run after `pull_backend.py`. Flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs, Rule F, lookup-table disagreement). Advisory (writes `work/qc_report.csv`); `--strict` exits non-zero on HIGH/MED findings; `--rows X-Y` scopes. Silence known-legit cells in `data/qc_allowlist.csv`. |
+| Backend QC scan | `scripts/qc_backend.py` | Run after `pull_backend.py`. Flags column-offset / misplaced-value corruption (a controlled value in the wrong column, a data value in a `[ref]`, lat/lon out of range, a URL in a value column, orphan refs, Rule F, lookup-table disagreement). Advisory (writes `work/qc_report.csv`); `--strict` exits non-zero on HIGH/MED findings; `--rows X-Y` scopes by live sheet row. Silence known-legit cells in `data/qc_allowlist.csv`. |
 | Builder facts table | `data/shipbuilder_facts.csv` | Authoritative yard country/area + yard-location block, keyed by `normalize_builder`. Autofill reads it first (DF §5). |
 | Owner facts table | `data/shipowner_facts.csv` | Authoritative Shipowner country/area + `[ref]`, keyed by `normalize_owner`; `AMBIGUOUS` = research per-vessel. |
 | Facts loaders + vocab | `scripts/lookups.py` | `load_builder_facts` / `load_owner_facts` + `CONTROLLED_VOCAB` (single source of truth, shared by build + QC). |
@@ -166,7 +166,7 @@ The whole-backend consistency/corruption sweep before a data release. Full SOP: 
 
 Name-column QC checks (in `qc_backend.py`): `name-builder-drift` (same yard, different builder label across placeholders) and `name-ordinal-gap` (placeholder missing its sequence number while cluster siblings are numbered) — both LOW/advisory.
 
-## Apply & verify workflow (AP — 2026-06-05, rev 11 2026-09-23)
+## Apply & verify workflow (AP — 2026-06-05, rev 12 2026-09-23)
 
 The offset-proof round-trip that gets a reviewed batch into the backend. Full SOP: `docs/sops/apply.md`.
 

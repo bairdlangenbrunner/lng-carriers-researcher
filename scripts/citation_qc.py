@@ -35,7 +35,7 @@ Outputs (work/, gitignored):
 Usage:
     python scripts/citation_qc.py                       # whole backend, health only
     python scripts/citation_qc.py --sheet-rows 900-1220 # live tab rows
-    python scripts/citation_qc.py --rows 1100-1220      # by column-B row_id
+    python scripts/citation_qc.py --rows 1100-1220      # by legacy "original order" id
     python scripts/citation_qc.py --corroborate         # + value↔ref gate per cell
     python scripts/citation_qc.py --delay 1.5 --resume  # polite; skip URLs already graded
     python scripts/citation_qc.py --resume --regrade dead,blocked  # re-fetch only those grades
@@ -94,11 +94,12 @@ def collect(be, row_ids=None, sheet_rows=None, hosts=None):
     ref_cols = [(i, h) for i, h in enumerate(be.header) if h.endswith("[ref]")]
     by_url = defaultdict(list)
     for r in be.data:
-        rid = be.cell(r, ri)
+        rid = be.key_of(r)
         if not rid:
             continue
         sr = srmap.get(rid)
-        if row_ids is not None and (not rid.isdigit() or int(rid) not in row_ids):
+        lid = be.legacy_of(r)   # --rows selects by the legacy "original order" id
+        if row_ids is not None and (not lid.isdigit() or int(lid) not in row_ids):
             continue
         if sheet_rows is not None and sr not in sheet_rows:
             continue
@@ -117,7 +118,7 @@ def collect(be, row_ids=None, sheet_rows=None, hosts=None):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--backend", default=str(backend_csv_path()))
-    ap.add_argument("--rows", default="", help="row_id range/list, e.g. 1100-1220")
+    ap.add_argument("--rows", default="", help="legacy 'original order' id range/list, e.g. 1100-1220 (prefer --sheet-rows)")
     ap.add_argument("--sheet-rows", default="", help="LIVE sheet tab rows, e.g. 900-1220")
     ap.add_argument("--hosts", default="", help="comma-separated host filter")
     ap.add_argument("--corroborate", action="store_true",
@@ -217,7 +218,7 @@ def main():
         cell_out = str(work_dir() / "citation_qc_cells.csv")
         ok_urls = {r["url"] for r in results if r["verdict"] == "ok"}
         _imo = be.header_index.get("IMO number")
-        imo_by_id = {rid: be.cell(row, _imo).strip() for rid, row in be.row_by_id().items()} if _imo is not None else {}
+        imo_by_id = be.map_rows(lambda row: be.cell(row, _imo).strip()) if _imo is not None else {}
         with open(cell_out, "w", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
             w.writerow(["sheet_row", "row_id", "field", "value", "url", "grade", "reason"])

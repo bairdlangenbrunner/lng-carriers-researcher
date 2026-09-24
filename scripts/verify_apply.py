@@ -63,7 +63,7 @@ def main():
 
     header, row_by_id, colmap = _load_backend(args.backend)
     H = {h: i for i, h in enumerate(header)}
-    # row_id is column-B "original order in sheet"; report the LIVE tab row to humans.
+    # Keys are UUIDs (legacy "original order" ids resolve); report the LIVE tab row to humans.
     srmap = sheet_row_map(args.backend, colmap)
     def sr(rid):
         return srmap.get(str(rid), "?")
@@ -112,7 +112,8 @@ def main():
             new_missing.append((nr.get("cluster_id", ""), keys))
 
     # qc the touched rows so an apply-time offset is caught now
-    touched_ids = {str(c["row_id"]) for c in apply_doc.get("accepted_cells", [])}
+    be = load_backend(args.backend)
+    touched_ids = {be.canonical_key(c["row_id"]) for c in apply_doc.get("accepted_cells", [])}
     findings, _, _ = qc_backend.scan(
         header, list(row_by_id.values()), rid_i,
         row_filter=(lambda rid: rid in touched_ids) if touched_ids else None)
