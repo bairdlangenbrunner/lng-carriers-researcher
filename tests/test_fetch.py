@@ -207,13 +207,23 @@ class TestLadder:
         assert p.status == "200" and tried == ["chrome", "firefox"]
 
     def test_sec_gets_the_declared_user_agent_and_no_disguise(self, monkeypatch):
+        # The identity is per user, read from GEM_SEC_UA at import; never a committed string.
+        monkeypatch.setattr(fetch, "SEC_USER_AGENT", "Test Person test@example.org")
         curl = FakeCurl(plain=("403", b"<html>Undeclared Automated Tool</html>"))
         monkeypatch.setattr(fetch, "_curl", curl)
         monkeypatch.setattr(fetch, "_cffi_get",
                             lambda *a, **k: pytest.fail("sec.gov must not be impersonated"))
         p = fetch.fetch_page("https://www.sec.gov/cgi-bin/browse-edgar?CIK=1")
-        assert curl.calls[0]["ua"] == fetch.SEC_USER_AGENT
+        assert curl.calls[0]["ua"] == "Test Person test@example.org"
         assert p.status == "403" and p.notes == ["sec_declared_ua"]
+
+    def test_sec_without_an_identity_is_not_fetched_at_all(self, monkeypatch):
+        monkeypatch.setattr(fetch, "SEC_USER_AGENT", "")
+        curl = FakeCurl(plain=("200", b"<html>should never be requested</html>"))
+        monkeypatch.setattr(fetch, "_curl", curl)
+        p = fetch.fetch_page("https://www.sec.gov/cgi-bin/browse-edgar?CIK=1")
+        assert curl.calls == []
+        assert p.status == "000" and p.notes == ["sec_ua_unset"]
 
 
 class TestEarnClearance:
