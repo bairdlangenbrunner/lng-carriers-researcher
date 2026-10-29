@@ -565,6 +565,8 @@ def build(batch_dirs, backend_path=None, info_path=None):
                                 v.get("cluster_id", ""), v["row_id"]))
 
     ordered = {k: proposals[k] for v in vessels for k in v["proposals"]}
+    for it in all_items:      # the vessel an item belongs on, keyed the way vessels are
+        it["row_key"] = next((ck(i) for i in it["row_ids"] if i), "")
     return {
         "built": datetime.now(ET).isoformat(timespec="seconds"),
         "backend_pulled": datetime.fromtimestamp(be.path.stat().st_mtime, ET).isoformat(timespec="seconds"),
@@ -574,6 +576,51 @@ def build(batch_dirs, backend_path=None, info_path=None):
         "proposals": ordered,
         "items": all_items,
     }
+
+
+# ---- the shared review app's form (../gem-review-app, trackers/lng) ----------------------
+
+TIER = {"G": "high", "Y": "medium", "R": "low"}
+ITEMS_PID = "items"          # the card for items no vessel card claims (trackers/lng/config.py ITEMS_PID)
+_VESSEL = ("name", "live_row", "new", "in_backend", "row_id", "cluster_id", "imo", "status", "shipbuilder",
+           "shipowner", "hull", "delivery_year")
+
+
+def adapt(raw):
+    """The dataset `build` returns, in the shared review app's form: one card per vessel with its
+    lines (the proposals) and items, and one last card for items no vessel claims. `raw` is left
+    as it is; push.py, living.py and suggestions.py keep reading that form."""
+    cards, by_row = [], {}
+    for v in raw["vessels"]:
+        keys = v["proposals"]
+        p0 = raw["proposals"][keys[0]]
+        pid = v["row_id"] or f"c:{p0['batch']}:{v.get('cluster_id', '')}"
+        card = {"pid": pid, "dir": p0["batch"], **{k: v.get(k) for k in _VESSEL}, "lines": [], "items": []}
+        card["row_id"], card["cluster_id"] = v["row_id"], v.get("cluster_id", "")
+        for k in keys:
+            p = raw["proposals"][k]
+            line = {kk: vv for kk, vv in p.items() if kk not in ("batch", "decision")}
+            line.update(key=k, dir=p["batch"], pid=pid, live_row=v["live_row"],
+                        tier=TIER.get(p["confidence"], "low"),
+                        severity="minor" if p["kind"] == "ref" or "ref_only" in p["flags"] else "major",
+                        prefill=p["decision"])
+            card["lines"].append(line)
+        if v["row_id"]:
+            by_row[v["row_id"]] = card
+        cards.append(card)
+    loose = {"pid": ITEMS_PID, "dir": "", "name": "items with no vessel", **{k: None for k in _VESSEL[1:]},
+             "lines": [], "items": []}
+    loose.update(new=False, in_backend=False, row_id="", cluster_id="")
+    for it in raw["items"]:
+        card = by_row.get(it.get("row_key")) or loose
+        item = {k: v for k, v in it.items() if k not in ("item_id", "type", "batch", "row_key")}
+        item.update(key=it["item_id"], dir=it["batch"], pid=card["pid"], kind=it["type"])
+        card["items"].append(item)
+    if loose["items"]:
+        loose["dir"] = loose["items"][0]["dir"]
+        cards.append(loose)
+    return {"built": raw["built"], "backend_pulled": raw["backend_pulled"], "header": raw["header"],
+            "dirs": [b["dir"] for b in raw["batches"]], "batches": raw["batches"], "vessels": cards}
 
 
 def check_backend(backend_path):

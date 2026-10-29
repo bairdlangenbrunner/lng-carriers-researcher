@@ -1,0 +1,60 @@
+{
+ "_note": "Index of every published LNG review page. One interface (the shared page in ../gem-review-app: review_core/web plus trackers/lng/web), many pages: each entry differs only in data and reviewer. Run build_all.py --check after any change in gem-review-app or a batch; it lists stale pages. Rebuild, republish to the url, then build_all.py --mark-published NAME (writes the published block).",
+ "pages": [
+  {
+    "name": "sep-17-pass",
+    "title": "LNG carriers reviewer - sep-17 pass",
+    "reviewer": "Baird Langenbrunner",
+    "kind": "artifact",
+    "url": "https://claude.ai/artifact/RKK3eVeTvuLRyYdrXDWuzn",
+    "dirs": ["batches/2026-09-17_0421ET_fix_delivery_rollforward", "batches/2026-09-17_0458ET_fix_delivery_confirmed", "batches/2026-09-17_0431ET_discovery_since_jun_2026", "batches/2026-09-17_0511ET_data_fill_on_order", "batches/2026-09-17_0505ET_ref_fill_rule_f", "batches/2026-09-17_1114ET_shipvault_companion_refs", "batches/2026-09-17_1654ET_fix_igu2026_sourced", "batches/2026-09-17_1702ET_fix_scrapped_status", "batches/2026-09-17_1737ET_fix_other_names_former", "batches/2026-09-17_1809ET_fix_qcmax_vessel_type", "batches/2026-09-17_1810ET_fix_price_full_usd", "batches/2026-09-18_2005ET_fix_igu2026_hulls", "batches/2026-09-21_1740ET_fix_review_suggestions", "batches/2026-09-21_2003ET_fix_shipowner_country_refs", "batches/2026-09-22_2208ET_fix_shipvault_hulls", "batches/2026-09-23_1707ET_fix_mozambique_bw"],
+    "published": {
+      "built": "2026-10-29T13:45:57-04:00",
+      "at": "2026-10-29T13:46:18-04:00",
+      "profile": "gem",
+      "fingerprint": "99078d27f0e6c046f8c377318b7d1c307d3c391fc1128750d20296700c19bab0",
+      "parts": {
+        "backend": "40510929344899e916d658179e8ce19655f06ba5508c334de281792bc6e5a323",
+        "builder": "c6a70597ee1eb0cbf9768f768438baaaa179c8204dfcc0af4c3c143d97eefeac",
+        "decisions": {
+          "batches/2026-09-17_0421ET_fix_delivery_rollforward": "8f3db4171f640036c7090ca9d61059d7ee67cb1f3dc763db69fd3031b58418b5",
+          "batches/2026-09-17_0431ET_discovery_since_jun_2026": "b13c1d8aaca86f043f43ef39a6e9092e75e8f366391056ce13499054a5f4ce5b",
+          "batches/2026-09-17_0458ET_fix_delivery_confirmed": "4715db3bd90924acad5eb0eb95e0b4299a403b3dd2abb3d73dd79ee5e2550002",
+          "batches/2026-09-17_0505ET_ref_fill_rule_f": "29dcd8696d5cd98bfe7c5596e7096f614c2c99031de572496141bd45aba5c203",
+          "batches/2026-09-17_0511ET_data_fill_on_order": "6e6804ca4eb5449cfbba0d5c72d587a40117da9b688ef7c98c579428eba696dd",
+          "batches/2026-09-17_1114ET_shipvault_companion_refs": "e17f0ef1580ebe66755c53475bdc2106e1b42f40358e1685982d18b03dd9c342",
+          "batches/2026-09-17_1654ET_fix_igu2026_sourced": "f640f20165a5537b477f982e95f3fbdf58df7cbe372e7f665e6547f2b96338d3",
+          "batches/2026-09-17_1702ET_fix_scrapped_status": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/2026-09-17_1737ET_fix_other_names_former": "bd824670dd530a8127fe6497fdac81de850379b83354f7ed7561d70962e7be39",
+          "batches/2026-09-17_1809ET_fix_qcmax_vessel_type": "7de00a1dc62d443e9e2c0b9be9919e5d4a60e7509c3b10c44a2ae98f9c1e02a1",
+          "batches/2026-09-17_1810ET_fix_price_full_usd": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/2026-09-18_2005ET_fix_igu2026_hulls": "60ed546eb647f8ba4994ef64824e8a960ae22355dd87059499e366210b6f6a4e",
+          "batches/2026-09-21_1740ET_fix_review_suggestions": "aa5f7817b9aff9af1202ffd3fd1951baabcfe609de1805767abf73e53784d3e6",
+          "batches/2026-09-21_2003ET_fix_shipowner_country_refs": "b7d1c433192e4a933c00a69336d59b6d22b2def79c13440d769fe858d70b14ec",
+          "batches/2026-09-22_2208ET_fix_shipvault_hulls": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/2026-09-23_1707ET_fix_mozambique_bw": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "dirs": {
+          "batches/2026-09-17_0421ET_fix_delivery_rollforward": "b175ca55d261965b4da55b4e9070559dac009d189058bcf09a934c8f5d9f19e6",
+          "batches/2026-09-17_0431ET_discovery_since_jun_2026": "14e5c234367d5c13b580fd0212c4850287f856c5df48401e8121abf3fd7f8628",
+          "batches/2026-09-17_0458ET_fix_delivery_confirmed": "935611ef64e2efcaa55fa6a2811cf3135c89e960daea3bf219db3be089be13fd",
+          "batches/2026-09-17_0505ET_ref_fill_rule_f": "e09464ff406c911c9926a48d17ed79626952090ad3253730970929f3eda5de3b",
+          "batches/2026-09-17_0511ET_data_fill_on_order": "604aef104b5bb69a77be73b41b6991190125331d45c238470dad24f48dcc0dd1",
+          "batches/2026-09-17_1114ET_shipvault_companion_refs": "4e658a714abb0fc45a24715d5f8054adec0a68dd08a23a21c6b9fc8a7583170f",
+          "batches/2026-09-17_1654ET_fix_igu2026_sourced": "897adbd0075776553fa6bb17dd84b1c1f1e47ccf884d9ed9834e8c72de70cfee",
+          "batches/2026-09-17_1702ET_fix_scrapped_status": "a58feb2550b93c29c79f26166939b773414ae9069559a7f1b69ed144c5f7f82c",
+          "batches/2026-09-17_1737ET_fix_other_names_former": "1ea001341546cff66c9d93913da7f070265b83ddef1fbc152afe275227455a48",
+          "batches/2026-09-17_1809ET_fix_qcmax_vessel_type": "b82d6a91a7029f5599e502684cd575eb3ba1bdb985d56ca327c3928e15ec6daa",
+          "batches/2026-09-17_1810ET_fix_price_full_usd": "cc22cec972a5c03aaf7c1ab376bcf059936b3702bfb0082dff237e2242cef593",
+          "batches/2026-09-18_2005ET_fix_igu2026_hulls": "d85a2df31b673283489f66b3943f5bee2408a0cc1c414e823eea5270a671d75a",
+          "batches/2026-09-21_1740ET_fix_review_suggestions": "c15ed05cd4a0c6f3af2c94bc363780b2fa1d6d91abc3b95bd6970e435b707b55",
+          "batches/2026-09-21_2003ET_fix_shipowner_country_refs": "a92463b4cdb76879b727fc596ba60a9bc0cdcfc51400f30c563094a0947eb800",
+          "batches/2026-09-22_2208ET_fix_shipvault_hulls": "fae61f441de5f5213a9e4bc4d887ef11b9d5dde466348131b03fadbaf5cbfbb5",
+          "batches/2026-09-23_1707ET_fix_mozambique_bw": "c3f7c664b30c0f5bbc5437f6f695f1e509f95281ae43903d4a5fc6b89027211b"
+        },
+        "interface": "16d38eb9044390ff23624500bef7f5c8dd04ac2600d48fe6799d6680dbac4ea8"
+      }
+    }
+  }
+ ]
+}

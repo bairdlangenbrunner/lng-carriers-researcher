@@ -4,7 +4,7 @@ Per-script reference for `scripts/` (moved out of `CLAUDE.md` 2026-09-23 so it i
 script matters, not on every session start). Every script runs from the repo root as
 `python scripts/<name>.py`; `paths.py` anchors `work/` to the repo root regardless of cwd.
 The review app's entry points (`review_data.py`, `server.py`, `suggestions.py`, `living.py`,
-`push.py`) are documented in `review_app/README.md`, not here. `review_app/` imports from
+`push.py`, `build_static.py`, `build_all.py`, `import_log.py`) are documented in `review_app/README.md`, not here. `review_app/` imports from
 `scripts/`, never the reverse.
 
 Trust the scripts by default. They are versioned scaffolding, not throwaway code. If you fix one,

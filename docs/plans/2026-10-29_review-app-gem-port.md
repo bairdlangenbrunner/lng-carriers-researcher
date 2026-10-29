@@ -1,13 +1,13 @@
 # Review app: port onto gem-review-app (phase 3)
 
-Asked by Baird on 2026-10-29: make the LNG carriers review app look and work like the shared app in `../gem-review-app`, and publish it as a claude.ai artifact page. `gem-review-app/docs/plan.md` already names this as its phase 3. Status: plan only, nothing built yet.
+Asked by Baird on 2026-10-29: make the LNG carriers review app look and work like the shared app in `../gem-review-app`, and publish it as a claude.ai artifact page. `gem-review-app/docs/plan.md` already names this as its phase 3. Status: built 2026-10-29 on the `baird` branch of both repos, and the sep-17-pass page is published (https://claude.ai/artifact/RKK3eVeTvuLRyYdrXDWuzn).
 
 ## What the port is
 
 The port follows the same pattern as gogpt and pipelines. Pipelines is the closer model, because it also has a backend sync, push routes and machine reviewers.
 
 - **gem-review-app, `trackers/lng/`**: `config.py` (a `TrackerConfig`: line kinds `fill`, `ref`, `new_row`; item kinds conflict, manual review, proposed, duplicate, discovery flag; machine reviewers `backend sync` and `§5 regrade`; push and refresh routes like pipelines) and `web/ext.js` and `web/ext.css` (the LNG card body, chips, filters).
-- **lng-carriers-researcher, `review_app/`**: `review_data.py` is kept and gains an adapter to the core dataset contract. `store.py`, `server.py` and `build_static.py` become thin shims over the core. The repo also gains `build_all.py`, `artifacts.json`, `import_log.py` and the `.claude/settings.json` staleness hooks. `push.py`, `suggestions.py` and `living.py` stay as they are, behind the loopback server's routes. `web/` is removed once the shared page covers it.
+- **lng-carriers-researcher, `review_app/`**: `review_data.py` is kept and gains an adapter to the core dataset contract. `store.py`, `server.py` and `build_static.py` become thin shims over the core. The repo also gains `build_all.py`, `artifacts.json` and `import_log.py`. It does not gain `.claude/settings.json` staleness hooks, because `.claude/README.md` says this repo commits no `settings.json` (settled 2026-07-16). Run `python review_app/build_all.py --check` by hand instead. `gem-review-app/scripts/check_consumers.py` also runs it. `push.py`, `suggestions.py` and `living.py` stay as they are, behind the loopback server's routes. `web/` is removed once the shared page covers it.
 
 ## Dataset mapping
 
@@ -24,7 +24,7 @@ The port follows the same pattern as gogpt and pipelines. Pipelines is the close
 
 ## Where decisions are stored
 
-The core writes `review_log.jsonl` and, when a ledger is configured, a Google `log` tab first. LNG has no Google ledger, and its pipeline reads `decisions.csv`. The LNG store shim therefore wraps the core's `decide` so every write also rewrites the `decision` cell in `decisions.csv`, as `review_app/store.py` does now. Item calls keep writing `review_items.jsonl`, and a conflict's call keeps writing `conflicts.csv`. Proposal: no Google ledger. Artifact decisions come back through `import_log.py`, which writes the batch logs and `decisions.csv` directly.
+There is no Google ledger. `review_app/core_store.py` binds the core store to the LNG config and gives it its own `sink`. A line decision goes to `review_log.jsonl` and to the `decision` cell of `decisions.csv`. An item call goes to `review_items.jsonl`, in the shape that file has always had. A conflict's call also goes to the `decision` cell of `conflicts.csv`. Each write is one transaction across the batch dirs it touches. Calls made on the artifact page come back through `import_log.py`, which writes the same files through the same `sink`. The old `review_app/store.py` stays, because `push.py`, `living.py` and `suggestions.py` read the raw dataset through it.
 
 ## What the artifact page can and cannot do
 
@@ -55,8 +55,8 @@ Items 1 to 5 go into the core, so gogpt and pipelines can use them too. Item 6 i
 
 1. Done: the decisions above.
 2. Done: the gem-review-app question-card commit.
-3. Core additions (items 1 to 5 above) with tests on the synthetic tracker; gogpt and pipelines tests still pass.
-4. `trackers/lng/` config and extension, the dataset adapter and the shims; `tests/test_review_app.py` and `tests/test_review_data.py` pass, adjusted only for file paths and the new dataset shape.
-5. Loopback check in a headless browser: render a vessel, decide a line, see `decisions.csv` change, run sync and a push plan without confirming it.
-6. Build the single-file page, publish it from the work profile, record it in `artifacts.json`, mark it published.
-7. Update `review_app/README.md`, `CLAUDE.md` (the review router) and `gem-review-app/docs/plan.md`.
+3. Done: core additions 1 to 5 (gem-review-app `b95108a`). Undo keeps a history, so `U` steps back one action at a time.
+4. Done: `trackers/lng/` config and extension, the dataset adapter and the shims; `tests/test_review_app.py` and `tests/test_review_data.py` pass, adjusted only for file paths and the new dataset shape.
+5. Done: loopback check in a headless browser: render a vessel, decide a line, see `decisions.csv` change, run sync and a push plan without confirming it.
+6. Done: build the single-file page, publish it from the work profile, record it in `artifacts.json`, mark it published.
+7. Done: update `review_app/README.md`, `CLAUDE.md` (the review router) and `gem-review-app/docs/plan.md`.

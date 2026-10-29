@@ -284,7 +284,7 @@ def test_the_real_config_never_syncs_a_session_over_other_batches(app_with):
 
 def test_refresh_syncs_and_reports_it(app_with):
     base, app, b, _backend = app_with(False)
-    sheet = FakeSheet({PROPS: [(k, "") for k in app.data["proposals"]], SHAPE: []})
+    sheet = FakeSheet({PROPS: [(k, "") for k in app.raw["proposals"]], SHAPE: []})
     app.living = make_living(sheet, b)
     status, out = post_json(base, "/api/refresh", {})
     assert status == 200
@@ -296,15 +296,16 @@ def test_push_syncs_after_the_backend_write(app_with):
     """A pushed cell is in the backend, so its line turns `processed - incorporated` in the
     living workbook without anyone touching it."""
     base, app, b, backend = app_with(False)
-    sheet = FakeSheet({PROPS: [(k, "") for k in app.data["proposals"]], SHAPE: []})
+    sheet = FakeSheet({PROPS: [(k, "") for k in app.raw["proposals"]], SHAPE: []})
     app.living = make_living(sheet, b)
     app.write = lambda writes: [edit_backend(backend, w["row_id"], **{w["column"]: w["new"]})
                                 for w in writes]
-    pre = [k for k, p in app.current()["proposals"].items() if p["decision"] == "accept"]
+    lines = lambda: {ln["key"]: ln for c in json.loads(app.current()[0])["vessels"] for ln in c["lines"]}
+    pre = [k for k, p in lines().items() if p["prefill"] == "accept"]
     post_json(base, "/api/decide", [{"key": k, "decision": "accept"} for k in pre])
     plan = post_json(base, "/api/push/plan", {})[1]
     out = post_json(base, "/api/push", {"token": plan["token"]})[1]
-    landed = [k for k, p in app.current()["proposals"].items() if "in_backend" in p["flags"]]
+    landed = [k for k, p in lines().items() if "in_backend" in p["flags"]]
     assert out["written"] == 7 and len(landed) == 4        # 7 sheet cells = 4 proposal lines
     assert out["living"]["written"] == len(landed)
     assert {v for rs in sheet.sent for _a, vals in rs for row in vals for v in row} == {INC}

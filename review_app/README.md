@@ -3,6 +3,8 @@
 The review surface for accept / hold / reject decisions, replacing the combined xlsx.
 Build spec: `docs/plans/2026-09-18_review-app.md`. Run everything from the repo root.
 
+Since 2026-10-29 the page is the shared review app in the sibling repo `../gem-review-app` (the same page gogpt and pipelines use): its core (`review_core/`) plus the LNG config and extension in `trackers/lng/` (`config.py`, `web/ext.js`, `web/ext.css`). This repo keeps the data, the store files and the backend routes. `core_store.py` binds the shared store to the LNG files, `review_data.py` adapts the dataset to the shared shape, and `server.py` serves the shared page with the sync and push routes. The old `review_app/web/` is gone. Port plan: `docs/plans/2026-10-29_review-app-gem-port.md`. The same page can also be published as a claude.ai artifact (entry point 5).
+
 Deciding never touches the backend: accept / hold / reject write only the `decision` column of
 each batch's `decisions.csv` plus an append-only audit log (`review_log.jsonl`). Accepted
 proposals — and the reviewer's own suggestions — reach the sheet through the Apply SOP
@@ -22,7 +24,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    `batches/*/` dir that names the batches (the sep-17-pass one lives in its combined dir);
    without one, label = dir name, order = dir sort order, applied = `verify_report.csv` exists.
 
-2. `server.py` serves the front end (`web/`) on `http://127.0.0.1:8765/` (loopback only;
+2. `server.py` serves the shared page (from `../gem-review-app`) on `http://127.0.0.1:8765/` (loopback only;
    standard library; its outward calls are the **sync backend** pull, the **push changes**
    write and the living-workbook sync below):
 
@@ -31,7 +33,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    python review_app/server.py                                         # serves the existing one
    ```
 
-   `--reviewer NAME` (default `git config user.name`), `--port`, `--no-open`, `--no-living`
+   `--reviewer NAME` (default `git config user.name`; records carry the reviewer's initials, older records full names), `--port`, `--no-open`, `--no-living`
    (leave the living workbook alone this session). The page shows
    the batches' current `decisions.csv` state, so it can be reloaded at any time.
    Keys: `j`/`k` line, `J`/`K` vessel, `a`/`h`/`r` accept / hold / reject, `s` suggest, `u` undo,
@@ -43,7 +45,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    (`store.reviewed`: the latest `review_log.jsonl` record, when it is a person's — a machine's
    is not, `store.MACHINE_REVIEWERS`: the backend sync and a `§5 regrade` — is not an undo back
    to undecided, and still matches the csv; else `null`). The page is drawn from `reviewed` alone: every card
-   starts undecided, with the pre-fill shown as a `batch suggests …` chip coloured by the
+   starts undecided, with the pre-fill shown as a `batch suggests …` chip colored by the
    confidence grade (green G / yellow Y / red R — there is no separate letter chip). The grade is
    computed from what the §3.8c gate did, never declared (RF §5 rev 28: a ref that passes on a
    **live** page stating the value for this vessel is G, and G is what pre-fills an accept), and the
@@ -90,7 +92,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    **Sync backend** (the `↻ sync backend` button, `POST /api/refresh`). Re-runs
    `scripts/pull_backend.py` (read-only profile), rebuilds the dataset over the same batch dirs
    and takes it in place — filters and the session summary stay. Every line is compared with
-   the fresh pull (whitespace- and number-normalised, as `verify_apply.py` does): value and
+   the fresh pull (whitespace- and number-normalized, as `verify_apply.py` does): value and
    proposed refs both there → flag `in the backend`; value there, a proposed ref missing →
    `value in the backend` (out of the queue like `in the backend`, but never auto-decided — its
    decisions.csv cell is left as it is). A discovery row is in the backend when
@@ -161,19 +163,14 @@ the app's one backend write: it lists every cell first and writes on one confirm
    (it sums to the status bar's count), not everything on the vessel. Under *to decide*, lines
    already in the backend or already applied stay out unless asked for by name — *show lines
    already in the backend*, or Flag → *in the backend* / *value in the backend* / *already applied* — and then come
-   through unless a person settled them. A card link and an Items row link clear every filter,
-   that checkbox included. The Items tab's Status / Type / Batch filters keep an item saved
-   this session in view until one of them changes.
+   through unless a person settled them. A card link clears every filter, that checkbox included.
 
    **New rows.** A discovery row's sources are numbered once under **Sources**; the row table
    cites them as `[1] [2]` beside each value instead of repeating the URLs. A long reason is
    clamped to four lines with **more**.
 
-   **Items tab.** Conflicts, manual-review entries, the proposed bucket, duplicate pairs and
-   discovery flags, grouped by backend row (the row link opens the vessel in the queue) and
-   opening on `open` items. Status (`open` / `resolved` / `needs research`) and a conflict's call
-   are one-click buttons that save at once (a call other than `hold` also resolves an open
-   item); the note saves when you leave the box. Each save is appended
+   **Items.** Conflicts, manual-review entries, the proposed bucket, duplicate pairs and
+   discovery flags sit on their vessel's card; items that name no vessel share one "items with no vessel" card. A conflict takes accept / hold / reject / resolved; any other item takes resolved or needs research. Calls are one-click buttons that save at once; the note saves when you leave the box. Each save is appended
    to `batches/<dir>/review_items.jsonl`. They feed the worklist, not the apply. A conflict also
    takes a call (accept / hold / reject), written into that record's `decision` cell in
    `conflicts.csv` (byte-preserving, refused if the record no longer matches). An accepted
@@ -181,7 +178,7 @@ the app's one backend write: it lists every cell first and writes on one confirm
    every call back at `hold`; the log keeps the call and the tab flags the drift — press the call
    again to rewrite it.
 
-   **Session summary.** Decisions and item calls made this session by batch, the
+   **Session summary.** In the progress dialog: decisions and item calls made this session by batch, the
    `apply_batch.py` command for each batch whose decisions changed, and the suggestions pending.
 
    **Suggest…** (`s`) records a different value for a line instead of its proposal: the value,
@@ -258,15 +255,37 @@ the app's one backend write: it lists every cell first and writes on one confirm
    `LNGCT_LIVING_SYNC=0` switches it off. Rebuild (not create) after rebuilding the combined
    workbook — `--create` would leave a second copy on the Drive.
 
+5. **The artifact page.** The same shared page as one html file, to publish as a claude.ai artifact or send to someone who does not run the repo. It decides, suggests, calls items and downloads its log. It cannot sync or push: those need `gws` on this machine, so they stay on the loopback server.
+
+   ```bash
+   python scripts/pull_backend.py                                   # the dataset needs a fresh pull
+   python review_app/build_all.py --list                            # the pages in artifacts.json and whether each is stale
+   python review_app/build_all.py --only sep-17-pass                # rebuild one page -> work/lng_review_<name>_<stamp>_ET.html
+   python review_app/build_all.py --mark-published sep-17-pass      # after publishing that build from the work profile
+   python review_app/build_all.py --check                           # exit 1 if a live page is stale
+   python review_app/build_static.py --batches <dir> ... --reviewer "Name"   # a one-off page outside artifacts.json
+   ```
+
+   `artifacts.json` lists each page: its batch dirs, title, reviewer and artifact URL. Publish with capabilities `db`, `user` (profile scope), `downloads` and `comments`. On the artifact, every call is saved to the artifact's `logs` collection. Opened from disk, calls stay in the browser and **download decisions** saves them as a file. A page is stale when a batch file, a decision log, the backend pull or the builder code changed since it was published. There are no `.claude/settings.json` hooks for this (`.claude/README.md`: this repo commits no `settings.json`), so run `--check` by hand. `../gem-review-app/scripts/check_consumers.py --check` runs it too.
+
+   `import_log.py` brings the page's calls into the batch dirs, through the same writes the loopback server makes (`decisions.csv`, `review_log.jsonl`, `review_items.jsonl`, `conflicts.csv`), each record marked `origin: artifact`:
+
+   ```bash
+   python review_app/import_log.py <download or saved logs collection>.json --reviewer EMAIL --dry-run
+   python review_app/import_log.py <file> --reviewer EMAIL [--reviewer XX=EMAIL ...]
+   ```
+
+   A record already imported (same id) is skipped, and so is one a person superseded later on the loopback server. A record whose key or batch is not in the current dataset stops the import before anything is written: rebuild and republish the page. An imported accept is a person's click, so **push changes** counts it. Then run `apply_batch.py` for each batch as usual.
+
 ## What a session leaves in a batch dir
 
 | file | written by | commit it |
 |---|---|---|
 | `decisions.csv` | the `decision` column only (a sync's accepts included) | yes (it already is) |
-| `review_log.jsonl` | every decision, undo, suggestion and sync accept — append-only, latest record per key wins | yes |
+| `review_log.jsonl` | every decision, undo, suggestion and sync accept, from the server or imported from the artifact page — append-only, latest record per key wins | yes |
 | `push_log.jsonl` | every cell a push wrote and verified (row, column, old → new, who, when) — append-only | yes |
-| `review_items.jsonl` | Items-tab statuses, notes, conflict calls and sync resolutions — append-only | yes |
+| `review_items.jsonl` | item calls, notes, conflict calls and sync resolutions — append-only | yes |
 | `conflicts.csv` | a conflict's call in `decision` (reset to `hold` by `apply_batch.py`) | yes |
 
 `work/review_data.json` (backend data) and the `--out` of `suggestions.py` stay in `work/`.
-Tests: `tests/test_review_data.py`, `tests/test_review_app.py`, `tests/test_review_suggestions.py`, `tests/test_living.py`.
+Tests: `tests/test_review_data.py`, `tests/test_review_app.py`, `tests/test_review_suggestions.py`, `tests/test_living.py`, `tests/test_artifact_page.py`; the LNG config and extension are tested in `../gem-review-app` (`tests/test_tracker_lng.py`, `tests/js/lng.test.js`).

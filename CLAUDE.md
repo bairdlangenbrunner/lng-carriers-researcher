@@ -190,7 +190,12 @@ python scripts/pull_backend.py                                   # review_data r
 python review_app/server.py --batches batches/<dir> [<dir> ...]   # work/review_data.json, serves 127.0.0.1:8765
 python review_app/suggestions.py --batches batches/<dir> ...      # suggestions push could not gate -> work/review_suggestions_fix.json (+ _notes.md to-do list)
 python review_app/living.py --rebuild --xlsx batches/<combined dir>/<workbook>.xlsx   # refresh the Drive copy; rebuild, never --create
+python review_app/build_all.py --check                           # artifact pages (artifacts.json) stale? --only <name> rebuilds, --mark-published <name> after publishing
+python review_app/import_log.py <file> --reviewer EMAIL --dry-run   # bring the artifact page's calls into the batch dirs
 ```
+
+The page is the shared app in `../gem-review-app` (`review_core/` + `trackers/lng/`); the same page is published as a claude.ai
+artifact from the work profile (README entry point 5). The artifact decides only; sync and push stay on the loopback server.
 
 `↻ sync backend` re-pulls and rebuilds in place (a held line the backend already holds → `accept`;
 a resolved open item → `resolved`). `⇪ push changes` (AP §2b, `review_app/push.py`) lists every

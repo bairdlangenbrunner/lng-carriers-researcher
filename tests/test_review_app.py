@@ -1,4 +1,6 @@
-"""review_app/server.py + store.py: loopback-only server, data overlay, write-back."""
+"""review_app/server.py + core_store.py: the shared review server (../gem-review-app) bound to the LNG
+store. Loopback only, the overlay of decisions.csv / review_log.jsonl / review_items.jsonl, write-back.
+Push tests use a fake `write` and `pull`: no test reaches the sheet."""
 import json
 import threading
 import urllib.error
@@ -6,8 +8,8 @@ import urllib.request
 
 import pytest
 import review_data
+import core_store as store
 import server
-import store
 from review_fixture import make_batches
 
 
@@ -32,6 +34,18 @@ def get(url, headers=None):
         return r.status, r.read()
 
 
+def data(base):
+    return json.loads(get(base + "/api/data")[1])
+
+
+def lines(d):
+    return {ln["key"]: ln for c in d["vessels"] for ln in c["lines"]}
+
+
+def line(base, key):
+    return lines(data(base))[key]
+
+
 def test_refuses_non_loopback():
     for host in ("0.0.0.0", "192.168.1.5", "example.com", "::"):
         with pytest.raises(ValueError):
@@ -45,18 +59,20 @@ def test_refuses_non_loopback():
 def test_serves_static_and_api(running):
     base, app, b = running
     status, body = get(base + "/")
-    assert status == 200 and b"<script src=\"app.js\">" in body
-    assert json.loads(get(base + "/api/whoami")[1]) == {"reviewer": "tester"}
-    data = json.loads(get(base + "/api/data")[1])
+    assert status == 200 and b"LNG carriers reviewer" in body
+    assert get(base + "/tracker/ext.js")[0] == 200
+    who = json.loads(get(base + "/api/whoami")[1])
+    assert who["reviewer"] == "T" and who["caps"] == {"decide": True, "refresh": True, "push": True}
     k = f"{b['fix_a'].name}::10|Name"
-    assert data["proposals"][k]["decision"] == "accept" and data["proposals"][k]["last"] is None
-    assert data["proposals"][k]["reviewed"] is None       # pre-filled by the batch, nobody decided
+    ln = line(base, k)
+    assert ln["prefill"] == "accept" and ln["decision"] is None
+    assert ln["reviewed"] is False                         # pre-filled by the batch, nobody decided
 
 
 def test_static_does_not_escape_web_dir(running):
     base, _, _ = running
     with pytest.raises(urllib.error.HTTPError) as e:
-        get(base + "/../server.py")
+        get(base + "/tracker/../config.py")
     assert e.value.code == 404
 
 
@@ -94,7 +110,7 @@ def test_decide_changes_only_the_decision_cells(running):
     path = b["fix_a"] / "decisions.csv"
     before_bytes, before = path.read_bytes(), rows(path)
     status, body = post(base, [{"key": f"{b['fix_a'].name}::10|Price", "decision": "accept"}])
-    assert status == 200 and body["saved"][0]["reviewer"] == "tester" and body["saved"][0]["ts"]
+    assert status == 200 and body["saved"][0]["reviewer"] == "T" and body["saved"][0]["ts"]
     after = rows(path)
     assert [r["id"] for r in after] == [r["id"] for r in before]
     for r0, r1 in zip(before, after):
@@ -132,30 +148,30 @@ def test_suggest_is_reject_in_csv_and_full_in_log(running):
     assert next(r for r in rows(b["fix_a"] / "decisions.csv") if r["id"] == "10|Name")["decision"] == "reject"
     log = [json.loads(x) for x in (b["fix_a"] / "review_log.jsonl").read_text().splitlines()]
     assert log[-1]["decision"] == "suggest" and log[-1]["suggested_value"] == "Atlantic Star II"
-    assert log[-1]["suggest_kind"] == "cosmetic" and log[-1]["reviewer"] == "tester"
-    data = json.loads(get(base + "/api/data")[1])
-    p = data["proposals"][key]
-    assert p["decision"] == "suggest" and p["suggestion"]["value"] == "Atlantic Star II"
+    assert log[-1]["suggest_kind"] == "cosmetic" and log[-1]["reviewer"] == "T"
+    p = line(base, key)
+    assert p["decision"] == "suggest" and p["suggested_value"] == "Atlantic Star II"
+    assert p["suggest_kind"] == "cosmetic"
 
 
 def test_reviewed_is_the_researchers_call_not_the_prefill(running):
     base, _, b = running
     key = f"{b['fix_a'].name}::10|Status"
-    prop = lambda: json.loads(get(base + "/api/data")[1])["proposals"][key]
-    before = prop()["decision"]
-    assert prop()["reviewed"] is None
+    prop = lambda: line(base, key)
+    before = prop()["prefill"]
+    assert prop()["reviewed"] is False
     post(base, [{"key": key, "decision": "reject"}])
-    assert prop()["reviewed"] == "reject"
-    # undo back to a line nobody had decided: the csv gets its pre-fill back, reviewed is None again
-    post(base, [{"key": key, "decision": before, "via": "undo", "undecided": True}])
-    assert prop()["decision"] == before and prop()["reviewed"] is None
+    assert prop()["reviewed"] and prop()["decision"] == "reject" and prop()["decided_by"] == "T"
+    # undo back to a line nobody had decided: the csv gets its pre-fill back, nobody has decided it
+    post(base, [{"key": key, "undo": True, "via": "undo"}])
+    assert prop()["prefill"] == before and prop()["decision"] is None and not prop()["reviewed"]
     post(base, [{"key": key, "decision": "hold"}])
-    assert prop()["reviewed"] == "hold"
+    assert prop()["reviewed"] and prop()["decision"] == "hold"
     # decisions.csv edited behind the log: the log no longer describes the line
     path = b["fix_a"] / "decisions.csv"
-    text = store.plan_csv(path, {"10|Status": "accept"})
+    text = store.legacy.plan_csv(path, {"10|Status": "accept"})
     path.write_text(text, encoding="utf-8", newline="")
-    assert prop()["decision"] == "accept" and prop()["reviewed"] is None
+    assert prop()["prefill"] == "accept" and prop()["decision"] is None and not prop()["reviewed"]
 
 
 def test_a_machine_record_is_not_a_click(running):
@@ -163,36 +179,43 @@ def test_a_machine_record_is_not_a_click(running):
     the log says who did it, but it is not a reviewer's click — the card stays undecided and
     push leaves the line alone (AP §2b)."""
     import push
-    base, _, b = running
+    base, app, b = running
     key = f"{b['fix_b'].name}::10|Status"
-    prop = lambda: json.loads(get(base + "/api/data")[1])["proposals"][key]
+    prop = lambda: line(base, key)
+
+    def clicked():
+        raw = store.legacy.overlay(json.loads(json.dumps(app.raw)), app.dirs())
+        return push.clicked(raw["proposals"][key])
     path = b["fix_b"] / "decisions.csv"
-    path.write_text(store.plan_csv(path, {"10|Status": "accept"}), encoding="utf-8", newline="")
+    path.write_text(store.legacy.plan_csv(path, {"10|Status": "accept"}), encoding="utf-8", newline="")
     with open(b["fix_b"] / "review_log.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps({"key": key, "decision": "accept", "via": "regrade:§5 rev 28",
                             "reviewer": store.REGRADE_REVIEWER, "ts": "2026-09-22T09:00:00-04:00"}) + "\n")
     p = prop()
-    assert p["decision"] == "accept" and p["reviewed"] is None
-    assert not push.clicked(p)
+    assert p["prefill"] == "accept" and not p["reviewed"] and p["applied"]["by"] == store.REGRADE_REVIEWER
+    assert not clicked()
     # and a person's accept on the same line still is one
     post(base, [{"key": key, "decision": "accept"}])
-    assert prop()["reviewed"] == "accept" and push.clicked(prop())
+    assert prop()["reviewed"] and prop()["decision"] == "accept" and clicked()
 
 
 def test_machine_reviewers_match_the_regrade_script(running):
     """scripts/ never imports review_app, so the two lists are mirrored by hand — pin them."""
     import regrade_confidence
-    assert store.MACHINE_REVIEWERS == regrade_confidence.MACHINE_REVIEWERS
+    assert store.legacy.MACHINE_REVIEWERS == regrade_confidence.MACHINE_REVIEWERS
+    assert store.CONFIG.machine_reviewers == regrade_confidence.MACHINE_REVIEWERS
 
 
 def test_undo_appends(running):
     base, _, b = running
     key = f"{b['fix_a'].name}::10|Status"
+    before = line(base, key)["prefill"]
     post(base, [{"key": key, "decision": "reject"}])
-    post(base, [{"key": key, "decision": "accept", "via": "undo"}])
+    post(base, [{"key": key, "undo": True, "via": "undo"}])
     log = [json.loads(x) for x in (b["fix_a"] / "review_log.jsonl").read_text().splitlines()]
-    assert [r["decision"] for r in log] == ["reject", "accept"] and log[1]["via"] == "undo"
-    assert next(r for r in rows(b["fix_a"] / "decisions.csv") if r["id"] == "10|Status")["decision"] == "accept"
+    assert [r["decision"] for r in log] == ["reject", before] and log[1]["via"] == "undo"
+    assert log[1]["undecided"] is True
+    assert next(r for r in rows(b["fix_a"] / "decisions.csv") if r["id"] == "10|Status")["decision"] == before
 
 
 @pytest.mark.parametrize("body", [
@@ -222,12 +245,12 @@ def test_wrong_content_type_refused(running):
 
 
 def test_failed_write_leaves_files_intact(running, monkeypatch):
+    import os
     base, _, b = running
-    import store
 
     def boom(src, dst):
         raise OSError("disk full")
-    monkeypatch.setattr(store.os, "replace", boom)
+    monkeypatch.setattr(os, "replace", boom)
     before = snapshot(b.values())
     status, resp = post(base, [{"key": f"{b['fix_a'].name}::10|Status", "decision": "reject"}])
     assert status == 500 and "disk full" in resp["error"]
@@ -235,12 +258,11 @@ def test_failed_write_leaves_files_intact(running, monkeypatch):
 
 
 def test_crlf_and_multiline_fields_survive(tmp_path):
-    import store
     p = tmp_path / "decisions.csv"
     text = ('id,kind,decision,note\r\n1|A,fill,hold,"two\r\nlines"\r\n2|B,fill,hold,x y\r\n'
             '3|C,fill,hold,"quoted, comma"\r\n')
     p.write_bytes(text.encode())
-    out = store.plan_csv(p, {"2|B": "accept", "1|A": "hold"})
+    out = store.legacy.plan_csv(p, {"2|B": "accept", "1|A": "hold"})
     assert out == text.replace("2|B,fill,hold,", "2|B,fill,accept,")
 
 
@@ -257,48 +279,76 @@ def post_item(base, body):
 
 
 def conflict_item(base):
-    data = json.loads(get(base + "/api/data")[1])
-    return next(it for it in data["items"] if it["type"] == "conflict")
+    return next(it for c in data(base)["vessels"] for it in c["items"] if it["kind"] == "conflict")
 
 
-def test_item_status_logged_and_conflict_call_written(running):
+def items_log(d):
+    return [json.loads(x) for x in (d / "review_items.jsonl").read_text().splitlines()]
+
+
+def test_conflict_sits_on_its_vessel_card(running):
+    base, _, _ = running
+    card = next(c for c in data(base)["vessels"] if any(it["kind"] == "conflict" for it in c["items"]))
+    assert card["pid"] == card["row_id"] and card["pid"] != "items"
+
+
+def test_item_call_logged_and_conflict_call_written(running):
     base, _, b = running
     it = conflict_item(base)
-    assert it["status"] == "open" and it["conflict_decision"] == "hold"
+    assert it["call"] is None and it["prefill"] == "hold"
     path = b["data_fill"] / "conflicts.csv"
     before = path.read_bytes()
-    status, body = post_item(base, [{"item_id": it["item_id"], "status": "resolved",
-                                     "note": "backend right", "conflict_decision": "reject"}])
-    assert status == 200 and body["saved"][0]["reviewer"] == "tester"
+    status, body = post_item(base, [{"key": it["key"], "call": "reject", "note": "backend right"}])
+    assert status == 200 and body["saved"][0]["reviewer"] == "T"
     after = path.read_bytes()
     # only the decision cell of that record changed
     assert after == before.replace(b",hold", b",reject", 1) and after.count(b",reject") == 1
-    log = [json.loads(x) for x in (b["data_fill"] / "review_items.jsonl").read_text().splitlines()]
-    assert log[-1]["status"] == "resolved" and log[-1]["conflict_decision"] == "reject"
+    log = items_log(b["data_fill"])
+    assert log[-1]["item_id"] == it["key"] and log[-1]["status"] == "resolved"
+    assert log[-1]["conflict_decision"] == "reject"
     it2 = conflict_item(base)
-    assert it2["status"] == "resolved" and it2["conflict_decision"] == "reject"
-    assert it2["last"]["note"] == "backend right"
+    assert it2["call"] == "reject" and it2["call_note"] == "backend right" and it2["reviewed"]
     # decisions.csv is not touched by an item call
     assert not (b["data_fill"] / "review_log.jsonl").exists()
+    # undo: back to open, and conflicts.csv back at hold
+    assert post_item(base, [{"key": it["key"], "undo": True}])[0] == 200
+    assert conflict_item(base)["call"] is None and path.read_bytes() == before
+    assert items_log(b["data_fill"])[-1]["status"] == "open"
 
 
-def test_item_status_without_call_leaves_conflicts_csv(running):
+def test_resolved_conflict_leaves_conflicts_csv(running):
     base, _, b = running
     it = conflict_item(base)
     before = (b["data_fill"] / "conflicts.csv").read_bytes()
-    assert post_item(base, [{"item_id": it["item_id"], "status": "needs research"}])[0] == 200
+    assert post_item(base, [{"key": it["key"], "call": "resolved"}])[0] == 200
     assert (b["data_fill"] / "conflicts.csv").read_bytes() == before
+    assert conflict_item(base)["call"] == "resolved"
+    assert items_log(b["data_fill"])[-1]["status"] == "resolved"
+
+
+def test_item_log_from_the_old_app_still_reads(running):
+    """review_items.jsonl written before the port carried status and conflict_decision only."""
+    base, _, b = running
+    it = conflict_item(base)
+    path = b["data_fill"] / "conflicts.csv"
+    path.write_text(path.read_text(encoding="utf-8").replace(",hold", ",accept", 1), encoding="utf-8")
+    with open(b["data_fill"] / "review_items.jsonl", "a", encoding="utf-8") as f:
+        f.write(json.dumps({"item_id": it["key"], "status": "resolved", "note": "old app",
+                            "conflict_decision": "accept", "reviewer": "Baird Langenbrunner",
+                            "ts": "2026-09-22T09:00:00-04:00"}) + "\n")
+    it2 = conflict_item(base)
+    assert it2["call"] == "accept" and it2["decided_by"] == "BL" and it2["call_note"] == "old app"
 
 
 @pytest.mark.parametrize("body", [
-    [{"item_id": "nope::conflict:0", "status": "open"}],
-    [{"item_id": "__C__", "status": "done"}],
-    [{"item_id": "__C__", "status": "open", "conflict_decision": "maybe"}],
+    [{"key": "nope::conflict:0", "call": "resolved"}],
+    [{"key": "__C__", "call": "done"}],
+    [{"key": "__C__", "call": "needs_research"}],
     [],
 ])
 def test_bad_item_request_is_400_and_writes_nothing(running, body):
     base, _, b = running
-    body = json.loads(json.dumps(body).replace("__C__", conflict_item(base)["item_id"]))
+    body = json.loads(json.dumps(body).replace("__C__", conflict_item(base)["key"]))
     before = snapshot(b.values())
     status, resp = post_item(base, body)
     assert status == 400 and resp["error"]
@@ -312,8 +362,7 @@ def test_regenerated_conflicts_csv_is_refused(running):
     text = path.read_text(encoding="utf-8").replace(it["conflict_match"][1], "Something else", 1)
     path.write_text(text, encoding="utf-8")
     before = snapshot(b.values())
-    status, resp = post_item(base, [{"item_id": it["item_id"], "status": "resolved",
-                                     "conflict_decision": "accept"}])
+    status, resp = post_item(base, [{"key": it["key"], "call": "accept"}])
     assert status == 400 and "no longer" in resp["error"]
     assert snapshot(b.values()) == before
 
@@ -328,18 +377,18 @@ def test_bulk_records_across_batches(running):
     for d in (b["fix_a"], b["fix_b"]):
         log = [json.loads(x) for x in (d / "review_log.jsonl").read_text().splitlines()]
         assert all(r["via"].startswith("bulk:") for r in log)
-    data = json.loads(get(base + "/api/data")[1])
-    assert all(data["proposals"][k]["decision"] == "reject" for k in keys)
+    ls = lines(data(base))
+    assert all(ls[k]["decision"] == "reject" for k in keys)
 
 
 def test_conflict_call_reset_by_apply_batch_is_shown(running, tmp_path):
     base, _, b = running
     from review_fixture import _run_apply
     it = conflict_item(base)
-    post_item(base, [{"item_id": it["item_id"], "status": "resolved", "conflict_decision": "accept"}])
+    post_item(base, [{"key": it["key"], "call": "accept"}])
     _run_apply(b["data_fill"], tmp_path / "backend.csv")       # regenerates conflicts.csv at hold
     it2 = conflict_item(base)
-    assert it2["conflict_decision"] == "hold" and it2["logged_call"] == "accept"
+    assert it2["call"] is None and it2["prefill"] == "hold" and it2["logged_call"] == "accept"
 
 
 # ---- backend sync (the refresh button) -----------------------------------------------
@@ -377,17 +426,19 @@ def test_refresh_accepts_holds_the_backend_already_holds(running, tmp_path):
                         edit_backend(backend, "7", Capacity="174000"))
     held = f"{b['fix_b'].name}::10|Status"
     other = f"{b['fix_b'].name}::10|Other names"
-    assert json.loads(get(base + "/api/data")[1])["proposals"][held]["decision"] == "hold"
+    assert line(base, held)["prefill"] == "hold"
     status, out = post_refresh(base)
     assert status == 200 and out["accepted"] == [held]
-    assert out["resolved"] == [conflict_item(base)["item_id"]]
-    data = json.loads(get(base + "/api/data")[1])
-    p = data["proposals"][held]
+    assert out["resolved"] == [conflict_item(base)["key"]]
+    ls = lines(data(base))
+    p = ls[held]
     assert p["decision"] == "accept" and "in_backend" in p["flags"] and p["current"] == "active"
-    assert p["last"]["reviewer"] == "backend sync" and p["last"]["via"] == "sync:backend"
-    assert data["proposals"][other]["decision"] == "hold"          # not in the backend: untouched
+    assert p["decided_by"] == "backend sync" and not p["reviewed"]
+    log = [json.loads(x) for x in (b["fix_b"] / "review_log.jsonl").read_text().splitlines()]
+    assert log[-1]["via"] == "sync:backend"
+    assert ls[other]["prefill"] == "hold" and ls[other]["decision"] is None   # not in the backend: untouched
     assert {r["id"]: r["decision"] for r in rows(b["fix_b"] / "decisions.csv")}["10|Status"] == "accept"
-    assert conflict_item(base)["status"] == "resolved"
+    assert conflict_item(base)["call"] == "resolved"
     assert post_refresh(base)[1]["accepted"] == []                 # idempotent
 
 
@@ -398,12 +449,12 @@ def test_refresh_leaves_a_decided_line_and_a_value_without_its_ref(running, tmp_
     held = f"{b['fix_b'].name}::10|Status"
     app.pull = lambda: edit_backend(backend, "10", Status="active")   # value only, old ref
     assert post_refresh(base)[1]["accepted"] == []
-    p = json.loads(get(base + "/api/data")[1])["proposals"][held]
-    assert p["decision"] == "hold" and "value_in_backend" in p["flags"]
+    p = line(base, held)
+    assert p["prefill"] == "hold" and p["decision"] is None and "value_in_backend" in p["flags"]
     post(base, [{"key": held, "decision": "reject"}])
     app.pull = lambda: edit_backend(backend, "10", Status_ref="http://press/10")
     assert post_refresh(base)[1]["accepted"] == []                 # a human's reject stands
-    assert json.loads(get(base + "/api/data")[1])["proposals"][held]["decision"] == "reject"
+    assert line(base, held)["decision"] == "reject"
 
 
 def test_failed_pull_changes_nothing(running):
@@ -445,7 +496,7 @@ def pushing(running, tmp_path):
             edit_backend(backend, w["row_id"], **{w["column"]: w["new"]})
     app.write = write
     # only a clicked accept is pushed: click every line apply_batch pre-filled as accept
-    pre = [k for k, p in app.current()["proposals"].items() if p["decision"] == "accept"]
+    pre = [k for k, p in lines(data(base)).items() if p["prefill"] == "accept"]
     assert post(base, [{"key": k, "decision": "accept"} for k in pre])[0] == 200
     return base, app, b, backend, sent
 
@@ -477,9 +528,8 @@ def test_push_writes_verifies_and_logs(pushing):
     log = [json.loads(l) for l in (b["fix_a"] / "push_log.jsonl").read_text().splitlines()]
     assert {(r["row_id"], r["column"]) for r in log} == {("10", "Name"), ("10", "Name [ref]"),
                                                           ("10", "Status"), ("10", "Status [ref]")}
-    assert all(r["reviewer"] == "tester" for r in log)
-    data = json.loads(get(base + "/api/data")[1])
-    assert "in_backend" in data["proposals"][f"{b['fix_a'].name}::10|Name"]["flags"]
+    assert all(r["reviewer"] == "T" for r in log)
+    assert "in_backend" in line(base, f"{b['fix_a'].name}::10|Name")["flags"]
     again = post_json(base, "/api/push/plan", {})[1]
     assert again["writes"] == []
     assert post_json(base, "/api/push", {"token": plan["token"]})[0] == 409    # the old plan is gone
@@ -590,7 +640,7 @@ def test_push_plan_includes_a_suggestion_with_gated_refs(pushing, gated):
     assert [(w["column"], w["new"]) for w in sent[0] if w["row_id"] == "10" and w["column"].startswith("Status")] == \
         [("Status", "laid up"), ("Status [ref]", "http://ship/10")]
     # the record keeps what the reviewer typed (deduped); the gate filters only at push time
-    assert app.current()["proposals"][k]["suggestion"]["refs"] == ["http://ship/10", "http://bad/x"]
+    assert line(base, k)["suggested_refs"] == ["http://ship/10", "http://bad/x"]
 
 
 def test_push_plan_skips_a_suggestion_no_ref_corroborates(pushing, gated):
@@ -613,5 +663,5 @@ def test_suggested_refs_must_be_urls(running):
     status, _ = post(base, [{"key": k, "decision": "suggest", "suggested_value": "laid up", "note": "n",
                              "suggested_refs": "http://ship/10, http://ship/11"}])
     assert status == 200
-    assert app.current()["proposals"][k]["suggestion"]["refs"] == ["http://ship/10", "http://ship/11"]
+    assert line(base, k)["suggested_refs"] == ["http://ship/10", "http://ship/11"]
     assert store.suggested_refs(None) == [] and store.suggested_refs(["", " http://a/b "]) == ["http://a/b"]
