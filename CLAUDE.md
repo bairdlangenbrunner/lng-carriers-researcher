@@ -274,8 +274,8 @@ never auto-applied.
 - **Always pull a fresh backend CSV at the start of a batch** and re-derive the column map.
 - **Report live sheet rows**, never a row key (the column-A `UUID`, or a legacy "original order"
   id), wherever a row is named to Baird.
-- **Git:** branch → commit → push → PR → merge is pre-authorised for this repo (Baird 2026-06-07);
-  commits all-lowercase and succinct, scoped to the task, no Claude attribution. **Never commit**
+- **Git:** Baird's work commits and pushes to the `baird` branch without asking; nothing merges or
+  pushes to `main` unless Baird asks (Baird 2026-10-29: Rob now works in this repo too); commits all-lowercase and succinct, scoped to the task, no Claude attribution. **Never commit**
   credentials or anything in `work/` (gitignored).
 
 ## When to escalate
